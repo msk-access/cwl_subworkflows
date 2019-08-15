@@ -6,16 +6,16 @@ cwl_subworkflows
 .. image:: https://img.shields.io/pypi/v/cwl_subworkflows.svg
         :target: https://pypi.python.org/pypi/cwl_subworkflows
 
-.. image:: https://img.shields.io/travis/rhshah/cwl_subworkflows.svg
-        :target: https://travis-ci.org/rhshah/cwl_subworkflows
+.. image:: https://img.shields.io/travis/msk-access/cwl_subworkflows.svg
+        :target: https://travis-ci.org/msk-access/cwl_subworkflows
 
 .. image:: https://readthedocs.org/projects/cwl-subworkflows/badge/?version=latest
         :target: https://cwl-subworkflows.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
 
-.. image:: https://pyup.io/repos/github/rhshah/cwl_subworkflows/shield.svg
-     :target: https://pyup.io/repos/github/rhshah/cwl_subworkflows/
+.. image:: https://pyup.io/repos/github/msk-access/cwl_subworkflows/shield.svg
+     :target: https://pyup.io/repos/github/msk-access/cwl_subworkflows/
      :alt: Updates
 
 
