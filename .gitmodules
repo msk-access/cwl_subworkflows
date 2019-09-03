@@ -1,3 +1,4 @@
 [submodule "command_line_tools"]
 	path = command_line_tools
 	url = https://github.com/mskcc/cwl-commandlinetools.git
+	branch = develop
