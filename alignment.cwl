@@ -23,7 +23,7 @@ inputs:
   - id: M
     type: boolean?
     'sbg:x': 0
-    'sbg:y': 1070
+    'sbg:y': 1177
   - id: read_group_identifier
     type: string
     'sbg:x': 0
@@ -35,7 +35,7 @@ inputs:
   - id: create_bam_index
     type: boolean?
     'sbg:x': 319.171875
-    'sbg:y': 514
+    'sbg:y': 560.5
   - id: read_group_sequnecing_center
     type: string
     'sbg:x': 0
@@ -59,7 +59,11 @@ inputs:
   - id: output_file_name
     type: string?
     'sbg:x': 319.171875
-    'sbg:y': 407
+    'sbg:y': 453.5
+  - id: output
+    type: string?
+    'sbg:x': 0
+    'sbg:y': 1070
 outputs:
   - id: bam
     outputSource:
@@ -67,8 +71,8 @@ outputs:
     type: File
     secondaryFiles:
       - ^.bai
-    'sbg:x': 918.5819091796875
-    'sbg:y': 535
+    'sbg:x': 922.9844970703125
+    'sbg:y': 588.5
 steps:
   - id: bwa_mem_0_7_5a
     in:
@@ -76,6 +80,8 @@ steps:
         source: M
       - id: P
         source: P
+      - id: output
+        source: output
       - id: reads
         source:
           - reads
@@ -86,7 +92,7 @@ steps:
     run: command_line_tools/bwa_mem_0.7.5a/bwa_mem_0.7.5a.cwl
     label: bwa-mem
     'sbg:x': 319.171875
-    'sbg:y': 642
+    'sbg:y': 695.5
   - id: picard_add_or_replace_read_groups_1_96
     in:
       - id: input
@@ -114,6 +120,6 @@ steps:
     run: >-
       command_line_tools/picard_add_or_replace_read_groups_1.96/picard_add_or_replace_read_groups_1.96.cwl
     label: picard_add_or_replace_read_groups_1.96
-    'sbg:x': 515.890625
-    'sbg:y': 472
+    'sbg:x': 520.293212890625
+    'sbg:y': 525.5
 requirements: []
