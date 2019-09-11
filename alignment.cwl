@@ -10,6 +10,11 @@ inputs:
     secondaryFiles:
       - .fai
       - ^.dict
+      - .amb
+      - .ann
+      - .bwt
+      - .pac
+      - .sa
     'sbg:x': 0
     'sbg:y': 107
   - id: reads
