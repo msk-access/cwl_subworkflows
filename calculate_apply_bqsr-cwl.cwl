@@ -25,6 +25,9 @@ inputs:
     'sbg:y': 107
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
+      - ^.dict
     'sbg:x': 0
     'sbg:y': 0
 outputs:
