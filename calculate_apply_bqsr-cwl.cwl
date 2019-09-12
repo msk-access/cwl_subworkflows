@@ -30,8 +30,12 @@ inputs:
       - ^.dict
     'sbg:x': 0
     'sbg:y': 0
+  - id: read_filter
+    type: string?
+    'sbg:x': -193.390625
+    'sbg:y': 37
 outputs:
-  - id: output
+  - id: bqsr_bam
     outputSource:
       - gatk_apply_bqsr_4_1_2_1/output
     type: File?
@@ -48,6 +52,8 @@ steps:
         source: known_sites_1
       - id: reference
         source: reference
+      - id: read_filter
+        source: read_filter
       - id: known_sites_2
         source: known_sites_2
     out:

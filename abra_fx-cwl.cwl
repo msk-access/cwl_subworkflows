@@ -12,32 +12,80 @@ inputs:
         items: File
     secondaryFiles:
       - ^.bai
-    'sbg:x': -21
-    'sbg:y': 186
+    'sbg:x': 0
+    'sbg:y': 853.5625
   - id: reference_fasta
     type: File
     secondaryFiles:
       - .fai
       - ^.dict
     'sbg:x': 0
-    'sbg:y': 0
+    'sbg:y': 320.125
   - id: bam_index
     type: boolean?
     'sbg:x': 0
-    'sbg:y': 321
+    'sbg:y': 1280.34375
   - id: option_bedgraph
     type: boolean?
-    'sbg:x': -0.9758758544921875
-    'sbg:y': 473.5
+    'sbg:x': 0
+    'sbg:y': 426.8203125
+  - id: window_size
+    type: string?
+    'sbg:x': 0
+    'sbg:y': 0
+  - id: soft_clip_contig
+    type: string?
+    'sbg:x': 0
+    'sbg:y': 106.6953125
+  - id: scoring_gap_alignments
+    type: string?
+    'sbg:x': 0
+    'sbg:y': 213.4296875
+  - id: no_sort
+    type: boolean?
+    'sbg:x': 0
+    'sbg:y': 533.515625
+  - id: maximum_mixmatch_rate
+    type: float?
+    'sbg:x': 0
+    'sbg:y': 640.171875
+  - id: maximum_average_depth
+    type: int?
+    'sbg:x': 0
+    'sbg:y': 746.8671875
+  - id: ignore_bad_assembly
+    type: boolean?
+    'sbg:x': 0
+    'sbg:y': 960.2578125
+  - id: contig_anchor
+    type: string?
+    'sbg:x': 0
+    'sbg:y': 1066.9921875
+  - id: consensus_sequence
+    type: boolean?
+    'sbg:x': 0
+    'sbg:y': 1173.6875
+  - id: number_of_threads
+    type: int?
+    label: abra_number_of_threads
+    'sbg:x': 535.44482421875
+    'sbg:y': 314.0636291503906
 outputs:
-  - id: bam
+  - id: abra_fx_bam
     outputSource:
       - picard_fix_mate_information_1_97/bam
     type: File
     secondaryFiles:
       - ^.bai
-    'sbg:x': 964.0241088867188
-    'sbg:y': 49.5
+    'sbg:x': 1346.0264892578125
+    'sbg:y': 640.171875
+  - id: output_file
+    outputSource:
+      - bedtools_merge/output_file
+    type: File?
+    label: indel_realign_targets
+    'sbg:x': 676.9483642578125
+    'sbg:y': 502.8046875
 steps:
   - id: bedtools_genomecov
     in:
@@ -50,8 +98,8 @@ steps:
     run: >-
       command_line_tools/bedtools_genomecov_v2.28.0_cv2/bedtools_genomecov_v2.28.0_cv2.cwl
     label: bedtools_genomecov
-    'sbg:x': 263.0245666503906
-    'sbg:y': 372.5
+    'sbg:x': 257.390625
+    'sbg:y': 633.1328125
   - id: bedtools_merge
     in:
       - id: input
@@ -61,10 +109,12 @@ steps:
     run: >-
       command_line_tools/bedtools_merge_v2.28.0_cv2/bedtools_merge_v2.28.0_cv2.cwl
     label: bedtools_merge
-    'sbg:x': 400
-    'sbg:y': -102
+    'sbg:x': 503.6046142578125
+    'sbg:y': 640.1328125
   - id: abra2_2_18
     in:
+      - id: number_of_threads
+        source: number_of_threads
       - id: input_bam
         source:
           - input_bam
@@ -72,14 +122,32 @@ steps:
         source: reference_fasta
       - id: targets
         source: bedtools_merge/output_file
+      - id: maximum_average_depth
+        source: maximum_average_depth
+      - id: soft_clip_contig
+        source: soft_clip_contig
+      - id: maximum_mixmatch_rate
+        source: maximum_mixmatch_rate
+      - id: scoring_gap_alignments
+        source: scoring_gap_alignments
+      - id: contig_anchor
+        source: contig_anchor
+      - id: window_size
+        source: window_size
+      - id: consensus_sequence
+        source: consensus_sequence
+      - id: ignore_bad_assembly
+        source: ignore_bad_assembly
       - id: bam_index
         source: bam_index
+      - id: no_sort
+        source: no_sort
     out:
       - id: realigned_bam
     run: command_line_tools/abra2_2.17/abra2_2.17.cwl
     label: abra2_2.17
-    'sbg:x': 572
-    'sbg:y': 96
+    'sbg:x': 787.517578125
+    'sbg:y': 767.3450317382812
   - id: picard_fix_mate_information_1_97
     in:
       - id: input
@@ -89,6 +157,6 @@ steps:
     run: >-
       command_line_tools/picard_fix_mate_information_1.96/picard_fix_mate_information_1.96.cwl
     label: picard_fix_mate_information_1.96
-    'sbg:x': 673.0241088867188
-    'sbg:y': 306.5
+    'sbg:x': 1150.2608642578125
+    'sbg:y': 640.171875
 requirements: []
