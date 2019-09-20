@@ -10,52 +10,65 @@ inputs:
     secondaryFiles:
       - .fai
       - ^.dict
+      - .amb
+      - .ann
+      - .bwt
+      - .pac
+      - .sa
     'sbg:x': 0
-    'sbg:y': 106.5390625
+    'sbg:y': 107
   - id: reads
     type: 'File[]'
     'sbg:x': 0
-    'sbg:y': 213.0390625
+    'sbg:y': 214
   - id: P
     type: boolean?
     'sbg:x': 0
-    'sbg:y': 959.9453125
+    'sbg:y': 963
   - id: M
     type: boolean?
     'sbg:x': 0
-    'sbg:y': 1066.4453125
+    'sbg:y': 1177
   - id: read_group_identifier
     type: string
     'sbg:x': 0
-    'sbg:y': 853.328125
+    'sbg:y': 856
   - id: sort_order
     type: string?
     'sbg:x': 0
     'sbg:y': 0
   - id: create_bam_index
     type: boolean?
-    'sbg:x': 479.32232666015625
-    'sbg:y': 854.1065063476562
+    'sbg:x': 319.171875
+    'sbg:y': 560.5
   - id: read_group_sequnecing_center
     type: string
     'sbg:x': 0
-    'sbg:y': 319.65625
+    'sbg:y': 321
   - id: read_group_sequencing_platform
     type: string
     'sbg:x': 0
-    'sbg:y': 426.390625
+    'sbg:y': 428
   - id: read_group_sample_name
     type: string
     'sbg:x': 0
-    'sbg:y': 533.125
+    'sbg:y': 535
   - id: read_group_platform_unit
     type: string
     'sbg:x': 0
-    'sbg:y': 639.859375
+    'sbg:y': 642
   - id: read_group_library
     type: int
     'sbg:x': 0
-    'sbg:y': 746.59375
+    'sbg:y': 749
+  - id: output_file_name
+    type: string?
+    'sbg:x': 319.171875
+    'sbg:y': 453.5
+  - id: output
+    type: string?
+    'sbg:x': 0
+    'sbg:y': 1070
 outputs:
   - id: bam
     outputSource:
@@ -63,8 +76,8 @@ outputs:
     type: File
     secondaryFiles:
       - ^.bai
-    'sbg:x': 908.6610107421875
-    'sbg:y': 533.2421875
+    'sbg:x': 922.9844970703125
+    'sbg:y': 588.5
 steps:
   - id: bwa_mem_0_7_5a
     in:
@@ -72,6 +85,8 @@ steps:
         source: M
       - id: P
         source: P
+      - id: output
+        source: output
       - id: reads
         source:
           - reads
@@ -81,12 +96,14 @@ steps:
       - id: sam
     run: command_line_tools/bwa_mem_0.7.5a/bwa_mem_0.7.5a.cwl
     label: bwa-mem
-    'sbg:x': 292.4254455566406
-    'sbg:y': 725.329833984375
+    'sbg:x': 319.171875
+    'sbg:y': 695.5
   - id: picard_add_or_replace_read_groups_1_96
     in:
       - id: input
         source: bwa_mem_0_7_5a/sam
+      - id: output_file_name
+        source: output_file_name
       - id: sort_order
         source: sort_order
       - id: read_group_identifier
@@ -108,6 +125,6 @@ steps:
     run: >-
       command_line_tools/picard_add_or_replace_read_groups_1.96/picard_add_or_replace_read_groups_1.96.cwl
     label: picard_add_or_replace_read_groups_1.96
-    'sbg:x': 715.1737670898438
-    'sbg:y': 346.0451965332031
+    'sbg:x': 520.293212890625
+    'sbg:y': 525.5
 requirements: []
