@@ -31,9 +31,14 @@ inputs:
     'sbg:x': 0
     'sbg:y': 0
   - id: read_filter
-    type: string?
-    'sbg:x': -193.390625
-    'sbg:y': 37
+    type:
+      - 'null'
+      - type: array
+        items: string
+        inputBinding:
+          prefix: '--read-filter'
+    'sbg:x': -324.8984375
+    'sbg:y': 74
 outputs:
   - id: bqsr_bam
     outputSource:
@@ -53,7 +58,8 @@ steps:
       - id: reference
         source: reference
       - id: read_filter
-        source: read_filter
+        source:
+          - read_filter
       - id: known_sites_2
         source: known_sites_2
     out:
