@@ -25,10 +25,22 @@ inputs:
     'sbg:y': 107
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
+      - ^.dict
     'sbg:x': 0
     'sbg:y': 0
+  - id: read_filter
+    type:
+      - 'null'
+      - type: array
+        items: string
+        inputBinding:
+          prefix: '--read-filter'
+    'sbg:x': -324.8984375
+    'sbg:y': 74
 outputs:
-  - id: output
+  - id: bqsr_bam
     outputSource:
       - gatk_apply_bqsr_4_1_2_1/output
     type: File?
@@ -45,6 +57,9 @@ steps:
         source: known_sites_1
       - id: reference
         source: reference
+      - id: read_filter
+        source:
+          - read_filter
       - id: known_sites_2
         source: known_sites_2
     out:
