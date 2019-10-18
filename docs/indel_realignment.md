@@ -1,4 +1,4 @@
-## Indel Re-alignment sub-workflow specification
+## Indel Re-alignment sub-workflow specification (abra_fx.cwl)
 
 ### Tools used:
 
