@@ -1,6 +1,3 @@
-# Initial page
-
-=======
 ---
 description: Central location for storing common workflow language based sub-workflows for building msk-access workflows
 ---
