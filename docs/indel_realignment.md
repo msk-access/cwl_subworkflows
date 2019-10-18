@@ -1,3 +1,7 @@
+---
+description: Specifications for performing Indel Re-alignment on a BAM file.
+---
+
 ## Indel Re-alignment sub-workflow specification - abra_fx.cwl
 
 ### Tools used:

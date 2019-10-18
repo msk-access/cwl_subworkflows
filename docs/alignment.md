@@ -1,3 +1,7 @@
+---
+description: Specifications for performing alignment on pair-end FASTQ files.
+---
+
 ## Alignment sub-workflow specification - alignment.cwl
 
 ### Tools used:

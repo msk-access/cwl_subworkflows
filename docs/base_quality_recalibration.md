@@ -1,3 +1,7 @@
+---
+description: Specifications for performing Base Quality Score Recalibration on a BAM file
+---
+
 ## Base Quality Score Recalibration sub-workflow specification - calculate_apply_bqsr.cwl
 
 ### Tools used:
