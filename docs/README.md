@@ -16,20 +16,12 @@ description: Central location for storing common workflow language based sub-wor
 
 Create sub-workflows in common workflow language to generate msk-access parent workflow.
 
-## Installation
-
-Clone the repository:
-
-```
-git clone --depth 50 https://github.com/msk-access/cwl-commandlinetools.git
-```
-
 **Follow the README in repsective tool folder for execution of the tool.**
 
 
 ## Credits
 
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
-
+- MSKCC - Members of Center for Molecular Oncology 
+- MSKCC - Memebers of Department of Molecular Pathology
 - Cookiecutter: https://github.com/audreyr/cookiecutter
 - `audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
