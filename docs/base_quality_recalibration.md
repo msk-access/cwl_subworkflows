@@ -2,5 +2,5 @@
 
 ### Tools used:
 
-* [GATK - BaseRecalibrator](../command_line_tools/gatk_BaseRecalibrator_4.1.2.0/README.md)
-* [GATK - ApplyBQSR](../command_line_tools/gatk_ApplyBQSR_4.1.2.0/README.md)
+* [GATK - BaseRecalibrator](https://msk-access.gitbook.io/command-line-tools-cwl/gatk/gatk_baserecalibrator_4.1.2.0)
+* [GATK - ApplyBQSR](https://msk-access.gitbook.io/command-line-tools-cwl/gatk/gatk_applybqsr_4.1.2.0)

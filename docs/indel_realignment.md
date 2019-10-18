@@ -2,8 +2,8 @@
 
 ### Tools used:
 
-* [bedtools genomecov](../command_line_tools/bedtools_genomecov_v2.28.0_cv2/README.md)
-* [bedtools merge](../command_line_tools/bedtools_merge_v2.28.0_cv2/README.md)
-* [ABRA2](../command_line_tools/abra2_2.17/README.md)
-* [Picard Tools - FixMateInformation](../command_line_tools/picard_fix_mate_information_1.96/README.md)
+* [bedtools genomecov](https://msk-access.gitbook.io/command-line-tools-cwl/bedtools/bedtools_genomecov_v2.28.0_cv2)
+* [bedtools merge](https://msk-access.gitbook.io/command-line-tools-cwl/bedtools/bedtools_merge_v2.28.0_cv2)
+* [ABRA2](https://msk-access.gitbook.io/command-line-tools-cwl/abra2/abra2_2.17)
+* [Picard Tools - FixMateInformation](https://msk-access.gitbook.io/command-line-tools-cwl/picard-tools/picard_fix_mate_information_1.96)
 
