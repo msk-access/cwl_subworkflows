@@ -1,4 +1,4 @@
-## Alignment sub-workflow specification (alignment.cwl)
+## Alignment sub-workflow specification - alignment.cwl
 
 ### Tools used:
 

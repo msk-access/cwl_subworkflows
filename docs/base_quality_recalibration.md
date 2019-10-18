@@ -1,4 +1,4 @@
-## Base Quality Score Recalibration sub-workflow specification (calculate_apply_bqsr.cwl)
+## Base Quality Score Recalibration sub-workflow specification - calculate_apply_bqsr.cwl
 
 ### Tools used:
 
