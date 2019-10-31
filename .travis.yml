@@ -1,15 +1,18 @@
 language: python
 python:
 - 3.7
+- 2.7
 install: pip install -U tox-travis
 script: tox
 deploy:
   provider: pypi
   distributions: sdist bdist_wheel
-  user: rhshah
+  skip_cleanup: true
+  skip_existing: true
+  user: __token__
   password:
-    secure: kg2GWkua1kIX8bgB18gAROQYsikZemS8jhZxI1OiqkhD1q55qD+0i/Xm7NjXjVL6qbDQJbQFDMYUQVaHiMXweVZSDijlyIO2ME5KyVuNgudz0KhzOQy1Uy02LiNG2Qwf0FmJw0C0D5al6ecP0WoQqeMazWmk+RerEeOcoVKZVlk3G676QZDIflj4w9/Tz86eJ65q8leJ4d6D8YgzBQo49Gqs8NR5DnGp+pk+y2nIprVZ4sBxGI0VgCF4PvZeaCbyGGo4YyO0NKpplB3OJY1+jtQ+GhMPcXt/MIPeKS1/gPWp/j8tbdp3SjLQNF/3l64DV1x7+Jr2w17hQwPV/lYw+sbWB8QWeUTB7lpLyornoCRpaClr8avcyG7tvnI7mfJON0+LZLRfFkiadTMs4AzrAoJ7h8NhCSfYoeNIfCFU/vkvKxs1ROWbiAjJnwzr2QCt6OfWEzUMO7n9phGChaNCRUcOI4Bkf/Xlt0+pXrwaRbHgM/KIGWYWjVdUIN5u/tgxNcpVPM/WAlasg4k/1e90WVq6MnGKPgpsTeRuy1T16Yaq0jMn4ki2qYHAx9TTwpqk4A/qUU9Gh36pQ0MZx2QZruHWmpV+MzSF1TZMv+XQH+64s5ei0bkCJ6ys11iApjbcZ9MUGLxB1imF7IBAMJah1C2zal9w15xLrXKap39mQeY=
+    secure: g9Ja5QDLc1WGu50xpmXl6wcP7qRNzfYZk7i3PEJtQNO6JLPtxEmBgDAb4+RedRxLo9MRmws/n/bFkTOSP837d+tJ91cYN6TFbVu2teWiR6hblDX/Twhbceq/MjdYJyAVsH+KpuORjuJGqzk2I4QLzI+B/0mXuWcE4EPaCZ5mpm0aYYOTLW1Ukxl1j/PoV8wWC2glItLQ02zIvLyr276+en+RAdWYwqW8sY7rn4hI6VaM78OMsc2/cvG27X82SX4rBxJ3/VveslAc3O7Kck02ltOPyOLI3w++HEVvhHAaCK3kDxNEYQCMly1lDYWTfAGm2F5TZ5mgt2adb08AN//0GnWQOfciHh3JUrIt7po7B5Zs8kmZNGGTJFog8o+btU4pAeCDIt61lFyMo7VVpvPzR4ToiGP3zBvGEgnZd7WpTI0H0E4oc821vl9SAN+3aWQhDxDHl+z3VDwpZTA18mgQikFNc7asKDSXCAGoStI/YFWjw3X+tvFGMXR+R6dpmeSplFFSOx9L3TbrtymWProH8MOyxSVNDdQG6Vz41bN9IS47GRI+/1A9jXxwGurKY1ZL7HZDApDx42Fn2RdOFQNyLCeCneI+RUXtkHY56tH3GpBmnnJX6bKPrn4+VIbgd1VCahPrG8INqxx+SE4JojdIQHcxDy924PCL8mS4hakE4Z0=
   on:
     tags: true
     repo: msk-access/cwl_subworkflows
-    python: 3.7
+    python: 2.7
