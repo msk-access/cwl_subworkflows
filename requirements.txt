@@ -1,6 +1,6 @@
 toil-ionox0[cwl]==0.0.7
 pytz
-typing==3.7.4
+typing==3.7.4.1
 ruamel.yaml==0.15.77
 pip==18.1
 bumpversion==0.5.3
