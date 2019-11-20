@@ -54,7 +54,7 @@ inputs:
     'sbg:x': 0
     'sbg:y': 641.25
   - id: read_group_library
-    type: int
+    type: string
     'sbg:x': 0
     'sbg:y': 748.125
   - id: output_file_name
