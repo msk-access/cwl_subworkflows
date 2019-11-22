@@ -73,7 +73,7 @@ inputs:
 outputs:
   - id: abra_fx_bam
     outputSource:
-      - picard_fix_mate_information_1_97/bam
+      - picard_fix_mate_information_2_21_2/bam
     type: File
     secondaryFiles:
       - ^.bai
@@ -148,15 +148,15 @@ steps:
     label: abra2_2.17
     'sbg:x': 787.517578125
     'sbg:y': 767.3450317382812
-  - id: picard_fix_mate_information_1_97
+  - id: picard_fix_mate_information_2_21_2
     in:
       - id: input
         source: abra2_2_18/realigned_bam
     out:
       - id: bam
     run: >-
-      command_line_tools/picard_fix_mate_information_1.96/picard_fix_mate_information_1.96.cwl
-    label: picard_fix_mate_information_1.96
+      command_line_tools/picard_fix_mate_information_2.21.2/picard_fix_mate_information_2.21.2.cwl
+    label: picard_fix_mate_information_2.21.2
     'sbg:x': 1150.2608642578125
     'sbg:y': 640.171875
 requirements: []

@@ -72,7 +72,7 @@ inputs:
 outputs:
   - id: bam
     outputSource:
-      - picard_add_or_replace_read_groups_1_96/bam
+      - picard_add_or_replace_read_groups_2_21_2/bam
     type: File
     secondaryFiles:
       - ^.bai
@@ -98,7 +98,7 @@ steps:
     label: bwa-mem
     'sbg:x': 319.140625
     'sbg:y': 694.6875
-  - id: picard_add_or_replace_read_groups_1_96
+  - id: picard_add_or_replace_read_groups_2_21_2
     in:
       - id: input
         source: bwa_mem_0_7_5a/sam
@@ -123,8 +123,8 @@ steps:
     out:
       - id: bam
     run: >-
-      command_line_tools/picard_add_or_replace_read_groups_1.96/picard_add_or_replace_read_groups_1.96.cwl
-    label: picard_add_or_replace_read_groups_1.96
+      command_line_tools/picard_add_or_replace_read_groups_2.21.2/picard_add_or_replace_read_groups_2.21.2.cwl
+    label: picard_add_or_replace_read_groups_2.21.2
     'sbg:x': 520.261962890625
     'sbg:y': 524.75
 requirements: []
