@@ -70,7 +70,7 @@ inputs:
     'sbg:x': 5.036951541900635
     'sbg:y': 326.5912170410156
   - id: temporary_directory
-    type: string?
+    type: Directory?
     label: picard_add_or_replace_read_group_1.96_tmpdir
     'sbg:x': 3.3808727264404297
     'sbg:y': -127.21382141113281

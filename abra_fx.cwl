@@ -71,7 +71,7 @@ inputs:
     'sbg:x': 535.44482421875
     'sbg:y': 314.0636291503906
   - id: temporary_directory
-    type: string?
+    type: Directory?
     label: picard_fix_mate_information_1.96_tmpdir
     'sbg:x': 1001.1474609375
     'sbg:y': 574.1583251953125
