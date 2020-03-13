@@ -70,6 +70,11 @@ inputs:
     label: abra_number_of_threads
     'sbg:x': 535.44482421875
     'sbg:y': 314.0636291503906
+  - id: temporary_directory
+    type: string?
+    label: picard_fix_mate_information_1.96_tmpdir
+    'sbg:x': 1001.1474609375
+    'sbg:y': 574.1583251953125
 outputs:
   - id: abra_fx_bam
     outputSource:
@@ -152,6 +157,8 @@ steps:
     in:
       - id: input
         source: abra2_2_18/realigned_bam
+      - id: temporary_directory
+        source: temporary_directory
     out:
       - id: bam
     run: >-

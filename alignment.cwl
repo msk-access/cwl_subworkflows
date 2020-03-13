@@ -41,10 +41,6 @@ inputs:
     type: boolean?
     'sbg:x': 319.171875
     'sbg:y': 560.5
-  - id: read_group_sequnecing_center
-    type: string
-    'sbg:x': 0
-    'sbg:y': 321
   - id: read_group_sequencing_platform
     type: string
     'sbg:x': 0
@@ -58,7 +54,7 @@ inputs:
     'sbg:x': 0
     'sbg:y': 642
   - id: read_group_library
-    type: int
+    type: string
     'sbg:x': 0
     'sbg:y': 749
   - id: output_file_name
@@ -69,6 +65,15 @@ inputs:
     type: string?
     'sbg:x': 0
     'sbg:y': 1070
+  - id: read_group_sequencing_center
+    type: string
+    'sbg:x': 5.036951541900635
+    'sbg:y': 326.5912170410156
+  - id: temporary_directory
+    type: string?
+    label: picard_add_or_replace_read_group_1.96_tmpdir
+    'sbg:x': 3.3808727264404297
+    'sbg:y': -127.21382141113281
 outputs:
   - id: bam
     outputSource:
@@ -108,8 +113,8 @@ steps:
         source: sort_order
       - id: read_group_identifier
         source: read_group_identifier
-      - id: read_group_sequnecing_center
-        source: read_group_sequnecing_center
+      - id: read_group_sequencing_center
+        source: read_group_sequencing_center
       - id: read_group_library
         source: read_group_library
       - id: read_group_platform_unit
@@ -120,6 +125,8 @@ steps:
         source: read_group_sequencing_platform
       - id: create_bam_index
         source: create_bam_index
+      - id: temporary_directory
+        source: temporary_directory
     out:
       - id: bam
     run: >-
