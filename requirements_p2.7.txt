@@ -1,5 +1,5 @@
 toil-ionox0[cwl]==0.0.7
-pytz==2019.2
+pytz==2020.1
 typing==3.7.4.1
 ruamel.yaml==0.15.77
 bumpversion==0.5.3
