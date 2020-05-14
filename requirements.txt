@@ -3,7 +3,7 @@ pytz
 typing==3.7.4
 ruamel.yaml==0.15.77
 pip==18.1
-bumpversion==0.5.3
+bumpversion==0.6.0
 wheel==0.32.1
 watchdog==0.9.0
 flake8==3.5.0
