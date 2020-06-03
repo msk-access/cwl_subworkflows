@@ -8,7 +8,7 @@ flake8==3.7.8
 tox==3.14.0
 coverage==4.5.4
 twine==1.15.0
-pytest==4.6.5
+pytest==5.4.3
 pytest-runner==5.1
 coloredlogs==10.0
 pathlib2==2.3.2
