@@ -41,9 +41,6 @@ inputs:
     type: int?
     'sbg:x': -648.0210571289062
     'sbg:y': 419.6796875
-  - id: program_list
-    type: 'string[]?'
-    'sbg:exposed': true
 outputs:
   - id: hs_metrics_file
     outputSource:
@@ -57,48 +54,12 @@ outputs:
     type: File?
     'sbg:x': 766.4902954101562
     'sbg:y': -1252.3756103515625
-  - id: bait_bias_detail_metrics
-    outputSource:
-      - picard_collectmultiplemetrics_2_8_1/bait_bias_detail_metrics
-    type: File?
-    'sbg:x': 427.6467590332031
-    'sbg:y': -622.5969848632812
-  - id: bait_bias_summary_metrics
-    outputSource:
-      - picard_collectmultiplemetrics_2_8_1/bait_bias_summary_metrics
-    type: File?
-    'sbg:x': 420.8084716796875
-    'sbg:y': -766.6268310546875
   - id: base_distribution_by_cycle_metrics
     outputSource:
       - picard_collectmultiplemetrics_2_8_1/base_distribution_by_cycle_metrics
     type: File?
     'sbg:x': 762.4103393554688
     'sbg:y': -260.4105529785156
-  - id: error_summary_metrics
-    outputSource:
-      - picard_collectmultiplemetrics_2_8_1/error_summary_metrics
-    type: File?
-    'sbg:x': 416.6467590332031
-    'sbg:y': -901.1367797851562
-  - id: gc_bias_detail_metrics
-    outputSource:
-      - picard_collectmultiplemetrics_2_8_1/gc_bias_detail_metrics
-    type: File?
-    'sbg:x': 417.3233947753906
-    'sbg:y': -1029.97509765625
-  - id: gc_bias_pdf
-    outputSource:
-      - picard_collectmultiplemetrics_2_8_1/gc_bias_pdf
-    type: File?
-    'sbg:x': 417
-    'sbg:y': -1159.2984619140625
-  - id: gc_bias_summary_metrics
-    outputSource:
-      - picard_collectmultiplemetrics_2_8_1/gc_bias_summary_metrics
-    type: File?
-    'sbg:x': 406.39764404296875
-    'sbg:y': -1303.6019287109375
   - id: insert_size_histogram_pdf
     outputSource:
       - picard_collectmultiplemetrics_2_8_1/insert_size_histogram_pdf
@@ -111,18 +72,6 @@ outputs:
     type: File?
     'sbg:x': 760.8084716796875
     'sbg:y': -536.0397338867188
-  - id: pre_adapter_detail_metrics
-    outputSource:
-      - picard_collectmultiplemetrics_2_8_1/pre_adapter_detail_metrics
-    type: File?
-    'sbg:x': 421.13641357421875
-    'sbg:y': -328.93975830078125
-  - id: pre_adapter_summary_metrics
-    outputSource:
-      - picard_collectmultiplemetrics_2_8_1/pre_adapter_summary_metrics
-    type: File?
-    'sbg:x': 420.8131103515625
-    'sbg:y': -469.0354309082031
   - id: quality_by_cycle_metrics
     outputSource:
       - picard_collectmultiplemetrics_2_8_1/quality_by_cycle_metrics
@@ -202,10 +151,7 @@ steps:
         source: input
       - id: program_list
         linkMerge: merge_nested
-        default:
-          - CollectGcBiasMetrics
-        source:
-          - program_list
+        default: []
       - id: intervals_file
         source: target_intervals
     out:
