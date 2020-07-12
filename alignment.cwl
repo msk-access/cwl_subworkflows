@@ -5,75 +5,67 @@ label: alignment
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
 inputs:
-  - id: reference
-    type: File
-    secondaryFiles:
-      - .fai
-      - ^.dict
-      - .amb
-      - .ann
-      - .bwt
-      - .pac
-      - .sa
-    'sbg:x': 0
-    'sbg:y': 107
-  - id: reads
-    type: 'File[]'
-    'sbg:x': 0
-    'sbg:y': 214
-  - id: P
-    type: boolean?
-    'sbg:x': 0
-    'sbg:y': 963
-  - id: M
-    type: boolean?
-    'sbg:x': 0
-    'sbg:y': 1177
   - id: read_group_identifier
     type: string
     'sbg:x': 0
-    'sbg:y': 856
+    'sbg:y': 962.15625
   - id: sort_order
     type: string?
     'sbg:x': 0
-    'sbg:y': 0
+    'sbg:y': 106.90625
   - id: create_bam_index
     type: boolean?
-    'sbg:x': 319.171875
-    'sbg:y': 560.5
+    'sbg:x': 319.15625
+    'sbg:y': 613.390625
   - id: read_group_sequencing_platform
     type: string
     'sbg:x': 0
-    'sbg:y': 428
+    'sbg:y': 427.625
   - id: read_group_sample_name
     type: string
     'sbg:x': 0
-    'sbg:y': 535
+    'sbg:y': 641.4375
   - id: read_group_platform_unit
     type: string
     'sbg:x': 0
-    'sbg:y': 642
+    'sbg:y': 748.34375
   - id: read_group_library
     type: string
     'sbg:x': 0
-    'sbg:y': 749
+    'sbg:y': 855.25
   - id: output_file_name
     type: string?
-    'sbg:x': 319.171875
-    'sbg:y': 453.5
-  - id: output
-    type: string?
-    'sbg:x': 0
-    'sbg:y': 1070
+    'sbg:x': 319.15625
+    'sbg:y': 506.484375
   - id: read_group_sequencing_center
     type: string
-    'sbg:x': 5.036951541900635
-    'sbg:y': 326.5912170410156
+    'sbg:x': 0
+    'sbg:y': 534.53125
   - id: temporary_directory
     type: string?
     label: picard_add_or_replace_read_group_1.96_tmpdir
-    'sbg:x': 3.3808727264404297
-    'sbg:y': -127.21382141113281
+    'sbg:x': 0
+    'sbg:y': 0
+  - id: reference
+    type: File
+    'sbg:x': 0
+    'sbg:y': 213.8125
+  - id: reads
+    type: 'File[]'
+    'sbg:x': 0
+    'sbg:y': 320.71875
+  - id: P
+    type: boolean?
+    'sbg:x': 0
+    'sbg:y': 1069.0625
+  - id: M
+    type: boolean?
+    'sbg:x': 0
+    'sbg:y': 1282.875
+  - id: output
+    type: string?
+    'sbg:x': 0
+    'sbg:y': 1175.96875
 outputs:
   - id: bam
     outputSource:
@@ -81,32 +73,13 @@ outputs:
     type: File
     secondaryFiles:
       - ^.bai
-    'sbg:x': 922.9844970703125
-    'sbg:y': 588.5
+    'sbg:x': 972.5267944335938
+    'sbg:y': 641.4375
 steps:
-  - id: bwa_mem_0_7_5a
-    in:
-      - id: M
-        source: M
-      - id: P
-        source: P
-      - id: output
-        source: output
-      - id: reads
-        source:
-          - reads
-      - id: reference
-        source: reference
-    out:
-      - id: sam
-    run: command_line_tools/bwa_mem_0.7.5a/bwa_mem_0.7.5a.cwl
-    label: bwa-mem
-    'sbg:x': 319.171875
-    'sbg:y': 695.5
   - id: picard_add_or_replace_read_groups_1_96
     in:
       - id: input
-        source: bwa_mem_0_7_5a/sam
+        source: bwa_mem_0_7_17/output_sam
       - id: output_file_name
         source: output_file_name
       - id: sort_order
@@ -132,6 +105,25 @@ steps:
     run: >-
       command_line_tools/picard_add_or_replace_read_groups_1.96/picard_add_or_replace_read_groups_1.96.cwl
     label: picard_add_or_replace_read_groups_1.96
-    'sbg:x': 520.293212890625
-    'sbg:y': 525.5
+    'sbg:x': 559.308837890625
+    'sbg:y': 571.4375
+  - id: bwa_mem_0_7_17
+    in:
+      - id: reads
+        source:
+          - reads
+      - id: reference
+        source: reference
+      - id: M
+        source: M
+      - id: P
+        default: false
+        source: P
+      - id: output
+        source: output
+    out:
+      - id: output_sam
+    run: command_line_tools/bwa_mem_0.7.17/bwa_mem_0.7.17.cwl
+    'sbg:x': 319.15625
+    'sbg:y': 748.34375
 requirements: []
