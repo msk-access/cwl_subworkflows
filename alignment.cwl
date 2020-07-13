@@ -105,8 +105,8 @@ steps:
     run: >-
       command_line_tools/picard_add_or_replace_read_groups_1.96/picard_add_or_replace_read_groups_1.96.cwl
     label: picard_add_or_replace_read_groups_1.96
-    'sbg:x': 559.308837890625
-    'sbg:y': 571.4375
+    'sbg:x': 692.606689453125
+    'sbg:y': 585.0638427734375
   - id: bwa_mem_0_7_17
     in:
       - id: reads
@@ -114,6 +114,8 @@ steps:
           - reads
       - id: reference
         source: reference
+      - id: sample_id
+        source: read_group_sample_name
       - id: M
         source: M
       - id: P
@@ -124,6 +126,6 @@ steps:
     out:
       - id: output_sam
     run: command_line_tools/bwa_mem_0.7.17/bwa_mem_0.7.17.cwl
-    'sbg:x': 319.15625
-    'sbg:y': 748.34375
+    'sbg:x': 598.926025390625
+    'sbg:y': 920.3512573242188
 requirements: []
