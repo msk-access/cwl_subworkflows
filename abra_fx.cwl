@@ -113,8 +113,8 @@ steps:
     run: >-
       command_line_tools/bedtools_merge_v2.28.0_cv2/bedtools_merge_v2.28.0_cv2.cwl
     label: bedtools_merge
-    'sbg:x': 503.6202697753906
-    'sbg:y': 746.890625
+    'sbg:x': 471.4647216796875
+    'sbg:y': 525.2531127929688
   - id: abra2_2_18
     in:
       - id: number_of_threads
@@ -143,6 +143,7 @@ steps:
       - id: ignore_bad_assembly
         source: ignore_bad_assembly
       - id: bam_index
+        default: true
         source: bam_index
       - id: no_sort
         source: no_sort
