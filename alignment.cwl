@@ -66,6 +66,26 @@ inputs:
     type: string?
     'sbg:x': 0
     'sbg:y': 1175.96875
+  - id: K
+    type: int?
+    'sbg:x': -330.8452453613281
+    'sbg:y': 947.9649047851562
+  - id: 'Y'
+    type: boolean?
+    'sbg:x': -356.7594299316406
+    'sbg:y': 749.2894897460938
+  - id: T
+    type: int?
+    'sbg:x': -441.41241455078125
+    'sbg:y': 498.7857666015625
+  - id: R
+    type: string?
+    'sbg:x': -592.7317504882812
+    'sbg:y': 877.1328125
+  - id: t
+    type: int?
+    'sbg:x': -613.4630737304688
+    'sbg:y': 588.62158203125
 outputs:
   - id: bam
     outputSource:
@@ -121,8 +141,18 @@ steps:
       - id: P
         default: false
         source: P
+      - id: T
+        source: T
+      - id: K
+        source: K
       - id: output
         source: output
+      - id: 'Y'
+        source: 'Y'
+      - id: t
+        source: t
+      - id: R
+        source: R
     out:
       - id: output_sam
     run: command_line_tools/bwa_mem_0.7.17/bwa_mem_0.7.17.cwl
