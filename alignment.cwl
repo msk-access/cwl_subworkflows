@@ -68,22 +68,31 @@ inputs:
     'sbg:y': 1175.96875
   - id: K
     type: int?
+    doc: BWA - Seed to ensure deterministic alignment results
     'sbg:x': -330.8452453613281
     'sbg:y': 947.9649047851562
   - id: 'Y'
     type: boolean?
+    doc: >-
+      BWA - Force soft-clipping rather than default hard-clipping of
+      supplementary alignments
     'sbg:x': -356.7594299316406
     'sbg:y': 749.2894897460938
   - id: T
     type: int?
+    doc: >-
+      BWA - Don’t output alignment with score lower than INT. This option only
+      affects output.
     'sbg:x': -441.41241455078125
     'sbg:y': 498.7857666015625
   - id: R
     type: string?
+    doc: BWA - read group ID
     'sbg:x': -592.7317504882812
     'sbg:y': 877.1328125
   - id: t
     type: int?
+    doc: BWA - Number of threads
     'sbg:x': -613.4630737304688
     'sbg:y': 588.62158203125
 outputs:
