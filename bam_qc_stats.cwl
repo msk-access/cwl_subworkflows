@@ -7,233 +7,123 @@ $namespaces:
 inputs:
   - id: input
     type: File
-    'sbg:x': -654.76123046875
-    'sbg:y': -419.1558532714844
-  - id: referece_fasta
-    type: File
-    'sbg:x': -649.5545043945312
-    'sbg:y': 696.1437377929688
-  - id: gene_list
-    type: File
-    'sbg:x': -652.7678833007812
-    'sbg:y': 162.7410888671875
+    'sbg:x': -496.41986083984375
+    'sbg:y': -282.843994140625
   - id: target_intervals
+    type: File
+    'sbg:x': -490.1000671386719
+    'sbg:y': -133.69674682617188
+  - id: bait_intervals
+    type: File
+    'sbg:x': -485.0442199707031
+    'sbg:y': 11.658624649047852
+  - id: reference
     type: File?
-    'sbg:x': -655.9135131835938
-    'sbg:y': -267.00360107421875
-  - id: bait_intervals_1
-    type: File
-    'sbg:x': -656.9841918945312
-    'sbg:y': -118.12298583984375
-  - id: bed_file
-    type: File
-    'sbg:x': -653.0328979492188
-    'sbg:y': 30.3909912109375
-  - id: coverage_threshold
-    type: int
-    'sbg:x': -650.0853881835938
-    'sbg:y': 286.525390625
-  - id: min_map_quality
-    type: int
-    'sbg:x': -649.2180786132812
-    'sbg:y': 547.4801635742188
-  - id: minimum_base_quality
-    type: int?
-    'sbg:x': -648.0210571289062
-    'sbg:y': 419.6796875
+    secondaryFiles:
+      - ^.fasta.fai
+      - ^.dict
+    'sbg:x': -504.0036315917969
+    'sbg:y': -426.9353942871094
 outputs:
-  - id: hs_metrics_file
+  - id: histogram_file_out
     outputSource:
-      - picard_hsmetrics_2_8_1/hs_metrics_file
-    type: File?
-    'sbg:x': 410.7783508300781
-    'sbg:y': -69.20183563232422
-  - id: alignment_summary_metrics
-    outputSource:
-      - picard_collectmultiplemetrics_2_8_1/alignment_summary_metrics
-    type: File?
-    'sbg:x': 766.4902954101562
-    'sbg:y': -1252.3756103515625
-  - id: base_distribution_by_cycle_metrics
-    outputSource:
-      - picard_collectmultiplemetrics_2_8_1/base_distribution_by_cycle_metrics
-    type: File?
-    'sbg:x': 762.4103393554688
-    'sbg:y': -260.4105529785156
-  - id: insert_size_histogram_pdf
-    outputSource:
-      - picard_collectmultiplemetrics_2_8_1/insert_size_histogram_pdf
-    type: File?
-    'sbg:x': 766.485107421875
-    'sbg:y': -395.5248107910156
+      - gatk_collect_insert_size_metrics_4_1_8_0/histogram_file_out
+    type: File
+    'sbg:x': 395.9356689453125
+    'sbg:y': 146.90231323242188
   - id: insert_size_metrics
     outputSource:
-      - picard_collectmultiplemetrics_2_8_1/insert_size_metrics
-    type: File?
-    'sbg:x': 760.8084716796875
-    'sbg:y': -536.0397338867188
-  - id: quality_by_cycle_metrics
-    outputSource:
-      - picard_collectmultiplemetrics_2_8_1/quality_by_cycle_metrics
-    type: File?
-    'sbg:x': 766.0000610351562
-    'sbg:y': -820.8134155273438
-  - id: quality_by_cycle_pdf
-    outputSource:
-      - picard_collectmultiplemetrics_2_8_1/quality_by_cycle_pdf
-    type: File?
-    'sbg:x': 759.9999389648438
-    'sbg:y': -670.0671997070312
-  - id: quality_distribution_metrics
-    outputSource:
-      - picard_collectmultiplemetrics_2_8_1/quality_distribution_metrics
-    type: File?
-    'sbg:x': 763
-    'sbg:y': -961.251708984375
-  - id: quality_distribution_pdf
-    outputSource:
-      - picard_collectmultiplemetrics_2_8_1/quality_distribution_pdf
-    type: File?
-    'sbg:x': 762
-    'sbg:y': -1094.481689453125
-  - id: base_distribution_by_cycle_pdf
-    outputSource:
-      - picard_collectmultiplemetrics_2_8_1/base_distribution_by_cycle_pdf
-    type: File?
-    'sbg:x': 779.8233032226562
-    'sbg:y': -127.81122589111328
-  - id: read_counts
-    outputSource:
-      - waltz_count_reads/read_counts
+      - gatk_collect_insert_size_metrics_4_1_8_0/insert_size_metrics
     type: File
-    'sbg:x': 409.0119323730469
-    'sbg:y': 82.19341278076172
-  - id: fragment_sizes
+    'sbg:x': 389.6158752441406
+    'sbg:y': 17.978422164916992
+  - id: hs_metrics
     outputSource:
-      - waltz_count_reads/fragment_sizes
+      - gatk_collect_hs_metrics_4_1_8_0/hs_metrics
     type: File
-    'sbg:x': 407.8551025390625
-    'sbg:y': 197.87574768066406
-  - id: covered_regions
+    'sbg:x': 384.5600280761719
+    'sbg:y': -112.20942687988281
+  - id: per_base_coverage_out
     outputSource:
-      - waltz_count_reads/covered_regions
+      - gatk_collect_hs_metrics_4_1_8_0/per_base_coverage_out
     type: File
-    'sbg:x': 406.69830322265625
-    'sbg:y': 321.6558532714844
-  - id: pileup_without_duplicates
+    'sbg:x': 378.240234375
+    'sbg:y': -244.92520141601562
+  - id: per_target_coverage_out
     outputSource:
-      - waltz_pileupmetrics/pileup_without_duplicates
+      - gatk_collect_hs_metrics_4_1_8_0/per_target_coverage_out
     type: File
-    'sbg:x': 408.73077392578125
-    'sbg:y': 487.15863037109375
-  - id: pileup
+    'sbg:x': 371.9204406738281
+    'sbg:y': -373.8490905761719
+  - id: alignment_summary_metrics
     outputSource:
-      - waltz_pileupmetrics/pileup
+      - gatk_collect_alignment_summary_metrics_4_1_3_0/alignment_summary_metrics
     type: File
-    'sbg:x': 405.4356689453125
-    'sbg:y': 631.0457153320312
-  - id: intervals_without_duplicates
-    outputSource:
-      - waltz_pileupmetrics/intervals_without_duplicates
-    type: File
-    'sbg:x': 398.84539794921875
-    'sbg:y': 768.342529296875
-  - id: intervals
-    outputSource:
-      - waltz_pileupmetrics/intervals
-    type: File
-    'sbg:x': 406.5340270996094
-    'sbg:y': 915.5183715820312
+    'sbg:x': 373.18438720703125
+    'sbg:y': -520.4683837890625
 steps:
-  - id: picard_collectmultiplemetrics_2_8_1
+  - id: gatk_collect_alignment_summary_metrics_4_1_3_0
     in:
       - id: input
         source: input
-      - id: program_list
-        linkMerge: merge_nested
-        default: []
-      - id: intervals_file
-        source: target_intervals
+      - id: reference
+        source: reference
     out:
       - id: alignment_summary_metrics
-      - id: bait_bias_detail_metrics
-      - id: bait_bias_summary_metrics
-      - id: base_distribution_by_cycle_metrics
-      - id: base_distribution_by_cycle_pdf
-      - id: error_summary_metrics
-      - id: gc_bias_detail_metrics
-      - id: gc_bias_pdf
-      - id: gc_bias_summary_metrics
-      - id: insert_size_histogram_pdf
-      - id: insert_size_metrics
-      - id: pre_adapter_detail_metrics
-      - id: pre_adapter_summary_metrics
-      - id: quality_by_cycle_metrics
-      - id: quality_by_cycle_pdf
-      - id: quality_distribution_metrics
-      - id: quality_distribution_pdf
     run: >-
-      command_line_tools/picard_collectmultiplemetric_2.8.1/picard_collectmultiplemetrics_2-8-1.cwl
-    label: picard_collectmultiplemetrices_2.8.1
-    'sbg:x': -52.132652282714844
-    'sbg:y': -440.153076171875
-  - id: picard_hsmetrics_2_8_1
+      command_line_tools/gatk_collect_alignment_summary_metrics_4.1.8.0/gatk_collect_alignment_summary_metrics_4.1.8.0.cwl
+    label: GATK-CollectAlignmentSummaryMetrics
+    'sbg:x': -63.445003509521484
+    'sbg:y': -424.1755676269531
+  - id: gatk_collect_hs_metrics_4_1_8_0
     in:
-      - id: bait_intervals
-        source: bait_intervals_1
-      - id: minimum_mapping_quality
-        source: min_map_quality
-      - id: minimum_base_quality
-        source: minimum_base_quality
-      - id: target_intervals
-        source: target_intervals
       - id: input
         source: input
+      - id: bait_intervals
+        source: bait_intervals
+      - id: target_intervals
+        source: target_intervals
+      - id: reference
+        source: reference
     out:
-      - id: hs_metrics_file
-    run: command_line_tools/picard_hsmetrics_2.8.1/picard_hsmetrics_2.8.1.cwl
-    label: picard_hsmetrics_2.8.1
-    scatter:
-      - per_target_coverage
-    'sbg:x': -47.9211311340332
-    'sbg:y': -87
-  - id: waltz_pileupmetrics
-    in:
-      - id: bam
-        source: input
-      - id: referece_fasta
-        source: referece_fasta
-      - id: min_map_quality
-        source: min_map_quality
-      - id: bed_file
-        source: bed_file
-    out:
-      - id: pileup
-      - id: pileup_without_duplicates
-      - id: intervals
-      - id: intervals_without_duplicates
+      - id: hs_metrics
+      - id: per_base_coverage_out
+      - id: per_target_coverage_out
     run: >-
-      command_line_tools/waltz_pileupmatrices_3.1.1/waltz_pileupmatrices_3.1.1.cwl
-    label: waltz_pileupmetrics
-    'sbg:x': -30.37705421447754
-    'sbg:y': 542.822021484375
-  - id: waltz_count_reads
+      command_line_tools/gatk_collect_hs_metrics_4.1.8.0/gatk_collect_hs_metrics_4.1.8.0.cwl
+    label: GATK-CollectHsMetrics
+    'sbg:x': -61.321895599365234
+    'sbg:y': -194.27346801757812
+  - id: gatk_collect_insert_size_metrics_4_1_8_0
     in:
-      - id: bam
+      - id: input
         source: input
-      - id: gene_list
-        source: gene_list
-      - id: coverage_threshold
-        source: coverage_threshold
-      - id: bed_file
-        source: bed_file
+      - id: histogram_file
+        default: histogram.pdf
     out:
-      - id: covered_regions
-      - id: fragment_sizes
-      - id: read_counts
-    run: command_line_tools/waltz_count_reads_3.1.1/waltz_count_reads_3.1.1.cwl
-    label: waltz_count_reads
-    'sbg:x': -41.6377067565918
-    'sbg:y': 224.30157470703125
-requirements:
-  - class: ScatterFeatureRequirement
+      - id: insert_size_metrics
+      - id: histogram_file_out
+    run: >-
+      command_line_tools/gatk_collect_insert_size_metrics_4.1.8.0/gatk_collect_insert_size_metrics_4.1.8.0.cwl
+    label: GATK-CollectInsertSizeMetrics
+    'sbg:x': -52.185672760009766
+    'sbg:y': 62.291622161865234
+requirements: []
+'dct:contributor':
+  - class: 'foaf:Organization'
+    'foaf:member':
+      - class: 'foaf:Person'
+        'foaf:mbox': 'mailto:murphyc4@mskcc.org'
+        'foaf:name': Charles Murphy
+    'foaf:name': Memorial Sloan Kettering Cancer Center
+'dct:creator':
+  - class: 'foaf:Organization'
+    'foaf:member':
+      - class: 'foaf:Person'
+        'foaf:mbox': 'mailto:murphyc4@mskcc.org'
+        'foaf:name': Charles Murphy
+    'foaf:name': Memorial Sloan Kettering Cancer Center
+'doap:release':
+  - class: 'doap:Version'
+    'doap:name': Tool Name
+    'doap:revision': Tool Version
