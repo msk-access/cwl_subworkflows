@@ -125,5 +125,5 @@ requirements: []
     'foaf:name': Memorial Sloan Kettering Cancer Center
 'doap:release':
   - class: 'doap:Version'
-    'doap:name': Tool Name
-    'doap:revision': Tool Version
+    'doap:name': bam_qc_stats
+    'doap:revision': 1.0
