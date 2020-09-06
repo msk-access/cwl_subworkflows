@@ -18,7 +18,7 @@ inputs:
     'sbg:x': -485.0442199707031
     'sbg:y': 11.658624649047852
   - id: reference
-    type: File?
+    type: File
     secondaryFiles:
       - ^.fasta.fai
       - ^.dict
