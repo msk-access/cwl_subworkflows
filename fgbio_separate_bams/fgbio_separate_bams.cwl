@@ -8,12 +8,17 @@ $namespaces:
 inputs:
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - ^.fai
+      - ^.dict
     'sbg:x': 0
-    'sbg:y': 747.078125
+    'sbg:y': 747.109375
   - id: input
     type: File
+    secondaryFiles:
+      - ^.bai
     'sbg:x': 0
-    'sbg:y': 2880.015625
+    'sbg:y': 3094.265625
   - id: reverse_per_base_tags_simplex_duplex
     type: boolean?
     'sbg:x': 0
@@ -25,43 +30,43 @@ inputs:
   - id: output_file_name_simplex_duplex
     type: string?
     'sbg:x': 0
-    'sbg:y': 853.6875
+    'sbg:y': 853.78125
   - id: number_of_threads
     type: int?
     'sbg:x': 0
-    'sbg:y': 1280.125
+    'sbg:y': 1387.140625
   - id: min_reads_simplex_duplex
     type: 'int[]?'
     'sbg:x': 0
-    'sbg:y': 1386.734375
+    'sbg:y': 1600.484375
   - id: min_mean_base_quality_simplex_duplex
     type: int?
     'sbg:x': 0
-    'sbg:y': 1600.015625
+    'sbg:y': 1813.859375
   - id: max_base_error_rate_simplex_duplex
     type: 'float[]?'
     'sbg:x': 0
-    'sbg:y': 2666.796875
+    'sbg:y': 2880.921875
   - id: max_no_call_fraction_simplex_duplex
     type: float?
     'sbg:x': 0
-    'sbg:y': 2453.578125
+    'sbg:y': 2667.578125
   - id: min_base_quality_simplex_duplex
     type: int?
     'sbg:x': 0
-    'sbg:y': 1813.484375
+    'sbg:y': 2027.328125
   - id: memory_per_job
     type: int?
     'sbg:x': 0
-    'sbg:y': 2026.953125
+    'sbg:y': 2240.796875
   - id: memory_overhead
     type: int?
     'sbg:x': 0
-    'sbg:y': 2133.6875
+    'sbg:y': 2347.53125
   - id: max_read_error_rate_simplex_duplex
     type: 'float[]?'
     'sbg:x': 0
-    'sbg:y': 2240.359375
+    'sbg:y': 2454.234375
   - id: reverse_per_base_tags_duplex
     type: boolean?
     'sbg:x': 0
@@ -73,31 +78,31 @@ inputs:
   - id: output_file_name_duplex
     type: string?
     'sbg:x': 0
-    'sbg:y': 1173.515625
+    'sbg:y': 1280.46875
   - id: min_reads_duplex
     type: 'int[]?'
     'sbg:x': 0
-    'sbg:y': 1493.34375
+    'sbg:y': 1707.15625
   - id: min_mean_base_quality_duplex
     type: int?
     'sbg:x': 0
-    'sbg:y': 1706.75
+    'sbg:y': 1920.59375
   - id: min_base_quality_duplex
     type: int?
     'sbg:x': 0
-    'sbg:y': 1920.21875
+    'sbg:y': 2134.0625
   - id: max_read_error_rate_duplex
     type: 'float[]?'
     'sbg:x': 0
-    'sbg:y': 2346.96875
+    'sbg:y': 2560.90625
   - id: max_no_call_fraction_duplex
     type: float?
     'sbg:x': 0
-    'sbg:y': 2560.1875
+    'sbg:y': 2774.25
   - id: max_base_error_rate_duplex
     type: 'float[]?'
     'sbg:x': 0
-    'sbg:y': 2773.40625
+    'sbg:y': 2987.59375
   - id: validation_stringency
     type: string?
     'sbg:x': 0
@@ -113,57 +118,69 @@ inputs:
   - id: output_file_name_duplex_aln_metrics
     type: string?
     'sbg:x': 0
-    'sbg:y': 1066.90625
+    'sbg:y': 1173.796875
   - id: create_index
     type: boolean?
     'sbg:x': 454.71875
-    'sbg:y': 1584.40625
+    'sbg:y': 1684.515625
   - id: assume_sorted
     type: boolean?
     'sbg:x': 454.71875
-    'sbg:y': 1691.015625
+    'sbg:y': 1791.1875
   - id: output_file_name_simplex_aln_metrics
     type: string?
     'sbg:x': 0
-    'sbg:y': 960.296875
+    'sbg:y': 960.453125
   - id: output_file_name_simpex
     type: string?
-    'sbg:x': 1107.5958251953125
-    'sbg:y': 1799.1015625
+    'sbg:x': 0
+    'sbg:y': 1067.125
   - id: min_simplex_reads
     type: int?
-    'sbg:x': 1301.595703125
-    'sbg:y': 1755.10205078125
+    'sbg:x': 0
+    'sbg:y': 1493.8125
 outputs:
-  - id: fgbio_filter_consensus_reads_bam
+  - id: fgbio_filter_consensus_reads_duplex_bam
     outputSource:
-      - fgbio_filter_consensus_reads_1_2_0/fgbio_filter_consensus_reads_bam
+      - >-
+        fgbio_filter_consensus_reads_1_2_0_duplex/fgbio_filter_consensus_reads_bam
     type: File
+    secondaryFiles:
+      - ^.bai
     'sbg:x': 1039.097900390625
-    'sbg:y': 1546.7109375
+    'sbg:y': 1667.8515625
   - id: fgbio_postprocessing_simplex_bam
     outputSource:
       - >-
         fgbio_postprocessing_simplex_filter_0_1_8/fgbio_postprocessing_simplex_bam
     type: File
     'sbg:x': 1543.551025390625
-    'sbg:y': 1588.7109375
+    'sbg:y': 1695.8515625
   - id: gatk_collect_alignment_summary_metrics_txt_simplex
     outputSource:
       - >-
         gatk_collect_alignment_summary_metrics_4_1_3_1/gatk_collect_alignment_summary_metrics_txt
     type: File
     'sbg:x': 2048.004150390625
-    'sbg:y': 1439.9765625
+    'sbg:y': 1547.1171875
   - id: gatk_collect_alignment_summary_metrics_txt_duplex
     outputSource:
       - >-
         gatk_collect_alignment_summary_metrics_4_1_3_0/gatk_collect_alignment_summary_metrics_txt
     type: File
     'sbg:x': 1543.551025390625
-    'sbg:y': 1291.2421875
+    'sbg:y': 1398.3828125
+  - id: fgbio_filter_consensus_reads_simplex_duplex_bam
+    outputSource:
+      - >-
+        fgbio_filter_consensus_reads_1_2_1_simplex_duplex/fgbio_filter_consensus_reads_bam
+    type: File
+    secondaryFiles:
+      - ^.bai
+    'sbg:x': 1114.5048828125
+    'sbg:y': 853.3326416015625
 steps:
-  - id: fgbio_filter_consensus_reads_1_2_0
+  - id: fgbio_filter_consensus_reads_1_2_0_duplex
     in:
       - id: memory_overhead
         source: memory_overhead
@@ -182,7 +199,6 @@ steps:
           - min_reads_duplex
       - id: max_read_error_rate
         source:
-          - max_read_error_rate_simplex_duplex
           - max_read_error_rate_duplex
       - id: max_base_error_rate
         source:
@@ -199,10 +215,10 @@ steps:
       - id: fgbio_filter_consensus_reads_bam
     run: >-
       ../command_line_tools/fgbio_filter_consensus_reads_1.2.0/fgbio_filter_consensus_reads_1.2.0.cwl
-    label: fgbio_filter_consensus_reads_1.2.0
+    label: fgbio_filter_consensus_reads_1.2.0_duplex
     'sbg:x': 454.71875
-    'sbg:y': 1386.734375
-  - id: fgbio_filter_consensus_reads_1_2_1
+    'sbg:y': 1493.8125
+  - id: fgbio_filter_consensus_reads_1_2_1_simplex_duplex
     in:
       - id: memory_per_job
         source: memory_per_job
@@ -239,13 +255,14 @@ steps:
       - id: fgbio_filter_consensus_reads_bam
     run: >-
       ../command_line_tools/fgbio_filter_consensus_reads_1.2.0/fgbio_filter_consensus_reads_1.2.0.cwl
-    label: fgbio_filter_consensus_reads_1.2.0
+    label: fgbio_filter_consensus_reads_1.2.0_simplex_duplex
     'sbg:x': 454.71875
-    'sbg:y': 1098
+    'sbg:y': 1212.078125
   - id: fgbio_postprocessing_simplex_filter_0_1_8
     in:
       - id: input_bam
-        source: fgbio_filter_consensus_reads_1_2_1/fgbio_filter_consensus_reads_bam
+        source: >-
+          fgbio_filter_consensus_reads_1_2_1_simplex_duplex/fgbio_filter_consensus_reads_bam
       - id: output_file_name
         source: output_file_name_simpex
       - id: min_simplex_reads
@@ -256,11 +273,12 @@ steps:
       ../command_line_tools/fgbio_postprocessing_simplex_filter_0.1.8/fgbio_postprocessing_simplex_filter_0.1.8.cwl
     label: fgbio_postprocessing_simplex_filter_0.1.8
     'sbg:x': 1039.097900390625
-    'sbg:y': 1439.9765625
+    'sbg:y': 1547.1171875
   - id: gatk_collect_alignment_summary_metrics_4_1_3_0
     in:
       - id: input
-        source: fgbio_filter_consensus_reads_1_2_0/fgbio_filter_consensus_reads_bam
+        source: >-
+          fgbio_filter_consensus_reads_1_2_0_duplex/fgbio_filter_consensus_reads_bam
       - id: output_file_name
         source: output_file_name_duplex_aln_metrics
       - id: validation_stringency
@@ -279,7 +297,7 @@ steps:
       ../command_line_tools/gatk_collect_alignment_summary_metrics_4.1.8.0/gatk_collect_alignment_summary_metrics_4.1.8.0.cwl
     label: GATK-CollectAlignmentSummaryMetrics
     'sbg:x': 1039.097900390625
-    'sbg:y': 1291.2421875
+    'sbg:y': 1384.3828125
   - id: gatk_collect_alignment_summary_metrics_4_1_3_1
     in:
       - id: input
@@ -303,9 +321,8 @@ steps:
       ../command_line_tools/gatk_collect_alignment_summary_metrics_4.1.8.0/gatk_collect_alignment_summary_metrics_4.1.8.0.cwl
     label: GATK-CollectAlignmentSummaryMetrics
     'sbg:x': 1543.551025390625
-    'sbg:y': 1439.9765625
-requirements:
-  - class: MultipleInputFeatureRequirement
+    'sbg:y': 1547.1171875
+requirements: []
 $schemas:
   - 'https://schema.org/version/latest/schema.rdf'
 's:author':
