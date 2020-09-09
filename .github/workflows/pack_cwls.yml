@@ -1,0 +1,39 @@
+name: Pack CWL Files
+
+# Triggers the action on push or pull requests,
+# but only for the develop branch
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  pack_cwls:
+    runs-on: macos-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [3.5, 3.6, 3.7, 3.8]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install cwltool
+        run: |
+          python -m pip install toil-msk[cwl]
+      - name: Run cwltool --pack for all workflows
+        run: |
+          echo Removing old packed workflows
+          rm -rf ./packed_workflows/*
+          echo Packing CWL files...
+          find . -name '*.cwl' ! -path '*/command_line_tools/*' ! -path '*/packed_workflows/*' -type f -print0 | xargs -0 -I file sh -c 'base=$(basename file); cwltool --pack file > packed_workflows/${base/.cwl/__packed.cwl}'
+      - uses: EndBug/add-and-commit@v4
+        with:
+          ref: ${{ github.head_ref }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
