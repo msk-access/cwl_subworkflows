@@ -6,7 +6,7 @@
             "label": "alignment",
             "inputs": [
                 {
-                    "id": "#reference",
+                    "id": "#main/reference",
                     "type": "File",
                     "secondaryFiles": [
                         ".fai",
@@ -21,7 +21,7 @@
                     "https://www.sevenbridges.com/y": 107
                 },
                 {
-                    "id": "#reads",
+                    "id": "#main/reads",
                     "type": {
                         "type": "array",
                         "items": "File"
@@ -30,7 +30,7 @@
                     "https://www.sevenbridges.com/y": 214
                 },
                 {
-                    "id": "#P",
+                    "id": "#main/P",
                     "type": [
                         "null",
                         "boolean"
@@ -39,7 +39,7 @@
                     "https://www.sevenbridges.com/y": 963
                 },
                 {
-                    "id": "#M",
+                    "id": "#main/M",
                     "type": [
                         "null",
                         "boolean"
@@ -48,13 +48,13 @@
                     "https://www.sevenbridges.com/y": 1177
                 },
                 {
-                    "id": "#read_group_identifier",
+                    "id": "#main/read_group_identifier",
                     "type": "string",
                     "https://www.sevenbridges.com/x": 0,
                     "https://www.sevenbridges.com/y": 856
                 },
                 {
-                    "id": "#sort_order",
+                    "id": "#main/sort_order",
                     "type": [
                         "null",
                         "string"
@@ -63,7 +63,7 @@
                     "https://www.sevenbridges.com/y": 0
                 },
                 {
-                    "id": "#create_bam_index",
+                    "id": "#main/create_bam_index",
                     "type": [
                         "null",
                         "boolean"
@@ -72,31 +72,31 @@
                     "https://www.sevenbridges.com/y": 560.5
                 },
                 {
-                    "id": "#read_group_sequencing_platform",
+                    "id": "#main/read_group_sequencing_platform",
                     "type": "string",
                     "https://www.sevenbridges.com/x": 0,
                     "https://www.sevenbridges.com/y": 428
                 },
                 {
-                    "id": "#read_group_sample_name",
+                    "id": "#main/read_group_sample_name",
                     "type": "string",
                     "https://www.sevenbridges.com/x": 0,
                     "https://www.sevenbridges.com/y": 535
                 },
                 {
-                    "id": "#read_group_platform_unit",
+                    "id": "#main/read_group_platform_unit",
                     "type": "string",
                     "https://www.sevenbridges.com/x": 0,
                     "https://www.sevenbridges.com/y": 642
                 },
                 {
-                    "id": "#read_group_library",
+                    "id": "#main/read_group_library",
                     "type": "string",
                     "https://www.sevenbridges.com/x": 0,
                     "https://www.sevenbridges.com/y": 749
                 },
                 {
-                    "id": "#output_file_name",
+                    "id": "#main/output_file_name",
                     "type": [
                         "null",
                         "string"
@@ -105,7 +105,7 @@
                     "https://www.sevenbridges.com/y": 453.5
                 },
                 {
-                    "id": "#output",
+                    "id": "#main/output",
                     "type": [
                         "null",
                         "string"
@@ -114,13 +114,13 @@
                     "https://www.sevenbridges.com/y": 1070
                 },
                 {
-                    "id": "#read_group_sequencing_center",
+                    "id": "#main/read_group_sequencing_center",
                     "type": "string",
                     "https://www.sevenbridges.com/x": 5.036951541900635,
                     "https://www.sevenbridges.com/y": 326.5912170410156
                 },
                 {
-                    "id": "#temporary_directory",
+                    "id": "#main/temporary_directory",
                     "type": [
                         "null",
                         "string"
@@ -132,9 +132,9 @@
             ],
             "outputs": [
                 {
-                    "id": "#bam",
+                    "id": "#main/bam",
                     "outputSource": [
-                        "#picard_add_or_replace_read_groups_1_96/bam"
+                        "#main/picard_add_or_replace_read_groups_1_96/bam"
                     ],
                     "type": "File",
                     "secondaryFiles": [
@@ -146,34 +146,34 @@
             ],
             "steps": [
                 {
-                    "id": "#bwa_mem_0_7_5a",
+                    "id": "#main/bwa_mem_0_7_5a",
                     "in": [
                         {
-                            "id": "#bwa_mem_0_7_5a/M",
-                            "source": "#M"
+                            "id": "#main/bwa_mem_0_7_5a/M",
+                            "source": "#main/M"
                         },
                         {
-                            "id": "#bwa_mem_0_7_5a/P",
-                            "source": "#P"
+                            "id": "#main/bwa_mem_0_7_5a/P",
+                            "source": "#main/P"
                         },
                         {
-                            "id": "#bwa_mem_0_7_5a/output",
-                            "source": "#output"
+                            "id": "#main/bwa_mem_0_7_5a/output",
+                            "source": "#main/output"
                         },
                         {
-                            "id": "#bwa_mem_0_7_5a/reads",
+                            "id": "#main/bwa_mem_0_7_5a/reads",
                             "source": [
-                                "#reads"
+                                "#main/reads"
                             ]
                         },
                         {
-                            "id": "#bwa_mem_0_7_5a/reference",
-                            "source": "#reference"
+                            "id": "#main/bwa_mem_0_7_5a/reference",
+                            "source": "#main/reference"
                         }
                     ],
                     "out": [
                         {
-                            "id": "#bwa_mem_0_7_5a/sam"
+                            "id": "#main/bwa_mem_0_7_5a/sam"
                         }
                     ],
                     "run": "#bwa_mem_0.7.5a.cwl",
@@ -182,56 +182,56 @@
                     "https://www.sevenbridges.com/y": 695.5
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_1_96",
+                    "id": "#main/picard_add_or_replace_read_groups_1_96",
                     "in": [
                         {
-                            "id": "#picard_add_or_replace_read_groups_1_96/input",
-                            "source": "#bwa_mem_0_7_5a/sam"
+                            "id": "#main/picard_add_or_replace_read_groups_1_96/input",
+                            "source": "#main/bwa_mem_0_7_5a/sam"
                         },
                         {
-                            "id": "#picard_add_or_replace_read_groups_1_96/output_file_name",
-                            "source": "#output_file_name"
+                            "id": "#main/picard_add_or_replace_read_groups_1_96/output_file_name",
+                            "source": "#main/output_file_name"
                         },
                         {
-                            "id": "#picard_add_or_replace_read_groups_1_96/sort_order",
-                            "source": "#sort_order"
+                            "id": "#main/picard_add_or_replace_read_groups_1_96/sort_order",
+                            "source": "#main/sort_order"
                         },
                         {
-                            "id": "#picard_add_or_replace_read_groups_1_96/read_group_identifier",
-                            "source": "#read_group_identifier"
+                            "id": "#main/picard_add_or_replace_read_groups_1_96/read_group_identifier",
+                            "source": "#main/read_group_identifier"
                         },
                         {
-                            "id": "#picard_add_or_replace_read_groups_1_96/read_group_sequencing_center",
-                            "source": "#read_group_sequencing_center"
+                            "id": "#main/picard_add_or_replace_read_groups_1_96/read_group_sequencing_center",
+                            "source": "#main/read_group_sequencing_center"
                         },
                         {
-                            "id": "#picard_add_or_replace_read_groups_1_96/read_group_library",
-                            "source": "#read_group_library"
+                            "id": "#main/picard_add_or_replace_read_groups_1_96/read_group_library",
+                            "source": "#main/read_group_library"
                         },
                         {
-                            "id": "#picard_add_or_replace_read_groups_1_96/read_group_platform_unit",
-                            "source": "#read_group_platform_unit"
+                            "id": "#main/picard_add_or_replace_read_groups_1_96/read_group_platform_unit",
+                            "source": "#main/read_group_platform_unit"
                         },
                         {
-                            "id": "#picard_add_or_replace_read_groups_1_96/read_group_sample_name",
-                            "source": "#read_group_sample_name"
+                            "id": "#main/picard_add_or_replace_read_groups_1_96/read_group_sample_name",
+                            "source": "#main/read_group_sample_name"
                         },
                         {
-                            "id": "#picard_add_or_replace_read_groups_1_96/read_group_sequencing_platform",
-                            "source": "#read_group_sequencing_platform"
+                            "id": "#main/picard_add_or_replace_read_groups_1_96/read_group_sequencing_platform",
+                            "source": "#main/read_group_sequencing_platform"
                         },
                         {
-                            "id": "#picard_add_or_replace_read_groups_1_96/create_bam_index",
-                            "source": "#create_bam_index"
+                            "id": "#main/picard_add_or_replace_read_groups_1_96/create_bam_index",
+                            "source": "#main/create_bam_index"
                         },
                         {
-                            "id": "#picard_add_or_replace_read_groups_1_96/temporary_directory",
-                            "source": "#temporary_directory"
+                            "id": "#main/picard_add_or_replace_read_groups_1_96/temporary_directory",
+                            "source": "#main/temporary_directory"
                         }
                     ],
                     "out": [
                         {
-                            "id": "#picard_add_or_replace_read_groups_1_96/bam"
+                            "id": "#main/picard_add_or_replace_read_groups_1_96/bam"
                         }
                     ],
                     "run": "#picard_add_or_replace_read_groups_1.96.cwl",
@@ -254,10 +254,7 @@
             "inputs": [
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/A",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
+                    "type": "int?",
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-A"
@@ -266,10 +263,7 @@
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/B",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
+                    "type": "int?",
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-B"
@@ -279,10 +273,7 @@
                 {
                     "default": false,
                     "id": "#bwa_mem_0.7.5a.cwl/C",
-                    "type": [
-                        "null",
-                        "boolean"
-                    ],
+                    "type": "boolean?",
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-C"
@@ -291,10 +282,7 @@
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/E",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
+                    "type": "int?",
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-E"
@@ -303,10 +291,7 @@
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/L",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
+                    "type": "int?",
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-L"
@@ -316,10 +301,7 @@
                 {
                     "default": true,
                     "id": "#bwa_mem_0.7.5a.cwl/M",
-                    "type": [
-                        "null",
-                        "boolean"
-                    ],
+                    "type": "boolean?",
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-M"
@@ -328,10 +310,7 @@
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/O",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
+                    "type": "int?",
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-O"
@@ -341,10 +320,7 @@
                 {
                     "default": false,
                     "id": "#bwa_mem_0.7.5a.cwl/P",
-                    "type": [
-                        "null",
-                        "boolean"
-                    ],
+                    "type": "boolean?",
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-P"
@@ -353,10 +329,7 @@
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/R",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
+                    "type": "string?",
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-R"
@@ -366,10 +339,7 @@
                 {
                     "default": false,
                     "id": "#bwa_mem_0.7.5a.cwl/S",
-                    "type": [
-                        "null",
-                        "boolean"
-                    ],
+                    "type": "boolean?",
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-S"
@@ -378,10 +348,7 @@
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/T",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
+                    "type": "int?",
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-T"
@@ -390,10 +357,7 @@
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/U",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
+                    "type": "int?",
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-U"
@@ -403,10 +367,7 @@
                 {
                     "default": false,
                     "id": "#bwa_mem_0.7.5a.cwl/a",
-                    "type": [
-                        "null",
-                        "boolean"
-                    ],
+                    "type": "boolean?",
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-a"
@@ -415,10 +376,7 @@
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/c",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
+                    "type": "int?",
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-c"
@@ -427,10 +385,7 @@
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/d",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
+                    "type": "int?",
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-d"
@@ -439,10 +394,7 @@
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/k",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
+                    "type": "int?",
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-k"
@@ -451,17 +403,11 @@
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/output",
-                    "type": [
-                        "null",
-                        "string"
-                    ]
+                    "type": "string?"
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/p",
-                    "type": [
-                        "null",
-                        "boolean"
-                    ],
+                    "type": "boolean?",
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-p"
@@ -470,10 +416,7 @@
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/r",
-                    "type": [
-                        "null",
-                        "float"
-                    ],
+                    "type": "float?",
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-r"
@@ -482,10 +425,7 @@
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/v",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
+                    "type": "int?",
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-v"
@@ -494,10 +434,7 @@
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/w",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
+                    "type": "int?",
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-w"
@@ -506,10 +443,7 @@
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/reads",
-                    "type": {
-                        "type": "array",
-                        "items": "File"
-                    },
+                    "type": "File[]",
                     "inputBinding": {
                         "position": 3
                     }
@@ -566,10 +500,10 @@
             "id": "#bwa_mem_0.7.5a.cwl",
             "http://purl.org/dc/terms/contributor": [
                 {
-                    "class": "http://xmlns.com/foaf/0.1/Organization",
+                    "class": "foaf:Organization",
                     "http://xmlns.com/foaf/0.1/member": [
                         {
-                            "class": "http://xmlns.com/foaf/0.1/Person",
+                            "class": "foaf:Person",
                             "http://xmlns.com/foaf/0.1/mbox": "mailto:chunj@mskcc.org",
                             "http://xmlns.com/foaf/0.1/name": "Jaeyoung Chun"
                         }
@@ -579,10 +513,10 @@
             ],
             "http://purl.org/dc/terms/creator": [
                 {
-                    "class": "http://xmlns.com/foaf/0.1/Organization",
+                    "class": "foaf:Organization",
                     "http://xmlns.com/foaf/0.1/member": [
                         {
-                            "class": "http://xmlns.com/foaf/0.1/Person",
+                            "class": "foaf:Person",
                             "http://xmlns.com/foaf/0.1/mbox": "mailto:chunj@mskcc.org",
                             "http://xmlns.com/foaf/0.1/name": "Jaeyoung Chun"
                         }
@@ -592,12 +526,12 @@
             ],
             "http://usefulinc.com/ns/doap#release": [
                 {
-                    "class": "http://usefulinc.com/ns/doap#Version",
+                    "class": "doap:Version",
                     "http://usefulinc.com/ns/doap#name": "bwa-mem",
                     "http://usefulinc.com/ns/doap#revision": "0.7.5a"
                 },
                 {
-                    "class": "http://usefulinc.com/ns/doap#Version",
+                    "class": "doap:Version",
                     "http://usefulinc.com/ns/doap#name": "bwa-mem-cwl",
                     "http://usefulinc.com/ns/doap#revision": "1.0.0"
                 }
@@ -611,30 +545,21 @@
             ],
             "inputs": [
                 {
-                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/memory_per_job",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
+                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/memory_per_job",
+                    "type": "int?",
                     "doc": "Memory per job in megabytes"
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/memory_overhead",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
+                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/memory_overhead",
+                    "type": "int?",
                     "doc": "Memory overhead per job in megabytes"
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/number_of_threads",
-                    "type": [
-                        "null",
-                        "int"
-                    ]
+                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/number_of_threads",
+                    "type": "int?"
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/input",
+                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/input",
                     "type": "File",
                     "inputBinding": {
                         "position": 0,
@@ -644,19 +569,13 @@
                     "doc": "Input file ( sam).  Required."
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/output_file_name",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
+                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/output_file_name",
+                    "type": "string?",
                     "doc": "Output file name (bam or sam). Not Required"
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/sort_order",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
+                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/sort_order",
+                    "type": "string?",
                     "inputBinding": {
                         "position": 0,
                         "prefix": "SO=",
@@ -665,7 +584,7 @@
                     "doc": "Optional sort order to output in. If not supplied OUTPUT is in the same order as INPUT.Default value: null. Possible values: {unsorted, queryname, coordinate}"
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/read_group_identifier",
+                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/read_group_identifier",
                     "type": "string",
                     "inputBinding": {
                         "position": 0,
@@ -675,7 +594,7 @@
                     "doc": "Read Group ID  Default value: 1. This option can be set to 'null' to clear the default value  Required"
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/read_group_sequencing_center",
+                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/read_group_sequencing_center",
                     "type": "string",
                     "inputBinding": {
                         "position": 0,
@@ -685,7 +604,7 @@
                     "doc": "Read Group sequencing center name  Default value: null. Required"
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/read_group_library",
+                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/read_group_library",
                     "type": "string",
                     "inputBinding": {
                         "position": 0,
@@ -695,7 +614,7 @@
                     "doc": "Read Group Library.  Required"
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/read_group_platform_unit",
+                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/read_group_platform_unit",
                     "type": "string",
                     "inputBinding": {
                         "position": 0,
@@ -705,7 +624,7 @@
                     "doc": "Read Group platform unit (eg. run barcode)  Required."
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/read_group_sample_name",
+                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/read_group_sample_name",
                     "type": "string",
                     "inputBinding": {
                         "position": 0,
@@ -715,7 +634,7 @@
                     "doc": "Read Group sample name.  Required"
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/read_group_sequencing_platform",
+                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/read_group_sequencing_platform",
                     "type": "string",
                     "inputBinding": {
                         "position": 0,
@@ -725,11 +644,8 @@
                     "doc": "Read Group platform (e.g. illumina, solid)  Required."
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/read_group_description",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
+                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/read_group_description",
+                    "type": "string?",
                     "inputBinding": {
                         "position": 0,
                         "prefix": "RGDS=",
@@ -738,11 +654,8 @@
                     "doc": "Read Group description  Default value: null."
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/read_group_run_date",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
+                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/read_group_run_date",
+                    "type": "string?",
                     "inputBinding": {
                         "position": 0,
                         "prefix": "RGDT=",
@@ -751,11 +664,8 @@
                     "doc": "Read Group run date  Default value: null."
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/validation_stringency",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
+                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/validation_stringency",
+                    "type": "string?",
                     "inputBinding": {
                         "position": 0,
                         "prefix": "VALIDATION_STRINGENCY=",
@@ -764,11 +674,8 @@
                     "doc": "Validation stringency for all SAM files read by this program.  Setting stringency to SILENT can improve performance when processing a BAM file in which variable-length data (read, qualities, tags) do not otherwise need to be decoded.  Default value: STRICT. This option can be set to 'null' to clear the default value. Possible values: {STRICT,LENIENT, SILENT}"
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/bam_compression_level",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
+                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/bam_compression_level",
+                    "type": "int?",
                     "inputBinding": {
                         "position": 0,
                         "prefix": "COMPRESSION_LEVEL=",
@@ -778,11 +685,8 @@
                 },
                 {
                     "default": true,
-                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/create_bam_index",
-                    "type": [
-                        "null",
-                        "boolean"
-                    ],
+                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/create_bam_index",
+                    "type": "boolean?",
                     "inputBinding": {
                         "position": 0,
                         "prefix": "CREATE_INDEX=true"
@@ -790,17 +694,14 @@
                     "doc": "Whether to create a BAM index when writing a coordinate-sorted BAM file.  Default value:false. This option can be set to 'null' to clear the default value. Possible values:{true, false}"
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/temporary_directory",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
+                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/temporary_directory",
+                    "type": "string?",
                     "doc": "Default value: null. This option may be specified 0 or more times."
                 }
             ],
             "outputs": [
                 {
-                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_bam",
+                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/bam",
                     "type": "File",
                     "outputBinding": {
                         "glob": "${\n    if(inputs.output_file_name)\n        return inputs.output_file_name;\n    return inputs.input.basename.replace(/.sam$/, '_srt.bam');\n}"
@@ -864,10 +765,10 @@
             ],
             "http://purl.org/dc/terms/contributor": [
                 {
-                    "class": "http://xmlns.com/foaf/0.1/Organization",
+                    "class": "foaf:Organization",
                     "http://xmlns.com/foaf/0.1/member": [
                         {
-                            "class": "http://xmlns.com/foaf/0.1/Person",
+                            "class": "foaf:Person",
                             "http://xmlns.com/foaf/0.1/mbox": "mailto:shahr2@mskcc.org",
                             "http://xmlns.com/foaf/0.1/name": "Ronak Shah"
                         }
@@ -877,10 +778,10 @@
             ],
             "http://purl.org/dc/terms/creator": [
                 {
-                    "class": "http://xmlns.com/foaf/0.1/Organization",
+                    "class": "foaf:Organization",
                     "http://xmlns.com/foaf/0.1/member": [
                         {
-                            "class": "http://xmlns.com/foaf/0.1/Person",
+                            "class": "foaf:Person",
                             "http://xmlns.com/foaf/0.1/mbox": "mailto:shahr2@mskcc.org",
                             "http://xmlns.com/foaf/0.1/name": "Ronak Shah"
                         }
@@ -890,7 +791,7 @@
             ],
             "http://usefulinc.com/ns/doap#release": [
                 {
-                    "class": "http://usefulinc.com/ns/doap#Version",
+                    "class": "doap:Version",
                     "http://usefulinc.com/ns/doap#name": "picard",
                     "http://usefulinc.com/ns/doap#revision": 1.96
                 }
@@ -899,8 +800,8 @@
     ],
     "cwlVersion": "v1.0",
     "$schemas": [
-        "http://usefulinc.com/ns/doap#",
         "http://dublincore.org/2012/06/14/dcterms.rdf",
-        "http://xmlns.com/foaf/spec/20140114.rdf"
+        "http://xmlns.com/foaf/spec/20140114.rdf",
+        "http://usefulinc.com/ns/doap#"
     ]
 }
