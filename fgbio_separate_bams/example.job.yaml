@@ -1,0 +1,38 @@
+assume_sorted: null
+create_index: null
+input: /path/to/unfiltered_bam
+max_base_error_rate_duplex: null
+max_base_error_rate_simplex_duplex: null
+max_no_call_fraction_duplex: null
+max_no_call_fraction_simplex_duplex: null
+max_read_error_rate_duplex: null
+max_read_error_rate_simplex_duplex: null
+memory_overhead: null
+memory_per_job: null
+min_base_quality_duplex: null
+min_base_quality_simplex_duplex: null
+min_mean_base_quality_duplex: null
+min_mean_base_quality_simplex_duplex: null
+min_reads_duplex:
+  - 2
+  - 1
+  - 1
+min_reads_simplex_duplex:
+  - 3
+  - 3
+  - 0
+min_simplex_reads: null
+number_of_threads: null
+output_file_name_duplex: null
+output_file_name_duplex_aln_metrics: null
+output_file_name_simpex: null
+output_file_name_simplex_aln_metrics: null
+output_file_name_simplex_duplex: null
+reference_fasta: /path/to/reference_fasta
+require_single_strand_agreement_duplex: null
+require_single_strand_agreement_simplex_duplex: null
+reverse_per_base_tags_duplex: null
+reverse_per_base_tags_simplex_duplex: null
+use_jdk_deflater: null
+use_jdk_inflater: null
+validation_stringency: null

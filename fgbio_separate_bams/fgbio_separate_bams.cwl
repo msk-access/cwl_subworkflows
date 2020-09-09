@@ -36,7 +36,7 @@ inputs:
     'sbg:x': 0
     'sbg:y': 1387.140625
   - id: min_reads_simplex_duplex
-    type: 'int[]?'
+    type: 'int[]'
     'sbg:x': 0
     'sbg:y': 1600.484375
   - id: min_mean_base_quality_simplex_duplex
@@ -80,7 +80,7 @@ inputs:
     'sbg:x': 0
     'sbg:y': 1280.46875
   - id: min_reads_duplex
-    type: 'int[]?'
+    type: 'int[]'
     'sbg:x': 0
     'sbg:y': 1707.15625
   - id: min_mean_base_quality_duplex
@@ -148,28 +148,28 @@ outputs:
     secondaryFiles:
       - ^.bai
     'sbg:x': 1039.097900390625
-    'sbg:y': 1667.8515625
+    'sbg:y': 1721.21875
   - id: fgbio_postprocessing_simplex_bam
     outputSource:
       - >-
         fgbio_postprocessing_simplex_filter_0_1_8/fgbio_postprocessing_simplex_bam
     type: File
     'sbg:x': 1543.551025390625
-    'sbg:y': 1695.8515625
+    'sbg:y': 1749.21875
   - id: gatk_collect_alignment_summary_metrics_txt_simplex
     outputSource:
       - >-
-        gatk_collect_alignment_summary_metrics_4_1_3_1/gatk_collect_alignment_summary_metrics_txt
+        gatk_collect_alignment_summary_metrics_4.1.8.0_duplex/gatk_collect_alignment_summary_metrics_txt
     type: File
-    'sbg:x': 2048.004150390625
-    'sbg:y': 1547.1171875
+    'sbg:x': 1543.551025390625
+    'sbg:y': 1345.015625
   - id: gatk_collect_alignment_summary_metrics_txt_duplex
     outputSource:
       - >-
-        gatk_collect_alignment_summary_metrics_4_1_3_0/gatk_collect_alignment_summary_metrics_txt
+        gatk_collect_alignment_summary_metrics_4.1.8.0_duplex/gatk_collect_alignment_summary_metrics_txt
     type: File
     'sbg:x': 1543.551025390625
-    'sbg:y': 1398.3828125
+    'sbg:y': 1451.75
   - id: fgbio_filter_consensus_reads_simplex_duplex_bam
     outputSource:
       - >-
@@ -177,8 +177,8 @@ outputs:
     type: File
     secondaryFiles:
       - ^.bai
-    'sbg:x': 1114.5048828125
-    'sbg:y': 853.3326416015625
+    'sbg:x': 1039.097900390625
+    'sbg:y': 1614.484375
 steps:
   - id: fgbio_filter_consensus_reads_1_2_0_duplex
     in:
@@ -273,8 +273,8 @@ steps:
       ../command_line_tools/fgbio_postprocessing_simplex_filter_0.1.8/fgbio_postprocessing_simplex_filter_0.1.8.cwl
     label: fgbio_postprocessing_simplex_filter_0.1.8
     'sbg:x': 1039.097900390625
-    'sbg:y': 1547.1171875
-  - id: gatk_collect_alignment_summary_metrics_4_1_3_0
+    'sbg:y': 1493.75
+  - id: gatk_collect_alignment_summary_metrics_4.1.8.0_duplex
     in:
       - id: input
         source: >-
@@ -297,8 +297,8 @@ steps:
       ../command_line_tools/gatk_collect_alignment_summary_metrics_4.1.8.0/gatk_collect_alignment_summary_metrics_4.1.8.0.cwl
     label: GATK-CollectAlignmentSummaryMetrics
     'sbg:x': 1039.097900390625
-    'sbg:y': 1384.3828125
-  - id: gatk_collect_alignment_summary_metrics_4_1_3_1
+    'sbg:y': 1331.015625
+  - id: gatk_collect_alignment_summary_metrics_4.1.8.0_simplex
     in:
       - id: input
         source: >-
@@ -321,7 +321,7 @@ steps:
       ../command_line_tools/gatk_collect_alignment_summary_metrics_4.1.8.0/gatk_collect_alignment_summary_metrics_4.1.8.0.cwl
     label: GATK-CollectAlignmentSummaryMetrics
     'sbg:x': 1543.551025390625
-    'sbg:y': 1547.1171875
+    'sbg:y': 1600.484375
 requirements: []
 $schemas:
   - 'https://schema.org/version/latest/schema.rdf'
