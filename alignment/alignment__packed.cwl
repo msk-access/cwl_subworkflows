@@ -2,8 +2,8 @@
     "$graph": [
         {
             "class": "Workflow",
-            "id": "#main",
             "label": "alignment",
+            "requirements": [],
             "inputs": [
                 {
                     "id": "#main/reference",
@@ -121,32 +121,30 @@
                 },
                 {
                     "id": "#main/temporary_directory",
+                    "label": "picard_add_or_replace_read_group_1.96_tmpdir",
                     "type": [
                         "null",
                         "string"
                     ],
-                    "label": "picard_add_or_replace_read_group_1.96_tmpdir",
                     "https://www.sevenbridges.com/x": 3.3808727264404297,
                     "https://www.sevenbridges.com/y": -127.21382141113281
                 }
             ],
             "outputs": [
                 {
-                    "id": "#main/bam",
-                    "outputSource": [
-                        "#main/picard_add_or_replace_read_groups_1_96/bam"
-                    ],
+                    "id": "#main/picard_add_or_replace_read_groups_bam",
                     "type": "File",
-                    "secondaryFiles": [
-                        "^.bai"
+                    "outputSource": [
+                        "#main/picard_add_or_replace_read_groups_1_96/picard_add_or_replace_read_groups_bam"
                     ],
-                    "https://www.sevenbridges.com/x": 922.9844970703125,
-                    "https://www.sevenbridges.com/y": 588.5
+                    "https://www.sevenbridges.com/x": 907.4813842773438,
+                    "https://www.sevenbridges.com/y": 391.4794921875
                 }
             ],
             "steps": [
                 {
                     "id": "#main/bwa_mem_0_7_5a",
+                    "label": "bwa-mem",
                     "in": [
                         {
                             "id": "#main/bwa_mem_0_7_5a/M",
@@ -171,18 +169,18 @@
                             "source": "#main/reference"
                         }
                     ],
+                    "run": "#bwa_mem_0.7.5a.cwl",
                     "out": [
                         {
                             "id": "#main/bwa_mem_0_7_5a/sam"
                         }
                     ],
-                    "run": "#bwa_mem_0.7.5a.cwl",
-                    "label": "bwa-mem",
                     "https://www.sevenbridges.com/x": 319.171875,
                     "https://www.sevenbridges.com/y": 695.5
                 },
                 {
                     "id": "#main/picard_add_or_replace_read_groups_1_96",
+                    "label": "picard_add_or_replace_read_groups_1.96",
                     "in": [
                         {
                             "id": "#main/picard_add_or_replace_read_groups_1_96/input",
@@ -229,19 +227,57 @@
                             "source": "#main/temporary_directory"
                         }
                     ],
+                    "run": "#picard_add_or_replace_read_groups_1.96.cwl",
                     "out": [
                         {
-                            "id": "#main/picard_add_or_replace_read_groups_1_96/bam"
+                            "id": "#main/picard_add_or_replace_read_groups_1_96/picard_add_or_replace_read_groups_bam"
                         }
                     ],
-                    "run": "#picard_add_or_replace_read_groups_1.96.cwl",
-                    "label": "picard_add_or_replace_read_groups_1.96",
-                    "https://www.sevenbridges.com/x": 520.293212890625,
-                    "https://www.sevenbridges.com/y": 525.5
+                    "https://www.sevenbridges.com/x": 650.7478637695312,
+                    "https://www.sevenbridges.com/y": 501.9268493652344
                 }
             ],
-            "requirements": [],
+            "id": "#main",
+            "https://schema.org/author": [
+                {
+                    "class": "https://schema.org/Person",
+                    "https://schema.org/email": "mailto:sumans@mskcc.org",
+                    "https://schema.org/identifier": "",
+                    "https://schema.org/name": "Shalabh Suman"
+                },
+                {
+                    "class": "https://schema.org/Person",
+                    "https://schema.org/email": "mailto:johnsoni@mskcc.org",
+                    "https://schema.org/identifier": "",
+                    "https://schema.org/name": "Ian Jonhnson"
+                }
+            ],
+            "https://schema.org/citation": "",
+            "https://schema.org/codeRepository": "https://github.com/msk-access/cwl_subworkflows/alignment",
+            "https://schema.org/contributor": [
+                {
+                    "class": "https://schema.org/Person",
+                    "https://schema.org/email": "mailto:johnsoni@mskcc.org",
+                    "https://schema.org/identifier": "",
+                    "https://schema.org/name": "Ian Jonhnson"
+                },
+                {
+                    "class": "https://schema.org/Person",
+                    "https://schema.org/email": "mailto:shahr2@mskcc.org",
+                    "https://schema.org/identifier": "https://orcid.org/0000-0001-9042-6213",
+                    "https://schema.org/name": "Ronak Shah"
+                },
+                {
+                    "class": "https://schema.org/Person",
+                    "https://schema.org/email": "mailto:sumans@mskcc.org",
+                    "https://schema.org/identifier": "",
+                    "https://schema.org/name": "Shalabh Suman"
+                }
+            ],
+            "https://schema.org/dateCreated": "2019-10-01",
+            "https://schema.org/license": "https://spdx.org/licenses/Apache-2.0",
             "$namespaces": {
+                "s": "https://schema.org/",
                 "sbg": "https://www.sevenbridges.com/"
             }
         },
@@ -701,7 +737,7 @@
             ],
             "outputs": [
                 {
-                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/bam",
+                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/picard_add_or_replace_read_groups_bam",
                     "type": "File",
                     "outputBinding": {
                         "glob": "${\n    if(inputs.output_file_name)\n        return inputs.output_file_name;\n    return inputs.input.basename.replace(/.sam$/, '_srt.bam');\n}"
@@ -800,8 +836,9 @@
     ],
     "cwlVersion": "v1.0",
     "$schemas": [
+        "http://dublincore.org/2012/06/14/dcterms.rdf",
+        "https://schema.org/version/latest/schema.rdf",
         "http://usefulinc.com/ns/doap#",
-        "http://xmlns.com/foaf/spec/20140114.rdf",
-        "http://dublincore.org/2012/06/14/dcterms.rdf"
+        "http://xmlns.com/foaf/spec/20140114.rdf"
     ]
 }
