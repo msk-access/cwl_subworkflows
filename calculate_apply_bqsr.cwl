@@ -5,7 +5,7 @@ label: calculate_apply_bqsr.cwl
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
 inputs:
-  - id: known_sites_1
+  - id: known_sites_12
     type: File
     secondaryFiles:
       - .idx
