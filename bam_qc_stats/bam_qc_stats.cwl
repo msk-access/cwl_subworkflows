@@ -71,7 +71,7 @@ steps:
     out:
       - id: alignment_summary_metrics
     run: >-
-      command_line_tools/gatk_collect_alignment_summary_metrics_4.1.8.0/gatk_collect_alignment_summary_metrics_4.1.8.0.cwl
+      ../command_line_tools/gatk_collect_alignment_summary_metrics_4.1.8.0/gatk_collect_alignment_summary_metrics_4.1.8.0.cwl
     label: GATK-CollectAlignmentSummaryMetrics
     'sbg:x': -63.445003509521484
     'sbg:y': -424.1755676269531
@@ -90,7 +90,7 @@ steps:
       - id: per_base_coverage_out
       - id: per_target_coverage_out
     run: >-
-      command_line_tools/gatk_collect_hs_metrics_4.1.8.0/gatk_collect_hs_metrics_4.1.8.0.cwl
+      ../command_line_tools/gatk_collect_hs_metrics_4.1.8.0/gatk_collect_hs_metrics_4.1.8.0.cwl
     label: GATK-CollectHsMetrics
     'sbg:x': -61.321895599365234
     'sbg:y': -194.27346801757812
@@ -104,7 +104,7 @@ steps:
       - id: insert_size_metrics
       - id: histogram_file_out
     run: >-
-      command_line_tools/gatk_collect_insert_size_metrics_4.1.8.0/gatk_collect_insert_size_metrics_4.1.8.0.cwl
+      ../command_line_tools/gatk_collect_insert_size_metrics_4.1.8.0/gatk_collect_insert_size_metrics_4.1.8.0.cwl
     label: GATK-CollectInsertSizeMetrics
     'sbg:x': -52.185672760009766
     'sbg:y': 62.291622161865234

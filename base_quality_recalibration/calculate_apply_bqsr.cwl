@@ -65,7 +65,7 @@ steps:
     out:
       - id: output
     run: >-
-      command_line_tools/gatk_BaseRecalibrator_4.1.2.0/gatk_baserecalibrator_4.1.2.0.cwl
+      ../command_line_tools/gatk_BaseRecalibrator_4.1.2.0/gatk_baserecalibrator_4.1.2.0.cwl
     label: gatk_base_recalibrator_4.1.2.0
     'sbg:x': 167.375
     'sbg:y': 139.5
@@ -79,7 +79,7 @@ steps:
         source: input
     out:
       - id: output
-    run: command_line_tools/gatk_ApplyBQSR_4.1.2.0/gatk_ApplyBQSR_4.1.2.0.cwl
+    run: ../command_line_tools/gatk_ApplyBQSR_4.1.2.0/gatk_ApplyBQSR_4.1.2.0.cwl
     label: gatk_apply_bqsr_4.1.2.0
     'sbg:x': 411.55841064453125
     'sbg:y': 146.5
