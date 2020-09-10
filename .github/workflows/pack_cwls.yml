@@ -35,7 +35,7 @@ jobs:
       - name: Validate packed workflows
         run: |
           echo Validating packed workflows...
-          find . -name '*__packed.cwl' | cwltool --validate
+          find . -name '*__packed.cwl' | xargs cwltool --validate
       - uses: EndBug/add-and-commit@v4
         with:
           ref: ${{ github.head_ref }}
