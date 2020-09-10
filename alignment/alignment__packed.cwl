@@ -1,70 +1,13 @@
 {
-    "$schemas": [
-        "http://dublincore.org/2012/06/14/dcterms.rdf",
-        "http://usefulinc.com/ns/doap#",
-        "http://xmlns.com/foaf/spec/20140114.rdf",
-        "https://schema.org/version/latest/schema.rdf"
-    ],
     "$graph": [
         {
-            "requirements": [],
             "class": "Workflow",
-            "outputs": [
-                {
-                    "outputSource": [
-                        "#main/picard_add_or_replace_read_groups_1_96/picard_add_or_replace_read_groups_bam"
-                    ],
-                    "id": "#main/picard_add_or_replace_read_groups_bam",
-                    "https://www.sevenbridges.com/y": 391.4794921875,
-                    "https://www.sevenbridges.com/x": 907.4813842773438,
-                    "type": "File"
-                }
-            ],
-            "https://schema.org/contributor": [
-                {
-                    "https://schema.org/email": "mailto:johnsoni@mskcc.org",
-                    "https://schema.org/name": "Ian Jonhnson",
-                    "https://schema.org/identifier": "",
-                    "class": "https://schema.org/Person"
-                },
-                {
-                    "https://schema.org/email": "mailto:shahr2@mskcc.org",
-                    "https://schema.org/name": "Ronak Shah",
-                    "https://schema.org/identifier": "https://orcid.org/0000-0001-9042-6213",
-                    "class": "https://schema.org/Person"
-                },
-                {
-                    "https://schema.org/email": "mailto:sumans@mskcc.org",
-                    "https://schema.org/name": "Shalabh Suman",
-                    "https://schema.org/identifier": "",
-                    "class": "https://schema.org/Person"
-                }
-            ],
-            "https://schema.org/author": [
-                {
-                    "https://schema.org/email": "mailto:sumans@mskcc.org",
-                    "https://schema.org/name": "Shalabh Suman",
-                    "https://schema.org/identifier": "",
-                    "class": "https://schema.org/Person"
-                },
-                {
-                    "https://schema.org/email": "mailto:johnsoni@mskcc.org",
-                    "https://schema.org/name": "Ian Jonhnson",
-                    "https://schema.org/identifier": "",
-                    "class": "https://schema.org/Person"
-                }
-            ],
-            "https://schema.org/license": "https://spdx.org/licenses/Apache-2.0",
-            "https://schema.org/dateCreated": "2019-10-01",
-            "$namespaces": {
-                "s": "https://schema.org/",
-                "sbg": "https://www.sevenbridges.com/"
-            },
+            "label": "alignment",
+            "requirements": [],
             "inputs": [
                 {
-                    "https://www.sevenbridges.com/x": 0,
                     "id": "#main/reference",
-                    "https://www.sevenbridges.com/y": 107,
+                    "type": "File",
                     "secondaryFiles": [
                         ".fai",
                         "^.dict",
@@ -74,122 +17,133 @@
                         ".pac",
                         ".sa"
                     ],
-                    "type": "File"
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 107
                 },
                 {
-                    "https://www.sevenbridges.com/x": 0,
                     "id": "#main/reads",
-                    "https://www.sevenbridges.com/y": 214,
                     "type": {
                         "type": "array",
                         "items": "File"
-                    }
+                    },
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 214
                 },
                 {
-                    "https://www.sevenbridges.com/x": 0,
                     "id": "#main/P",
-                    "https://www.sevenbridges.com/y": 963,
                     "type": [
                         "null",
                         "boolean"
-                    ]
+                    ],
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 963
                 },
                 {
-                    "https://www.sevenbridges.com/x": 0,
                     "id": "#main/M",
-                    "https://www.sevenbridges.com/y": 1177,
                     "type": [
                         "null",
                         "boolean"
-                    ]
+                    ],
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 1177
                 },
                 {
-                    "https://www.sevenbridges.com/x": 0,
                     "id": "#main/read_group_identifier",
-                    "https://www.sevenbridges.com/y": 856,
-                    "type": "string"
+                    "type": "string",
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 856
                 },
                 {
-                    "https://www.sevenbridges.com/x": 0,
                     "id": "#main/sort_order",
-                    "https://www.sevenbridges.com/y": 0,
                     "type": [
                         "null",
                         "string"
-                    ]
+                    ],
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 0
                 },
                 {
-                    "https://www.sevenbridges.com/x": 319.171875,
                     "id": "#main/create_bam_index",
-                    "https://www.sevenbridges.com/y": 560.5,
                     "type": [
                         "null",
                         "boolean"
-                    ]
-                },
-                {
-                    "https://www.sevenbridges.com/x": 0,
-                    "id": "#main/read_group_sequencing_platform",
-                    "https://www.sevenbridges.com/y": 428,
-                    "type": "string"
-                },
-                {
-                    "https://www.sevenbridges.com/x": 0,
-                    "id": "#main/read_group_sample_name",
-                    "https://www.sevenbridges.com/y": 535,
-                    "type": "string"
-                },
-                {
-                    "https://www.sevenbridges.com/x": 0,
-                    "id": "#main/read_group_platform_unit",
-                    "https://www.sevenbridges.com/y": 642,
-                    "type": "string"
-                },
-                {
-                    "https://www.sevenbridges.com/x": 0,
-                    "id": "#main/read_group_library",
-                    "https://www.sevenbridges.com/y": 749,
-                    "type": "string"
-                },
-                {
+                    ],
                     "https://www.sevenbridges.com/x": 319.171875,
-                    "id": "#main/output_file_name",
-                    "https://www.sevenbridges.com/y": 453.5,
-                    "type": [
-                        "null",
-                        "string"
-                    ]
+                    "https://www.sevenbridges.com/y": 560.5
                 },
                 {
+                    "id": "#main/read_group_sequencing_platform",
+                    "type": "string",
                     "https://www.sevenbridges.com/x": 0,
-                    "id": "#main/output",
-                    "https://www.sevenbridges.com/y": 1070,
+                    "https://www.sevenbridges.com/y": 428
+                },
+                {
+                    "id": "#main/read_group_sample_name",
+                    "type": "string",
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 535
+                },
+                {
+                    "id": "#main/read_group_platform_unit",
+                    "type": "string",
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 642
+                },
+                {
+                    "id": "#main/read_group_library",
+                    "type": "string",
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 749
+                },
+                {
+                    "id": "#main/output_file_name",
                     "type": [
                         "null",
                         "string"
-                    ]
+                    ],
+                    "https://www.sevenbridges.com/x": 319.171875,
+                    "https://www.sevenbridges.com/y": 453.5
                 },
                 {
-                    "https://www.sevenbridges.com/x": 5.036951541900635,
+                    "id": "#main/output",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 1070
+                },
+                {
                     "id": "#main/read_group_sequencing_center",
-                    "https://www.sevenbridges.com/y": 326.5912170410156,
-                    "type": "string"
+                    "type": "string",
+                    "https://www.sevenbridges.com/x": 5.036951541900635,
+                    "https://www.sevenbridges.com/y": 326.5912170410156
                 },
                 {
-                    "https://www.sevenbridges.com/x": 3.3808727264404297,
                     "id": "#main/temporary_directory",
                     "label": "picard_add_or_replace_read_group_1.96_tmpdir",
-                    "https://www.sevenbridges.com/y": -127.21382141113281,
                     "type": [
                         "null",
                         "string"
-                    ]
+                    ],
+                    "https://www.sevenbridges.com/x": 3.3808727264404297,
+                    "https://www.sevenbridges.com/y": -127.21382141113281
                 }
             ],
-            "label": "alignment",
+            "outputs": [
+                {
+                    "id": "#main/picard_add_or_replace_read_groups_bam",
+                    "type": "File",
+                    "outputSource": [
+                        "#main/picard_add_or_replace_read_groups_1_96/picard_add_or_replace_read_groups_bam"
+                    ],
+                    "https://www.sevenbridges.com/x": 907.4813842773438,
+                    "https://www.sevenbridges.com/y": 391.4794921875
+                }
+            ],
             "steps": [
                 {
-                    "https://www.sevenbridges.com/x": 319.171875,
+                    "id": "#main/bwa_mem_0_7_5a",
                     "label": "bwa-mem",
                     "in": [
                         {
@@ -215,17 +169,17 @@
                             "source": "#main/reference"
                         }
                     ],
+                    "run": "#bwa_mem_0.7.5a.cwl",
                     "out": [
                         {
                             "id": "#main/bwa_mem_0_7_5a/sam"
                         }
                     ],
-                    "https://www.sevenbridges.com/y": 695.5,
-                    "id": "#main/bwa_mem_0_7_5a",
-                    "run": "#bwa_mem_0.7.5a.cwl"
+                    "https://www.sevenbridges.com/x": 319.171875,
+                    "https://www.sevenbridges.com/y": 695.5
                 },
                 {
-                    "https://www.sevenbridges.com/x": 650.7478637695312,
+                    "id": "#main/picard_add_or_replace_read_groups_1_96",
                     "label": "picard_add_or_replace_read_groups_1.96",
                     "in": [
                         {
@@ -273,213 +227,215 @@
                             "source": "#main/temporary_directory"
                         }
                     ],
+                    "run": "#picard_add_or_replace_read_groups_1.96.cwl",
                     "out": [
                         {
                             "id": "#main/picard_add_or_replace_read_groups_1_96/picard_add_or_replace_read_groups_bam"
                         }
                     ],
-                    "https://www.sevenbridges.com/y": 501.9268493652344,
-                    "id": "#main/picard_add_or_replace_read_groups_1_96",
-                    "run": "#picard_add_or_replace_read_groups_1.96.cwl"
+                    "https://www.sevenbridges.com/x": 650.7478637695312,
+                    "https://www.sevenbridges.com/y": 501.9268493652344
                 }
             ],
-            "https://schema.org/codeRepository": "https://github.com/msk-access/cwl_subworkflows/alignment",
             "id": "#main",
-            "https://schema.org/citation": ""
+            "https://schema.org/author": [
+                {
+                    "class": "https://schema.org/Person",
+                    "https://schema.org/email": "mailto:sumans@mskcc.org",
+                    "https://schema.org/identifier": "",
+                    "https://schema.org/name": "Shalabh Suman"
+                },
+                {
+                    "class": "https://schema.org/Person",
+                    "https://schema.org/email": "mailto:johnsoni@mskcc.org",
+                    "https://schema.org/identifier": "",
+                    "https://schema.org/name": "Ian Jonhnson"
+                }
+            ],
+            "https://schema.org/citation": "",
+            "https://schema.org/codeRepository": "https://github.com/msk-access/cwl_subworkflows/alignment",
+            "https://schema.org/contributor": [
+                {
+                    "class": "https://schema.org/Person",
+                    "https://schema.org/email": "mailto:johnsoni@mskcc.org",
+                    "https://schema.org/identifier": "",
+                    "https://schema.org/name": "Ian Jonhnson"
+                },
+                {
+                    "class": "https://schema.org/Person",
+                    "https://schema.org/email": "mailto:shahr2@mskcc.org",
+                    "https://schema.org/identifier": "https://orcid.org/0000-0001-9042-6213",
+                    "https://schema.org/name": "Ronak Shah"
+                },
+                {
+                    "class": "https://schema.org/Person",
+                    "https://schema.org/email": "mailto:sumans@mskcc.org",
+                    "https://schema.org/identifier": "",
+                    "https://schema.org/name": "Shalabh Suman"
+                }
+            ],
+            "https://schema.org/dateCreated": "2019-10-01",
+            "https://schema.org/license": "https://spdx.org/licenses/Apache-2.0",
+            "$namespaces": {
+                "s": "https://schema.org/",
+                "sbg": "https://www.sevenbridges.com/"
+            }
         },
         {
-            "requirements": [
-                {
-                    "coresMin": 16,
-                    "ramMin": 32000,
-                    "class": "ResourceRequirement"
-                },
-                {
-                    "dockerPull": "mskcc/bwa_mem:0.7.5a",
-                    "class": "DockerRequirement"
-                },
-                {
-                    "class": "InlineJavascriptRequirement"
-                }
-            ],
             "class": "CommandLineTool",
-            "outputs": [
-                {
-                    "id": "#bwa_mem_0.7.5a.cwl/sam",
-                    "outputBinding": {
-                        "glob": "${\n  if (inputs.output)\n    return inputs.output;\n  return inputs.reads[0].basename.replace(/(fastq.gz)|(fq.gz)/, 'sam');\n}"
-                    },
-                    "type": "File"
-                }
-            ],
-            "http://purl.org/dc/terms/creator": [
-                {
-                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center",
-                    "class": "foaf:Organization",
-                    "http://xmlns.com/foaf/0.1/member": [
-                        {
-                            "http://xmlns.com/foaf/0.1/mbox": "mailto:chunj@mskcc.org",
-                            "class": "foaf:Person",
-                            "http://xmlns.com/foaf/0.1/name": "Jaeyoung Chun"
-                        }
-                    ]
-                }
-            ],
             "baseCommand": [
                 "bwa",
                 "mem"
             ],
-            "stdout": "${\n  if (inputs.output)\n    return inputs.output;\n  return inputs.reads[0].basename.replace(/(fastq.gz)|(fq.gz)/, 'sam');\n}",
-            "doc": "bwa mem\n",
             "inputs": [
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/A",
-                    "doc": "INT score for a sequence match [1]",
+                    "type": "int?",
                     "inputBinding": {
-                        "prefix": "-A",
-                        "position": 0
+                        "position": 0,
+                        "prefix": "-A"
                     },
-                    "type": "int?"
+                    "doc": "INT score for a sequence match [1]"
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/B",
-                    "doc": "INT penalty for a mismatch [4]",
+                    "type": "int?",
                     "inputBinding": {
-                        "prefix": "-B",
-                        "position": 0
+                        "position": 0,
+                        "prefix": "-B"
                     },
-                    "type": "int?"
+                    "doc": "INT penalty for a mismatch [4]"
                 },
                 {
-                    "id": "#bwa_mem_0.7.5a.cwl/C",
-                    "doc": "append FASTA/FASTQ comment to SAM output",
-                    "inputBinding": {
-                        "prefix": "-C",
-                        "position": 0
-                    },
                     "default": false,
-                    "type": "boolean?"
+                    "id": "#bwa_mem_0.7.5a.cwl/C",
+                    "type": "boolean?",
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "-C"
+                    },
+                    "doc": "append FASTA/FASTQ comment to SAM output"
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/E",
-                    "doc": "INT gap extension penalty; a gap of size k cost {-O} + {-E}*k [1]",
+                    "type": "int?",
                     "inputBinding": {
-                        "prefix": "-E",
-                        "position": 0
+                        "position": 0,
+                        "prefix": "-E"
                     },
-                    "type": "int?"
+                    "doc": "INT gap extension penalty; a gap of size k cost {-O} + {-E}*k [1]"
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/L",
-                    "doc": "INT penalty for clipping [5]",
+                    "type": "int?",
                     "inputBinding": {
-                        "prefix": "-L",
-                        "position": 0
+                        "position": 0,
+                        "prefix": "-L"
                     },
-                    "type": "int?"
+                    "doc": "INT penalty for clipping [5]"
                 },
                 {
-                    "id": "#bwa_mem_0.7.5a.cwl/M",
-                    "doc": "mark shorter split hits as secondary (for Picard/GATK compatibility)",
-                    "inputBinding": {
-                        "prefix": "-M",
-                        "position": 0
-                    },
                     "default": true,
-                    "type": "boolean?"
+                    "id": "#bwa_mem_0.7.5a.cwl/M",
+                    "type": "boolean?",
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "-M"
+                    },
+                    "doc": "mark shorter split hits as secondary (for Picard/GATK compatibility)"
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/O",
-                    "doc": "INT gap open penalty [6]",
+                    "type": "int?",
                     "inputBinding": {
-                        "prefix": "-O",
-                        "position": 0
+                        "position": 0,
+                        "prefix": "-O"
                     },
-                    "type": "int?"
+                    "doc": "INT gap open penalty [6]"
                 },
                 {
-                    "id": "#bwa_mem_0.7.5a.cwl/P",
-                    "doc": "skip pairing; mate rescue performed unless -S also in use",
-                    "inputBinding": {
-                        "prefix": "-P",
-                        "position": 0
-                    },
                     "default": false,
-                    "type": "boolean?"
+                    "id": "#bwa_mem_0.7.5a.cwl/P",
+                    "type": "boolean?",
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "-P"
+                    },
+                    "doc": "skip pairing; mate rescue performed unless -S also in use"
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/R",
-                    "doc": "STR read group header line such as '@RG\\tID -foo\\tSM -bar' [null]",
+                    "type": "string?",
                     "inputBinding": {
-                        "prefix": "-R",
-                        "position": 0
+                        "position": 0,
+                        "prefix": "-R"
                     },
-                    "type": "string?"
+                    "doc": "STR read group header line such as '@RG\\tID -foo\\tSM -bar' [null]"
                 },
                 {
-                    "id": "#bwa_mem_0.7.5a.cwl/S",
-                    "doc": "skip mate rescue",
-                    "inputBinding": {
-                        "prefix": "-S",
-                        "position": 0
-                    },
                     "default": false,
-                    "type": "boolean?"
+                    "id": "#bwa_mem_0.7.5a.cwl/S",
+                    "type": "boolean?",
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "-S"
+                    },
+                    "doc": "skip mate rescue"
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/T",
-                    "doc": "INT minimum score to output [30]",
+                    "type": "int?",
                     "inputBinding": {
-                        "prefix": "-T",
-                        "position": 0
+                        "position": 0,
+                        "prefix": "-T"
                     },
-                    "type": "int?"
+                    "doc": "INT minimum score to output [30]"
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/U",
-                    "doc": "INT penalty for an unpaired read pair [17]",
+                    "type": "int?",
                     "inputBinding": {
-                        "prefix": "-U",
-                        "position": 0
+                        "position": 0,
+                        "prefix": "-U"
                     },
-                    "type": "int?"
+                    "doc": "INT penalty for an unpaired read pair [17]"
                 },
                 {
-                    "id": "#bwa_mem_0.7.5a.cwl/a",
-                    "doc": "output all alignments for SE or unpaired PE",
-                    "inputBinding": {
-                        "prefix": "-a",
-                        "position": 0
-                    },
                     "default": false,
-                    "type": "boolean?"
+                    "id": "#bwa_mem_0.7.5a.cwl/a",
+                    "type": "boolean?",
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "-a"
+                    },
+                    "doc": "output all alignments for SE or unpaired PE"
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/c",
-                    "doc": "INT skip seeds with more than INT occurrences [10000]",
+                    "type": "int?",
                     "inputBinding": {
-                        "prefix": "-c",
-                        "position": 0
+                        "position": 0,
+                        "prefix": "-c"
                     },
-                    "type": "int?"
+                    "doc": "INT skip seeds with more than INT occurrences [10000]"
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/d",
-                    "doc": "INT off-diagonal X-dropoff [100]",
+                    "type": "int?",
                     "inputBinding": {
-                        "prefix": "-d",
-                        "position": 0
+                        "position": 0,
+                        "prefix": "-d"
                     },
-                    "type": "int?"
+                    "doc": "INT off-diagonal X-dropoff [100]"
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/k",
-                    "doc": "INT minimum seed length [19]",
+                    "type": "int?",
                     "inputBinding": {
-                        "prefix": "-k",
-                        "position": 0
+                        "position": 0,
+                        "prefix": "-k"
                     },
-                    "type": "int?"
+                    "doc": "INT minimum seed length [19]"
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/output",
@@ -487,49 +443,50 @@
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/p",
-                    "doc": "first query file consists of interleaved paired-end sequences",
+                    "type": "boolean?",
                     "inputBinding": {
-                        "prefix": "-p",
-                        "position": 0
+                        "position": 0,
+                        "prefix": "-p"
                     },
-                    "type": "boolean?"
+                    "doc": "first query file consists of interleaved paired-end sequences"
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/r",
-                    "doc": "FLOAT look for internal seeds inside a seed longer than {-k} * FLOAT [1.5]",
+                    "type": "float?",
                     "inputBinding": {
-                        "prefix": "-r",
-                        "position": 0
+                        "position": 0,
+                        "prefix": "-r"
                     },
-                    "type": "float?"
+                    "doc": "FLOAT look for internal seeds inside a seed longer than {-k} * FLOAT [1.5]"
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/v",
-                    "doc": "INT verbose level - 1=error, 2=warning, 3=message, 4+=debugging [3]",
+                    "type": "int?",
                     "inputBinding": {
-                        "prefix": "-v",
-                        "position": 0
+                        "position": 0,
+                        "prefix": "-v"
                     },
-                    "type": "int?"
+                    "doc": "INT verbose level - 1=error, 2=warning, 3=message, 4+=debugging [3]"
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/w",
-                    "doc": "INT band width for banded alignment [100]",
+                    "type": "int?",
                     "inputBinding": {
-                        "prefix": "-w",
-                        "position": 0
+                        "position": 0,
+                        "prefix": "-w"
                     },
-                    "type": "int?"
+                    "doc": "INT band width for banded alignment [100]"
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/reads",
+                    "type": "File[]",
                     "inputBinding": {
                         "position": 3
-                    },
-                    "type": "File[]"
+                    }
                 },
                 {
                     "id": "#bwa_mem_0.7.5a.cwl/reference",
+                    "type": "File",
                     "inputBinding": {
                         "position": 2
                     },
@@ -540,56 +497,98 @@
                         ".pac",
                         ".sa",
                         ".fai"
-                    ],
-                    "type": "File"
+                    ]
                 }
             ],
+            "outputs": [
+                {
+                    "id": "#bwa_mem_0.7.5a.cwl/sam",
+                    "type": "File",
+                    "outputBinding": {
+                        "glob": "${\n  if (inputs.output)\n    return inputs.output;\n  return inputs.reads[0].basename.replace(/(fastq.gz)|(fq.gz)/, 'sam');\n}"
+                    }
+                }
+            ],
+            "doc": "bwa mem\n",
             "label": "bwa-mem",
-            "http://usefulinc.com/ns/doap#release": [
-                {
-                    "http://usefulinc.com/ns/doap#revision": "0.7.5a",
-                    "class": "doap:Version",
-                    "http://usefulinc.com/ns/doap#name": "bwa-mem"
-                },
-                {
-                    "http://usefulinc.com/ns/doap#revision": "1.0.0",
-                    "class": "doap:Version",
-                    "http://usefulinc.com/ns/doap#name": "bwa-mem-cwl"
-                }
-            ],
             "arguments": [
                 {
-                    "prefix": "-t",
                     "position": 0,
+                    "prefix": "-t",
                     "valueFrom": "$(runtime.cores)"
                 }
             ],
+            "requirements": [
+                {
+                    "class": "ResourceRequirement",
+                    "ramMin": 32000,
+                    "coresMin": 16
+                },
+                {
+                    "class": "DockerRequirement",
+                    "dockerPull": "mskcc/bwa_mem:0.7.5a"
+                },
+                {
+                    "class": "InlineJavascriptRequirement"
+                }
+            ],
+            "stdout": "${\n  if (inputs.output)\n    return inputs.output;\n  return inputs.reads[0].basename.replace(/(fastq.gz)|(fq.gz)/, 'sam');\n}",
             "id": "#bwa_mem_0.7.5a.cwl",
             "http://purl.org/dc/terms/contributor": [
                 {
-                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center",
                     "class": "foaf:Organization",
                     "http://xmlns.com/foaf/0.1/member": [
                         {
-                            "http://xmlns.com/foaf/0.1/mbox": "mailto:chunj@mskcc.org",
                             "class": "foaf:Person",
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:chunj@mskcc.org",
                             "http://xmlns.com/foaf/0.1/name": "Jaeyoung Chun"
                         }
-                    ]
+                    ],
+                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
+                }
+            ],
+            "http://purl.org/dc/terms/creator": [
+                {
+                    "class": "foaf:Organization",
+                    "http://xmlns.com/foaf/0.1/member": [
+                        {
+                            "class": "foaf:Person",
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:chunj@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Jaeyoung Chun"
+                        }
+                    ],
+                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
+                }
+            ],
+            "http://usefulinc.com/ns/doap#release": [
+                {
+                    "class": "doap:Version",
+                    "http://usefulinc.com/ns/doap#name": "bwa-mem",
+                    "http://usefulinc.com/ns/doap#revision": "0.7.5a"
+                },
+                {
+                    "class": "doap:Version",
+                    "http://usefulinc.com/ns/doap#name": "bwa-mem-cwl",
+                    "http://usefulinc.com/ns/doap#revision": "1.0.0"
                 }
             ]
         },
         {
+            "class": "CommandLineTool",
+            "id": "#picard_add_or_replace_read_groups_1.96.cwl",
+            "baseCommand": [
+                "java"
+            ],
             "inputs": [
                 {
                     "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/memory_per_job",
-                    "doc": "Memory per job in megabytes",
-                    "type": "int?"
+                    "type": "int?",
+                    "doc": "Memory per job in megabytes"
                 },
                 {
                     "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/memory_overhead",
-                    "doc": "Memory overhead per job in megabytes",
-                    "type": "int?"
+                    "type": "int?",
+                    "doc": "Memory overhead per job in megabytes"
                 },
                 {
                     "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/number_of_threads",
@@ -597,143 +596,190 @@
                 },
                 {
                     "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/input",
-                    "doc": "Input file ( sam).  Required.",
+                    "type": "File",
                     "inputBinding": {
+                        "position": 0,
                         "prefix": "I=",
-                        "separate": false,
-                        "position": 0
+                        "separate": false
                     },
-                    "type": "File"
+                    "doc": "Input file ( sam).  Required."
                 },
                 {
                     "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/output_file_name",
-                    "doc": "Output file name (bam or sam). Not Required",
-                    "type": "string?"
+                    "type": "string?",
+                    "doc": "Output file name (bam or sam). Not Required"
                 },
                 {
                     "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/sort_order",
-                    "doc": "Optional sort order to output in. If not supplied OUTPUT is in the same order as INPUT.Default value: null. Possible values: {unsorted, queryname, coordinate}",
+                    "type": "string?",
                     "inputBinding": {
+                        "position": 0,
                         "prefix": "SO=",
-                        "separate": false,
-                        "position": 0
+                        "separate": false
                     },
-                    "type": "string?"
+                    "doc": "Optional sort order to output in. If not supplied OUTPUT is in the same order as INPUT.Default value: null. Possible values: {unsorted, queryname, coordinate}"
                 },
                 {
                     "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/read_group_identifier",
-                    "doc": "Read Group ID  Default value: 1. This option can be set to 'null' to clear the default value  Required",
+                    "type": "string",
                     "inputBinding": {
+                        "position": 0,
                         "prefix": "RGID=",
-                        "separate": false,
-                        "position": 0
+                        "separate": false
                     },
-                    "type": "string"
+                    "doc": "Read Group ID  Default value: 1. This option can be set to 'null' to clear the default value  Required"
                 },
                 {
                     "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/read_group_sequencing_center",
-                    "doc": "Read Group sequencing center name  Default value: null. Required",
+                    "type": "string",
                     "inputBinding": {
+                        "position": 0,
                         "prefix": "RGCN=",
-                        "separate": false,
-                        "position": 0
+                        "separate": false
                     },
-                    "type": "string"
+                    "doc": "Read Group sequencing center name  Default value: null. Required"
                 },
                 {
                     "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/read_group_library",
-                    "doc": "Read Group Library.  Required",
+                    "type": "string",
                     "inputBinding": {
+                        "position": 0,
                         "prefix": "RGLB=",
-                        "separate": false,
-                        "position": 0
+                        "separate": false
                     },
-                    "type": "string"
+                    "doc": "Read Group Library.  Required"
                 },
                 {
                     "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/read_group_platform_unit",
-                    "doc": "Read Group platform unit (eg. run barcode)  Required.",
+                    "type": "string",
                     "inputBinding": {
+                        "position": 0,
                         "prefix": "RGPU=",
-                        "separate": false,
-                        "position": 0
+                        "separate": false
                     },
-                    "type": "string"
+                    "doc": "Read Group platform unit (eg. run barcode)  Required."
                 },
                 {
                     "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/read_group_sample_name",
-                    "doc": "Read Group sample name.  Required",
+                    "type": "string",
                     "inputBinding": {
+                        "position": 0,
                         "prefix": "RGSM=",
-                        "separate": false,
-                        "position": 0
+                        "separate": false
                     },
-                    "type": "string"
+                    "doc": "Read Group sample name.  Required"
                 },
                 {
                     "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/read_group_sequencing_platform",
-                    "doc": "Read Group platform (e.g. illumina, solid)  Required.",
+                    "type": "string",
                     "inputBinding": {
+                        "position": 0,
                         "prefix": "RGPL=",
-                        "separate": false,
-                        "position": 0
+                        "separate": false
                     },
-                    "type": "string"
+                    "doc": "Read Group platform (e.g. illumina, solid)  Required."
                 },
                 {
                     "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/read_group_description",
-                    "doc": "Read Group description  Default value: null.",
+                    "type": "string?",
                     "inputBinding": {
+                        "position": 0,
                         "prefix": "RGDS=",
-                        "separate": false,
-                        "position": 0
+                        "separate": false
                     },
-                    "type": "string?"
+                    "doc": "Read Group description  Default value: null."
                 },
                 {
                     "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/read_group_run_date",
-                    "doc": "Read Group run date  Default value: null.",
+                    "type": "string?",
                     "inputBinding": {
+                        "position": 0,
                         "prefix": "RGDT=",
-                        "separate": false,
-                        "position": 0
+                        "separate": false
                     },
-                    "type": "string?"
+                    "doc": "Read Group run date  Default value: null."
                 },
                 {
                     "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/validation_stringency",
-                    "doc": "Validation stringency for all SAM files read by this program.  Setting stringency to SILENT can improve performance when processing a BAM file in which variable-length data (read, qualities, tags) do not otherwise need to be decoded.  Default value: STRICT. This option can be set to 'null' to clear the default value. Possible values: {STRICT,LENIENT, SILENT}",
+                    "type": "string?",
                     "inputBinding": {
+                        "position": 0,
                         "prefix": "VALIDATION_STRINGENCY=",
-                        "separate": false,
-                        "position": 0
+                        "separate": false
                     },
-                    "type": "string?"
+                    "doc": "Validation stringency for all SAM files read by this program.  Setting stringency to SILENT can improve performance when processing a BAM file in which variable-length data (read, qualities, tags) do not otherwise need to be decoded.  Default value: STRICT. This option can be set to 'null' to clear the default value. Possible values: {STRICT,LENIENT, SILENT}"
                 },
                 {
                     "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/bam_compression_level",
-                    "doc": "Compression level for all compressed files created (e.g. BAM and GELI).  Default value:5. This option can be set to 'null' to clear the default value.",
+                    "type": "int?",
                     "inputBinding": {
+                        "position": 0,
                         "prefix": "COMPRESSION_LEVEL=",
-                        "separate": false,
-                        "position": 0
+                        "separate": false
                     },
-                    "type": "int?"
+                    "doc": "Compression level for all compressed files created (e.g. BAM and GELI).  Default value:5. This option can be set to 'null' to clear the default value."
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/create_bam_index",
-                    "doc": "Whether to create a BAM index when writing a coordinate-sorted BAM file.  Default value:false. This option can be set to 'null' to clear the default value. Possible values:{true, false}",
-                    "inputBinding": {
-                        "prefix": "CREATE_INDEX=true",
-                        "position": 0
-                    },
                     "default": true,
-                    "type": "boolean?"
+                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/create_bam_index",
+                    "type": "boolean?",
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "CREATE_INDEX=true"
+                    },
+                    "doc": "Whether to create a BAM index when writing a coordinate-sorted BAM file.  Default value:false. This option can be set to 'null' to clear the default value. Possible values:{true, false}"
                 },
                 {
                     "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/temporary_directory",
-                    "doc": "Default value: null. This option may be specified 0 or more times.",
-                    "type": "string?"
+                    "type": "string?",
+                    "doc": "Default value: null. This option may be specified 0 or more times."
+                }
+            ],
+            "outputs": [
+                {
+                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/picard_add_or_replace_read_groups_bam",
+                    "type": "File",
+                    "outputBinding": {
+                        "glob": "${\n    if(inputs.output_file_name)\n        return inputs.output_file_name;\n    return inputs.input.basename.replace(/.sam$/, '_srt.bam');\n}"
+                    },
+                    "secondaryFiles": [
+                        "^.bai"
+                    ]
+                }
+            ],
+            "label": "picard_add_or_replace_read_groups_1.96",
+            "arguments": [
+                {
+                    "position": 0,
+                    "valueFrom": "${\n  if(inputs.memory_per_job && inputs.memory_overhead) {\n    if(inputs.memory_per_job % 1000 == 0) {\n      return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\"\n    }\n    else {\n      return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\"\n    }\n  }\n  else if (inputs.memory_per_job && !inputs.memory_overhead){\n    if(inputs.memory_per_job % 1000 == 0) {\n      return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\"\n    }\n    else {\n      return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\"\n    }\n  }\n  else if(!inputs.memory_per_job && inputs.memory_overhead){\n    return \"-Xmx15G\"\n  }\n  else {\n      return \"-Xmx15G\"\n  }\n}"
+                },
+                {
+                    "position": 0,
+                    "shellQuote": false,
+                    "valueFrom": "-XX:-UseGCOverheadLimit"
+                },
+                {
+                    "position": 0,
+                    "prefix": "-Djava.io.tmpdir=",
+                    "separate": false,
+                    "valueFrom": "${\n    if(inputs.temporary_directory)\n        return inputs.temporary_directory;\n      return runtime.tmpdir\n}"
+                },
+                {
+                    "position": 0,
+                    "prefix": "-jar",
+                    "valueFrom": "/usr/local/bin/AddOrReplaceReadGroups.jar"
+                },
+                {
+                    "position": 0,
+                    "prefix": "TMP_DIR=",
+                    "separate": false,
+                    "valueFrom": "${\n    if(inputs.temporary_directory)\n        return inputs.temporary_directory;\n      return runtime.tmpdir\n}"
+                },
+                {
+                    "position": 0,
+                    "prefix": "O=",
+                    "separate": false,
+                    "valueFrom": "${\n    if(inputs.output_file_name)\n        return inputs.output_file_name;\n      return inputs.input.basename.replace(/.sam$/, '_srt.bam');\n}"
                 }
             ],
             "requirements": [
@@ -741,104 +787,58 @@
                     "class": "ShellCommandRequirement"
                 },
                 {
-                    "coresMin": 2,
+                    "class": "ResourceRequirement",
                     "ramMin": 25000,
-                    "class": "ResourceRequirement"
+                    "coresMin": 2
                 },
                 {
-                    "dockerPull": "mskaccess/picard_1.96:0.6.3",
-                    "class": "DockerRequirement"
+                    "class": "DockerRequirement",
+                    "dockerPull": "mskaccess/picard_1.96:0.6.3"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
                 }
             ],
-            "label": "picard_add_or_replace_read_groups_1.96",
-            "class": "CommandLineTool",
-            "outputs": [
+            "http://purl.org/dc/terms/contributor": [
                 {
-                    "id": "#picard_add_or_replace_read_groups_1.96.cwl/picard_add_or_replace_read_groups_1_96/picard_add_or_replace_read_groups_bam",
-                    "outputBinding": {
-                        "glob": "${\n    if(inputs.output_file_name)\n        return inputs.output_file_name;\n    return inputs.input.basename.replace(/.sam$/, '_srt.bam');\n}"
-                    },
-                    "secondaryFiles": [
-                        "^.bai"
+                    "class": "foaf:Organization",
+                    "http://xmlns.com/foaf/0.1/member": [
+                        {
+                            "class": "foaf:Person",
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:shahr2@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Ronak Shah"
+                        }
                     ],
-                    "type": "File"
+                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
                 }
-            ],
-            "arguments": [
-                {
-                    "position": 0,
-                    "valueFrom": "${\n  if(inputs.memory_per_job && inputs.memory_overhead) {\n    if(inputs.memory_per_job % 1000 == 0) {\n      return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\"\n    }\n    else {\n      return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\"\n    }\n  }\n  else if (inputs.memory_per_job && !inputs.memory_overhead){\n    if(inputs.memory_per_job % 1000 == 0) {\n      return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\"\n    }\n    else {\n      return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\"\n    }\n  }\n  else if(!inputs.memory_per_job && inputs.memory_overhead){\n    return \"-Xmx15G\"\n  }\n  else {\n      return \"-Xmx15G\"\n  }\n}"
-                },
-                {
-                    "shellQuote": false,
-                    "position": 0,
-                    "valueFrom": "-XX:-UseGCOverheadLimit"
-                },
-                {
-                    "prefix": "-Djava.io.tmpdir=",
-                    "separate": false,
-                    "position": 0,
-                    "valueFrom": "${\n    if(inputs.temporary_directory)\n        return inputs.temporary_directory;\n      return runtime.tmpdir\n}"
-                },
-                {
-                    "prefix": "-jar",
-                    "position": 0,
-                    "valueFrom": "/usr/local/bin/AddOrReplaceReadGroups.jar"
-                },
-                {
-                    "prefix": "TMP_DIR=",
-                    "separate": false,
-                    "position": 0,
-                    "valueFrom": "${\n    if(inputs.temporary_directory)\n        return inputs.temporary_directory;\n      return runtime.tmpdir\n}"
-                },
-                {
-                    "prefix": "O=",
-                    "separate": false,
-                    "position": 0,
-                    "valueFrom": "${\n    if(inputs.output_file_name)\n        return inputs.output_file_name;\n      return inputs.input.basename.replace(/.sam$/, '_srt.bam');\n}"
-                }
-            ],
-            "id": "#picard_add_or_replace_read_groups_1.96.cwl",
-            "baseCommand": [
-                "java"
             ],
             "http://purl.org/dc/terms/creator": [
                 {
-                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center",
                     "class": "foaf:Organization",
                     "http://xmlns.com/foaf/0.1/member": [
                         {
-                            "http://xmlns.com/foaf/0.1/mbox": "mailto:shahr2@mskcc.org",
                             "class": "foaf:Person",
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:shahr2@mskcc.org",
                             "http://xmlns.com/foaf/0.1/name": "Ronak Shah"
                         }
-                    ]
-                }
-            ],
-            "http://purl.org/dc/terms/contributor": [
-                {
-                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center",
-                    "class": "foaf:Organization",
-                    "http://xmlns.com/foaf/0.1/member": [
-                        {
-                            "http://xmlns.com/foaf/0.1/mbox": "mailto:shahr2@mskcc.org",
-                            "class": "foaf:Person",
-                            "http://xmlns.com/foaf/0.1/name": "Ronak Shah"
-                        }
-                    ]
+                    ],
+                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
                 }
             ],
             "http://usefulinc.com/ns/doap#release": [
                 {
-                    "http://usefulinc.com/ns/doap#revision": 1.96,
                     "class": "doap:Version",
-                    "http://usefulinc.com/ns/doap#name": "picard"
+                    "http://usefulinc.com/ns/doap#name": "picard",
+                    "http://usefulinc.com/ns/doap#revision": 1.96
                 }
             ]
         }
     ],
-    "cwlVersion": "v1.0"
+    "cwlVersion": "v1.0",
+    "$schemas": [
+        "http://usefulinc.com/ns/doap#",
+        "https://schema.org/version/latest/schema.rdf",
+        "http://dublincore.org/2012/06/14/dcterms.rdf",
+        "http://xmlns.com/foaf/spec/20140114.rdf"
+    ]
 }
