@@ -170,11 +170,11 @@ toil-cwl-runner \
        --writeLogs ./example_log_folder/ \
        --logLevel DEBUG \
        --stats \
-       --retryCount 2
+       --retryCount 2 \
        --disableCaching \
        --disableChaining \
        --maxLogFileSize 20000000000 \
-       --cleanWorkDir onSuccess
+       --cleanWorkDir onSuccess \
        --preserve-environment TOIL_LSF_ARGS TMPDIR \
        alignment.cwl \
        inputs.yaml \
