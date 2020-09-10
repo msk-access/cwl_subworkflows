@@ -74,7 +74,7 @@ steps:
       - id: reference
         source: reference
       - id: bqsr_recal_file
-        source: gatk_base_recalibrator_4_1_2_1/output
+        source: gatk_base_recalibrator_4_1_2_1/gatk_base_recalibrator_output
       - id: input
         source: input
     out:
