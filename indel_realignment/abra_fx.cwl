@@ -78,15 +78,15 @@ inputs:
 outputs:
   - id: abra_fx_bam
     outputSource:
-      - picard_fix_mate_information_1_97/bam
+      - picard_fix_mate_information_1_97/picard_fix_mate_information_bam
     type: File
     secondaryFiles:
       - ^.bai
     'sbg:x': 1346.0264892578125
     'sbg:y': 640.171875
-  - id: output_file
+  - id: bedtools_merge_bed
     outputSource:
-      - bedtools_merge/output_file
+      - bedtools_merge/bedtools_merge_bed
     type: File?
     label: indel_realign_targets
     'sbg:x': 676.9483642578125
@@ -99,7 +99,7 @@ steps:
       - id: option_bedgraph
         source: option_bedgraph
     out:
-      - id: output_file
+      - id: bedtools_genomecove_bedgraph
     run: >-
       ../command_line_tools/bedtools_genomecov_v2.28.0_cv2/bedtools_genomecov_v2.28.0_cv2.cwl
     label: bedtools_genomecov
@@ -108,9 +108,9 @@ steps:
   - id: bedtools_merge
     in:
       - id: input
-        source: bedtools_genomecov/output_file
+        source: bedtools_genomecov/bedtools_genomecove_bedgraph
     out:
-      - id: output_file
+      - id: bedtools_merge_bed
     run: >-
       ../command_line_tools/bedtools_merge_v2.28.0_cv2/bedtools_merge_v2.28.0_cv2.cwl
     label: bedtools_merge
@@ -126,7 +126,7 @@ steps:
       - id: reference_fasta
         source: reference_fasta
       - id: targets
-        source: bedtools_merge/output_file
+        source: bedtools_merge/bedtools_merge_bed
       - id: maximum_average_depth
         source: maximum_average_depth
       - id: soft_clip_contig
@@ -160,7 +160,7 @@ steps:
       - id: temporary_directory
         source: temporary_directory
     out:
-      - id: bam
+      - id: picard_fix_mate_information_bam
     run: >-
       ../command_line_tools/picard_fix_mate_information_1.96/picard_fix_mate_information_1.96.cwl
     label: picard_fix_mate_information_1.96
