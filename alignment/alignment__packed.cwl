@@ -836,9 +836,9 @@
     ],
     "cwlVersion": "v1.0",
     "$schemas": [
-        "http://usefulinc.com/ns/doap#",
+        "http://xmlns.com/foaf/spec/20140114.rdf",
         "https://schema.org/version/latest/schema.rdf",
         "http://dublincore.org/2012/06/14/dcterms.rdf",
-        "http://xmlns.com/foaf/spec/20140114.rdf"
+        "http://usefulinc.com/ns/doap#"
     ]
 }
