@@ -40,9 +40,9 @@ inputs:
     'sbg:x': -324.8984375
     'sbg:y': 74
 outputs:
-  - id: bqsr_bam
+  - id: gatk_apply_bqsr_bam
     outputSource:
-      - gatk_apply_bqsr_4_1_2_1/output
+      - gatk_apply_bqsr_4_1_2_1/gatk_apply_bqsr_bam
     type: File?
     secondaryFiles:
       - ^.bai
@@ -63,7 +63,7 @@ steps:
       - id: known_sites_2
         source: known_sites_2
     out:
-      - id: output
+      - id: gatk_base_recalibrator_output
     run: >-
       ../command_line_tools/gatk_BaseRecalibrator_4.1.2.0/gatk_baserecalibrator_4.1.2.0.cwl
     label: gatk_base_recalibrator_4.1.2.0
@@ -78,7 +78,7 @@ steps:
       - id: input
         source: input
     out:
-      - id: output
+      - id: gatk_apply_bqsr_bam
     run: ../command_line_tools/gatk_ApplyBQSR_4.1.2.0/gatk_ApplyBQSR_4.1.2.0.cwl
     label: gatk_apply_bqsr_4.1.2.0
     'sbg:x': 411.55841064453125
