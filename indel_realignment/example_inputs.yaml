@@ -1,0 +1,21 @@
+input_bam:
+  class: File
+  path: "/path/to/bam"
+number_of_threads: null
+reference_fasta:
+  class: File
+  path: "/path/to/reference.fasta"
+targets:
+  class: File
+  path: "/path/to/targets.bed"
+maximum_average_depth: null
+soft_clip_contig: null
+maximum_mixmatch_rate: null
+scoring_gap_alignments: null
+contig_anchor: null
+window_size: null
+ignore_bad_assembly: null
+bam_index: null
+no_edge_complex_indel: null
+no_sort: null
+option_bedgraph: null
