@@ -115,7 +115,7 @@ steps:
         source: no_sort
     out:
       - id: abra_realigned_bam
-    run: command_line_tools/abra2_2.22/abra2_2.22.cwl
+    run: ../command_line_tools/abra2_2.22/abra2_2.22.cwl
     label: abra2_2.22
     'sbg:x': 773.9833984375
     'sbg:y': 880.1202392578125
@@ -128,7 +128,7 @@ steps:
     out:
       - id: bedtools_genomecove_bedgraph
     run: >-
-      command_line_tools/bedtools_genomecov_v2.28.0_cv2/bedtools_genomecov_v2.28.0_cv2.cwl
+      ../command_line_tools/bedtools_genomecov_v2.28.0_cv2/bedtools_genomecov_v2.28.0_cv2.cwl
     label: bedtools_genomecov
     'sbg:x': 768.715576171875
     'sbg:y': 583.307373046875
@@ -137,7 +137,7 @@ steps:
     out:
       - id: bedtools_merge_bed
     run: >-
-      command_line_tools/bedtools_merge_v2.28.0_cv2/bedtools_merge_v2.28.0_cv2.cwl
+      ../command_line_tools/bedtools_merge_v2.28.0_cv2/bedtools_merge_v2.28.0_cv2.cwl
     label: bedtools_merge
     'sbg:x': 762.4281005859375
     'sbg:y': 410.26446533203125
@@ -148,7 +148,7 @@ steps:
     out:
       - id: picard_fix_mate_information_bam
     run: >-
-      command_line_tools/picard_fix_mate_information_4.1.8.1/picard_fix_mate_information_4.1.8.1.cwl
+      ../command_line_tools/picard_fix_mate_information_4.1.8.1/picard_fix_mate_information_4.1.8.1.cwl
     label: picard_fix_mate_information_4.1.8.1
     'sbg:x': 1190.5587158203125
     'sbg:y': 881.240478515625
