@@ -1,7 +1,7 @@
 class: Workflow
 cwlVersion: v1.0
-id: abra_fx_cwl
-label: abra_fx.cwl
+id: indel_realignment_cwl
+label: indel_realignment.cwl
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
 inputs:
@@ -153,3 +153,17 @@ steps:
     'sbg:x': 1190.5587158203125
     'sbg:y': 881.240478515625
 requirements: []
+$schemas:
+  - 'https://schema.org/version/latest/schema.rdf'
+'s:author':
+  - class: 's:Person'
+    's:email': 'mailto:murphyc4@mskcc.org'
+    's:name': Charlie Murphy
+'s:citation': ''
+'s:codeRepository': 'https://github.com/msk-access/cwl_subworkflows/indel_realignment'
+'s:contributor':
+  - class: 's:Person'
+    's:email': 'mailto:murphyc4@mskcc.org'
+    's:name': Charlie Murphy
+'s:dateCreated': '2020-09-14'
+'s:license': 'https://spdx.org/licenses/Apache-2.0'
