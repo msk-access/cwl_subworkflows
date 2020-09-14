@@ -3,6 +3,7 @@ cwlVersion: v1.0
 id: indel_realignment_cwl
 label: indel_realignment.cwl
 $namespaces:
+  s: 'https://schema.org/'
   sbg: 'https://www.sevenbridges.com/'
 inputs:
   - id: targets
