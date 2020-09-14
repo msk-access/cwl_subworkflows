@@ -6,26 +6,24 @@ $namespaces:
   s: 'https://schema.org/'
   sbg: 'https://www.sevenbridges.com/'
 inputs:
-  - id: targets
-    type: File
-    'sbg:x': 15.996973991394043
-    'sbg:y': 339.2330017089844
   - id: window_size
     type: string?
-    'sbg:x': 14.86524486541748
-    'sbg:y': 224.2661895751953
+    'sbg:x': 8.834391593933105
+    'sbg:y': 201.19451904296875
   - id: soft_clip_contig
     type: string?
-    'sbg:x': 16.210084915161133
-    'sbg:y': 481.13067626953125
+    'sbg:x': 10.5871000289917
+    'sbg:y': 347.4817810058594
   - id: scoring_gap_alignments
     type: string?
-    'sbg:x': 17.5549259185791
-    'sbg:y': 623.6837158203125
+    'sbg:x': 15.195699691772461
+    'sbg:y': 485.8731994628906
   - id: reference_fasta
     type: File
-    'sbg:x': 16.210084915161133
-    'sbg:y': 770.2713012695312
+    secondaryFiles:
+      - ^.fasta.fai
+    'sbg:x': 19.608600616455078
+    'sbg:y': 620.2431030273438
   - id: no_sort
     type: boolean?
     'sbg:x': 18
@@ -43,6 +41,8 @@ inputs:
       - File
       - type: array
         items: File
+    secondaryFiles:
+      - ^.bai
     'sbg:x': 12
     'sbg:y': 1493.5413818359375
   - id: ignore_bad_assembly
@@ -67,19 +67,30 @@ inputs:
     'sbg:y': 904.0529174804688
   - id: option_bedgraph
     type: boolean?
-    'sbg:x': 14.788423538208008
-    'sbg:y': 104.05289459228516
+    'sbg:x': 13.505415916442871
+    'sbg:y': 66.65933227539062
   - id: no_edge_complex_indel
     type: boolean?
     'sbg:x': 7.0559563636779785
     'sbg:y': 1133.9771728515625
+  - id: distance_between_features
+    type: int?
+    'sbg:x': 16.124685287475586
+    'sbg:y': -77.0201187133789
+  - id: output_bams
+    type:
+      - string
+      - type: array
+        items: string
+    'sbg:x': 19.456621170043945
+    'sbg:y': 776.728271484375
 outputs:
   - id: abra_fx_bam
     outputSource:
       - picard_fix_mate_information_4_1_8_1/picard_fix_mate_information_bam
     type: File
-    'sbg:x': 1477.4757080078125
-    'sbg:y': 871.328125
+    'sbg:x': 1860.3577880859375
+    'sbg:y': 865.3345947265625
 steps:
   - id: abra2_2_22
     in:
@@ -91,7 +102,7 @@ steps:
       - id: reference_fasta
         source: reference_fasta
       - id: targets
-        source: targets
+        source: bedtools_merge/bedtools_merge_bed
       - id: maximum_average_depth
         source: maximum_average_depth
       - id: soft_clip_contig
@@ -106,6 +117,9 @@ steps:
         source: window_size
       - id: consensus_sequence
         source: consensus_sequence
+      - id: output_bams
+        source:
+          - output_bams
       - id: ignore_bad_assembly
         source: ignore_bad_assembly
       - id: bam_index
@@ -118,8 +132,8 @@ steps:
       - id: abra_realigned_bam
     run: ../command_line_tools/abra2_2.22/abra2_2.22.cwl
     label: abra2_2.22
-    'sbg:x': 773.9833984375
-    'sbg:y': 880.1202392578125
+    'sbg:x': 1173.35400390625
+    'sbg:y': 885.6654052734375
   - id: bedtools_genomecov
     in:
       - id: input
@@ -131,17 +145,21 @@ steps:
     run: >-
       ../command_line_tools/bedtools_genomecov_v2.28.0_cv2/bedtools_genomecov_v2.28.0_cv2.cwl
     label: bedtools_genomecov
-    'sbg:x': 768.715576171875
-    'sbg:y': 583.307373046875
+    'sbg:x': 673.576904296875
+    'sbg:y': 305.3960876464844
   - id: bedtools_merge
-    in: []
+    in:
+      - id: input
+        source: bedtools_genomecov/bedtools_genomecove_bedgraph
+      - id: distance_between_features
+        source: distance_between_features
     out:
       - id: bedtools_merge_bed
     run: >-
       ../command_line_tools/bedtools_merge_v2.28.0_cv2/bedtools_merge_v2.28.0_cv2.cwl
     label: bedtools_merge
-    'sbg:x': 762.4281005859375
-    'sbg:y': 410.26446533203125
+    'sbg:x': 892.4700317382812
+    'sbg:y': 307.1064453125
   - id: picard_fix_mate_information_4_1_8_1
     in:
       - id: input
@@ -151,11 +169,9 @@ steps:
     run: >-
       ../command_line_tools/picard_fix_mate_information_4.1.8.1/picard_fix_mate_information_4.1.8.1.cwl
     label: picard_fix_mate_information_4.1.8.1
-    'sbg:x': 1190.5587158203125
-    'sbg:y': 881.240478515625
+    'sbg:x': 1535.5885009765625
+    'sbg:y': 881
 requirements: []
-$schemas:
-  - 'https://schema.org/version/latest/schema.rdf'
 's:author':
   - class: 's:Person'
     's:email': 'mailto:murphyc4@mskcc.org'
