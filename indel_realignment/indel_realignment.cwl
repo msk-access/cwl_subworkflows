@@ -171,7 +171,10 @@ steps:
     label: picard_fix_mate_information_4.1.8.1
     'sbg:x': 1535.5885009765625
     'sbg:y': 881
-requirements: []
+requirements:
+  - class: ResourceRequirement
+    ramMin: 20000
+    coresMin: 1
 's:author':
   - class: 's:Person'
     's:email': 'mailto:murphyc4@mskcc.org'
