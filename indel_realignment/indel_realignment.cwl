@@ -85,7 +85,7 @@ inputs:
     'sbg:x': 19.456621170043945
     'sbg:y': 776.728271484375
 outputs:
-  - id: abra_fx_bam
+  - id: indel_realignment_bam
     outputSource:
       - picard_fix_mate_information_4_1_8_1/picard_fix_mate_information_bam
     type: File
