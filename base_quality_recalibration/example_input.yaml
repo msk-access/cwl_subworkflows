@@ -1,0 +1,20 @@
+add_output_sam_program_record: null
+apply_bqsr_create_output_bam_index: null
+apply_bqsr_output_file_name: null
+base_recalibrator_output_file_name: null
+disable_read_filter: null
+input:
+  class: File
+  path: /path/to/file.bam
+known_sites:
+  - class: File
+    path: >-
+      /path/to/known_sites/dbsnp_137_14_16.b37.vcf
+  - class: File
+    path: >-
+      /path/to/known_sites/Mills_and_1000G_gold_standard-14_16.indels.b37.vcf
+lenient: null
+read_filter: null
+reference:
+  class: File
+  path: /path/to/reference.fasta
