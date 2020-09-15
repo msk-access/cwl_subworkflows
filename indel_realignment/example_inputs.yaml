@@ -4,10 +4,10 @@ input_bam:
 number_of_threads: null
 reference_fasta:
   class: File
-  path: "/Users/charlesmurphy/Desktop/data/ref/hg19/Homo_sapiens_assembly19.fasta"
+  path: "/path/to/fasta"
   secondaryFiles:
     - class: File
-      path: "/Users/charlesmurphy/Desktop/data/ref/hg19/Homo_sapiens_assembly19.fasta.fai"
+      path: "/path/to/fasta/fai"
 soft_clip_contig: null
 maximum_mixmatch_rate: null
 maximum_average_depth: null
@@ -16,10 +16,10 @@ scoring_gap_alignments: null
 contig_anchor: null
 window_size: null
 ignore_bad_assembly: null
-bam_index: null
+bam_index: true
 distance_between_features: null
 output_bams:
-  - "test.bam"
+  - "/output/file/name"
 no_edge_complex_indel: null
 no_sort: null
 option_bedgraph: true
