@@ -1,6 +1,6 @@
 input_bam:
   class: File
-  path: "test.bam"
+  path: "/path/to/bam"
 number_of_threads: null
 reference_fasta:
   class: File
