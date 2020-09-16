@@ -16,8 +16,8 @@ inputs:
     'sbg:y': 388.04266357421875
   - id: read_group_description
     type: string?
-    'sbg:x': 308.8017883300781
-    'sbg:y': 260.1056213378906
+    'sbg:x': 308.095947265625
+    'sbg:y': 268.1795654296875
   - id: read_group_identifier
     type: string
     'sbg:x': 308.8017883300781
@@ -32,8 +32,8 @@ inputs:
     'sbg:y': -106.25950622558594
   - id: read_group_run_date
     type: string?
-    'sbg:x': 293.2942810058594
-    'sbg:y': -220.62501525878906
+    'sbg:x': 293.1172790527344
+    'sbg:y': -220
   - id: read_group_sample_name
     type: string
     'sbg:x': 291.3558349609375
@@ -52,43 +52,56 @@ inputs:
     'sbg:y': -712.0499877929688
   - id: validation_stringency
     type: string?
-    'sbg:x': 286.29644775390625
-    'sbg:y': -840.7815551757812
+    'sbg:x': 290.2070617675781
+    'sbg:y': -838.8253784179688
   - id: reference
     type: File
-    secondaryFiles:
-      - .amb
-      - .ann
-      - .bwt
-      - .pac
-      - .sa
-      - .fai
-    'sbg:x': 40.131065368652344
-    'sbg:y': 618.1557006835938
+    'sbg:x': 53.21892166137695
+    'sbg:y': 838.94482421875
   - id: reads
     type: 'File[]'
-    'sbg:x': 48.79703140258789
-    'sbg:y': 753.09716796875
+    'sbg:x': 49.8884162902832
+    'sbg:y': 964.5027465820312
   - id: output
     type: string?
-    'sbg:x': 55.95198059082031
-    'sbg:y': 1066.6053466796875
+    'sbg:x': 51.22316360473633
+    'sbg:y': 1341.708984375
   - id: P
     type: boolean?
-    'sbg:x': 56.22500228881836
-    'sbg:y': 917.7505493164062
+    'sbg:x': 48.44633102416992
+    'sbg:y': 1209.7047119140625
   - id: M
     type: boolean?
-    'sbg:x': 53.7490119934082
-    'sbg:y': 1224.7662353515625
+    'sbg:x': 53
+    'sbg:y': 1494.043701171875
   - id: bam_compression_level
     type: int?
     'sbg:x': 307.7873840332031
     'sbg:y': 649.9906005859375
   - id: sample_id
     type: string
-    'sbg:x': 40.787940979003906
-    'sbg:y': 463.85009765625
+    'sbg:x': 53.21892166137695
+    'sbg:y': 708.4942626953125
+  - id: R
+    type: string?
+    'sbg:x': 46.45319366455078
+    'sbg:y': 1094.5814208984375
+  - id: t
+    type: int?
+    'sbg:x': 59.672115325927734
+    'sbg:y': 590.3740234375
+  - id: T
+    type: int?
+    'sbg:x': 50.23002624511719
+    'sbg:y': 465.7384948730469
+  - id: 'Y'
+    type: boolean?
+    'sbg:x': 52.118446350097656
+    'sbg:y': 348.6695556640625
+  - id: K
+    type: int?
+    'sbg:x': 57.846099853515625
+    'sbg:y': 1635.44140625
 outputs:
   - id: picard_add_or_replace_read_groups_bam
     outputSource:
@@ -148,14 +161,26 @@ steps:
         source: M
       - id: P
         source: P
+      - id: T
+        source: T
+      - id: K
+        source: K
       - id: output
         source: output
+      - id: 'Y'
+        source: 'Y'
+      - id: t
+        source: t
+      - id: R
+        source: R
     out:
       - id: bwa_mem_output_sam
     run: ../command_line_tools/bwa_mem_0.7.17/bwa_mem_0.7.17.cwl
-    'sbg:x': 321.204833984375
-    'sbg:y': 827.0160522460938
+    'sbg:x': 311.72674560546875
+    'sbg:y': 975.3718872070312
 requirements: []
+$schemas:
+  - 'https://schema.org/version/latest/schema.rdf'
 's:author':
   - class: 's:Person'
     's:email': 'mailto:sumans@mskcc.org'
