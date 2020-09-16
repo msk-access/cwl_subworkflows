@@ -9,7 +9,6 @@ description: Specifications for performing alignment on pair-end FASTQ files.
 -   BWA mem
 -   [Picard Tools - AddOrReplaceReadGroups](https://msk-access.gitbook.io/command-line-tools-cwl/picard-tools/picard_add_or_replace_read_groups_4.1.8.1)
 
-
 ### Usage
 
 ```bash
