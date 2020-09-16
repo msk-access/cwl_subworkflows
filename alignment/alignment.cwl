@@ -56,6 +56,13 @@ inputs:
     'sbg:y': -840.7815551757812
   - id: reference
     type: File
+    secondaryFiles:
+      - .amb
+      - .ann
+      - .bwt
+      - .pac
+      - .sa
+      - .fai
     'sbg:x': 40.131065368652344
     'sbg:y': 618.1557006835938
   - id: reads
@@ -78,6 +85,10 @@ inputs:
     type: int?
     'sbg:x': 307.7873840332031
     'sbg:y': 649.9906005859375
+  - id: sample_id
+    type: string
+    'sbg:x': 40.787940979003906
+    'sbg:y': 463.85009765625
 outputs:
   - id: picard_add_or_replace_read_groups_bam
     outputSource:
@@ -131,6 +142,8 @@ steps:
           - reads
       - id: reference
         source: reference
+      - id: sample_id
+        source: sample_id
       - id: M
         source: M
       - id: P
@@ -143,8 +156,6 @@ steps:
     'sbg:x': 321.204833984375
     'sbg:y': 827.0160522460938
 requirements: []
-$schemas:
-  - 'https://schema.org/version/latest/schema.rdf'
 's:author':
   - class: 's:Person'
     's:email': 'mailto:sumans@mskcc.org'
