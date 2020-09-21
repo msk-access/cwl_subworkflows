@@ -1,0 +1,36 @@
+reference:
+  class: File
+  path: "/path/to/reference.fa"
+  secondaryFiles:
+    - class: File
+      path: "/path/to/reference.fa.amb"
+    - class: File
+      path: "/path/to/reference.fa.ann"
+    - class: File
+      path: "/path/to/reference.fa.bwt"
+    - class: File
+      path: "/path/to/reference.fa.pac"
+    - class: File
+      path: "/path/to/reference.fa.sa"
+    - class: File
+      path: "/path/to/reference.fa.fai"
+reads:
+  - class: File
+    path: "/path/to/fastq"
+sample_id: 'test'
+create_bam_index: null
+output_file_name: 'test.sam'
+read_group_description: null
+read_group_identifier: 'NA'
+read_group_library: 'NA'
+read_group_platform_unit: 'NA'
+read_group_run_date: null
+read_group_sample_name: 'NA'
+read_group_sequencing_center: 'NA'
+read_group_sequencing_platform: 'NA'
+sort_order: null
+validation_stringency: null
+output: null
+P: null
+M: null
+bam_compression_level: null
