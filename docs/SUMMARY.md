@@ -2,10 +2,10 @@
 
 -   [MSK-ACCESS sub-workflows](../README.md)
     -   [Installation and Usage](install.md)
-    -   [Alignment sub-workflow](../alignment/alignment.md)
-    -   [INDEL re-alignment sub-workflow](../indel_realignment/indel_realignment.md)
-    -   [Base Quality Score Recalibration sub-workflow](../base_quality_recalibration/base_quality_recalibration.md)
-    -   [Fgbio Separate Bams](../fgbio_separate_bams/fgbio_separate_bams.md)
+    -   [Alignment sub-workflow](../alignment/README.md)
+    -   [INDEL re-alignment sub-workflow](../indel_realignment/README.md)
+    -   [Base Quality Score Recalibration sub-workflow](../base_quality_recalibration/README.md)
+    -   [Fgbio Separate Bams](../fgbio_separate_bams/README.md)
 
 ## Github Specifications
 
