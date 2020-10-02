@@ -11,8 +11,8 @@
                         "null",
                         "boolean"
                     ],
-                    "https://www.sevenbridges.com/x": 312.82177734375,
-                    "https://www.sevenbridges.com/y": 515.8241577148438
+                    "https://www.sevenbridges.com/x": 319.15625,
+                    "https://www.sevenbridges.com/y": 852.0390625
                 },
                 {
                     "id": "#output_file_name",
@@ -20,8 +20,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": 307.83258056640625,
-                    "https://www.sevenbridges.com/y": 388.04266357421875
+                    "https://www.sevenbridges.com/x": 319.15625,
+                    "https://www.sevenbridges.com/y": 745.2109375
                 },
                 {
                     "id": "#read_group_description",
@@ -29,26 +29,26 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": 308.095947265625,
-                    "https://www.sevenbridges.com/y": 268.1795654296875
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 1388.765625
                 },
                 {
                     "id": "#read_group_identifier",
                     "type": "string",
-                    "https://www.sevenbridges.com/x": 308.8017883300781,
-                    "https://www.sevenbridges.com/y": 136.04547119140625
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 1281.9375
                 },
                 {
                     "id": "#read_group_library",
                     "type": "string",
-                    "https://www.sevenbridges.com/x": 302.01727294921875,
-                    "https://www.sevenbridges.com/y": 10.046881675720215
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 1175.109375
                 },
                 {
                     "id": "#read_group_platform_unit",
                     "type": "string",
-                    "https://www.sevenbridges.com/x": 294.26348876953125,
-                    "https://www.sevenbridges.com/y": -106.25950622558594
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 1068.28125
                 },
                 {
                     "id": "#read_group_run_date",
@@ -56,26 +56,26 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": 293.1172790527344,
-                    "https://www.sevenbridges.com/y": -220
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 961.453125
                 },
                 {
                     "id": "#read_group_sample_name",
                     "type": "string",
-                    "https://www.sevenbridges.com/x": 291.3558349609375,
-                    "https://www.sevenbridges.com/y": -338.8698425292969
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 854.625
                 },
                 {
                     "id": "#read_group_sequencing_center",
                     "type": "string",
-                    "https://www.sevenbridges.com/x": 292.3250732421875,
-                    "https://www.sevenbridges.com/y": -459.0531311035156
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 747.796875
                 },
                 {
                     "id": "#read_group_sequencing_platform",
                     "type": "string",
-                    "https://www.sevenbridges.com/x": 294.25390625,
-                    "https://www.sevenbridges.com/y": -584.0225830078125
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 640.96875
                 },
                 {
                     "id": "#sort_order",
@@ -83,8 +83,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": 289.8829345703125,
-                    "https://www.sevenbridges.com/y": -712.0499877929688
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 320.484375
                 },
                 {
                     "id": "#validation_stringency",
@@ -92,14 +92,14 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": 290.2070617675781,
-                    "https://www.sevenbridges.com/y": -838.8253784179688
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 106.828125
                 },
                 {
                     "id": "#reference",
                     "type": "File",
-                    "https://www.sevenbridges.com/x": 53.21892166137695,
-                    "https://www.sevenbridges.com/y": 838.94482421875
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 427.3125
                 },
                 {
                     "id": "#reads",
@@ -107,8 +107,8 @@
                         "type": "array",
                         "items": "File"
                     },
-                    "https://www.sevenbridges.com/x": 49.8884162902832,
-                    "https://www.sevenbridges.com/y": 964.5027465820312
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 534.140625
                 },
                 {
                     "id": "#output",
@@ -116,8 +116,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": 51.22316360473633,
-                    "https://www.sevenbridges.com/y": 1341.708984375
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 1602.421875
                 },
                 {
                     "id": "#P",
@@ -125,8 +125,8 @@
                         "null",
                         "boolean"
                     ],
-                    "https://www.sevenbridges.com/x": 48.44633102416992,
-                    "https://www.sevenbridges.com/y": 1209.7047119140625
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 1495.59375
                 },
                 {
                     "id": "#M",
@@ -134,41 +134,8 @@
                         "null",
                         "boolean"
                     ],
-                    "https://www.sevenbridges.com/x": 53,
-                    "https://www.sevenbridges.com/y": 1494.043701171875
-                },
-                {
-                    "id": "#bam_compression_level",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
-                    "https://www.sevenbridges.com/x": 307.7873840332031,
-                    "https://www.sevenbridges.com/y": 649.9906005859375
-                },
-                {
-                    "id": "#sample_id",
-                    "type": "string",
-                    "https://www.sevenbridges.com/x": 53.21892166137695,
-                    "https://www.sevenbridges.com/y": 708.4942626953125
-                },
-                {
-                    "id": "#R",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "https://www.sevenbridges.com/x": 46.45319366455078,
-                    "https://www.sevenbridges.com/y": 1094.5814208984375
-                },
-                {
-                    "id": "#t",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
-                    "https://www.sevenbridges.com/x": 59.672115325927734,
-                    "https://www.sevenbridges.com/y": 590.3740234375
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 1709.25
                 },
                 {
                     "id": "#T",
@@ -176,8 +143,8 @@
                         "null",
                         "int"
                     ],
-                    "https://www.sevenbridges.com/x": 50.23002624511719,
-                    "https://www.sevenbridges.com/y": 465.7384948730469
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 213.65625
                 },
                 {
                     "id": "#Y",
@@ -185,8 +152,8 @@
                         "null",
                         "boolean"
                     ],
-                    "https://www.sevenbridges.com/x": 52.118446350097656,
-                    "https://www.sevenbridges.com/y": 348.6695556640625
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 0
                 },
                 {
                     "id": "#K",
@@ -194,8 +161,17 @@
                         "null",
                         "int"
                     ],
-                    "https://www.sevenbridges.com/x": 57.846099853515625,
-                    "https://www.sevenbridges.com/y": 1635.44140625
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 1816.078125
+                },
+                {
+                    "id": "#bwa_number_of_threads",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 1922.90625
                 }
             ],
             "outputs": [
@@ -205,8 +181,8 @@
                         "#picard_add_or_replace_read_groups_4_1_8_1/picard_add_or_replace_read_groups_bam"
                     ],
                     "type": "File",
-                    "https://www.sevenbridges.com/x": 1446.0848388671875,
-                    "https://www.sevenbridges.com/y": 264.5576171875
+                    "https://www.sevenbridges.com/x": 1379.46142578125,
+                    "https://www.sevenbridges.com/y": 961.453125
                 }
             ],
             "steps": [
@@ -262,10 +238,6 @@
                             "source": "#validation_stringency"
                         },
                         {
-                            "id": "#picard_add_or_replace_read_groups_4_1_8_1/bam_compression_level",
-                            "source": "#bam_compression_level"
-                        },
-                        {
                             "id": "#picard_add_or_replace_read_groups_4_1_8_1/create_bam_index",
                             "source": "#create_bam_index"
                         }
@@ -277,12 +249,16 @@
                     ],
                     "run": "#picard_add_or_replace_read_groups_4.1.8.1.cwl",
                     "label": "picard_add_or_replace_read_groups_4.1.8.1",
-                    "https://www.sevenbridges.com/x": 905.8611450195312,
-                    "https://www.sevenbridges.com/y": 259.5883483886719
+                    "https://www.sevenbridges.com/x": 737.3328857421875,
+                    "https://www.sevenbridges.com/y": 870.453125
                 },
                 {
                     "id": "#bwa_mem_0_7_17",
                     "in": [
+                        {
+                            "id": "#bwa_mem_0_7_17/number_of_threads",
+                            "source": "#bwa_number_of_threads"
+                        },
                         {
                             "id": "#bwa_mem_0_7_17/reads",
                             "source": [
@@ -292,10 +268,6 @@
                         {
                             "id": "#bwa_mem_0_7_17/reference",
                             "source": "#reference"
-                        },
-                        {
-                            "id": "#bwa_mem_0_7_17/sample_id",
-                            "source": "#sample_id"
                         },
                         {
                             "id": "#bwa_mem_0_7_17/M",
@@ -320,14 +292,6 @@
                         {
                             "id": "#bwa_mem_0_7_17/Y",
                             "source": "#Y"
-                        },
-                        {
-                            "id": "#bwa_mem_0_7_17/t",
-                            "source": "#t"
-                        },
-                        {
-                            "id": "#bwa_mem_0_7_17/R",
-                            "source": "#R"
                         }
                     ],
                     "out": [
@@ -336,8 +300,9 @@
                         }
                     ],
                     "run": "#bwa_mem_0.7.17.cwl",
-                    "https://www.sevenbridges.com/x": 311.72674560546875,
-                    "https://www.sevenbridges.com/y": 975.3718872070312
+                    "label": "bwa_mem_0.7.17",
+                    "https://www.sevenbridges.com/x": 319.15625,
+                    "https://www.sevenbridges.com/y": 1014.8671875
                 }
             ],
             "requirements": [],
@@ -398,6 +363,29 @@
             ],
             "inputs": [
                 {
+                    "id": "#bwa_mem_0.7.17.cwl/memory_per_job",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "doc": "Memory per job in megabytes"
+                },
+                {
+                    "id": "#bwa_mem_0.7.17.cwl/memory_overhead",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "doc": "Memory overhead per job in megabytes"
+                },
+                {
+                    "id": "#bwa_mem_0.7.17.cwl/number_of_threads",
+                    "type": [
+                        "null",
+                        "int"
+                    ]
+                },
+                {
                     "id": "#bwa_mem_0.7.17.cwl/reads",
                     "type": {
                         "type": "array",
@@ -423,19 +411,7 @@
                     ]
                 },
                 {
-                    "id": "#bwa_mem_0.7.17.cwl/sample_id",
-                    "type": "string"
-                },
-                {
-                    "id": "#bwa_mem_0.7.17.cwl/lane_id",
-                    "type": [
-                        "null",
-                        "string"
-                    ]
-                },
-                {
                     "id": "#bwa_mem_0.7.17.cwl/A",
-                    "doc": "score for a sequence match, which scales options -TdBOELU unless overridden [1]",
                     "type": [
                         "null",
                         "int"
@@ -443,11 +419,11 @@
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-A"
-                    }
+                    },
+                    "doc": "score for a sequence match, which scales options -TdBOELU unless overridden [1]"
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/B",
-                    "doc": "penalty for a mismatch [4]",
                     "type": [
                         "null",
                         "int"
@@ -455,11 +431,11 @@
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-B"
-                    }
+                    },
+                    "doc": "penalty for a mismatch [4]"
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/C",
-                    "doc": "append FASTA/FASTQ comment to SAM output",
                     "type": [
                         "null",
                         "boolean"
@@ -467,11 +443,11 @@
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-C"
-                    }
+                    },
+                    "doc": "append FASTA/FASTQ comment to SAM output"
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/E",
-                    "doc": "gap extension penalty; a gap of size k cost '{-O} + {-E}*k' [1,1]",
                     "type": [
                         "null",
                         {
@@ -483,11 +459,11 @@
                         "position": 0,
                         "prefix": "-E",
                         "itemSeparator": ","
-                    }
+                    },
+                    "doc": "gap extension penalty; a gap of size k cost '{-O} + {-E}*k' [1,1]"
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/L",
-                    "doc": "penalty for 5'- and 3'-end clipping [5,5]",
                     "type": [
                         "null",
                         {
@@ -499,7 +475,8 @@
                         "position": 0,
                         "prefix": "-L",
                         "itemSeparator": ","
-                    }
+                    },
+                    "doc": "penalty for 5'- and 3'-end clipping [5,5]"
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/M",
@@ -514,7 +491,6 @@
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/O",
-                    "doc": "gap open penalties for deletions and insertions [6,6]",
                     "type": [
                         "null",
                         {
@@ -526,11 +502,11 @@
                         "position": 0,
                         "prefix": "-O",
                         "itemSeparator": ","
-                    }
+                    },
+                    "doc": "gap open penalties for deletions and insertions [6,6]"
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/P",
-                    "doc": "skip pairing; mate rescue performed unless -S also in use",
                     "type": [
                         "null",
                         "boolean"
@@ -538,11 +514,11 @@
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-P"
-                    }
+                    },
+                    "doc": "skip pairing; mate rescue performed unless -S also in use"
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/S",
-                    "doc": "skip mate rescue",
                     "type": [
                         "null",
                         "boolean"
@@ -550,11 +526,11 @@
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-S"
-                    }
+                    },
+                    "doc": "skip mate rescue"
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/T",
-                    "doc": "minimum score to output [30]",
                     "type": [
                         "null",
                         "int"
@@ -562,11 +538,11 @@
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-T"
-                    }
+                    },
+                    "doc": "minimum score to output [30]"
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/U",
-                    "doc": "penalty for an unpaired read pair [17]",
                     "type": [
                         "null",
                         "int"
@@ -574,11 +550,11 @@
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-U"
-                    }
+                    },
+                    "doc": "penalty for an unpaired read pair [17]"
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/a",
-                    "doc": "output all alignments for SE or unpaired PE",
                     "type": [
                         "null",
                         "boolean"
@@ -586,11 +562,11 @@
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-a"
-                    }
+                    },
+                    "doc": "output all alignments for SE or unpaired PE"
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/c",
-                    "doc": "skip seeds with more than INT occurrences [500]",
                     "type": [
                         "null",
                         "int"
@@ -598,11 +574,11 @@
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-c"
-                    }
+                    },
+                    "doc": "skip seeds with more than INT occurrences [500]"
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/d",
-                    "doc": "off-diagonal X-dropoff [100]",
                     "type": [
                         "null",
                         "int"
@@ -610,11 +586,11 @@
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-d"
-                    }
+                    },
+                    "doc": "off-diagonal X-dropoff [100]"
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/k",
-                    "doc": "minimum seed length [19]",
                     "type": [
                         "null",
                         "int"
@@ -622,11 +598,11 @@
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-k"
-                    }
+                    },
+                    "doc": "minimum seed length [19]"
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/K",
-                    "doc": "process INT input bases in each batch regardless of nThreads (for reproducibility) []",
                     "type": [
                         "null",
                         "int"
@@ -634,7 +610,8 @@
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-K"
-                    }
+                    },
+                    "doc": "process INT input bases in each batch regardless of nThreads (for reproducibility) []"
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/output",
@@ -645,7 +622,6 @@
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/p",
-                    "doc": "smart pairing (ignoring in2.fq)",
                     "type": [
                         "null",
                         "boolean"
@@ -653,11 +629,11 @@
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-p"
-                    }
+                    },
+                    "doc": "smart pairing (ignoring in2.fq)"
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/r",
-                    "doc": "look for internal seeds inside a seed longer than {-k} * FLOAT [1.5]",
                     "type": [
                         "null",
                         "float"
@@ -665,11 +641,11 @@
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-r"
-                    }
+                    },
+                    "doc": "look for internal seeds inside a seed longer than {-k} * FLOAT [1.5]"
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/v",
-                    "doc": "verbosity level: 1=error, 2=warning, 3=message, 4+=debugging [3]",
                     "type": [
                         "null",
                         "int"
@@ -677,11 +653,11 @@
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-v"
-                    }
+                    },
+                    "doc": "verbosity level: 1=error, 2=warning, 3=message, 4+=debugging [3]"
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/w",
-                    "doc": "band width for banded alignment [100]",
                     "type": [
                         "null",
                         "int"
@@ -689,11 +665,11 @@
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-w"
-                    }
+                    },
+                    "doc": "band width for banded alignment [100]"
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/y",
-                    "doc": "seed occurrence for the 3rd round seeding [20]",
                     "type": [
                         "null",
                         "int"
@@ -701,11 +677,11 @@
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-y"
-                    }
+                    },
+                    "doc": "seed occurrence for the 3rd round seeding [20]"
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/D",
-                    "doc": "drop chains shorter than FLOAT fraction of the longest overlapping chain [0.50]",
                     "type": [
                         "null",
                         "float"
@@ -713,11 +689,11 @@
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-D"
-                    }
+                    },
+                    "doc": "drop chains shorter than FLOAT fraction of the longest overlapping chain [0.50]"
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/W",
-                    "doc": "discard a chain if seeded bases shorter than INT [0]",
                     "type": [
                         "null",
                         "int"
@@ -725,11 +701,11 @@
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-W"
-                    }
+                    },
+                    "doc": "discard a chain if seeded bases shorter than INT [0]"
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/m",
-                    "doc": "perform at most INT rounds of mate rescues for each read [50]",
                     "type": [
                         "null",
                         "int"
@@ -737,7 +713,8 @@
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-m"
-                    }
+                    },
+                    "doc": "perform at most INT rounds of mate rescues for each read [50]"
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/e",
@@ -752,7 +729,6 @@
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/x",
-                    "doc": "read type. Setting -x changes multiple parameters unless overridden [null] pacbio: -k17 -W40 -r10 -A1 -B1 -O1 -E1 -L0  (PacBio reads to ref) ont2d: -k14 -W20 -r10 -A1 -B1 -O1 -E1 -L0  (Oxford Nanopore 2D-reads to ref) intractg: -B9 -O16 -L5  (intra-species contigs to ref)",
                     "type": [
                         "null",
                         "string"
@@ -760,24 +736,23 @@
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-x"
-                    }
+                    },
+                    "doc": "read type. Setting -x changes multiple parameters unless overridden [null] pacbio: -k17 -W40 -r10 -A1 -B1 -O1 -E1 -L0  (PacBio reads to ref) ont2d: -k14 -W20 -r10 -A1 -B1 -O1 -E1 -L0  (Oxford Nanopore 2D-reads to ref) intractg: -B9 -O16 -L5  (intra-species contigs to ref)"
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/H",
-                    "doc": "if there are <INT hits with score >80% of the max score, output all in XA [5,200]",
                     "type": [
                         "null",
-                        "File",
-                        "string"
+                        "boolean"
                     ],
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-H"
-                    }
+                    },
+                    "doc": "Use hard clipping \u2019H\u2019 in the SAM output. This option may dramatically reduce the redundancy of output when mapping long contig or BAC sequences"
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/j",
-                    "doc": "treat ALT contigs as part of the primary assembly (i.e. ignore <idxbase>.alt file)",
                     "type": [
                         "null",
                         "File"
@@ -785,11 +760,11 @@
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-j"
-                    }
+                    },
+                    "doc": "treat ALT contigs as part of the primary assembly (i.e. ignore <idxbase>.alt file)"
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/he",
-                    "doc": "if there are <INT hits with score >80% of the max score, output all in XA [5,200]",
                     "type": [
                         "null",
                         {
@@ -801,11 +776,11 @@
                         "position": 0,
                         "prefix": "-h",
                         "itemSeparator": ","
-                    }
+                    },
+                    "doc": "if there are <INT hits with score >80% of the max score, output all in XA [5,200]"
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/V",
-                    "doc": "output the reference FASTA header in the XR tag",
                     "type": [
                         "null",
                         "boolean"
@@ -813,11 +788,11 @@
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-V"
-                    }
+                    },
+                    "doc": "output the reference FASTA header in the XR tag"
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/Y",
-                    "doc": "use soft clipping for supplementary alignments",
                     "type": [
                         "null",
                         "boolean"
@@ -825,7 +800,8 @@
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-Y"
-                    }
+                    },
+                    "doc": "use soft clipping for supplementary alignments"
                 },
                 {
                     "id": "#bwa_mem_0.7.17.cwl/I",
@@ -839,28 +815,54 @@
                     }
                 },
                 {
-                    "id": "#bwa_mem_0.7.17.cwl/t",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "-t"
-                    },
-                    "doc": "Number of threads"
-                },
-                {
                     "id": "#bwa_mem_0.7.17.cwl/R",
                     "type": [
                         "null",
                         "string"
                     ],
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "-R"
-                    },
                     "doc": "STR read group header line such as '@RG\\tID -foo\\tSM -bar' [null]"
+                },
+                {
+                    "id": "#bwa_mem_0.7.17.cwl/sample_id",
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                {
+                    "id": "#bwa_mem_0.7.17.cwl/lane_id",
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                {
+                    "id": "#bwa_mem_0.7.17.cwl/platform",
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                {
+                    "id": "#bwa_mem_0.7.17.cwl/platform_unit",
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                {
+                    "id": "#bwa_mem_0.7.17.cwl/center_name",
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                {
+                    "id": "#bwa_mem_0.7.17.cwl/library_id",
+                    "type": [
+                        "null",
+                        "string"
+                    ]
                 }
             ],
             "outputs": [
@@ -872,11 +874,25 @@
                     }
                 }
             ],
+            "doc": "bwa mem [-aCHMpP] [-t nThreads] [-k minSeedLen] [-w bandWidth] [-d zDropoff] [-r seedSplitRatio] [-c maxOcc] [-A matchScore] [-B mmPenalty] [-O gapOpenPen] [-E gapExtPen] [-L clipPen] [-U unpairPen] [-R RGline] [-v verboseLevel] db.prefix reads.fq [mates.fq]\nAlign 70bp-1Mbp query sequences with the BWA-MEM algorithm. Briefly, the algorithm works by seeding alignments with maximal exact matches (MEMs) and then extending seeds with the affine-gap Smith-Waterman algorithm (SW).\n\nIf mates.fq file is absent and option -p is not set, this command regards input reads are single-end. If mates.fq is present, this command assumes the i-th read in reads.fq and the i-th read in mates.fq constitute a read pair. If -p is used, the command assumes the 2i-th and the (2i+1)-th read in reads.fq constitute a read pair (such input file is said to be interleaved). In this case, mates.fq is ignored. In the paired-end mode, the mem command will infer the read orientation and the insert size distribution from a batch of reads.\n\nThe BWA-MEM algorithm performs local alignment. It may produce multiple primary alignments for different part of a query sequence. This is a crucial feature for long sequences. However, some tools such as Picard\u2019s markDuplicates does not work with split alignments. One may consider to use option -M to flag shorter split hits as secondary.",
+            "label": "bwa_mem_0.7.17",
+            "arguments": [
+                {
+                    "position": 0,
+                    "prefix": "-t",
+                    "valueFrom": "$(runtime.cores)"
+                },
+                {
+                    "position": 0,
+                    "prefix": "-R",
+                    "valueFrom": "${\n    if (inputs.sample_id) {\n        var rg_id = \"@RG\\\\tID:\" + inputs.sample_id + \"\\\\tSM:\" + inputs.sample_id;\n        if (inputs.library_id) {\n            rg_id += \"\\\\tLB:\" + inputs.library_id;\n        } if (inputs.platform) {\n            rg_id += \"\\\\tPL:\" + inputs.platform;\n        } if (inputs.platform_unit) {\n            rg_id += \"\\\\tPU:\" + inputs.platform_unit;\n        } if (inputs.center_name) {\n            rg_id += \"\\\\tCN:\" + inputs.center_name;\n        }\n        return rg_id\n    } else {\n        return inputs.R\n    }\n}"
+                }
+            ],
             "requirements": [
                 {
                     "class": "ResourceRequirement",
-                    "ramMin": 32000,
-                    "coresMin": 4
+                    "ramMin": "${ if(inputs.memory_per_job && inputs.memory_overhead) { return inputs.memory_per_job + inputs.memory_overhead } else if (inputs.memory_per_job && !inputs.memory_overhead){ return inputs.memory_per_job + 2000 } else if(!inputs.memory_per_job && inputs.memory_overhead){ return 32000 + inputs.memory_overhead } else { return 32000 } }",
+                    "coresMin": "${ if (inputs.number_of_threads) { return inputs.number_of_threads } else { return 16 } }"
                 },
                 {
                     "class": "DockerRequirement",
@@ -887,7 +903,40 @@
                 }
             ],
             "stdout": "${\n  if (inputs.output)\n    return inputs.output;\n  return inputs.reads[0].basename.replace(/(fastq.gz)|(fq.gz)/, 'sam');\n}",
-            "id": "#bwa_mem_0.7.17.cwl"
+            "id": "#bwa_mem_0.7.17.cwl",
+            "http://purl.org/dc/terms/contributor": [
+                {
+                    "class": "http://xmlns.com/foaf/0.1/Organization",
+                    "http://xmlns.com/foaf/0.1/member": [
+                        {
+                            "class": "http://xmlns.com/foaf/0.1/Person",
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:shahr2@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Ronak Shah"
+                        }
+                    ],
+                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
+                }
+            ],
+            "http://purl.org/dc/terms/creator": [
+                {
+                    "class": "http://xmlns.com/foaf/0.1/Organization",
+                    "http://xmlns.com/foaf/0.1/member": [
+                        {
+                            "class": "http://xmlns.com/foaf/0.1/Person",
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:johnsoni@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Ian Johnson"
+                        }
+                    ],
+                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
+                }
+            ],
+            "http://usefulinc.com/ns/doap#release": [
+                {
+                    "class": "http://usefulinc.com/ns/doap#Version",
+                    "http://usefulinc.com/ns/doap#name": "bwa",
+                    "http://usefulinc.com/ns/doap#revision": "0.7.17"
+                }
+            ]
         },
         {
             "class": "CommandLineTool",
@@ -1187,6 +1236,6 @@
     ],
     "cwlVersion": "v1.0",
     "$schemas": [
-        "https://schema.org/version/latest/schema.rdf"
+        "http://schema.org/version/9.0/schemaorg-current-http.rdf"
     ]
 }

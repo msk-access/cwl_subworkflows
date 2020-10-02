@@ -1315,6 +1315,6 @@
     ],
     "cwlVersion": "v1.0",
     "$schemas": [
-        "https://schema.org/version/latest/schema.rdf"
+        "http://schema.org/version/9.0/schemaorg-current-http.rdf"
     ]
 }

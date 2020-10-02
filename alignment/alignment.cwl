@@ -8,108 +8,96 @@ $namespaces:
 inputs:
   - id: create_bam_index
     type: boolean?
-    'sbg:x': 312.82177734375
-    'sbg:y': 515.8241577148438
+    'sbg:x': 319.15625
+    'sbg:y': 852.0390625
   - id: output_file_name
     type: string?
-    'sbg:x': 307.83258056640625
-    'sbg:y': 388.04266357421875
+    'sbg:x': 319.15625
+    'sbg:y': 745.2109375
   - id: read_group_description
     type: string?
-    'sbg:x': 308.095947265625
-    'sbg:y': 268.1795654296875
+    'sbg:x': 0
+    'sbg:y': 1388.765625
   - id: read_group_identifier
     type: string
-    'sbg:x': 308.8017883300781
-    'sbg:y': 136.04547119140625
+    'sbg:x': 0
+    'sbg:y': 1281.9375
   - id: read_group_library
     type: string
-    'sbg:x': 302.01727294921875
-    'sbg:y': 10.046881675720215
+    'sbg:x': 0
+    'sbg:y': 1175.109375
   - id: read_group_platform_unit
     type: string
-    'sbg:x': 294.26348876953125
-    'sbg:y': -106.25950622558594
+    'sbg:x': 0
+    'sbg:y': 1068.28125
   - id: read_group_run_date
     type: string?
-    'sbg:x': 293.1172790527344
-    'sbg:y': -220
+    'sbg:x': 0
+    'sbg:y': 961.453125
   - id: read_group_sample_name
     type: string
-    'sbg:x': 291.3558349609375
-    'sbg:y': -338.8698425292969
+    'sbg:x': 0
+    'sbg:y': 854.625
   - id: read_group_sequencing_center
     type: string
-    'sbg:x': 292.3250732421875
-    'sbg:y': -459.0531311035156
+    'sbg:x': 0
+    'sbg:y': 747.796875
   - id: read_group_sequencing_platform
     type: string
-    'sbg:x': 294.25390625
-    'sbg:y': -584.0225830078125
+    'sbg:x': 0
+    'sbg:y': 640.96875
   - id: sort_order
     type: string?
-    'sbg:x': 289.8829345703125
-    'sbg:y': -712.0499877929688
+    'sbg:x': 0
+    'sbg:y': 320.484375
   - id: validation_stringency
     type: string?
-    'sbg:x': 290.2070617675781
-    'sbg:y': -838.8253784179688
+    'sbg:x': 0
+    'sbg:y': 106.828125
   - id: reference
     type: File
-    'sbg:x': 53.21892166137695
-    'sbg:y': 838.94482421875
+    'sbg:x': 0
+    'sbg:y': 427.3125
   - id: reads
     type: 'File[]'
-    'sbg:x': 49.8884162902832
-    'sbg:y': 964.5027465820312
+    'sbg:x': 0
+    'sbg:y': 534.140625
   - id: output
     type: string?
-    'sbg:x': 51.22316360473633
-    'sbg:y': 1341.708984375
+    'sbg:x': 0
+    'sbg:y': 1602.421875
   - id: P
     type: boolean?
-    'sbg:x': 48.44633102416992
-    'sbg:y': 1209.7047119140625
+    'sbg:x': 0
+    'sbg:y': 1495.59375
   - id: M
     type: boolean?
-    'sbg:x': 53
-    'sbg:y': 1494.043701171875
-  - id: bam_compression_level
-    type: int?
-    'sbg:x': 307.7873840332031
-    'sbg:y': 649.9906005859375
-  - id: sample_id
-    type: string
-    'sbg:x': 53.21892166137695
-    'sbg:y': 708.4942626953125
-  - id: R
-    type: string?
-    'sbg:x': 46.45319366455078
-    'sbg:y': 1094.5814208984375
-  - id: t
-    type: int?
-    'sbg:x': 59.672115325927734
-    'sbg:y': 590.3740234375
+    'sbg:x': 0
+    'sbg:y': 1709.25
   - id: T
     type: int?
-    'sbg:x': 50.23002624511719
-    'sbg:y': 465.7384948730469
+    'sbg:x': 0
+    'sbg:y': 213.65625
   - id: 'Y'
     type: boolean?
-    'sbg:x': 52.118446350097656
-    'sbg:y': 348.6695556640625
+    'sbg:x': 0
+    'sbg:y': 0
   - id: K
     type: int?
-    'sbg:x': 57.846099853515625
-    'sbg:y': 1635.44140625
+    'sbg:x': 0
+    'sbg:y': 1816.078125
+  - id: bwa_number_of_threads
+    type: int?
+    'sbg:x': 0
+    'sbg:y': 1922.90625
 outputs:
   - id: picard_add_or_replace_read_groups_bam
     outputSource:
       - >-
         picard_add_or_replace_read_groups_4_1_8_1/picard_add_or_replace_read_groups_bam
     type: File
-    'sbg:x': 1446.0848388671875
-    'sbg:y': 264.5576171875
+    'sbg:x': 1379.46142578125
+    'sbg:y': 961.453125
 steps:
   - id: picard_add_or_replace_read_groups_4_1_8_1
     in:
@@ -137,8 +125,6 @@ steps:
         source: read_group_run_date
       - id: validation_stringency
         source: validation_stringency
-      - id: bam_compression_level
-        source: bam_compression_level
       - id: create_bam_index
         source: create_bam_index
     out:
@@ -146,17 +132,17 @@ steps:
     run: >-
       ../command_line_tools/picard_add_or_replace_read_groups_4.1.8.1/picard_add_or_replace_read_groups_4.1.8.1.cwl
     label: picard_add_or_replace_read_groups_4.1.8.1
-    'sbg:x': 905.8611450195312
-    'sbg:y': 259.5883483886719
+    'sbg:x': 737.3328857421875
+    'sbg:y': 870.453125
   - id: bwa_mem_0_7_17
     in:
+      - id: number_of_threads
+        source: bwa_number_of_threads
       - id: reads
         source:
           - reads
       - id: reference
         source: reference
-      - id: sample_id
-        source: sample_id
       - id: M
         source: M
       - id: P
@@ -169,15 +155,12 @@ steps:
         source: output
       - id: 'Y'
         source: 'Y'
-      - id: t
-        source: t
-      - id: R
-        source: R
     out:
       - id: bwa_mem_output_sam
     run: ../command_line_tools/bwa_mem_0.7.17/bwa_mem_0.7.17.cwl
-    'sbg:x': 311.72674560546875
-    'sbg:y': 975.3718872070312
+    label: bwa_mem_0.7.17
+    'sbg:x': 319.15625
+    'sbg:y': 1014.8671875
 requirements: []
 $schemas:
   - 'http://schema.org/version/9.0/schemaorg-current-http.rdf'
