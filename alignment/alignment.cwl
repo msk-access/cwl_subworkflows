@@ -56,6 +56,14 @@ inputs:
     'sbg:y': 106.828125
   - id: reference
     type: File
+    secondaryFiles:
+      - .amb
+      - .fai
+      - .sa
+      - ^.dict
+      - .ann
+      - .bwt
+      - .pac
     'sbg:x': 0
     'sbg:y': 427.3125
   - id: reads
@@ -96,6 +104,8 @@ outputs:
       - >-
         picard_add_or_replace_read_groups_4_1_8_1/picard_add_or_replace_read_groups_bam
     type: File
+    secondaryFiles:
+      - ^.bai?
     'sbg:x': 1379.46142578125
     'sbg:y': 961.453125
 steps:
