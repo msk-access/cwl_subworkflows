@@ -71,7 +71,7 @@ outputs:
   - id: gatk_apply_bqsr_bam
     outputSource:
       - gatk_apply_bqsr_4_1_8_1/gatk_apply_bqsr_bam
-    type: File?
+    type: File
     secondaryFiles:
       - ^.bai?
     'sbg:x': 1060.585205078125
