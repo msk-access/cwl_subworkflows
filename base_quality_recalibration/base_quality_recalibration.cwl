@@ -47,7 +47,6 @@ inputs:
     'sbg:y': 961.734375
   - id: disable_read_filter
     type:
-      - 'null'
       - type: array
         items: string
         inputBinding:
