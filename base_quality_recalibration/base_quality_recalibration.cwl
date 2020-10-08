@@ -21,10 +21,11 @@ inputs:
     'sbg:y': 0
   - id: read_filter
     type:
-      type: array
-      items: string
-      inputBinding:
-        prefix: '--read-filter'
+      - 'null'
+      - type: array
+        items: string
+        inputBinding:
+          prefix: '--read-filter'
     'sbg:x': 0
     'sbg:y': 106.859375
   - id: known_sites
@@ -47,10 +48,11 @@ inputs:
     'sbg:y': 961.734375
   - id: disable_read_filter
     type:
-      type: array
-      items: string
-      inputBinding:
-        prefix: '--disable-read-filter'
+      - 'null'
+      - type: array
+        items: string
+        inputBinding:
+          prefix: '--disable-read-filter'
     'sbg:x': 0
     'sbg:y': 534.296875
   - id: lenient
