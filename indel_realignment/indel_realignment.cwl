@@ -21,7 +21,7 @@ inputs:
   - id: reference_fasta
     type: File
     secondaryFiles:
-      - ^.fasta.fai
+      - .fai
     'sbg:x': 0
     'sbg:y': 533.359375
   - id: no_sort
@@ -37,10 +37,7 @@ inputs:
     'sbg:x': 0
     'sbg:y': 1279.796875
   - id: input_bam
-    type:
-      - File
-      - type: array
-        items: File
+    type: File
     secondaryFiles:
       - ^.bai
     'sbg:x': 0
@@ -141,6 +138,7 @@ steps:
       - id: ignore_bad_assembly
         source: ignore_bad_assembly
       - id: bam_index
+        default: true
         source: bam_index
       - id: no_edge_complex_indel
         source: no_edge_complex_indel
