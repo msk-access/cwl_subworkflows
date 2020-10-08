@@ -105,7 +105,7 @@ outputs:
         picard_add_or_replace_read_groups_4_1_8_1/picard_add_or_replace_read_groups_bam
     type: File
     secondaryFiles:
-      - ^.bai?
+      - ^.bai
     'sbg:x': 1379.46142578125
     'sbg:y': 961.453125
 steps:

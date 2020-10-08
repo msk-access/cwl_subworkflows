@@ -73,7 +73,7 @@ outputs:
       - gatk_apply_bqsr_4_1_8_1/gatk_apply_bqsr_bam
     type: File
     secondaryFiles:
-      - ^.bai?
+      - ^.bai
     'sbg:x': 1060.585205078125
     'sbg:y': 772.228271484375
 steps:

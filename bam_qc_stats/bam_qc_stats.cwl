@@ -3,6 +3,7 @@ cwlVersion: v1.0
 id: bam_qc_stats
 label: bam_qc_stats
 $namespaces:
+  s: 'https://schema.org/'
   sbg: 'https://www.sevenbridges.com/'
 inputs:
   - id: input
@@ -109,21 +110,19 @@ steps:
     'sbg:x': -52.185672760009766
     'sbg:y': 62.291622161865234
 requirements: []
-'dct:contributor':
-  - class: 'foaf:Organization'
-    'foaf:member':
-      - class: 'foaf:Person'
-        'foaf:mbox': 'mailto:murphyc4@mskcc.org'
-        'foaf:name': Charles Murphy
-    'foaf:name': Memorial Sloan Kettering Cancer Center
-'dct:creator':
-  - class: 'foaf:Organization'
-    'foaf:member':
-      - class: 'foaf:Person'
-        'foaf:mbox': 'mailto:murphyc4@mskcc.org'
-        'foaf:name': Charles Murphy
-    'foaf:name': Memorial Sloan Kettering Cancer Center
-'doap:release':
-  - class: 'doap:Version'
-    'doap:name': bam_qc_stats
-    'doap:revision': 1.0
+$schemas:
+  - 'http://schema.org/version/9.0/schemaorg-current-http.rdf'
+'s:author':
+  - class: 's:Person'
+    's:email': 'mailto:murphyc4@mskcc.org'
+    's:identifier': ''
+    's:name': Charles Murphy
+'s:citation': ''
+'s:codeRepository': 'https://github.com/msk-access/uncollapsed_bam_generation'
+'s:contributor':
+  - class: 's:Person'
+    's:email': 'mailto:shahr2@mskcc.org'
+    's:identifier': 'https://orcid.org/0000-0001-9042-6213'
+    's:name': Ronak Shah
+'s:dateCreated': '2020-09-23'
+'s:license': 'https://spdx.org/licenses/Apache-2.0'
