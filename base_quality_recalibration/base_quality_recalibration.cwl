@@ -21,7 +21,6 @@ inputs:
     'sbg:y': 0
   - id: read_filter
     type:
-      - 'null'
       - type: array
         items: string
         inputBinding:
