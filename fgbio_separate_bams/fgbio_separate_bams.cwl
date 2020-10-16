@@ -9,7 +9,7 @@ inputs:
   - id: reference_fasta
     type: File
     secondaryFiles:
-      - ^.fai
+      - .fai
       - ^.dict
     'sbg:x': 0
     'sbg:y': 747.109375
