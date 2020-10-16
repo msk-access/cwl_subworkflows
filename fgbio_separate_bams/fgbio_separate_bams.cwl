@@ -158,13 +158,6 @@ outputs:
       - ^.bai
     'sbg:x': 1543.551025390625
     'sbg:y': 1749.21875
-  - id: gatk_collect_alignment_summary_metrics_txt_simplex
-    outputSource:
-      - >-
-        gatk_collect_alignment_summary_metrics_4.1.8.0_duplex/gatk_collect_alignment_summary_metrics_txt
-    type: File
-    'sbg:x': 1543.551025390625
-    'sbg:y': 1345.015625
   - id: gatk_collect_alignment_summary_metrics_txt_duplex
     outputSource:
       - >-
@@ -181,6 +174,13 @@ outputs:
       - ^.bai
     'sbg:x': 1039.097900390625
     'sbg:y': 1614.484375
+  - id: gatk_collect_alignment_summary_metrics_txt_simplex
+    outputSource:
+      - >-
+        gatk_collect_alignment_summary_metrics_4.1.8.0_simplex/gatk_collect_alignment_summary_metrics_txt
+    type: File
+    'sbg:x': 1844.8406982421875
+    'sbg:y': 1597.18408203125
 steps:
   - id: fgbio_filter_consensus_reads_1_2_0_duplex
     in:
