@@ -12,13 +12,13 @@ inputs:
       - .fai
       - ^.dict
     'sbg:x': 0
-    'sbg:y': 747.109375
+    'sbg:y': 747.0703125
   - id: input
     type: File
     secondaryFiles:
       - ^.bai
     'sbg:x': 0
-    'sbg:y': 3094.265625
+    'sbg:y': 3092.9765625
   - id: reverse_per_base_tags_simplex_duplex
     type: boolean?
     'sbg:x': 0
@@ -30,43 +30,43 @@ inputs:
   - id: output_file_name_simplex_duplex
     type: string?
     'sbg:x': 0
-    'sbg:y': 853.78125
+    'sbg:y': 853.6640625
   - id: number_of_threads
     type: int?
     'sbg:x': 0
-    'sbg:y': 1387.140625
+    'sbg:y': 1386.6328125
   - id: min_reads_simplex_duplex
     type: 'int[]'
     'sbg:x': 0
-    'sbg:y': 1600.484375
+    'sbg:y': 1599.8203125
   - id: min_mean_base_quality_simplex_duplex
     type: int?
     'sbg:x': 0
-    'sbg:y': 1813.859375
+    'sbg:y': 1813.078125
   - id: max_base_error_rate_simplex_duplex
     type: 'float[]?'
     'sbg:x': 0
-    'sbg:y': 2880.921875
+    'sbg:y': 2879.7890625
   - id: max_no_call_fraction_simplex_duplex
     type: float?
     'sbg:x': 0
-    'sbg:y': 2667.578125
+    'sbg:y': 2666.6015625
   - id: min_base_quality_simplex_duplex
     type: int?
     'sbg:x': 0
-    'sbg:y': 2027.328125
+    'sbg:y': 2026.546875
   - id: memory_per_job
     type: int?
     'sbg:x': 0
-    'sbg:y': 2240.796875
+    'sbg:y': 2240.015625
   - id: memory_overhead
     type: int?
     'sbg:x': 0
-    'sbg:y': 2347.53125
+    'sbg:y': 2346.75
   - id: max_read_error_rate_simplex_duplex
     type: 'float[]?'
     'sbg:x': 0
-    'sbg:y': 2454.234375
+    'sbg:y': 2453.4140625
   - id: reverse_per_base_tags_duplex
     type: boolean?
     'sbg:x': 0
@@ -78,31 +78,31 @@ inputs:
   - id: output_file_name_duplex
     type: string?
     'sbg:x': 0
-    'sbg:y': 1280.46875
+    'sbg:y': 1280.0390625
   - id: min_reads_duplex
     type: 'int[]'
     'sbg:x': 0
-    'sbg:y': 1707.15625
+    'sbg:y': 1706.4140625
   - id: min_mean_base_quality_duplex
     type: int?
     'sbg:x': 0
-    'sbg:y': 1920.59375
+    'sbg:y': 1919.8125
   - id: min_base_quality_duplex
     type: int?
     'sbg:x': 0
-    'sbg:y': 2134.0625
+    'sbg:y': 2133.28125
   - id: max_read_error_rate_duplex
     type: 'float[]?'
     'sbg:x': 0
-    'sbg:y': 2560.90625
+    'sbg:y': 2560.0078125
   - id: max_no_call_fraction_duplex
     type: float?
     'sbg:x': 0
-    'sbg:y': 2774.25
+    'sbg:y': 2773.1953125
   - id: max_base_error_rate_duplex
     type: 'float[]?'
     'sbg:x': 0
-    'sbg:y': 2987.59375
+    'sbg:y': 2986.3828125
   - id: validation_stringency
     type: string?
     'sbg:x': 0
@@ -118,27 +118,27 @@ inputs:
   - id: output_file_name_duplex_aln_metrics
     type: string?
     'sbg:x': 0
-    'sbg:y': 1173.796875
+    'sbg:y': 1173.4453125
   - id: create_index
     type: boolean?
-    'sbg:x': 454.71875
-    'sbg:y': 1684.515625
+    'sbg:x': 454.703125
+    'sbg:y': 1683.890625
   - id: assume_sorted
     type: boolean?
-    'sbg:x': 454.71875
-    'sbg:y': 1791.1875
+    'sbg:x': 454.703125
+    'sbg:y': 1790.484375
   - id: output_file_name_simplex_aln_metrics
     type: string?
     'sbg:x': 0
-    'sbg:y': 960.453125
+    'sbg:y': 960.2578125
   - id: output_file_name_simpex
     type: string?
     'sbg:x': 0
-    'sbg:y': 1067.125
+    'sbg:y': 1066.8515625
   - id: min_simplex_reads
     type: int?
     'sbg:x': 0
-    'sbg:y': 1493.8125
+    'sbg:y': 1493.2265625
 outputs:
   - id: fgbio_filter_consensus_reads_duplex_bam
     outputSource:
@@ -147,8 +147,8 @@ outputs:
     type: File
     secondaryFiles:
       - ^.bai
-    'sbg:x': 1039.097900390625
-    'sbg:y': 1721.21875
+    'sbg:x': 1039.082275390625
+    'sbg:y': 1720.5546875
   - id: fgbio_postprocessing_simplex_bam
     outputSource:
       - >-
@@ -156,15 +156,15 @@ outputs:
     type: File
     secondaryFiles:
       - ^.bai
-    'sbg:x': 1543.551025390625
-    'sbg:y': 1749.21875
+    'sbg:x': 1556.7442626953125
+    'sbg:y': 1702.3203125
   - id: gatk_collect_alignment_summary_metrics_txt_duplex
     outputSource:
       - >-
         gatk_collect_alignment_summary_metrics_4.1.8.0_duplex/gatk_collect_alignment_summary_metrics_txt
     type: File
-    'sbg:x': 1543.551025390625
-    'sbg:y': 1451.75
+    'sbg:x': 1556.7442626953125
+    'sbg:y': 1390.5859375
   - id: fgbio_filter_consensus_reads_simplex_duplex_bam
     outputSource:
       - >-
@@ -172,15 +172,15 @@ outputs:
     type: File
     secondaryFiles:
       - ^.bai
-    'sbg:x': 1039.097900390625
-    'sbg:y': 1614.484375
+    'sbg:x': 1039.082275390625
+    'sbg:y': 1613.8203125
   - id: gatk_collect_alignment_summary_metrics_txt_simplex
     outputSource:
       - >-
         gatk_collect_alignment_summary_metrics_4.1.8.0_simplex/gatk_collect_alignment_summary_metrics_txt
     type: File
-    'sbg:x': 1844.8406982421875
-    'sbg:y': 1597.18408203125
+    'sbg:x': 2074.40625
+    'sbg:y': 1546.453125
 steps:
   - id: fgbio_filter_consensus_reads_1_2_0_duplex
     in:
@@ -218,8 +218,8 @@ steps:
     run: >-
       ../command_line_tools/fgbio_filter_consensus_reads_1.2.0/fgbio_filter_consensus_reads_1.2.0.cwl
     label: fgbio_filter_consensus_reads_1.2.0_duplex
-    'sbg:x': 454.71875
-    'sbg:y': 1493.8125
+    'sbg:x': 454.703125
+    'sbg:y': 1493.2265625
   - id: fgbio_filter_consensus_reads_1_2_1_simplex_duplex
     in:
       - id: memory_per_job
@@ -258,8 +258,8 @@ steps:
     run: >-
       ../command_line_tools/fgbio_filter_consensus_reads_1.2.0/fgbio_filter_consensus_reads_1.2.0.cwl
     label: fgbio_filter_consensus_reads_1.2.0_simplex_duplex
-    'sbg:x': 454.71875
-    'sbg:y': 1212.078125
+    'sbg:x': 454.703125
+    'sbg:y': 1211.4921875
   - id: fgbio_postprocessing_simplex_filter_0_1_8
     in:
       - id: input_bam
@@ -274,8 +274,8 @@ steps:
     run: >-
       ../command_line_tools/fgbio_postprocessing_simplex_filter_0.1.8/fgbio_postprocessing_simplex_filter_0.1.8.cwl
     label: fgbio_postprocessing_simplex_filter_0.1.8
-    'sbg:x': 1039.097900390625
-    'sbg:y': 1493.75
+    'sbg:x': 1039.082275390625
+    'sbg:y': 1493.0859375
   - id: gatk_collect_alignment_summary_metrics_4.1.8.0_duplex
     in:
       - id: input
@@ -283,6 +283,8 @@ steps:
           fgbio_filter_consensus_reads_1_2_0_duplex/fgbio_filter_consensus_reads_bam
       - id: output_file_name
         source: output_file_name_duplex_aln_metrics
+      - id: reference
+        source: reference_fasta
       - id: validation_stringency
         source: validation_stringency
       - id: assume_sorted
@@ -298,8 +300,8 @@ steps:
     run: >-
       ../command_line_tools/gatk_collect_alignment_summary_metrics_4.1.8.0/gatk_collect_alignment_summary_metrics_4.1.8.0.cwl
     label: GATK-CollectAlignmentSummaryMetrics
-    'sbg:x': 1039.097900390625
-    'sbg:y': 1331.015625
+    'sbg:x': 1039.082275390625
+    'sbg:y': 1323.21875
   - id: gatk_collect_alignment_summary_metrics_4.1.8.0_simplex
     in:
       - id: input
@@ -307,6 +309,8 @@ steps:
           fgbio_postprocessing_simplex_filter_0_1_8/fgbio_postprocessing_simplex_bam
       - id: output_file_name
         source: output_file_name_simplex_aln_metrics
+      - id: reference
+        source: reference_fasta
       - id: validation_stringency
         source: validation_stringency
       - id: assume_sorted
@@ -322,8 +326,8 @@ steps:
     run: >-
       ../command_line_tools/gatk_collect_alignment_summary_metrics_4.1.8.0/gatk_collect_alignment_summary_metrics_4.1.8.0.cwl
     label: GATK-CollectAlignmentSummaryMetrics
-    'sbg:x': 1543.551025390625
-    'sbg:y': 1600.484375
+    'sbg:x': 1556.7442626953125
+    'sbg:y': 1546.453125
 requirements: []
 $schemas:
   - 'http://schema.org/version/9.0/schemaorg-current-http.rdf'
