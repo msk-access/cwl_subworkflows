@@ -197,7 +197,7 @@ steps:
     'sbg:y': 931.6171875
 requirements: []
 $schemas:
-  - 'http://schema.org/version/9.0/schemaorg-current-http.rdf'
+  - 'http://schema.org/version/latest/schemaorg-current-http.rdf'
 's:author':
   - class: 's:Person'
     's:email': 'mailto:murphyc4@mskcc.org'
