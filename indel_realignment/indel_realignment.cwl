@@ -138,7 +138,6 @@ steps:
       - id: ignore_bad_assembly
         source: ignore_bad_assembly
       - id: bam_index
-        default: true
         source: bam_index
       - id: no_edge_complex_indel
         source: no_edge_complex_indel
