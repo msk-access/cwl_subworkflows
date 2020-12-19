@@ -11,14 +11,14 @@ inputs:
     secondaryFiles:
       - ^.bai
     'sbg:x': 0
-    'sbg:y': 427.4375
+    'sbg:y': 533.390625
   - id: reference
     type: File
     secondaryFiles:
       - .fai
       - ^.dict
     'sbg:x': 0
-    'sbg:y': 0
+    'sbg:y': 106.703125
   - id: read_filter
     type:
       - 'null'
@@ -27,7 +27,7 @@ inputs:
         inputBinding:
           prefix: '--read-filter'
     'sbg:x': 0
-    'sbg:y': 106.859375
+    'sbg:y': 213.375
   - id: known_sites
     type:
       type: array
@@ -37,15 +37,15 @@ inputs:
     secondaryFiles:
       - .idx
     'sbg:x': 0
-    'sbg:y': 320.578125
+    'sbg:y': 426.71875
   - id: base_recalibrator_output_file_name
     type: string?
     'sbg:x': 0
-    'sbg:y': 641.15625
+    'sbg:y': 746.734375
   - id: add_output_sam_program_record
     type: boolean?
     'sbg:x': 0
-    'sbg:y': 961.734375
+    'sbg:y': 853.4375
   - id: disable_read_filter
     type:
       - 'null'
@@ -54,19 +54,23 @@ inputs:
         inputBinding:
           prefix: '--disable-read-filter'
     'sbg:x': 0
-    'sbg:y': 534.296875
+    'sbg:y': 640.0625
   - id: lenient
     type: boolean?
     'sbg:x': 0
-    'sbg:y': 213.71875
+    'sbg:y': 320.046875
   - id: apply_bqsr_create_output_bam_index
     type: boolean?
-    'sbg:x': 0
-    'sbg:y': 854.875
+    'sbg:x': 337.34375
+    'sbg:y': 533.453125
   - id: apply_bqsr_output_file_name
     type: string?
+    'sbg:x': 337.34375
+    'sbg:y': 426.71875
+  - id: temporary_directory
+    type: string?
     'sbg:x': 0
-    'sbg:y': 748.015625
+    'sbg:y': 0
 outputs:
   - id: gatk_apply_bqsr_bam
     outputSource:
@@ -74,8 +78,8 @@ outputs:
     type: File
     secondaryFiles:
       - ^.bai
-    'sbg:x': 1060.585205078125
-    'sbg:y': 772.228271484375
+    'sbg:x': 1269.836181640625
+    'sbg:y': 426.71875
 steps:
   - id: gatk_base_recalibrator_4_1_8_1
     in:
@@ -98,13 +102,15 @@ steps:
       - id: read_filter
         source:
           - read_filter
+      - id: temporary_directory
+        source: temporary_directory
     out:
       - id: gatk_base_recalibrator_output
     run: >-
       ../command_line_tools/gatk_base_recalibrator_4.1.8.1/gatk_base_recalibrator_4.1.8.1.cwl
     label: gatk_base_recalibrator_4.1.8.1
-    'sbg:x': 356.59375
-    'sbg:y': 350.4375
+    'sbg:x': 337.34375
+    'sbg:y': 263.8515625
   - id: gatk_apply_bqsr_4_1_8_1
     in:
       - id: reference
@@ -125,12 +131,14 @@ steps:
       - id: read_filter
         source:
           - read_filter
+      - id: temporary_directory
+        source: temporary_directory
     out:
       - id: gatk_apply_bqsr_bam
     run: ../command_line_tools/gatk_apply_bqsr_4.1.8.1/gatk_apply_bqsr_4.1.8.1.cwl
     label: gatk_apply_bqsr_4.1.8.1
-    'sbg:x': 589.6504516601562
-    'sbg:y': 741.6892700195312
+    'sbg:x': 837.3018188476562
+    'sbg:y': 370.5859375
 requirements: []
 $schemas:
   - 'http://schema.org/version/latest/schemaorg-current-http.rdf'

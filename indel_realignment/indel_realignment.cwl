@@ -13,90 +13,94 @@ inputs:
   - id: soft_clip_contig
     type: string?
     'sbg:x': 0
-    'sbg:y': 319.96875
+    'sbg:y': 426.796875
   - id: scoring_gap_alignments
     type: string?
     'sbg:x': 0
-    'sbg:y': 426.703125
+    'sbg:y': 533.53125
   - id: reference_fasta
     type: File
     secondaryFiles:
       - .fai
     'sbg:x': 0
-    'sbg:y': 533.359375
+    'sbg:y': 640.21875
   - id: no_sort
     type: boolean?
     'sbg:x': 0
-    'sbg:y': 959.828125
+    'sbg:y': 1066.875
   - id: maximum_mixmatch_rate
     type: float?
     'sbg:x': 0
-    'sbg:y': 1173.140625
+    'sbg:y': 1280.25
   - id: maximum_average_depth
     type: int?
     'sbg:x': 0
-    'sbg:y': 1279.796875
+    'sbg:y': 1386.9375
   - id: input_bam
     type: File
     secondaryFiles:
       - ^.bai
     'sbg:x': 0
-    'sbg:y': 1386.453125
+    'sbg:y': 1493.625
   - id: ignore_bad_assembly
     type: boolean?
     'sbg:x': 0
-    'sbg:y': 1493.109375
+    'sbg:y': 1600.3125
   - id: contig_anchor
     type: string?
     'sbg:x': 0
-    'sbg:y': 1706.421875
+    'sbg:y': 1813.6875
   - id: consensus_sequence
     type: boolean?
     'sbg:x': 0
-    'sbg:y': 1813.078125
+    'sbg:y': 1920.375
   - id: bam_index
     type: boolean?
     'sbg:x': 0
-    'sbg:y': 1919.65625
+    'sbg:y': 2027.015625
   - id: number_of_threads
     type: int?
     'sbg:x': 0
-    'sbg:y': 853.25
+    'sbg:y': 960.234375
   - id: option_bedgraph
     type: boolean?
     'sbg:x': 0
-    'sbg:y': 746.59375
+    'sbg:y': 853.546875
   - id: no_edge_complex_indel
     type: boolean?
     'sbg:x': 0
-    'sbg:y': 1066.484375
+    'sbg:y': 1173.5625
   - id: distance_between_features
     type: int?
     'sbg:x': 0
-    'sbg:y': 1599.765625
+    'sbg:y': 1707
   - id: output_bams
     type:
       - string
       - type: array
         items: string
     'sbg:x': 0
-    'sbg:y': 639.9375
+    'sbg:y': 746.859375
   - id: validation_stringency
     type: string?
     'sbg:x': 0
-    'sbg:y': 106.65625
+    'sbg:y': 106.6875
   - id: sort_order
     type: string?
     'sbg:x': 0
-    'sbg:y': 213.3125
+    'sbg:y': 320.109375
   - id: output_file_name
     type: string?
-    'sbg:x': 992.881103515625
-    'sbg:y': 748.25
+    'sbg:x': 992.927978515625
+    'sbg:y': 794.8671875
   - id: create_bam_index
     type: boolean?
-    'sbg:x': 992.881103515625
-    'sbg:y': 854.828125
+    'sbg:x': 992.927978515625
+    'sbg:y': 901.5078125
+  - id: temporary_directory
+    type: string?
+    'sbg:x': 0
+    'sbg:y': 213.421875
 outputs:
   - id: indel_realignment_bam
     outputSource:
@@ -104,8 +108,8 @@ outputs:
     type: File
     secondaryFiles:
       - ^.bai
-    'sbg:x': 1950.827880859375
-    'sbg:y': 959.75
+    'sbg:x': 1981.323974609375
+    'sbg:y': 1013.4609375
 steps:
   - id: abra2_2_22
     in:
@@ -114,6 +118,8 @@ steps:
       - id: input_bam
         source:
           - input_bam
+      - id: working_directory
+        source: temporary_directory
       - id: reference_fasta
         source: reference_fasta
       - id: targets
@@ -147,8 +153,8 @@ steps:
       - id: abra_realigned_bam
     run: ../command_line_tools/abra2_2.22/abra2_2.22.cwl
     label: abra2_2.22
-    'sbg:x': 992.881103515625
-    'sbg:y': 1066.40625
+    'sbg:x': 992.927978515625
+    'sbg:y': 1120.1484375
   - id: bedtools_genomecov
     in:
       - id: input
@@ -160,8 +166,8 @@ steps:
     run: >-
       ../command_line_tools/bedtools_genomecov_v2.28.0_cv2/bedtools_genomecov_v2.28.0_cv2.cwl
     label: bedtools_genomecov
-    'sbg:x': 269.546875
-    'sbg:y': 952.75
+    'sbg:x': 269.59375
+    'sbg:y': 1006.4609375
   - id: bedtools_merge
     in:
       - id: input
@@ -173,8 +179,8 @@ steps:
     run: >-
       ../command_line_tools/bedtools_merge_v2.28.0_cv2/bedtools_merge_v2.28.0_cv2.cwl
     label: bedtools_merge
-    'sbg:x': 635.4639892578125
-    'sbg:y': 952.75
+    'sbg:x': 635.5108642578125
+    'sbg:y': 1006.4609375
   - id: picard_fix_mate_information_4_1_8_1
     in:
       - id: input
@@ -187,13 +193,15 @@ steps:
         source: validation_stringency
       - id: create_bam_index
         source: create_bam_index
+      - id: temporary_directory
+        source: temporary_directory
     out:
       - id: picard_fix_mate_information_bam
     run: >-
       ../command_line_tools/picard_fix_mate_information_4.1.8.1/picard_fix_mate_information_4.1.8.1.cwl
     label: picard_fix_mate_information_4.1.8.1
-    'sbg:x': 1534.827880859375
-    'sbg:y': 931.6171875
+    'sbg:x': 1546.70458984375
+    'sbg:y': 978.328125
 requirements: []
 $schemas:
   - 'http://schema.org/version/latest/schemaorg-current-http.rdf'

@@ -9,47 +9,47 @@ inputs:
   - id: create_bam_index
     type: boolean?
     'sbg:x': 319.15625
-    'sbg:y': 852.0390625
+    'sbg:y': 958.8671875
   - id: output_file_name
     type: string?
     'sbg:x': 319.15625
-    'sbg:y': 745.2109375
+    'sbg:y': 852.0390625
   - id: read_group_description
     type: string?
     'sbg:x': 0
-    'sbg:y': 1388.765625
+    'sbg:y': 1495.59375
   - id: read_group_identifier
     type: string
     'sbg:x': 0
-    'sbg:y': 1281.9375
+    'sbg:y': 1388.765625
   - id: read_group_library
     type: string
     'sbg:x': 0
-    'sbg:y': 1175.109375
+    'sbg:y': 1281.9375
   - id: read_group_platform_unit
     type: string
     'sbg:x': 0
-    'sbg:y': 1068.28125
+    'sbg:y': 1175.109375
   - id: read_group_run_date
     type: string?
     'sbg:x': 0
-    'sbg:y': 961.453125
+    'sbg:y': 1068.28125
   - id: read_group_sample_name
     type: string
     'sbg:x': 0
-    'sbg:y': 854.625
+    'sbg:y': 961.453125
   - id: read_group_sequencing_center
     type: string
     'sbg:x': 0
-    'sbg:y': 747.796875
+    'sbg:y': 854.625
   - id: read_group_sequencing_platform
     type: string
     'sbg:x': 0
-    'sbg:y': 640.96875
+    'sbg:y': 747.796875
   - id: sort_order
     type: string?
     'sbg:x': 0
-    'sbg:y': 320.484375
+    'sbg:y': 427.3125
   - id: validation_stringency
     type: string?
     'sbg:x': 0
@@ -65,27 +65,27 @@ inputs:
       - .bwt
       - .pac
     'sbg:x': 0
-    'sbg:y': 427.3125
+    'sbg:y': 534.140625
   - id: reads
     type: 'File[]'
     'sbg:x': 0
-    'sbg:y': 534.140625
+    'sbg:y': 640.96875
   - id: output
     type: string?
     'sbg:x': 0
-    'sbg:y': 1602.421875
+    'sbg:y': 1709.25
   - id: P
     type: boolean?
     'sbg:x': 0
-    'sbg:y': 1495.59375
+    'sbg:y': 1602.421875
   - id: M
     type: boolean?
     'sbg:x': 0
-    'sbg:y': 1709.25
+    'sbg:y': 1816.078125
   - id: T
     type: int?
     'sbg:x': 0
-    'sbg:y': 213.65625
+    'sbg:y': 320.484375
   - id: 'Y'
     type: boolean?
     'sbg:x': 0
@@ -93,11 +93,15 @@ inputs:
   - id: K
     type: int?
     'sbg:x': 0
-    'sbg:y': 1816.078125
+    'sbg:y': 1922.90625
   - id: bwa_number_of_threads
     type: int?
     'sbg:x': 0
-    'sbg:y': 1922.90625
+    'sbg:y': 2029.734375
+  - id: temporary_directory
+    type: string?
+    'sbg:x': 0
+    'sbg:y': 213.65625
 outputs:
   - id: picard_add_or_replace_read_groups_bam
     outputSource:
@@ -106,8 +110,8 @@ outputs:
     type: File
     secondaryFiles:
       - ^.bai
-    'sbg:x': 1379.46142578125
-    'sbg:y': 961.453125
+    'sbg:x': 1389.239501953125
+    'sbg:y': 1014.8671875
 steps:
   - id: picard_add_or_replace_read_groups_4_1_8_1
     in:
@@ -137,13 +141,15 @@ steps:
         source: validation_stringency
       - id: create_bam_index
         source: create_bam_index
+      - id: temporary_directory
+        source: temporary_directory
     out:
       - id: picard_add_or_replace_read_groups_bam
     run: >-
       ../command_line_tools/picard_add_or_replace_read_groups_4.1.8.1/picard_add_or_replace_read_groups_4.1.8.1.cwl
     label: picard_add_or_replace_read_groups_4.1.8.1
     'sbg:x': 737.3328857421875
-    'sbg:y': 870.453125
+    'sbg:y': 923.8671875
   - id: bwa_mem_0_7_17
     in:
       - id: number_of_threads
@@ -170,7 +176,7 @@ steps:
     run: ../command_line_tools/bwa_mem_0.7.17/bwa_mem_0.7.17.cwl
     label: bwa_mem_0.7.17
     'sbg:x': 319.15625
-    'sbg:y': 1014.8671875
+    'sbg:y': 1121.6953125
 requirements: []
 $schemas:
   - 'http://schema.org/version/latest/schemaorg-current-http.rdf'

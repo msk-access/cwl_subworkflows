@@ -8,60 +8,69 @@ $namespaces:
 inputs:
   - id: input
     type: File
-    'sbg:x': -496.41986083984375
-    'sbg:y': -282.843994140625
+    'sbg:x': 0
+    'sbg:y': 374.0625
   - id: target_intervals
     type: File
-    'sbg:x': -490.1000671386719
-    'sbg:y': -133.69674682617188
+    'sbg:x': 0
+    'sbg:y': 160.3125
   - id: bait_intervals
     type: File
-    'sbg:x': -485.0442199707031
-    'sbg:y': 11.658624649047852
+    'sbg:x': 0
+    'sbg:y': 480.9375
   - id: reference
     type: File
     secondaryFiles:
       - ^.fasta.fai
       - ^.dict
-    'sbg:x': -504.0036315917969
-    'sbg:y': -426.9353942871094
+    'sbg:x': 0
+    'sbg:y': 267.1875
+  - id: temporary_directory
+    type: string?
+    'sbg:x': 0
+    'sbg:y': 53.4375
 outputs:
   - id: gatk_collect_insert_size_metrics_histogram_pdf
     outputSource:
-      - gatk_collect_insert_size_metrics_4_1_8_0/gatk_collect_insert_size_metrics_histogram_pdf
+      - >-
+        gatk_collect_insert_size_metrics_4_1_8_0/gatk_collect_insert_size_metrics_histogram_pdf
     type: File
-    'sbg:x': 395.9356689453125
-    'sbg:y': 146.90231323242188
+    'sbg:x': 700.636962890625
+    'sbg:y': 106.875
   - id: gatk_collect_insert_size_metrics_txt
     outputSource:
-      - gatk_collect_insert_size_metrics_4_1_8_0/gatk_collect_insert_size_metrics_txt
+      - >-
+        gatk_collect_insert_size_metrics_4_1_8_0/gatk_collect_insert_size_metrics_txt
     type: File
-    'sbg:x': 389.6158752441406
-    'sbg:y': 17.978422164916992
+    'sbg:x': 700.636962890625
+    'sbg:y': 0
   - id: gatk_collect_hs_metrics_txt
     outputSource:
       - gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_txt
     type: File
-    'sbg:x': 384.5600280761719
-    'sbg:y': -112.20942687988281
+    'sbg:x': 700.636962890625
+    'sbg:y': 213.75
   - id: gatk_collect_hs_metrics_per_base_coverage_txt
     outputSource:
-      - gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_per_base_coverage_txt
+      - >-
+        gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_per_base_coverage_txt
     type: File
-    'sbg:x': 378.240234375
-    'sbg:y': -244.92520141601562
+    'sbg:x': 700.636962890625
+    'sbg:y': 427.5
   - id: gatk_collect_hs_metrics_per_target_coverage_txt
     outputSource:
-      - gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_per_target_coverage_txt
+      - >-
+        gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_per_target_coverage_txt
     type: File
-    'sbg:x': 371.9204406738281
-    'sbg:y': -373.8490905761719
+    'sbg:x': 700.636962890625
+    'sbg:y': 320.625
   - id: gatk_collect_alignment_summary_metrics_txt
     outputSource:
-      - gatk_collect_alignment_summary_metrics_4_1_3_0/gatk_collect_alignment_summary_metrics_txt
+      - >-
+        gatk_collect_alignment_summary_metrics_4_1_3_0/gatk_collect_alignment_summary_metrics_txt
     type: File
-    'sbg:x': 373.18438720703125
-    'sbg:y': -520.4683837890625
+    'sbg:x': 700.636962890625
+    'sbg:y': 534.375
 steps:
   - id: gatk_collect_alignment_summary_metrics_4_1_3_0
     in:
@@ -69,13 +78,15 @@ steps:
         source: input
       - id: reference
         source: reference
+      - id: temporary_directory
+        source: temporary_directory
     out:
       - id: gatk_collect_alignment_summary_metrics_txt
     run: >-
       ../command_line_tools/gatk_collect_alignment_summary_metrics_4.1.8.0/gatk_collect_alignment_summary_metrics_4.1.8.0.cwl
     label: GATK-CollectAlignmentSummaryMetrics
-    'sbg:x': -63.445003509521484
-    'sbg:y': -424.1755676269531
+    'sbg:x': 208.8125
+    'sbg:y': 402.0625
   - id: gatk_collect_hs_metrics_4_1_8_0
     in:
       - id: input
@@ -86,6 +97,8 @@ steps:
         source: target_intervals
       - id: reference
         source: reference
+      - id: temporary_directory
+        source: temporary_directory
     out:
       - id: gatk_collect_hs_metrics_txt
       - id: gatk_collect_hs_metrics_per_base_coverage_txt
@@ -93,22 +106,24 @@ steps:
     run: >-
       ../command_line_tools/gatk_collect_hs_metrics_4.1.8.0/gatk_collect_hs_metrics_4.1.8.0.cwl
     label: GATK-CollectHsMetrics
-    'sbg:x': -61.321895599365234
-    'sbg:y': -194.27346801757812
+    'sbg:x': 208.8125
+    'sbg:y': 253.1875
   - id: gatk_collect_insert_size_metrics_4_1_8_0
     in:
       - id: input
         source: input
       - id: histogram_file
         default: histogram.pdf
+      - id: temporary_directory
+        source: temporary_directory
     out:
       - id: gatk_collect_insert_size_metrics_txt
       - id: gatk_collect_insert_size_metrics_histogram_pdf
     run: >-
       ../command_line_tools/gatk_collect_insert_size_metrics_4.1.8.0/gatk_collect_insert_size_metrics_4.1.8.0.cwl
     label: GATK-CollectInsertSizeMetrics
-    'sbg:x': -52.185672760009766
-    'sbg:y': 62.291622161865234
+    'sbg:x': 208.8125
+    'sbg:y': 111.3125
 requirements: []
 $schemas:
   - 'http://schema.org/version/latest/schemaorg-current-http.rdf'
