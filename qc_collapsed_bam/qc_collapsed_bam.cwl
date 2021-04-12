@@ -107,8 +107,8 @@ outputs:
       - File
       - type: array
         items: File
-    'sbg:x': 1085.72802734375
-    'sbg:y': 1327.263916015625
+    'sbg:x': 1073.549560546875
+    'sbg:y': -58.49618148803711
   - id: fgbio_collect_duplex_seq_metrics_duplex_family_size
     outputSource:
       - >-
@@ -319,6 +319,36 @@ outputs:
     type: File
     'sbg:x': 683.7645874023438
     'sbg:y': 53.56740951538086
+  - id: biometrics_genotype_plot_input_database
+    outputSource:
+      - biometrics_genotype/biometrics_genotype_plot_input_database
+    type: File?
+    'sbg:x': 1109.0440673828125
+    'sbg:y': 1322.331787109375
+  - id: biometrics_genotype_plot_input
+    outputSource:
+      - biometrics_genotype/biometrics_genotype_plot_input
+    type: File?
+    'sbg:x': 1110.3228759765625
+    'sbg:y': 1477.0633544921875
+  - id: biometrics_genotype_comparisons
+    outputSource:
+      - biometrics_genotype/biometrics_genotype_comparisons
+    type: File
+    'sbg:x': 1119.2742919921875
+    'sbg:y': 1657.3702392578125
+  - id: biometrics_genotype_cluster_input_database
+    outputSource:
+      - biometrics_genotype/biometrics_genotype_cluster_input_database
+    type: File?
+    'sbg:x': 1128.2257080078125
+    'sbg:y': 1828.7257080078125
+  - id: biometrics_genotype_cluster_input
+    outputSource:
+      - biometrics_genotype/biometrics_genotype_cluster_input
+    type: File
+    'sbg:x': 1132.06201171875
+    'sbg:y': 2006.47509765625
 steps:
   - id: bam_qc_stats
     in:
@@ -365,15 +395,20 @@ steps:
   - id: biometrics_extract
     in:
       - id: sample_bam
-        source: collapsed_bam
+        source:
+          - collapsed_bam
       - id: sample_type
-        source: sample_type
+        source:
+          - sample_type
       - id: sample_sex
-        source: sample_sex
+        source:
+          - sample_sex
       - id: sample_group
-        source: sample_group
+        source:
+          - sample_group
       - id: sample_name
-        source: sample_name
+        source:
+          - sample_name
       - id: fafile
         source: reference
       - id: vcf_file
@@ -382,8 +417,7 @@ steps:
         source: bed_file
     out:
       - id: biometrics_extract_pickle
-    run: >-
-      ../command_line_tools/biometrics_extract_0.2.5/biometrics_extract_0.2.5.cwl
+    run: ../command_line_tools/biometrics_extract/0.2.7/biometrics_extract.cwl
     'sbg:x': -56.18357467651367
     'sbg:y': 437.74395751953125
   - id: fgbio_collect_duplex_seq_metrics_1_2_0
@@ -431,7 +465,7 @@ steps:
       - id: biometrics_major_csv
       - id: biometrics_major_json
       - id: biometrics_major_plot
-    run: ../command_line_tools/biometrics_major_0.2.5/biometrics_major_0.2.5.cwl
+    run: ../command_line_tools/biometrics_major/0.2.7/biometrics_major.cwl
     'sbg:x': 677.335205078125
     'sbg:y': 262.2733154296875
   - id: biometrics_minor
@@ -448,7 +482,7 @@ steps:
       - id: biometrics_minor_json
       - id: biometrics_minor_plot
       - id: biometrics_minor_sites_plot
-    run: ../command_line_tools/biometrics_minor_0.2.5/biometrics_minor_0.2.5.cwl
+    run: ../command_line_tools/biometrics_minor/0.2.7/biometrics_minor.cwl
     'sbg:x': 686.5601196289062
     'sbg:y': 571.31689453125
   - id: biometrics_sexmismatch
@@ -460,9 +494,23 @@ steps:
       - id: biometrics_sexmismatch_csv
       - id: biometrics_sexmismatch_json
     run: >-
-      ../command_line_tools/biometrics_sexmismatch_0.2.5/biometrics_sexmismatch_0.2.5.cwl
+      ../command_line_tools/biometrics_sexmismatch/0.2.7/biometrics_sexmismatch.cwl
     'sbg:x': 688.3497924804688
     'sbg:y': 1029.9459228515625
+  - id: biometrics_genotype
+    in:
+      - id: input
+        source:
+          - biometrics_extract/biometrics_extract_pickle
+    out:
+      - id: biometrics_genotype_comparisons
+      - id: biometrics_genotype_cluster_input
+      - id: biometrics_genotype_cluster_input_database
+      - id: biometrics_genotype_plot_input
+      - id: biometrics_genotype_plot_input_database
+    run: ../command_line_tools/biometrics_genotype/0.2.7/biometrics_genotype.cwl
+    'sbg:x': 730.717529296875
+    'sbg:y': 1501
 requirements:
   - class: SubworkflowFeatureRequirement
   - class: InlineJavascriptRequirement

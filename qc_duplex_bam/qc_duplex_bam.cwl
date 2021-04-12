@@ -44,7 +44,7 @@ inputs:
     type: File
     label: noise_sites_bed
     doc: >-
-      Path to BED file containing regions over which to calculate noise 
+      Path to BED file containing regions over which to calculate noise
       [required]
     'sbg:x': -1380.5565185546875
     'sbg:y': -635.455810546875
@@ -194,82 +194,130 @@ outputs:
     outputSource:
       - biometrics_extract/biometrics_extract_pickle
     type: File
-    'sbg:x': 819.1282348632812
-    'sbg:y': 1635.113525390625
-  - id: gatk_collect_alignment_summary_metrics_txt
+    'sbg:x': 804.253662109375
+    'sbg:y': 1651.220947265625
+  - id: gatk_collect_alignment_summary_metrics_txt_pool_b
     outputSource:
-      - bam_qc_stats_1/gatk_collect_alignment_summary_metrics_txt
-    type: File
+      - bam_qc_stats_pool_b/gatk_collect_alignment_summary_metrics_txt
+    type:
+      - File
+      - type: array
+        items: File
+    label: gatk_collect_alignment_summary_metrics_txt_pool_b
     'sbg:x': 335.32611083984375
     'sbg:y': 490.64373779296875
-  - id: gatk_collect_hs_metrics_per_base_coverage_txt
+  - id: gatk_collect_hs_metrics_per_base_coverage_txt_pool_b
     outputSource:
-      - bam_qc_stats_1/gatk_collect_hs_metrics_per_base_coverage_txt
-    type: File
+      - bam_qc_stats_pool_b/gatk_collect_hs_metrics_per_base_coverage_txt
+    type:
+      - File
+      - type: array
+        items: File
+    label: gatk_collect_hs_metrics_per_base_coverage_txt_pool_b
     'sbg:x': 333.6207580566406
     'sbg:y': 371.2675476074219
-  - id: gatk_collect_hs_metrics_per_target_coverage_txt
+  - id: gatk_collect_hs_metrics_per_target_coverage_txt_pool_b
     outputSource:
-      - bam_qc_stats_1/gatk_collect_hs_metrics_per_target_coverage_txt
-    type: File
+      - bam_qc_stats_pool_b/gatk_collect_hs_metrics_per_target_coverage_txt
+    type:
+      - File
+      - type: array
+        items: File
+    label: gatk_collect_hs_metrics_per_target_coverage_txt_pool_b
     'sbg:x': 330.7894287109375
     'sbg:y': 255.84107971191406
-  - id: gatk_collect_hs_metrics_txt
+  - id: gatk_collect_hs_metrics_txt_pool_b
     outputSource:
-      - bam_qc_stats_1/gatk_collect_hs_metrics_txt
-    type: File
+      - bam_qc_stats_pool_b/gatk_collect_hs_metrics_txt
+    type:
+      - File
+      - type: array
+        items: File
+    label: gatk_collect_hs_metrics_txt_pool_b
     'sbg:x': 334.6937255859375
     'sbg:y': 138.71177673339844
-  - id: gatk_collect_insert_size_metrics_histogram_pdf
+  - id: gatk_collect_insert_size_metrics_histogram_pdf_pool_b
     outputSource:
-      - bam_qc_stats_1/gatk_collect_insert_size_metrics_histogram_pdf
-    type: File
+      - bam_qc_stats_pool_b/gatk_collect_insert_size_metrics_histogram_pdf
+    type:
+      - File
+      - type: array
+        items: File
+    label: gatk_collect_insert_size_metrics_histogram_pdf_pool_b
     'sbg:x': 337.2966003417969
     'sbg:y': 20.281023025512695
-  - id: gatk_collect_insert_size_metrics_txt
+  - id: gatk_collect_insert_size_metrics_txt_pool_b
     outputSource:
-      - bam_qc_stats_1/gatk_collect_insert_size_metrics_txt
-    type: File
+      - bam_qc_stats_pool_b/gatk_collect_insert_size_metrics_txt
+    type:
+      - File
+      - type: array
+        items: File
+    label: gatk_collect_insert_size_metrics_txt_pool_b
     'sbg:x': 329.48797607421875
     'sbg:y': -99.45116424560547
-  - id: gatk_collect_alignment_summary_metrics_txt_1
+  - id: gatk_collect_alignment_summary_metrics_txt_pool_a
     outputSource:
-      - bam_qc_stats/gatk_collect_alignment_summary_metrics_txt
-    type: File
+      - bam_qc_stats_pool_a/gatk_collect_alignment_summary_metrics_txt
+    type:
+      - File
+      - type: array
+        items: File
+    label: gatk_collect_alignment_summary_metrics_txt_pool_a
     'sbg:x': 732.9334106445312
     'sbg:y': 143.91751098632812
-  - id: gatk_collect_hs_metrics_per_base_coverage_txt_1
+  - id: gatk_collect_hs_metrics_per_base_coverage_txt_pool_a
     outputSource:
-      - bam_qc_stats/gatk_collect_hs_metrics_per_base_coverage_txt
-    type: File
+      - bam_qc_stats_pool_a/gatk_collect_hs_metrics_per_base_coverage_txt
+    type:
+      - File
+      - type: array
+        items: File
+    label: gatk_collect_hs_metrics_per_base_coverage_txt_pool_a
     'sbg:x': 725.124755859375
     'sbg:y': 25.486770629882812
-  - id: gatk_collect_hs_metrics_per_target_coverage_txt_1
+  - id: gatk_collect_hs_metrics_per_target_coverage_txt_pool_a
     outputSource:
-      - bam_qc_stats/gatk_collect_hs_metrics_per_target_coverage_txt
-    type: File
+      - bam_qc_stats_pool_a/gatk_collect_hs_metrics_per_target_coverage_txt
+    type:
+      - File
+      - type: array
+        items: File
+    label: gatk_collect_hs_metrics_per_target_coverage_txt_pool_a
     'sbg:x': 710.8089599609375
     'sbg:y': -92.94397735595703
-  - id: gatk_collect_hs_metrics_txt_1
+  - id: gatk_collect_hs_metrics_txt_pool_a
     outputSource:
-      - bam_qc_stats/gatk_collect_hs_metrics_txt
-    type: File
+      - bam_qc_stats_pool_a/gatk_collect_hs_metrics_txt
+    type:
+      - File
+      - type: array
+        items: File
+    label: gatk_collect_hs_metrics_txt_pool_a
     'sbg:x': 723.8233032226562
     'sbg:y': -208.7718505859375
-  - id: gatk_collect_insert_size_metrics_histogram_pdf_1
+  - id: gatk_collect_insert_size_metrics_histogram_pdf_pool_a
     outputSource:
-      - bam_qc_stats/gatk_collect_insert_size_metrics_histogram_pdf
-    type: File
+      - bam_qc_stats_pool_a/gatk_collect_insert_size_metrics_histogram_pdf
+    type:
+      - File
+      - type: array
+        items: File
+    label: gatk_collect_insert_size_metrics_histogram_pdf_pool_a
     'sbg:x': 712.1104125976562
     'sbg:y': -325.9011535644531
-  - id: gatk_collect_insert_size_metrics_txt_1
+  - id: gatk_collect_insert_size_metrics_txt_pool_a
     outputSource:
-      - bam_qc_stats/gatk_collect_insert_size_metrics_txt
-    type: File
+      - bam_qc_stats_pool_a/gatk_collect_insert_size_metrics_txt
+    type:
+      - File
+      - type: array
+        items: File
+    label: gatk_collect_insert_size_metrics_txt_pool_a
     'sbg:x': 712.1104125976562
     'sbg:y': -446.9347839355469
 steps:
-  - id: bam_qc_stats
+  - id: bam_qc_stats_pool_a
     in:
       - id: input
         source: input
@@ -287,7 +335,7 @@ steps:
       - id: gatk_collect_hs_metrics_per_target_coverage_txt
       - id: gatk_collect_alignment_summary_metrics_txt
     run: ../bam_qc_stats/bam_qc_stats.cwl
-    label: bam_qc_stats
+    label: bam_qc_stats_pool_a
     'sbg:x': -201.51846313476562
     'sbg:y': -271.1477355957031
   - id: calculate_noise_0_1_16
@@ -308,7 +356,7 @@ steps:
     run: ../command_line_tools/sequence_qc_0.1.16/sequence_qc_0.1.16.cwl
     'sbg:x': -205.99472045898438
     'sbg:y': -716.7506103515625
-  - id: bam_qc_stats_1
+  - id: bam_qc_stats_pool_b
     in:
       - id: input
         source: input
@@ -326,21 +374,26 @@ steps:
       - id: gatk_collect_hs_metrics_per_target_coverage_txt
       - id: gatk_collect_alignment_summary_metrics_txt
     run: ../bam_qc_stats/bam_qc_stats.cwl
-    label: bam_qc_stats
+    label: bam_qc_stats_pool_b
     'sbg:x': -200.22406005859375
     'sbg:y': 144.43153381347656
   - id: biometrics_extract
     in:
       - id: sample_bam
-        source: input
+        source:
+          - input
       - id: sample_type
-        source: sample_type
+        source:
+          - sample_type
       - id: sample_sex
-        source: sample_sex
+        source:
+          - sample_sex
       - id: sample_group
-        source: sample_group
+        source:
+          - sample_group
       - id: sample_name
-        source: sample_name
+        source:
+          - sample_name
       - id: fafile
         source: reference
       - id: vcf_file
@@ -357,8 +410,7 @@ steps:
         source: min_homozygous_thresh
     out:
       - id: biometrics_extract_pickle
-    run: >-
-      ../command_line_tools/biometrics_extract_0.2.5/biometrics_extract_0.2.5.cwl
+    run: ../command_line_tools/biometrics_extract/0.2.7/biometrics_extract.cwl
     'sbg:x': -176.97422790527344
     'sbg:y': 734.6185302734375
   - id: biometrics_minor
@@ -375,7 +427,7 @@ steps:
       - id: biometrics_minor_json
       - id: biometrics_minor_plot
       - id: biometrics_minor_sites_plot
-    run: ../command_line_tools/biometrics_minor_0.2.5/biometrics_minor_0.2.5.cwl
+    run: ../command_line_tools/biometrics_minor/0.2.7/biometrics_minor.cwl
     'sbg:x': 464.28485107421875
     'sbg:y': 1208.646240234375
   - id: biometrics_major
@@ -391,7 +443,7 @@ steps:
       - id: biometrics_major_csv
       - id: biometrics_major_json
       - id: biometrics_major_plot
-    run: ../command_line_tools/biometrics_major_0.2.5/biometrics_major_0.2.5.cwl
+    run: ../command_line_tools/biometrics_major/0.2.7/biometrics_major.cwl
     'sbg:x': 413.70654296875
     'sbg:y': 681.5068969726562
 requirements:
