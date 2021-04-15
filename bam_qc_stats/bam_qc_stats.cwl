@@ -7,7 +7,12 @@ $namespaces:
   sbg: 'https://www.sevenbridges.com/'
 inputs:
   - id: input
-    type: File
+    type:
+      - File
+      - type: array
+        items: File
+    secondaryFiles:
+      - ^.bai
     'sbg:x': 0
     'sbg:y': 374.0625
   - id: target_intervals
@@ -34,41 +39,59 @@ outputs:
     outputSource:
       - >-
         gatk_collect_insert_size_metrics_4_1_8_0/gatk_collect_insert_size_metrics_histogram_pdf
-    type: File
+    type:
+      - File
+      - type: array
+        items: File
     'sbg:x': 700.636962890625
     'sbg:y': 106.875
   - id: gatk_collect_insert_size_metrics_txt
     outputSource:
       - >-
         gatk_collect_insert_size_metrics_4_1_8_0/gatk_collect_insert_size_metrics_txt
-    type: File
+    type:
+      - File
+      - type: array
+        items: File
     'sbg:x': 700.636962890625
     'sbg:y': 0
   - id: gatk_collect_hs_metrics_txt
     outputSource:
       - gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_txt
-    type: File
+    type:
+      - File
+      - type: array
+        items: File
     'sbg:x': 700.636962890625
     'sbg:y': 213.75
   - id: gatk_collect_hs_metrics_per_base_coverage_txt
     outputSource:
       - >-
         gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_per_base_coverage_txt
-    type: File
+    type:
+      - File
+      - type: array
+        items: File
     'sbg:x': 700.636962890625
     'sbg:y': 427.5
   - id: gatk_collect_hs_metrics_per_target_coverage_txt
     outputSource:
       - >-
         gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_per_target_coverage_txt
-    type: File
+    type:
+      - File
+      - type: array
+        items: File
     'sbg:x': 700.636962890625
     'sbg:y': 320.625
   - id: gatk_collect_alignment_summary_metrics_txt
     outputSource:
       - >-
         gatk_collect_alignment_summary_metrics_4_1_3_0/gatk_collect_alignment_summary_metrics_txt
-    type: File
+    type:
+      - File
+      - type: array
+        items: File
     'sbg:x': 700.636962890625
     'sbg:y': 534.375
 steps:
@@ -124,7 +147,9 @@ steps:
     label: GATK-CollectInsertSizeMetrics
     'sbg:x': 208.8125
     'sbg:y': 111.3125
-requirements: []
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: StepInputExpressionRequirement
 $schemas:
   - 'http://schema.org/version/latest/schemaorg-current-http.rdf'
 's:author':
