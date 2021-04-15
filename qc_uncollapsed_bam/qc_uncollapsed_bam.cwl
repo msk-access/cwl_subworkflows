@@ -18,8 +18,20 @@ inputs:
       - type: array
         items: File
     label: uncollapsed_bam
+    secondaryFiles:
+      - ^.bai
     'sbg:x': -714.6541137695312
     'sbg:y': 563.10693359375
+  - id: uncollapsed_bam_base_recal
+    type:
+      - File
+      - type: array
+        items: File
+    label: uncollapsed_bam_base_recal
+    secondaryFiles:
+      - ^.bai
+    'sbg:x': -673.8885498046875
+    'sbg:y': 1228.81201171875
   - id: pool_b_target_intervals
     type: File
     label: pool_b_target_intervals
@@ -40,119 +52,173 @@ inputs:
     label: pool_a_target_intervals
     'sbg:x': -581.4170532226562
     'sbg:y': -288.2825012207031
-  - id: uncollapsed_bam_base_recal
+outputs:
+  - id: gatk_collect_alignment_summary_metrics_txt_pool_b
+    outputSource:
+      - bam_qc_stats_pool_b/gatk_collect_alignment_summary_metrics_txt
     type:
       - File
       - type: array
         items: File
-    label: uncollapsed_bam_base_recal
-    doc: An aligned SAM or BAM file.  Required.
-    'sbg:x': -711.8302001953125
-    'sbg:y': 724.0377197265625
-outputs:
-  - id: gatk_collect_alignment_summary_metrics_txt
-    outputSource:
-      - bam_qc_stats_1/gatk_collect_alignment_summary_metrics_txt
-    type: File
+    label: gatk_collect_alignment_summary_metrics_txt_pool_b
     'sbg:x': 429.216064453125
     'sbg:y': 559.75537109375
-  - id: gatk_collect_hs_metrics_per_base_coverage_txt
+  - id: gatk_collect_hs_metrics_per_base_coverage_txt_pool_b
     outputSource:
-      - bam_qc_stats_1/gatk_collect_hs_metrics_per_base_coverage_txt
-    type: File
+      - bam_qc_stats_pool_b/gatk_collect_hs_metrics_per_base_coverage_txt
+    type:
+      - File
+      - type: array
+        items: File
+    label: gatk_collect_hs_metrics_per_base_coverage_txt_pool_b
     'sbg:x': 420.07769775390625
     'sbg:y': 442.26190185546875
-  - id: gatk_collect_hs_metrics_per_target_coverage_txt
+  - id: gatk_collect_hs_metrics_per_target_coverage_txt_pool_b
     outputSource:
-      - bam_qc_stats_1/gatk_collect_hs_metrics_per_target_coverage_txt
-    type: File
+      - bam_qc_stats_pool_b/gatk_collect_hs_metrics_per_target_coverage_txt
+    type:
+      - File
+      - type: array
+        items: File
+    label: gatk_collect_hs_metrics_per_target_coverage_txt_pool_b
     'sbg:x': 427.91058349609375
     'sbg:y': 323.46295166015625
-  - id: gatk_collect_hs_metrics_txt
+  - id: gatk_collect_hs_metrics_txt_pool_b
     outputSource:
-      - bam_qc_stats_1/gatk_collect_hs_metrics_txt
-    type: File
+      - bam_qc_stats_pool_b/gatk_collect_hs_metrics_txt
+    type:
+      - File
+      - type: array
+        items: File
+    label: gatk_collect_hs_metrics_txt_pool_b
     'sbg:x': 427.91058349609375
     'sbg:y': 204.66400146484375
-  - id: gatk_collect_insert_size_metrics_histogram_pdf
+  - id: gatk_collect_insert_size_metrics_histogram_pdf_pool_b
     outputSource:
-      - bam_qc_stats_1/gatk_collect_insert_size_metrics_histogram_pdf
-    type: File
+      - bam_qc_stats_pool_b/gatk_collect_insert_size_metrics_histogram_pdf
+    type:
+      - File
+      - type: array
+        items: File
+    label: gatk_collect_insert_size_metrics_histogram_pdf_pool_b
     'sbg:x': 422.68865966796875
     'sbg:y': 80.64311218261719
-  - id: gatk_collect_insert_size_metrics_txt
+  - id: gatk_collect_insert_size_metrics_txt_pool_b
     outputSource:
-      - bam_qc_stats_1/gatk_collect_insert_size_metrics_txt
-    type: File
+      - bam_qc_stats_pool_b/gatk_collect_insert_size_metrics_txt
+    type:
+      - File
+      - type: array
+        items: File
+    label: gatk_collect_insert_size_metrics_txt_pool_b
     'sbg:x': 430.52154541015625
     'sbg:y': -34.2393913269043
-  - id: gatk_collect_alignment_summary_metrics_txt_1
+  - id: gatk_collect_alignment_summary_metrics_txt_pool_a
     outputSource:
-      - bam_qc_stats/gatk_collect_alignment_summary_metrics_txt
-    type: File
+      - bam_qc_stats_pool_a/gatk_collect_alignment_summary_metrics_txt
+    type:
+      - File
+      - type: array
+        items: File
+    label: gatk_collect_alignment_summary_metrics_txt_pool_a
     'sbg:x': 420.07769775390625
     'sbg:y': -155.64930725097656
-  - id: gatk_collect_hs_metrics_per_base_coverage_txt_1
+  - id: gatk_collect_hs_metrics_per_base_coverage_txt_pool_a
     outputSource:
-      - bam_qc_stats/gatk_collect_hs_metrics_per_base_coverage_txt
-    type: File
+      - bam_qc_stats_pool_a/gatk_collect_hs_metrics_per_base_coverage_txt
+    type:
+      - File
+      - type: array
+        items: File
+    label: gatk_collect_hs_metrics_per_base_coverage_txt_pool_a
     'sbg:x': 417.46673583984375
     'sbg:y': -274.4482727050781
-  - id: gatk_collect_hs_metrics_per_target_coverage_txt_1
+  - id: gatk_collect_hs_metrics_per_target_coverage_txt_pool_a
     outputSource:
-      - bam_qc_stats/gatk_collect_hs_metrics_per_target_coverage_txt
-    type: File
+      - bam_qc_stats_pool_a/gatk_collect_hs_metrics_per_target_coverage_txt
+    type:
+      - File
+      - type: array
+        items: File
+    label: gatk_collect_hs_metrics_per_target_coverage_txt_pool_a
     'sbg:x': 414.85577392578125
     'sbg:y': -389.3307800292969
-  - id: gatk_collect_hs_metrics_txt_1
+  - id: gatk_collect_hs_metrics_txt_pool_a
     outputSource:
-      - bam_qc_stats/gatk_collect_hs_metrics_txt
-    type: File
+      - bam_qc_stats_pool_a/gatk_collect_hs_metrics_txt
+    type:
+      - File
+      - type: array
+        items: File
+    label: gatk_collect_hs_metrics_txt_pool_a
     'sbg:x': 409.9451599121094
     'sbg:y': -498.08355712890625
-  - id: gatk_collect_insert_size_metrics_histogram_pdf_1
+  - id: gatk_collect_insert_size_metrics_histogram_pdf_pool_a
     outputSource:
-      - bam_qc_stats/gatk_collect_insert_size_metrics_histogram_pdf
-    type: File
+      - bam_qc_stats_pool_a/gatk_collect_insert_size_metrics_histogram_pdf
+    type:
+      - File
+      - type: array
+        items: File
+    label: gatk_collect_insert_size_metrics_histogram_pdf_pool_a
     'sbg:x': 410.9393005371094
     'sbg:y': -621.7067260742188
-  - id: gatk_collect_insert_size_metrics_txt_1
+  - id: gatk_collect_insert_size_metrics_txt_pool_a
     outputSource:
-      - bam_qc_stats/gatk_collect_insert_size_metrics_txt
-    type: File
+      - bam_qc_stats_pool_a/gatk_collect_insert_size_metrics_txt
+    type:
+      - File
+      - type: array
+        items: File
+    label: gatk_collect_insert_size_metrics_txt_pool_a
     'sbg:x': 400.4954528808594
     'sbg:y': -773.1427612304688
   - id: gatk_mean_quality_by_cycle_output
     outputSource:
       - gatk_mean_quality_by_cycle_4_1_8_0/gatk_mean_quality_by_cycle_output
-    type: File
+    type:
+      - File
+      - type: array
+        items: File
     'sbg:x': 419.18060302734375
     'sbg:y': 776.599609375
   - id: gatk_mean_quality_by_cycle_chart_output
     outputSource:
       - >-
         gatk_mean_quality_by_cycle_4_1_8_0/gatk_mean_quality_by_cycle_chart_output
-    type: File
+    type:
+      - File
+      - type: array
+        items: File
     'sbg:x': 419.18060302734375
     'sbg:y': 929.2159423828125
-  - id: gatk_mean_quality_by_cycle_output_1
+  - id: gatk_mean_quality_by_cycle_output_base_recal
     outputSource:
       - gatk_mean_quality_by_cycle_4_1_8_1/gatk_mean_quality_by_cycle_output
-    type: File
+    type:
+      - File
+      - type: array
+        items: File
+    label: gatk_mean_quality_by_cycle_output_base_recal
     'sbg:x': 417.72711181640625
     'sbg:y': 1129.79736328125
-  - id: gatk_mean_quality_by_cycle_chart_output_1
+  - id: gatk_mean_quality_by_cycle_chart_output_base_recal
     outputSource:
       - >-
         gatk_mean_quality_by_cycle_4_1_8_1/gatk_mean_quality_by_cycle_chart_output
-    type: File
+    type:
+      - File
+      - type: array
+        items: File
+    label: gatk_mean_quality_by_cycle_chart_output_base_recal
     'sbg:x': 424.99456787109375
     'sbg:y': 1283.8670654296875
 steps:
-  - id: bam_qc_stats
+  - id: bam_qc_stats_pool_a
     in:
       - id: input
-        source: uncollapsed_bam
+        source:
+          - uncollapsed_bam
       - id: target_intervals
         source: pool_a_target_intervals
       - id: bait_intervals
@@ -167,13 +233,14 @@ steps:
       - id: gatk_collect_hs_metrics_per_target_coverage_txt
       - id: gatk_collect_alignment_summary_metrics_txt
     run: ../bam_qc_stats/bam_qc_stats.cwl
-    label: bam_qc_stats
+    label: bam_qc_stats_pool_a
     'sbg:x': -114.38903045654297
     'sbg:y': -295.4621276855469
-  - id: bam_qc_stats_1
+  - id: bam_qc_stats_pool_b
     in:
       - id: input
-        source: uncollapsed_bam
+        source:
+          - uncollapsed_bam
       - id: target_intervals
         source: pool_b_target_intervals
       - id: bait_intervals
@@ -188,7 +255,7 @@ steps:
       - id: gatk_collect_hs_metrics_per_target_coverage_txt
       - id: gatk_collect_alignment_summary_metrics_txt
     run: ../bam_qc_stats/bam_qc_stats.cwl
-    label: bam_qc_stats
+    label: bam_qc_stats_pool_b
     'sbg:x': -116.60113525390625
     'sbg:y': 139.5
   - id: gatk_mean_quality_by_cycle_4_1_8_0
@@ -216,7 +283,7 @@ steps:
       - id: gatk_mean_quality_by_cycle_chart_output
     run: >-
       ../command_line_tools/gatk_mean_quality_by_cycle/4.1.8.0/gatk_mean_quality_by_cycle_4.1.8.0.cwl
-    label: GATK-MeanQualityByCycle
+    label: GATK-MeanQualityByCycle_base_recal
     'sbg:x': -78.6744155883789
     'sbg:y': 1229.6976318359375
 requirements:

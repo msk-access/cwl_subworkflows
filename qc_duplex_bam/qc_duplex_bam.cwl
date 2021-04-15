@@ -12,32 +12,34 @@ inputs:
       - ^.fasta.fai
     'sbg:x': -1389.233154296875
     'sbg:y': -472.8433837890625
-  - id: input
+  - id: duplex_bam
     type:
       - File
       - type: array
         items: File
     label: duplex_bam
+    secondaryFiles:
+      - ^.bai
     'sbg:x': -1188.919921875
     'sbg:y': 746.09033203125
-  - id: pool_a_targets_intervals
+  - id: pool_a_target_intervals
     type: File
-    label: pool_a_targets_intervals
+    label: pool_a_target_intervals
     'sbg:x': -1369.597900390625
     'sbg:y': -305.27490234375
-  - id: pool_a_baits_intervals
+  - id: pool_a_bait_intervals
     type: File
-    label: pool_a_baits_intervals
+    label: pool_a_bait_intervals
     'sbg:x': -1376.3414306640625
     'sbg:y': -157
-  - id: pool_b_targets_intervals
+  - id: pool_b_target_intervals
     type: File
-    label: pool_b_targets_intervals
+    label: pool_b_target_intervals
     'sbg:x': -1369.759765625
     'sbg:y': -12.322619438171387
-  - id: pool_b_baits_intervals
+  - id: pool_b_bait_intervals
     type: File
-    label: pool_b_baits_intervals
+    label: pool_b_bait_intervals
     'sbg:x': -1365.1011962890625
     'sbg:y': 130.08450317382812
   - id: noise_sites_bed
@@ -48,9 +50,9 @@ inputs:
       [required]
     'sbg:x': -1380.5565185546875
     'sbg:y': -635.455810546875
-  - id: pool_b_baits_bed
+  - id: pool_b_bait_bed
     type: File?
-    label: pool_b_baits_bed
+    label: pool_b_bait_bed
     doc: BED file containing the intervals to be queried.
     'sbg:x': -1365.263916015625
     'sbg:y': 410.41717529296875
@@ -121,79 +123,123 @@ outputs:
   - id: biometrics_minor_csv
     outputSource:
       - biometrics_minor/biometrics_minor_csv
-    type: File
+    type:
+      - File
+      - type: array
+        items: File
     'sbg:x': 800.5043334960938
     'sbg:y': 1475.69189453125
   - id: biometrics_minor_plot
     outputSource:
       - biometrics_minor/biometrics_minor_plot
-    type: File?
+    type:
+      - 'null'
+      - File
+      - type: array
+        items: File
     'sbg:x': 793.9630126953125
     'sbg:y': 1179.9027099609375
   - id: biometrics_minor_json
     outputSource:
       - biometrics_minor/biometrics_minor_json
-    type: File?
+    type:
+      - 'null'
+      - File
+      - type: array
+        items: File
     'sbg:x': 798.0455932617188
     'sbg:y': 1334.6092529296875
   - id: biometrics_minor_sites_plot
     outputSource:
       - biometrics_minor/biometrics_minor_sites_plot
-    type: File?
+    type:
+      - 'null'
+      - File
+      - type: array
+        items: File
     'sbg:x': 788.9630126953125
     'sbg:y': 1020.7374877929688
   - id: biometrics_major_csv
     outputSource:
       - biometrics_major/biometrics_major_csv
-    type: File
+    type:
+      - File
+      - type: array
+        items: File
     'sbg:x': 768.3390502929688
     'sbg:y': 872.6092529296875
   - id: biometrics_major_json
     outputSource:
       - biometrics_major/biometrics_major_json
-    type: File?
+    type:
+      - 'null'
+      - File
+      - type: array
+        items: File
     'sbg:x': 779.9630126953125
     'sbg:y': 721.8201293945312
   - id: biometrics_major_plot
     outputSource:
       - biometrics_major/biometrics_major_plot
-    type: File?
+    type:
+      - 'null'
+      - File
+      - type: array
+        items: File
     'sbg:x': 773.4216918945312
     'sbg:y': 582.1961669921875
   - id: sequence_qc_noise_positions
     outputSource:
       - calculate_noise_0_1_16/sequence_qc_noise_positions
-    type: File
+    type:
+      - File
+      - type: array
+        items: File
     'sbg:x': 307.75909423828125
     'sbg:y': -1031.4013671875
   - id: sequence_qc_noise_n
     outputSource:
       - calculate_noise_0_1_16/sequence_qc_noise_n
-    type: File
+    type:
+      - File
+      - type: array
+        items: File
     'sbg:x': 312.423828125
     'sbg:y': -913.6166381835938
   - id: sequence_qc_noise_del
     outputSource:
       - calculate_noise_0_1_16/sequence_qc_noise_del
-    type: File
+    type:
+      - File
+      - type: array
+        items: File
     'sbg:x': 313.5899963378906
     'sbg:y': -794.6656494140625
   - id: sequence_qc_noise_acgt
     outputSource:
       - calculate_noise_0_1_16/sequence_qc_noise_acgt
-    type: File
+    type:
+      - File
+      - type: array
+        items: File
     'sbg:x': 312.423828125
     'sbg:y': -669.8837280273438
   - id: sequence_qc_figures
     outputSource:
       - calculate_noise_0_1_16/sequence_qc_figures
-    type: File
+    type:
+      - File
+      - type: array
+        items: File
     'sbg:x': 311.25762939453125
     'sbg:y': -539.2709350585938
   - id: biometrics_extract_pickle
     outputSource:
       - biometrics_extract/biometrics_extract_pickle
-    type: File
+    type:
+      - File
+      - type: array
+        items: File
     'sbg:x': 804.253662109375
     'sbg:y': 1651.220947265625
   - id: gatk_collect_alignment_summary_metrics_txt_pool_b
@@ -320,11 +366,11 @@ steps:
   - id: bam_qc_stats_pool_a
     in:
       - id: input
-        source: input
+        source: duplex_bam
       - id: target_intervals
-        source: pool_a_targets_intervals
+        source: pool_a_target_intervals
       - id: bait_intervals
-        source: pool_a_baits_intervals
+        source: pool_a_bait_intervals
       - id: reference
         source: reference
     out:
@@ -343,9 +389,11 @@ steps:
       - id: reference
         source: reference
       - id: bam_file
-        source: input
+        source: duplex_bam
       - id: bed_file
         source: noise_sites_bed
+      - id: sample_id
+        source: sample_name
     out:
       - id: sequence_qc_pileup
       - id: sequence_qc_noise_positions
@@ -359,11 +407,11 @@ steps:
   - id: bam_qc_stats_pool_b
     in:
       - id: input
-        source: input
+        source: duplex_bam
       - id: target_intervals
-        source: pool_b_targets_intervals
+        source: pool_b_target_intervals
       - id: bait_intervals
-        source: pool_b_baits_intervals
+        source: pool_b_bait_intervals
       - id: reference
         source: reference
     out:
@@ -380,18 +428,23 @@ steps:
   - id: biometrics_extract
     in:
       - id: sample_bam
+        linkMerge: merge_nested
         source:
-          - input
+          - duplex_bam
       - id: sample_type
+        linkMerge: merge_nested
         source:
           - sample_type
       - id: sample_sex
+        linkMerge: merge_nested
         source:
           - sample_sex
       - id: sample_group
+        linkMerge: merge_nested
         source:
           - sample_group
       - id: sample_name
+        linkMerge: merge_nested
         source:
           - sample_name
       - id: fafile
@@ -399,7 +452,7 @@ steps:
       - id: vcf_file
         source: vcf_file
       - id: bed_file
-        source: pool_b_baits_bed
+        source: pool_b_bait_bed
       - id: min_mapping_quality
         source: min_mapping_quality
       - id: min_base_quality
