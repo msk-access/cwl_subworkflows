@@ -401,7 +401,7 @@ steps:
       - id: sequence_qc_noise_n
       - id: sequence_qc_noise_del
       - id: sequence_qc_figures
-    run: ../command_line_tools/sequence_qc_0.1.16/sequence_qc_0.1.16.cwl
+    run: ../command_line_tools/sequence_qc/0.1.19/sequence_qc_0.1.19.cwl
     'sbg:x': -205.99472045898438
     'sbg:y': -716.7506103515625
   - id: bam_qc_stats_pool_b
