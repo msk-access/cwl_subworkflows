@@ -114,6 +114,96 @@ inputs:
       - ^.bai
     'sbg:x': -809.8264770507812
     'sbg:y': -383.9412536621094
+  - id: biometrics_plot
+    type: boolean?
+    label: biometrics_plot
+    doc: Also output plots of the data.
+    'sbg:x': -1379.9268798828125
+    'sbg:y': -906.622314453125
+  - id: duplex_biometrics_minor_threshold
+    type: float?
+    label: duplex_biometrics_minor_threshold
+    doc: Minor contamination threshold for bad sample.
+    'sbg:x': -1403.07958984375
+    'sbg:y': -1674.0557861328125
+  - id: duplex_biometrics_min_mapping_quality
+    type: int?
+    label: duplex_biometrics_min_mapping_quality
+    doc: Minimum mapping quality of reads to be used for pileup.
+    'sbg:x': -1396.1343994140625
+    'sbg:y': -1554.8912353515625
+  - id: duplex_biometrics_min_homozygous_thresh
+    type: float?
+    label: duplex_biometrics_min_homozygous_thresh
+    doc: Minimum threshold to define homozygous.
+    'sbg:x': -1385.1710205078125
+    'sbg:y': -1427.8912353515625
+  - id: duplex_biometrics_min_coverage
+    type: int?
+    label: duplex_biometrics_min_coverage
+    doc: Minimum coverage to count a site.
+    'sbg:x': -1388.2076416015625
+    'sbg:y': -1303.781494140625
+  - id: duplex_biometrics_min_base_quality
+    type: int?
+    label: duplex_biometrics_min_base_quality
+    doc: Minimum base quality of reads to be used for pileup.
+    'sbg:x': -1384.262451171875
+    'sbg:y': -1172.6351318359375
+  - id: duplex_biometrics_major_threshold
+    type: float?
+    label: duplex_biometrics_major_threshold
+    doc: Major contamination threshold for bad sample.
+    'sbg:x': -1390.1893310546875
+    'sbg:y': -1050.3974609375
+  - id: biometrics_json
+    type: boolean?
+    label: biometrics_json
+    doc: Also output data in JSON format.
+    'sbg:x': -1376.9451904296875
+    'sbg:y': -753.5125732421875
+  - id: collapsed_biometrics_minor_threshold
+    type: float?
+    label: collapsed_biometrics_minor_threshold
+    doc: Minor contamination threshold for bad sample.
+    'sbg:x': -838.6036376953125
+    'sbg:y': -2211.296142578125
+  - id: collapsed_biometrics_min_mapping_quality
+    type: int?
+    label: collapsed_biometrics_min_mapping_quality
+    doc: Minimum mapping quality of reads to be used for pileup.
+    'sbg:x': -842.24755859375
+    'sbg:y': -2087.296142578125
+  - id: collapsed_biometrics_min_homozygous_thresh
+    type: float?
+    label: collapsed_biometrics_min_homozygous_thresh
+    doc: Minimum threshold to define homozygous.
+    'sbg:x': -838.9255981445312
+    'sbg:y': -1947.6180419921875
+  - id: collapsed_biometrics_min_coverage
+    type: int?
+    label: collapsed_biometrics_min_coverage
+    doc: Minimum coverage to count a site.
+    'sbg:x': -833.9255981445312
+    'sbg:y': -1817.9400634765625
+  - id: collapsed_biometrics_min_base_quality
+    type: int?
+    label: collapsed_biometrics_min_base_quality
+    doc: Minimum base quality of reads to be used for pileup.
+    'sbg:x': -835.4125366210938
+    'sbg:y': -1676.795166015625
+  - id: collapsed_biometrics_major_threshold
+    type: float?
+    label: collapsed_biometrics_major_threshold
+    doc: Major contamination threshold for bad sample.
+    'sbg:x': -839.7344970703125
+    'sbg:y': -1520.1512451171875
+  - id: collapsed_biometrics_coverage_threshold
+    type: int?
+    label: collapsed_biometrics_coverage_threshold
+    doc: Samples with Y chromosome above this value will be considered male.
+    'sbg:x': -830.3240356445312
+    'sbg:y': -1386.815185546875
 outputs:
   - id: uncollapsed_bam_stats_pool_a_dir
     outputSource:
@@ -275,6 +365,24 @@ steps:
         source: pool_b_bait_intervals
       - id: biometrics_bed_file
         source: biometrics_bed_file
+      - id: json
+        source: biometrics_json
+      - id: plot
+        source: biometrics_plot
+      - id: major_threshold
+        source: collapsed_biometrics_major_threshold
+      - id: minor_threshold
+        source: collapsed_biometrics_minor_threshold
+      - id: coverage_threshold
+        source: collapsed_biometrics_coverage_threshold
+      - id: min_mapping_quality
+        source: collapsed_biometrics_min_mapping_quality
+      - id: min_homozygous_thresh
+        source: collapsed_biometrics_min_homozygous_thresh
+      - id: min_coverage
+        source: collapsed_biometrics_min_coverage
+      - id: min_base_quality
+        source: collapsed_biometrics_min_base_quality
     out:
       - id: biometrics_extract_pickle
       - id: fgbio_collect_duplex_seq_metrics_duplex_family_size_pool_a
@@ -320,8 +428,8 @@ steps:
       - sample_group
       - group_reads_by_umi_bam
     scatterMethod: dotproduct
-    'sbg:x': -97.16836547851562
-    'sbg:y': 206.98886108398438
+    'sbg:x': -98.75630187988281
+    'sbg:y': 269.2268981933594
   - id: qc_uncollapsed_bam
     in:
       - id: reference
@@ -396,6 +504,22 @@ steps:
       - id: sample_group
         source:
           - sample_group
+      - id: min_mapping_quality
+        source: duplex_biometrics_min_mapping_quality
+      - id: min_homozygous_thresh
+        source: duplex_biometrics_min_homozygous_thresh
+      - id: min_coverage
+        source: duplex_biometrics_min_coverage
+      - id: min_base_quality
+        source: duplex_biometrics_min_base_quality
+      - id: plot
+        source: biometrics_plot
+      - id: major_threshold
+        source: duplex_biometrics_major_threshold
+      - id: minor_threshold
+        source: duplex_biometrics_minor_threshold
+      - id: json
+        source: biometrics_json
     out:
       - id: biometrics_minor_csv
       - id: biometrics_minor_plot

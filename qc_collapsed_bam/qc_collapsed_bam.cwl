@@ -101,6 +101,51 @@ inputs:
     doc: BED file containing the intervals to be queried.
     'sbg:x': -1384.4722900390625
     'sbg:y': 347.15325927734375
+  - id: json
+    type: boolean?
+    doc: Also output data in JSON format.
+    'sbg:x': -50.14529037475586
+    'sbg:y': 668.078369140625
+  - id: plot
+    type: boolean?
+    doc: Also output plots of the data.
+    'sbg:x': -37.99789047241211
+    'sbg:y': 828.6326904296875
+  - id: major_threshold
+    type: float?
+    doc: Major contamination threshold for bad sample.
+    'sbg:x': -37.99789047241211
+    'sbg:y': 986.5403442382812
+  - id: minor_threshold
+    type: float?
+    doc: Minor contamination threshold for bad sample.
+    'sbg:x': -20.255456924438477
+    'sbg:y': 1140.8995361328125
+  - id: coverage_threshold
+    type: int?
+    doc: Samples with Y chromosome above this value will be considered male.
+    'sbg:x': -16.70697021484375
+    'sbg:y': 1304.1298828125
+  - id: min_mapping_quality
+    type: int?
+    doc: Minimum mapping quality of reads to be used for pileup.
+    'sbg:x': -316.75909423828125
+    'sbg:y': 658.3980102539062
+  - id: min_homozygous_thresh
+    type: float?
+    doc: Minimum threshold to define homozygous.
+    'sbg:x': -310.90899658203125
+    'sbg:y': 805.6259155273438
+  - id: min_coverage
+    type: int?
+    doc: Minimum coverage to count a site.
+    'sbg:x': -304.0838623046875
+    'sbg:y': 946.0287475585938
+  - id: min_base_quality
+    type: int?
+    doc: Minimum base quality of reads to be used for pileup.
+    'sbg:x': -313.83404541015625
+    'sbg:y': 1075.706298828125
 outputs:
   - id: biometrics_extract_pickle
     outputSource:
@@ -458,7 +503,8 @@ steps:
   - id: bam_qc_stats_pool_b
     in:
       - id: input
-        source: collapsed_bam
+        source:
+          - collapsed_bam
       - id: target_intervals
         source: pool_b_target_intervals
       - id: bait_intervals
@@ -479,7 +525,8 @@ steps:
   - id: bam_qc_stats_pool_a
     in:
       - id: input
-        source: collapsed_bam
+        source:
+          - collapsed_bam
       - id: target_intervals
         source: pool_a_target_intervals
       - id: bait_intervals
@@ -525,6 +572,14 @@ steps:
         source: biometrics_vcf_file
       - id: bed_file
         source: biometrics_bed_file
+      - id: min_mapping_quality
+        source: min_mapping_quality
+      - id: min_base_quality
+        source: min_base_quality
+      - id: min_coverage
+        source: min_coverage
+      - id: min_homozygous_thresh
+        source: min_homozygous_thresh
     out:
       - id: biometrics_extract_pickle
     run: ../command_line_tools/biometrics_extract/0.2.9/biometrics_extract.cwl
@@ -571,6 +626,12 @@ steps:
       - id: input
         source:
           - biometrics_extract/biometrics_extract_pickle
+      - id: major_threshold
+        source: major_threshold
+      - id: plot
+        source: plot
+      - id: json
+        source: json
     out:
       - id: biometrics_major_csv
       - id: biometrics_major_json
@@ -583,10 +644,14 @@ steps:
       - id: input
         source:
           - biometrics_extract/biometrics_extract_pickle
+      - id: minor_threshold
+        source: minor_threshold
       - id: plot
         default: false
+        source: plot
       - id: json
         default: true
+        source: json
     out:
       - id: biometrics_minor_csv
       - id: biometrics_minor_json
@@ -600,6 +665,10 @@ steps:
       - id: input
         source:
           - biometrics_extract/biometrics_extract_pickle
+      - id: coverage_threshold
+        source: coverage_threshold
+      - id: json
+        source: json
     out:
       - id: biometrics_sexmismatch_csv
       - id: biometrics_sexmismatch_json

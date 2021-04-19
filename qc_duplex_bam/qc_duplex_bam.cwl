@@ -113,6 +113,26 @@ inputs:
     doc: Minimum base quality of reads to be used for pileup.
     'sbg:x': -382.89617919921875
     'sbg:y': 1347.3890380859375
+  - id: plot
+    type: boolean?
+    doc: Also output plots of the data.
+    'sbg:x': -376.41387939453125
+    'sbg:y': 1510.7532958984375
+  - id: major_threshold
+    type: float?
+    doc: Major contamination threshold for bad sample.
+    'sbg:x': -373.6401672363281
+    'sbg:y': 1656.323974609375
+  - id: minor_threshold
+    type: float?
+    doc: Minor contamination threshold for bad sample.
+    'sbg:x': -375.43487548828125
+    'sbg:y': 1803.476806640625
+  - id: json
+    type: boolean?
+    doc: Also output data in JSON format.
+    'sbg:x': -375.43487548828125
+    'sbg:y': 1945.246826171875
 outputs:
   - id: biometrics_minor_csv
     outputSource:
@@ -465,10 +485,14 @@ steps:
       - id: input
         source:
           - biometrics_extract/biometrics_extract_pickle
+      - id: minor_threshold
+        source: minor_threshold
       - id: plot
-        default: true
+        default: false
+        source: plot
       - id: json
         default: true
+        source: json
     out:
       - id: biometrics_minor_csv
       - id: biometrics_minor_json
@@ -482,10 +506,14 @@ steps:
       - id: input
         source:
           - biometrics_extract/biometrics_extract_pickle
+      - id: major_threshold
+        source: major_threshold
       - id: plot
-        default: true
+        default: false
+        source: plot
       - id: json
         default: true
+        source: json
     out:
       - id: biometrics_major_csv
       - id: biometrics_major_json
