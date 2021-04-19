@@ -50,13 +50,7 @@ inputs:
       [required]
     'sbg:x': -1380.5565185546875
     'sbg:y': -635.455810546875
-  - id: pool_b_bait_bed
-    type: File?
-    label: pool_b_bait_bed
-    doc: BED file containing the intervals to be queried.
-    'sbg:x': -1365.263916015625
-    'sbg:y': 410.41717529296875
-  - id: vcf_file
+  - id: biometrics_vcf_file
     type: File
     doc: VCF file containing the SNPs to be queried.
     'sbg:x': -1373.5452880859375
@@ -366,7 +360,8 @@ steps:
   - id: bam_qc_stats_pool_a
     in:
       - id: input
-        source: duplex_bam
+        source:
+          - duplex_bam
       - id: target_intervals
         source: pool_a_target_intervals
       - id: bait_intervals
@@ -407,7 +402,8 @@ steps:
   - id: bam_qc_stats_pool_b
     in:
       - id: input
-        source: duplex_bam
+        source:
+          - duplex_bam
       - id: target_intervals
         source: pool_b_target_intervals
       - id: bait_intervals
@@ -450,9 +446,7 @@ steps:
       - id: fafile
         source: reference
       - id: vcf_file
-        source: vcf_file
-      - id: bed_file
-        source: pool_b_bait_bed
+        source: biometrics_vcf_file
       - id: min_mapping_quality
         source: min_mapping_quality
       - id: min_base_quality

@@ -22,7 +22,7 @@ inputs:
     label: pool_a_target_intervals
     'sbg:x': -1407.2725830078125
     'sbg:y': -725.6703491210938
-  - id: vcf_file
+  - id: biometrics_vcf_file
     type: File
     doc: VCF file containing the SNPs to be queried.
     'sbg:x': -1376.3106689453125
@@ -96,7 +96,7 @@ inputs:
     doc: 'Optional set of intervals over which to restrict analysis. [Optional].'
     'sbg:x': -1393.6268310546875
     'sbg:y': -352.0533142089844
-  - id: bed_file
+  - id: biometrics_bed_file
     type: File?
     doc: BED file containing the intervals to be queried.
     'sbg:x': -1384.4722900390625
@@ -522,9 +522,9 @@ steps:
       - id: fafile
         source: reference
       - id: vcf_file
-        source: vcf_file
+        source: biometrics_vcf_file
       - id: bed_file
-        source: bed_file
+        source: biometrics_bed_file
     out:
       - id: biometrics_extract_pickle
     run: ../command_line_tools/biometrics_extract/0.2.9/biometrics_extract.cwl

@@ -67,12 +67,12 @@ inputs:
     label: pool_a_bait_intervals
     'sbg:x': -1366.56494140625
     'sbg:y': 126.96497344970703
-  - id: bed_file
+  - id: biometrics_bed_file
     type: File?
     doc: BED file containing the intervals to be queried.
     'sbg:x': -1356.0794677734375
     'sbg:y': 652.2377319335938
-  - id: vcf_file
+  - id: biometrics_vcf_file
     type: File
     doc: VCF file containing the SNPs to be queried.
     'sbg:x': -1345.8929443359375
@@ -249,8 +249,8 @@ steps:
         source: pool_b_target_intervals
       - id: pool_a_target_intervals
         source: pool_a_target_intervals
-      - id: vcf_file
-        source: vcf_file
+      - id: biometrics_vcf_file
+        source: biometrics_vcf_file
       - id: collapsed_bam
         source:
           - collapsed_bam
@@ -273,8 +273,8 @@ steps:
         source: pool_a_bait_intervals
       - id: pool_b_bait_intervals
         source: pool_b_bait_intervals
-      - id: bed_file
-        source: bed_file
+      - id: biometrics_bed_file
+        source: biometrics_bed_file
     out:
       - id: biometrics_extract_pickle
       - id: fgbio_collect_duplex_seq_metrics_duplex_family_size_pool_a
@@ -382,8 +382,8 @@ steps:
         source: pool_b_bait_intervals
       - id: noise_sites_bed
         source: noise_sites_bed
-      - id: vcf_file
-        source: vcf_file
+      - id: biometrics_vcf_file
+        source: biometrics_vcf_file
       - id: sample_type
         source:
           - sample_type
