@@ -463,7 +463,7 @@ steps:
         source: min_homozygous_thresh
     out:
       - id: biometrics_extract_pickle
-    run: ../command_line_tools/biometrics_extract/0.2.8/biometrics_extract_0.2.8.cwl
+    run: ../command_line_tools/biometrics_extract/0.2.9/biometrics_extract.cwl
     'sbg:x': -176.97422790527344
     'sbg:y': 734.6185302734375
   - id: biometrics_minor
@@ -480,7 +480,7 @@ steps:
       - id: biometrics_minor_json
       - id: biometrics_minor_plot
       - id: biometrics_minor_sites_plot
-    run: ../command_line_tools/biometrics_minor/0.2.8/biometrics_minor_0.2.8.cwl
+    run: ../command_line_tools/biometrics_minor/0.2.9/biometrics_minor.cwl
     'sbg:x': 464.28485107421875
     'sbg:y': 1208.646240234375
   - id: biometrics_major
@@ -496,7 +496,7 @@ steps:
       - id: biometrics_major_csv
       - id: biometrics_major_json
       - id: biometrics_major_plot
-    run: ../command_line_tools/biometrics_major/0.2.8/biometrics_major_0.2.8.cwl
+    run: ../command_line_tools/biometrics_major/0.2.9/biometrics_major.cwl
     'sbg:x': 413.70654296875
     'sbg:y': 681.5068969726562
 requirements:

@@ -527,7 +527,7 @@ steps:
         source: bed_file
     out:
       - id: biometrics_extract_pickle
-    run: ../command_line_tools/biometrics_extract/0.2.8/biometrics_extract_0.2.8.cwl
+    run: ../command_line_tools/biometrics_extract/0.2.9/biometrics_extract.cwl
     'sbg:x': -56.18357467651367
     'sbg:y': 437.74395751953125
   - id: fgbio_collect_duplex_seq_metrics_1_2_0
@@ -575,7 +575,7 @@ steps:
       - id: biometrics_major_csv
       - id: biometrics_major_json
       - id: biometrics_major_plot
-    run: ../command_line_tools/biometrics_major/0.2.8/biometrics_major_0.2.8.cwl
+    run: ../command_line_tools/biometrics_major/0.2.9/biometrics_major.cwl
     'sbg:x': 677.335205078125
     'sbg:y': 262.2733154296875
   - id: biometrics_minor
@@ -592,7 +592,7 @@ steps:
       - id: biometrics_minor_json
       - id: biometrics_minor_plot
       - id: biometrics_minor_sites_plot
-    run: ../command_line_tools/biometrics_minor/0.2.8/biometrics_minor_0.2.8.cwl
+    run: ../command_line_tools/biometrics_minor/0.2.9/biometrics_minor.cwl
     'sbg:x': 686.5601196289062
     'sbg:y': 571.31689453125
   - id: biometrics_sexmismatch
@@ -604,7 +604,7 @@ steps:
       - id: biometrics_sexmismatch_csv
       - id: biometrics_sexmismatch_json
     run: >-
-      ../command_line_tools/biometrics_sexmismatch/0.2.8/biometrics_sexmismatch_0.2.8.cwl
+      ../command_line_tools/biometrics_sexmismatch/0.2.9/biometrics_sexmismatch.cwl
     'sbg:x': 688.3497924804688
     'sbg:y': 1029.9459228515625
 requirements:
