@@ -3,6 +3,7 @@ cwlVersion: v1.0
 id: access_bam_qc
 label: access_bam_qc
 $namespaces:
+  s: 'https://schema.org/'
   sbg: 'https://www.sevenbridges.com/'
 inputs:
   - id: reference
