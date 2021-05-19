@@ -897,3 +897,18 @@ requirements:
   - class: MultipleInputFeatureRequirement
   - class: InlineJavascriptRequirement
   - class: StepInputExpressionRequirement
+$schemas:
+  - 'http://schema.org/version/latest/schemaorg-current-http.rdf'
+'s:author':
+  - class: 's:Person'
+    's:email': 'mailto:murphyc4@mskcc.org'
+    's:identifier': ''
+    's:name': Charlie Murphy
+'s:citation': ''
+'s:codeRepository': 'https://github.com/msk-access/cwl_subworkflows'
+'s:contributor':
+  - class: 's:Person'
+    's:email': 'mailto:murphyc4@mskcc.org'
+    's:name': Charlie Murphy
+'s:dateCreated': '2021-05-19'
+'s:license': 'https://spdx.org/licenses/Apache-2.0'
