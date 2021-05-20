@@ -322,6 +322,20 @@
                     "doc": "Samples with Y chromosome above this value will be considered male.",
                     "https://www.sevenbridges.com/x": -387.0456237792969,
                     "https://www.sevenbridges.com/y": 1481.5826416015625
+                },
+                {
+                    "id": "#simplex_bam_pool_b_dir",
+                    "type": {
+                        "type": "array",
+                        "items": [
+                            "File",
+                            "Directory",
+                            "null"
+                        ]
+                    },
+                    "label": "simplex_bam_pool_b_dir",
+                    "https://www.sevenbridges.com/x": -376.6598815917969,
+                    "https://www.sevenbridges.com/y": -2307.748291015625
                 }
             ],
             "outputs": [
@@ -464,6 +478,16 @@
                     "label": "collapsed_biometrics_outdir",
                     "https://www.sevenbridges.com/x": 855.2215576171875,
                     "https://www.sevenbridges.com/y": 1238.1143798828125
+                },
+                {
+                    "id": "#simplex_bam_pool_b_outdir",
+                    "outputSource": [
+                        "#simplex_bam_pool_b_agg/directory"
+                    ],
+                    "type": "Directory",
+                    "label": "simplex_bam_pool_b_outdir",
+                    "https://www.sevenbridges.com/x": 302.2002258300781,
+                    "https://www.sevenbridges.com/y": -2309.53466796875
                 }
             ],
             "steps": [
@@ -1162,17 +1186,35 @@
                     "label": "collapsed_biometrics_agg",
                     "https://www.sevenbridges.com/x": 585.7066650390625,
                     "https://www.sevenbridges.com/y": 1235.0516357421875
+                },
+                {
+                    "id": "#simplex_bam_pool_b_agg",
+                    "in": [
+                        {
+                            "id": "#simplex_bam_pool_b_agg/files",
+                            "source": [
+                                "#simplex_bam_pool_b_dir"
+                            ]
+                        },
+                        {
+                            "id": "#simplex_bam_pool_b_agg/output_directory_name",
+                            "default": "simplex_bam_pool_b_merged_dir"
+                        }
+                    ],
+                    "out": [
+                        {
+                            "id": "#simplex_bam_pool_b_agg/directory"
+                        }
+                    ],
+                    "run": "#put_in_dir.cwl",
+                    "label": "simplex_bam_pool_b_agg",
+                    "https://www.sevenbridges.com/x": 2.071298837661743,
+                    "https://www.sevenbridges.com/y": -2311.31787109375
                 }
             ],
             "requirements": [
                 {
                     "class": "MultipleInputFeatureRequirement"
-                },
-                {
-                    "class": "InlineJavascriptRequirement"
-                },
-                {
-                    "class": "StepInputExpressionRequirement"
                 }
             ],
             "$namespaces": {
