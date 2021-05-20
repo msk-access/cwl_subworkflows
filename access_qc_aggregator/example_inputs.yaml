@@ -1,0 +1,53 @@
+simplex_bam_pool_a_dir:
+  - class: Directory
+    path: /path
+duplex_bam_sequence_qc_dir:
+  - class: Directory
+    path: /path
+duplex_bam_stats_pool_a_dir:
+  - class: Directory
+    path: /path
+duplex_bam_stats_pool_b_dir:
+  - class: Directory
+    path: /path
+collapsed_bam_stats_pool_a_dir:
+  - class: Directory
+    path: /path
+collapsed_bam_stats_pool_b_dir:
+  - class: Directory
+    path: /path
+collapsed_bam_duplex_metrics_pool_a_dir:
+  - class: Directory
+    path: /path
+collapsed_bam_duplex_metrics_pool_b_dir:
+  - class: Directory
+    path: /path
+gatk_mean_quality_by_cycle_recal_dir:
+  - class: Directory
+    path: /path- class: File
+gatk_mean_quality_by_cycle_dir:
+  - class: Directory
+    path: /path
+uncollapsed_bam_stats_pool_b_dir:
+  - class: Directory
+    path: /path
+uncollapsed_bam_stats_pool_a_dir:
+  - class: Directory
+    path: /path
+duplex_extraction_files:
+  - class: File
+    path: /path
+collapsed_extraction_files:
+  - class: File
+    path: /path
+biometrics_plot: true
+biometrics_json: true
+biometrics_threads: null
+duplex_biometrics_coverage_threshold: null
+duplex_biometrics_discordance_threshold: null
+duplex_biometrics_major_threshold: null
+duplex_biometrics_minor_threshold: null
+collapsed_biometrics_discordance_threshold: null
+collapsed_biometrics_major_threshold: null
+collapsed_biometrics_minor_threshold: null
+collapsed_biometrics_coverage_threshold: null
