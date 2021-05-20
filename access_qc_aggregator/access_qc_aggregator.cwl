@@ -349,7 +349,7 @@ steps:
       - id: biometrics_genotype_cluster_input_database
       - id: biometrics_genotype_plot_input
       - id: biometrics_genotype_plot_input_database
-    run: ../command_line_tools/biometrics_genotype/0.2.8/biometrics_genotype_0.2.8.cwl
+    run: ../command_line_tools/biometrics_genotype/0.2.9/biometrics_genotype.cwl
     'sbg:x': 15.982142448425293
     'sbg:y': 126.89286041259766
   - id: simplex_bam_pool_a_agg
@@ -517,7 +517,7 @@ steps:
       - id: biometrics_major_csv
       - id: biometrics_major_json
       - id: biometrics_major_plot
-    run: ../command_line_tools/biometrics_major/0.2.8/biometrics_major_0.2.8.cwl
+    run: ../command_line_tools/biometrics_major/0.2.9/biometrics_major.cwl
     label: duplex_biometrics_major
     'sbg:x': 19.419479370117188
     'sbg:y': 303.0918273925781
@@ -539,7 +539,7 @@ steps:
       - id: biometrics_minor_json
       - id: biometrics_minor_plot
       - id: biometrics_minor_sites_plot
-    run: ../command_line_tools/biometrics_minor/0.2.8/biometrics_minor_0.2.8.cwl
+    run: ../command_line_tools/biometrics_minor/0.2.9/biometrics_minor.cwl
     label: duplex_biometrics_minor
     'sbg:x': 17.838956832885742
     'sbg:y': 492.78192138671875
@@ -556,7 +556,7 @@ steps:
       - id: biometrics_sexmismatch_csv
       - id: biometrics_sexmismatch_json
     run: >-
-      ../command_line_tools/biometrics_sexmismatch/0.2.8/biometrics_sexmismatch_0.2.8.cwl
+      ../command_line_tools/biometrics_sexmismatch/0.2.9/biometrics_sexmismatch.cwl
     label: duplex_biometrics_sexmismatch
     'sbg:x': 12.246261596679688
     'sbg:y': 665.076904296875
@@ -608,7 +608,7 @@ steps:
       - id: biometrics_genotype_cluster_input_database
       - id: biometrics_genotype_plot_input
       - id: biometrics_genotype_plot_input_database
-    run: ../command_line_tools/biometrics_genotype/0.2.8/biometrics_genotype_0.2.8.cwl
+    run: ../command_line_tools/biometrics_genotype/0.2.9/biometrics_genotype.cwl
     label: collapsed_biometrics_genotype
     'sbg:x': 30.168201446533203
     'sbg:y': 924.2750244140625
@@ -630,7 +630,7 @@ steps:
       - id: biometrics_major_csv
       - id: biometrics_major_json
       - id: biometrics_major_plot
-    run: ../command_line_tools/biometrics_major/0.2.8/biometrics_major_0.2.8.cwl
+    run: ../command_line_tools/biometrics_major/0.2.9/biometrics_major.cwl
     label: collapsed_biometrics_major
     'sbg:x': 37.61433792114258
     'sbg:y': 1125.25341796875
@@ -655,7 +655,7 @@ steps:
       - id: biometrics_minor_json
       - id: biometrics_minor_plot
       - id: biometrics_minor_sites_plot
-    run: ../command_line_tools/biometrics_minor/0.2.8/biometrics_minor_0.2.8.cwl
+    run: ../command_line_tools/biometrics_minor/0.2.9/biometrics_minor.cwl
     label: collapsed_biometrics_minor
     'sbg:x': 37.22428512573242
     'sbg:y': 1325.6654052734375
@@ -673,7 +673,7 @@ steps:
       - id: biometrics_sexmismatch_csv
       - id: biometrics_sexmismatch_json
     run: >-
-      ../command_line_tools/biometrics_sexmismatch/0.2.8/biometrics_sexmismatch_0.2.8.cwl
+      ../command_line_tools/biometrics_sexmismatch/0.2.9/biometrics_sexmismatch.cwl
     label: collapsed_biometrics_sexmismatch
     'sbg:x': 38.33828353881836
     'sbg:y': 1529
