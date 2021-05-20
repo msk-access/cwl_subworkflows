@@ -34,7 +34,7 @@
                     "id": "#fgbio_filter_consensus_reads_1.2.0.cwl/input",
                     "type": "File",
                     "inputBinding": {
-                        "position": 0,
+                        "position": 2,
                         "prefix": "--input",
                         "shellQuote": false
                     },
@@ -52,12 +52,12 @@
                     "id": "#fgbio_filter_consensus_reads_1.2.0.cwl/reference_fasta",
                     "type": "File",
                     "inputBinding": {
-                        "position": 0,
+                        "position": 2,
                         "prefix": "--ref"
                     },
                     "doc": "Reference fasta file.",
                     "secondaryFiles": [
-                        "^.fai",
+                        ".fai",
                         "^.dict"
                     ]
                 },
@@ -68,7 +68,7 @@
                         "boolean"
                     ],
                     "inputBinding": {
-                        "position": 0,
+                        "position": 2,
                         "prefix": "--reverse-per-base-tags"
                     },
                     "doc": "Reverse [complement] per base tags on reverse strand reads."
@@ -83,9 +83,10 @@
                         }
                     ],
                     "inputBinding": {
-                        "position": 0,
+                        "position": 2,
                         "prefix": "--min-reads",
-                        "itemSeparator": " "
+                        "itemSeparator": " ",
+                        "shellQuote": false
                     },
                     "doc": "The minimum number of reads supporting a consensus base/read. (Max 3 values)"
                 },
@@ -99,7 +100,7 @@
                         }
                     ],
                     "inputBinding": {
-                        "position": 0,
+                        "position": 2,
                         "prefix": "--max-read-error-rate",
                         "itemSeparator": " "
                     },
@@ -115,7 +116,7 @@
                         }
                     ],
                     "inputBinding": {
-                        "position": 0,
+                        "position": 2,
                         "prefix": "--max-base-error-rate",
                         "itemSeparator": " "
                     },
@@ -123,12 +124,9 @@
                 },
                 {
                     "id": "#fgbio_filter_consensus_reads_1.2.0.cwl/min_base_quality",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
+                    "type": "int",
                     "inputBinding": {
-                        "position": 0,
+                        "position": 2,
                         "prefix": "--min-base-quality"
                     },
                     "doc": "Mask (make N) consensus bases with quality less than this threshold."
@@ -140,7 +138,7 @@
                         "float"
                     ],
                     "inputBinding": {
-                        "position": 0,
+                        "position": 2,
                         "prefix": "--max-no-call-fraction"
                     },
                     "doc": "Maximum fraction of no-calls in the read after filtering"
@@ -152,7 +150,7 @@
                         "int"
                     ],
                     "inputBinding": {
-                        "position": 0,
+                        "position": 2,
                         "prefix": "--min-mean-base-quality"
                     },
                     "doc": "The minimum mean base quality across the consensus read"
@@ -164,10 +162,31 @@
                         "boolean"
                     ],
                     "inputBinding": {
-                        "position": 0,
+                        "position": 2,
                         "prefix": "--require-single-strand-agreement"
                     },
                     "doc": "Mask (make N) consensus bases where the AB and BA consensus reads disagree (for duplex-sequencing only)."
+                },
+                {
+                    "id": "#fgbio_filter_consensus_reads_1.2.0.cwl/temporary_directory",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "doc": "Default value: null."
+                },
+                {
+                    "id": "#fgbio_filter_consensus_reads_1.2.0.cwl/async_io",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "inputBinding": {
+                        "position": 0,
+                        "separate": false,
+                        "prefix": "--async-io="
+                    },
+                    "doc": "'Use asynchronous I/O where possible, e.g. for SAM and BAM files [=true|false].'"
                 }
             ],
             "outputs": [
@@ -187,35 +206,27 @@
             "arguments": [
                 {
                     "position": 0,
-                    "prefix": "",
-                    "valueFrom": "${\n  if(inputs.memory_per_job && inputs.memory_overhead) {\n    if(inputs.memory_per_job % 1000 == 0) {\n      return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\"\n    }\n    else {\n      return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\"\n    }\n  }\n  else if (inputs.memory_per_job && !inputs.memory_overhead){\n    if(inputs.memory_per_job % 1000 == 0) {\n      return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\"\n    }\n    else {\n      return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\"\n    }\n  }\n  else if(!inputs.memory_per_job && inputs.memory_overhead){\n    return \"-Xmx10G\"\n  }\n  else {\n      return \"-Xmx10G\"\n  }\n}"
+                    "valueFrom": "${\n  if(inputs.memory_per_job && inputs.memory_overhead) {\n    if(inputs.memory_per_job % 1000 == 0) {\n      return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\"\n    }\n    else {\n      return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\"\n    }\n  }\n  else if (inputs.memory_per_job && !inputs.memory_overhead){\n    if(inputs.memory_per_job % 1000 == 0) {\n      return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\"\n    }\n    else {\n      return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\"\n    }\n  }\n  else if(!inputs.memory_per_job && inputs.memory_overhead){\n    return \"-Xmx12G\"\n  }\n  else {\n      return \"-Xmx12G\"\n  }\n}"
                 },
                 {
                     "position": 0,
                     "valueFrom": "-XX:-UseGCOverheadLimit"
                 },
                 {
-                    "position": 0,
-                    "prefix": "-Djava.io.tmpdir=",
-                    "separate": false,
-                    "shellQuote": false,
-                    "valueFrom": "${ return runtime.tmpdir}"
-                },
-                {
-                    "position": 0,
-                    "prefix": "",
+                    "position": 1,
                     "valueFrom": "FilterConsensusReads"
                 },
                 {
                     "position": 0,
+                    "prefix": "--tmp-dir=",
+                    "separate": false,
+                    "valueFrom": "${\n    if(inputs.temporary_directory)\n        return inputs.temporary_directory;\n      return runtime.tmpdir\n}"
+                },
+                {
+                    "position": 2,
                     "prefix": "--output",
                     "shellQuote": false,
                     "valueFrom": "${\n    if(inputs.output_file_name)\n        return inputs.output_file_name;\n      return  inputs.input.basename.replace(/.bam/,'_filtered.bam');\n}"
-                },
-                {
-                    "position": 0,
-                    "prefix": "--threads",
-                    "valueFrom": "${\n    if(inputs.number_of_threads)\n        return inputs.number_of_threads\n    return runtime.cores\n}"
                 }
             ],
             "requirements": [
@@ -224,12 +235,12 @@
                 },
                 {
                     "class": "ResourceRequirement",
-                    "ramMin": 4000,
+                    "ramMin": 16000,
                     "coresMin": 2
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "quay.io/biocontainers/fgbio:1.2.0--0"
+                    "dockerPull": "ghcr.io/msk-access/fgbio:1.2.0"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -284,6 +295,7 @@
                     "id": "#fgbio_postprocessing_simplex_filter_0.1.8.cwl/input_bam",
                     "type": "File",
                     "inputBinding": {
+                        "position": 0,
                         "prefix": "--input_bam"
                     },
                     "doc": "Input file (bam or sam).  Required.",
@@ -298,6 +310,7 @@
                         "string"
                     ],
                     "inputBinding": {
+                        "position": 0,
                         "prefix": "--output_filename"
                     },
                     "doc": "Output file (bam or sam)."
@@ -309,6 +322,7 @@
                         "int"
                     ],
                     "inputBinding": {
+                        "position": 0,
                         "prefix": "--min_simplex_reads"
                     },
                     "doc": "Minimum number of simplex reads to pass filter for consensus reads"
@@ -330,12 +344,12 @@
             "requirements": [
                 {
                     "class": "ResourceRequirement",
-                    "ramMin": 2000,
-                    "coresMin": 1
+                    "ramMin": 16000,
+                    "coresMin": 2
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "mskaccess/fgbio_postprocessing:0.2.0"
+                    "dockerPull": "ghcr.io/msk-access/fgbio_postprocessing:0.2.1"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -378,7 +392,6 @@
         {
             "class": "CommandLineTool",
             "id": "#gatk_collect_alignment_summary_metrics_4.1.8.0.cwl",
-            "label": "GATK-CollectAlignmentSummaryMetrics",
             "baseCommand": [
                 "gatk",
                 "CollectAlignmentSummaryMetrics"
@@ -434,11 +447,11 @@
                         "position": 0,
                         "prefix": "-R"
                     },
+                    "doc": "Reference sequence file. Note that while this argument is not required, without it only a small subset of the metrics will be calculated. Note also that if a reference sequence is provided, it must be accompanied by a sequence dictionary.  Default value: null.",
                     "secondaryFiles": [
                         "^.fasta.fai",
                         "^.dict"
-                    ],
-                    "doc": "Reference sequence file. Note that while this argument is not required, without it only a small subset of the metrics will be calculated. Note also that if a reference sequence is provided, it must be accompanied by a sequence dictionary.  Default value: null."
+                    ]
                 },
                 {
                     "id": "#gatk_collect_alignment_summary_metrics_4.1.8.0.cwl/adaptor_sequence",
@@ -513,8 +526,8 @@
                     "doc": "Validation stringency for all SAM files read by this program.  Setting stringency to SILENT can improve performance when processing a BAM file in which variable-length data (read, qualities, tags) do not otherwise need to be decoded.  Default value: STRICT. This option can be set to 'null' to clear the default value. Possible values: {STRICT,LENIENT, SILENT}"
                 },
                 {
-                    "id": "#gatk_collect_alignment_summary_metrics_4.1.8.0.cwl/assume_sorted",
                     "default": true,
+                    "id": "#gatk_collect_alignment_summary_metrics_4.1.8.0.cwl/assume_sorted",
                     "type": [
                         "null",
                         "boolean"
@@ -584,6 +597,14 @@
                         "prefix": "--USE_JDK_INFLATER"
                     },
                     "doc": "Use the JDK Inflater instead of the Intel Inflater for reading compressed input"
+                },
+                {
+                    "id": "#gatk_collect_alignment_summary_metrics_4.1.8.0.cwl/temporary_directory",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "doc": "Default value: null. This option may be specified 0 or more times."
                 }
             ],
             "outputs": [
@@ -595,6 +616,7 @@
                     }
                 }
             ],
+            "label": "GATK-CollectAlignmentSummaryMetrics",
             "arguments": [
                 {
                     "position": 0,
@@ -604,20 +626,10 @@
                 {
                     "position": 0,
                     "prefix": "--TMP_DIR",
-                    "valueFrom": "."
+                    "valueFrom": "${\n    if(inputs.temporary_directory)\n        return inputs.temporary_directory;\n      return runtime.tmpdir\n}"
                 },
                 {
                     "position": 0,
-                    "prefix": "--COMPRESSION_LEVEL",
-                    "valueFrom": "2"
-                },
-                {
-                    "position": 0,
-                    "prefix": "--MAX_RECORDS_IN_RAM",
-                    "valueFrom": "50000"
-                },
-                {
-                    "position": 2,
                     "prefix": "-O",
                     "valueFrom": "${\n    if(inputs.output_file_name){\n        return inputs.output_file_name\n    } else {\n        return inputs.input.basename.replace(/.bam/, '_alignment_summary_metrics.txt')\n    }\n}"
                 }
@@ -630,7 +642,7 @@
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "broadinstitute/gatk:4.1.8.0"
+                    "dockerPull": "ghcr.io/msk-access/gatk:4.1.8.0"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -679,11 +691,11 @@
                     "id": "#reference_fasta",
                     "type": "File",
                     "secondaryFiles": [
-                        "^.fai",
+                        ".fai",
                         "^.dict"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 747.109375
+                    "https://www.sevenbridges.com/y": 853.8671875
                 },
                 {
                     "id": "#input",
@@ -692,7 +704,7 @@
                         "^.bai"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 3094.265625
+                    "https://www.sevenbridges.com/y": 3201.7734375
                 },
                 {
                     "id": "#reverse_per_base_tags_simplex_duplex",
@@ -701,7 +713,7 @@
                         "boolean"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 320.203125
+                    "https://www.sevenbridges.com/y": 426.9375
                 },
                 {
                     "id": "#require_single_strand_agreement_simplex_duplex",
@@ -710,7 +722,7 @@
                         "boolean"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 533.671875
+                    "https://www.sevenbridges.com/y": 640.40625
                 },
                 {
                     "id": "#output_file_name_simplex_duplex",
@@ -719,7 +731,7 @@
                         "string"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 853.78125
+                    "https://www.sevenbridges.com/y": 960.5859375
                 },
                 {
                     "id": "#number_of_threads",
@@ -728,7 +740,7 @@
                         "int"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 1387.140625
+                    "https://www.sevenbridges.com/y": 1494.1796875
                 },
                 {
                     "id": "#min_reads_simplex_duplex",
@@ -737,7 +749,7 @@
                         "items": "int"
                     },
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 1600.484375
+                    "https://www.sevenbridges.com/y": 1707.6171875
                 },
                 {
                     "id": "#min_mean_base_quality_simplex_duplex",
@@ -746,7 +758,7 @@
                         "int"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 1813.859375
+                    "https://www.sevenbridges.com/y": 1921.0625
                 },
                 {
                     "id": "#max_base_error_rate_simplex_duplex",
@@ -758,7 +770,7 @@
                         }
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 2880.921875
+                    "https://www.sevenbridges.com/y": 2988.3359375
                 },
                 {
                     "id": "#max_no_call_fraction_simplex_duplex",
@@ -767,7 +779,7 @@
                         "float"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 2667.578125
+                    "https://www.sevenbridges.com/y": 2774.8984375
                 },
                 {
                     "id": "#min_base_quality_simplex_duplex",
@@ -776,7 +788,7 @@
                         "int"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 2027.328125
+                    "https://www.sevenbridges.com/y": 2134.53125
                 },
                 {
                     "id": "#memory_per_job",
@@ -785,7 +797,7 @@
                         "int"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 2240.796875
+                    "https://www.sevenbridges.com/y": 2348
                 },
                 {
                     "id": "#memory_overhead",
@@ -794,7 +806,7 @@
                         "int"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 2347.53125
+                    "https://www.sevenbridges.com/y": 2454.734375
                 },
                 {
                     "id": "#max_read_error_rate_simplex_duplex",
@@ -806,7 +818,7 @@
                         }
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 2454.234375
+                    "https://www.sevenbridges.com/y": 2561.4609375
                 },
                 {
                     "id": "#reverse_per_base_tags_duplex",
@@ -815,7 +827,7 @@
                         "boolean"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 426.9375
+                    "https://www.sevenbridges.com/y": 533.671875
                 },
                 {
                     "id": "#require_single_strand_agreement_duplex",
@@ -824,7 +836,7 @@
                         "boolean"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 640.40625
+                    "https://www.sevenbridges.com/y": 747.140625
                 },
                 {
                     "id": "#output_file_name_duplex",
@@ -833,7 +845,7 @@
                         "string"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 1280.46875
+                    "https://www.sevenbridges.com/y": 1387.4609375
                 },
                 {
                     "id": "#min_reads_duplex",
@@ -842,7 +854,7 @@
                         "items": "int"
                     },
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 1707.15625
+                    "https://www.sevenbridges.com/y": 1814.3359375
                 },
                 {
                     "id": "#min_mean_base_quality_duplex",
@@ -851,7 +863,7 @@
                         "int"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 1920.59375
+                    "https://www.sevenbridges.com/y": 2027.796875
                 },
                 {
                     "id": "#min_base_quality_duplex",
@@ -860,7 +872,7 @@
                         "int"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 2134.0625
+                    "https://www.sevenbridges.com/y": 2241.265625
                 },
                 {
                     "id": "#max_read_error_rate_duplex",
@@ -872,7 +884,7 @@
                         }
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 2560.90625
+                    "https://www.sevenbridges.com/y": 2668.1796875
                 },
                 {
                     "id": "#max_no_call_fraction_duplex",
@@ -881,7 +893,7 @@
                         "float"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 2774.25
+                    "https://www.sevenbridges.com/y": 2881.6171875
                 },
                 {
                     "id": "#max_base_error_rate_duplex",
@@ -893,7 +905,7 @@
                         }
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 2987.59375
+                    "https://www.sevenbridges.com/y": 3095.0546875
                 },
                 {
                     "id": "#validation_stringency",
@@ -929,7 +941,7 @@
                         "string"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 1173.796875
+                    "https://www.sevenbridges.com/y": 1280.7421875
                 },
                 {
                     "id": "#create_index",
@@ -937,8 +949,8 @@
                         "null",
                         "boolean"
                     ],
-                    "https://www.sevenbridges.com/x": 454.71875,
-                    "https://www.sevenbridges.com/y": 1684.515625
+                    "https://www.sevenbridges.com/x": 454.671875,
+                    "https://www.sevenbridges.com/y": 1805.625
                 },
                 {
                     "id": "#assume_sorted",
@@ -946,8 +958,8 @@
                         "null",
                         "boolean"
                     ],
-                    "https://www.sevenbridges.com/x": 454.71875,
-                    "https://www.sevenbridges.com/y": 1791.1875
+                    "https://www.sevenbridges.com/x": 454.671875,
+                    "https://www.sevenbridges.com/y": 1912.34375
                 },
                 {
                     "id": "#output_file_name_simplex_aln_metrics",
@@ -956,7 +968,7 @@
                         "string"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 960.453125
+                    "https://www.sevenbridges.com/y": 1067.3046875
                 },
                 {
                     "id": "#output_file_name_simpex",
@@ -965,7 +977,7 @@
                         "string"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 1067.125
+                    "https://www.sevenbridges.com/y": 1174.0234375
                 },
                 {
                     "id": "#min_simplex_reads",
@@ -974,7 +986,25 @@
                         "int"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 1493.8125
+                    "https://www.sevenbridges.com/y": 1600.8984375
+                },
+                {
+                    "id": "#temporary_directory",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 320.203125
+                },
+                {
+                    "id": "#async_io",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 3308.5
                 }
             ],
             "outputs": [
@@ -987,8 +1017,8 @@
                     "secondaryFiles": [
                         "^.bai"
                     ],
-                    "https://www.sevenbridges.com/x": 1039.097900390625,
-                    "https://www.sevenbridges.com/y": 1721.21875
+                    "https://www.sevenbridges.com/x": 1072.9705810546875,
+                    "https://www.sevenbridges.com/y": 1828.3515625
                 },
                 {
                     "id": "#fgbio_postprocessing_simplex_bam",
@@ -996,17 +1026,11 @@
                         "#fgbio_postprocessing_simplex_filter_0_1_8/fgbio_postprocessing_simplex_bam"
                     ],
                     "type": "File",
-                    "https://www.sevenbridges.com/x": 1543.551025390625,
-                    "https://www.sevenbridges.com/y": 1749.21875
-                },
-                {
-                    "id": "#gatk_collect_alignment_summary_metrics_txt_simplex",
-                    "outputSource": [
-                        "#gatk_collect_alignment_summary_metrics_4.1.8.0_duplex/gatk_collect_alignment_summary_metrics_txt"
+                    "secondaryFiles": [
+                        "^.bai"
                     ],
-                    "type": "File",
-                    "https://www.sevenbridges.com/x": 1543.551025390625,
-                    "https://www.sevenbridges.com/y": 1345.015625
+                    "https://www.sevenbridges.com/x": 1616.9268798828125,
+                    "https://www.sevenbridges.com/y": 1809.984375
                 },
                 {
                     "id": "#gatk_collect_alignment_summary_metrics_txt_duplex",
@@ -1014,8 +1038,8 @@
                         "#gatk_collect_alignment_summary_metrics_4.1.8.0_duplex/gatk_collect_alignment_summary_metrics_txt"
                     ],
                     "type": "File",
-                    "https://www.sevenbridges.com/x": 1543.551025390625,
-                    "https://www.sevenbridges.com/y": 1451.75
+                    "https://www.sevenbridges.com/x": 1616.9268798828125,
+                    "https://www.sevenbridges.com/y": 1498.515625
                 },
                 {
                     "id": "#fgbio_filter_consensus_reads_simplex_duplex_bam",
@@ -1026,8 +1050,17 @@
                     "secondaryFiles": [
                         "^.bai"
                     ],
-                    "https://www.sevenbridges.com/x": 1039.097900390625,
-                    "https://www.sevenbridges.com/y": 1614.484375
+                    "https://www.sevenbridges.com/x": 1072.9705810546875,
+                    "https://www.sevenbridges.com/y": 1721.6171875
+                },
+                {
+                    "id": "#gatk_collect_alignment_summary_metrics_txt_simplex",
+                    "outputSource": [
+                        "#gatk_collect_alignment_summary_metrics_4.1.8.0_simplex/gatk_collect_alignment_summary_metrics_txt"
+                    ],
+                    "type": "File",
+                    "https://www.sevenbridges.com/x": 2134.5888671875,
+                    "https://www.sevenbridges.com/y": 1654.25
                 }
             ],
             "steps": [
@@ -1091,6 +1124,14 @@
                         {
                             "id": "#fgbio_filter_consensus_reads_1_2_0_duplex/require_single_strand_agreement",
                             "source": "#require_single_strand_agreement_duplex"
+                        },
+                        {
+                            "id": "#fgbio_filter_consensus_reads_1_2_0_duplex/temporary_directory",
+                            "source": "#temporary_directory"
+                        },
+                        {
+                            "id": "#fgbio_filter_consensus_reads_1_2_0_duplex/async_io",
+                            "source": "#async_io"
                         }
                     ],
                     "out": [
@@ -1100,8 +1141,8 @@
                     ],
                     "run": "#fgbio_filter_consensus_reads_1.2.0.cwl",
                     "label": "fgbio_filter_consensus_reads_1.2.0_duplex",
-                    "https://www.sevenbridges.com/x": 454.71875,
-                    "https://www.sevenbridges.com/y": 1493.8125
+                    "https://www.sevenbridges.com/x": 454.671875,
+                    "https://www.sevenbridges.com/y": 1600.8984375
                 },
                 {
                     "id": "#fgbio_filter_consensus_reads_1_2_1_simplex_duplex",
@@ -1167,6 +1208,14 @@
                         {
                             "id": "#fgbio_filter_consensus_reads_1_2_1_simplex_duplex/require_single_strand_agreement",
                             "source": "#require_single_strand_agreement_simplex_duplex"
+                        },
+                        {
+                            "id": "#fgbio_filter_consensus_reads_1_2_1_simplex_duplex/temporary_directory",
+                            "source": "#temporary_directory"
+                        },
+                        {
+                            "id": "#fgbio_filter_consensus_reads_1_2_1_simplex_duplex/async_io",
+                            "source": "#async_io"
                         }
                     ],
                     "out": [
@@ -1176,8 +1225,8 @@
                     ],
                     "run": "#fgbio_filter_consensus_reads_1.2.0.cwl",
                     "label": "fgbio_filter_consensus_reads_1.2.0_simplex_duplex",
-                    "https://www.sevenbridges.com/x": 454.71875,
-                    "https://www.sevenbridges.com/y": 1212.078125
+                    "https://www.sevenbridges.com/x": 454.671875,
+                    "https://www.sevenbridges.com/y": 1291.1640625
                 },
                 {
                     "id": "#fgbio_postprocessing_simplex_filter_0_1_8",
@@ -1202,8 +1251,8 @@
                     ],
                     "run": "#fgbio_postprocessing_simplex_filter_0.1.8.cwl",
                     "label": "fgbio_postprocessing_simplex_filter_0.1.8",
-                    "https://www.sevenbridges.com/x": 1039.097900390625,
-                    "https://www.sevenbridges.com/y": 1493.75
+                    "https://www.sevenbridges.com/x": 1072.9705810546875,
+                    "https://www.sevenbridges.com/y": 1600.8828125
                 },
                 {
                     "id": "#gatk_collect_alignment_summary_metrics_4.1.8.0_duplex",
@@ -1215,6 +1264,10 @@
                         {
                             "id": "#gatk_collect_alignment_summary_metrics_4.1.8.0_duplex/output_file_name",
                             "source": "#output_file_name_duplex_aln_metrics"
+                        },
+                        {
+                            "id": "#gatk_collect_alignment_summary_metrics_4.1.8.0_duplex/reference",
+                            "source": "#reference_fasta"
                         },
                         {
                             "id": "#gatk_collect_alignment_summary_metrics_4.1.8.0_duplex/validation_stringency",
@@ -1235,6 +1288,10 @@
                         {
                             "id": "#gatk_collect_alignment_summary_metrics_4.1.8.0_duplex/use_jdk_inflater",
                             "source": "#use_jdk_inflater"
+                        },
+                        {
+                            "id": "#gatk_collect_alignment_summary_metrics_4.1.8.0_duplex/temporary_directory",
+                            "source": "#temporary_directory"
                         }
                     ],
                     "out": [
@@ -1244,8 +1301,8 @@
                     ],
                     "run": "#gatk_collect_alignment_summary_metrics_4.1.8.0.cwl",
                     "label": "GATK-CollectAlignmentSummaryMetrics",
-                    "https://www.sevenbridges.com/x": 1039.097900390625,
-                    "https://www.sevenbridges.com/y": 1331.015625
+                    "https://www.sevenbridges.com/x": 1072.9705810546875,
+                    "https://www.sevenbridges.com/y": 1424.1484375
                 },
                 {
                     "id": "#gatk_collect_alignment_summary_metrics_4.1.8.0_simplex",
@@ -1257,6 +1314,10 @@
                         {
                             "id": "#gatk_collect_alignment_summary_metrics_4.1.8.0_simplex/output_file_name",
                             "source": "#output_file_name_simplex_aln_metrics"
+                        },
+                        {
+                            "id": "#gatk_collect_alignment_summary_metrics_4.1.8.0_simplex/reference",
+                            "source": "#reference_fasta"
                         },
                         {
                             "id": "#gatk_collect_alignment_summary_metrics_4.1.8.0_simplex/validation_stringency",
@@ -1286,8 +1347,8 @@
                     ],
                     "run": "#gatk_collect_alignment_summary_metrics_4.1.8.0.cwl",
                     "label": "GATK-CollectAlignmentSummaryMetrics",
-                    "https://www.sevenbridges.com/x": 1543.551025390625,
-                    "https://www.sevenbridges.com/y": 1600.484375
+                    "https://www.sevenbridges.com/x": 1616.9268798828125,
+                    "https://www.sevenbridges.com/y": 1654.25
                 }
             ],
             "requirements": [],
@@ -1315,6 +1376,6 @@
     ],
     "cwlVersion": "v1.0",
     "$schemas": [
-        "http://schema.org/version/9.0/schemaorg-current-http.rdf"
+        "http://schema.org/version/latest/schemaorg-current-http.rdf"
     ]
 }
