@@ -357,6 +357,8 @@ steps:
       - id: files
         source:
           - simplex_bam_pool_a_dir
+      - id: output_directory_name
+        default: simplex_bam_pool_a_merged_dir
     out:
       - id: directory
     run: ../command_line_tools/expression_tools/put_in_dir.cwl
@@ -368,6 +370,8 @@ steps:
       - id: files
         source:
           - duplex_bam_sequence_qc_dir
+      - id: output_directory_name
+        default: duplex_bam_sequence_qc_merged_dir
     out:
       - id: directory
     run: ../command_line_tools/expression_tools/put_in_dir.cwl
@@ -379,6 +383,8 @@ steps:
       - id: files
         source:
           - duplex_bam_stats_pool_a_dir
+      - id: output_directory_name
+        default: duplex_bam_stats_pool_a_merged_dir
     out:
       - id: directory
     run: ../command_line_tools/expression_tools/put_in_dir.cwl
@@ -390,6 +396,8 @@ steps:
       - id: files
         source:
           - duplex_bam_stats_pool_b_dir
+      - id: output_directory_name
+        default: duplex_bam_stats_pool_b_merged_dir
     out:
       - id: directory
     run: ../command_line_tools/expression_tools/put_in_dir.cwl
