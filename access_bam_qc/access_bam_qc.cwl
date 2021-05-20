@@ -3,6 +3,7 @@ cwlVersion: v1.0
 id: access_bam_qc
 label: access_bam_qc
 $namespaces:
+  s: 'https://schema.org/'
   sbg: 'https://www.sevenbridges.com/'
 inputs:
   - id: reference
@@ -310,26 +311,6 @@ outputs:
     label: duplex_bam_biometrics_dir
     'sbg:x': 745.9236450195312
     'sbg:y': -362.3155822753906
-  - id: duplex_bam_biometrics_extract_pickle
-    outputSource:
-      - qc_duplex_bam/biometrics_extract_pickle
-    type:
-      - File
-      - type: array
-        items: File
-    label: duplex_biometrics_extract_pickle
-    'sbg:x': 749.50537109375
-    'sbg:y': -236.2369384765625
-  - id: collapsed_bam_biometrics_extract_pickle
-    outputSource:
-      - qc_collapsed_bam/biometrics_extract_pickle
-    type:
-      - File
-      - type: array
-        items: File
-    label: collapsed_bam_biometrics_extract_pickle
-    'sbg:x': 1137.100341796875
-    'sbg:y': 574.3834228515625
 steps:
   - id: qc_collapsed_bam
     in:
@@ -773,6 +754,7 @@ steps:
           - qc_collapsed_bam/biometrics_major_plot
           - qc_collapsed_bam/biometrics_major_json
           - qc_collapsed_bam/biometrics_major_csv
+          - qc_collapsed_bam/biometrics_extract_pickle
       - id: output_directory_name
         default: collapsed_bam_biometrics
     out:
@@ -849,6 +831,7 @@ steps:
           - qc_duplex_bam/biometrics_minor_json
           - qc_duplex_bam/biometrics_minor_plot
           - qc_duplex_bam/biometrics_minor_sites_plot
+          - qc_duplex_bam/biometrics_extract_pickle
       - id: output_directory_name
         default: duplex_bam_biometrics
     out:
@@ -897,3 +880,18 @@ requirements:
   - class: MultipleInputFeatureRequirement
   - class: InlineJavascriptRequirement
   - class: StepInputExpressionRequirement
+$schemas:
+  - 'http://schema.org/version/latest/schemaorg-current-http.rdf'
+'s:author':
+  - class: 's:Person'
+    's:email': 'mailto:murphyc4@mskcc.org'
+    's:identifier': ''
+    's:name': Charlie Murphy
+'s:citation': ''
+'s:codeRepository': 'https://github.com/msk-access/cwl_subworkflows'
+'s:contributor':
+  - class: 's:Person'
+    's:email': 'mailto:murphyc4@mskcc.org'
+    's:name': Charlie Murphy
+'s:dateCreated': '2021-05-19'
+'s:license': 'https://spdx.org/licenses/Apache-2.0'

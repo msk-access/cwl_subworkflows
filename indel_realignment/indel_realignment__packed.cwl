@@ -28,11 +28,7 @@
                     "type": [
                         "null",
                         "int"
-                    ],
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "--threads"
-                    }
+                    ]
                 },
                 {
                     "id": "#abra2_2.22.cwl/input_bam",
@@ -56,12 +52,8 @@
                     "id": "#abra2_2.22.cwl/working_directory",
                     "type": [
                         "null",
-                        "Directory"
+                        "string"
                     ],
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "--tmpdir"
-                    },
                     "doc": "Set the temp directory (overrides java.io.tmpdir)"
                 },
                 {
@@ -268,7 +260,7 @@
                         }
                     ],
                     "outputBinding": {
-                        "glob": "*abra.bam"
+                        "glob": "${\n    return inputs.output_bams\n}"
                     },
                     "secondaryFiles": [
                         "^.bai"
@@ -279,23 +271,33 @@
             "arguments": [
                 {
                     "position": 0,
-                    "valueFrom": "${ if(inputs.memory_per_job && inputs.memory_overhead) { if(inputs.memory_per_job % 1000 == 0) { return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\" } else { return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\" } } else if (inputs.memory_per_job && !inputs.memory_overhead){ if(inputs.memory_per_job % 1000 == 0) { return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\" } else { return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\" } } else if(!inputs.memory_per_job && inputs.memory_overhead){ return \"-Xmx15G\" } else { return \"-Xmx15G\" } }"
+                    "valueFrom": "${\n  if (inputs.memory_per_job && inputs.memory_overhead) {\n\n    if (inputs.memory_per_job % 1000 == 0) {\n\n      return \"-Xmx\" + (inputs.memory_per_job / 1000).toString() + \"G\"\n    }\n    else {\n\n      return \"-Xmx\" + Math.floor((inputs.memory_per_job / 1000)).toString() + \"G\"\n    }\n  }\n  else if (inputs.memory_per_job && !inputs.memory_overhead) {\n\n    if (inputs.memory_per_job % 1000 == 0) {\n\n      return \"-Xmx\" + (inputs.memory_per_job / 1000).toString() + \"G\"\n    }\n    else {\n\n      return \"-Xmx\" + Math.floor((inputs.memory_per_job / 1000)).toString() + \"G\"\n    }\n  }\n  else if (!inputs.memory_per_job && inputs.memory_overhead) {\n\n    return \"-Xmx20G\"\n  }\n  else {\n\n    return \"-Xmx20G\"\n  }\n}"
                 },
                 {
                     "position": 0,
                     "prefix": "-jar",
                     "valueFrom": "/usr/local/bin/abra2.jar"
+                },
+                {
+                    "position": 0,
+                    "prefix": "--threads",
+                    "valueFrom": "${\n    if(inputs.number_of_threads)\n        return inputs.number_of_threads\n    return runtime.cores\n}"
+                },
+                {
+                    "position": 0,
+                    "prefix": "--tmpdir",
+                    "valueFrom": "${\n    if(inputs.working_directory)\n        return inputs.working_directory;\n      return runtime.tmpdir\n}"
                 }
             ],
             "requirements": [
                 {
                     "class": "ResourceRequirement",
-                    "ramMin": "${ if(inputs.memory_per_job && inputs.memory_overhead) { return inputs.memory_per_job + inputs.memory_overhead } else if (inputs.memory_per_job && !inputs.memory_overhead){ return inputs.memory_per_job + 2000 } else if(!inputs.memory_per_job && inputs.memory_overhead){ return 15000 + inputs.memory_overhead } else { return 17000 } }",
-                    "coresMin": "${ if (inputs.number_of_threads) { return inputs.number_of_threads } else { return 4 } }"
+                    "ramMin": 60000,
+                    "coresMin": 16
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "mskaccess/abra2:2.22"
+                    "dockerPull": "ghcr.io/msk-access/abra2:2.22"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -423,7 +425,7 @@
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "biocontainers/bedtools:v2.28.0_cv2"
+                    "dockerPull": "ghcr.io/msk-access/bedtools:v2.28.0_cv2"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -528,10 +530,7 @@
             "outputs": [
                 {
                     "id": "#bedtools_merge_v2.28.0_cv2.cwl/bedtools_merge_bed",
-                    "type": [
-                        "null",
-                        "File"
-                    ],
+                    "type": "File",
                     "outputBinding": {
                         "glob": "${\n    if (inputs.output_file_name)\n      return inputs.output_file_name;\n    return inputs.input.basename.replace('.bedgraph', '.bed');\n  }"
                     }
@@ -549,7 +548,7 @@
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "biocontainers/bedtools:v2.28.0_cv2"
+                    "dockerPull": "ghcr.io/msk-access/bedtools:v2.28.0_cv2"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -627,10 +626,7 @@
                         "position": 0,
                         "prefix": "-I"
                     },
-                    "doc": "The input file to fix.  This option may be specified 0 or more times",
-                    "secondaryFiles": [
-                        "^.bai"
-                    ]
+                    "doc": "The input file to fix.  This option may be specified 0 or more times"
                 },
                 {
                     "id": "#picard_fix_mate_information_4.1.8.1.cwl/output_file_name",
@@ -712,6 +708,14 @@
                         "prefix": "--CREATE_INDEX"
                     },
                     "doc": "Whether to create a BAM index when writing a coordinate-sorted BAM file. Default value:false. This option can be set to 'null' to clear the default value. Possible values:{true, false}"
+                },
+                {
+                    "id": "#picard_fix_mate_information_4.1.8.1.cwl/temporary_directory",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "doc": "Default value: null. This option may be specified 0 or more times."
                 }
             ],
             "outputs": [
@@ -730,17 +734,12 @@
             "arguments": [
                 {
                     "position": 0,
-                    "valueFrom": "${\n  if(inputs.memory_per_job && inputs.memory_overhead) {\n    if(inputs.memory_per_job % 1000 == 0) {\n      return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\"\n    }\n    else {\n      return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\"\n    }\n  }\n  else if (inputs.memory_per_job && !inputs.memory_overhead){\n    if(inputs.memory_per_job % 1000 == 0) {\n      return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\"\n    }\n    else {\n      return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\"\n    }\n  }\n  else if(!inputs.memory_per_job && inputs.memory_overhead){\n    return \"-Xmx15G\"\n  }\n  else {\n      return \"-Xmx15G\"\n  }\n}"
+                    "valueFrom": "${\n  if(inputs.memory_per_job && inputs.memory_overhead) {\n    if(inputs.memory_per_job % 1000 == 0) {\n      return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\"\n    }\n    else {\n      return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\"\n    }\n  }\n  else if (inputs.memory_per_job && !inputs.memory_overhead){\n    if(inputs.memory_per_job % 1000 == 0) {\n      return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\"\n    }\n    else {\n      return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\"\n    }\n  }\n  else if(!inputs.memory_per_job && inputs.memory_overhead){\n    return \"-Xmx20G\"\n  }\n  else {\n      return \"-Xmx20G\"\n  }\n}"
                 },
                 {
                     "position": 0,
-                    "valueFrom": "-XX:-UseGCOverheadLimit",
-                    "shellQuote": false
-                },
-                {
-                    "position": 0,
-                    "valueFrom": "-Djava.io.tmpdir=$(runtime.tmpdir)",
-                    "shellQuote": false
+                    "shellQuote": false,
+                    "valueFrom": "-XX:-UseGCOverheadLimit"
                 },
                 {
                     "position": 0,
@@ -754,7 +753,7 @@
                 {
                     "position": 0,
                     "prefix": "--TMP_DIR",
-                    "valueFrom": "$(runtime.tmpdir)"
+                    "valueFrom": "${\n    if(inputs.temporary_directory)\n        return inputs.temporary_directory;\n      return runtime.tmpdir\n}"
                 },
                 {
                     "position": 0,
@@ -764,13 +763,16 @@
             ],
             "requirements": [
                 {
+                    "class": "ShellCommandRequirement"
+                },
+                {
                     "class": "ResourceRequirement",
-                    "ramMin": 25000,
-                    "coresMin": 2
+                    "ramMin": 30000,
+                    "coresMin": 12
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "broadinstitute/gatk:4.1.8.1"
+                    "dockerPull": "ghcr.io/msk-access/gatk:4.1.8.1"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -831,7 +833,7 @@
                         "string"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 319.96875
+                    "https://www.sevenbridges.com/y": 426.796875
                 },
                 {
                     "id": "#scoring_gap_alignments",
@@ -840,16 +842,16 @@
                         "string"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 426.703125
+                    "https://www.sevenbridges.com/y": 533.53125
                 },
                 {
                     "id": "#reference_fasta",
                     "type": "File",
                     "secondaryFiles": [
-                        "^.fasta.fai"
+                        ".fai"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 533.359375
+                    "https://www.sevenbridges.com/y": 640.21875
                 },
                 {
                     "id": "#no_sort",
@@ -858,7 +860,7 @@
                         "boolean"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 959.828125
+                    "https://www.sevenbridges.com/y": 1066.875
                 },
                 {
                     "id": "#maximum_mixmatch_rate",
@@ -867,7 +869,7 @@
                         "float"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 1173.140625
+                    "https://www.sevenbridges.com/y": 1280.25
                 },
                 {
                     "id": "#maximum_average_depth",
@@ -876,22 +878,16 @@
                         "int"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 1279.796875
+                    "https://www.sevenbridges.com/y": 1386.9375
                 },
                 {
                     "id": "#input_bam",
-                    "type": [
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
+                    "type": "File",
                     "secondaryFiles": [
                         "^.bai"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 1386.453125
+                    "https://www.sevenbridges.com/y": 1493.625
                 },
                 {
                     "id": "#ignore_bad_assembly",
@@ -900,7 +896,7 @@
                         "boolean"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 1493.109375
+                    "https://www.sevenbridges.com/y": 1600.3125
                 },
                 {
                     "id": "#contig_anchor",
@@ -909,7 +905,7 @@
                         "string"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 1706.421875
+                    "https://www.sevenbridges.com/y": 1813.6875
                 },
                 {
                     "id": "#consensus_sequence",
@@ -918,7 +914,7 @@
                         "boolean"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 1813.078125
+                    "https://www.sevenbridges.com/y": 1920.375
                 },
                 {
                     "id": "#bam_index",
@@ -927,7 +923,7 @@
                         "boolean"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 1919.65625
+                    "https://www.sevenbridges.com/y": 2027.015625
                 },
                 {
                     "id": "#number_of_threads",
@@ -936,7 +932,7 @@
                         "int"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 853.25
+                    "https://www.sevenbridges.com/y": 960.234375
                 },
                 {
                     "id": "#option_bedgraph",
@@ -945,7 +941,7 @@
                         "boolean"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 746.59375
+                    "https://www.sevenbridges.com/y": 853.546875
                 },
                 {
                     "id": "#no_edge_complex_indel",
@@ -954,7 +950,7 @@
                         "boolean"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 1066.484375
+                    "https://www.sevenbridges.com/y": 1173.5625
                 },
                 {
                     "id": "#distance_between_features",
@@ -963,7 +959,7 @@
                         "int"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 1599.765625
+                    "https://www.sevenbridges.com/y": 1707
                 },
                 {
                     "id": "#output_bams",
@@ -975,7 +971,7 @@
                         }
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 639.9375
+                    "https://www.sevenbridges.com/y": 746.859375
                 },
                 {
                     "id": "#validation_stringency",
@@ -984,7 +980,7 @@
                         "string"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 106.65625
+                    "https://www.sevenbridges.com/y": 106.6875
                 },
                 {
                     "id": "#sort_order",
@@ -993,7 +989,7 @@
                         "string"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 213.3125
+                    "https://www.sevenbridges.com/y": 320.109375
                 },
                 {
                     "id": "#output_file_name",
@@ -1001,8 +997,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": 992.881103515625,
-                    "https://www.sevenbridges.com/y": 748.25
+                    "https://www.sevenbridges.com/x": 992.927978515625,
+                    "https://www.sevenbridges.com/y": 794.8671875
                 },
                 {
                     "id": "#create_bam_index",
@@ -1010,8 +1006,17 @@
                         "null",
                         "boolean"
                     ],
-                    "https://www.sevenbridges.com/x": 992.881103515625,
-                    "https://www.sevenbridges.com/y": 854.828125
+                    "https://www.sevenbridges.com/x": 992.927978515625,
+                    "https://www.sevenbridges.com/y": 901.5078125
+                },
+                {
+                    "id": "#temporary_directory",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 213.421875
                 }
             ],
             "outputs": [
@@ -1021,8 +1026,11 @@
                         "#picard_fix_mate_information_4_1_8_1/picard_fix_mate_information_bam"
                     ],
                     "type": "File",
-                    "https://www.sevenbridges.com/x": 1950.827880859375,
-                    "https://www.sevenbridges.com/y": 959.75
+                    "secondaryFiles": [
+                        "^.bai"
+                    ],
+                    "https://www.sevenbridges.com/x": 1981.323974609375,
+                    "https://www.sevenbridges.com/y": 1013.4609375
                 }
             ],
             "steps": [
@@ -1038,6 +1046,10 @@
                             "source": [
                                 "#input_bam"
                             ]
+                        },
+                        {
+                            "id": "#abra2_2_22/working_directory",
+                            "source": "#temporary_directory"
                         },
                         {
                             "id": "#abra2_2_22/reference_fasta",
@@ -1105,8 +1117,8 @@
                     ],
                     "run": "#abra2_2.22.cwl",
                     "label": "abra2_2.22",
-                    "https://www.sevenbridges.com/x": 992.881103515625,
-                    "https://www.sevenbridges.com/y": 1066.40625
+                    "https://www.sevenbridges.com/x": 992.927978515625,
+                    "https://www.sevenbridges.com/y": 1120.1484375
                 },
                 {
                     "id": "#bedtools_genomecov",
@@ -1127,8 +1139,8 @@
                     ],
                     "run": "#bedtools_genomecov_v2.28.0_cv2.cwl",
                     "label": "bedtools_genomecov",
-                    "https://www.sevenbridges.com/x": 269.546875,
-                    "https://www.sevenbridges.com/y": 952.75
+                    "https://www.sevenbridges.com/x": 269.59375,
+                    "https://www.sevenbridges.com/y": 1006.4609375
                 },
                 {
                     "id": "#bedtools_merge",
@@ -1149,8 +1161,8 @@
                     ],
                     "run": "#bedtools_merge_v2.28.0_cv2.cwl",
                     "label": "bedtools_merge",
-                    "https://www.sevenbridges.com/x": 635.4639892578125,
-                    "https://www.sevenbridges.com/y": 952.75
+                    "https://www.sevenbridges.com/x": 635.5108642578125,
+                    "https://www.sevenbridges.com/y": 1006.4609375
                 },
                 {
                     "id": "#picard_fix_mate_information_4_1_8_1",
@@ -1174,6 +1186,10 @@
                         {
                             "id": "#picard_fix_mate_information_4_1_8_1/create_bam_index",
                             "source": "#create_bam_index"
+                        },
+                        {
+                            "id": "#picard_fix_mate_information_4_1_8_1/temporary_directory",
+                            "source": "#temporary_directory"
                         }
                     ],
                     "out": [
@@ -1183,8 +1199,8 @@
                     ],
                     "run": "#picard_fix_mate_information_4.1.8.1.cwl",
                     "label": "picard_fix_mate_information_4.1.8.1",
-                    "https://www.sevenbridges.com/x": 1534.827880859375,
-                    "https://www.sevenbridges.com/y": 931.6171875
+                    "https://www.sevenbridges.com/x": 1546.70458984375,
+                    "https://www.sevenbridges.com/y": 978.328125
                 }
             ],
             "requirements": [],
@@ -1210,6 +1226,6 @@
     ],
     "cwlVersion": "v1.0",
     "$schemas": [
-        "http://schema.org/version/9.0/schemaorg-current-http.rdf"
+        "http://schema.org/version/latest/schemaorg-current-http.rdf"
     ]
 }
