@@ -228,6 +228,16 @@ inputs:
     doc: Samples with Y chromosome above this value will be considered male.
     'sbg:x': -387.0456237792969
     'sbg:y': 1481.5826416015625
+  - id: simplex_bam_pool_b_dir
+    type:
+      type: array
+      items:
+        - File
+        - Directory
+        - 'null'
+    label: simplex_bam_pool_b_dir
+    'sbg:x': -376.6598815917969
+    'sbg:y': -2307.748291015625
 outputs:
   - id: simplex_bam_pool_a_outdir
     outputSource:
@@ -327,6 +337,13 @@ outputs:
     label: collapsed_biometrics_outdir
     'sbg:x': 855.2215576171875
     'sbg:y': 1238.1143798828125
+  - id: simplex_bam_pool_b_outdir
+    outputSource:
+      - simplex_bam_pool_b_agg/directory
+    type: Directory
+    label: simplex_bam_pool_b_outdir
+    'sbg:x': 302.2002258300781
+    'sbg:y': -2309.53466796875
 steps:
   - id: duplex_biometrics_genotype
     in:
@@ -713,7 +730,18 @@ steps:
     label: collapsed_biometrics_agg
     'sbg:x': 585.7066650390625
     'sbg:y': 1235.0516357421875
+  - id: simplex_bam_pool_b_agg
+    in:
+      - id: files
+        source:
+          - simplex_bam_pool_b_dir
+      - id: output_directory_name
+        default: simplex_bam_pool_b_merged_dir
+    out:
+      - id: directory
+    run: ../command_line_tools/expression_tools/put_in_dir.cwl
+    label: simplex_bam_pool_b_agg
+    'sbg:x': 2.071298837661743
+    'sbg:y': -2311.31787109375
 requirements:
   - class: MultipleInputFeatureRequirement
-  - class: InlineJavascriptRequirement
-  - class: StepInputExpressionRequirement
