@@ -311,26 +311,6 @@ outputs:
     label: duplex_bam_biometrics_dir
     'sbg:x': 745.9236450195312
     'sbg:y': -362.3155822753906
-  - id: duplex_bam_biometrics_extract_pickle
-    outputSource:
-      - qc_duplex_bam/biometrics_extract_pickle
-    type:
-      - File
-      - type: array
-        items: File
-    label: duplex_biometrics_extract_pickle
-    'sbg:x': 749.50537109375
-    'sbg:y': -236.2369384765625
-  - id: collapsed_bam_biometrics_extract_pickle
-    outputSource:
-      - qc_collapsed_bam/biometrics_extract_pickle
-    type:
-      - File
-      - type: array
-        items: File
-    label: collapsed_bam_biometrics_extract_pickle
-    'sbg:x': 1137.100341796875
-    'sbg:y': 574.3834228515625
 steps:
   - id: qc_collapsed_bam
     in:
@@ -774,6 +754,7 @@ steps:
           - qc_collapsed_bam/biometrics_major_plot
           - qc_collapsed_bam/biometrics_major_json
           - qc_collapsed_bam/biometrics_major_csv
+          - qc_collapsed_bam/biometrics_extract_pickle
       - id: output_directory_name
         default: collapsed_bam_biometrics
     out:
@@ -850,6 +831,7 @@ steps:
           - qc_duplex_bam/biometrics_minor_json
           - qc_duplex_bam/biometrics_minor_plot
           - qc_duplex_bam/biometrics_minor_sites_plot
+          - qc_duplex_bam/biometrics_extract_pickle
       - id: output_directory_name
         default: duplex_bam_biometrics
     out:
