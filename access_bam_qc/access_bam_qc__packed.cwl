@@ -5431,6 +5431,10 @@
                             "source": "#qc_collapsed_bam.cwl/major_threshold"
                         },
                         {
+                            "id": "#qc_collapsed_bam.cwl/biometrics_major/prefix",
+                            "default": "collapsed"
+                        },
+                        {
                             "id": "#qc_collapsed_bam.cwl/biometrics_major/plot",
                             "source": "#qc_collapsed_bam.cwl/plot"
                         },
@@ -5466,6 +5470,10 @@
                         {
                             "id": "#qc_collapsed_bam.cwl/biometrics_minor/minor_threshold",
                             "source": "#qc_collapsed_bam.cwl/minor_threshold"
+                        },
+                        {
+                            "id": "#qc_collapsed_bam.cwl/biometrics_minor/prefix",
+                            "default": "collapsed"
                         },
                         {
                             "id": "#qc_collapsed_bam.cwl/biometrics_minor/plot",
@@ -5510,6 +5518,10 @@
                             "source": "#qc_collapsed_bam.cwl/coverage_threshold"
                         },
                         {
+                            "id": "#qc_collapsed_bam.cwl/biometrics_sexmismatch/prefix",
+                            "default": "collapsed"
+                        },
+                        {
                             "id": "#qc_collapsed_bam.cwl/biometrics_sexmismatch/json",
                             "source": "#qc_collapsed_bam.cwl/json"
                         }
@@ -5530,12 +5542,6 @@
             "requirements": [
                 {
                     "class": "SubworkflowFeatureRequirement"
-                },
-                {
-                    "class": "InlineJavascriptRequirement"
-                },
-                {
-                    "class": "StepInputExpressionRequirement"
                 }
             ]
         },
@@ -6436,6 +6442,10 @@
                             "source": "#qc_duplex_bam.cwl/minor_threshold"
                         },
                         {
+                            "id": "#qc_duplex_bam.cwl/biometrics_minor/prefix",
+                            "default": "duplex"
+                        },
+                        {
                             "id": "#qc_duplex_bam.cwl/biometrics_minor/plot",
                             "default": false,
                             "source": "#qc_duplex_bam.cwl/plot"
@@ -6476,6 +6486,10 @@
                         {
                             "id": "#qc_duplex_bam.cwl/biometrics_major/major_threshold",
                             "source": "#qc_duplex_bam.cwl/major_threshold"
+                        },
+                        {
+                            "id": "#qc_duplex_bam.cwl/biometrics_major/prefix",
+                            "default": "duplex"
                         },
                         {
                             "id": "#qc_duplex_bam.cwl/biometrics_major/plot",

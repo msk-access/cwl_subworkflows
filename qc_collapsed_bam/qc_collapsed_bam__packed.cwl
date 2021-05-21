@@ -3326,6 +3326,10 @@
                             "source": "#major_threshold"
                         },
                         {
+                            "id": "#biometrics_major/prefix",
+                            "default": "collapsed"
+                        },
+                        {
                             "id": "#biometrics_major/plot",
                             "source": "#plot"
                         },
@@ -3361,6 +3365,10 @@
                         {
                             "id": "#biometrics_minor/minor_threshold",
                             "source": "#minor_threshold"
+                        },
+                        {
+                            "id": "#biometrics_minor/prefix",
+                            "default": "collapsed"
                         },
                         {
                             "id": "#biometrics_minor/plot",
@@ -3405,6 +3413,10 @@
                             "source": "#coverage_threshold"
                         },
                         {
+                            "id": "#biometrics_sexmismatch/prefix",
+                            "default": "collapsed"
+                        },
+                        {
                             "id": "#biometrics_sexmismatch/json",
                             "source": "#json"
                         }
@@ -3425,12 +3437,6 @@
             "requirements": [
                 {
                     "class": "SubworkflowFeatureRequirement"
-                },
-                {
-                    "class": "InlineJavascriptRequirement"
-                },
-                {
-                    "class": "StepInputExpressionRequirement"
                 }
             ]
         }

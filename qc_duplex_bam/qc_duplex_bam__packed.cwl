@@ -2934,6 +2934,10 @@
                             "source": "#minor_threshold"
                         },
                         {
+                            "id": "#biometrics_minor/prefix",
+                            "default": "duplex"
+                        },
+                        {
                             "id": "#biometrics_minor/plot",
                             "default": false,
                             "source": "#plot"
@@ -2974,6 +2978,10 @@
                         {
                             "id": "#biometrics_major/major_threshold",
                             "source": "#major_threshold"
+                        },
+                        {
+                            "id": "#biometrics_major/prefix",
+                            "default": "duplex"
                         },
                         {
                             "id": "#biometrics_major/plot",
