@@ -2246,6 +2246,42 @@
                     "doc": "Also output data in JSON format.",
                     "https://www.sevenbridges.com/x": -375.43487548828125,
                     "https://www.sevenbridges.com/y": 1945.246826171875
+                },
+                {
+                    "id": "#sequence_qc_min_basq",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "https://www.sevenbridges.com/x": -1374.6207275390625,
+                    "https://www.sevenbridges.com/y": -798.4012451171875
+                },
+                {
+                    "id": "#sequence_qc_min_mapq",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "https://www.sevenbridges.com/x": -1380.14501953125,
+                    "https://www.sevenbridges.com/y": -951.69873046875
+                },
+                {
+                    "id": "#sequence_qc_threshold",
+                    "type": [
+                        "null",
+                        "float"
+                    ],
+                    "https://www.sevenbridges.com/x": -1384.2880859375,
+                    "https://www.sevenbridges.com/y": -1102.2271728515625
+                },
+                {
+                    "id": "#sequence_qc_truncate",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "https://www.sevenbridges.com/x": -1382.9071044921875,
+                    "https://www.sevenbridges.com/y": -1252.7550048828125
                 }
             ],
             "outputs": [
@@ -2708,6 +2744,22 @@
                         {
                             "id": "#calculate_noise_0_1_16/sample_id",
                             "source": "#sample_name"
+                        },
+                        {
+                            "id": "#calculate_noise_0_1_16/threshold",
+                            "source": "#sequence_qc_threshold"
+                        },
+                        {
+                            "id": "#calculate_noise_0_1_16/truncate",
+                            "source": "#sequence_qc_truncate"
+                        },
+                        {
+                            "id": "#calculate_noise_0_1_16/min_mapq",
+                            "source": "#sequence_qc_min_mapq"
+                        },
+                        {
+                            "id": "#calculate_noise_0_1_16/min_basq",
+                            "source": "#sequence_qc_min_basq"
                         }
                     ],
                     "out": [
@@ -2938,12 +2990,6 @@
             "requirements": [
                 {
                     "class": "SubworkflowFeatureRequirement"
-                },
-                {
-                    "class": "InlineJavascriptRequirement"
-                },
-                {
-                    "class": "StepInputExpressionRequirement"
                 }
             ]
         }
