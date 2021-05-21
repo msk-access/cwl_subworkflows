@@ -205,6 +205,22 @@ inputs:
     doc: Samples with Y chromosome above this value will be considered male.
     'sbg:x': -830.3240356445312
     'sbg:y': -1386.815185546875
+  - id: sequence_qc_min_basq
+    type: int?
+    'sbg:x': -1393.9599609375
+    'sbg:y': -1809.91650390625
+  - id: sequence_qc_min_mapq
+    type: int?
+    'sbg:x': -1398.4918212890625
+    'sbg:y': -1940.338134765625
+  - id: sequence_qc_threshold
+    type: float?
+    'sbg:x': -1405.4483642578125
+    'sbg:y': -2085.8505859375
+  - id: sequence_qc_truncate
+    type: int?
+    'sbg:x': -1403.2008056640625
+    'sbg:y': -2227.529296875
 outputs:
   - id: uncollapsed_bam_stats_pool_a_dir
     outputSource:
@@ -501,6 +517,14 @@ steps:
         source: duplex_biometrics_minor_threshold
       - id: json
         source: biometrics_json
+      - id: sequence_qc_min_basq
+        source: sequence_qc_min_basq
+      - id: sequence_qc_min_mapq
+        source: sequence_qc_min_mapq
+      - id: sequence_qc_threshold
+        source: sequence_qc_threshold
+      - id: sequence_qc_truncate
+        source: sequence_qc_truncate
     out:
       - id: biometrics_minor_csv
       - id: biometrics_minor_plot
@@ -878,8 +902,6 @@ requirements:
   - class: SubworkflowFeatureRequirement
   - class: ScatterFeatureRequirement
   - class: MultipleInputFeatureRequirement
-  - class: InlineJavascriptRequirement
-  - class: StepInputExpressionRequirement
 $schemas:
   - 'http://schema.org/version/latest/schemaorg-current-http.rdf'
 's:author':
