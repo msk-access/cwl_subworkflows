@@ -628,6 +628,8 @@ steps:
           - biometrics_extract/biometrics_extract_pickle
       - id: major_threshold
         source: major_threshold
+      - id: prefix
+        default: collapsed
       - id: plot
         source: plot
       - id: json
@@ -646,6 +648,8 @@ steps:
           - biometrics_extract/biometrics_extract_pickle
       - id: minor_threshold
         source: minor_threshold
+      - id: prefix
+        default: collapsed
       - id: plot
         default: false
         source: plot
@@ -667,6 +671,8 @@ steps:
           - biometrics_extract/biometrics_extract_pickle
       - id: coverage_threshold
         source: coverage_threshold
+      - id: prefix
+        default: collapsed
       - id: json
         source: json
     out:
@@ -678,5 +684,3 @@ steps:
     'sbg:y': 1029.9459228515625
 requirements:
   - class: SubworkflowFeatureRequirement
-  - class: InlineJavascriptRequirement
-  - class: StepInputExpressionRequirement

@@ -520,6 +520,8 @@ steps:
           - biometrics_extract/biometrics_extract_pickle
       - id: minor_threshold
         source: minor_threshold
+      - id: prefix
+        default: duplex
       - id: plot
         default: false
         source: plot
@@ -541,6 +543,8 @@ steps:
           - biometrics_extract/biometrics_extract_pickle
       - id: major_threshold
         source: major_threshold
+      - id: prefix
+        default: duplex
       - id: plot
         default: false
         source: plot
