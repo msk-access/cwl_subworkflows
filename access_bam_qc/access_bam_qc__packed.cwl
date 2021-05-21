@@ -355,6 +355,42 @@
                     "doc": "Samples with Y chromosome above this value will be considered male.",
                     "https://www.sevenbridges.com/x": -830.3240356445312,
                     "https://www.sevenbridges.com/y": -1386.815185546875
+                },
+                {
+                    "id": "#sequence_qc_min_basq",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "https://www.sevenbridges.com/x": -1393.9599609375,
+                    "https://www.sevenbridges.com/y": -1809.91650390625
+                },
+                {
+                    "id": "#sequence_qc_min_mapq",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "https://www.sevenbridges.com/x": -1398.4918212890625,
+                    "https://www.sevenbridges.com/y": -1940.338134765625
+                },
+                {
+                    "id": "#sequence_qc_threshold",
+                    "type": [
+                        "null",
+                        "float"
+                    ],
+                    "https://www.sevenbridges.com/x": -1405.4483642578125,
+                    "https://www.sevenbridges.com/y": -2085.8505859375
+                },
+                {
+                    "id": "#sequence_qc_truncate",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "https://www.sevenbridges.com/x": -1403.2008056640625,
+                    "https://www.sevenbridges.com/y": -2227.529296875
                 }
             ],
             "outputs": [
@@ -920,6 +956,22 @@
                         {
                             "id": "#qc_duplex_bam/json",
                             "source": "#biometrics_json"
+                        },
+                        {
+                            "id": "#qc_duplex_bam/sequence_qc_min_basq",
+                            "source": "#sequence_qc_min_basq"
+                        },
+                        {
+                            "id": "#qc_duplex_bam/sequence_qc_min_mapq",
+                            "source": "#sequence_qc_min_mapq"
+                        },
+                        {
+                            "id": "#qc_duplex_bam/sequence_qc_threshold",
+                            "source": "#sequence_qc_threshold"
+                        },
+                        {
+                            "id": "#qc_duplex_bam/sequence_qc_truncate",
+                            "source": "#sequence_qc_truncate"
                         }
                     ],
                     "out": [
@@ -1544,12 +1596,6 @@
                 },
                 {
                     "class": "MultipleInputFeatureRequirement"
-                },
-                {
-                    "class": "InlineJavascriptRequirement"
-                },
-                {
-                    "class": "StepInputExpressionRequirement"
                 }
             ],
             "https://schema.org/author": [
@@ -5698,6 +5744,42 @@
                     "doc": "Also output data in JSON format.",
                     "https://www.sevenbridges.com/x": -375.43487548828125,
                     "https://www.sevenbridges.com/y": 1945.246826171875
+                },
+                {
+                    "id": "#qc_duplex_bam.cwl/sequence_qc_min_basq",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "https://www.sevenbridges.com/x": -1374.6207275390625,
+                    "https://www.sevenbridges.com/y": -798.4012451171875
+                },
+                {
+                    "id": "#qc_duplex_bam.cwl/sequence_qc_min_mapq",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "https://www.sevenbridges.com/x": -1380.14501953125,
+                    "https://www.sevenbridges.com/y": -951.69873046875
+                },
+                {
+                    "id": "#qc_duplex_bam.cwl/sequence_qc_threshold",
+                    "type": [
+                        "null",
+                        "float"
+                    ],
+                    "https://www.sevenbridges.com/x": -1384.2880859375,
+                    "https://www.sevenbridges.com/y": -1102.2271728515625
+                },
+                {
+                    "id": "#qc_duplex_bam.cwl/sequence_qc_truncate",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "https://www.sevenbridges.com/x": -1382.9071044921875,
+                    "https://www.sevenbridges.com/y": -1252.7550048828125
                 }
             ],
             "outputs": [
@@ -6160,6 +6242,22 @@
                         {
                             "id": "#qc_duplex_bam.cwl/calculate_noise_0_1_16/sample_id",
                             "source": "#qc_duplex_bam.cwl/sample_name"
+                        },
+                        {
+                            "id": "#qc_duplex_bam.cwl/calculate_noise_0_1_16/threshold",
+                            "source": "#qc_duplex_bam.cwl/sequence_qc_threshold"
+                        },
+                        {
+                            "id": "#qc_duplex_bam.cwl/calculate_noise_0_1_16/truncate",
+                            "source": "#qc_duplex_bam.cwl/sequence_qc_truncate"
+                        },
+                        {
+                            "id": "#qc_duplex_bam.cwl/calculate_noise_0_1_16/min_mapq",
+                            "source": "#qc_duplex_bam.cwl/sequence_qc_min_mapq"
+                        },
+                        {
+                            "id": "#qc_duplex_bam.cwl/calculate_noise_0_1_16/min_basq",
+                            "source": "#qc_duplex_bam.cwl/sequence_qc_min_basq"
                         }
                     ],
                     "out": [
@@ -6390,12 +6488,6 @@
             "requirements": [
                 {
                     "class": "SubworkflowFeatureRequirement"
-                },
-                {
-                    "class": "InlineJavascriptRequirement"
-                },
-                {
-                    "class": "StepInputExpressionRequirement"
                 }
             ]
         },
