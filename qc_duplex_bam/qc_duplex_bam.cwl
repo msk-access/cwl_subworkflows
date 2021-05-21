@@ -133,6 +133,22 @@ inputs:
     doc: Also output data in JSON format.
     'sbg:x': -375.43487548828125
     'sbg:y': 1945.246826171875
+  - id: sequence_qc_min_basq
+    type: int?
+    'sbg:x': -1374.6207275390625
+    'sbg:y': -798.4012451171875
+  - id: sequence_qc_min_mapq
+    type: int?
+    'sbg:x': -1380.14501953125
+    'sbg:y': -951.69873046875
+  - id: sequence_qc_threshold
+    type: float?
+    'sbg:x': -1384.2880859375
+    'sbg:y': -1102.2271728515625
+  - id: sequence_qc_truncate
+    type: int?
+    'sbg:x': -1382.9071044921875
+    'sbg:y': -1252.7550048828125
 outputs:
   - id: biometrics_minor_csv
     outputSource:
@@ -409,6 +425,14 @@ steps:
         source: noise_sites_bed
       - id: sample_id
         source: sample_name
+      - id: threshold
+        source: sequence_qc_threshold
+      - id: truncate
+        source: sequence_qc_truncate
+      - id: min_mapq
+        source: sequence_qc_min_mapq
+      - id: min_basq
+        source: sequence_qc_min_basq
     out:
       - id: sequence_qc_pileup
       - id: sequence_qc_noise_positions
@@ -523,5 +547,3 @@ steps:
     'sbg:y': 681.5068969726562
 requirements:
   - class: SubworkflowFeatureRequirement
-  - class: InlineJavascriptRequirement
-  - class: StepInputExpressionRequirement
