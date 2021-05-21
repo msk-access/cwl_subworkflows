@@ -1049,6 +1049,9 @@
                         },
                         {
                             "id": "#qc_duplex_bam/gatk_collect_insert_size_metrics_txt_pool_a"
+                        },
+                        {
+                            "id": "#qc_duplex_bam/sequence_qc_pileup"
                         }
                     ],
                     "run": "#qc_duplex_bam.cwl",
@@ -1401,7 +1404,8 @@
                                 "#qc_duplex_bam/sequence_qc_noise_n",
                                 "#qc_duplex_bam/sequence_qc_noise_del",
                                 "#qc_duplex_bam/sequence_qc_noise_acgt",
-                                "#qc_duplex_bam/sequence_qc_figures"
+                                "#qc_duplex_bam/sequence_qc_figures",
+                                "#qc_duplex_bam/sequence_qc_pileup"
                             ]
                         },
                         {
@@ -6174,6 +6178,21 @@
                     "label": "gatk_collect_insert_size_metrics_txt_pool_a",
                     "https://www.sevenbridges.com/x": 712.1104125976562,
                     "https://www.sevenbridges.com/y": -446.9347839355469
+                },
+                {
+                    "id": "#qc_duplex_bam.cwl/sequence_qc_pileup",
+                    "outputSource": [
+                        "#qc_duplex_bam.cwl/calculate_noise_0_1_16/sequence_qc_pileup"
+                    ],
+                    "type": [
+                        "File",
+                        {
+                            "type": "array",
+                            "items": "File"
+                        }
+                    ],
+                    "https://www.sevenbridges.com/x": 303.6086120605469,
+                    "https://www.sevenbridges.com/y": -1159.51220703125
                 }
             ],
             "steps": [
