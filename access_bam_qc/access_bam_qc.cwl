@@ -551,6 +551,7 @@ steps:
       - id: gatk_collect_hs_metrics_txt_pool_a
       - id: gatk_collect_insert_size_metrics_histogram_pdf_pool_a
       - id: gatk_collect_insert_size_metrics_txt_pool_a
+      - id: sequence_qc_pileup
     run: ../qc_duplex_bam/qc_duplex_bam.cwl
     label: qc_duplex_bam
     scatter:
@@ -797,6 +798,7 @@ steps:
           - qc_duplex_bam/sequence_qc_noise_del
           - qc_duplex_bam/sequence_qc_noise_acgt
           - qc_duplex_bam/sequence_qc_figures
+          - qc_duplex_bam/sequence_qc_pileup
       - id: output_directory_name
         default: duplex_bam_sequence_qc
     out:

@@ -392,6 +392,15 @@ outputs:
     label: gatk_collect_insert_size_metrics_txt_pool_a
     'sbg:x': 712.1104125976562
     'sbg:y': -446.9347839355469
+  - id: sequence_qc_pileup
+    outputSource:
+      - calculate_noise_0_1_16/sequence_qc_pileup
+    type:
+      - File
+      - type: array
+        items: File
+    'sbg:x': 303.6086120605469
+    'sbg:y': -1159.51220703125
 steps:
   - id: bam_qc_stats_pool_a
     in:
