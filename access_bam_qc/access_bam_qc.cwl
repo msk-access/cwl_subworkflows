@@ -221,6 +221,18 @@ inputs:
     type: int?
     'sbg:x': -1403.2008056640625
     'sbg:y': -2227.529296875
+  - id: hsmetrics_minimum_mapping_quality
+    type: int?
+    'sbg:x': -1366.3743896484375
+    'sbg:y': -306.4041442871094
+  - id: hsmetrics_minimum_base_quality
+    type: int?
+    'sbg:x': -1361.5120849609375
+    'sbg:y': -422.63983154296875
+  - id: hsmetrics_coverage_cap
+    type: int?
+    'sbg:x': -1374.583984375
+    'sbg:y': -534.837890625
 outputs:
   - id: uncollapsed_bam_stats_pool_a_dir
     outputSource:
@@ -380,6 +392,12 @@ steps:
         source: collapsed_biometrics_min_coverage
       - id: min_base_quality
         source: collapsed_biometrics_min_base_quality
+      - id: hsmetrics_minimum_mapping_quality
+        source: hsmetrics_minimum_mapping_quality
+      - id: hsmetrics_minimum_base_quality
+        source: hsmetrics_minimum_base_quality
+      - id: hsmetrics_coverage_cap
+        source: hsmetrics_coverage_cap
     out:
       - id: biometrics_extract_pickle
       - id: fgbio_collect_duplex_seq_metrics_duplex_family_size_pool_a
@@ -445,6 +463,12 @@ steps:
         source: pool_a_bait_intervals
       - id: pool_a_target_intervals
         source: pool_a_target_intervals
+      - id: hsmetrics_minimum_mapping_quality
+        source: hsmetrics_minimum_mapping_quality
+      - id: hsmetrics_minimum_base_quality
+        source: hsmetrics_minimum_base_quality
+      - id: hsmetrics_coverage_cap
+        source: hsmetrics_coverage_cap
     out:
       - id: gatk_collect_alignment_summary_metrics_txt_pool_b
       - id: gatk_collect_hs_metrics_per_base_coverage_txt_pool_b
@@ -525,6 +549,12 @@ steps:
         source: sequence_qc_threshold
       - id: sequence_qc_truncate
         source: sequence_qc_truncate
+      - id: hsmetrics_minimum_mapping_quality
+        source: hsmetrics_minimum_mapping_quality
+      - id: hsmetrics_minimum_base_quality
+        source: hsmetrics_minimum_base_quality
+      - id: hsmetrics_coverage_cap
+        source: hsmetrics_coverage_cap
     out:
       - id: biometrics_minor_csv
       - id: biometrics_minor_plot
@@ -880,6 +910,12 @@ steps:
         source: pool_a_bait_intervals
       - id: pool_a_target_intervals
         source: pool_a_target_intervals
+      - id: hsmetrics_minimum_mapping_quality
+        source: hsmetrics_minimum_mapping_quality
+      - id: hsmetrics_minimum_base_quality
+        source: hsmetrics_minimum_base_quality
+      - id: hsmetrics_coverage_cap
+        source: hsmetrics_coverage_cap
     out:
       - id: gatk_collect_alignment_summary_metrics_txt_pool_b
       - id: gatk_collect_hs_metrics_per_base_coverage_txt_pool_b
@@ -898,8 +934,8 @@ steps:
     scatter:
       - simplex_bam
     scatterMethod: dotproduct
-    'sbg:x': -126.70350646972656
-    'sbg:y': -1048.5262451171875
+    'sbg:x': -129.99029541015625
+    'sbg:y': -1110.5147705078125
 requirements:
   - class: SubworkflowFeatureRequirement
   - class: ScatterFeatureRequirement
