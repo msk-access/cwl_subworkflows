@@ -146,6 +146,18 @@ inputs:
     doc: Minimum base quality of reads to be used for pileup.
     'sbg:x': -313.83404541015625
     'sbg:y': 1075.706298828125
+  - id: hsmetrics_minimum_mapping_quality
+    type: int?
+    'sbg:x': -1416.0538330078125
+    'sbg:y': -1003.3903198242188
+  - id: hsmetrics_minimum_base_quality
+    type: int?
+    'sbg:x': -1417.81689453125
+    'sbg:y': -1132.09375
+  - id: hsmetrics_coverage_cap
+    type: int?
+    'sbg:x': -1414.290771484375
+    'sbg:y': -1262.5513916015625
 outputs:
   - id: biometrics_extract_pickle
     outputSource:
@@ -511,6 +523,12 @@ steps:
         source: pool_b_bait_intervals
       - id: reference
         source: reference
+      - id: hsmetrics_minimum_mapping_quality
+        source: hsmetrics_minimum_mapping_quality
+      - id: hsmetrics_minimum_base_quality
+        source: hsmetrics_minimum_base_quality
+      - id: hsmetrics_coverage_cap
+        source: hsmetrics_coverage_cap
     out:
       - id: gatk_collect_insert_size_metrics_histogram_pdf
       - id: gatk_collect_insert_size_metrics_txt
@@ -533,6 +551,12 @@ steps:
         source: pool_a_bait_intervals
       - id: reference
         source: reference
+      - id: hsmetrics_minimum_mapping_quality
+        source: hsmetrics_minimum_mapping_quality
+      - id: hsmetrics_minimum_base_quality
+        source: hsmetrics_minimum_base_quality
+      - id: hsmetrics_coverage_cap
+        source: hsmetrics_coverage_cap
     out:
       - id: gatk_collect_insert_size_metrics_histogram_pdf
       - id: gatk_collect_insert_size_metrics_txt

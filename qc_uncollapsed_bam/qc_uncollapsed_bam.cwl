@@ -52,6 +52,18 @@ inputs:
     label: pool_a_target_intervals
     'sbg:x': -581.4170532226562
     'sbg:y': -288.2825012207031
+  - id: hsmetrics_minimum_mapping_quality
+    type: int?
+    'sbg:x': -587.9199829101562
+    'sbg:y': -409.1614685058594
+  - id: hsmetrics_minimum_base_quality
+    type: int?
+    'sbg:x': -595.432861328125
+    'sbg:y': -532.598388671875
+  - id: hsmetrics_coverage_cap
+    type: int?
+    'sbg:x': -600.9963989257812
+    'sbg:y': -654.81982421875
 outputs:
   - id: gatk_collect_alignment_summary_metrics_txt_pool_b
     outputSource:
@@ -225,6 +237,12 @@ steps:
         source: pool_a_bait_intervals
       - id: reference
         source: reference
+      - id: hsmetrics_minimum_mapping_quality
+        source: hsmetrics_minimum_mapping_quality
+      - id: hsmetrics_minimum_base_quality
+        source: hsmetrics_minimum_base_quality
+      - id: hsmetrics_coverage_cap
+        source: hsmetrics_coverage_cap
     out:
       - id: gatk_collect_insert_size_metrics_histogram_pdf
       - id: gatk_collect_insert_size_metrics_txt
@@ -247,6 +265,12 @@ steps:
         source: pool_b_bait_intervals
       - id: reference
         source: reference
+      - id: hsmetrics_minimum_mapping_quality
+        source: hsmetrics_minimum_mapping_quality
+      - id: hsmetrics_minimum_base_quality
+        source: hsmetrics_minimum_base_quality
+      - id: hsmetrics_coverage_cap
+        source: hsmetrics_coverage_cap
     out:
       - id: gatk_collect_insert_size_metrics_histogram_pdf
       - id: gatk_collect_insert_size_metrics_txt
@@ -288,5 +312,3 @@ steps:
     'sbg:y': 1229.6976318359375
 requirements:
   - class: SubworkflowFeatureRequirement
-  - class: InlineJavascriptRequirement
-  - class: StepInputExpressionRequirement

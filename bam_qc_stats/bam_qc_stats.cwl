@@ -34,6 +34,21 @@ inputs:
     type: string?
     'sbg:x': 0
     'sbg:y': 53.4375
+  - id: hsmetrics_minimum_mapping_quality
+    type: int?
+    label: hsmetrics_minimum_mapping_quality
+    'sbg:x': 1
+    'sbg:y': 613
+  - id: hsmetrics_minimum_base_quality
+    type: int?
+    label: hsmetrics_minimum_base_quality
+    'sbg:x': 3
+    'sbg:y': 743
+  - id: hsmetrics_coverage_cap
+    type: int?
+    label: hsmetrics_coverage_cap
+    'sbg:x': 2
+    'sbg:y': 872
 outputs:
   - id: gatk_collect_insert_size_metrics_histogram_pdf
     outputSource:
@@ -118,6 +133,12 @@ steps:
         source: bait_intervals
       - id: target_intervals
         source: target_intervals
+      - id: coverage_cap
+        source: hsmetrics_coverage_cap
+      - id: minimum_base_quality
+        source: hsmetrics_minimum_base_quality
+      - id: minimum_mapping_quality
+        source: hsmetrics_minimum_mapping_quality
       - id: reference
         source: reference
       - id: temporary_directory
@@ -147,9 +168,7 @@ steps:
     label: GATK-CollectInsertSizeMetrics
     'sbg:x': 208.8125
     'sbg:y': 111.3125
-requirements:
-  - class: InlineJavascriptRequirement
-  - class: StepInputExpressionRequirement
+requirements: []
 $schemas:
   - 'http://schema.org/version/latest/schemaorg-current-http.rdf'
 's:author':

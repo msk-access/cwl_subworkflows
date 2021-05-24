@@ -15,10 +15,10 @@ inputs:
   - id: simplex_bam
     type: File
     label: simplex_bam
-    'sbg:x': -570.2189331054688
-    'sbg:y': 376.736328125
     secondaryFiles:
       - ^.bai
+    'sbg:x': -570.2189331054688
+    'sbg:y': 376.736328125
   - id: pool_b_target_intervals
     type: File
     label: pool_b_target_intervals
@@ -39,6 +39,18 @@ inputs:
     label: pool_a_target_intervals
     'sbg:x': -581.4170532226562
     'sbg:y': -288.2825012207031
+  - id: hsmetrics_minimum_mapping_quality
+    type: int?
+    'sbg:x': -585.7700805664062
+    'sbg:y': -414.1761779785156
+  - id: hsmetrics_minimum_base_quality
+    type: int?
+    'sbg:x': -590.94140625
+    'sbg:y': -539.5800170898438
+  - id: hsmetrics_coverage_cap
+    type: int?
+    'sbg:x': -595.156005859375
+    'sbg:y': -670.54931640625
 outputs:
   - id: gatk_collect_alignment_summary_metrics_txt_pool_b
     outputSource:
@@ -128,13 +140,20 @@ steps:
   - id: bam_qc_stats_pool_a
     in:
       - id: input
-        source: simplex_bam
+        source:
+          - simplex_bam
       - id: target_intervals
         source: pool_a_target_intervals
       - id: bait_intervals
         source: pool_a_bait_intervals
       - id: reference
         source: reference
+      - id: hsmetrics_minimum_mapping_quality
+        source: hsmetrics_minimum_mapping_quality
+      - id: hsmetrics_minimum_base_quality
+        source: hsmetrics_minimum_base_quality
+      - id: hsmetrics_coverage_cap
+        source: hsmetrics_coverage_cap
     out:
       - id: gatk_collect_insert_size_metrics_histogram_pdf
       - id: gatk_collect_insert_size_metrics_txt
@@ -149,13 +168,20 @@ steps:
   - id: bam_qc_stats_pool_b
     in:
       - id: input
-        source: simplex_bam
+        source:
+          - simplex_bam
       - id: target_intervals
         source: pool_b_target_intervals
       - id: bait_intervals
         source: pool_b_bait_intervals
       - id: reference
         source: reference
+      - id: hsmetrics_minimum_mapping_quality
+        source: hsmetrics_minimum_mapping_quality
+      - id: hsmetrics_minimum_base_quality
+        source: hsmetrics_minimum_base_quality
+      - id: hsmetrics_coverage_cap
+        source: hsmetrics_coverage_cap
     out:
       - id: gatk_collect_insert_size_metrics_histogram_pdf
       - id: gatk_collect_insert_size_metrics_txt
@@ -169,5 +195,3 @@ steps:
     'sbg:y': 139.5
 requirements:
   - class: SubworkflowFeatureRequirement
-  - class: InlineJavascriptRequirement
-  - class: StepInputExpressionRequirement

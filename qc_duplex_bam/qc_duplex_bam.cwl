@@ -149,6 +149,18 @@ inputs:
     type: int?
     'sbg:x': -1382.9071044921875
     'sbg:y': -1252.7550048828125
+  - id: hsmetrics_minimum_mapping_quality
+    type: int?
+    'sbg:x': -1369.7769775390625
+    'sbg:y': 395.4126281738281
+  - id: hsmetrics_minimum_base_quality
+    type: int?
+    'sbg:x': -1380.285400390625
+    'sbg:y': 511.57122802734375
+  - id: hsmetrics_coverage_cap
+    type: int?
+    'sbg:x': -1378.1395263671875
+    'sbg:y': 628.438232421875
 outputs:
   - id: biometrics_minor_csv
     outputSource:
@@ -413,6 +425,12 @@ steps:
         source: pool_a_bait_intervals
       - id: reference
         source: reference
+      - id: hsmetrics_minimum_mapping_quality
+        source: hsmetrics_minimum_mapping_quality
+      - id: hsmetrics_minimum_base_quality
+        source: hsmetrics_minimum_base_quality
+      - id: hsmetrics_coverage_cap
+        source: hsmetrics_coverage_cap
     out:
       - id: gatk_collect_insert_size_metrics_histogram_pdf
       - id: gatk_collect_insert_size_metrics_txt
@@ -463,6 +481,12 @@ steps:
         source: pool_b_bait_intervals
       - id: reference
         source: reference
+      - id: hsmetrics_minimum_mapping_quality
+        source: hsmetrics_minimum_mapping_quality
+      - id: hsmetrics_minimum_base_quality
+        source: hsmetrics_minimum_base_quality
+      - id: hsmetrics_coverage_cap
+        source: hsmetrics_coverage_cap
     out:
       - id: gatk_collect_insert_size_metrics_histogram_pdf
       - id: gatk_collect_insert_size_metrics_txt
