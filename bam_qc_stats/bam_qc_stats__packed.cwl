@@ -50,6 +50,36 @@
                     ],
                     "https://www.sevenbridges.com/x": 0,
                     "https://www.sevenbridges.com/y": 53.4375
+                },
+                {
+                    "id": "#hsmetrics_minimum_mapping_quality",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "label": "hsmetrics_minimum_mapping_quality",
+                    "https://www.sevenbridges.com/x": 1,
+                    "https://www.sevenbridges.com/y": 613
+                },
+                {
+                    "id": "#hsmetrics_minimum_base_quality",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "label": "hsmetrics_minimum_base_quality",
+                    "https://www.sevenbridges.com/x": 3,
+                    "https://www.sevenbridges.com/y": 743
+                },
+                {
+                    "id": "#hsmetrics_coverage_cap",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "label": "hsmetrics_coverage_cap",
+                    "https://www.sevenbridges.com/x": 2,
+                    "https://www.sevenbridges.com/y": 872
                 }
             ],
             "outputs": [
@@ -187,6 +217,18 @@
                             "source": "#target_intervals"
                         },
                         {
+                            "id": "#gatk_collect_hs_metrics_4_1_8_0/coverage_cap",
+                            "source": "#hsmetrics_coverage_cap"
+                        },
+                        {
+                            "id": "#gatk_collect_hs_metrics_4_1_8_0/minimum_base_quality",
+                            "source": "#hsmetrics_minimum_base_quality"
+                        },
+                        {
+                            "id": "#gatk_collect_hs_metrics_4_1_8_0/minimum_mapping_quality",
+                            "source": "#hsmetrics_minimum_mapping_quality"
+                        },
+                        {
                             "id": "#gatk_collect_hs_metrics_4_1_8_0/reference",
                             "source": "#reference"
                         },
@@ -241,14 +283,7 @@
                     "https://www.sevenbridges.com/y": 111.3125
                 }
             ],
-            "requirements": [
-                {
-                    "class": "InlineJavascriptRequirement"
-                },
-                {
-                    "class": "StepInputExpressionRequirement"
-                }
-            ],
+            "requirements": [],
             "https://schema.org/author": [
                 {
                     "class": "https://schema.org/Person",

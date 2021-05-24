@@ -50,6 +50,36 @@
                     ],
                     "https://www.sevenbridges.com/x": 0,
                     "https://www.sevenbridges.com/y": 53.4375
+                },
+                {
+                    "id": "#bam_qc_stats.cwl/hsmetrics_minimum_mapping_quality",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "label": "hsmetrics_minimum_mapping_quality",
+                    "https://www.sevenbridges.com/x": 1,
+                    "https://www.sevenbridges.com/y": 613
+                },
+                {
+                    "id": "#bam_qc_stats.cwl/hsmetrics_minimum_base_quality",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "label": "hsmetrics_minimum_base_quality",
+                    "https://www.sevenbridges.com/x": 3,
+                    "https://www.sevenbridges.com/y": 743
+                },
+                {
+                    "id": "#bam_qc_stats.cwl/hsmetrics_coverage_cap",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "label": "hsmetrics_coverage_cap",
+                    "https://www.sevenbridges.com/x": 2,
+                    "https://www.sevenbridges.com/y": 872
                 }
             ],
             "outputs": [
@@ -187,6 +217,18 @@
                             "source": "#bam_qc_stats.cwl/target_intervals"
                         },
                         {
+                            "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/coverage_cap",
+                            "source": "#bam_qc_stats.cwl/hsmetrics_coverage_cap"
+                        },
+                        {
+                            "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/minimum_base_quality",
+                            "source": "#bam_qc_stats.cwl/hsmetrics_minimum_base_quality"
+                        },
+                        {
+                            "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/minimum_mapping_quality",
+                            "source": "#bam_qc_stats.cwl/hsmetrics_minimum_mapping_quality"
+                        },
+                        {
                             "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/reference",
                             "source": "#bam_qc_stats.cwl/reference"
                         },
@@ -241,14 +283,7 @@
                     "https://www.sevenbridges.com/y": 111.3125
                 }
             ],
-            "requirements": [
-                {
-                    "class": "InlineJavascriptRequirement"
-                },
-                {
-                    "class": "StepInputExpressionRequirement"
-                }
-            ],
+            "requirements": [],
             "https://schema.org/author": [
                 {
                     "class": "https://schema.org/Person",
@@ -1289,6 +1324,33 @@
                     "label": "pool_a_target_intervals",
                     "https://www.sevenbridges.com/x": -581.4170532226562,
                     "https://www.sevenbridges.com/y": -288.2825012207031
+                },
+                {
+                    "id": "#hsmetrics_minimum_mapping_quality",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "https://www.sevenbridges.com/x": -585.7700805664062,
+                    "https://www.sevenbridges.com/y": -414.1761779785156
+                },
+                {
+                    "id": "#hsmetrics_minimum_base_quality",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "https://www.sevenbridges.com/x": -590.94140625,
+                    "https://www.sevenbridges.com/y": -539.5800170898438
+                },
+                {
+                    "id": "#hsmetrics_coverage_cap",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "https://www.sevenbridges.com/x": -595.156005859375,
+                    "https://www.sevenbridges.com/y": -670.54931640625
                 }
             ],
             "outputs": [
@@ -1419,7 +1481,9 @@
                     "in": [
                         {
                             "id": "#bam_qc_stats_pool_a/input",
-                            "source": "#simplex_bam"
+                            "source": [
+                                "#simplex_bam"
+                            ]
                         },
                         {
                             "id": "#bam_qc_stats_pool_a/target_intervals",
@@ -1432,6 +1496,18 @@
                         {
                             "id": "#bam_qc_stats_pool_a/reference",
                             "source": "#reference"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_a/hsmetrics_minimum_mapping_quality",
+                            "source": "#hsmetrics_minimum_mapping_quality"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_a/hsmetrics_minimum_base_quality",
+                            "source": "#hsmetrics_minimum_base_quality"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_a/hsmetrics_coverage_cap",
+                            "source": "#hsmetrics_coverage_cap"
                         }
                     ],
                     "out": [
@@ -1464,7 +1540,9 @@
                     "in": [
                         {
                             "id": "#bam_qc_stats_pool_b/input",
-                            "source": "#simplex_bam"
+                            "source": [
+                                "#simplex_bam"
+                            ]
                         },
                         {
                             "id": "#bam_qc_stats_pool_b/target_intervals",
@@ -1477,6 +1555,18 @@
                         {
                             "id": "#bam_qc_stats_pool_b/reference",
                             "source": "#reference"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_b/hsmetrics_minimum_mapping_quality",
+                            "source": "#hsmetrics_minimum_mapping_quality"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_b/hsmetrics_minimum_base_quality",
+                            "source": "#hsmetrics_minimum_base_quality"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_b/hsmetrics_coverage_cap",
+                            "source": "#hsmetrics_coverage_cap"
                         }
                     ],
                     "out": [
@@ -1508,12 +1598,6 @@
             "requirements": [
                 {
                     "class": "SubworkflowFeatureRequirement"
-                },
-                {
-                    "class": "InlineJavascriptRequirement"
-                },
-                {
-                    "class": "StepInputExpressionRequirement"
                 }
             ]
         }
