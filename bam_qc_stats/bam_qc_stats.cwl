@@ -123,8 +123,8 @@ steps:
     run: >-
       ../command_line_tools/gatk_collect_alignment_summary_metrics_4.1.8.0/gatk_collect_alignment_summary_metrics_4.1.8.0.cwl
     label: GATK-CollectAlignmentSummaryMetrics
-    'sbg:x': 208.8125
-    'sbg:y': 402.0625
+    'sbg:x': 334.2886657714844
+    'sbg:y': 560.505126953125
   - id: gatk_collect_hs_metrics_4_1_8_0
     in:
       - id: input
@@ -150,8 +150,8 @@ steps:
     run: >-
       ../command_line_tools/gatk_collect_hs_metrics_4.1.8.0/gatk_collect_hs_metrics_4.1.8.0.cwl
     label: GATK-CollectHsMetrics
-    'sbg:x': 208.8125
-    'sbg:y': 253.1875
+    'sbg:x': 327.8453674316406
+    'sbg:y': 372.8453674316406
   - id: gatk_collect_insert_size_metrics_4_1_8_0
     in:
       - id: input
@@ -166,8 +166,8 @@ steps:
     run: >-
       ../command_line_tools/gatk_collect_insert_size_metrics_4.1.8.0/gatk_collect_insert_size_metrics_4.1.8.0.cwl
     label: GATK-CollectInsertSizeMetrics
-    'sbg:x': 208.8125
-    'sbg:y': 111.3125
+    'sbg:x': 335.57733154296875
+    'sbg:y': 194.7628936767578
 requirements: []
 $schemas:
   - 'http://schema.org/version/latest/schemaorg-current-http.rdf'

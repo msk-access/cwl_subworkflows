@@ -161,6 +161,10 @@ inputs:
     type: int?
     'sbg:x': -1378.1395263671875
     'sbg:y': 628.438232421875
+  - id: prefix
+    type: string?
+    'sbg:x': -375.210205078125
+    'sbg:y': 2084.396728515625
 outputs:
   - id: biometrics_minor_csv
     outputSource:
@@ -546,6 +550,7 @@ steps:
         source: minor_threshold
       - id: prefix
         default: duplex
+        source: prefix
       - id: plot
         default: false
         source: plot
@@ -569,6 +574,7 @@ steps:
         source: major_threshold
       - id: prefix
         default: duplex
+        source: prefix
       - id: plot
         default: false
         source: plot

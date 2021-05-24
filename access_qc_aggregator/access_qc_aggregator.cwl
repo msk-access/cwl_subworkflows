@@ -268,6 +268,8 @@ steps:
           - duplex_extraction_files
       - id: discordance_threshold
         source: duplex_biometrics_discordance_threshold
+      - id: prefix
+        default: duplex
       - id: plot
         default: true
         source: biometrics_plot
@@ -305,19 +307,19 @@ steps:
           - duplex_bam_sequence_qc_dir
       - id: output_directory_name
         default:
-        - "simplex_bam_pool_a_dir"
-        - "simplex_bam_pool_b_dir"
-        - "duplex_bam_stats_pool_a_dir"
-        - "duplex_bam_stats_pool_b_dir"
-        - "collapsed_bam_stats_pool_a_dir"
-        - "collapsed_bam_stats_pool_b_dir"
-        - "collapsed_bam_duplex_metrics_pool_a_dir"
-        - "collapsed_bam_duplex_metrics_pool_b_dir"
-        - "gatk_mean_quality_by_cycle_recal_dir"
-        - "gatk_mean_quality_by_cycle_dir"
-        - "uncollapsed_bam_stats_pool_b_dir"
-        - "uncollapsed_bam_stats_pool_a_dir"
-        - "duplex_bam_sequence_qc_dir"
+          - simplex_bam_pool_a_dir
+          - simplex_bam_pool_b_dir
+          - duplex_bam_stats_pool_a_dir
+          - duplex_bam_stats_pool_b_dir
+          - collapsed_bam_stats_pool_a_dir
+          - collapsed_bam_stats_pool_b_dir
+          - collapsed_bam_duplex_metrics_pool_a_dir
+          - collapsed_bam_duplex_metrics_pool_b_dir
+          - gatk_mean_quality_by_cycle_recal_dir
+          - gatk_mean_quality_by_cycle_dir
+          - uncollapsed_bam_stats_pool_b_dir
+          - uncollapsed_bam_stats_pool_a_dir
+          - duplex_bam_sequence_qc_dir
     out:
       - id: directory
     run: ../command_line_tools/expression_tools/put_in_dir.cwl
@@ -335,6 +337,8 @@ steps:
           - duplex_extraction_files
       - id: major_threshold
         source: duplex_biometrics_major_threshold
+      - id: prefix
+        default: duplex
       - id: plot
         default: true
         source: biometrics_plot
@@ -356,6 +360,8 @@ steps:
           - duplex_extraction_files
       - id: minor_threshold
         source: duplex_biometrics_minor_threshold
+      - id: prefix
+        default: duplex
       - id: plot
         default: true
         source: biometrics_plot
@@ -378,6 +384,8 @@ steps:
           - duplex_extraction_files
       - id: coverage_threshold
         source: duplex_biometrics_coverage_threshold
+      - id: prefix
+        default: duplex
       - id: json
         default: true
     out:
@@ -422,6 +430,8 @@ steps:
           - collapsed_extraction_files
       - id: discordance_threshold
         source: collapsed_biometrics_discordance_threshold
+      - id: prefix
+        default: collapsed
       - id: plot
         default: true
         source: biometrics_plot
@@ -448,6 +458,8 @@ steps:
       - id: major_threshold
         default: 0.6
         source: collapsed_biometrics_major_threshold
+      - id: prefix
+        default: collapsed
       - id: plot
         default: true
         source: biometrics_plot
@@ -470,6 +482,8 @@ steps:
       - id: minor_threshold
         default: 0.002
         source: collapsed_biometrics_minor_threshold
+      - id: prefix
+        default: collapsed
       - id: plot
         default: true
         source: biometrics_plot
@@ -494,6 +508,8 @@ steps:
           - collapsed_extraction_files
       - id: coverage_threshold
         source: collapsed_biometrics_coverage_threshold
+      - id: prefix
+        default: collapsed
       - id: json
         default: true
         source: biometrics_json

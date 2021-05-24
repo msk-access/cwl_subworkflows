@@ -124,8 +124,8 @@ inputs:
   - id: coverage_threshold
     type: int?
     doc: Samples with Y chromosome above this value will be considered male.
-    'sbg:x': -16.70697021484375
-    'sbg:y': 1304.1298828125
+    'sbg:x': -28.91999626159668
+    'sbg:y': 1299.155029296875
   - id: min_mapping_quality
     type: int?
     doc: Minimum mapping quality of reads to be used for pileup.
@@ -158,6 +158,10 @@ inputs:
     type: int?
     'sbg:x': -1414.290771484375
     'sbg:y': -1262.5513916015625
+  - id: prefix
+    type: string?
+    'sbg:x': -26.909893035888672
+    'sbg:y': 1447.054931640625
 outputs:
   - id: biometrics_extract_pickle
     outputSource:
@@ -654,6 +658,7 @@ steps:
         source: major_threshold
       - id: prefix
         default: collapsed
+        source: prefix
       - id: plot
         source: plot
       - id: json
@@ -674,6 +679,7 @@ steps:
         source: minor_threshold
       - id: prefix
         default: collapsed
+        source: prefix
       - id: plot
         default: false
         source: plot
@@ -697,6 +703,7 @@ steps:
         source: coverage_threshold
       - id: prefix
         default: collapsed
+        source: prefix
       - id: json
         source: json
     out:
