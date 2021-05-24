@@ -388,6 +388,10 @@
                             "source": "#duplex_biometrics_discordance_threshold"
                         },
                         {
+                            "id": "#duplex_biometrics_genotype/prefix",
+                            "default": "duplex"
+                        },
+                        {
                             "id": "#duplex_biometrics_genotype/plot",
                             "default": true,
                             "source": "#biometrics_plot"
@@ -493,6 +497,10 @@
                             "source": "#duplex_biometrics_major_threshold"
                         },
                         {
+                            "id": "#duplex_biometrics_major/prefix",
+                            "default": "duplex"
+                        },
+                        {
                             "id": "#duplex_biometrics_major/plot",
                             "default": true,
                             "source": "#biometrics_plot"
@@ -531,6 +539,10 @@
                         {
                             "id": "#duplex_biometrics_minor/minor_threshold",
                             "source": "#duplex_biometrics_minor_threshold"
+                        },
+                        {
+                            "id": "#duplex_biometrics_minor/prefix",
+                            "default": "duplex"
                         },
                         {
                             "id": "#duplex_biometrics_minor/plot",
@@ -574,6 +586,10 @@
                         {
                             "id": "#duplex_biometrics_sexmismatch/coverage_threshold",
                             "source": "#duplex_biometrics_coverage_threshold"
+                        },
+                        {
+                            "id": "#duplex_biometrics_sexmismatch/prefix",
+                            "default": "duplex"
                         },
                         {
                             "id": "#duplex_biometrics_sexmismatch/json",
@@ -644,6 +660,10 @@
                             "source": "#collapsed_biometrics_discordance_threshold"
                         },
                         {
+                            "id": "#collapsed_biometrics_genotype/prefix",
+                            "default": "collapsed"
+                        },
+                        {
                             "id": "#collapsed_biometrics_genotype/plot",
                             "default": true,
                             "source": "#biometrics_plot"
@@ -695,6 +715,10 @@
                             "source": "#collapsed_biometrics_major_threshold"
                         },
                         {
+                            "id": "#collapsed_biometrics_major/prefix",
+                            "default": "collapsed"
+                        },
+                        {
                             "id": "#collapsed_biometrics_major/plot",
                             "default": true,
                             "source": "#biometrics_plot"
@@ -734,6 +758,10 @@
                             "id": "#collapsed_biometrics_minor/minor_threshold",
                             "default": 0.002,
                             "source": "#collapsed_biometrics_minor_threshold"
+                        },
+                        {
+                            "id": "#collapsed_biometrics_minor/prefix",
+                            "default": "collapsed"
                         },
                         {
                             "id": "#collapsed_biometrics_minor/plot",
@@ -781,6 +809,10 @@
                         {
                             "id": "#collapsed_biometrics_sexmismatch/coverage_threshold",
                             "source": "#collapsed_biometrics_coverage_threshold"
+                        },
+                        {
+                            "id": "#collapsed_biometrics_sexmismatch/prefix",
+                            "default": "collapsed"
                         },
                         {
                             "id": "#collapsed_biometrics_sexmismatch/json",

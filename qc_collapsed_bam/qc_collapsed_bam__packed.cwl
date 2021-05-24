@@ -198,8 +198,8 @@
                     ],
                     "run": "#gatk_collect_alignment_summary_metrics_4.1.8.0.cwl",
                     "label": "GATK-CollectAlignmentSummaryMetrics",
-                    "https://www.sevenbridges.com/x": 208.8125,
-                    "https://www.sevenbridges.com/y": 402.0625
+                    "https://www.sevenbridges.com/x": 334.2886657714844,
+                    "https://www.sevenbridges.com/y": 560.505126953125
                 },
                 {
                     "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0",
@@ -250,8 +250,8 @@
                     ],
                     "run": "#gatk_collect_hs_metrics_4.1.8.0.cwl",
                     "label": "GATK-CollectHsMetrics",
-                    "https://www.sevenbridges.com/x": 208.8125,
-                    "https://www.sevenbridges.com/y": 253.1875
+                    "https://www.sevenbridges.com/x": 327.8453674316406,
+                    "https://www.sevenbridges.com/y": 372.8453674316406
                 },
                 {
                     "id": "#bam_qc_stats.cwl/gatk_collect_insert_size_metrics_4_1_8_0",
@@ -279,8 +279,8 @@
                     ],
                     "run": "#gatk_collect_insert_size_metrics_4.1.8.0.cwl",
                     "label": "GATK-CollectInsertSizeMetrics",
-                    "https://www.sevenbridges.com/x": 208.8125,
-                    "https://www.sevenbridges.com/y": 111.3125
+                    "https://www.sevenbridges.com/x": 335.57733154296875,
+                    "https://www.sevenbridges.com/y": 194.7628936767578
                 }
             ],
             "requirements": [],
@@ -2512,8 +2512,8 @@
                         "int"
                     ],
                     "doc": "Samples with Y chromosome above this value will be considered male.",
-                    "https://www.sevenbridges.com/x": -16.70697021484375,
-                    "https://www.sevenbridges.com/y": 1304.1298828125
+                    "https://www.sevenbridges.com/x": -28.91999626159668,
+                    "https://www.sevenbridges.com/y": 1299.155029296875
                 },
                 {
                     "id": "#min_mapping_quality",
@@ -2581,6 +2581,15 @@
                     ],
                     "https://www.sevenbridges.com/x": -1414.290771484375,
                     "https://www.sevenbridges.com/y": -1262.5513916015625
+                },
+                {
+                    "id": "#prefix",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "https://www.sevenbridges.com/x": -26.909893035888672,
+                    "https://www.sevenbridges.com/y": 1447.054931640625
                 }
             ],
             "outputs": [
@@ -3413,7 +3422,8 @@
                         },
                         {
                             "id": "#biometrics_major/prefix",
-                            "default": "collapsed"
+                            "default": "collapsed",
+                            "source": "#prefix"
                         },
                         {
                             "id": "#biometrics_major/plot",
@@ -3454,7 +3464,8 @@
                         },
                         {
                             "id": "#biometrics_minor/prefix",
-                            "default": "collapsed"
+                            "default": "collapsed",
+                            "source": "#prefix"
                         },
                         {
                             "id": "#biometrics_minor/plot",
@@ -3500,7 +3511,8 @@
                         },
                         {
                             "id": "#biometrics_sexmismatch/prefix",
-                            "default": "collapsed"
+                            "default": "collapsed",
+                            "source": "#prefix"
                         },
                         {
                             "id": "#biometrics_sexmismatch/json",

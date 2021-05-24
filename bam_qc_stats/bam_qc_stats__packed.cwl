@@ -198,8 +198,8 @@
                     ],
                     "run": "#gatk_collect_alignment_summary_metrics_4.1.8.0.cwl",
                     "label": "GATK-CollectAlignmentSummaryMetrics",
-                    "https://www.sevenbridges.com/x": 208.8125,
-                    "https://www.sevenbridges.com/y": 402.0625
+                    "https://www.sevenbridges.com/x": 334.2886657714844,
+                    "https://www.sevenbridges.com/y": 560.505126953125
                 },
                 {
                     "id": "#gatk_collect_hs_metrics_4_1_8_0",
@@ -250,8 +250,8 @@
                     ],
                     "run": "#gatk_collect_hs_metrics_4.1.8.0.cwl",
                     "label": "GATK-CollectHsMetrics",
-                    "https://www.sevenbridges.com/x": 208.8125,
-                    "https://www.sevenbridges.com/y": 253.1875
+                    "https://www.sevenbridges.com/x": 327.8453674316406,
+                    "https://www.sevenbridges.com/y": 372.8453674316406
                 },
                 {
                     "id": "#gatk_collect_insert_size_metrics_4_1_8_0",
@@ -279,8 +279,8 @@
                     ],
                     "run": "#gatk_collect_insert_size_metrics_4.1.8.0.cwl",
                     "label": "GATK-CollectInsertSizeMetrics",
-                    "https://www.sevenbridges.com/x": 208.8125,
-                    "https://www.sevenbridges.com/y": 111.3125
+                    "https://www.sevenbridges.com/x": 335.57733154296875,
+                    "https://www.sevenbridges.com/y": 194.7628936767578
                 }
             ],
             "requirements": [],
