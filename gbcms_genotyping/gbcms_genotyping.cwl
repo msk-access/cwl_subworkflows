@@ -287,7 +287,7 @@ steps:
         source: normal_output
         valueFrom: |-
           ${
-            if (inputs.tumor_output){
+            if (inputs.normal_output){
               return inputs.normal_output
             } else {
               return inputs.normal_genotyping_bams_ids.map(function(b, i) {
