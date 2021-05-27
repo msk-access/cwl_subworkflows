@@ -10,85 +10,53 @@ inputs:
     secondaryFiles:
       - ^.bai
     'sbg:x': 0
-    'sbg:y': 1494.125
+    'sbg:y': 1067.0859375
   - id: normal_bams
     type: 'File[]'
     secondaryFiles:
       - ^.bai
     'sbg:x': 0
-    'sbg:y': 960.5
+    'sbg:y': 640.2421875
   - id: tumor_bams
     type: 'File[]'
     secondaryFiles:
       - ^.bai
     'sbg:x': 0
-    'sbg:y': 213.453125
+    'sbg:y': 106.7109375
   - id: simplex_bams
     type: 'File[]'
     secondaryFiles:
       - ^.bai
     'sbg:x': 0
-    'sbg:y': 533.609375
+    'sbg:y': 320.1328125
   - id: maf
     type: File
     'sbg:x': 0
-    'sbg:y': 1067.21875
+    'sbg:y': 746.9296875
   - id: ref_fasta
     type: File
     'sbg:x': 0
-    'sbg:y': 640.328125
+    'sbg:y': 426.8203125
   - id: simplex_genotyping_bams_ids
     type: 'string[]'
     'sbg:x': 0
-    'sbg:y': 426.890625
-  - id: simplex_output
-    type:
-      - 'null'
-      - string
-      - type: array
-        items: string
-    'sbg:x': 0
-    'sbg:y': 320.171875
+    'sbg:y': 213.421875
   - id: generic_counting
     type: boolean?
     'sbg:x': 0
-    'sbg:y': 1173.9453125
-  - id: duplex_output
-    type:
-      - 'null'
-      - string
-      - type: array
-        items: string
-    'sbg:x': 0
-    'sbg:y': 1280.671875
-  - id: normal_output
-    type:
-      - 'null'
-      - string
-      - type: array
-        items: string
-    'sbg:x': 0
-    'sbg:y': 747.046875
+    'sbg:y': 853.640625
   - id: normal_genotyping_bams_ids
     type: 'string[]'
     'sbg:x': 0
-    'sbg:y': 853.7734375
-  - id: tumor_output
-    type:
-      - 'null'
-      - string
-      - type: array
-        items: string
-    'sbg:x': 0
-    'sbg:y': 0
+    'sbg:y': 533.53125
   - id: tumor_genotyping_bams_ids
     type: 'string[]'
     'sbg:x': 0
-    'sbg:y': 106.7265625
+    'sbg:y': 0
   - id: duplex_genotyping_bams_ids
     type: 'string[]'
     'sbg:x': 0
-    'sbg:y': 1387.3984375
+    'sbg:y': 960.375
 outputs:
   - id: tumor_fillout
     outputSource:
@@ -97,8 +65,8 @@ outputs:
       - File
       - type: array
         items: File
-    'sbg:x': 605.1873779296875
-    'sbg:y': 586.984375
+    'sbg:x': 611.2342529296875
+    'sbg:y': 373.5234375
   - id: simplex_fillout
     outputSource:
       - simplex_getbasecountsmultisample_1_2_5/fillout
@@ -106,8 +74,8 @@ outputs:
       - File
       - type: array
         items: File
-    'sbg:x': 605.1873779296875
-    'sbg:y': 693.703125
+    'sbg:x': 611.2342529296875
+    'sbg:y': 480.2109375
   - id: normal_fillout
     outputSource:
       - normal_getbasecountsmultisample_1_2_5/fillout
@@ -115,8 +83,8 @@ outputs:
       - File
       - type: array
         items: File
-    'sbg:x': 605.1873779296875
-    'sbg:y': 800.421875
+    'sbg:x': 611.2342529296875
+    'sbg:y': 586.8984375
   - id: duplex_fillout
     outputSource:
       - duplex_getbasecountsmultisample_1_2_5/fillout
@@ -124,8 +92,8 @@ outputs:
       - File
       - type: array
         items: File
-    'sbg:x': 605.1873779296875
-    'sbg:y': 907.140625
+    'sbg:x': 611.2342529296875
+    'sbg:y': 693.5859375
 steps:
   - id: duplex_getbasecountsmultisample_1_2_5
     in:
@@ -175,8 +143,8 @@ steps:
       - genotyping_bams_ids
       - output
     scatterMethod: dotproduct
-    'sbg:x': 289.796875
-    'sbg:y': 977.15625
+    'sbg:x': 295.84375
+    'sbg:y': 763.6328125
   - id: simplex_getbasecountsmultisample_1_2_5
     in:
       - id: genotyping_bams
@@ -225,8 +193,8 @@ steps:
       - genotyping_bams_ids
       - output
     scatterMethod: dotproduct
-    'sbg:x': 289.796875
-    'sbg:y': 623.5546875
+    'sbg:x': 295.84375
+    'sbg:y': 410.1640625
   - id: tumor_getbasecountsmultisample_1_2_5
     in:
       - id: genotyping_bams
@@ -275,8 +243,8 @@ steps:
       - genotyping_bams_ids
       - output
     scatterMethod: dotproduct
-    'sbg:x': 289.796875
-    'sbg:y': 446.8203125
+    'sbg:x': 295.84375
+    'sbg:y': 233.4296875
   - id: normal_getbasecountsmultisample_1_2_5
     in:
       - id: genotyping_bams
@@ -325,8 +293,8 @@ steps:
       - genotyping_bams_ids
       - output
     scatterMethod: dotproduct
-    'sbg:x': 289.796875
-    'sbg:y': 800.2890625
+    'sbg:x': 295.84375
+    'sbg:y': 586.8984375
 requirements:
   - class: ScatterFeatureRequirement
   - class: StepInputExpressionRequirement
