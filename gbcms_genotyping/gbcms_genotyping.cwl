@@ -262,6 +262,7 @@ steps:
       - genotyping_bams
       - genotyping_bams_ids
       - output
+    scatterMethod: dotproduct
     'sbg:x': 289.796875
     'sbg:y': 446.8203125
   - id: normal_getbasecountsmultisample_1_2_5
