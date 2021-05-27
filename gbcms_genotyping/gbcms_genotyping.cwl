@@ -37,7 +37,7 @@ inputs:
     type: File
     'sbg:x': 0
     'sbg:y': 640.328125
-  - id: simplex_bams_ids
+  - id: simplex_genotyping_bams_ids
     type: 'string[]'
     'sbg:x': 0
     'sbg:y': 426.890625
@@ -146,7 +146,7 @@ steps:
       - id: omaf
         default: true
       - id: output
-        source: duplex_output
+        source: duplex_genotyping_bams_ids
         valueFrom: |-
           ${
             if (inputs.duplex_output){
@@ -180,7 +180,7 @@ steps:
           - simplex_bams
       - id: genotyping_bams_ids
         source:
-          - simplex_bams_ids
+          - simplex_genotyping_bams_ids
       - id: filter_duplicate
         default: 0
       - id: fragment_count
@@ -192,7 +192,7 @@ steps:
       - id: omaf
         default: true
       - id: output
-        source: simplex_output
+        source: simplex_genotyping_bams_ids
         valueFrom: |-
           ${
             if (inputs.simplex_output){
@@ -238,7 +238,7 @@ steps:
       - id: omaf
         default: true
       - id: output
-        source: tumor_output
+        source: tumor_genotyping_bams_ids
         valueFrom: |-
           ${
             if (inputs.tumor_output) {
@@ -284,7 +284,7 @@ steps:
       - id: omaf
         default: true
       - id: output
-        source: normal_output
+        source: normal_genotyping_bams_ids
         valueFrom: |-
           ${
             if (inputs.normal_output){
@@ -313,3 +313,5 @@ steps:
     'sbg:y': 800.2890625
 requirements:
   - class: ScatterFeatureRequirement
+  - class: StepInputExpressionRequirement
+  - class: InlineJavascriptRequirement
