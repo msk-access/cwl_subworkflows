@@ -149,11 +149,15 @@ steps:
         source: duplex_genotyping_bams_ids
         valueFrom: |-
           ${
-            if (inputs.duplex_output){
+            if (inputs.duplex_output) {
               return inputs.duplex_output
             } else {
-              return inputs.duplex_genotyping_bams_ids.map(function(b, i) {
-                return b + "_fillout_DUPLEX.maf"
+              if (typeof(self) == 'object') {
+                  return self.map(function(b, i) {
+                    return b + "_fillout_DUPLEX.maf"
+                  })
+              } else {
+                  return self + "_fillout_DUPLEX.maf"
               }
             }
           }
@@ -198,8 +202,12 @@ steps:
             if (inputs.simplex_output){
               return inputs.simplex_output
             } else {
-              return inputs.simplex_genotyping_bams_ids.map(function(b, i) {
-                return b + "_fillout_SIMPLEX.maf"
+              if (typeof(self) == 'object') {
+                  return self.map(function(b, i) {
+                    return b + "_fillout_SIMPLEX.maf"
+                  })
+              } else {
+                  return self + "_fillout_SIMPLEX.maf"
               }
             }
           }
@@ -244,8 +252,12 @@ steps:
             if (inputs.tumor_output) {
               return inputs.tumor_output
             } else {
-              return inputs.tumor_genotyping_bams_ids.map(function(b, i) {
-                return b + "_fillout.maf"
+              if (typeof(self) == 'object') {
+                  return self.map(function(b, i) {
+                    return b + "_fillout.maf"
+                  })
+              } else {
+                  return self + "_fillout.maf"
               }
             }
           }   
@@ -290,8 +302,12 @@ steps:
             if (inputs.normal_output){
               return inputs.normal_output
             } else {
-              return inputs.normal_genotyping_bams_ids.map(function(b, i) {
-                return b + "_fillout.maf"
+              if (typeof(self) == 'object') {
+                  return self.map(function(b, i) {
+                    return b + "_fillout.maf"
+                  })
+              } else {
+                  return self + "_fillout.maf"
               }
             }
           }
