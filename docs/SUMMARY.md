@@ -6,6 +6,7 @@
     -   [INDEL re-alignment sub-workflow](../indel_realignment/README.md)
     -   [Base Quality Score Recalibration sub-workflow](../base_quality_recalibration/README.md)
     -   [Fgbio Separate Bams](../fgbio_separate_bams/README.md)
+    -   [GetBaseCountsMultiSample Genotyping](../gbcms_genotyping/README.md)
 
 ## Github Specifications
 
