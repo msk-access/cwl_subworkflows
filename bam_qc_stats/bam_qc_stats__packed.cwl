@@ -8,20 +8,20 @@
                 {
                     "id": "#input",
                     "type": "File",
-                    "https://www.sevenbridges.com/x": -496.41986083984375,
-                    "https://www.sevenbridges.com/y": -282.843994140625
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 374.0625
                 },
                 {
                     "id": "#target_intervals",
                     "type": "File",
-                    "https://www.sevenbridges.com/x": -490.1000671386719,
-                    "https://www.sevenbridges.com/y": -133.69674682617188
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 160.3125
                 },
                 {
                     "id": "#bait_intervals",
                     "type": "File",
-                    "https://www.sevenbridges.com/x": -485.0442199707031,
-                    "https://www.sevenbridges.com/y": 11.658624649047852
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 480.9375
                 },
                 {
                     "id": "#reference",
@@ -30,8 +30,17 @@
                         "^.fasta.fai",
                         "^.dict"
                     ],
-                    "https://www.sevenbridges.com/x": -504.0036315917969,
-                    "https://www.sevenbridges.com/y": -426.9353942871094
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 267.1875
+                },
+                {
+                    "id": "#temporary_directory",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 53.4375
                 }
             ],
             "outputs": [
@@ -41,8 +50,8 @@
                         "#gatk_collect_insert_size_metrics_4_1_8_0/gatk_collect_insert_size_metrics_histogram_pdf"
                     ],
                     "type": "File",
-                    "https://www.sevenbridges.com/x": 395.9356689453125,
-                    "https://www.sevenbridges.com/y": 146.90231323242188
+                    "https://www.sevenbridges.com/x": 700.636962890625,
+                    "https://www.sevenbridges.com/y": 106.875
                 },
                 {
                     "id": "#gatk_collect_insert_size_metrics_txt",
@@ -50,8 +59,8 @@
                         "#gatk_collect_insert_size_metrics_4_1_8_0/gatk_collect_insert_size_metrics_txt"
                     ],
                     "type": "File",
-                    "https://www.sevenbridges.com/x": 389.6158752441406,
-                    "https://www.sevenbridges.com/y": 17.978422164916992
+                    "https://www.sevenbridges.com/x": 700.636962890625,
+                    "https://www.sevenbridges.com/y": 0
                 },
                 {
                     "id": "#gatk_collect_hs_metrics_txt",
@@ -59,8 +68,8 @@
                         "#gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_txt"
                     ],
                     "type": "File",
-                    "https://www.sevenbridges.com/x": 384.5600280761719,
-                    "https://www.sevenbridges.com/y": -112.20942687988281
+                    "https://www.sevenbridges.com/x": 700.636962890625,
+                    "https://www.sevenbridges.com/y": 213.75
                 },
                 {
                     "id": "#gatk_collect_hs_metrics_per_base_coverage_txt",
@@ -68,8 +77,8 @@
                         "#gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_per_base_coverage_txt"
                     ],
                     "type": "File",
-                    "https://www.sevenbridges.com/x": 378.240234375,
-                    "https://www.sevenbridges.com/y": -244.92520141601562
+                    "https://www.sevenbridges.com/x": 700.636962890625,
+                    "https://www.sevenbridges.com/y": 427.5
                 },
                 {
                     "id": "#gatk_collect_hs_metrics_per_target_coverage_txt",
@@ -77,8 +86,8 @@
                         "#gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_per_target_coverage_txt"
                     ],
                     "type": "File",
-                    "https://www.sevenbridges.com/x": 371.9204406738281,
-                    "https://www.sevenbridges.com/y": -373.8490905761719
+                    "https://www.sevenbridges.com/x": 700.636962890625,
+                    "https://www.sevenbridges.com/y": 320.625
                 },
                 {
                     "id": "#gatk_collect_alignment_summary_metrics_txt",
@@ -86,8 +95,8 @@
                         "#gatk_collect_alignment_summary_metrics_4_1_3_0/gatk_collect_alignment_summary_metrics_txt"
                     ],
                     "type": "File",
-                    "https://www.sevenbridges.com/x": 373.18438720703125,
-                    "https://www.sevenbridges.com/y": -520.4683837890625
+                    "https://www.sevenbridges.com/x": 700.636962890625,
+                    "https://www.sevenbridges.com/y": 534.375
                 }
             ],
             "steps": [
@@ -101,6 +110,10 @@
                         {
                             "id": "#gatk_collect_alignment_summary_metrics_4_1_3_0/reference",
                             "source": "#reference"
+                        },
+                        {
+                            "id": "#gatk_collect_alignment_summary_metrics_4_1_3_0/temporary_directory",
+                            "source": "#temporary_directory"
                         }
                     ],
                     "out": [
@@ -110,8 +123,8 @@
                     ],
                     "run": "#gatk_collect_alignment_summary_metrics_4.1.8.0.cwl",
                     "label": "GATK-CollectAlignmentSummaryMetrics",
-                    "https://www.sevenbridges.com/x": -63.445003509521484,
-                    "https://www.sevenbridges.com/y": -424.1755676269531
+                    "https://www.sevenbridges.com/x": 208.8125,
+                    "https://www.sevenbridges.com/y": 402.0625
                 },
                 {
                     "id": "#gatk_collect_hs_metrics_4_1_8_0",
@@ -131,6 +144,10 @@
                         {
                             "id": "#gatk_collect_hs_metrics_4_1_8_0/reference",
                             "source": "#reference"
+                        },
+                        {
+                            "id": "#gatk_collect_hs_metrics_4_1_8_0/temporary_directory",
+                            "source": "#temporary_directory"
                         }
                     ],
                     "out": [
@@ -146,8 +163,8 @@
                     ],
                     "run": "#gatk_collect_hs_metrics_4.1.8.0.cwl",
                     "label": "GATK-CollectHsMetrics",
-                    "https://www.sevenbridges.com/x": -61.321895599365234,
-                    "https://www.sevenbridges.com/y": -194.27346801757812
+                    "https://www.sevenbridges.com/x": 208.8125,
+                    "https://www.sevenbridges.com/y": 253.1875
                 },
                 {
                     "id": "#gatk_collect_insert_size_metrics_4_1_8_0",
@@ -159,6 +176,10 @@
                         {
                             "id": "#gatk_collect_insert_size_metrics_4_1_8_0/histogram_file",
                             "default": "histogram.pdf"
+                        },
+                        {
+                            "id": "#gatk_collect_insert_size_metrics_4_1_8_0/temporary_directory",
+                            "source": "#temporary_directory"
                         }
                     ],
                     "out": [
@@ -171,52 +192,39 @@
                     ],
                     "run": "#gatk_collect_insert_size_metrics_4.1.8.0.cwl",
                     "label": "GATK-CollectInsertSizeMetrics",
-                    "https://www.sevenbridges.com/x": -52.185672760009766,
-                    "https://www.sevenbridges.com/y": 62.291622161865234
+                    "https://www.sevenbridges.com/x": 208.8125,
+                    "https://www.sevenbridges.com/y": 111.3125
                 }
             ],
             "requirements": [],
-            "doap:release": [
+            "https://schema.org/author": [
                 {
-                    "class": "doap:Version",
-                    "doap:name": "bam_qc_stats",
-                    "doap:revision": 1.0
+                    "class": "https://schema.org/Person",
+                    "https://schema.org/email": "mailto:murphyc4@mskcc.org",
+                    "https://schema.org/identifier": "",
+                    "https://schema.org/name": "Charles Murphy"
                 }
             ],
-            "http://purl.org/dc/terms/contributor": [
+            "https://schema.org/citation": "",
+            "https://schema.org/codeRepository": "https://github.com/msk-access/uncollapsed_bam_generation",
+            "https://schema.org/contributor": [
                 {
-                    "class": "foaf:Organization",
-                    "foaf:member": [
-                        {
-                            "class": "foaf:Person",
-                            "foaf:mbox": "mailto:murphyc4@mskcc.org",
-                            "foaf:name": "Charles Murphy"
-                        }
-                    ],
-                    "foaf:name": "Memorial Sloan Kettering Cancer Center"
+                    "class": "https://schema.org/Person",
+                    "https://schema.org/email": "mailto:shahr2@mskcc.org",
+                    "https://schema.org/identifier": "https://orcid.org/0000-0001-9042-6213",
+                    "https://schema.org/name": "Ronak Shah"
                 }
             ],
-            "http://purl.org/dc/terms/creator": [
-                {
-                    "class": "foaf:Organization",
-                    "foaf:member": [
-                        {
-                            "class": "foaf:Person",
-                            "foaf:mbox": "mailto:murphyc4@mskcc.org",
-                            "foaf:name": "Charles Murphy"
-                        }
-                    ],
-                    "foaf:name": "Memorial Sloan Kettering Cancer Center"
-                }
-            ],
+            "https://schema.org/dateCreated": "2020-09-23",
+            "https://schema.org/license": "https://spdx.org/licenses/Apache-2.0",
             "$namespaces": {
+                "s": "https://schema.org/",
                 "sbg": "https://www.sevenbridges.com/"
             }
         },
         {
             "class": "CommandLineTool",
             "id": "#gatk_collect_alignment_summary_metrics_4.1.8.0.cwl",
-            "label": "GATK-CollectAlignmentSummaryMetrics",
             "baseCommand": [
                 "gatk",
                 "CollectAlignmentSummaryMetrics"
@@ -272,11 +280,11 @@
                         "position": 0,
                         "prefix": "-R"
                     },
+                    "doc": "Reference sequence file. Note that while this argument is not required, without it only a small subset of the metrics will be calculated. Note also that if a reference sequence is provided, it must be accompanied by a sequence dictionary.  Default value: null.",
                     "secondaryFiles": [
                         "^.fasta.fai",
                         "^.dict"
-                    ],
-                    "doc": "Reference sequence file. Note that while this argument is not required, without it only a small subset of the metrics will be calculated. Note also that if a reference sequence is provided, it must be accompanied by a sequence dictionary.  Default value: null."
+                    ]
                 },
                 {
                     "id": "#gatk_collect_alignment_summary_metrics_4.1.8.0.cwl/adaptor_sequence",
@@ -351,8 +359,8 @@
                     "doc": "Validation stringency for all SAM files read by this program.  Setting stringency to SILENT can improve performance when processing a BAM file in which variable-length data (read, qualities, tags) do not otherwise need to be decoded.  Default value: STRICT. This option can be set to 'null' to clear the default value. Possible values: {STRICT,LENIENT, SILENT}"
                 },
                 {
-                    "id": "#gatk_collect_alignment_summary_metrics_4.1.8.0.cwl/assume_sorted",
                     "default": true,
+                    "id": "#gatk_collect_alignment_summary_metrics_4.1.8.0.cwl/assume_sorted",
                     "type": [
                         "null",
                         "boolean"
@@ -422,6 +430,14 @@
                         "prefix": "--USE_JDK_INFLATER"
                     },
                     "doc": "Use the JDK Inflater instead of the Intel Inflater for reading compressed input"
+                },
+                {
+                    "id": "#gatk_collect_alignment_summary_metrics_4.1.8.0.cwl/temporary_directory",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "doc": "Default value: null. This option may be specified 0 or more times."
                 }
             ],
             "outputs": [
@@ -433,6 +449,7 @@
                     }
                 }
             ],
+            "label": "GATK-CollectAlignmentSummaryMetrics",
             "arguments": [
                 {
                     "position": 0,
@@ -442,20 +459,10 @@
                 {
                     "position": 0,
                     "prefix": "--TMP_DIR",
-                    "valueFrom": "."
+                    "valueFrom": "${\n    if(inputs.temporary_directory)\n        return inputs.temporary_directory;\n      return runtime.tmpdir\n}"
                 },
                 {
                     "position": 0,
-                    "prefix": "--COMPRESSION_LEVEL",
-                    "valueFrom": "2"
-                },
-                {
-                    "position": 0,
-                    "prefix": "--MAX_RECORDS_IN_RAM",
-                    "valueFrom": "50000"
-                },
-                {
-                    "position": 2,
                     "prefix": "-O",
                     "valueFrom": "${\n    if(inputs.output_file_name){\n        return inputs.output_file_name\n    } else {\n        return inputs.input.basename.replace(/.bam/, '_alignment_summary_metrics.txt')\n    }\n}"
                 }
@@ -468,7 +475,7 @@
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "broadinstitute/gatk:4.1.8.0"
+                    "dockerPull": "ghcr.io/msk-access/gatk:4.1.8.0"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -511,7 +518,6 @@
         {
             "class": "CommandLineTool",
             "id": "#gatk_collect_hs_metrics_4.1.8.0.cwl",
-            "label": "GATK-CollectHsMetrics",
             "baseCommand": [
                 "gatk",
                 "CollectHsMetrics"
@@ -698,11 +704,11 @@
                         "position": 0,
                         "prefix": "-R"
                     },
+                    "doc": "Reference sequence file. Note that while this argument is not required, without it only a small subset of the metrics will be calculated. Note also that if a reference sequence is provided, it must be accompanied by a sequence dictionary.  Default value: null.",
                     "secondaryFiles": [
                         "^.fasta.fai",
                         "^.dict"
-                    ],
-                    "doc": "Reference sequence file. Note that while this argument is not required, without it only a small subset of the metrics will be calculated. Note also that if a reference sequence is provided, it must be accompanied by a sequence dictionary.  Default value: null."
+                    ]
                 },
                 {
                     "id": "#gatk_collect_hs_metrics_4.1.8.0.cwl/metrics_acciumulation_level",
@@ -774,6 +780,14 @@
                         "null",
                         "int"
                     ]
+                },
+                {
+                    "id": "#gatk_collect_hs_metrics_4.1.8.0.cwl/temporary_directory",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "doc": "Default value: null. This option may be specified 0 or more times."
                 }
             ],
             "outputs": [
@@ -799,6 +813,7 @@
                     }
                 }
             ],
+            "label": "GATK-CollectHsMetrics",
             "arguments": [
                 {
                     "position": 0,
@@ -808,30 +823,20 @@
                 {
                     "position": 0,
                     "prefix": "--TMP_DIR",
-                    "valueFrom": "."
+                    "valueFrom": "${\n    if(inputs.temporary_directory)\n        return inputs.temporary_directory;\n      return runtime.tmpdir\n}"
                 },
                 {
                     "position": 0,
-                    "prefix": "--COMPRESSION_LEVEL",
-                    "valueFrom": "2"
-                },
-                {
-                    "position": 0,
-                    "prefix": "--MAX_RECORDS_IN_RAM",
-                    "valueFrom": "50000"
-                },
-                {
-                    "position": 2,
                     "prefix": "-O",
                     "valueFrom": "${\n    if(inputs.output_file_name){\n        return inputs.output_file_name\n    } else {\n        return inputs.input.basename.replace(/.bam/, '_hs_metrics.txt')\n    }\n}"
                 },
                 {
-                    "position": 2,
+                    "position": 0,
                     "prefix": "--PER_TARGET_COVERAGE",
                     "valueFrom": "${\n    if(inputs.per_target_coverage){\n        return inputs.per_target_coverage\n    } else {\n        return inputs.input.basename.replace(/.bam/, '_per_target_coverage.txt')\n    }\n}"
                 },
                 {
-                    "position": 2,
+                    "position": 0,
                     "prefix": "--PER_BASE_COVERAGE",
                     "valueFrom": "${\n    if(inputs.per_base_coverage){\n        return inputs.per_base_coverage\n    } else {\n        return inputs.input.basename.replace(/.bam/, '_per_base_coverage.txt')\n    }\n}"
                 }
@@ -844,7 +849,7 @@
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "broadinstitute/gatk:4.1.8.0"
+                    "dockerPull": "ghcr.io/msk-access/gatk:4.1.8.0"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -887,7 +892,6 @@
         {
             "class": "CommandLineTool",
             "id": "#gatk_collect_insert_size_metrics_4.1.8.0.cwl",
-            "label": "GATK-CollectInsertSizeMetrics",
             "baseCommand": [
                 "gatk",
                 "CollectInsertSizeMetrics"
@@ -1014,8 +1018,8 @@
                     "doc": "Validation stringency for all SAM files read by this program.  Setting stringency to SILENT can improve performance when processing a BAM file in which variable-length data (read, qualities, tags) do not otherwise need to be decoded.  Default value: STRICT. This option can be set to 'null' to clear the default value. Possible values: {STRICT,LENIENT, SILENT}"
                 },
                 {
-                    "id": "#gatk_collect_insert_size_metrics_4.1.8.0.cwl/assume_sorted",
                     "default": true,
+                    "id": "#gatk_collect_insert_size_metrics_4.1.8.0.cwl/assume_sorted",
                     "type": [
                         "null",
                         "boolean"
@@ -1085,6 +1089,14 @@
                         "prefix": "--USE_JDK_INFLATER"
                     },
                     "doc": "Use the JDK Inflater instead of the Intel Inflater for reading compressed input"
+                },
+                {
+                    "id": "#gatk_collect_insert_size_metrics_4.1.8.0.cwl/temporary_directory",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "doc": "Default value: null. This option may be specified 0 or more times."
                 }
             ],
             "outputs": [
@@ -1103,6 +1115,7 @@
                     }
                 }
             ],
+            "label": "GATK-CollectInsertSizeMetrics",
             "arguments": [
                 {
                     "position": 0,
@@ -1112,17 +1125,7 @@
                 {
                     "position": 0,
                     "prefix": "--TMP_DIR",
-                    "valueFrom": "."
-                },
-                {
-                    "position": 0,
-                    "prefix": "--COMPRESSION_LEVEL",
-                    "valueFrom": "2"
-                },
-                {
-                    "position": 0,
-                    "prefix": "--MAX_RECORDS_IN_RAM",
-                    "valueFrom": "50000"
+                    "valueFrom": "${\n    if(inputs.temporary_directory)\n        return inputs.temporary_directory;\n      return runtime.tmpdir\n}"
                 },
                 {
                     "position": 2,
@@ -1143,7 +1146,7 @@
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "broadinstitute/gatk:4.1.8.0"
+                    "dockerPull": "ghcr.io/msk-access/gatk:4.1.8.0"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -1184,5 +1187,8 @@
             ]
         }
     ],
-    "cwlVersion": "v1.0"
+    "cwlVersion": "v1.0",
+    "$schemas": [
+        "http://schema.org/version/latest/schemaorg-current-http.rdf"
+    ]
 }
