@@ -230,6 +230,7 @@
                 }
             ],
             "$namespaces": {
+                "s": "https://schema.org/",
                 "sbg": "https://www.sevenbridges.com/"
             }
         },
@@ -678,8 +679,29 @@
                 {
                     "class": "InlineJavascriptRequirement"
                 }
-            ]
+            ],
+            "https://schema.org/author": [
+                {
+                    "class": "https://schema.org/Person",
+                    "https://schema.org/email": "mailto:johnsoni@mskcc.org",
+                    "https://schema.org/name": "Ian Johnson"
+                }
+            ],
+            "https://schema.org/citation": "",
+            "https://schema.org/codeRepository": "https://github.com/msk-access/cwl_subworkflows/gbcms_genotyping",
+            "https://schema.org/contributor": [
+                {
+                    "class": "https://schema.org/Person",
+                    "https://schema.org/email": "mailto:shahr2@mskcc.org",
+                    "https://schema.org/name": "Ronak Shah"
+                }
+            ],
+            "https://schema.org/dateCreated": "2021-05-28",
+            "https://schema.org/license": "https://spdx.org/licenses/Apache-2.0"
         }
     ],
-    "cwlVersion": "v1.0"
+    "cwlVersion": "v1.0",
+    "$schemas": [
+        "http://schema.org/version/latest/schemaorg-current-http.rdf"
+    ]
 }
