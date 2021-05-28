@@ -3,6 +3,7 @@ cwlVersion: v1.0
 id: gbcms_genotyping
 label: gbcms_genotyping
 $namespaces:
+  s: 'https://schema.org/'
   sbg: 'https://www.sevenbridges.com/'
 inputs:
   - id: duplex_bams
@@ -299,3 +300,17 @@ requirements:
   - class: ScatterFeatureRequirement
   - class: StepInputExpressionRequirement
   - class: InlineJavascriptRequirement
+$schemas:
+  - 'http://schema.org/version/latest/schemaorg-current-http.rdf'
+'s:author':
+  - class: 's:Person'
+    's:email': 'mailto:johnsoni@mskcc.org'
+    's:name': Ian Johnson
+'s:citation': ''
+'s:codeRepository': 'https://github.com/msk-access/cwl_subworkflows/gbcms_genotyping'
+'s:contributor':
+  - class: 's:Person'
+    's:email': 'mailto:shahr2@mskcc.org'
+    's:name': Ronak Shah
+'s:dateCreated': '2021-05-28'
+'s:license': 'https://spdx.org/licenses/Apache-2.0'
