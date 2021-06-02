@@ -12,16 +12,6 @@ inputs:
       - ^.dict
     'sbg:x': -573
     'sbg:y': 247.2935333251953
-  - id: uncollapsed_bam
-    type:
-      - File
-      - type: array
-        items: File
-    label: uncollapsed_bam
-    secondaryFiles:
-      - ^.bai
-    'sbg:x': -714.6541137695312
-    'sbg:y': 563.10693359375
   - id: uncollapsed_bam_base_recal
     type:
       - File
@@ -64,6 +54,14 @@ inputs:
     type: int?
     'sbg:x': -600.9963989257812
     'sbg:y': -654.81982421875
+  - id: uncollapsed_bam
+    type:
+      - File
+      - type: array
+        items: File
+    label: uncollapsed_bam
+    'sbg:x': -579.3350219726562
+    'sbg:y': 702.20458984375
 outputs:
   - id: gatk_collect_alignment_summary_metrics_txt_pool_b
     outputSource:
@@ -230,7 +228,7 @@ steps:
     in:
       - id: input
         source:
-          - uncollapsed_bam
+          - gatk_revert_sam_4_1_8_0/gatk_revert_sam_output
       - id: target_intervals
         source: pool_a_target_intervals
       - id: bait_intervals
@@ -252,13 +250,13 @@ steps:
       - id: gatk_collect_alignment_summary_metrics_txt
     run: ../bam_qc_stats/bam_qc_stats.cwl
     label: bam_qc_stats_pool_a
-    'sbg:x': -114.38903045654297
-    'sbg:y': -295.4621276855469
+    'sbg:x': 12.585670471191406
+    'sbg:y': -296.3324890136719
   - id: bam_qc_stats_pool_b
     in:
       - id: input
         source:
-          - uncollapsed_bam
+          - gatk_revert_sam_4_1_8_1/gatk_revert_sam_output
       - id: target_intervals
         source: pool_b_target_intervals
       - id: bait_intervals
@@ -280,8 +278,8 @@ steps:
       - id: gatk_collect_alignment_summary_metrics_txt
     run: ../bam_qc_stats/bam_qc_stats.cwl
     label: bam_qc_stats_pool_b
-    'sbg:x': -116.60113525390625
-    'sbg:y': 139.5
+    'sbg:x': 18.580554962158203
+    'sbg:y': 127.00767517089844
   - id: gatk_mean_quality_by_cycle_4_1_8_0
     in:
       - id: input
@@ -310,5 +308,53 @@ steps:
     label: GATK-MeanQualityByCycle_base_recal
     'sbg:x': -78.6744155883789
     'sbg:y': 1229.6976318359375
+  - id: gatk_revert_sam_4_1_8_0
+    in:
+      - id: input
+        source: uncollapsed_bam
+      - id: output_by_readgroup_file_format
+        default: 'false'
+      - id: remove_alignment_information
+        default: 'false'
+      - id: remove_duplicate_information
+        default: 'true'
+      - id: restore_hardclips
+        default: 'false'
+      - id: restore_original_qualities
+        default: 'false'
+      - id: sort_order
+        default: unsorted
+      - id: validation_stringency
+        default: SILENT
+    out:
+      - id: gatk_revert_sam_output
+      - id: gatk_revert_sam_output_map
+    run: ../command_line_tools/gatk_revert_sam/4.1.8.0/gatk_revert_sam_4.1.8.0.cwl
+    label: GATK-CollectHsMetrics
+    'sbg:x': -248.34014892578125
+    'sbg:y': -298.8951416015625
+  - id: gatk_revert_sam_4_1_8_1
+    in:
+      - id: input
+        source: uncollapsed_bam
+      - id: remove_alignment_information
+        default: 'false'
+      - id: remove_duplicate_information
+        default: 'true'
+      - id: restore_hardclips
+        default: 'false'
+      - id: restore_original_qualities
+        default: 'false'
+      - id: sort_order
+        default: unsorted
+      - id: validation_stringency
+        default: SILENT
+    out:
+      - id: gatk_revert_sam_output
+      - id: gatk_revert_sam_output_map
+    run: ../command_line_tools/gatk_revert_sam/4.1.8.0/gatk_revert_sam_4.1.8.0.cwl
+    label: GATK-CollectHsMetrics
+    'sbg:x': -255.77493286132812
+    'sbg:y': 115.07417297363281
 requirements:
   - class: SubworkflowFeatureRequirement
