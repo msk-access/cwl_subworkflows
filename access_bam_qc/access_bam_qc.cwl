@@ -97,7 +97,7 @@ inputs:
     'sbg:x': -811.90576171875
     'sbg:y': -766.7771606445312
   - id: sample_name
-    type: 'string[]'
+    type: 'string[]?'
     doc: >-
       Sample name. If not specified, sample name is automatically figured out
       from the BAM file.
