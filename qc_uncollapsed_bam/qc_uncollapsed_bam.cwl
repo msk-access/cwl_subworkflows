@@ -312,8 +312,6 @@ steps:
     in:
       - id: input
         source: uncollapsed_bam
-      - id: output_by_readgroup_file_format
-        default: 'false'
       - id: remove_alignment_information
         default: 'false'
       - id: remove_duplicate_information
