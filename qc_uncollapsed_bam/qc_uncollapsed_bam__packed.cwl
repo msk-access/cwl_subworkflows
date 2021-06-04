@@ -2,11 +2,11 @@
     "$graph": [
         {
             "class": "Workflow",
-            "id": "#main",
+            "id": "#bam_qc_stats.cwl",
             "label": "bam_qc_stats",
             "inputs": [
                 {
-                    "id": "#input",
+                    "id": "#bam_qc_stats.cwl/input",
                     "type": [
                         "File",
                         {
@@ -21,19 +21,19 @@
                     "https://www.sevenbridges.com/y": 374.0625
                 },
                 {
-                    "id": "#target_intervals",
+                    "id": "#bam_qc_stats.cwl/target_intervals",
                     "type": "File",
                     "https://www.sevenbridges.com/x": 0,
                     "https://www.sevenbridges.com/y": 160.3125
                 },
                 {
-                    "id": "#bait_intervals",
+                    "id": "#bam_qc_stats.cwl/bait_intervals",
                     "type": "File",
                     "https://www.sevenbridges.com/x": 0,
                     "https://www.sevenbridges.com/y": 480.9375
                 },
                 {
-                    "id": "#reference",
+                    "id": "#bam_qc_stats.cwl/reference",
                     "type": "File",
                     "secondaryFiles": [
                         "^.fasta.fai",
@@ -43,7 +43,7 @@
                     "https://www.sevenbridges.com/y": 267.1875
                 },
                 {
-                    "id": "#temporary_directory",
+                    "id": "#bam_qc_stats.cwl/temporary_directory",
                     "type": [
                         "null",
                         "string"
@@ -52,7 +52,7 @@
                     "https://www.sevenbridges.com/y": 53.4375
                 },
                 {
-                    "id": "#hsmetrics_minimum_mapping_quality",
+                    "id": "#bam_qc_stats.cwl/hsmetrics_minimum_mapping_quality",
                     "type": [
                         "null",
                         "int"
@@ -62,7 +62,7 @@
                     "https://www.sevenbridges.com/y": 613
                 },
                 {
-                    "id": "#hsmetrics_minimum_base_quality",
+                    "id": "#bam_qc_stats.cwl/hsmetrics_minimum_base_quality",
                     "type": [
                         "null",
                         "int"
@@ -72,7 +72,7 @@
                     "https://www.sevenbridges.com/y": 743
                 },
                 {
-                    "id": "#hsmetrics_coverage_cap",
+                    "id": "#bam_qc_stats.cwl/hsmetrics_coverage_cap",
                     "type": [
                         "null",
                         "int"
@@ -84,9 +84,9 @@
             ],
             "outputs": [
                 {
-                    "id": "#gatk_collect_insert_size_metrics_histogram_pdf",
+                    "id": "#bam_qc_stats.cwl/gatk_collect_insert_size_metrics_histogram_pdf",
                     "outputSource": [
-                        "#gatk_collect_insert_size_metrics_4_1_8_0/gatk_collect_insert_size_metrics_histogram_pdf"
+                        "#bam_qc_stats.cwl/gatk_collect_insert_size_metrics_4_1_8_0/gatk_collect_insert_size_metrics_histogram_pdf"
                     ],
                     "type": [
                         "File",
@@ -99,9 +99,9 @@
                     "https://www.sevenbridges.com/y": 106.875
                 },
                 {
-                    "id": "#gatk_collect_insert_size_metrics_txt",
+                    "id": "#bam_qc_stats.cwl/gatk_collect_insert_size_metrics_txt",
                     "outputSource": [
-                        "#gatk_collect_insert_size_metrics_4_1_8_0/gatk_collect_insert_size_metrics_txt"
+                        "#bam_qc_stats.cwl/gatk_collect_insert_size_metrics_4_1_8_0/gatk_collect_insert_size_metrics_txt"
                     ],
                     "type": [
                         "File",
@@ -114,9 +114,9 @@
                     "https://www.sevenbridges.com/y": 0
                 },
                 {
-                    "id": "#gatk_collect_hs_metrics_txt",
+                    "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_txt",
                     "outputSource": [
-                        "#gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_txt"
+                        "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_txt"
                     ],
                     "type": [
                         "File",
@@ -129,9 +129,9 @@
                     "https://www.sevenbridges.com/y": 213.75
                 },
                 {
-                    "id": "#gatk_collect_hs_metrics_per_base_coverage_txt",
+                    "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_per_base_coverage_txt",
                     "outputSource": [
-                        "#gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_per_base_coverage_txt"
+                        "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_per_base_coverage_txt"
                     ],
                     "type": [
                         "File",
@@ -144,9 +144,9 @@
                     "https://www.sevenbridges.com/y": 427.5
                 },
                 {
-                    "id": "#gatk_collect_hs_metrics_per_target_coverage_txt",
+                    "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_per_target_coverage_txt",
                     "outputSource": [
-                        "#gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_per_target_coverage_txt"
+                        "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_per_target_coverage_txt"
                     ],
                     "type": [
                         "File",
@@ -159,9 +159,9 @@
                     "https://www.sevenbridges.com/y": 320.625
                 },
                 {
-                    "id": "#gatk_collect_alignment_summary_metrics_txt",
+                    "id": "#bam_qc_stats.cwl/gatk_collect_alignment_summary_metrics_txt",
                     "outputSource": [
-                        "#gatk_collect_alignment_summary_metrics_4_1_3_0/gatk_collect_alignment_summary_metrics_txt"
+                        "#bam_qc_stats.cwl/gatk_collect_alignment_summary_metrics_4_1_3_0/gatk_collect_alignment_summary_metrics_txt"
                     ],
                     "type": [
                         "File",
@@ -176,24 +176,24 @@
             ],
             "steps": [
                 {
-                    "id": "#gatk_collect_alignment_summary_metrics_4_1_3_0",
+                    "id": "#bam_qc_stats.cwl/gatk_collect_alignment_summary_metrics_4_1_3_0",
                     "in": [
                         {
-                            "id": "#gatk_collect_alignment_summary_metrics_4_1_3_0/input",
-                            "source": "#input"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_alignment_summary_metrics_4_1_3_0/input",
+                            "source": "#bam_qc_stats.cwl/input"
                         },
                         {
-                            "id": "#gatk_collect_alignment_summary_metrics_4_1_3_0/reference",
-                            "source": "#reference"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_alignment_summary_metrics_4_1_3_0/reference",
+                            "source": "#bam_qc_stats.cwl/reference"
                         },
                         {
-                            "id": "#gatk_collect_alignment_summary_metrics_4_1_3_0/temporary_directory",
-                            "source": "#temporary_directory"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_alignment_summary_metrics_4_1_3_0/temporary_directory",
+                            "source": "#bam_qc_stats.cwl/temporary_directory"
                         }
                     ],
                     "out": [
                         {
-                            "id": "#gatk_collect_alignment_summary_metrics_4_1_3_0/gatk_collect_alignment_summary_metrics_txt"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_alignment_summary_metrics_4_1_3_0/gatk_collect_alignment_summary_metrics_txt"
                         }
                     ],
                     "run": "#gatk_collect_alignment_summary_metrics_4.1.8.0.cwl",
@@ -202,50 +202,50 @@
                     "https://www.sevenbridges.com/y": 560.505126953125
                 },
                 {
-                    "id": "#gatk_collect_hs_metrics_4_1_8_0",
+                    "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0",
                     "in": [
                         {
-                            "id": "#gatk_collect_hs_metrics_4_1_8_0/input",
-                            "source": "#input"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/input",
+                            "source": "#bam_qc_stats.cwl/input"
                         },
                         {
-                            "id": "#gatk_collect_hs_metrics_4_1_8_0/bait_intervals",
-                            "source": "#bait_intervals"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/bait_intervals",
+                            "source": "#bam_qc_stats.cwl/bait_intervals"
                         },
                         {
-                            "id": "#gatk_collect_hs_metrics_4_1_8_0/target_intervals",
-                            "source": "#target_intervals"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/target_intervals",
+                            "source": "#bam_qc_stats.cwl/target_intervals"
                         },
                         {
-                            "id": "#gatk_collect_hs_metrics_4_1_8_0/coverage_cap",
-                            "source": "#hsmetrics_coverage_cap"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/coverage_cap",
+                            "source": "#bam_qc_stats.cwl/hsmetrics_coverage_cap"
                         },
                         {
-                            "id": "#gatk_collect_hs_metrics_4_1_8_0/minimum_base_quality",
-                            "source": "#hsmetrics_minimum_base_quality"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/minimum_base_quality",
+                            "source": "#bam_qc_stats.cwl/hsmetrics_minimum_base_quality"
                         },
                         {
-                            "id": "#gatk_collect_hs_metrics_4_1_8_0/minimum_mapping_quality",
-                            "source": "#hsmetrics_minimum_mapping_quality"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/minimum_mapping_quality",
+                            "source": "#bam_qc_stats.cwl/hsmetrics_minimum_mapping_quality"
                         },
                         {
-                            "id": "#gatk_collect_hs_metrics_4_1_8_0/reference",
-                            "source": "#reference"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/reference",
+                            "source": "#bam_qc_stats.cwl/reference"
                         },
                         {
-                            "id": "#gatk_collect_hs_metrics_4_1_8_0/temporary_directory",
-                            "source": "#temporary_directory"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/temporary_directory",
+                            "source": "#bam_qc_stats.cwl/temporary_directory"
                         }
                     ],
                     "out": [
                         {
-                            "id": "#gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_txt"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_txt"
                         },
                         {
-                            "id": "#gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_per_base_coverage_txt"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_per_base_coverage_txt"
                         },
                         {
-                            "id": "#gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_per_target_coverage_txt"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_per_target_coverage_txt"
                         }
                     ],
                     "run": "#gatk_collect_hs_metrics_4.1.8.0.cwl",
@@ -254,27 +254,27 @@
                     "https://www.sevenbridges.com/y": 372.8453674316406
                 },
                 {
-                    "id": "#gatk_collect_insert_size_metrics_4_1_8_0",
+                    "id": "#bam_qc_stats.cwl/gatk_collect_insert_size_metrics_4_1_8_0",
                     "in": [
                         {
-                            "id": "#gatk_collect_insert_size_metrics_4_1_8_0/input",
-                            "source": "#input"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_insert_size_metrics_4_1_8_0/input",
+                            "source": "#bam_qc_stats.cwl/input"
                         },
                         {
-                            "id": "#gatk_collect_insert_size_metrics_4_1_8_0/histogram_file",
+                            "id": "#bam_qc_stats.cwl/gatk_collect_insert_size_metrics_4_1_8_0/histogram_file",
                             "default": "histogram.pdf"
                         },
                         {
-                            "id": "#gatk_collect_insert_size_metrics_4_1_8_0/temporary_directory",
-                            "source": "#temporary_directory"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_insert_size_metrics_4_1_8_0/temporary_directory",
+                            "source": "#bam_qc_stats.cwl/temporary_directory"
                         }
                     ],
                     "out": [
                         {
-                            "id": "#gatk_collect_insert_size_metrics_4_1_8_0/gatk_collect_insert_size_metrics_txt"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_insert_size_metrics_4_1_8_0/gatk_collect_insert_size_metrics_txt"
                         },
                         {
-                            "id": "#gatk_collect_insert_size_metrics_4_1_8_0/gatk_collect_insert_size_metrics_histogram_pdf"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_insert_size_metrics_4_1_8_0/gatk_collect_insert_size_metrics_histogram_pdf"
                         }
                     ],
                     "run": "#gatk_collect_insert_size_metrics_4.1.8.0.cwl",
@@ -305,7 +305,6 @@
             "https://schema.org/dateCreated": "2020-09-23",
             "https://schema.org/license": "https://spdx.org/licenses/Apache-2.0",
             "$namespaces": {
-                "s": "https://schema.org/",
                 "sbg": "https://www.sevenbridges.com/"
             }
         },
@@ -1270,6 +1269,769 @@
                     "class": "http://usefulinc.com/ns/doap#Version",
                     "http://usefulinc.com/ns/doap#name": "gatk4",
                     "http://usefulinc.com/ns/doap#revision": "4.1.8.0"
+                }
+            ]
+        },
+        {
+            "class": "CommandLineTool",
+            "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl",
+            "baseCommand": [
+                "gatk",
+                "MeanQualityByCycle"
+            ],
+            "inputs": [
+                {
+                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/input",
+                    "type": "File",
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "-I"
+                    },
+                    "doc": "An aligned SAM or BAM file.  Required."
+                },
+                {
+                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/output_file_name",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "doc": "The output file to write the metrics to."
+                },
+                {
+                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/chart_output",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "doc": "A file (with .pdf extension) to write the chart to."
+                },
+                {
+                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/assume_sorted",
+                    "type": [
+                        "null",
+                        "boolean"
+                    ],
+                    "inputBinding": {
+                        "position": 1,
+                        "prefix": "--ASSUME_SORTED"
+                    },
+                    "doc": "If true (default), then the sort order in the header file will be ignored.\n"
+                },
+                {
+                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/pf_reads_only",
+                    "type": [
+                        "null",
+                        "boolean"
+                    ],
+                    "inputBinding": {
+                        "position": 1,
+                        "prefix": "--PF_READS_ONLY"
+                    },
+                    "doc": "If set to true calculate mean quality over PF reads only.  Default value: false. Possible values: {true, false}\n"
+                },
+                {
+                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/reference",
+                    "type": [
+                        "null",
+                        "File"
+                    ],
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "-R"
+                    },
+                    "doc": "Reference sequence file. Note that while this argument is not required, without it only a small subset of the metrics will be calculated. Note also that if a reference sequence is provided, it must be accompanied by a sequence dictionary.  Default value: null.",
+                    "secondaryFiles": [
+                        "^.fasta.fai",
+                        "^.dict"
+                    ]
+                },
+                {
+                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/validation_stringency",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "--VALIDATION_STRINGENCY"
+                    },
+                    "doc": "Validation stringency for all SAM files read by this program.  Setting stringency to SILENT can improve performance when processing a BAM file in which variable-length data (read, qualities, tags) do not otherwise need to be decoded.  Default value: STRICT. This option can be set to 'null' to clear the default value. Possible values: {STRICT,LENIENT, SILENT}"
+                },
+                {
+                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/create_index",
+                    "type": [
+                        "null",
+                        "boolean"
+                    ],
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "--CREATE_INDEX"
+                    },
+                    "doc": "Whether to create a BAM index when writing a coordinate-sorted BAM file. Default value: false. Possible values: {true, false}"
+                },
+                {
+                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/create_md5_file",
+                    "type": [
+                        "null",
+                        "boolean"
+                    ],
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "--CREATE_MD5_FILE"
+                    },
+                    "doc": "Whether to create an MD5 digest for any BAM or FASTQ files created. Default value: false. Possible values: {true, false}"
+                },
+                {
+                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/memory_per_job",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "doc": "Memory per job in megabytes"
+                },
+                {
+                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/memory_overhead",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "doc": "Memory overhead per job in megabytes"
+                },
+                {
+                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/number_of_threads",
+                    "type": [
+                        "null",
+                        "int"
+                    ]
+                },
+                {
+                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/temporary_directory",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "doc": "Directory with space available to be used by this program for temporary storage of working files."
+                }
+            ],
+            "outputs": [
+                {
+                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/gatk_mean_quality_by_cycle_output",
+                    "type": "File",
+                    "outputBinding": {
+                        "glob": "${\n    if(inputs.output_file_name){\n        return inputs.output_file_name\n    } else {\n        return inputs.input.basename.replace(/.bam/, '_mean_quality_by_cycle.txt')\n    }\n}"
+                    }
+                },
+                {
+                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/gatk_mean_quality_by_cycle_chart_output",
+                    "type": "File",
+                    "outputBinding": {
+                        "glob": "${\n    if(inputs.chart_output){\n        return inputs.chart_output\n    } else {\n        return inputs.input.basename.replace(/.bam/, '_mean_quality_by_cycle.pdf')\n    }\n}"
+                    }
+                }
+            ],
+            "label": "GATK-MeanQualityByCycle",
+            "arguments": [
+                {
+                    "position": 0,
+                    "prefix": "--java-options",
+                    "valueFrom": "${\n  if(inputs.memory_per_job && inputs.memory_overhead) {\n    if(inputs.memory_per_job % 1000 == 0) {\n      return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\"\n    }\n    else {\n      return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\"\n    }\n  }\n  else if (inputs.memory_per_job && !inputs.memory_overhead){\n    if(inputs.memory_per_job % 1000 == 0) {\n      return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\"\n    }\n    else {\n      return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\"\n    }\n  }\n  else if(!inputs.memory_per_job && inputs.memory_overhead){\n    return \"-Xmx14G\"\n  }\n  else {\n      return \"-Xmx14G\"\n  }\n}"
+                },
+                {
+                    "position": 0,
+                    "prefix": "--TMP_DIR",
+                    "valueFrom": "${\n    if(inputs.temporary_directory) {\n      return inputs.temporary_directory;\n    }\n    return runtime.tmpdir;\n}"
+                },
+                {
+                    "position": 0,
+                    "prefix": "-O",
+                    "valueFrom": "${\n    if(inputs.output_file_name){\n        return inputs.output_file_name\n    } else {\n        return inputs.input.basename.replace(/.bam/, '_mean_quality_by_cycle.txt')\n    }\n}"
+                },
+                {
+                    "position": 0,
+                    "prefix": "--CHART_OUTPUT",
+                    "valueFrom": "${\n    if(inputs.chart_output){\n        return inputs.chart_output\n    } else {\n        return inputs.input.basename.replace(/.bam/, '_mean_quality_by_cycle.pdf')\n    }\n}"
+                }
+            ],
+            "requirements": [
+                {
+                    "class": "ResourceRequirement",
+                    "ramMin": 16000,
+                    "coresMin": 2
+                },
+                {
+                    "class": "DockerRequirement",
+                    "dockerPull": "ghcr.io/msk-access/gatk:4.1.8.0"
+                },
+                {
+                    "class": "InlineJavascriptRequirement"
+                }
+            ],
+            "http://purl.org/dc/terms/contributor": [
+                {
+                    "class": "http://xmlns.com/foaf/0.1/Organization",
+                    "http://xmlns.com/foaf/0.1/member": [
+                        {
+                            "class": "http://xmlns.com/foaf/0.1/Person",
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:murphyc4@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Charles Murphy"
+                        }
+                    ],
+                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
+                }
+            ],
+            "http://purl.org/dc/terms/creator": [
+                {
+                    "class": "http://xmlns.com/foaf/0.1/Organization",
+                    "http://xmlns.com/foaf/0.1/member": [
+                        {
+                            "class": "http://xmlns.com/foaf/0.1/Person",
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:murphyc4@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Charles Murphy"
+                        }
+                    ],
+                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
+                }
+            ],
+            "http://usefulinc.com/ns/doap#release": [
+                {
+                    "class": "http://usefulinc.com/ns/doap#Version",
+                    "http://usefulinc.com/ns/doap#name": "gatk4",
+                    "http://usefulinc.com/ns/doap#revision": "4.1.8.0"
+                }
+            ]
+        },
+        {
+            "class": "Workflow",
+            "id": "#main",
+            "label": "qc_uncollapsed_bam",
+            "inputs": [
+                {
+                    "id": "#reference",
+                    "type": "File",
+                    "secondaryFiles": [
+                        "^.fasta.fai",
+                        "^.dict"
+                    ],
+                    "https://www.sevenbridges.com/x": -573,
+                    "https://www.sevenbridges.com/y": 247.2935333251953
+                },
+                {
+                    "id": "#uncollapsed_bam",
+                    "type": [
+                        "File",
+                        {
+                            "type": "array",
+                            "items": "File"
+                        }
+                    ],
+                    "label": "uncollapsed_bam",
+                    "secondaryFiles": [
+                        "^.bai"
+                    ],
+                    "https://www.sevenbridges.com/x": -714.6541137695312,
+                    "https://www.sevenbridges.com/y": 563.10693359375
+                },
+                {
+                    "id": "#uncollapsed_bam_base_recal",
+                    "type": [
+                        "File",
+                        {
+                            "type": "array",
+                            "items": "File"
+                        }
+                    ],
+                    "label": "uncollapsed_bam_base_recal",
+                    "secondaryFiles": [
+                        "^.bai"
+                    ],
+                    "https://www.sevenbridges.com/x": -673.8885498046875,
+                    "https://www.sevenbridges.com/y": 1228.81201171875
+                },
+                {
+                    "id": "#pool_b_target_intervals",
+                    "type": "File",
+                    "label": "pool_b_target_intervals",
+                    "https://www.sevenbridges.com/x": -583.1691284179688,
+                    "https://www.sevenbridges.com/y": -23.069652557373047
+                },
+                {
+                    "id": "#pool_b_bait_intervals",
+                    "type": "File",
+                    "label": "pool_b_bait_intervals",
+                    "https://www.sevenbridges.com/x": -579.8407592773438,
+                    "https://www.sevenbridges.com/y": 105.95523071289062
+                },
+                {
+                    "id": "#pool_a_bait_intervals",
+                    "type": "File",
+                    "label": "pool_a_bait_intervals",
+                    "https://www.sevenbridges.com/x": -583.9046020507812,
+                    "https://www.sevenbridges.com/y": -163.9043731689453
+                },
+                {
+                    "id": "#pool_a_target_intervals",
+                    "type": "File",
+                    "label": "pool_a_target_intervals",
+                    "https://www.sevenbridges.com/x": -581.4170532226562,
+                    "https://www.sevenbridges.com/y": -288.2825012207031
+                },
+                {
+                    "id": "#hsmetrics_minimum_mapping_quality",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "https://www.sevenbridges.com/x": -587.9199829101562,
+                    "https://www.sevenbridges.com/y": -409.1614685058594
+                },
+                {
+                    "id": "#hsmetrics_minimum_base_quality",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "https://www.sevenbridges.com/x": -595.432861328125,
+                    "https://www.sevenbridges.com/y": -532.598388671875
+                },
+                {
+                    "id": "#hsmetrics_coverage_cap",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "https://www.sevenbridges.com/x": -600.9963989257812,
+                    "https://www.sevenbridges.com/y": -654.81982421875
+                }
+            ],
+            "outputs": [
+                {
+                    "id": "#gatk_collect_alignment_summary_metrics_txt_pool_b",
+                    "outputSource": [
+                        "#bam_qc_stats_pool_b/gatk_collect_alignment_summary_metrics_txt"
+                    ],
+                    "type": [
+                        "File",
+                        {
+                            "type": "array",
+                            "items": "File"
+                        }
+                    ],
+                    "label": "gatk_collect_alignment_summary_metrics_txt_pool_b",
+                    "https://www.sevenbridges.com/x": 429.216064453125,
+                    "https://www.sevenbridges.com/y": 559.75537109375
+                },
+                {
+                    "id": "#gatk_collect_hs_metrics_per_base_coverage_txt_pool_b",
+                    "outputSource": [
+                        "#bam_qc_stats_pool_b/gatk_collect_hs_metrics_per_base_coverage_txt"
+                    ],
+                    "type": [
+                        "File",
+                        {
+                            "type": "array",
+                            "items": "File"
+                        }
+                    ],
+                    "label": "gatk_collect_hs_metrics_per_base_coverage_txt_pool_b",
+                    "https://www.sevenbridges.com/x": 420.07769775390625,
+                    "https://www.sevenbridges.com/y": 442.26190185546875
+                },
+                {
+                    "id": "#gatk_collect_hs_metrics_per_target_coverage_txt_pool_b",
+                    "outputSource": [
+                        "#bam_qc_stats_pool_b/gatk_collect_hs_metrics_per_target_coverage_txt"
+                    ],
+                    "type": [
+                        "File",
+                        {
+                            "type": "array",
+                            "items": "File"
+                        }
+                    ],
+                    "label": "gatk_collect_hs_metrics_per_target_coverage_txt_pool_b",
+                    "https://www.sevenbridges.com/x": 427.91058349609375,
+                    "https://www.sevenbridges.com/y": 323.46295166015625
+                },
+                {
+                    "id": "#gatk_collect_hs_metrics_txt_pool_b",
+                    "outputSource": [
+                        "#bam_qc_stats_pool_b/gatk_collect_hs_metrics_txt"
+                    ],
+                    "type": [
+                        "File",
+                        {
+                            "type": "array",
+                            "items": "File"
+                        }
+                    ],
+                    "label": "gatk_collect_hs_metrics_txt_pool_b",
+                    "https://www.sevenbridges.com/x": 427.91058349609375,
+                    "https://www.sevenbridges.com/y": 204.66400146484375
+                },
+                {
+                    "id": "#gatk_collect_insert_size_metrics_histogram_pdf_pool_b",
+                    "outputSource": [
+                        "#bam_qc_stats_pool_b/gatk_collect_insert_size_metrics_histogram_pdf"
+                    ],
+                    "type": [
+                        "File",
+                        {
+                            "type": "array",
+                            "items": "File"
+                        }
+                    ],
+                    "label": "gatk_collect_insert_size_metrics_histogram_pdf_pool_b",
+                    "https://www.sevenbridges.com/x": 422.68865966796875,
+                    "https://www.sevenbridges.com/y": 80.64311218261719
+                },
+                {
+                    "id": "#gatk_collect_insert_size_metrics_txt_pool_b",
+                    "outputSource": [
+                        "#bam_qc_stats_pool_b/gatk_collect_insert_size_metrics_txt"
+                    ],
+                    "type": [
+                        "File",
+                        {
+                            "type": "array",
+                            "items": "File"
+                        }
+                    ],
+                    "label": "gatk_collect_insert_size_metrics_txt_pool_b",
+                    "https://www.sevenbridges.com/x": 430.52154541015625,
+                    "https://www.sevenbridges.com/y": -34.2393913269043
+                },
+                {
+                    "id": "#gatk_collect_alignment_summary_metrics_txt_pool_a",
+                    "outputSource": [
+                        "#bam_qc_stats_pool_a/gatk_collect_alignment_summary_metrics_txt"
+                    ],
+                    "type": [
+                        "File",
+                        {
+                            "type": "array",
+                            "items": "File"
+                        }
+                    ],
+                    "label": "gatk_collect_alignment_summary_metrics_txt_pool_a",
+                    "https://www.sevenbridges.com/x": 420.07769775390625,
+                    "https://www.sevenbridges.com/y": -155.64930725097656
+                },
+                {
+                    "id": "#gatk_collect_hs_metrics_per_base_coverage_txt_pool_a",
+                    "outputSource": [
+                        "#bam_qc_stats_pool_a/gatk_collect_hs_metrics_per_base_coverage_txt"
+                    ],
+                    "type": [
+                        "File",
+                        {
+                            "type": "array",
+                            "items": "File"
+                        }
+                    ],
+                    "label": "gatk_collect_hs_metrics_per_base_coverage_txt_pool_a",
+                    "https://www.sevenbridges.com/x": 417.46673583984375,
+                    "https://www.sevenbridges.com/y": -274.4482727050781
+                },
+                {
+                    "id": "#gatk_collect_hs_metrics_per_target_coverage_txt_pool_a",
+                    "outputSource": [
+                        "#bam_qc_stats_pool_a/gatk_collect_hs_metrics_per_target_coverage_txt"
+                    ],
+                    "type": [
+                        "File",
+                        {
+                            "type": "array",
+                            "items": "File"
+                        }
+                    ],
+                    "label": "gatk_collect_hs_metrics_per_target_coverage_txt_pool_a",
+                    "https://www.sevenbridges.com/x": 414.85577392578125,
+                    "https://www.sevenbridges.com/y": -389.3307800292969
+                },
+                {
+                    "id": "#gatk_collect_hs_metrics_txt_pool_a",
+                    "outputSource": [
+                        "#bam_qc_stats_pool_a/gatk_collect_hs_metrics_txt"
+                    ],
+                    "type": [
+                        "File",
+                        {
+                            "type": "array",
+                            "items": "File"
+                        }
+                    ],
+                    "label": "gatk_collect_hs_metrics_txt_pool_a",
+                    "https://www.sevenbridges.com/x": 409.9451599121094,
+                    "https://www.sevenbridges.com/y": -498.08355712890625
+                },
+                {
+                    "id": "#gatk_collect_insert_size_metrics_histogram_pdf_pool_a",
+                    "outputSource": [
+                        "#bam_qc_stats_pool_a/gatk_collect_insert_size_metrics_histogram_pdf"
+                    ],
+                    "type": [
+                        "File",
+                        {
+                            "type": "array",
+                            "items": "File"
+                        }
+                    ],
+                    "label": "gatk_collect_insert_size_metrics_histogram_pdf_pool_a",
+                    "https://www.sevenbridges.com/x": 410.9393005371094,
+                    "https://www.sevenbridges.com/y": -621.7067260742188
+                },
+                {
+                    "id": "#gatk_collect_insert_size_metrics_txt_pool_a",
+                    "outputSource": [
+                        "#bam_qc_stats_pool_a/gatk_collect_insert_size_metrics_txt"
+                    ],
+                    "type": [
+                        "File",
+                        {
+                            "type": "array",
+                            "items": "File"
+                        }
+                    ],
+                    "label": "gatk_collect_insert_size_metrics_txt_pool_a",
+                    "https://www.sevenbridges.com/x": 400.4954528808594,
+                    "https://www.sevenbridges.com/y": -773.1427612304688
+                },
+                {
+                    "id": "#gatk_mean_quality_by_cycle_output",
+                    "outputSource": [
+                        "#gatk_mean_quality_by_cycle_4_1_8_0/gatk_mean_quality_by_cycle_output"
+                    ],
+                    "type": [
+                        "File",
+                        {
+                            "type": "array",
+                            "items": "File"
+                        }
+                    ],
+                    "https://www.sevenbridges.com/x": 419.18060302734375,
+                    "https://www.sevenbridges.com/y": 776.599609375
+                },
+                {
+                    "id": "#gatk_mean_quality_by_cycle_chart_output",
+                    "outputSource": [
+                        "#gatk_mean_quality_by_cycle_4_1_8_0/gatk_mean_quality_by_cycle_chart_output"
+                    ],
+                    "type": [
+                        "File",
+                        {
+                            "type": "array",
+                            "items": "File"
+                        }
+                    ],
+                    "https://www.sevenbridges.com/x": 419.18060302734375,
+                    "https://www.sevenbridges.com/y": 929.2159423828125
+                },
+                {
+                    "id": "#gatk_mean_quality_by_cycle_output_base_recal",
+                    "outputSource": [
+                        "#gatk_mean_quality_by_cycle_4_1_8_1/gatk_mean_quality_by_cycle_output"
+                    ],
+                    "type": [
+                        "File",
+                        {
+                            "type": "array",
+                            "items": "File"
+                        }
+                    ],
+                    "label": "gatk_mean_quality_by_cycle_output_base_recal",
+                    "https://www.sevenbridges.com/x": 417.72711181640625,
+                    "https://www.sevenbridges.com/y": 1129.79736328125
+                },
+                {
+                    "id": "#gatk_mean_quality_by_cycle_chart_output_base_recal",
+                    "outputSource": [
+                        "#gatk_mean_quality_by_cycle_4_1_8_1/gatk_mean_quality_by_cycle_chart_output"
+                    ],
+                    "type": [
+                        "File",
+                        {
+                            "type": "array",
+                            "items": "File"
+                        }
+                    ],
+                    "label": "gatk_mean_quality_by_cycle_chart_output_base_recal",
+                    "https://www.sevenbridges.com/x": 424.99456787109375,
+                    "https://www.sevenbridges.com/y": 1283.8670654296875
+                }
+            ],
+            "steps": [
+                {
+                    "id": "#bam_qc_stats_pool_a",
+                    "in": [
+                        {
+                            "id": "#bam_qc_stats_pool_a/input",
+                            "source": [
+                                "#uncollapsed_bam"
+                            ]
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_a/target_intervals",
+                            "source": "#pool_a_target_intervals"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_a/bait_intervals",
+                            "source": "#pool_a_bait_intervals"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_a/reference",
+                            "source": "#reference"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_a/hsmetrics_minimum_mapping_quality",
+                            "source": "#hsmetrics_minimum_mapping_quality"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_a/hsmetrics_minimum_base_quality",
+                            "source": "#hsmetrics_minimum_base_quality"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_a/hsmetrics_coverage_cap",
+                            "source": "#hsmetrics_coverage_cap"
+                        }
+                    ],
+                    "out": [
+                        {
+                            "id": "#bam_qc_stats_pool_a/gatk_collect_insert_size_metrics_histogram_pdf"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_a/gatk_collect_insert_size_metrics_txt"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_a/gatk_collect_hs_metrics_txt"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_a/gatk_collect_hs_metrics_per_base_coverage_txt"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_a/gatk_collect_hs_metrics_per_target_coverage_txt"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_a/gatk_collect_alignment_summary_metrics_txt"
+                        }
+                    ],
+                    "run": "#bam_qc_stats.cwl",
+                    "label": "bam_qc_stats_pool_a",
+                    "https://www.sevenbridges.com/x": -114.38903045654297,
+                    "https://www.sevenbridges.com/y": -295.4621276855469
+                },
+                {
+                    "id": "#bam_qc_stats_pool_b",
+                    "in": [
+                        {
+                            "id": "#bam_qc_stats_pool_b/input",
+                            "source": [
+                                "#uncollapsed_bam"
+                            ]
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_b/target_intervals",
+                            "source": "#pool_b_target_intervals"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_b/bait_intervals",
+                            "source": "#pool_b_bait_intervals"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_b/reference",
+                            "source": "#reference"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_b/hsmetrics_minimum_mapping_quality",
+                            "source": "#hsmetrics_minimum_mapping_quality"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_b/hsmetrics_minimum_base_quality",
+                            "source": "#hsmetrics_minimum_base_quality"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_b/hsmetrics_coverage_cap",
+                            "source": "#hsmetrics_coverage_cap"
+                        }
+                    ],
+                    "out": [
+                        {
+                            "id": "#bam_qc_stats_pool_b/gatk_collect_insert_size_metrics_histogram_pdf"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_b/gatk_collect_insert_size_metrics_txt"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_b/gatk_collect_hs_metrics_txt"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_b/gatk_collect_hs_metrics_per_base_coverage_txt"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_b/gatk_collect_hs_metrics_per_target_coverage_txt"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_b/gatk_collect_alignment_summary_metrics_txt"
+                        }
+                    ],
+                    "run": "#bam_qc_stats.cwl",
+                    "label": "bam_qc_stats_pool_b",
+                    "https://www.sevenbridges.com/x": -116.60113525390625,
+                    "https://www.sevenbridges.com/y": 139.5
+                },
+                {
+                    "id": "#gatk_mean_quality_by_cycle_4_1_8_0",
+                    "in": [
+                        {
+                            "id": "#gatk_mean_quality_by_cycle_4_1_8_0/input",
+                            "source": "#uncollapsed_bam"
+                        },
+                        {
+                            "id": "#gatk_mean_quality_by_cycle_4_1_8_0/reference",
+                            "source": "#reference"
+                        }
+                    ],
+                    "out": [
+                        {
+                            "id": "#gatk_mean_quality_by_cycle_4_1_8_0/gatk_mean_quality_by_cycle_output"
+                        },
+                        {
+                            "id": "#gatk_mean_quality_by_cycle_4_1_8_0/gatk_mean_quality_by_cycle_chart_output"
+                        }
+                    ],
+                    "run": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl",
+                    "label": "GATK-MeanQualityByCycle",
+                    "https://www.sevenbridges.com/x": -80.24418640136719,
+                    "https://www.sevenbridges.com/y": 861.4418334960938
+                },
+                {
+                    "id": "#gatk_mean_quality_by_cycle_4_1_8_1",
+                    "in": [
+                        {
+                            "id": "#gatk_mean_quality_by_cycle_4_1_8_1/input",
+                            "source": "#uncollapsed_bam_base_recal"
+                        },
+                        {
+                            "id": "#gatk_mean_quality_by_cycle_4_1_8_1/reference",
+                            "source": "#reference"
+                        }
+                    ],
+                    "out": [
+                        {
+                            "id": "#gatk_mean_quality_by_cycle_4_1_8_1/gatk_mean_quality_by_cycle_output"
+                        },
+                        {
+                            "id": "#gatk_mean_quality_by_cycle_4_1_8_1/gatk_mean_quality_by_cycle_chart_output"
+                        }
+                    ],
+                    "run": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl",
+                    "label": "GATK-MeanQualityByCycle_base_recal",
+                    "https://www.sevenbridges.com/x": -78.6744155883789,
+                    "https://www.sevenbridges.com/y": 1229.6976318359375
+                }
+            ],
+            "requirements": [
+                {
+                    "class": "SubworkflowFeatureRequirement"
                 }
             ]
         }

@@ -2,11 +2,11 @@
     "$graph": [
         {
             "class": "Workflow",
-            "id": "#main",
+            "id": "#bam_qc_stats.cwl",
             "label": "bam_qc_stats",
             "inputs": [
                 {
-                    "id": "#input",
+                    "id": "#bam_qc_stats.cwl/input",
                     "type": [
                         "File",
                         {
@@ -21,19 +21,19 @@
                     "https://www.sevenbridges.com/y": 374.0625
                 },
                 {
-                    "id": "#target_intervals",
+                    "id": "#bam_qc_stats.cwl/target_intervals",
                     "type": "File",
                     "https://www.sevenbridges.com/x": 0,
                     "https://www.sevenbridges.com/y": 160.3125
                 },
                 {
-                    "id": "#bait_intervals",
+                    "id": "#bam_qc_stats.cwl/bait_intervals",
                     "type": "File",
                     "https://www.sevenbridges.com/x": 0,
                     "https://www.sevenbridges.com/y": 480.9375
                 },
                 {
-                    "id": "#reference",
+                    "id": "#bam_qc_stats.cwl/reference",
                     "type": "File",
                     "secondaryFiles": [
                         "^.fasta.fai",
@@ -43,7 +43,7 @@
                     "https://www.sevenbridges.com/y": 267.1875
                 },
                 {
-                    "id": "#temporary_directory",
+                    "id": "#bam_qc_stats.cwl/temporary_directory",
                     "type": [
                         "null",
                         "string"
@@ -52,7 +52,7 @@
                     "https://www.sevenbridges.com/y": 53.4375
                 },
                 {
-                    "id": "#hsmetrics_minimum_mapping_quality",
+                    "id": "#bam_qc_stats.cwl/hsmetrics_minimum_mapping_quality",
                     "type": [
                         "null",
                         "int"
@@ -62,7 +62,7 @@
                     "https://www.sevenbridges.com/y": 613
                 },
                 {
-                    "id": "#hsmetrics_minimum_base_quality",
+                    "id": "#bam_qc_stats.cwl/hsmetrics_minimum_base_quality",
                     "type": [
                         "null",
                         "int"
@@ -72,7 +72,7 @@
                     "https://www.sevenbridges.com/y": 743
                 },
                 {
-                    "id": "#hsmetrics_coverage_cap",
+                    "id": "#bam_qc_stats.cwl/hsmetrics_coverage_cap",
                     "type": [
                         "null",
                         "int"
@@ -84,9 +84,9 @@
             ],
             "outputs": [
                 {
-                    "id": "#gatk_collect_insert_size_metrics_histogram_pdf",
+                    "id": "#bam_qc_stats.cwl/gatk_collect_insert_size_metrics_histogram_pdf",
                     "outputSource": [
-                        "#gatk_collect_insert_size_metrics_4_1_8_0/gatk_collect_insert_size_metrics_histogram_pdf"
+                        "#bam_qc_stats.cwl/gatk_collect_insert_size_metrics_4_1_8_0/gatk_collect_insert_size_metrics_histogram_pdf"
                     ],
                     "type": [
                         "File",
@@ -99,9 +99,9 @@
                     "https://www.sevenbridges.com/y": 106.875
                 },
                 {
-                    "id": "#gatk_collect_insert_size_metrics_txt",
+                    "id": "#bam_qc_stats.cwl/gatk_collect_insert_size_metrics_txt",
                     "outputSource": [
-                        "#gatk_collect_insert_size_metrics_4_1_8_0/gatk_collect_insert_size_metrics_txt"
+                        "#bam_qc_stats.cwl/gatk_collect_insert_size_metrics_4_1_8_0/gatk_collect_insert_size_metrics_txt"
                     ],
                     "type": [
                         "File",
@@ -114,9 +114,9 @@
                     "https://www.sevenbridges.com/y": 0
                 },
                 {
-                    "id": "#gatk_collect_hs_metrics_txt",
+                    "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_txt",
                     "outputSource": [
-                        "#gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_txt"
+                        "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_txt"
                     ],
                     "type": [
                         "File",
@@ -129,9 +129,9 @@
                     "https://www.sevenbridges.com/y": 213.75
                 },
                 {
-                    "id": "#gatk_collect_hs_metrics_per_base_coverage_txt",
+                    "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_per_base_coverage_txt",
                     "outputSource": [
-                        "#gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_per_base_coverage_txt"
+                        "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_per_base_coverage_txt"
                     ],
                     "type": [
                         "File",
@@ -144,9 +144,9 @@
                     "https://www.sevenbridges.com/y": 427.5
                 },
                 {
-                    "id": "#gatk_collect_hs_metrics_per_target_coverage_txt",
+                    "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_per_target_coverage_txt",
                     "outputSource": [
-                        "#gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_per_target_coverage_txt"
+                        "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_per_target_coverage_txt"
                     ],
                     "type": [
                         "File",
@@ -159,9 +159,9 @@
                     "https://www.sevenbridges.com/y": 320.625
                 },
                 {
-                    "id": "#gatk_collect_alignment_summary_metrics_txt",
+                    "id": "#bam_qc_stats.cwl/gatk_collect_alignment_summary_metrics_txt",
                     "outputSource": [
-                        "#gatk_collect_alignment_summary_metrics_4_1_3_0/gatk_collect_alignment_summary_metrics_txt"
+                        "#bam_qc_stats.cwl/gatk_collect_alignment_summary_metrics_4_1_3_0/gatk_collect_alignment_summary_metrics_txt"
                     ],
                     "type": [
                         "File",
@@ -176,24 +176,24 @@
             ],
             "steps": [
                 {
-                    "id": "#gatk_collect_alignment_summary_metrics_4_1_3_0",
+                    "id": "#bam_qc_stats.cwl/gatk_collect_alignment_summary_metrics_4_1_3_0",
                     "in": [
                         {
-                            "id": "#gatk_collect_alignment_summary_metrics_4_1_3_0/input",
-                            "source": "#input"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_alignment_summary_metrics_4_1_3_0/input",
+                            "source": "#bam_qc_stats.cwl/input"
                         },
                         {
-                            "id": "#gatk_collect_alignment_summary_metrics_4_1_3_0/reference",
-                            "source": "#reference"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_alignment_summary_metrics_4_1_3_0/reference",
+                            "source": "#bam_qc_stats.cwl/reference"
                         },
                         {
-                            "id": "#gatk_collect_alignment_summary_metrics_4_1_3_0/temporary_directory",
-                            "source": "#temporary_directory"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_alignment_summary_metrics_4_1_3_0/temporary_directory",
+                            "source": "#bam_qc_stats.cwl/temporary_directory"
                         }
                     ],
                     "out": [
                         {
-                            "id": "#gatk_collect_alignment_summary_metrics_4_1_3_0/gatk_collect_alignment_summary_metrics_txt"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_alignment_summary_metrics_4_1_3_0/gatk_collect_alignment_summary_metrics_txt"
                         }
                     ],
                     "run": "#gatk_collect_alignment_summary_metrics_4.1.8.0.cwl",
@@ -202,50 +202,50 @@
                     "https://www.sevenbridges.com/y": 560.505126953125
                 },
                 {
-                    "id": "#gatk_collect_hs_metrics_4_1_8_0",
+                    "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0",
                     "in": [
                         {
-                            "id": "#gatk_collect_hs_metrics_4_1_8_0/input",
-                            "source": "#input"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/input",
+                            "source": "#bam_qc_stats.cwl/input"
                         },
                         {
-                            "id": "#gatk_collect_hs_metrics_4_1_8_0/bait_intervals",
-                            "source": "#bait_intervals"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/bait_intervals",
+                            "source": "#bam_qc_stats.cwl/bait_intervals"
                         },
                         {
-                            "id": "#gatk_collect_hs_metrics_4_1_8_0/target_intervals",
-                            "source": "#target_intervals"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/target_intervals",
+                            "source": "#bam_qc_stats.cwl/target_intervals"
                         },
                         {
-                            "id": "#gatk_collect_hs_metrics_4_1_8_0/coverage_cap",
-                            "source": "#hsmetrics_coverage_cap"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/coverage_cap",
+                            "source": "#bam_qc_stats.cwl/hsmetrics_coverage_cap"
                         },
                         {
-                            "id": "#gatk_collect_hs_metrics_4_1_8_0/minimum_base_quality",
-                            "source": "#hsmetrics_minimum_base_quality"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/minimum_base_quality",
+                            "source": "#bam_qc_stats.cwl/hsmetrics_minimum_base_quality"
                         },
                         {
-                            "id": "#gatk_collect_hs_metrics_4_1_8_0/minimum_mapping_quality",
-                            "source": "#hsmetrics_minimum_mapping_quality"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/minimum_mapping_quality",
+                            "source": "#bam_qc_stats.cwl/hsmetrics_minimum_mapping_quality"
                         },
                         {
-                            "id": "#gatk_collect_hs_metrics_4_1_8_0/reference",
-                            "source": "#reference"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/reference",
+                            "source": "#bam_qc_stats.cwl/reference"
                         },
                         {
-                            "id": "#gatk_collect_hs_metrics_4_1_8_0/temporary_directory",
-                            "source": "#temporary_directory"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/temporary_directory",
+                            "source": "#bam_qc_stats.cwl/temporary_directory"
                         }
                     ],
                     "out": [
                         {
-                            "id": "#gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_txt"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_txt"
                         },
                         {
-                            "id": "#gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_per_base_coverage_txt"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_per_base_coverage_txt"
                         },
                         {
-                            "id": "#gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_per_target_coverage_txt"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_per_target_coverage_txt"
                         }
                     ],
                     "run": "#gatk_collect_hs_metrics_4.1.8.0.cwl",
@@ -254,27 +254,27 @@
                     "https://www.sevenbridges.com/y": 372.8453674316406
                 },
                 {
-                    "id": "#gatk_collect_insert_size_metrics_4_1_8_0",
+                    "id": "#bam_qc_stats.cwl/gatk_collect_insert_size_metrics_4_1_8_0",
                     "in": [
                         {
-                            "id": "#gatk_collect_insert_size_metrics_4_1_8_0/input",
-                            "source": "#input"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_insert_size_metrics_4_1_8_0/input",
+                            "source": "#bam_qc_stats.cwl/input"
                         },
                         {
-                            "id": "#gatk_collect_insert_size_metrics_4_1_8_0/histogram_file",
+                            "id": "#bam_qc_stats.cwl/gatk_collect_insert_size_metrics_4_1_8_0/histogram_file",
                             "default": "histogram.pdf"
                         },
                         {
-                            "id": "#gatk_collect_insert_size_metrics_4_1_8_0/temporary_directory",
-                            "source": "#temporary_directory"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_insert_size_metrics_4_1_8_0/temporary_directory",
+                            "source": "#bam_qc_stats.cwl/temporary_directory"
                         }
                     ],
                     "out": [
                         {
-                            "id": "#gatk_collect_insert_size_metrics_4_1_8_0/gatk_collect_insert_size_metrics_txt"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_insert_size_metrics_4_1_8_0/gatk_collect_insert_size_metrics_txt"
                         },
                         {
-                            "id": "#gatk_collect_insert_size_metrics_4_1_8_0/gatk_collect_insert_size_metrics_histogram_pdf"
+                            "id": "#bam_qc_stats.cwl/gatk_collect_insert_size_metrics_4_1_8_0/gatk_collect_insert_size_metrics_histogram_pdf"
                         }
                     ],
                     "run": "#gatk_collect_insert_size_metrics_4.1.8.0.cwl",
@@ -305,7 +305,6 @@
             "https://schema.org/dateCreated": "2020-09-23",
             "https://schema.org/license": "https://spdx.org/licenses/Apache-2.0",
             "$namespaces": {
-                "s": "https://schema.org/",
                 "sbg": "https://www.sevenbridges.com/"
             }
         },
@@ -1270,6 +1269,335 @@
                     "class": "http://usefulinc.com/ns/doap#Version",
                     "http://usefulinc.com/ns/doap#name": "gatk4",
                     "http://usefulinc.com/ns/doap#revision": "4.1.8.0"
+                }
+            ]
+        },
+        {
+            "class": "Workflow",
+            "id": "#main",
+            "label": "qc_simplex_bam",
+            "inputs": [
+                {
+                    "id": "#reference",
+                    "type": "File",
+                    "secondaryFiles": [
+                        "^.fasta.fai",
+                        "^.dict"
+                    ],
+                    "https://www.sevenbridges.com/x": -573,
+                    "https://www.sevenbridges.com/y": 247.2935333251953
+                },
+                {
+                    "id": "#simplex_bam",
+                    "type": "File",
+                    "label": "simplex_bam",
+                    "secondaryFiles": [
+                        "^.bai"
+                    ],
+                    "https://www.sevenbridges.com/x": -570.2189331054688,
+                    "https://www.sevenbridges.com/y": 376.736328125
+                },
+                {
+                    "id": "#pool_b_target_intervals",
+                    "type": "File",
+                    "label": "pool_b_target_intervals",
+                    "https://www.sevenbridges.com/x": -583.1691284179688,
+                    "https://www.sevenbridges.com/y": -23.069652557373047
+                },
+                {
+                    "id": "#pool_b_bait_intervals",
+                    "type": "File",
+                    "label": "pool_b_bait_intervals",
+                    "https://www.sevenbridges.com/x": -579.8407592773438,
+                    "https://www.sevenbridges.com/y": 105.95523071289062
+                },
+                {
+                    "id": "#pool_a_bait_intervals",
+                    "type": "File",
+                    "label": "pool_a_bait_intervals",
+                    "https://www.sevenbridges.com/x": -583.9046020507812,
+                    "https://www.sevenbridges.com/y": -163.9043731689453
+                },
+                {
+                    "id": "#pool_a_target_intervals",
+                    "type": "File",
+                    "label": "pool_a_target_intervals",
+                    "https://www.sevenbridges.com/x": -581.4170532226562,
+                    "https://www.sevenbridges.com/y": -288.2825012207031
+                },
+                {
+                    "id": "#hsmetrics_minimum_mapping_quality",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "https://www.sevenbridges.com/x": -585.7700805664062,
+                    "https://www.sevenbridges.com/y": -414.1761779785156
+                },
+                {
+                    "id": "#hsmetrics_minimum_base_quality",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "https://www.sevenbridges.com/x": -590.94140625,
+                    "https://www.sevenbridges.com/y": -539.5800170898438
+                },
+                {
+                    "id": "#hsmetrics_coverage_cap",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "https://www.sevenbridges.com/x": -595.156005859375,
+                    "https://www.sevenbridges.com/y": -670.54931640625
+                }
+            ],
+            "outputs": [
+                {
+                    "id": "#gatk_collect_alignment_summary_metrics_txt_pool_b",
+                    "outputSource": [
+                        "#bam_qc_stats_pool_b/gatk_collect_alignment_summary_metrics_txt"
+                    ],
+                    "type": "File",
+                    "label": "gatk_collect_alignment_summary_metrics_txt_pool_b",
+                    "https://www.sevenbridges.com/x": 429.216064453125,
+                    "https://www.sevenbridges.com/y": 559.75537109375
+                },
+                {
+                    "id": "#gatk_collect_hs_metrics_per_base_coverage_txt_pool_b",
+                    "outputSource": [
+                        "#bam_qc_stats_pool_b/gatk_collect_hs_metrics_per_base_coverage_txt"
+                    ],
+                    "type": "File",
+                    "label": "gatk_collect_hs_metrics_per_base_coverage_txt_pool_b",
+                    "https://www.sevenbridges.com/x": 420.07769775390625,
+                    "https://www.sevenbridges.com/y": 442.26190185546875
+                },
+                {
+                    "id": "#gatk_collect_hs_metrics_per_target_coverage_txt_pool_b",
+                    "outputSource": [
+                        "#bam_qc_stats_pool_b/gatk_collect_hs_metrics_per_target_coverage_txt"
+                    ],
+                    "type": "File",
+                    "label": "gatk_collect_hs_metrics_per_target_coverage_txt_pool_b",
+                    "https://www.sevenbridges.com/x": 427.91058349609375,
+                    "https://www.sevenbridges.com/y": 323.46295166015625
+                },
+                {
+                    "id": "#gatk_collect_hs_metrics_txt_pool_b",
+                    "outputSource": [
+                        "#bam_qc_stats_pool_b/gatk_collect_hs_metrics_txt"
+                    ],
+                    "type": "File",
+                    "label": "gatk_collect_hs_metrics_txt_pool_b",
+                    "https://www.sevenbridges.com/x": 427.91058349609375,
+                    "https://www.sevenbridges.com/y": 204.66400146484375
+                },
+                {
+                    "id": "#gatk_collect_insert_size_metrics_histogram_pdf_pool_b",
+                    "outputSource": [
+                        "#bam_qc_stats_pool_b/gatk_collect_insert_size_metrics_histogram_pdf"
+                    ],
+                    "type": "File",
+                    "label": "gatk_collect_insert_size_metrics_histogram_pdf_pool_b",
+                    "https://www.sevenbridges.com/x": 422.68865966796875,
+                    "https://www.sevenbridges.com/y": 80.64311218261719
+                },
+                {
+                    "id": "#gatk_collect_insert_size_metrics_txt_pool_b",
+                    "outputSource": [
+                        "#bam_qc_stats_pool_b/gatk_collect_insert_size_metrics_txt"
+                    ],
+                    "type": "File",
+                    "label": "gatk_collect_insert_size_metrics_txt_pool_b",
+                    "https://www.sevenbridges.com/x": 430.52154541015625,
+                    "https://www.sevenbridges.com/y": -34.2393913269043
+                },
+                {
+                    "id": "#gatk_collect_alignment_summary_metrics_txt_pool_a",
+                    "outputSource": [
+                        "#bam_qc_stats_pool_a/gatk_collect_alignment_summary_metrics_txt"
+                    ],
+                    "type": "File",
+                    "label": "gatk_collect_alignment_summary_metrics_txt_pool_a",
+                    "https://www.sevenbridges.com/x": 420.07769775390625,
+                    "https://www.sevenbridges.com/y": -155.64930725097656
+                },
+                {
+                    "id": "#gatk_collect_hs_metrics_per_base_coverage_txt_pool_a",
+                    "outputSource": [
+                        "#bam_qc_stats_pool_a/gatk_collect_hs_metrics_per_base_coverage_txt"
+                    ],
+                    "type": "File",
+                    "label": "gatk_collect_hs_metrics_per_base_coverage_txt_pool_a",
+                    "https://www.sevenbridges.com/x": 417.46673583984375,
+                    "https://www.sevenbridges.com/y": -274.4482727050781
+                },
+                {
+                    "id": "#gatk_collect_hs_metrics_per_target_coverage_txt_pool_a",
+                    "outputSource": [
+                        "#bam_qc_stats_pool_a/gatk_collect_hs_metrics_per_target_coverage_txt"
+                    ],
+                    "type": "File",
+                    "label": "gatk_collect_hs_metrics_per_target_coverage_txt_pool_a",
+                    "https://www.sevenbridges.com/x": 414.85577392578125,
+                    "https://www.sevenbridges.com/y": -389.3307800292969
+                },
+                {
+                    "id": "#gatk_collect_hs_metrics_txt_pool_a",
+                    "outputSource": [
+                        "#bam_qc_stats_pool_a/gatk_collect_hs_metrics_txt"
+                    ],
+                    "type": "File",
+                    "label": "gatk_collect_hs_metrics_txt_pool_a",
+                    "https://www.sevenbridges.com/x": 409.9451599121094,
+                    "https://www.sevenbridges.com/y": -498.08355712890625
+                },
+                {
+                    "id": "#gatk_collect_insert_size_metrics_histogram_pdf_pool_a",
+                    "outputSource": [
+                        "#bam_qc_stats_pool_a/gatk_collect_insert_size_metrics_histogram_pdf"
+                    ],
+                    "type": "File",
+                    "label": "gatk_collect_insert_size_metrics_histogram_pdf_pool_a",
+                    "https://www.sevenbridges.com/x": 410.9393005371094,
+                    "https://www.sevenbridges.com/y": -621.7067260742188
+                },
+                {
+                    "id": "#gatk_collect_insert_size_metrics_txt_pool_a",
+                    "outputSource": [
+                        "#bam_qc_stats_pool_a/gatk_collect_insert_size_metrics_txt"
+                    ],
+                    "type": "File",
+                    "label": "gatk_collect_insert_size_metrics_txt_pool_a",
+                    "https://www.sevenbridges.com/x": 400.4954528808594,
+                    "https://www.sevenbridges.com/y": -773.1427612304688
+                }
+            ],
+            "steps": [
+                {
+                    "id": "#bam_qc_stats_pool_a",
+                    "in": [
+                        {
+                            "id": "#bam_qc_stats_pool_a/input",
+                            "source": [
+                                "#simplex_bam"
+                            ]
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_a/target_intervals",
+                            "source": "#pool_a_target_intervals"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_a/bait_intervals",
+                            "source": "#pool_a_bait_intervals"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_a/reference",
+                            "source": "#reference"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_a/hsmetrics_minimum_mapping_quality",
+                            "source": "#hsmetrics_minimum_mapping_quality"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_a/hsmetrics_minimum_base_quality",
+                            "source": "#hsmetrics_minimum_base_quality"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_a/hsmetrics_coverage_cap",
+                            "source": "#hsmetrics_coverage_cap"
+                        }
+                    ],
+                    "out": [
+                        {
+                            "id": "#bam_qc_stats_pool_a/gatk_collect_insert_size_metrics_histogram_pdf"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_a/gatk_collect_insert_size_metrics_txt"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_a/gatk_collect_hs_metrics_txt"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_a/gatk_collect_hs_metrics_per_base_coverage_txt"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_a/gatk_collect_hs_metrics_per_target_coverage_txt"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_a/gatk_collect_alignment_summary_metrics_txt"
+                        }
+                    ],
+                    "run": "#bam_qc_stats.cwl",
+                    "label": "bam_qc_stats_pool_a",
+                    "https://www.sevenbridges.com/x": -114.38903045654297,
+                    "https://www.sevenbridges.com/y": -295.4621276855469
+                },
+                {
+                    "id": "#bam_qc_stats_pool_b",
+                    "in": [
+                        {
+                            "id": "#bam_qc_stats_pool_b/input",
+                            "source": [
+                                "#simplex_bam"
+                            ]
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_b/target_intervals",
+                            "source": "#pool_b_target_intervals"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_b/bait_intervals",
+                            "source": "#pool_b_bait_intervals"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_b/reference",
+                            "source": "#reference"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_b/hsmetrics_minimum_mapping_quality",
+                            "source": "#hsmetrics_minimum_mapping_quality"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_b/hsmetrics_minimum_base_quality",
+                            "source": "#hsmetrics_minimum_base_quality"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_b/hsmetrics_coverage_cap",
+                            "source": "#hsmetrics_coverage_cap"
+                        }
+                    ],
+                    "out": [
+                        {
+                            "id": "#bam_qc_stats_pool_b/gatk_collect_insert_size_metrics_histogram_pdf"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_b/gatk_collect_insert_size_metrics_txt"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_b/gatk_collect_hs_metrics_txt"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_b/gatk_collect_hs_metrics_per_base_coverage_txt"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_b/gatk_collect_hs_metrics_per_target_coverage_txt"
+                        },
+                        {
+                            "id": "#bam_qc_stats_pool_b/gatk_collect_alignment_summary_metrics_txt"
+                        }
+                    ],
+                    "run": "#bam_qc_stats.cwl",
+                    "label": "bam_qc_stats_pool_b",
+                    "https://www.sevenbridges.com/x": -116.60113525390625,
+                    "https://www.sevenbridges.com/y": 139.5
+                }
+            ],
+            "requirements": [
+                {
+                    "class": "SubworkflowFeatureRequirement"
                 }
             ]
         }
