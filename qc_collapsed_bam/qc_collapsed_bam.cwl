@@ -37,15 +37,6 @@ inputs:
       - ^.bai
     'sbg:x': -899.7366333007812
     'sbg:y': 462.836181640625
-  - id: sample_type
-    type:
-      - 'null'
-      - string
-      - type: array
-        items: string
-    doc: 'Sample types: Normal or Tumor.'
-    'sbg:x': -900.1541137695312
-    'sbg:y': 613.905517578125
   - id: sample_sex
     type:
       - 'null'
@@ -578,10 +569,6 @@ steps:
         linkMerge: merge_nested
         source:
           - collapsed_bam
-      - id: sample_type
-        linkMerge: merge_nested
-        source:
-          - sample_type
       - id: sample_sex
         linkMerge: merge_nested
         source:

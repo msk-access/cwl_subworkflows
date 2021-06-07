@@ -55,15 +55,6 @@ inputs:
     doc: VCF file containing the SNPs to be queried.
     'sbg:x': -1373.5452880859375
     'sbg:y': 274.6005859375
-  - id: sample_type
-    type:
-      - 'null'
-      - string
-      - type: array
-        items: string
-    doc: 'Sample types: Normal or Tumor.'
-    'sbg:x': -1181.2960205078125
-    'sbg:y': 899.139404296875
   - id: sample_sex
     type:
       - 'null'
@@ -508,10 +499,6 @@ steps:
         linkMerge: merge_nested
         source:
           - duplex_bam
-      - id: sample_type
-        linkMerge: merge_nested
-        source:
-          - sample_type
       - id: sample_sex
         linkMerge: merge_nested
         source:
