@@ -1501,6 +1501,390 @@
             ]
         },
         {
+            "class": "CommandLineTool",
+            "id": "#gatk_revert_sam_4.1.8.0.cwl",
+            "baseCommand": [
+                "gatk",
+                "RevertSam"
+            ],
+            "inputs": [
+                {
+                    "id": "#gatk_revert_sam_4.1.8.0.cwl/input",
+                    "type": "File",
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "-I"
+                    },
+                    "doc": "An aligned SAM or BAM file.  Required."
+                },
+                {
+                    "id": "#gatk_revert_sam_4.1.8.0.cwl/output",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "doc": "The output SAM/BAM file to create, or an output directory if OUTPUT_BY_READGROUP is true. Required.  Cannot be used in conjunction with argument(s) OUTPUT_MAP (OM)"
+                },
+                {
+                    "id": "#gatk_revert_sam_4.1.8.0.cwl/output_map",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "doc": "Tab separated file with two columns, READ_GROUP_ID and OUTPUT, providing file mapping only used if OUTPUT_BY_READGROUP is true.  Required.  Cannot be used in conjunction with argument(s) OUTPUT (O)"
+                },
+                {
+                    "id": "#gatk_revert_sam_4.1.8.0.cwl/attribute_to_clear",
+                    "type": [
+                        "null",
+                        {
+                            "type": "array",
+                            "items": "string",
+                            "inputBinding": {
+                                "position": 0,
+                                "prefix": "--ATTRIBUTE_TO_CLEAR"
+                            }
+                        }
+                    ],
+                    "doc": "When removing alignment information, the set of optional tags to remove.  This may be specified 0 or more times. Default value: [NM, UQ, PG, MD, MQ, SA, MC, AS]."
+                },
+                {
+                    "id": "#gatk_revert_sam_4.1.8.0.cwl/max_discard_fraction",
+                    "type": [
+                        "null",
+                        "float"
+                    ],
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "--MAX_DISCARD_FRACTION"
+                    },
+                    "doc": "If SANITIZE=true and higher than MAX_DISCARD_FRACTION reads are discarded due to sanitization thenthe program will exit with an Exception instead of exiting cleanly. Output BAM will still be valid.  Default value: 0.01."
+                },
+                {
+                    "id": "#gatk_revert_sam_4.1.8.0.cwl/library_name",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "--LIBRARY_NAME"
+                    },
+                    "doc": "The library name to use in the reverted output file.  This will override the existing sample alias in the file and is used only if all the read groups in the input file have the same library name.  Default value: null."
+                },
+                {
+                    "id": "#gatk_revert_sam_4.1.8.0.cwl/max_records_in_ram",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "--MAX_RECORDS_IN_RAM"
+                    },
+                    "doc": "When writing files that need to be sorted, this will specify the number of records stored in RAM before spilling to disk. Increasing this number reduces the number of file handles needed to sort the file, and increases the amount of RAM needed.  Default value: 500000."
+                },
+                {
+                    "id": "#gatk_revert_sam_4.1.8.0.cwl/output_by_readgroup",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "default": "false",
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "--OUTPUT_BY_READGROUP"
+                    },
+                    "doc": "When true, outputs each read group in a separate file.  Default value: false. Possible values: {true, false}"
+                },
+                {
+                    "id": "#gatk_revert_sam_4.1.8.0.cwl/output_by_readgroup_file_format",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "--OUTPUT_BY_READGROUP_FILE_FORMAT"
+                    },
+                    "doc": "When using OUTPUT_BY_READGROUP, the output file format can be set to a certain format. Default value: dynamic. sam (Generate SAM files.) bam (Generate BAM files.) cram (Generate CRAM files.) dynamic (Generate files based on the extention of INPUT.)"
+                },
+                {
+                    "id": "#gatk_revert_sam_4.1.8.0.cwl/remove_alignment_information",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "default": "true",
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "--REMOVE_ALIGNMENT_INFORMATION"
+                    },
+                    "doc": "Remove all alignment information from the file.  Default value: true. Possible values: {true, false}"
+                },
+                {
+                    "id": "#gatk_revert_sam_4.1.8.0.cwl/remove_duplicate_information",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "default": "true",
+                    "inputBinding": {
+                        "position": 1,
+                        "prefix": "--REMOVE_DUPLICATE_INFORMATION"
+                    },
+                    "doc": "Remove duplicate read flags from all reads.  Note that if this is false and\nREMOVE_ALIGNMENT_INFORMATION==true,  the output may have the unusual but sometimes\ndesirable trait of having unmapped reads that are marked as duplicates.  Default value:\ntrue. Possible values: {true, false}\n"
+                },
+                {
+                    "id": "#gatk_revert_sam_4.1.8.0.cwl/restore_hardclips",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "default": "true",
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "--RESTORE_HARDCLIPS"
+                    },
+                    "doc": "When true, restores reads and qualities of records with hard-clips containing XB and XQ tags.  Default value: true. Possible values: {true, false}"
+                },
+                {
+                    "id": "#gatk_revert_sam_4.1.8.0.cwl/restore_original_qualities",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "default": "true",
+                    "inputBinding": {
+                        "position": 1,
+                        "prefix": "--RESTORE_ORIGINAL_QUALITIES"
+                    },
+                    "doc": "True to restore original qualities from the OQ field to the QUAL field if available. Default value: true. Possible values: {true, false}\n"
+                },
+                {
+                    "id": "#gatk_revert_sam_4.1.8.0.cwl/sample_alias",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "inputBinding": {
+                        "position": 1,
+                        "prefix": "--SAMPLE_ALIAS"
+                    },
+                    "doc": "The sample alias to use in the reverted output file.  This will override the existing\nsample alias in the file and is used only if all the read groups in the input file have\nthe same sample alias.  Default value: null.\n"
+                },
+                {
+                    "id": "#gatk_revert_sam_4.1.8.0.cwl/sanitize",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "default": "false",
+                    "inputBinding": {
+                        "position": 1,
+                        "prefix": "--SANITIZE"
+                    },
+                    "doc": "WARNING: This option is potentially destructive. If enabled will discard reads in order to\nproduce a consistent output BAM. Reads discarded include (but are not limited to) paired\nreads with missing mates, duplicated records, records with mismatches in length of bases\nand qualities. This option can only be enabled if the output sort order is queryname and\nwill always cause sorting to occur.  Default value: false. Possible values: {true, false}\n"
+                },
+                {
+                    "id": "#gatk_revert_sam_4.1.8.0.cwl/sort_order",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "inputBinding": {
+                        "position": 1,
+                        "prefix": "--SORT_ORDER"
+                    },
+                    "doc": "The sort order to create the reverted output file with.  Default value: queryname. Possible values: {unsorted, queryname, coordinate, duplicate, unknown}\n"
+                },
+                {
+                    "id": "#gatk_revert_sam_4.1.8.0.cwl/reference",
+                    "type": [
+                        "null",
+                        "File"
+                    ],
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "-R"
+                    },
+                    "doc": "Reference sequence file. Note that while this argument is not required, without it only a small subset of the metrics will be calculated. Note also that if a reference sequence is provided, it must be accompanied by a sequence dictionary.  Default value: null.",
+                    "secondaryFiles": [
+                        "^.fasta.fai",
+                        "^.dict"
+                    ]
+                },
+                {
+                    "id": "#gatk_revert_sam_4.1.8.0.cwl/validation_stringency",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "--VALIDATION_STRINGENCY"
+                    },
+                    "doc": "Validation stringency for all SAM files read by this program.  Setting stringency to SILENT can improve performance when processing a BAM file in which variable-length data (read, qualities, tags) do not otherwise need to be decoded.  Default value: STRICT. This option can be set to 'null' to clear the default value. Possible values: {STRICT,LENIENT, SILENT}"
+                },
+                {
+                    "id": "#gatk_revert_sam_4.1.8.0.cwl/compression_level",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "--COMPRESSION_LEVEL"
+                    },
+                    "doc": "Compression level for all compressed files created (e.g. BAM and VCF).  Default value: 2."
+                },
+                {
+                    "id": "#gatk_revert_sam_4.1.8.0.cwl/create_index",
+                    "type": [
+                        "null",
+                        "boolean"
+                    ],
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "--CREATE_INDEX"
+                    },
+                    "doc": "Whether to create a BAM index when writing a coordinate-sorted BAM file. Default value: false. Possible values: {true, false}"
+                },
+                {
+                    "id": "#gatk_revert_sam_4.1.8.0.cwl/create_md5_file",
+                    "type": [
+                        "null",
+                        "boolean"
+                    ],
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "--CREATE_MD5_FILE"
+                    },
+                    "doc": "Whether to create an MD5 digest for any BAM or FASTQ files created. Default value: false. Possible values: {true, false}"
+                },
+                {
+                    "id": "#gatk_revert_sam_4.1.8.0.cwl/memory_per_job",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "doc": "Memory per job in megabytes"
+                },
+                {
+                    "id": "#gatk_revert_sam_4.1.8.0.cwl/memory_overhead",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "doc": "Memory overhead per job in megabytes"
+                },
+                {
+                    "id": "#gatk_revert_sam_4.1.8.0.cwl/number_of_threads",
+                    "type": [
+                        "null",
+                        "int"
+                    ]
+                },
+                {
+                    "id": "#gatk_revert_sam_4.1.8.0.cwl/temporary_directory",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "doc": "Default value: null. This option may be specified 0 or more times."
+                }
+            ],
+            "outputs": [
+                {
+                    "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_output",
+                    "type": "File",
+                    "outputBinding": {
+                        "glob": "${\n  if(inputs.output){\n      return inputs.output\n  } else {\n      return inputs.input.basename.replace(/.bam|.sam/, '_revertsam.bam')\n  }\n}"
+                    }
+                },
+                {
+                    "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_output_map",
+                    "type": [
+                        "null",
+                        "File"
+                    ],
+                    "outputBinding": {
+                        "glob": "${\n  if(inputs.output_map){\n      return inputs.output_map\n  } else {\n      return inputs.input.basename.replace(/.bam|.sam/, '_revertsam.tsv')\n  }\n}"
+                    }
+                }
+            ],
+            "label": "GATK-CollectHsMetrics",
+            "arguments": [
+                {
+                    "position": 0,
+                    "prefix": "--java-options",
+                    "valueFrom": "${\n  if(inputs.memory_per_job && inputs.memory_overhead) {\n    if(inputs.memory_per_job % 1000 == 0) {\n      return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\"\n    }\n    else {\n      return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\"\n    }\n  }\n  else if (inputs.memory_per_job && !inputs.memory_overhead){\n    if(inputs.memory_per_job % 1000 == 0) {\n      return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\"\n    }\n    else {\n      return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\"\n    }\n  }\n  else if(!inputs.memory_per_job && inputs.memory_overhead){\n    return \"-Xmx15G\"\n  }\n  else {\n      return \"-Xmx15G\"\n  }\n}"
+                },
+                {
+                    "position": 0,
+                    "prefix": "--TMP_DIR",
+                    "valueFrom": "${\n    if(inputs.temporary_directory)\n        return inputs.temporary_directory;\n      return runtime.tmpdir\n}"
+                },
+                {
+                    "position": 0,
+                    "prefix": "-O",
+                    "valueFrom": "${\n    if(inputs.output){\n        return inputs.output;\n    } else if (inputs.output_map) {\n      return null;\n    } else {\n        return inputs.input.basename.replace(/.bam|.sam/, '_revertsam.bam');\n    }\n}"
+                },
+                {
+                    "position": 0,
+                    "prefix": "-OM",
+                    "valueFrom": "${\n    if(inputs.output_map){\n        return inputs.output_map;\n    } else {\n        return null;\n    }\n}"
+                }
+            ],
+            "requirements": [
+                {
+                    "class": "ResourceRequirement",
+                    "ramMin": 17000,
+                    "coresMin": 2
+                },
+                {
+                    "class": "DockerRequirement",
+                    "dockerPull": "ghcr.io/msk-access/gatk:4.1.8.0"
+                },
+                {
+                    "class": "InlineJavascriptRequirement"
+                }
+            ],
+            "http://purl.org/dc/terms/contributor": [
+                {
+                    "class": "http://xmlns.com/foaf/0.1/Organization",
+                    "http://xmlns.com/foaf/0.1/member": [
+                        {
+                            "class": "http://xmlns.com/foaf/0.1/Person",
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:murphyc4@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Charles Murphy"
+                        }
+                    ],
+                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
+                }
+            ],
+            "http://purl.org/dc/terms/creator": [
+                {
+                    "class": "http://xmlns.com/foaf/0.1/Organization",
+                    "http://xmlns.com/foaf/0.1/member": [
+                        {
+                            "class": "http://xmlns.com/foaf/0.1/Person",
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:murphyc4@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Charles Murphy"
+                        }
+                    ],
+                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
+                }
+            ],
+            "http://usefulinc.com/ns/doap#release": [
+                {
+                    "class": "http://usefulinc.com/ns/doap#Version",
+                    "http://usefulinc.com/ns/doap#name": "gatk4",
+                    "http://usefulinc.com/ns/doap#revision": "4.1.8.0"
+                }
+            ]
+        },
+        {
             "class": "Workflow",
             "id": "#main",
             "label": "qc_uncollapsed_bam",
@@ -1514,22 +1898,6 @@
                     ],
                     "https://www.sevenbridges.com/x": -573,
                     "https://www.sevenbridges.com/y": 247.2935333251953
-                },
-                {
-                    "id": "#uncollapsed_bam",
-                    "type": [
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
-                    "label": "uncollapsed_bam",
-                    "secondaryFiles": [
-                        "^.bai"
-                    ],
-                    "https://www.sevenbridges.com/x": -714.6541137695312,
-                    "https://www.sevenbridges.com/y": 563.10693359375
                 },
                 {
                     "id": "#uncollapsed_bam_base_recal",
@@ -1601,6 +1969,19 @@
                     ],
                     "https://www.sevenbridges.com/x": -600.9963989257812,
                     "https://www.sevenbridges.com/y": -654.81982421875
+                },
+                {
+                    "id": "#uncollapsed_bam",
+                    "type": [
+                        "File",
+                        {
+                            "type": "array",
+                            "items": "File"
+                        }
+                    ],
+                    "label": "uncollapsed_bam",
+                    "https://www.sevenbridges.com/x": -579.3350219726562,
+                    "https://www.sevenbridges.com/y": 702.20458984375
                 }
             ],
             "outputs": [
@@ -1866,7 +2247,7 @@
                         {
                             "id": "#bam_qc_stats_pool_a/input",
                             "source": [
-                                "#uncollapsed_bam"
+                                "#gatk_revert_sam_4_1_8_0/gatk_revert_sam_output"
                             ]
                         },
                         {
@@ -1916,8 +2297,8 @@
                     ],
                     "run": "#bam_qc_stats.cwl",
                     "label": "bam_qc_stats_pool_a",
-                    "https://www.sevenbridges.com/x": -114.38903045654297,
-                    "https://www.sevenbridges.com/y": -295.4621276855469
+                    "https://www.sevenbridges.com/x": 12.585670471191406,
+                    "https://www.sevenbridges.com/y": -296.3324890136719
                 },
                 {
                     "id": "#bam_qc_stats_pool_b",
@@ -1925,7 +2306,7 @@
                         {
                             "id": "#bam_qc_stats_pool_b/input",
                             "source": [
-                                "#uncollapsed_bam"
+                                "#gatk_revert_sam_4_1_8_1/gatk_revert_sam_output"
                             ]
                         },
                         {
@@ -1975,8 +2356,8 @@
                     ],
                     "run": "#bam_qc_stats.cwl",
                     "label": "bam_qc_stats_pool_b",
-                    "https://www.sevenbridges.com/x": -116.60113525390625,
-                    "https://www.sevenbridges.com/y": 139.5
+                    "https://www.sevenbridges.com/x": 18.580554962158203,
+                    "https://www.sevenbridges.com/y": 127.00767517089844
                 },
                 {
                     "id": "#gatk_mean_quality_by_cycle_4_1_8_0",
@@ -2027,6 +2408,96 @@
                     "label": "GATK-MeanQualityByCycle_base_recal",
                     "https://www.sevenbridges.com/x": -78.6744155883789,
                     "https://www.sevenbridges.com/y": 1229.6976318359375
+                },
+                {
+                    "id": "#gatk_revert_sam_4_1_8_0",
+                    "in": [
+                        {
+                            "id": "#gatk_revert_sam_4_1_8_0/input",
+                            "source": "#uncollapsed_bam"
+                        },
+                        {
+                            "id": "#gatk_revert_sam_4_1_8_0/remove_alignment_information",
+                            "default": "false"
+                        },
+                        {
+                            "id": "#gatk_revert_sam_4_1_8_0/remove_duplicate_information",
+                            "default": "true"
+                        },
+                        {
+                            "id": "#gatk_revert_sam_4_1_8_0/restore_hardclips",
+                            "default": "false"
+                        },
+                        {
+                            "id": "#gatk_revert_sam_4_1_8_0/restore_original_qualities",
+                            "default": "false"
+                        },
+                        {
+                            "id": "#gatk_revert_sam_4_1_8_0/sort_order",
+                            "default": "unsorted"
+                        },
+                        {
+                            "id": "#gatk_revert_sam_4_1_8_0/validation_stringency",
+                            "default": "SILENT"
+                        }
+                    ],
+                    "out": [
+                        {
+                            "id": "#gatk_revert_sam_4_1_8_0/gatk_revert_sam_output"
+                        },
+                        {
+                            "id": "#gatk_revert_sam_4_1_8_0/gatk_revert_sam_output_map"
+                        }
+                    ],
+                    "run": "#gatk_revert_sam_4.1.8.0.cwl",
+                    "label": "GATK-CollectHsMetrics",
+                    "https://www.sevenbridges.com/x": -248.34014892578125,
+                    "https://www.sevenbridges.com/y": -298.8951416015625
+                },
+                {
+                    "id": "#gatk_revert_sam_4_1_8_1",
+                    "in": [
+                        {
+                            "id": "#gatk_revert_sam_4_1_8_1/input",
+                            "source": "#uncollapsed_bam"
+                        },
+                        {
+                            "id": "#gatk_revert_sam_4_1_8_1/remove_alignment_information",
+                            "default": "false"
+                        },
+                        {
+                            "id": "#gatk_revert_sam_4_1_8_1/remove_duplicate_information",
+                            "default": "true"
+                        },
+                        {
+                            "id": "#gatk_revert_sam_4_1_8_1/restore_hardclips",
+                            "default": "false"
+                        },
+                        {
+                            "id": "#gatk_revert_sam_4_1_8_1/restore_original_qualities",
+                            "default": "false"
+                        },
+                        {
+                            "id": "#gatk_revert_sam_4_1_8_1/sort_order",
+                            "default": "unsorted"
+                        },
+                        {
+                            "id": "#gatk_revert_sam_4_1_8_1/validation_stringency",
+                            "default": "SILENT"
+                        }
+                    ],
+                    "out": [
+                        {
+                            "id": "#gatk_revert_sam_4_1_8_1/gatk_revert_sam_output"
+                        },
+                        {
+                            "id": "#gatk_revert_sam_4_1_8_1/gatk_revert_sam_output_map"
+                        }
+                    ],
+                    "run": "#gatk_revert_sam_4.1.8.0.cwl",
+                    "label": "GATK-CollectHsMetrics",
+                    "https://www.sevenbridges.com/x": -255.77493286132812,
+                    "https://www.sevenbridges.com/y": 115.07417297363281
                 }
             ],
             "requirements": [
