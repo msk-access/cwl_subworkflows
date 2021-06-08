@@ -1,0 +1,17 @@
+name: Validate CWL Files
+
+on:
+  push:
+    branches: all
+  pull_request:
+    branches: all
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Validate
+        run: |
+          pip install cwltool
+          find . -name '*.cwl' | xargs -n 1 cwltool --validate
