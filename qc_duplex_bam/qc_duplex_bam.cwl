@@ -273,10 +273,7 @@ outputs:
   - id: biometrics_extract_pickle
     outputSource:
       - biometrics_extract/biometrics_extract_pickle
-    type:
-      - File
-      - type: array
-        items: File
+    type: 'File[]'
     'sbg:x': 804.253662109375
     'sbg:y': 1651.220947265625
   - id: gatk_collect_alignment_summary_metrics_txt_pool_b

@@ -157,10 +157,7 @@ outputs:
   - id: biometrics_extract_pickle
     outputSource:
       - biometrics_extract/biometrics_extract_pickle
-    type:
-      - File
-      - type: array
-        items: File
+    type: 'File[]'
     'sbg:x': 1073.549560546875
     'sbg:y': -58.49618148803711
   - id: fgbio_collect_duplex_seq_metrics_duplex_family_size_pool_a
