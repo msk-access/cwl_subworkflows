@@ -437,7 +437,7 @@ steps:
     label: bam_qc_stats_pool_a
     'sbg:x': -201.51846313476562
     'sbg:y': -271.1477355957031
-  - id: calculate_noise_0_1_16
+  - id: calculate_noise_0_2_3
     in:
       - id: reference
         source: reference
@@ -462,7 +462,7 @@ steps:
       - id: sequence_qc_noise_n
       - id: sequence_qc_noise_del
       - id: sequence_qc_figures
-    run: ../command_line_tools/sequence_qc/0.1.19/sequence_qc_0.1.19.cwl
+    run: ../command_line_tools/sequence_qc/0.2.3/sequence_qc_0.2.3.cwl
     'sbg:x': -205.99472045898438
     'sbg:y': -716.7506103515625
   - id: bam_qc_stats_pool_b
@@ -525,7 +525,7 @@ steps:
         source: min_homozygous_thresh
     out:
       - id: biometrics_extract_pickle
-    run: ../command_line_tools/biometrics_extract/0.2.9/biometrics_extract.cwl
+    run: ../command_line_tools/biometrics_extract/0.2.11/biometrics_extract.cwl
     'sbg:x': -176.97422790527344
     'sbg:y': 734.6185302734375
   - id: biometrics_minor
@@ -549,7 +549,7 @@ steps:
       - id: biometrics_minor_json
       - id: biometrics_minor_plot
       - id: biometrics_minor_sites_plot
-    run: ../command_line_tools/biometrics_minor/0.2.9/biometrics_minor.cwl
+    run: ../command_line_tools/biometrics_minor/0.2.11/biometrics_minor.cwl
     'sbg:x': 464.28485107421875
     'sbg:y': 1208.646240234375
   - id: biometrics_major
@@ -572,7 +572,7 @@ steps:
       - id: biometrics_major_csv
       - id: biometrics_major_json
       - id: biometrics_major_plot
-    run: ../command_line_tools/biometrics_major/0.2.9/biometrics_major.cwl
+    run: ../command_line_tools/biometrics_major/0.2.11/biometrics_major.cwl
     'sbg:x': 413.70654296875
     'sbg:y': 681.5068969726562
 requirements:
