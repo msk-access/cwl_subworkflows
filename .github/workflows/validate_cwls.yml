@@ -28,4 +28,4 @@ jobs:
       - name: Validate
         run: |
           pip install cwltool
-          find . -name '*.cwl' | xargs -n 1 cwltool --validate
+          find . -name '*.cwl' | xargs -n 1 -P 8 cwltool --validate
