@@ -2569,13 +2569,10 @@
                     "outputSource": [
                         "#biometrics_extract/biometrics_extract_pickle"
                     ],
-                    "type": [
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
+                    "type": {
+                        "type": "array",
+                        "items": "File"
+                    },
                     "https://www.sevenbridges.com/x": 1073.549560546875,
                     "https://www.sevenbridges.com/y": -58.49618148803711
                 },
