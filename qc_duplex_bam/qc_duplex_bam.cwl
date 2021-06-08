@@ -227,7 +227,7 @@ outputs:
     'sbg:y': 582.1961669921875
   - id: sequence_qc_noise_positions
     outputSource:
-      - calculate_noise_0_1_16/sequence_qc_noise_positions
+      - calculate_noise/sequence_qc_noise_positions
     type:
       - File
       - type: array
@@ -236,7 +236,7 @@ outputs:
     'sbg:y': -1031.4013671875
   - id: sequence_qc_noise_n
     outputSource:
-      - calculate_noise_0_1_16/sequence_qc_noise_n
+      - calculate_noise/sequence_qc_noise_n
     type:
       - File
       - type: array
@@ -245,7 +245,7 @@ outputs:
     'sbg:y': -913.6166381835938
   - id: sequence_qc_noise_del
     outputSource:
-      - calculate_noise_0_1_16/sequence_qc_noise_del
+      - calculate_noise/sequence_qc_noise_del
     type:
       - File
       - type: array
@@ -254,7 +254,7 @@ outputs:
     'sbg:y': -794.6656494140625
   - id: sequence_qc_noise_acgt
     outputSource:
-      - calculate_noise_0_1_16/sequence_qc_noise_acgt
+      - calculate_noise/sequence_qc_noise_acgt
     type:
       - File
       - type: array
@@ -263,7 +263,7 @@ outputs:
     'sbg:y': -669.8837280273438
   - id: sequence_qc_figures
     outputSource:
-      - calculate_noise_0_1_16/sequence_qc_figures
+      - calculate_noise/sequence_qc_figures
     type:
       - File
       - type: array
@@ -401,7 +401,7 @@ outputs:
     'sbg:y': -446.9347839355469
   - id: sequence_qc_pileup
     outputSource:
-      - calculate_noise_0_1_16/sequence_qc_pileup
+      - calculate_noise/sequence_qc_pileup
     type:
       - File
       - type: array
@@ -437,7 +437,7 @@ steps:
     label: bam_qc_stats_pool_a
     'sbg:x': -201.51846313476562
     'sbg:y': -271.1477355957031
-  - id: calculate_noise_0_2_3
+  - id: calculate_noise
     in:
       - id: reference
         source: reference
