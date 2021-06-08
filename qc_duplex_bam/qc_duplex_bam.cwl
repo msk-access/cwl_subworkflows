@@ -408,6 +408,12 @@ outputs:
         items: File
     'sbg:x': 303.6086120605469
     'sbg:y': -1159.51220703125
+  - id: sequence_qc_noise_by_substitution
+    outputSource:
+      - calculate_noise/sequence_qc_noise_by_substitution
+    type: File
+    'sbg:x': 686.90771484375
+    'sbg:y': -695.8947143554688
 steps:
   - id: bam_qc_stats_pool_a
     in:
@@ -458,6 +464,7 @@ steps:
     out:
       - id: sequence_qc_pileup
       - id: sequence_qc_noise_positions
+      - id: sequence_qc_noise_by_substitution
       - id: sequence_qc_noise_acgt
       - id: sequence_qc_noise_n
       - id: sequence_qc_noise_del
