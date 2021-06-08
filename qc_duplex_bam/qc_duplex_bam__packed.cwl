@@ -2753,6 +2753,15 @@
                     ],
                     "https://www.sevenbridges.com/x": 303.6086120605469,
                     "https://www.sevenbridges.com/y": -1159.51220703125
+                },
+                {
+                    "id": "#sequence_qc_noise_by_substitution",
+                    "outputSource": [
+                        "#calculate_noise/sequence_qc_noise_by_substitution"
+                    ],
+                    "type": "File",
+                    "https://www.sevenbridges.com/x": 686.90771484375,
+                    "https://www.sevenbridges.com/y": -695.8947143554688
                 }
             ],
             "steps": [
@@ -2857,6 +2866,9 @@
                         },
                         {
                             "id": "#calculate_noise/sequence_qc_noise_positions"
+                        },
+                        {
+                            "id": "#calculate_noise/sequence_qc_noise_by_substitution"
                         },
                         {
                             "id": "#calculate_noise/sequence_qc_noise_acgt"
