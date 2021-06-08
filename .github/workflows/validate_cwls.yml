@@ -7,7 +7,7 @@ on:
     branches: develop
 
 jobs:
-  pack_cwls:
+  validate_cwls:
     runs-on: macos-latest
     strategy:
       fail-fast: false
