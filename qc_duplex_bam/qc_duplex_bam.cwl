@@ -50,20 +50,6 @@ inputs:
       [required]
     'sbg:x': -1380.5565185546875
     'sbg:y': -635.455810546875
-  - id: biometrics_vcf_file
-    type: File
-    doc: VCF file containing the SNPs to be queried.
-    'sbg:x': -1373.5452880859375
-    'sbg:y': 274.6005859375
-  - id: sample_sex
-    type:
-      - 'null'
-      - string
-      - type: array
-        items: string
-    doc: Expected sample sex (i.e. M or F).
-    'sbg:x': -1187.8372802734375
-    'sbg:y': 1063.1763916015625
   - id: sample_name
     type:
       - 'null'
@@ -75,45 +61,11 @@ inputs:
       from the BAM file.
     'sbg:x': -1184.7547607421875
     'sbg:y': 1249.0025634765625
-  - id: sample_group
-    type:
-      - 'null'
-      - string
-      - type: array
-        items: string
-    doc: The sample group (e.g. the sample patient ID).
-    'sbg:x': -1183.7547607421875
-    'sbg:y': 1409.03955078125
-  - id: min_mapping_quality
-    type: int?
-    doc: Minimum mapping quality of reads to be used for pileup.
-    'sbg:x': -402.0198059082031
-    'sbg:y': 972.8847045898438
-  - id: min_homozygous_thresh
-    type: float?
-    doc: Minimum threshold to define homozygous.
-    'sbg:x': -398.8325500488281
-    'sbg:y': 1101.96923828125
-  - id: min_coverage
-    type: int?
-    doc: Minimum coverage to count a site.
-    'sbg:x': -387.6770935058594
-    'sbg:y': 1226.272705078125
-  - id: min_base_quality
-    type: int?
-    doc: Minimum base quality of reads to be used for pileup.
-    'sbg:x': -382.89617919921875
-    'sbg:y': 1347.3890380859375
   - id: plot
     type: boolean?
     doc: Also output plots of the data.
     'sbg:x': -376.41387939453125
     'sbg:y': 1510.7532958984375
-  - id: major_threshold
-    type: float?
-    doc: Major contamination threshold for bad sample.
-    'sbg:x': -373.6401672363281
-    'sbg:y': 1656.323974609375
   - id: minor_threshold
     type: float?
     doc: Minor contamination threshold for bad sample.
@@ -156,6 +108,34 @@ inputs:
     type: string?
     'sbg:x': -375.210205078125
     'sbg:y': 2084.396728515625
+  - id: vcf_file
+    type: File
+    'sbg:x': -1391.8258056640625
+    'sbg:y': 991.7987670898438
+  - id: sample_sex
+    type:
+      - 'null'
+      - type: array
+        items: string
+        inputBinding:
+          position: 0
+          prefix: '--sample-sex'
+    'sbg:x': -1041.0224609375
+    'sbg:y': 1003.9751586914062
+  - id: sample_group
+    type:
+      - 'null'
+      - type: array
+        items: string
+        inputBinding:
+          position: 0
+          prefix: '--sample-group'
+    'sbg:x': -840.3492431640625
+    'sbg:y': 1296.849609375
+  - id: major_threshold
+    type: float?
+    'sbg:x': -107.41658782958984
+    'sbg:y': 713.9224853515625
 outputs:
   - id: biometrics_minor_csv
     outputSource:
@@ -196,35 +176,6 @@ outputs:
         items: File
     'sbg:x': 788.9630126953125
     'sbg:y': 1020.7374877929688
-  - id: biometrics_major_csv
-    outputSource:
-      - biometrics_major/biometrics_major_csv
-    type:
-      - File
-      - type: array
-        items: File
-    'sbg:x': 768.3390502929688
-    'sbg:y': 872.6092529296875
-  - id: biometrics_major_json
-    outputSource:
-      - biometrics_major/biometrics_major_json
-    type:
-      - 'null'
-      - File
-      - type: array
-        items: File
-    'sbg:x': 779.9630126953125
-    'sbg:y': 721.8201293945312
-  - id: biometrics_major_plot
-    outputSource:
-      - biometrics_major/biometrics_major_plot
-    type:
-      - 'null'
-      - File
-      - type: array
-        items: File
-    'sbg:x': 773.4216918945312
-    'sbg:y': 582.1961669921875
   - id: sequence_qc_noise_positions
     outputSource:
       - calculate_noise/sequence_qc_noise_positions
@@ -270,12 +221,6 @@ outputs:
         items: File
     'sbg:x': 311.25762939453125
     'sbg:y': -539.2709350585938
-  - id: biometrics_extract_pickle
-    outputSource:
-      - biometrics_extract/biometrics_extract_pickle
-    type: 'File[]'
-    'sbg:x': 804.253662109375
-    'sbg:y': 1651.220947265625
   - id: gatk_collect_alignment_summary_metrics_txt_pool_b
     outputSource:
       - bam_qc_stats_pool_b/gatk_collect_alignment_summary_metrics_txt
@@ -411,6 +356,30 @@ outputs:
     type: File
     'sbg:x': 686.90771484375
     'sbg:y': -695.8947143554688
+  - id: biometrics_extract_pickle
+    outputSource:
+      - biometrics_extract_0_2_11/biometrics_extract_pickle
+    type: File
+    'sbg:x': -268.1592712402344
+    'sbg:y': 1079.905517578125
+  - id: biometrics_major_plot
+    outputSource:
+      - biometrics_major_0_2_11/biometrics_major_plot
+    type: File?
+    'sbg:x': 489.82940673828125
+    'sbg:y': 697.122314453125
+  - id: biometrics_major_json
+    outputSource:
+      - biometrics_major_0_2_11/biometrics_major_json
+    type: File?
+    'sbg:x': 691.9446411132812
+    'sbg:y': 820.0875244140625
+  - id: biometrics_major_csv
+    outputSource:
+      - biometrics_major_0_2_11/biometrics_major_csv
+    type: File
+    'sbg:x': 441.7740478515625
+    'sbg:y': 886.5169677734375
 steps:
   - id: bam_qc_stats_pool_a
     in:
@@ -497,46 +466,11 @@ steps:
     label: bam_qc_stats_pool_b
     'sbg:x': -200.22406005859375
     'sbg:y': 144.43153381347656
-  - id: biometrics_extract
-    in:
-      - id: sample_bam
-        linkMerge: merge_nested
-        source:
-          - duplex_bam
-      - id: sample_sex
-        linkMerge: merge_nested
-        source:
-          - sample_sex
-      - id: sample_group
-        linkMerge: merge_nested
-        source:
-          - sample_group
-      - id: sample_name
-        linkMerge: merge_nested
-        source:
-          - sample_name
-      - id: fafile
-        source: reference
-      - id: vcf_file
-        source: biometrics_vcf_file
-      - id: min_mapping_quality
-        source: min_mapping_quality
-      - id: min_base_quality
-        source: min_base_quality
-      - id: min_coverage
-        source: min_coverage
-      - id: min_homozygous_thresh
-        source: min_homozygous_thresh
-    out:
-      - id: biometrics_extract_pickle
-    run: ../command_line_tools/biometrics_extract/0.2.11/biometrics_extract.cwl
-    'sbg:x': -176.97422790527344
-    'sbg:y': 734.6185302734375
   - id: biometrics_minor
     in:
       - id: input
         source:
-          - biometrics_extract/biometrics_extract_pickle
+          - biometrics_extract_0_2_11/biometrics_extract_pickle
       - id: minor_threshold
         source: minor_threshold
       - id: prefix
@@ -556,28 +490,49 @@ steps:
     run: ../command_line_tools/biometrics_minor/0.2.11/biometrics_minor.cwl
     'sbg:x': 464.28485107421875
     'sbg:y': 1208.646240234375
-  - id: biometrics_major
+  - id: biometrics_extract_0_2_11
+    in:
+      - id: sample_bam
+        source:
+          - duplex_bam
+      - id: sample_sex
+        source:
+          - sample_sex
+      - id: sample_group
+        source:
+          - sample_group
+      - id: sample_name
+        source:
+          - sample_name
+      - id: fafile
+        source: reference
+      - id: vcf_file
+        source: vcf_file
+    out:
+      - id: biometrics_extract_pickle
+    run: >-
+      ../../cwl-commandlinetools/biometrics_extract/0.2.11/biometrics_extract.cwl
+    'sbg:x': -375.4969177246094
+    'sbg:y': 820.4859008789062
+  - id: biometrics_major_0_2_11
     in:
       - id: input
         source:
-          - biometrics_extract/biometrics_extract_pickle
+          - biometrics_extract_0_2_11/biometrics_extract_pickle
       - id: major_threshold
         source: major_threshold
       - id: prefix
-        default: duplex
         source: prefix
       - id: plot
-        default: false
         source: plot
       - id: json
-        default: true
         source: json
     out:
       - id: biometrics_major_csv
       - id: biometrics_major_json
       - id: biometrics_major_plot
     run: ../command_line_tools/biometrics_major/0.2.11/biometrics_major.cwl
-    'sbg:x': 413.70654296875
-    'sbg:y': 681.5068969726562
+    'sbg:x': 245.3122100830078
+    'sbg:y': 773.4448852539062
 requirements:
   - class: SubworkflowFeatureRequirement
