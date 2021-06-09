@@ -318,16 +318,11 @@
             "inputs": [
                 {
                     "id": "#biometrics_extract.cwl/sample_bam",
-                    "type": [
-                        {
-                            "type": "array",
-                            "items": "File",
-                            "inputBinding": {
-                                "position": 0,
-                                "prefix": "--sample-bam"
-                            }
-                        }
-                    ],
+                    "type": "File",
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "--sample-bam"
+                    },
                     "secondaryFiles": [
                         "^.bai"
                     ],
@@ -337,44 +332,33 @@
                     "id": "#biometrics_extract.cwl/sample_sex",
                     "type": [
                         "null",
-                        {
-                            "type": "array",
-                            "items": "string",
-                            "inputBinding": {
-                                "position": 0,
-                                "prefix": "--sample-sex"
-                            }
-                        }
+                        "string"
                     ],
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "--sample-sex"
+                    },
                     "doc": "Expected sample sex (i.e. M or F)."
                 },
                 {
                     "id": "#biometrics_extract.cwl/sample_group",
                     "type": [
                         "null",
-                        {
-                            "type": "array",
-                            "items": "string",
-                            "inputBinding": {
-                                "position": 0,
-                                "prefix": "--sample-group"
-                            }
-                        }
+                        "string"
                     ],
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "--sample-group"
+                    },
                     "doc": "The sample group (e.g. the sample patient ID)."
                 },
                 {
                     "id": "#biometrics_extract.cwl/sample_name",
-                    "type": [
-                        {
-                            "type": "array",
-                            "items": "string",
-                            "inputBinding": {
-                                "position": 0,
-                                "prefix": "--sample-name"
-                            }
-                        }
-                    ],
+                    "type": "string",
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "--sample-name"
+                    },
                     "doc": "Sample name. If not specified, sample name is automatically figured out from the BAM file."
                 },
                 {
@@ -490,12 +474,9 @@
             "outputs": [
                 {
                     "id": "#biometrics_extract.cwl/biometrics_extract_pickle",
-                    "type": {
-                        "type": "array",
-                        "items": "File"
-                    },
+                    "type": "File",
                     "outputBinding": {
-                        "glob": "${\n    return inputs.sample_name.map(val => {\n      if (inputs.database) {\n        return inputs.database + '/' + val + '.pk';\n      } else {\n        return val + '.pk';\n      }\n    });\n}"
+                        "glob": "${\n  if (inputs.database) {\n    return inputs.database + '/' + inputs.sample_name + '.pickle';\n  } else {\n    return inputs.sample_name + '.pickle';\n  }\n}"
                     }
                 }
             ],
@@ -507,7 +488,7 @@
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.11"
+                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.12"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -543,7 +524,7 @@
                 {
                     "class": "http://usefulinc.com/ns/doap#Version",
                     "http://usefulinc.com/ns/doap#name": "biometrics",
-                    "http://usefulinc.com/ns/doap#revision": "0.2.11"
+                    "http://usefulinc.com/ns/doap#revision": "0.2.12"
                 }
             ]
         },
@@ -680,7 +661,7 @@
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.11"
+                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.12"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -716,7 +697,7 @@
                 {
                     "class": "http://usefulinc.com/ns/doap#Version",
                     "http://usefulinc.com/ns/doap#name": "biometrics",
-                    "http://usefulinc.com/ns/doap#revision": "0.2.11"
+                    "http://usefulinc.com/ns/doap#revision": "0.2.12"
                 }
             ]
         },
@@ -863,7 +844,7 @@
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.11"
+                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.12"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -899,7 +880,7 @@
                 {
                     "class": "http://usefulinc.com/ns/doap#Version",
                     "http://usefulinc.com/ns/doap#name": "biometrics",
-                    "http://usefulinc.com/ns/doap#revision": "0.2.11"
+                    "http://usefulinc.com/ns/doap#revision": "0.2.12"
                 }
             ]
         },
@@ -2089,8 +2070,8 @@
                     "secondaryFiles": [
                         "^.fasta.fai"
                     ],
-                    "https://www.sevenbridges.com/x": -1389.233154296875,
-                    "https://www.sevenbridges.com/y": -472.8433837890625
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 902.734375
                 },
                 {
                     "id": "#duplex_bam",
@@ -2105,65 +2086,44 @@
                     "secondaryFiles": [
                         "^.bai"
                     ],
-                    "https://www.sevenbridges.com/x": -1188.919921875,
-                    "https://www.sevenbridges.com/y": 746.09033203125
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 2290
                 },
                 {
                     "id": "#pool_a_target_intervals",
                     "type": "File",
                     "label": "pool_a_target_intervals",
-                    "https://www.sevenbridges.com/x": -1369.597900390625,
-                    "https://www.sevenbridges.com/y": -305.27490234375
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 1329.5546875
                 },
                 {
                     "id": "#pool_a_bait_intervals",
                     "type": "File",
                     "label": "pool_a_bait_intervals",
-                    "https://www.sevenbridges.com/x": -1376.3414306640625,
-                    "https://www.sevenbridges.com/y": -157
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 1436.265625
                 },
                 {
                     "id": "#pool_b_target_intervals",
                     "type": "File",
                     "label": "pool_b_target_intervals",
-                    "https://www.sevenbridges.com/x": -1369.759765625,
-                    "https://www.sevenbridges.com/y": -12.322619438171387
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 1116.1328125
                 },
                 {
                     "id": "#pool_b_bait_intervals",
                     "type": "File",
                     "label": "pool_b_bait_intervals",
-                    "https://www.sevenbridges.com/x": -1365.1011962890625,
-                    "https://www.sevenbridges.com/y": 130.08450317382812
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 1222.84375
                 },
                 {
                     "id": "#noise_sites_bed",
                     "type": "File",
                     "label": "noise_sites_bed",
                     "doc": "Path to BED file containing regions over which to calculate noise [required]",
-                    "https://www.sevenbridges.com/x": -1380.5565185546875,
-                    "https://www.sevenbridges.com/y": -635.455810546875
-                },
-                {
-                    "id": "#biometrics_vcf_file",
-                    "type": "File",
-                    "doc": "VCF file containing the SNPs to be queried.",
-                    "https://www.sevenbridges.com/x": -1373.5452880859375,
-                    "https://www.sevenbridges.com/y": 274.6005859375
-                },
-                {
-                    "id": "#sample_sex",
-                    "type": [
-                        "null",
-                        "string",
-                        {
-                            "type": "array",
-                            "items": "string"
-                        }
-                    ],
-                    "doc": "Expected sample sex (i.e. M or F).",
-                    "https://www.sevenbridges.com/x": -1187.8372802734375,
-                    "https://www.sevenbridges.com/y": 1063.1763916015625
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 1649.640625
                 },
                 {
                     "id": "#sample_name",
@@ -2176,62 +2136,8 @@
                         }
                     ],
                     "doc": "Sample name. If not specified, sample name is automatically figured out from the BAM file.",
-                    "https://www.sevenbridges.com/x": -1184.7547607421875,
-                    "https://www.sevenbridges.com/y": 1249.0025634765625
-                },
-                {
-                    "id": "#sample_group",
-                    "type": [
-                        "null",
-                        "string",
-                        {
-                            "type": "array",
-                            "items": "string"
-                        }
-                    ],
-                    "doc": "The sample group (e.g. the sample patient ID).",
-                    "https://www.sevenbridges.com/x": -1183.7547607421875,
-                    "https://www.sevenbridges.com/y": 1409.03955078125
-                },
-                {
-                    "id": "#min_mapping_quality",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
-                    "doc": "Minimum mapping quality of reads to be used for pileup.",
-                    "https://www.sevenbridges.com/x": -402.0198059082031,
-                    "https://www.sevenbridges.com/y": 972.8847045898438
-                },
-                {
-                    "id": "#min_homozygous_thresh",
-                    "type": [
-                        "null",
-                        "float"
-                    ],
-                    "doc": "Minimum threshold to define homozygous.",
-                    "https://www.sevenbridges.com/x": -398.8325500488281,
-                    "https://www.sevenbridges.com/y": 1101.96923828125
-                },
-                {
-                    "id": "#min_coverage",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
-                    "doc": "Minimum coverage to count a site.",
-                    "https://www.sevenbridges.com/x": -387.6770935058594,
-                    "https://www.sevenbridges.com/y": 1226.272705078125
-                },
-                {
-                    "id": "#min_base_quality",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
-                    "doc": "Minimum base quality of reads to be used for pileup.",
-                    "https://www.sevenbridges.com/x": -382.89617919921875,
-                    "https://www.sevenbridges.com/y": 1347.3890380859375
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 689.3125
                 },
                 {
                     "id": "#plot",
@@ -2240,28 +2146,8 @@
                         "boolean"
                     ],
                     "doc": "Also output plots of the data.",
-                    "https://www.sevenbridges.com/x": -376.41387939453125,
-                    "https://www.sevenbridges.com/y": 1510.7532958984375
-                },
-                {
-                    "id": "#major_threshold",
-                    "type": [
-                        "null",
-                        "float"
-                    ],
-                    "doc": "Major contamination threshold for bad sample.",
-                    "https://www.sevenbridges.com/x": -373.6401672363281,
-                    "https://www.sevenbridges.com/y": 1656.323974609375
-                },
-                {
-                    "id": "#minor_threshold",
-                    "type": [
-                        "null",
-                        "float"
-                    ],
-                    "doc": "Minor contamination threshold for bad sample.",
-                    "https://www.sevenbridges.com/x": -375.43487548828125,
-                    "https://www.sevenbridges.com/y": 1803.476806640625
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 1542.953125
                 },
                 {
                     "id": "#json",
@@ -2270,8 +2156,8 @@
                         "boolean"
                     ],
                     "doc": "Also output data in JSON format.",
-                    "https://www.sevenbridges.com/x": -375.43487548828125,
-                    "https://www.sevenbridges.com/y": 1945.246826171875
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 1863.0859375
                 },
                 {
                     "id": "#sequence_qc_min_basq",
@@ -2279,8 +2165,8 @@
                         "null",
                         "int"
                     ],
-                    "https://www.sevenbridges.com/x": -1374.6207275390625,
-                    "https://www.sevenbridges.com/y": -798.4012451171875
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 475.9375
                 },
                 {
                     "id": "#sequence_qc_min_mapq",
@@ -2288,8 +2174,8 @@
                         "null",
                         "int"
                     ],
-                    "https://www.sevenbridges.com/x": -1380.14501953125,
-                    "https://www.sevenbridges.com/y": -951.69873046875
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 369.25
                 },
                 {
                     "id": "#sequence_qc_threshold",
@@ -2297,8 +2183,8 @@
                         "null",
                         "float"
                     ],
-                    "https://www.sevenbridges.com/x": -1384.2880859375,
-                    "https://www.sevenbridges.com/y": -1102.2271728515625
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 262.5625
                 },
                 {
                     "id": "#sequence_qc_truncate",
@@ -2306,8 +2192,8 @@
                         "null",
                         "int"
                     ],
-                    "https://www.sevenbridges.com/x": -1382.9071044921875,
-                    "https://www.sevenbridges.com/y": -1252.7550048828125
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 155.875
                 },
                 {
                     "id": "#hsmetrics_minimum_mapping_quality",
@@ -2315,8 +2201,8 @@
                         "null",
                         "int"
                     ],
-                    "https://www.sevenbridges.com/x": -1369.7769775390625,
-                    "https://www.sevenbridges.com/y": 395.4126281738281
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 1969.8203125
                 },
                 {
                     "id": "#hsmetrics_minimum_base_quality",
@@ -2324,8 +2210,8 @@
                         "null",
                         "int"
                     ],
-                    "https://www.sevenbridges.com/x": -1380.285400390625,
-                    "https://www.sevenbridges.com/y": 511.57122802734375
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 2076.5546875
                 },
                 {
                     "id": "#hsmetrics_coverage_cap",
@@ -2333,8 +2219,8 @@
                         "null",
                         "int"
                     ],
-                    "https://www.sevenbridges.com/x": -1378.1395263671875,
-                    "https://www.sevenbridges.com/y": 628.438232421875
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 2183.2890625
                 },
                 {
                     "id": "#prefix",
@@ -2342,121 +2228,44 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": -375.210205078125,
-                    "https://www.sevenbridges.com/y": 2084.396728515625
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 1009.421875
+                },
+                {
+                    "id": "#major_threshold",
+                    "type": [
+                        "null",
+                        "float"
+                    ],
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 1756.3515625
+                },
+                {
+                    "id": "#vcf_file",
+                    "type": "File",
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 49.1875
+                },
+                {
+                    "id": "#sample_sex",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 582.625
+                },
+                {
+                    "id": "#sample_group",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 796.0234375
                 }
             ],
             "outputs": [
-                {
-                    "id": "#biometrics_minor_csv",
-                    "outputSource": [
-                        "#biometrics_minor/biometrics_minor_csv"
-                    ],
-                    "type": [
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
-                    "https://www.sevenbridges.com/x": 800.5043334960938,
-                    "https://www.sevenbridges.com/y": 1475.69189453125
-                },
-                {
-                    "id": "#biometrics_minor_plot",
-                    "outputSource": [
-                        "#biometrics_minor/biometrics_minor_plot"
-                    ],
-                    "type": [
-                        "null",
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
-                    "https://www.sevenbridges.com/x": 793.9630126953125,
-                    "https://www.sevenbridges.com/y": 1179.9027099609375
-                },
-                {
-                    "id": "#biometrics_minor_json",
-                    "outputSource": [
-                        "#biometrics_minor/biometrics_minor_json"
-                    ],
-                    "type": [
-                        "null",
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
-                    "https://www.sevenbridges.com/x": 798.0455932617188,
-                    "https://www.sevenbridges.com/y": 1334.6092529296875
-                },
-                {
-                    "id": "#biometrics_minor_sites_plot",
-                    "outputSource": [
-                        "#biometrics_minor/biometrics_minor_sites_plot"
-                    ],
-                    "type": [
-                        "null",
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
-                    "https://www.sevenbridges.com/x": 788.9630126953125,
-                    "https://www.sevenbridges.com/y": 1020.7374877929688
-                },
-                {
-                    "id": "#biometrics_major_csv",
-                    "outputSource": [
-                        "#biometrics_major/biometrics_major_csv"
-                    ],
-                    "type": [
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
-                    "https://www.sevenbridges.com/x": 768.3390502929688,
-                    "https://www.sevenbridges.com/y": 872.6092529296875
-                },
-                {
-                    "id": "#biometrics_major_json",
-                    "outputSource": [
-                        "#biometrics_major/biometrics_major_json"
-                    ],
-                    "type": [
-                        "null",
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
-                    "https://www.sevenbridges.com/x": 779.9630126953125,
-                    "https://www.sevenbridges.com/y": 721.8201293945312
-                },
-                {
-                    "id": "#biometrics_major_plot",
-                    "outputSource": [
-                        "#biometrics_major/biometrics_major_plot"
-                    ],
-                    "type": [
-                        "null",
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
-                    "https://www.sevenbridges.com/x": 773.4216918945312,
-                    "https://www.sevenbridges.com/y": 582.1961669921875
-                },
                 {
                     "id": "#sequence_qc_noise_positions",
                     "outputSource": [
@@ -2469,8 +2278,8 @@
                             "items": "File"
                         }
                     ],
-                    "https://www.sevenbridges.com/x": 307.75909423828125,
-                    "https://www.sevenbridges.com/y": -1031.4013671875
+                    "https://www.sevenbridges.com/x": 982.1279296875,
+                    "https://www.sevenbridges.com/y": 106.6875
                 },
                 {
                     "id": "#sequence_qc_noise_n",
@@ -2484,8 +2293,8 @@
                             "items": "File"
                         }
                     ],
-                    "https://www.sevenbridges.com/x": 312.423828125,
-                    "https://www.sevenbridges.com/y": -913.6166381835938
+                    "https://www.sevenbridges.com/x": 982.1279296875,
+                    "https://www.sevenbridges.com/y": 213.375
                 },
                 {
                     "id": "#sequence_qc_noise_del",
@@ -2499,8 +2308,8 @@
                             "items": "File"
                         }
                     ],
-                    "https://www.sevenbridges.com/x": 313.5899963378906,
-                    "https://www.sevenbridges.com/y": -794.6656494140625
+                    "https://www.sevenbridges.com/x": 982.1279296875,
+                    "https://www.sevenbridges.com/y": 320.0625
                 },
                 {
                     "id": "#sequence_qc_noise_acgt",
@@ -2514,8 +2323,8 @@
                             "items": "File"
                         }
                     ],
-                    "https://www.sevenbridges.com/x": 312.423828125,
-                    "https://www.sevenbridges.com/y": -669.8837280273438
+                    "https://www.sevenbridges.com/x": 982.1279296875,
+                    "https://www.sevenbridges.com/y": 533.5078125
                 },
                 {
                     "id": "#sequence_qc_figures",
@@ -2529,20 +2338,8 @@
                             "items": "File"
                         }
                     ],
-                    "https://www.sevenbridges.com/x": 311.25762939453125,
-                    "https://www.sevenbridges.com/y": -539.2709350585938
-                },
-                {
-                    "id": "#biometrics_extract_pickle",
-                    "outputSource": [
-                        "#biometrics_extract/biometrics_extract_pickle"
-                    ],
-                    "type": {
-                        "type": "array",
-                        "items": "File"
-                    },
-                    "https://www.sevenbridges.com/x": 804.253662109375,
-                    "https://www.sevenbridges.com/y": 1651.220947265625
+                    "https://www.sevenbridges.com/x": 982.1279296875,
+                    "https://www.sevenbridges.com/y": 640.2421875
                 },
                 {
                     "id": "#gatk_collect_alignment_summary_metrics_txt_pool_b",
@@ -2557,8 +2354,8 @@
                         }
                     ],
                     "label": "gatk_collect_alignment_summary_metrics_txt_pool_b",
-                    "https://www.sevenbridges.com/x": 335.32611083984375,
-                    "https://www.sevenbridges.com/y": 490.64373779296875
+                    "https://www.sevenbridges.com/x": 982.1279296875,
+                    "https://www.sevenbridges.com/y": 1814.3203125
                 },
                 {
                     "id": "#gatk_collect_hs_metrics_per_base_coverage_txt_pool_b",
@@ -2573,8 +2370,8 @@
                         }
                     ],
                     "label": "gatk_collect_hs_metrics_per_base_coverage_txt_pool_b",
-                    "https://www.sevenbridges.com/x": 333.6207580566406,
-                    "https://www.sevenbridges.com/y": 371.2675476074219
+                    "https://www.sevenbridges.com/x": 982.1279296875,
+                    "https://www.sevenbridges.com/y": 1600.8515625
                 },
                 {
                     "id": "#gatk_collect_hs_metrics_per_target_coverage_txt_pool_b",
@@ -2589,8 +2386,8 @@
                         }
                     ],
                     "label": "gatk_collect_hs_metrics_per_target_coverage_txt_pool_b",
-                    "https://www.sevenbridges.com/x": 330.7894287109375,
-                    "https://www.sevenbridges.com/y": 255.84107971191406
+                    "https://www.sevenbridges.com/x": 982.1279296875,
+                    "https://www.sevenbridges.com/y": 1387.3828125
                 },
                 {
                     "id": "#gatk_collect_hs_metrics_txt_pool_b",
@@ -2605,8 +2402,8 @@
                         }
                     ],
                     "label": "gatk_collect_hs_metrics_txt_pool_b",
-                    "https://www.sevenbridges.com/x": 334.6937255859375,
-                    "https://www.sevenbridges.com/y": 138.71177673339844
+                    "https://www.sevenbridges.com/x": 982.1279296875,
+                    "https://www.sevenbridges.com/y": 1173.9140625
                 },
                 {
                     "id": "#gatk_collect_insert_size_metrics_histogram_pdf_pool_b",
@@ -2621,8 +2418,8 @@
                         }
                     ],
                     "label": "gatk_collect_insert_size_metrics_histogram_pdf_pool_b",
-                    "https://www.sevenbridges.com/x": 337.2966003417969,
-                    "https://www.sevenbridges.com/y": 20.281023025512695
+                    "https://www.sevenbridges.com/x": 982.1279296875,
+                    "https://www.sevenbridges.com/y": 960.4453125
                 },
                 {
                     "id": "#gatk_collect_insert_size_metrics_txt_pool_b",
@@ -2637,8 +2434,8 @@
                         }
                     ],
                     "label": "gatk_collect_insert_size_metrics_txt_pool_b",
-                    "https://www.sevenbridges.com/x": 329.48797607421875,
-                    "https://www.sevenbridges.com/y": -99.45116424560547
+                    "https://www.sevenbridges.com/x": 982.1279296875,
+                    "https://www.sevenbridges.com/y": 746.9765625
                 },
                 {
                     "id": "#gatk_collect_alignment_summary_metrics_txt_pool_a",
@@ -2653,8 +2450,8 @@
                         }
                     ],
                     "label": "gatk_collect_alignment_summary_metrics_txt_pool_a",
-                    "https://www.sevenbridges.com/x": 732.9334106445312,
-                    "https://www.sevenbridges.com/y": 143.91751098632812
+                    "https://www.sevenbridges.com/x": 982.1279296875,
+                    "https://www.sevenbridges.com/y": 1921.0546875
                 },
                 {
                     "id": "#gatk_collect_hs_metrics_per_base_coverage_txt_pool_a",
@@ -2669,8 +2466,8 @@
                         }
                     ],
                     "label": "gatk_collect_hs_metrics_per_base_coverage_txt_pool_a",
-                    "https://www.sevenbridges.com/x": 725.124755859375,
-                    "https://www.sevenbridges.com/y": 25.486770629882812
+                    "https://www.sevenbridges.com/x": 982.1279296875,
+                    "https://www.sevenbridges.com/y": 1707.5859375
                 },
                 {
                     "id": "#gatk_collect_hs_metrics_per_target_coverage_txt_pool_a",
@@ -2685,8 +2482,8 @@
                         }
                     ],
                     "label": "gatk_collect_hs_metrics_per_target_coverage_txt_pool_a",
-                    "https://www.sevenbridges.com/x": 710.8089599609375,
-                    "https://www.sevenbridges.com/y": -92.94397735595703
+                    "https://www.sevenbridges.com/x": 982.1279296875,
+                    "https://www.sevenbridges.com/y": 1494.1171875
                 },
                 {
                     "id": "#gatk_collect_hs_metrics_txt_pool_a",
@@ -2701,8 +2498,8 @@
                         }
                     ],
                     "label": "gatk_collect_hs_metrics_txt_pool_a",
-                    "https://www.sevenbridges.com/x": 723.8233032226562,
-                    "https://www.sevenbridges.com/y": -208.7718505859375
+                    "https://www.sevenbridges.com/x": 982.1279296875,
+                    "https://www.sevenbridges.com/y": 1280.6484375
                 },
                 {
                     "id": "#gatk_collect_insert_size_metrics_histogram_pdf_pool_a",
@@ -2717,8 +2514,8 @@
                         }
                     ],
                     "label": "gatk_collect_insert_size_metrics_histogram_pdf_pool_a",
-                    "https://www.sevenbridges.com/x": 712.1104125976562,
-                    "https://www.sevenbridges.com/y": -325.9011535644531
+                    "https://www.sevenbridges.com/x": 982.1279296875,
+                    "https://www.sevenbridges.com/y": 1067.1796875
                 },
                 {
                     "id": "#gatk_collect_insert_size_metrics_txt_pool_a",
@@ -2733,8 +2530,8 @@
                         }
                     ],
                     "label": "gatk_collect_insert_size_metrics_txt_pool_a",
-                    "https://www.sevenbridges.com/x": 712.1104125976562,
-                    "https://www.sevenbridges.com/y": -446.9347839355469
+                    "https://www.sevenbridges.com/x": 982.1279296875,
+                    "https://www.sevenbridges.com/y": 853.7109375
                 },
                 {
                     "id": "#sequence_qc_pileup",
@@ -2748,8 +2545,8 @@
                             "items": "File"
                         }
                     ],
-                    "https://www.sevenbridges.com/x": 303.6086120605469,
-                    "https://www.sevenbridges.com/y": -1159.51220703125
+                    "https://www.sevenbridges.com/x": 982.1279296875,
+                    "https://www.sevenbridges.com/y": 0
                 },
                 {
                     "id": "#sequence_qc_noise_by_substitution",
@@ -2757,8 +2554,95 @@
                         "#calculate_noise/sequence_qc_noise_by_substitution"
                     ],
                     "type": "File",
-                    "https://www.sevenbridges.com/x": 686.90771484375,
-                    "https://www.sevenbridges.com/y": -695.8947143554688
+                    "https://www.sevenbridges.com/x": 982.1279296875,
+                    "https://www.sevenbridges.com/y": 426.7734375
+                },
+                {
+                    "id": "#biometrics_major_plot",
+                    "outputSource": [
+                        "#biometrics_major_0_2_12/biometrics_major_plot"
+                    ],
+                    "type": [
+                        "null",
+                        "File"
+                    ],
+                    "https://www.sevenbridges.com/x": 1495.4873046875,
+                    "https://www.sevenbridges.com/y": 1276.2578125
+                },
+                {
+                    "id": "#biometrics_major_json",
+                    "outputSource": [
+                        "#biometrics_major_0_2_12/biometrics_major_json"
+                    ],
+                    "type": [
+                        "null",
+                        "File"
+                    ],
+                    "https://www.sevenbridges.com/x": 1495.4873046875,
+                    "https://www.sevenbridges.com/y": 1382.9921875
+                },
+                {
+                    "id": "#biometrics_major_csv",
+                    "outputSource": [
+                        "#biometrics_major_0_2_12/biometrics_major_csv"
+                    ],
+                    "type": "File",
+                    "https://www.sevenbridges.com/x": 1495.4873046875,
+                    "https://www.sevenbridges.com/y": 1489.7265625
+                },
+                {
+                    "id": "#biometrics_extract_pickle",
+                    "outputSource": [
+                        "#biometrics_extract_0_2_12/biometrics_extract_pickle"
+                    ],
+                    "type": "File",
+                    "https://www.sevenbridges.com/x": 982.1279296875,
+                    "https://www.sevenbridges.com/y": 2339.1875
+                },
+                {
+                    "id": "#biometrics_minor_sites_plot",
+                    "outputSource": [
+                        "#biometrics_minor_0_2_12/biometrics_minor_sites_plot"
+                    ],
+                    "type": [
+                        "null",
+                        "File"
+                    ],
+                    "https://www.sevenbridges.com/x": 1495.4873046875,
+                    "https://www.sevenbridges.com/y": 849.4375
+                },
+                {
+                    "id": "#biometrics_minor_plot",
+                    "outputSource": [
+                        "#biometrics_minor_0_2_12/biometrics_minor_plot"
+                    ],
+                    "type": [
+                        "null",
+                        "File"
+                    ],
+                    "https://www.sevenbridges.com/x": 1495.4873046875,
+                    "https://www.sevenbridges.com/y": 956.125
+                },
+                {
+                    "id": "#biometrics_minor_json",
+                    "outputSource": [
+                        "#biometrics_minor_0_2_12/biometrics_minor_json"
+                    ],
+                    "type": [
+                        "null",
+                        "File"
+                    ],
+                    "https://www.sevenbridges.com/x": 1495.4873046875,
+                    "https://www.sevenbridges.com/y": 1062.8359375
+                },
+                {
+                    "id": "#biometrics_minor_csv",
+                    "outputSource": [
+                        "#biometrics_minor_0_2_12/biometrics_minor_csv"
+                    ],
+                    "type": "File",
+                    "https://www.sevenbridges.com/x": 1495.4873046875,
+                    "https://www.sevenbridges.com/y": 1169.546875
                 }
             ],
             "steps": [
@@ -2818,8 +2702,8 @@
                     ],
                     "run": "#bam_qc_stats.cwl",
                     "label": "bam_qc_stats_pool_a",
-                    "https://www.sevenbridges.com/x": -201.51846313476562,
-                    "https://www.sevenbridges.com/y": -271.1477355957031
+                    "https://www.sevenbridges.com/x": 351.421875,
+                    "https://www.sevenbridges.com/y": 1406.625
                 },
                 {
                     "id": "#calculate_noise",
@@ -2881,8 +2765,8 @@
                         }
                     ],
                     "run": "#sequence_qc_0.2.3.cwl",
-                    "https://www.sevenbridges.com/x": -205.99472045898438,
-                    "https://www.sevenbridges.com/y": -716.7506103515625
+                    "https://www.sevenbridges.com/x": 351.421875,
+                    "https://www.sevenbridges.com/y": 841.5625
                 },
                 {
                     "id": "#bam_qc_stats_pool_b",
@@ -2940,164 +2824,132 @@
                     ],
                     "run": "#bam_qc_stats.cwl",
                     "label": "bam_qc_stats_pool_b",
-                    "https://www.sevenbridges.com/x": -200.22406005859375,
-                    "https://www.sevenbridges.com/y": 144.43153381347656
+                    "https://www.sevenbridges.com/x": 351.421875,
+                    "https://www.sevenbridges.com/y": 1215.9375
                 },
                 {
-                    "id": "#biometrics_extract",
+                    "id": "#biometrics_major_0_2_12",
                     "in": [
                         {
-                            "id": "#biometrics_extract/sample_bam",
+                            "id": "#biometrics_major_0_2_12/input",
                             "linkMerge": "merge_nested",
                             "source": [
-                                "#duplex_bam"
+                                "#biometrics_extract_0_2_12/biometrics_extract_pickle"
                             ]
                         },
                         {
-                            "id": "#biometrics_extract/sample_sex",
-                            "linkMerge": "merge_nested",
-                            "source": [
-                                "#sample_sex"
-                            ]
-                        },
-                        {
-                            "id": "#biometrics_extract/sample_group",
-                            "linkMerge": "merge_nested",
-                            "source": [
-                                "#sample_group"
-                            ]
-                        },
-                        {
-                            "id": "#biometrics_extract/sample_name",
-                            "linkMerge": "merge_nested",
-                            "source": [
-                                "#sample_name"
-                            ]
-                        },
-                        {
-                            "id": "#biometrics_extract/fafile",
-                            "source": "#reference"
-                        },
-                        {
-                            "id": "#biometrics_extract/vcf_file",
-                            "source": "#biometrics_vcf_file"
-                        },
-                        {
-                            "id": "#biometrics_extract/min_mapping_quality",
-                            "source": "#min_mapping_quality"
-                        },
-                        {
-                            "id": "#biometrics_extract/min_base_quality",
-                            "source": "#min_base_quality"
-                        },
-                        {
-                            "id": "#biometrics_extract/min_coverage",
-                            "source": "#min_coverage"
-                        },
-                        {
-                            "id": "#biometrics_extract/min_homozygous_thresh",
-                            "source": "#min_homozygous_thresh"
-                        }
-                    ],
-                    "out": [
-                        {
-                            "id": "#biometrics_extract/biometrics_extract_pickle"
-                        }
-                    ],
-                    "run": "#biometrics_extract.cwl",
-                    "https://www.sevenbridges.com/x": -176.97422790527344,
-                    "https://www.sevenbridges.com/y": 734.6185302734375
-                },
-                {
-                    "id": "#biometrics_minor",
-                    "in": [
-                        {
-                            "id": "#biometrics_minor/input",
-                            "source": [
-                                "#biometrics_extract/biometrics_extract_pickle"
-                            ]
-                        },
-                        {
-                            "id": "#biometrics_minor/minor_threshold",
-                            "source": "#minor_threshold"
-                        },
-                        {
-                            "id": "#biometrics_minor/prefix",
-                            "default": "duplex",
-                            "source": "#prefix"
-                        },
-                        {
-                            "id": "#biometrics_minor/plot",
-                            "default": false,
-                            "source": "#plot"
-                        },
-                        {
-                            "id": "#biometrics_minor/json",
-                            "default": true,
-                            "source": "#json"
-                        }
-                    ],
-                    "out": [
-                        {
-                            "id": "#biometrics_minor/biometrics_minor_csv"
-                        },
-                        {
-                            "id": "#biometrics_minor/biometrics_minor_json"
-                        },
-                        {
-                            "id": "#biometrics_minor/biometrics_minor_plot"
-                        },
-                        {
-                            "id": "#biometrics_minor/biometrics_minor_sites_plot"
-                        }
-                    ],
-                    "run": "#biometrics_minor.cwl",
-                    "https://www.sevenbridges.com/x": 464.28485107421875,
-                    "https://www.sevenbridges.com/y": 1208.646240234375
-                },
-                {
-                    "id": "#biometrics_major",
-                    "in": [
-                        {
-                            "id": "#biometrics_major/input",
-                            "source": [
-                                "#biometrics_extract/biometrics_extract_pickle"
-                            ]
-                        },
-                        {
-                            "id": "#biometrics_major/major_threshold",
+                            "id": "#biometrics_major_0_2_12/major_threshold",
                             "source": "#major_threshold"
                         },
                         {
-                            "id": "#biometrics_major/prefix",
-                            "default": "duplex",
+                            "id": "#biometrics_major_0_2_12/prefix",
                             "source": "#prefix"
                         },
                         {
-                            "id": "#biometrics_major/plot",
-                            "default": false,
+                            "id": "#biometrics_major_0_2_12/plot",
                             "source": "#plot"
                         },
                         {
-                            "id": "#biometrics_major/json",
-                            "default": true,
+                            "id": "#biometrics_major_0_2_12/json",
                             "source": "#json"
                         }
                     ],
                     "out": [
                         {
-                            "id": "#biometrics_major/biometrics_major_csv"
+                            "id": "#biometrics_major_0_2_12/biometrics_major_csv"
                         },
                         {
-                            "id": "#biometrics_major/biometrics_major_json"
+                            "id": "#biometrics_major_0_2_12/biometrics_major_json"
                         },
                         {
-                            "id": "#biometrics_major/biometrics_major_plot"
+                            "id": "#biometrics_major_0_2_12/biometrics_major_plot"
                         }
                     ],
                     "run": "#biometrics_major.cwl",
-                    "https://www.sevenbridges.com/x": 413.70654296875,
-                    "https://www.sevenbridges.com/y": 681.5068969726562
+                    "https://www.sevenbridges.com/x": 982.1279296875,
+                    "https://www.sevenbridges.com/y": 2204.4765625
+                },
+                {
+                    "id": "#biometrics_extract_0_2_12",
+                    "in": [
+                        {
+                            "id": "#biometrics_extract_0_2_12/sample_bam",
+                            "source": "#duplex_bam"
+                        },
+                        {
+                            "id": "#biometrics_extract_0_2_12/sample_sex",
+                            "source": "#sample_sex"
+                        },
+                        {
+                            "id": "#biometrics_extract_0_2_12/sample_group",
+                            "source": "#sample_group"
+                        },
+                        {
+                            "id": "#biometrics_extract_0_2_12/sample_name",
+                            "source": "#sample_name"
+                        },
+                        {
+                            "id": "#biometrics_extract_0_2_12/fafile",
+                            "source": "#reference"
+                        },
+                        {
+                            "id": "#biometrics_extract_0_2_12/vcf_file",
+                            "source": "#vcf_file"
+                        },
+                        {
+                            "id": "#biometrics_extract_0_2_12/min_coverage",
+                            "default": 200
+                        }
+                    ],
+                    "out": [
+                        {
+                            "id": "#biometrics_extract_0_2_12/biometrics_extract_pickle"
+                        }
+                    ],
+                    "run": "#biometrics_extract.cwl",
+                    "https://www.sevenbridges.com/x": 351.421875,
+                    "https://www.sevenbridges.com/y": 1032.25
+                },
+                {
+                    "id": "#biometrics_minor_0_2_12",
+                    "in": [
+                        {
+                            "id": "#biometrics_minor_0_2_12/input",
+                            "linkMerge": "merge_nested",
+                            "source": [
+                                "#biometrics_extract_0_2_12/biometrics_extract_pickle"
+                            ]
+                        },
+                        {
+                            "id": "#biometrics_minor_0_2_12/prefix",
+                            "source": "#prefix"
+                        },
+                        {
+                            "id": "#biometrics_minor_0_2_12/plot",
+                            "source": "#plot"
+                        },
+                        {
+                            "id": "#biometrics_minor_0_2_12/json",
+                            "source": "#json"
+                        }
+                    ],
+                    "out": [
+                        {
+                            "id": "#biometrics_minor_0_2_12/biometrics_minor_csv"
+                        },
+                        {
+                            "id": "#biometrics_minor_0_2_12/biometrics_minor_json"
+                        },
+                        {
+                            "id": "#biometrics_minor_0_2_12/biometrics_minor_plot"
+                        },
+                        {
+                            "id": "#biometrics_minor_0_2_12/biometrics_minor_sites_plot"
+                        }
+                    ],
+                    "run": "#biometrics_minor.cwl",
+                    "https://www.sevenbridges.com/x": 982.1279296875,
+                    "https://www.sevenbridges.com/y": 2048.765625
                 }
             ],
             "requirements": [
