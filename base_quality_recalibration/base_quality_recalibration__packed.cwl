@@ -30,10 +30,7 @@
                         "null",
                         {
                             "type": "array",
-                            "items": "string",
-                            "inputBinding": {
-                                "prefix": "--read-filter"
-                            }
+                            "items": "string"
                         }
                     ],
                     "https://www.sevenbridges.com/x": 0,
@@ -43,10 +40,7 @@
                     "id": "#known_sites",
                     "type": {
                         "type": "array",
-                        "items": "File",
-                        "inputBinding": {
-                            "prefix": "--known-sites"
-                        }
+                        "items": "File"
                     },
                     "secondaryFiles": [
                         ".idx"
@@ -78,10 +72,7 @@
                         "null",
                         {
                             "type": "array",
-                            "items": "string",
-                            "inputBinding": {
-                                "prefix": "--disable-read-filter"
-                            }
+                            "items": "string"
                         }
                     ],
                     "https://www.sevenbridges.com/x": 0,

@@ -334,21 +334,6 @@
                     "doc": "BAM file."
                 },
                 {
-                    "id": "#biometrics_extract.cwl/sample_type",
-                    "type": [
-                        "null",
-                        {
-                            "type": "array",
-                            "items": "string",
-                            "inputBinding": {
-                                "position": 0,
-                                "prefix": "--sample-type"
-                            }
-                        }
-                    ],
-                    "doc": "Sample types: Normal or Tumor."
-                },
-                {
                     "id": "#biometrics_extract.cwl/sample_sex",
                     "type": [
                         "null",
@@ -522,7 +507,7 @@
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.9"
+                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.11"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -558,7 +543,7 @@
                 {
                     "class": "http://usefulinc.com/ns/doap#Version",
                     "http://usefulinc.com/ns/doap#name": "biometrics",
-                    "http://usefulinc.com/ns/doap#revision": "0.2.9"
+                    "http://usefulinc.com/ns/doap#revision": "0.2.11"
                 }
             ]
         },
@@ -695,7 +680,7 @@
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.9"
+                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.11"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -731,7 +716,7 @@
                 {
                     "class": "http://usefulinc.com/ns/doap#Version",
                     "http://usefulinc.com/ns/doap#name": "biometrics",
-                    "http://usefulinc.com/ns/doap#revision": "0.2.9"
+                    "http://usefulinc.com/ns/doap#revision": "0.2.11"
                 }
             ]
         },
@@ -878,7 +863,7 @@
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.9"
+                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.11"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -914,7 +899,7 @@
                 {
                     "class": "http://usefulinc.com/ns/doap#Version",
                     "http://usefulinc.com/ns/doap#name": "biometrics",
-                    "http://usefulinc.com/ns/doap#revision": "0.2.9"
+                    "http://usefulinc.com/ns/doap#revision": "0.2.11"
                 }
             ]
         },
@@ -1029,7 +1014,7 @@
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.9"
+                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.11"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -1065,7 +1050,7 @@
                 {
                     "class": "http://usefulinc.com/ns/doap#Version",
                     "http://usefulinc.com/ns/doap#name": "biometrics",
-                    "http://usefulinc.com/ns/doap#revision": "0.2.9"
+                    "http://usefulinc.com/ns/doap#revision": "0.2.11"
                 }
             ]
         },
@@ -2364,20 +2349,6 @@
                     "https://www.sevenbridges.com/y": 462.836181640625
                 },
                 {
-                    "id": "#sample_type",
-                    "type": [
-                        "null",
-                        "string",
-                        {
-                            "type": "array",
-                            "items": "string"
-                        }
-                    ],
-                    "doc": "Sample types: Normal or Tumor.",
-                    "https://www.sevenbridges.com/x": -900.1541137695312,
-                    "https://www.sevenbridges.com/y": 613.905517578125
-                },
-                {
                     "id": "#sample_sex",
                     "type": [
                         "null",
@@ -2598,13 +2569,10 @@
                     "outputSource": [
                         "#biometrics_extract/biometrics_extract_pickle"
                     ],
-                    "type": [
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
+                    "type": {
+                        "type": "array",
+                        "items": "File"
+                    },
                     "https://www.sevenbridges.com/x": 1073.549560546875,
                     "https://www.sevenbridges.com/y": -58.49618148803711
                 },
@@ -3265,13 +3233,6 @@
                             "linkMerge": "merge_nested",
                             "source": [
                                 "#collapsed_bam"
-                            ]
-                        },
-                        {
-                            "id": "#biometrics_extract/sample_type",
-                            "linkMerge": "merge_nested",
-                            "source": [
-                                "#sample_type"
                             ]
                         },
                         {

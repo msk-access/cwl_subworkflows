@@ -334,21 +334,6 @@
                     "doc": "BAM file."
                 },
                 {
-                    "id": "#biometrics_extract.cwl/sample_type",
-                    "type": [
-                        "null",
-                        {
-                            "type": "array",
-                            "items": "string",
-                            "inputBinding": {
-                                "position": 0,
-                                "prefix": "--sample-type"
-                            }
-                        }
-                    ],
-                    "doc": "Sample types: Normal or Tumor."
-                },
-                {
                     "id": "#biometrics_extract.cwl/sample_sex",
                     "type": [
                         "null",
@@ -522,7 +507,7 @@
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.9"
+                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.11"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -558,7 +543,7 @@
                 {
                     "class": "http://usefulinc.com/ns/doap#Version",
                     "http://usefulinc.com/ns/doap#name": "biometrics",
-                    "http://usefulinc.com/ns/doap#revision": "0.2.9"
+                    "http://usefulinc.com/ns/doap#revision": "0.2.11"
                 }
             ]
         },
@@ -695,7 +680,7 @@
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.9"
+                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.11"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -731,7 +716,7 @@
                 {
                     "class": "http://usefulinc.com/ns/doap#Version",
                     "http://usefulinc.com/ns/doap#name": "biometrics",
-                    "http://usefulinc.com/ns/doap#revision": "0.2.9"
+                    "http://usefulinc.com/ns/doap#revision": "0.2.11"
                 }
             ]
         },
@@ -878,7 +863,7 @@
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.9"
+                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.11"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -914,7 +899,7 @@
                 {
                     "class": "http://usefulinc.com/ns/doap#Version",
                     "http://usefulinc.com/ns/doap#name": "biometrics",
-                    "http://usefulinc.com/ns/doap#revision": "0.2.9"
+                    "http://usefulinc.com/ns/doap#revision": "0.2.11"
                 }
             ]
         },
@@ -1884,13 +1869,13 @@
         },
         {
             "class": "CommandLineTool",
-            "id": "#sequence_qc_0.1.19.cwl",
+            "id": "#sequence_qc_0.2.3.cwl",
             "baseCommand": [
                 "calculate_noise"
             ],
             "inputs": [
                 {
-                    "id": "#sequence_qc_0.1.19.cwl/reference",
+                    "id": "#sequence_qc_0.2.3.cwl/reference",
                     "type": "File",
                     "inputBinding": {
                         "position": 0,
@@ -1902,7 +1887,7 @@
                     "doc": "Path to reference fasta, containing all regions in bed_file"
                 },
                 {
-                    "id": "#sequence_qc_0.1.19.cwl/bam_file",
+                    "id": "#sequence_qc_0.2.3.cwl/bam_file",
                     "type": "File",
                     "inputBinding": {
                         "position": 0,
@@ -1914,7 +1899,7 @@
                     "doc": "Path to BAM file for calculating noise  [required]"
                 },
                 {
-                    "id": "#sequence_qc_0.1.19.cwl/bed_file",
+                    "id": "#sequence_qc_0.2.3.cwl/bed_file",
                     "type": "File",
                     "inputBinding": {
                         "position": 0,
@@ -1923,7 +1908,7 @@
                     "doc": "Path to BED file containing regions over which to calculate noise  [required]"
                 },
                 {
-                    "id": "#sequence_qc_0.1.19.cwl/sample_id",
+                    "id": "#sequence_qc_0.2.3.cwl/sample_id",
                     "type": "string",
                     "inputBinding": {
                         "position": 0,
@@ -1932,7 +1917,7 @@
                     "doc": "Prefix to include in all output file names"
                 },
                 {
-                    "id": "#sequence_qc_0.1.19.cwl/threshold",
+                    "id": "#sequence_qc_0.2.3.cwl/threshold",
                     "type": [
                         "null",
                         "float"
@@ -1944,7 +1929,7 @@
                     "doc": "Alt allele frequency past which to ignore positions from the calculation."
                 },
                 {
-                    "id": "#sequence_qc_0.1.19.cwl/truncate",
+                    "id": "#sequence_qc_0.2.3.cwl/truncate",
                     "type": [
                         "null",
                         "int"
@@ -1956,7 +1941,7 @@
                     "doc": "Whether to exclude trailing bases from reads that only partially overlap the bed file (0 or 1)"
                 },
                 {
-                    "id": "#sequence_qc_0.1.19.cwl/min_mapq",
+                    "id": "#sequence_qc_0.2.3.cwl/min_mapq",
                     "type": [
                         "null",
                         "int"
@@ -1968,7 +1953,7 @@
                     "doc": "Exclude reads with a lower mapping quality"
                 },
                 {
-                    "id": "#sequence_qc_0.1.19.cwl/min_basq",
+                    "id": "#sequence_qc_0.2.3.cwl/min_basq",
                     "type": [
                         "null",
                         "int"
@@ -1982,42 +1967,49 @@
             ],
             "outputs": [
                 {
-                    "id": "#sequence_qc_0.1.19.cwl/sequence_qc_pileup",
+                    "id": "#sequence_qc_0.2.3.cwl/sequence_qc_pileup",
                     "type": "File",
                     "outputBinding": {
-                        "glob": "${\n    return inputs.sample_id + 'pileup.tsv'\n}"
+                        "glob": "${\n    return inputs.sample_id + '_pileup.tsv'\n}"
                     }
                 },
                 {
-                    "id": "#sequence_qc_0.1.19.cwl/sequence_qc_noise_positions",
+                    "id": "#sequence_qc_0.2.3.cwl/sequence_qc_noise_positions",
                     "type": "File",
                     "outputBinding": {
-                        "glob": "${\n    return inputs.sample_id + 'noise_positions.tsv'\n}"
+                        "glob": "${\n    return inputs.sample_id + '_noise_positions.tsv'\n}"
                     }
                 },
                 {
-                    "id": "#sequence_qc_0.1.19.cwl/sequence_qc_noise_acgt",
+                    "id": "#sequence_qc_0.2.3.cwl/sequence_qc_noise_by_substitution",
                     "type": "File",
                     "outputBinding": {
-                        "glob": "${\n    return inputs.sample_id + 'noise_acgt.tsv'\n}"
+                        "glob": "${\n    return inputs.sample_id + '_noise_by_substitution.tsv'\n}"
                     }
                 },
                 {
-                    "id": "#sequence_qc_0.1.19.cwl/sequence_qc_noise_n",
+                    "id": "#sequence_qc_0.2.3.cwl/sequence_qc_noise_acgt",
                     "type": "File",
                     "outputBinding": {
-                        "glob": "${\n    return inputs.sample_id + 'noise_n.tsv'\n}"
+                        "glob": "${\n    return inputs.sample_id + '_noise_acgt.tsv'\n}"
                     }
                 },
                 {
-                    "id": "#sequence_qc_0.1.19.cwl/sequence_qc_noise_del",
+                    "id": "#sequence_qc_0.2.3.cwl/sequence_qc_noise_n",
                     "type": "File",
                     "outputBinding": {
-                        "glob": "${\n    return inputs.sample_id + 'noise_del.tsv'\n}"
+                        "glob": "${\n    return inputs.sample_id + '_noise_n.tsv'\n}"
                     }
                 },
                 {
-                    "id": "#sequence_qc_0.1.19.cwl/sequence_qc_figures",
+                    "id": "#sequence_qc_0.2.3.cwl/sequence_qc_noise_del",
+                    "type": "File",
+                    "outputBinding": {
+                        "glob": "${\n    return inputs.sample_id + '_noise_del.tsv'\n}"
+                    }
+                },
+                {
+                    "id": "#sequence_qc_0.2.3.cwl/sequence_qc_figures",
                     "type": "File",
                     "outputBinding": {
                         "glob": "${\n    return inputs.sample_id + '_noise.html'\n}"
@@ -2032,10 +2024,23 @@
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "ghcr.io/msk-access/sequence_qc:0.1.19"
+                    "dockerPull": "ghcr.io/msk-access/sequence_qc:0.2.3"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
+                },
+                {
+                    "class": "EnvVarRequirement",
+                    "envDef": [
+                        {
+                            "envValue": "en_US.utf-8",
+                            "envName": "LANG"
+                        },
+                        {
+                            "envValue": "en_US.utf-8",
+                            "envName": "LC_ALL"
+                        }
+                    ]
                 }
             ],
             "http://purl.org/dc/terms/contributor": [
@@ -2068,7 +2073,7 @@
                 {
                     "class": "http://usefulinc.com/ns/doap#Version",
                     "http://usefulinc.com/ns/doap#name": "sesquence_qc",
-                    "http://usefulinc.com/ns/doap#revision": "0.1.19"
+                    "http://usefulinc.com/ns/doap#revision": "0.2.3"
                 }
             ]
         },
@@ -2145,20 +2150,6 @@
                     "doc": "VCF file containing the SNPs to be queried.",
                     "https://www.sevenbridges.com/x": -1373.5452880859375,
                     "https://www.sevenbridges.com/y": 274.6005859375
-                },
-                {
-                    "id": "#sample_type",
-                    "type": [
-                        "null",
-                        "string",
-                        {
-                            "type": "array",
-                            "items": "string"
-                        }
-                    ],
-                    "doc": "Sample types: Normal or Tumor.",
-                    "https://www.sevenbridges.com/x": -1181.2960205078125,
-                    "https://www.sevenbridges.com/y": 899.139404296875
                 },
                 {
                     "id": "#sample_sex",
@@ -2469,7 +2460,7 @@
                 {
                     "id": "#sequence_qc_noise_positions",
                     "outputSource": [
-                        "#calculate_noise_0_1_16/sequence_qc_noise_positions"
+                        "#calculate_noise/sequence_qc_noise_positions"
                     ],
                     "type": [
                         "File",
@@ -2484,7 +2475,7 @@
                 {
                     "id": "#sequence_qc_noise_n",
                     "outputSource": [
-                        "#calculate_noise_0_1_16/sequence_qc_noise_n"
+                        "#calculate_noise/sequence_qc_noise_n"
                     ],
                     "type": [
                         "File",
@@ -2499,7 +2490,7 @@
                 {
                     "id": "#sequence_qc_noise_del",
                     "outputSource": [
-                        "#calculate_noise_0_1_16/sequence_qc_noise_del"
+                        "#calculate_noise/sequence_qc_noise_del"
                     ],
                     "type": [
                         "File",
@@ -2514,7 +2505,7 @@
                 {
                     "id": "#sequence_qc_noise_acgt",
                     "outputSource": [
-                        "#calculate_noise_0_1_16/sequence_qc_noise_acgt"
+                        "#calculate_noise/sequence_qc_noise_acgt"
                     ],
                     "type": [
                         "File",
@@ -2529,7 +2520,7 @@
                 {
                     "id": "#sequence_qc_figures",
                     "outputSource": [
-                        "#calculate_noise_0_1_16/sequence_qc_figures"
+                        "#calculate_noise/sequence_qc_figures"
                     ],
                     "type": [
                         "File",
@@ -2546,13 +2537,10 @@
                     "outputSource": [
                         "#biometrics_extract/biometrics_extract_pickle"
                     ],
-                    "type": [
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
+                    "type": {
+                        "type": "array",
+                        "items": "File"
+                    },
                     "https://www.sevenbridges.com/x": 804.253662109375,
                     "https://www.sevenbridges.com/y": 1651.220947265625
                 },
@@ -2751,7 +2739,7 @@
                 {
                     "id": "#sequence_qc_pileup",
                     "outputSource": [
-                        "#calculate_noise_0_1_16/sequence_qc_pileup"
+                        "#calculate_noise/sequence_qc_pileup"
                     ],
                     "type": [
                         "File",
@@ -2762,6 +2750,15 @@
                     ],
                     "https://www.sevenbridges.com/x": 303.6086120605469,
                     "https://www.sevenbridges.com/y": -1159.51220703125
+                },
+                {
+                    "id": "#sequence_qc_noise_by_substitution",
+                    "outputSource": [
+                        "#calculate_noise/sequence_qc_noise_by_substitution"
+                    ],
+                    "type": "File",
+                    "https://www.sevenbridges.com/x": 686.90771484375,
+                    "https://www.sevenbridges.com/y": -695.8947143554688
                 }
             ],
             "steps": [
@@ -2825,62 +2822,65 @@
                     "https://www.sevenbridges.com/y": -271.1477355957031
                 },
                 {
-                    "id": "#calculate_noise_0_1_16",
+                    "id": "#calculate_noise",
                     "in": [
                         {
-                            "id": "#calculate_noise_0_1_16/reference",
+                            "id": "#calculate_noise/reference",
                             "source": "#reference"
                         },
                         {
-                            "id": "#calculate_noise_0_1_16/bam_file",
+                            "id": "#calculate_noise/bam_file",
                             "source": "#duplex_bam"
                         },
                         {
-                            "id": "#calculate_noise_0_1_16/bed_file",
+                            "id": "#calculate_noise/bed_file",
                             "source": "#noise_sites_bed"
                         },
                         {
-                            "id": "#calculate_noise_0_1_16/sample_id",
+                            "id": "#calculate_noise/sample_id",
                             "source": "#sample_name"
                         },
                         {
-                            "id": "#calculate_noise_0_1_16/threshold",
+                            "id": "#calculate_noise/threshold",
                             "source": "#sequence_qc_threshold"
                         },
                         {
-                            "id": "#calculate_noise_0_1_16/truncate",
+                            "id": "#calculate_noise/truncate",
                             "source": "#sequence_qc_truncate"
                         },
                         {
-                            "id": "#calculate_noise_0_1_16/min_mapq",
+                            "id": "#calculate_noise/min_mapq",
                             "source": "#sequence_qc_min_mapq"
                         },
                         {
-                            "id": "#calculate_noise_0_1_16/min_basq",
+                            "id": "#calculate_noise/min_basq",
                             "source": "#sequence_qc_min_basq"
                         }
                     ],
                     "out": [
                         {
-                            "id": "#calculate_noise_0_1_16/sequence_qc_pileup"
+                            "id": "#calculate_noise/sequence_qc_pileup"
                         },
                         {
-                            "id": "#calculate_noise_0_1_16/sequence_qc_noise_positions"
+                            "id": "#calculate_noise/sequence_qc_noise_positions"
                         },
                         {
-                            "id": "#calculate_noise_0_1_16/sequence_qc_noise_acgt"
+                            "id": "#calculate_noise/sequence_qc_noise_by_substitution"
                         },
                         {
-                            "id": "#calculate_noise_0_1_16/sequence_qc_noise_n"
+                            "id": "#calculate_noise/sequence_qc_noise_acgt"
                         },
                         {
-                            "id": "#calculate_noise_0_1_16/sequence_qc_noise_del"
+                            "id": "#calculate_noise/sequence_qc_noise_n"
                         },
                         {
-                            "id": "#calculate_noise_0_1_16/sequence_qc_figures"
+                            "id": "#calculate_noise/sequence_qc_noise_del"
+                        },
+                        {
+                            "id": "#calculate_noise/sequence_qc_figures"
                         }
                     ],
-                    "run": "#sequence_qc_0.1.19.cwl",
+                    "run": "#sequence_qc_0.2.3.cwl",
                     "https://www.sevenbridges.com/x": -205.99472045898438,
                     "https://www.sevenbridges.com/y": -716.7506103515625
                 },
@@ -2951,13 +2951,6 @@
                             "linkMerge": "merge_nested",
                             "source": [
                                 "#duplex_bam"
-                            ]
-                        },
-                        {
-                            "id": "#biometrics_extract/sample_type",
-                            "linkMerge": "merge_nested",
-                            "source": [
-                                "#sample_type"
                             ]
                         },
                         {
