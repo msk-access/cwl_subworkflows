@@ -119,6 +119,10 @@ inputs:
     type: string?
     'sbg:x': 0
     'sbg:y': 796.0234375
+  - id: maf
+    type: File
+    'sbg:x': 239.50196838378906
+    'sbg:y': -129.10670471191406
 outputs:
   - id: sequence_qc_noise_positions
     outputSource:
@@ -348,6 +352,12 @@ outputs:
     type: File
     'sbg:x': 1495.4873046875
     'sbg:y': 1169.546875
+  - id: fillout_maf
+    outputSource:
+      - getbasecountsmultisample_1_2_5/fillout
+    type: File
+    'sbg:x': 1306.6917724609375
+    'sbg:y': 443.52789306640625
 steps:
   - id: bam_qc_stats_pool_a
     in:
@@ -496,5 +506,21 @@ steps:
     run: ../command_line_tools/biometrics_minor/0.2.12/biometrics_minor.cwl
     'sbg:x': 982.1279296875
     'sbg:y': 2048.765625
+  - id: getbasecountsmultisample_1_2_5
+    in:
+      - id: genotyping_bams
+        source:
+          - duplex_bam
+      - id: maf
+        source: maf
+      - id: ref_fasta
+        source: reference
+    out:
+      - id: fillout
+    run: >-
+      ../command_line_tools/getbasecountsmultisample/1.2.5/getbasecountsmultisample_1.2.5.cwl
+    label: getbasecountsmultisample_1.2.5
+    'sbg:x': 400.5279846191406
+    'sbg:y': 432.4228820800781
 requirements:
   - class: SubworkflowFeatureRequirement
