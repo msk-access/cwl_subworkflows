@@ -656,6 +656,9 @@ steps:
         source: maf
       - id: ref_fasta
         source: reference
+      - id: output
+        source: sample_name
+        valueFrom: $(self + '_collapsed_hotspots_fillout.maf')
     out:
       - id: fillout
     run: >-

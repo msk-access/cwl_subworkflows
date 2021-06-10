@@ -522,6 +522,9 @@ steps:
         source: maf
       - id: ref_fasta
         source: reference
+      - id: output
+        source: sample_name
+        valueFrom: $(self + '_duplex_hotspots_fillout.maf')
     out:
       - id: fillout
     run: >-
