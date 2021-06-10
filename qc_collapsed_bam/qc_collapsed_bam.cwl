@@ -434,25 +434,25 @@ outputs:
     'sbg:y': 1175.28125
   - id: biometrics_major_plot
     outputSource:
-      - biometrics_major_0_2_12/biometrics_major_plot
+      - biometrics_major_0_2_13/biometrics_major_plot
     type: File?
     'sbg:x': 1547.1123046875
     'sbg:y': 1786.5
   - id: biometrics_major_json
     outputSource:
-      - biometrics_major_0_2_12/biometrics_major_json
+      - biometrics_major_0_2_13/biometrics_major_json
     type: File?
     'sbg:x': 1547.1123046875
     'sbg:y': 1893.34375
   - id: biometrics_major_csv
     outputSource:
-      - biometrics_major_0_2_12/biometrics_major_csv
+      - biometrics_major_0_2_13/biometrics_major_csv
     type: File
     'sbg:x': 1547.1123046875
     'sbg:y': 2000.1875
   - id: biometrics_extract_pickle
     outputSource:
-      - biometrics_extract_0_2_12/biometrics_extract_pickle
+      - biometrics_extract_0_2_13/biometrics_extract_pickle
     type: File
     'sbg:x': 982.1435546875
     'sbg:y': 3145.625
@@ -560,7 +560,7 @@ steps:
       - id: input
         linkMerge: merge_nested
         source:
-          - biometrics_extract_0_2_12/biometrics_extract_pickle
+          - biometrics_extract_0_2_13/biometrics_extract_pickle
       - id: minor_threshold
         source: minor_threshold
       - id: prefix
@@ -577,7 +577,7 @@ steps:
       - id: biometrics_minor_json
       - id: biometrics_minor_plot
       - id: biometrics_minor_sites_plot
-    run: ../command_line_tools/biometrics_minor/0.2.12/biometrics_minor.cwl
+    run: ../command_line_tools/biometrics_minor/0.2.13/biometrics_minor.cwl
     'sbg:x': 982.1435546875
     'sbg:y': 2847.9375
   - id: biometrics_sexmismatch
@@ -585,7 +585,7 @@ steps:
       - id: input
         linkMerge: merge_flattened
         source:
-          - biometrics_extract_0_2_12/biometrics_extract_pickle
+          - biometrics_extract_0_2_13/biometrics_extract_pickle
       - id: coverage_threshold
         source: coverage_threshold
       - id: prefix
@@ -597,15 +597,15 @@ steps:
       - id: biometrics_sexmismatch_csv
       - id: biometrics_sexmismatch_json
     run: >-
-      ../command_line_tools/biometrics_sexmismatch/0.2.12/biometrics_sexmismatch.cwl
+      ../command_line_tools/biometrics_sexmismatch/0.2.13/biometrics_sexmismatch.cwl
     'sbg:x': 982.1435546875
     'sbg:y': 2692.09375
-  - id: biometrics_major_0_2_12
+  - id: biometrics_major_0_2_13
     in:
       - id: input
         linkMerge: merge_nested
         source:
-          - biometrics_extract_0_2_12/biometrics_extract_pickle
+          - biometrics_extract_0_2_13/biometrics_extract_pickle
       - id: major_threshold
         source: major_threshold
       - id: prefix
@@ -618,10 +618,10 @@ steps:
       - id: biometrics_major_csv
       - id: biometrics_major_json
       - id: biometrics_major_plot
-    run: ../command_line_tools/biometrics_major/0.2.12/biometrics_major.cwl
+    run: ../command_line_tools/biometrics_major/0.2.13/biometrics_major.cwl
     'sbg:x': 982.1435546875
     'sbg:y': 3010.78125
-  - id: biometrics_extract_0_2_12
+  - id: biometrics_extract_0_2_13
     in:
       - id: sample_bam
         source: collapsed_bam
@@ -637,7 +637,7 @@ steps:
         source: vcf_file
     out:
       - id: biometrics_extract_pickle
-    run: ../command_line_tools/biometrics_extract/0.2.12/biometrics_extract.cwl
+    run: ../command_line_tools/biometrics_extract/0.2.13/biometrics_extract.cwl
     'sbg:x': 351.4375
     'sbg:y': 1612.234375
   - id: getbasecountsmultisample_1_2_5
