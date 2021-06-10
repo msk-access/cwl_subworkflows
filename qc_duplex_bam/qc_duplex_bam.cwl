@@ -511,6 +511,13 @@ steps:
       - id: genotyping_bams
         source:
           - duplex_bam
+      - id: genotyping_bams_ids
+        source:
+          - sample_name
+      - id: filter_duplicate
+        default: 0
+      - id: fragment_count
+        default: 1
       - id: maf
         source: maf
       - id: ref_fasta

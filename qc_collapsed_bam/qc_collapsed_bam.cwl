@@ -93,10 +93,6 @@ inputs:
     type: float?
     'sbg:x': 0
     'sbg:y': 1786.5
-  - id: plot_1
-    type: boolean?
-    'sbg:x': 0
-    'sbg:y': 1465.96875
   - id: json_1
     type: boolean?
     'sbg:x': 0
@@ -615,7 +611,7 @@ steps:
       - id: prefix
         source: prefix
       - id: plot
-        source: plot_1
+        source: plot
       - id: json
         source: json_1
     out:
@@ -649,6 +645,13 @@ steps:
       - id: genotyping_bams
         source:
           - collapsed_bam
+      - id: genotyping_bams_ids
+        source:
+          - sample_name
+      - id: filter_duplicate
+        default: 0
+      - id: fragment_count
+        default: 1
       - id: maf
         source: maf
       - id: ref_fasta
