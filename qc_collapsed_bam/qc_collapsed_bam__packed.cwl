@@ -3661,6 +3661,9 @@
             "requirements": [
                 {
                     "class": "SubworkflowFeatureRequirement"
+                },
+                {
+                    "class": "InlineJavascriptRequirement"
                 }
             ]
         }
