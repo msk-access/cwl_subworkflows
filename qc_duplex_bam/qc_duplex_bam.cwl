@@ -11,7 +11,7 @@ inputs:
     secondaryFiles:
       - ^.fasta.fai
     'sbg:x': 0
-    'sbg:y': 902.734375
+    'sbg:y': 903.75
   - id: duplex_bam
     type:
       - File
@@ -21,27 +21,27 @@ inputs:
     secondaryFiles:
       - ^.bai
     'sbg:x': 0
-    'sbg:y': 2290
+    'sbg:y': 2399.5625
   - id: pool_a_target_intervals
     type: File
     label: pool_a_target_intervals
     'sbg:x': 0
-    'sbg:y': 1329.5546875
+    'sbg:y': 1331.125
   - id: pool_a_bait_intervals
     type: File
     label: pool_a_bait_intervals
     'sbg:x': 0
-    'sbg:y': 1436.265625
+    'sbg:y': 1437.96875
   - id: pool_b_target_intervals
     type: File
     label: pool_b_target_intervals
     'sbg:x': 0
-    'sbg:y': 1116.1328125
+    'sbg:y': 1117.4375
   - id: pool_b_bait_intervals
     type: File
     label: pool_b_bait_intervals
     'sbg:x': 0
-    'sbg:y': 1222.84375
+    'sbg:y': 1224.28125
   - id: noise_sites_bed
     type: File
     label: noise_sites_bed
@@ -49,7 +49,7 @@ inputs:
       Path to BED file containing regions over which to calculate noise
       [required]
     'sbg:x': 0
-    'sbg:y': 1649.640625
+    'sbg:y': 1651.65625
   - id: sample_name
     type:
       - 'null'
@@ -60,69 +60,69 @@ inputs:
       Sample name. If not specified, sample name is automatically figured out
       from the BAM file.
     'sbg:x': 0
-    'sbg:y': 689.3125
+    'sbg:y': 690.0625
   - id: plot
     type: boolean?
     doc: Also output plots of the data.
     'sbg:x': 0
-    'sbg:y': 1542.953125
+    'sbg:y': 1544.8125
   - id: json
     type: boolean?
     doc: Also output data in JSON format.
     'sbg:x': 0
-    'sbg:y': 1863.0859375
+    'sbg:y': 1972.1875
   - id: sequence_qc_min_basq
     type: int?
     'sbg:x': 0
-    'sbg:y': 475.9375
+    'sbg:y': 476.375
   - id: sequence_qc_min_mapq
     type: int?
     'sbg:x': 0
-    'sbg:y': 369.25
+    'sbg:y': 369.53125
   - id: sequence_qc_threshold
     type: float?
     'sbg:x': 0
-    'sbg:y': 262.5625
+    'sbg:y': 262.6875
   - id: sequence_qc_truncate
     type: int?
     'sbg:x': 0
-    'sbg:y': 155.875
+    'sbg:y': 155.84375
   - id: hsmetrics_minimum_mapping_quality
     type: int?
     'sbg:x': 0
-    'sbg:y': 1969.8203125
+    'sbg:y': 2079.03125
   - id: hsmetrics_minimum_base_quality
     type: int?
     'sbg:x': 0
-    'sbg:y': 2076.5546875
+    'sbg:y': 2185.875
   - id: hsmetrics_coverage_cap
     type: int?
     'sbg:x': 0
-    'sbg:y': 2183.2890625
+    'sbg:y': 2292.71875
   - id: prefix
     type: string?
     'sbg:x': 0
-    'sbg:y': 1009.421875
+    'sbg:y': 1010.59375
   - id: major_threshold
     type: float?
     'sbg:x': 0
-    'sbg:y': 1756.3515625
+    'sbg:y': 1758.5
   - id: vcf_file
     type: File
     'sbg:x': 0
-    'sbg:y': 49.1875
+    'sbg:y': 49
   - id: sample_sex
     type: string?
     'sbg:x': 0
-    'sbg:y': 582.625
+    'sbg:y': 583.21875
   - id: sample_group
     type: string?
     'sbg:x': 0
-    'sbg:y': 796.0234375
+    'sbg:y': 796.90625
   - id: maf
     type: File
-    'sbg:x': 239.50196838378906
-    'sbg:y': -129.10670471191406
+    'sbg:x': 0
+    'sbg:y': 1865.34375
 outputs:
   - id: sequence_qc_noise_positions
     outputSource:
@@ -131,8 +131,8 @@ outputs:
       - File
       - type: array
         items: File
-    'sbg:x': 982.1279296875
-    'sbg:y': 106.6875
+    'sbg:x': 982.1435546875
+    'sbg:y': 106.84375
   - id: sequence_qc_noise_n
     outputSource:
       - calculate_noise/sequence_qc_noise_n
@@ -140,8 +140,8 @@ outputs:
       - File
       - type: array
         items: File
-    'sbg:x': 982.1279296875
-    'sbg:y': 213.375
+    'sbg:x': 982.1435546875
+    'sbg:y': 213.6875
   - id: sequence_qc_noise_del
     outputSource:
       - calculate_noise/sequence_qc_noise_del
@@ -149,8 +149,8 @@ outputs:
       - File
       - type: array
         items: File
-    'sbg:x': 982.1279296875
-    'sbg:y': 320.0625
+    'sbg:x': 982.1435546875
+    'sbg:y': 320.53125
   - id: sequence_qc_noise_acgt
     outputSource:
       - calculate_noise/sequence_qc_noise_acgt
@@ -158,8 +158,8 @@ outputs:
       - File
       - type: array
         items: File
-    'sbg:x': 982.1279296875
-    'sbg:y': 533.5078125
+    'sbg:x': 982.1435546875
+    'sbg:y': 534.21875
   - id: sequence_qc_figures
     outputSource:
       - calculate_noise/sequence_qc_figures
@@ -167,8 +167,8 @@ outputs:
       - File
       - type: array
         items: File
-    'sbg:x': 982.1279296875
-    'sbg:y': 640.2421875
+    'sbg:x': 982.1435546875
+    'sbg:y': 641.0625
   - id: gatk_collect_alignment_summary_metrics_txt_pool_b
     outputSource:
       - bam_qc_stats_pool_b/gatk_collect_alignment_summary_metrics_txt
@@ -177,8 +177,8 @@ outputs:
       - type: array
         items: File
     label: gatk_collect_alignment_summary_metrics_txt_pool_b
-    'sbg:x': 982.1279296875
-    'sbg:y': 1814.3203125
+    'sbg:x': 982.1435546875
+    'sbg:y': 1816.34375
   - id: gatk_collect_hs_metrics_per_base_coverage_txt_pool_b
     outputSource:
       - bam_qc_stats_pool_b/gatk_collect_hs_metrics_per_base_coverage_txt
@@ -187,8 +187,8 @@ outputs:
       - type: array
         items: File
     label: gatk_collect_hs_metrics_per_base_coverage_txt_pool_b
-    'sbg:x': 982.1279296875
-    'sbg:y': 1600.8515625
+    'sbg:x': 982.1435546875
+    'sbg:y': 1602.65625
   - id: gatk_collect_hs_metrics_per_target_coverage_txt_pool_b
     outputSource:
       - bam_qc_stats_pool_b/gatk_collect_hs_metrics_per_target_coverage_txt
@@ -197,8 +197,8 @@ outputs:
       - type: array
         items: File
     label: gatk_collect_hs_metrics_per_target_coverage_txt_pool_b
-    'sbg:x': 982.1279296875
-    'sbg:y': 1387.3828125
+    'sbg:x': 982.1435546875
+    'sbg:y': 1388.96875
   - id: gatk_collect_hs_metrics_txt_pool_b
     outputSource:
       - bam_qc_stats_pool_b/gatk_collect_hs_metrics_txt
@@ -207,8 +207,8 @@ outputs:
       - type: array
         items: File
     label: gatk_collect_hs_metrics_txt_pool_b
-    'sbg:x': 982.1279296875
-    'sbg:y': 1173.9140625
+    'sbg:x': 982.1435546875
+    'sbg:y': 1175.28125
   - id: gatk_collect_insert_size_metrics_histogram_pdf_pool_b
     outputSource:
       - bam_qc_stats_pool_b/gatk_collect_insert_size_metrics_histogram_pdf
@@ -217,8 +217,8 @@ outputs:
       - type: array
         items: File
     label: gatk_collect_insert_size_metrics_histogram_pdf_pool_b
-    'sbg:x': 982.1279296875
-    'sbg:y': 960.4453125
+    'sbg:x': 982.1435546875
+    'sbg:y': 961.59375
   - id: gatk_collect_insert_size_metrics_txt_pool_b
     outputSource:
       - bam_qc_stats_pool_b/gatk_collect_insert_size_metrics_txt
@@ -227,8 +227,8 @@ outputs:
       - type: array
         items: File
     label: gatk_collect_insert_size_metrics_txt_pool_b
-    'sbg:x': 982.1279296875
-    'sbg:y': 746.9765625
+    'sbg:x': 982.1435546875
+    'sbg:y': 747.90625
   - id: gatk_collect_alignment_summary_metrics_txt_pool_a
     outputSource:
       - bam_qc_stats_pool_a/gatk_collect_alignment_summary_metrics_txt
@@ -237,8 +237,8 @@ outputs:
       - type: array
         items: File
     label: gatk_collect_alignment_summary_metrics_txt_pool_a
-    'sbg:x': 982.1279296875
-    'sbg:y': 1921.0546875
+    'sbg:x': 982.1435546875
+    'sbg:y': 1923.1875
   - id: gatk_collect_hs_metrics_per_base_coverage_txt_pool_a
     outputSource:
       - bam_qc_stats_pool_a/gatk_collect_hs_metrics_per_base_coverage_txt
@@ -247,8 +247,8 @@ outputs:
       - type: array
         items: File
     label: gatk_collect_hs_metrics_per_base_coverage_txt_pool_a
-    'sbg:x': 982.1279296875
-    'sbg:y': 1707.5859375
+    'sbg:x': 982.1435546875
+    'sbg:y': 1709.5
   - id: gatk_collect_hs_metrics_per_target_coverage_txt_pool_a
     outputSource:
       - bam_qc_stats_pool_a/gatk_collect_hs_metrics_per_target_coverage_txt
@@ -257,8 +257,8 @@ outputs:
       - type: array
         items: File
     label: gatk_collect_hs_metrics_per_target_coverage_txt_pool_a
-    'sbg:x': 982.1279296875
-    'sbg:y': 1494.1171875
+    'sbg:x': 982.1435546875
+    'sbg:y': 1495.8125
   - id: gatk_collect_hs_metrics_txt_pool_a
     outputSource:
       - bam_qc_stats_pool_a/gatk_collect_hs_metrics_txt
@@ -267,8 +267,8 @@ outputs:
       - type: array
         items: File
     label: gatk_collect_hs_metrics_txt_pool_a
-    'sbg:x': 982.1279296875
-    'sbg:y': 1280.6484375
+    'sbg:x': 982.1435546875
+    'sbg:y': 1282.125
   - id: gatk_collect_insert_size_metrics_histogram_pdf_pool_a
     outputSource:
       - bam_qc_stats_pool_a/gatk_collect_insert_size_metrics_histogram_pdf
@@ -277,8 +277,8 @@ outputs:
       - type: array
         items: File
     label: gatk_collect_insert_size_metrics_histogram_pdf_pool_a
-    'sbg:x': 982.1279296875
-    'sbg:y': 1067.1796875
+    'sbg:x': 982.1435546875
+    'sbg:y': 1068.4375
   - id: gatk_collect_insert_size_metrics_txt_pool_a
     outputSource:
       - bam_qc_stats_pool_a/gatk_collect_insert_size_metrics_txt
@@ -287,8 +287,8 @@ outputs:
       - type: array
         items: File
     label: gatk_collect_insert_size_metrics_txt_pool_a
-    'sbg:x': 982.1279296875
-    'sbg:y': 853.7109375
+    'sbg:x': 982.1435546875
+    'sbg:y': 854.75
   - id: sequence_qc_pileup
     outputSource:
       - calculate_noise/sequence_qc_pileup
@@ -296,68 +296,68 @@ outputs:
       - File
       - type: array
         items: File
-    'sbg:x': 982.1279296875
+    'sbg:x': 982.1435546875
     'sbg:y': 0
   - id: sequence_qc_noise_by_substitution
     outputSource:
       - calculate_noise/sequence_qc_noise_by_substitution
     type: File
-    'sbg:x': 982.1279296875
-    'sbg:y': 426.7734375
+    'sbg:x': 982.1435546875
+    'sbg:y': 427.375
   - id: biometrics_major_plot
     outputSource:
       - biometrics_major_0_2_12/biometrics_major_plot
     type: File?
-    'sbg:x': 1495.4873046875
-    'sbg:y': 1276.2578125
+    'sbg:x': 1495.5341796875
+    'sbg:y': 1331.125
   - id: biometrics_major_json
     outputSource:
       - biometrics_major_0_2_12/biometrics_major_json
     type: File?
-    'sbg:x': 1495.4873046875
-    'sbg:y': 1382.9921875
+    'sbg:x': 1495.5341796875
+    'sbg:y': 1437.96875
   - id: biometrics_major_csv
     outputSource:
       - biometrics_major_0_2_12/biometrics_major_csv
     type: File
-    'sbg:x': 1495.4873046875
-    'sbg:y': 1489.7265625
+    'sbg:x': 1495.5341796875
+    'sbg:y': 1544.8125
   - id: biometrics_extract_pickle
     outputSource:
       - biometrics_extract_0_2_12/biometrics_extract_pickle
     type: File
-    'sbg:x': 982.1279296875
-    'sbg:y': 2339.1875
+    'sbg:x': 982.1435546875
+    'sbg:y': 2448.5625
   - id: biometrics_minor_sites_plot
     outputSource:
       - biometrics_minor_0_2_12/biometrics_minor_sites_plot
     type: File?
-    'sbg:x': 1495.4873046875
-    'sbg:y': 849.4375
+    'sbg:x': 1495.5341796875
+    'sbg:y': 903.75
   - id: biometrics_minor_plot
     outputSource:
       - biometrics_minor_0_2_12/biometrics_minor_plot
     type: File?
-    'sbg:x': 1495.4873046875
-    'sbg:y': 956.125
+    'sbg:x': 1495.5341796875
+    'sbg:y': 1010.59375
   - id: biometrics_minor_json
     outputSource:
       - biometrics_minor_0_2_12/biometrics_minor_json
     type: File?
-    'sbg:x': 1495.4873046875
-    'sbg:y': 1062.8359375
+    'sbg:x': 1495.5341796875
+    'sbg:y': 1117.4375
   - id: biometrics_minor_csv
     outputSource:
       - biometrics_minor_0_2_12/biometrics_minor_csv
     type: File
-    'sbg:x': 1495.4873046875
-    'sbg:y': 1169.546875
+    'sbg:x': 1495.5341796875
+    'sbg:y': 1224.28125
   - id: fillout_maf
     outputSource:
       - getbasecountsmultisample_1_2_5/fillout
     type: File
-    'sbg:x': 1306.6917724609375
-    'sbg:y': 443.52789306640625
+    'sbg:x': 982.1435546875
+    'sbg:y': 2030.03125
 steps:
   - id: bam_qc_stats_pool_a
     in:
@@ -385,8 +385,8 @@ steps:
       - id: gatk_collect_alignment_summary_metrics_txt
     run: ../bam_qc_stats/bam_qc_stats.cwl
     label: bam_qc_stats_pool_a
-    'sbg:x': 351.421875
-    'sbg:y': 1406.625
+    'sbg:x': 351.4375
+    'sbg:y': 1563.96875
   - id: calculate_noise
     in:
       - id: reference
@@ -414,8 +414,8 @@ steps:
       - id: sequence_qc_noise_del
       - id: sequence_qc_figures
     run: ../command_line_tools/sequence_qc/0.2.3/sequence_qc_0.2.3.cwl
-    'sbg:x': 351.421875
-    'sbg:y': 841.5625
+    'sbg:x': 351.4375
+    'sbg:y': 998.4375
   - id: bam_qc_stats_pool_b
     in:
       - id: input
@@ -442,8 +442,8 @@ steps:
       - id: gatk_collect_alignment_summary_metrics_txt
     run: ../bam_qc_stats/bam_qc_stats.cwl
     label: bam_qc_stats_pool_b
-    'sbg:x': 351.421875
-    'sbg:y': 1215.9375
+    'sbg:x': 351.4375
+    'sbg:y': 1373.125
   - id: biometrics_major_0_2_12
     in:
       - id: input
@@ -463,8 +463,8 @@ steps:
       - id: biometrics_major_json
       - id: biometrics_major_plot
     run: ../command_line_tools/biometrics_major/0.2.12/biometrics_major.cwl
-    'sbg:x': 982.1279296875
-    'sbg:y': 2204.4765625
+    'sbg:x': 982.1435546875
+    'sbg:y': 2313.71875
   - id: biometrics_extract_0_2_12
     in:
       - id: sample_bam
@@ -484,8 +484,8 @@ steps:
     out:
       - id: biometrics_extract_pickle
     run: ../command_line_tools/biometrics_extract/0.2.12/biometrics_extract.cwl
-    'sbg:x': 351.421875
-    'sbg:y': 1032.25
+    'sbg:x': 351.4375
+    'sbg:y': 1189.28125
   - id: biometrics_minor_0_2_12
     in:
       - id: input
@@ -504,8 +504,8 @@ steps:
       - id: biometrics_minor_plot
       - id: biometrics_minor_sites_plot
     run: ../command_line_tools/biometrics_minor/0.2.12/biometrics_minor.cwl
-    'sbg:x': 982.1279296875
-    'sbg:y': 2048.765625
+    'sbg:x': 982.1435546875
+    'sbg:y': 2157.875
   - id: getbasecountsmultisample_1_2_5
     in:
       - id: genotyping_bams
@@ -520,17 +520,17 @@ steps:
         default: 1
       - id: maf
         source: maf
-      - id: ref_fasta
-        source: reference
       - id: output
         source: sample_name
         valueFrom: $(self + '_duplex_hotspots_fillout.maf')
+      - id: ref_fasta
+        source: reference
     out:
       - id: fillout
     run: >-
       ../command_line_tools/getbasecountsmultisample/1.2.5/getbasecountsmultisample_1.2.5.cwl
     label: getbasecountsmultisample_1.2.5
-    'sbg:x': 400.5279846191406
-    'sbg:y': 432.4228820800781
+    'sbg:x': 351.4375
+    'sbg:y': 814.59375
 requirements:
   - class: SubworkflowFeatureRequirement
