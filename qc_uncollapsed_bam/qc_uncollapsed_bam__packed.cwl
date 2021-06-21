@@ -1813,7 +1813,7 @@
                     }
                 }
             ],
-            "label": "GATK-CollectHsMetrics",
+            "label": "GATK-RevertSam",
             "arguments": [
                 {
                     "position": 0,
@@ -1896,8 +1896,8 @@
                         "^.fasta.fai",
                         "^.dict"
                     ],
-                    "https://www.sevenbridges.com/x": -573,
-                    "https://www.sevenbridges.com/y": 247.2935333251953
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 267.2265625
                 },
                 {
                     "id": "#uncollapsed_bam_base_recal",
@@ -1912,36 +1912,36 @@
                     "secondaryFiles": [
                         "^.bai"
                     ],
-                    "https://www.sevenbridges.com/x": -673.8885498046875,
-                    "https://www.sevenbridges.com/y": 1228.81201171875
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 160.3359375
                 },
                 {
                     "id": "#pool_b_target_intervals",
                     "type": "File",
                     "label": "pool_b_target_intervals",
-                    "https://www.sevenbridges.com/x": -583.1691284179688,
-                    "https://www.sevenbridges.com/y": -23.069652557373047
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 374.1171875
                 },
                 {
                     "id": "#pool_b_bait_intervals",
                     "type": "File",
                     "label": "pool_b_bait_intervals",
-                    "https://www.sevenbridges.com/x": -579.8407592773438,
-                    "https://www.sevenbridges.com/y": 105.95523071289062
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 481.0078125
                 },
                 {
                     "id": "#pool_a_bait_intervals",
                     "type": "File",
                     "label": "pool_a_bait_intervals",
-                    "https://www.sevenbridges.com/x": -583.9046020507812,
-                    "https://www.sevenbridges.com/y": -163.9043731689453
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 694.7890625
                 },
                 {
                     "id": "#pool_a_target_intervals",
                     "type": "File",
                     "label": "pool_a_target_intervals",
-                    "https://www.sevenbridges.com/x": -581.4170532226562,
-                    "https://www.sevenbridges.com/y": -288.2825012207031
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 587.8984375
                 },
                 {
                     "id": "#hsmetrics_minimum_mapping_quality",
@@ -1949,8 +1949,8 @@
                         "null",
                         "int"
                     ],
-                    "https://www.sevenbridges.com/x": -587.9199829101562,
-                    "https://www.sevenbridges.com/y": -409.1614685058594
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 801.6796875
                 },
                 {
                     "id": "#hsmetrics_minimum_base_quality",
@@ -1958,8 +1958,8 @@
                         "null",
                         "int"
                     ],
-                    "https://www.sevenbridges.com/x": -595.432861328125,
-                    "https://www.sevenbridges.com/y": -532.598388671875
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 908.5703125
                 },
                 {
                     "id": "#hsmetrics_coverage_cap",
@@ -1967,21 +1967,8 @@
                         "null",
                         "int"
                     ],
-                    "https://www.sevenbridges.com/x": -600.9963989257812,
-                    "https://www.sevenbridges.com/y": -654.81982421875
-                },
-                {
-                    "id": "#uncollapsed_bam",
-                    "type": [
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
-                    "label": "uncollapsed_bam",
-                    "https://www.sevenbridges.com/x": -579.3350219726562,
-                    "https://www.sevenbridges.com/y": 702.20458984375
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 1015.4609375
                 }
             ],
             "outputs": [
@@ -1998,8 +1985,8 @@
                         }
                     ],
                     "label": "gatk_collect_alignment_summary_metrics_txt_pool_b",
-                    "https://www.sevenbridges.com/x": 429.216064453125,
-                    "https://www.sevenbridges.com/y": 559.75537109375
+                    "https://www.sevenbridges.com/x": 1369.4512939453125,
+                    "https://www.sevenbridges.com/y": 1068.90625
                 },
                 {
                     "id": "#gatk_collect_hs_metrics_per_base_coverage_txt_pool_b",
@@ -2014,8 +2001,8 @@
                         }
                     ],
                     "label": "gatk_collect_hs_metrics_per_base_coverage_txt_pool_b",
-                    "https://www.sevenbridges.com/x": 420.07769775390625,
-                    "https://www.sevenbridges.com/y": 442.26190185546875
+                    "https://www.sevenbridges.com/x": 1369.4512939453125,
+                    "https://www.sevenbridges.com/y": 855.125
                 },
                 {
                     "id": "#gatk_collect_hs_metrics_per_target_coverage_txt_pool_b",
@@ -2030,8 +2017,8 @@
                         }
                     ],
                     "label": "gatk_collect_hs_metrics_per_target_coverage_txt_pool_b",
-                    "https://www.sevenbridges.com/x": 427.91058349609375,
-                    "https://www.sevenbridges.com/y": 323.46295166015625
+                    "https://www.sevenbridges.com/x": 1369.4512939453125,
+                    "https://www.sevenbridges.com/y": 641.34375
                 },
                 {
                     "id": "#gatk_collect_hs_metrics_txt_pool_b",
@@ -2046,8 +2033,8 @@
                         }
                     ],
                     "label": "gatk_collect_hs_metrics_txt_pool_b",
-                    "https://www.sevenbridges.com/x": 427.91058349609375,
-                    "https://www.sevenbridges.com/y": 204.66400146484375
+                    "https://www.sevenbridges.com/x": 1369.4512939453125,
+                    "https://www.sevenbridges.com/y": 427.5625
                 },
                 {
                     "id": "#gatk_collect_insert_size_metrics_histogram_pdf_pool_b",
@@ -2062,8 +2049,8 @@
                         }
                     ],
                     "label": "gatk_collect_insert_size_metrics_histogram_pdf_pool_b",
-                    "https://www.sevenbridges.com/x": 422.68865966796875,
-                    "https://www.sevenbridges.com/y": 80.64311218261719
+                    "https://www.sevenbridges.com/x": 1369.4512939453125,
+                    "https://www.sevenbridges.com/y": 213.78125
                 },
                 {
                     "id": "#gatk_collect_insert_size_metrics_txt_pool_b",
@@ -2078,8 +2065,8 @@
                         }
                     ],
                     "label": "gatk_collect_insert_size_metrics_txt_pool_b",
-                    "https://www.sevenbridges.com/x": 430.52154541015625,
-                    "https://www.sevenbridges.com/y": -34.2393913269043
+                    "https://www.sevenbridges.com/x": 1369.4512939453125,
+                    "https://www.sevenbridges.com/y": 0
                 },
                 {
                     "id": "#gatk_collect_alignment_summary_metrics_txt_pool_a",
@@ -2094,8 +2081,8 @@
                         }
                     ],
                     "label": "gatk_collect_alignment_summary_metrics_txt_pool_a",
-                    "https://www.sevenbridges.com/x": 420.07769775390625,
-                    "https://www.sevenbridges.com/y": -155.64930725097656
+                    "https://www.sevenbridges.com/x": 1369.4512939453125,
+                    "https://www.sevenbridges.com/y": 1175.796875
                 },
                 {
                     "id": "#gatk_collect_hs_metrics_per_base_coverage_txt_pool_a",
@@ -2110,8 +2097,8 @@
                         }
                     ],
                     "label": "gatk_collect_hs_metrics_per_base_coverage_txt_pool_a",
-                    "https://www.sevenbridges.com/x": 417.46673583984375,
-                    "https://www.sevenbridges.com/y": -274.4482727050781
+                    "https://www.sevenbridges.com/x": 1369.4512939453125,
+                    "https://www.sevenbridges.com/y": 962.015625
                 },
                 {
                     "id": "#gatk_collect_hs_metrics_per_target_coverage_txt_pool_a",
@@ -2126,8 +2113,8 @@
                         }
                     ],
                     "label": "gatk_collect_hs_metrics_per_target_coverage_txt_pool_a",
-                    "https://www.sevenbridges.com/x": 414.85577392578125,
-                    "https://www.sevenbridges.com/y": -389.3307800292969
+                    "https://www.sevenbridges.com/x": 1369.4512939453125,
+                    "https://www.sevenbridges.com/y": 748.234375
                 },
                 {
                     "id": "#gatk_collect_hs_metrics_txt_pool_a",
@@ -2142,8 +2129,8 @@
                         }
                     ],
                     "label": "gatk_collect_hs_metrics_txt_pool_a",
-                    "https://www.sevenbridges.com/x": 409.9451599121094,
-                    "https://www.sevenbridges.com/y": -498.08355712890625
+                    "https://www.sevenbridges.com/x": 1369.4512939453125,
+                    "https://www.sevenbridges.com/y": 534.453125
                 },
                 {
                     "id": "#gatk_collect_insert_size_metrics_histogram_pdf_pool_a",
@@ -2158,8 +2145,8 @@
                         }
                     ],
                     "label": "gatk_collect_insert_size_metrics_histogram_pdf_pool_a",
-                    "https://www.sevenbridges.com/x": 410.9393005371094,
-                    "https://www.sevenbridges.com/y": -621.7067260742188
+                    "https://www.sevenbridges.com/x": 1369.4512939453125,
+                    "https://www.sevenbridges.com/y": 320.671875
                 },
                 {
                     "id": "#gatk_collect_insert_size_metrics_txt_pool_a",
@@ -2174,38 +2161,8 @@
                         }
                     ],
                     "label": "gatk_collect_insert_size_metrics_txt_pool_a",
-                    "https://www.sevenbridges.com/x": 400.4954528808594,
-                    "https://www.sevenbridges.com/y": -773.1427612304688
-                },
-                {
-                    "id": "#gatk_mean_quality_by_cycle_output",
-                    "outputSource": [
-                        "#gatk_mean_quality_by_cycle_4_1_8_0/gatk_mean_quality_by_cycle_output"
-                    ],
-                    "type": [
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
-                    "https://www.sevenbridges.com/x": 419.18060302734375,
-                    "https://www.sevenbridges.com/y": 776.599609375
-                },
-                {
-                    "id": "#gatk_mean_quality_by_cycle_chart_output",
-                    "outputSource": [
-                        "#gatk_mean_quality_by_cycle_4_1_8_0/gatk_mean_quality_by_cycle_chart_output"
-                    ],
-                    "type": [
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
-                    "https://www.sevenbridges.com/x": 419.18060302734375,
-                    "https://www.sevenbridges.com/y": 929.2159423828125
+                    "https://www.sevenbridges.com/x": 1369.4512939453125,
+                    "https://www.sevenbridges.com/y": 106.890625
                 },
                 {
                     "id": "#gatk_mean_quality_by_cycle_output_base_recal",
@@ -2220,8 +2177,8 @@
                         }
                     ],
                     "label": "gatk_mean_quality_by_cycle_output_base_recal",
-                    "https://www.sevenbridges.com/x": 417.72711181640625,
-                    "https://www.sevenbridges.com/y": 1129.79736328125
+                    "https://www.sevenbridges.com/x": 738.7452392578125,
+                    "https://www.sevenbridges.com/y": 343.5625
                 },
                 {
                     "id": "#gatk_mean_quality_by_cycle_chart_output_base_recal",
@@ -2236,8 +2193,8 @@
                         }
                     ],
                     "label": "gatk_mean_quality_by_cycle_chart_output_base_recal",
-                    "https://www.sevenbridges.com/x": 424.99456787109375,
-                    "https://www.sevenbridges.com/y": 1283.8670654296875
+                    "https://www.sevenbridges.com/x": 738.7452392578125,
+                    "https://www.sevenbridges.com/y": 450.453125
                 }
             ],
             "steps": [
@@ -2297,8 +2254,8 @@
                     ],
                     "run": "#bam_qc_stats.cwl",
                     "label": "bam_qc_stats_pool_a",
-                    "https://www.sevenbridges.com/x": 12.585670471191406,
-                    "https://www.sevenbridges.com/y": -296.3324890136719
+                    "https://www.sevenbridges.com/x": 738.7452392578125,
+                    "https://www.sevenbridges.com/y": 790.234375
                 },
                 {
                     "id": "#bam_qc_stats_pool_b",
@@ -2306,7 +2263,7 @@
                         {
                             "id": "#bam_qc_stats_pool_b/input",
                             "source": [
-                                "#gatk_revert_sam_4_1_8_1/gatk_revert_sam_output"
+                                "#gatk_revert_sam_4_1_8_0/gatk_revert_sam_output"
                             ]
                         },
                         {
@@ -2356,33 +2313,8 @@
                     ],
                     "run": "#bam_qc_stats.cwl",
                     "label": "bam_qc_stats_pool_b",
-                    "https://www.sevenbridges.com/x": 18.580554962158203,
-                    "https://www.sevenbridges.com/y": 127.00767517089844
-                },
-                {
-                    "id": "#gatk_mean_quality_by_cycle_4_1_8_0",
-                    "in": [
-                        {
-                            "id": "#gatk_mean_quality_by_cycle_4_1_8_0/input",
-                            "source": "#uncollapsed_bam"
-                        },
-                        {
-                            "id": "#gatk_mean_quality_by_cycle_4_1_8_0/reference",
-                            "source": "#reference"
-                        }
-                    ],
-                    "out": [
-                        {
-                            "id": "#gatk_mean_quality_by_cycle_4_1_8_0/gatk_mean_quality_by_cycle_output"
-                        },
-                        {
-                            "id": "#gatk_mean_quality_by_cycle_4_1_8_0/gatk_mean_quality_by_cycle_chart_output"
-                        }
-                    ],
-                    "run": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl",
-                    "label": "GATK-MeanQualityByCycle",
-                    "https://www.sevenbridges.com/x": -80.24418640136719,
-                    "https://www.sevenbridges.com/y": 861.4418334960938
+                    "https://www.sevenbridges.com/x": 738.7452392578125,
+                    "https://www.sevenbridges.com/y": 599.34375
                 },
                 {
                     "id": "#gatk_mean_quality_by_cycle_4_1_8_1",
@@ -2406,15 +2338,15 @@
                     ],
                     "run": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl",
                     "label": "GATK-MeanQualityByCycle_base_recal",
-                    "https://www.sevenbridges.com/x": -78.6744155883789,
-                    "https://www.sevenbridges.com/y": 1229.6976318359375
+                    "https://www.sevenbridges.com/x": 351.4375,
+                    "https://www.sevenbridges.com/y": 701.7890625
                 },
                 {
                     "id": "#gatk_revert_sam_4_1_8_0",
                     "in": [
                         {
                             "id": "#gatk_revert_sam_4_1_8_0/input",
-                            "source": "#uncollapsed_bam"
+                            "source": "#uncollapsed_bam_base_recal"
                         },
                         {
                             "id": "#gatk_revert_sam_4_1_8_0/remove_alignment_information",
@@ -2450,54 +2382,9 @@
                         }
                     ],
                     "run": "#gatk_revert_sam_4.1.8.0.cwl",
-                    "label": "GATK-CollectHsMetrics",
-                    "https://www.sevenbridges.com/x": -248.34014892578125,
-                    "https://www.sevenbridges.com/y": -298.8951416015625
-                },
-                {
-                    "id": "#gatk_revert_sam_4_1_8_1",
-                    "in": [
-                        {
-                            "id": "#gatk_revert_sam_4_1_8_1/input",
-                            "source": "#uncollapsed_bam"
-                        },
-                        {
-                            "id": "#gatk_revert_sam_4_1_8_1/remove_alignment_information",
-                            "default": "false"
-                        },
-                        {
-                            "id": "#gatk_revert_sam_4_1_8_1/remove_duplicate_information",
-                            "default": "true"
-                        },
-                        {
-                            "id": "#gatk_revert_sam_4_1_8_1/restore_hardclips",
-                            "default": "false"
-                        },
-                        {
-                            "id": "#gatk_revert_sam_4_1_8_1/restore_original_qualities",
-                            "default": "false"
-                        },
-                        {
-                            "id": "#gatk_revert_sam_4_1_8_1/sort_order",
-                            "default": "unsorted"
-                        },
-                        {
-                            "id": "#gatk_revert_sam_4_1_8_1/validation_stringency",
-                            "default": "SILENT"
-                        }
-                    ],
-                    "out": [
-                        {
-                            "id": "#gatk_revert_sam_4_1_8_1/gatk_revert_sam_output"
-                        },
-                        {
-                            "id": "#gatk_revert_sam_4_1_8_1/gatk_revert_sam_output_map"
-                        }
-                    ],
-                    "run": "#gatk_revert_sam_4.1.8.0.cwl",
-                    "label": "GATK-CollectHsMetrics",
-                    "https://www.sevenbridges.com/x": -255.77493286132812,
-                    "https://www.sevenbridges.com/y": 115.07417297363281
+                    "label": "GATK-RevertSam",
+                    "https://www.sevenbridges.com/x": 351.4375,
+                    "https://www.sevenbridges.com/y": 580.8984375
                 }
             ],
             "requirements": [
