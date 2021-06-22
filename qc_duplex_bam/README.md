@@ -4,10 +4,10 @@ The sub-workflow calculates quality control metrics for duplex BAMs. The main ou
 1. Targeted capture metrics.
 2. Insert size metrics.
 3. Alignment metrics.
-5. Extracted genotype information used for genotyping and contamination estimation.
-6. Genotype metrics to be used for hotspot metrics.
+4. Extracted genotype information used for fingerprinting and contamination estimation.
+5. Genotype metrics to be used for hotspot mutation metrics.
 
-**Note:** This sub-workflow was originally designed for MSK-ACCESS data. Therefore, in addition to the collapsed BAM, it expects two sets of bait/target regions (referred to as pool A and pool B for MSK-ACCESS).
+**Note:** This sub-workflow was originally designed for MSK-ACCESS data. Hence, in addition to the collapsed BAM, it expects two sets of bait/target regions (referred to as pool A and pool B for MSK-ACCESS).
 
 ### Tools used:
 

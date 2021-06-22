@@ -5,7 +5,7 @@ The sub-workflow calculates quality control metrics for simplex BAMs. The main o
 2. Insert size metrics.
 3. Alignment metrics.
 
-**Note:** This sub-workflow was originally designed for MSK-ACCESS data. Therefore, in addition to the collapsed BAM, it expects two sets of bait/target regions (referred to as pool A and pool B for MSK-ACCESS).
+**Note:** This sub-workflow was originally designed for MSK-ACCESS data. Hence, in addition to the collapsed BAM, it expects two sets of bait/target regions (referred to as pool A and pool B for MSK-ACCESS).
 
 ### Tools used:
 

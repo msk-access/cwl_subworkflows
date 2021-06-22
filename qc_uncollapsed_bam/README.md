@@ -6,7 +6,7 @@ The sub-workflow calculates quality control metrics for uncollapsed BAMs. The ma
 3. Alignment metrics.
 4. Mean base quality by cycle.
 
-**Note:** This sub-workflow was originally designed for MSK-ACCESS data. Therefore, in addition to the collapsed BAM, it expects two sets of bait/target regions (referred to as pool A and pool B for MSK-ACCESS).
+**Note:** This sub-workflow was originally designed for MSK-ACCESS data. Hence, in addition to the collapsed BAM, it expects two sets of bait/target regions (referred to as pool A and pool B for MSK-ACCESS).
 
 ### Tools used:
 
