@@ -674,3 +674,4 @@ steps:
     'sbg:y': 1102.703125
 requirements:
   - class: SubworkflowFeatureRequirement
+  - class: InlineJavascriptRequirement
