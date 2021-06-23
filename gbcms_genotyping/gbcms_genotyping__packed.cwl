@@ -105,10 +105,14 @@
                 },
                 {
                     "id": "#getbasecountsmultisample_1.2.5.cwl/output",
-                    "type": "string",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
                     "inputBinding": {
                         "position": 0,
-                        "prefix": "--output"
+                        "prefix": "--output",
+                        "valueFrom": "${\n    if (inputs.output) {\n        return inputs.output\n    } else if (inputs.genotyping_bams.length) {\n        return inputs.maf.basename.replace('.maf', '_fillout.maf')\n    } else {\n        return inputs.genotyping_bams.basename.replace('.bam', '_fillout.maf')\n    }\n}"
                     },
                     "doc": "Filename for output of raw fillout data in MAF/VCF format"
                 },
@@ -151,7 +155,7 @@
                     "id": "#getbasecountsmultisample_1.2.5.cwl/fillout",
                     "type": "File",
                     "outputBinding": {
-                        "glob": "$(inputs.output)\n"
+                        "glob": "${\n    if (inputs.output) {\n        return inputs.output\n    } else if (inputs.genotyping_bams.length) {\n        return inputs.maf.basename.replace('.maf', '_fillout.maf')\n    } else {\n        return inputs.genotyping_bams.basename.replace('.bam', '_fillout.maf')\n    }\n}"
                     }
                 }
             ],

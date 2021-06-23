@@ -323,10 +323,10 @@
                         "position": 0,
                         "prefix": "--sample-bam"
                     },
+                    "doc": "BAM file.",
                     "secondaryFiles": [
                         "^.bai"
-                    ],
-                    "doc": "BAM file."
+                    ]
                 },
                 {
                     "id": "#biometrics_extract.cwl/sample_sex",
@@ -368,10 +368,10 @@
                         "position": 0,
                         "prefix": "--fafile"
                     },
+                    "doc": "Path to reference fasta.",
                     "secondaryFiles": [
                         "^.fasta.fai"
-                    ],
-                    "doc": "Path to reference fasta."
+                    ]
                 },
                 {
                     "id": "#biometrics_extract.cwl/vcf_file",
@@ -407,12 +407,12 @@
                     "doc": "Directory to store the intermediate files after running the extraction step."
                 },
                 {
+                    "default": 1,
                     "id": "#biometrics_extract.cwl/min_mapping_quality",
                     "type": [
                         "null",
                         "int"
                     ],
-                    "default": 1,
                     "inputBinding": {
                         "position": 0,
                         "prefix": "--min-mapping-quality"
@@ -420,12 +420,12 @@
                     "doc": "Minimum mapping quality of reads to be used for pileup."
                 },
                 {
+                    "default": 1,
                     "id": "#biometrics_extract.cwl/min_base_quality",
                     "type": [
                         "null",
                         "int"
                     ],
-                    "default": 1,
                     "inputBinding": {
                         "position": 0,
                         "prefix": "--min-base-quality"
@@ -433,12 +433,12 @@
                     "doc": "Minimum base quality of reads to be used for pileup."
                 },
                 {
+                    "default": 10,
                     "id": "#biometrics_extract.cwl/min_coverage",
                     "type": [
                         "null",
                         "int"
                     ],
-                    "default": 10,
                     "inputBinding": {
                         "position": 0,
                         "prefix": "--min-coverage"
@@ -446,12 +446,12 @@
                     "doc": "Minimum coverage to count a site."
                 },
                 {
+                    "default": 0.1,
                     "id": "#biometrics_extract.cwl/min_homozygous_thresh",
                     "type": [
                         "null",
                         "float"
                     ],
-                    "default": 0.1,
                     "inputBinding": {
                         "position": 0,
                         "prefix": "--min-homozygous-thresh"
@@ -488,7 +488,7 @@
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.12"
+                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.13"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -524,7 +524,7 @@
                 {
                     "class": "http://usefulinc.com/ns/doap#Version",
                     "http://usefulinc.com/ns/doap#name": "biometrics",
-                    "http://usefulinc.com/ns/doap#revision": "0.2.12"
+                    "http://usefulinc.com/ns/doap#revision": "0.2.13"
                 }
             ]
         },
@@ -563,12 +563,12 @@
                     "doc": "Directory to store the intermediate files after running the extraction step."
                 },
                 {
+                    "default": 0.6,
                     "id": "#biometrics_major.cwl/major_threshold",
                     "type": [
                         "null",
                         "float"
                     ],
-                    "default": 0.6,
                     "inputBinding": {
                         "position": 0,
                         "prefix": "--major-threshold"
@@ -661,7 +661,7 @@
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.12"
+                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.13"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -697,7 +697,7 @@
                 {
                     "class": "http://usefulinc.com/ns/doap#Version",
                     "http://usefulinc.com/ns/doap#name": "biometrics",
-                    "http://usefulinc.com/ns/doap#revision": "0.2.12"
+                    "http://usefulinc.com/ns/doap#revision": "0.2.13"
                 }
             ]
         },
@@ -736,12 +736,12 @@
                     "doc": "Directory to store the intermediate files after running the extraction step."
                 },
                 {
+                    "default": 0.002,
                     "id": "#biometrics_minor.cwl/minor_threshold",
                     "type": [
                         "null",
                         "float"
                     ],
-                    "default": 0.002,
                     "inputBinding": {
                         "position": 0,
                         "prefix": "--minor-threshold"
@@ -844,7 +844,7 @@
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.12"
+                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.13"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -880,7 +880,7 @@
                 {
                     "class": "http://usefulinc.com/ns/doap#Version",
                     "http://usefulinc.com/ns/doap#name": "biometrics",
-                    "http://usefulinc.com/ns/doap#revision": "0.2.12"
+                    "http://usefulinc.com/ns/doap#revision": "0.2.13"
                 }
             ]
         },
@@ -1953,10 +1953,14 @@
                 },
                 {
                     "id": "#getbasecountsmultisample_1.2.5.cwl/output",
-                    "type": "string",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
                     "inputBinding": {
                         "position": 0,
-                        "prefix": "--output"
+                        "prefix": "--output",
+                        "valueFrom": "${\n    if (inputs.output) {\n        return inputs.output\n    } else if (inputs.genotyping_bams.length) {\n        return inputs.maf.basename.replace('.maf', '_fillout.maf')\n    } else {\n        return inputs.genotyping_bams.basename.replace('.bam', '_fillout.maf')\n    }\n}"
                     },
                     "doc": "Filename for output of raw fillout data in MAF/VCF format"
                 },
@@ -1999,7 +2003,7 @@
                     "id": "#getbasecountsmultisample_1.2.5.cwl/fillout",
                     "type": "File",
                     "outputBinding": {
-                        "glob": "$(inputs.output)\n"
+                        "glob": "${\n    if (inputs.output) {\n        return inputs.output\n    } else if (inputs.genotyping_bams.length) {\n        return inputs.maf.basename.replace('.maf', '_fillout.maf')\n    } else {\n        return inputs.genotyping_bams.basename.replace('.bam', '_fillout.maf')\n    }\n}"
                     }
                 }
             ],
@@ -2796,7 +2800,7 @@
                 {
                     "id": "#biometrics_major_plot",
                     "outputSource": [
-                        "#biometrics_major_0_2_12/biometrics_major_plot"
+                        "#biometrics_major_0_2_13/biometrics_major_plot"
                     ],
                     "type": [
                         "null",
@@ -2808,7 +2812,7 @@
                 {
                     "id": "#biometrics_major_json",
                     "outputSource": [
-                        "#biometrics_major_0_2_12/biometrics_major_json"
+                        "#biometrics_major_0_2_13/biometrics_major_json"
                     ],
                     "type": [
                         "null",
@@ -2820,7 +2824,7 @@
                 {
                     "id": "#biometrics_major_csv",
                     "outputSource": [
-                        "#biometrics_major_0_2_12/biometrics_major_csv"
+                        "#biometrics_major_0_2_13/biometrics_major_csv"
                     ],
                     "type": "File",
                     "https://www.sevenbridges.com/x": 1495.5341796875,
@@ -2829,7 +2833,7 @@
                 {
                     "id": "#biometrics_extract_pickle",
                     "outputSource": [
-                        "#biometrics_extract_0_2_12/biometrics_extract_pickle"
+                        "#biometrics_extract_0_2_13/biometrics_extract_pickle"
                     ],
                     "type": "File",
                     "https://www.sevenbridges.com/x": 982.1435546875,
@@ -2838,7 +2842,7 @@
                 {
                     "id": "#biometrics_minor_sites_plot",
                     "outputSource": [
-                        "#biometrics_minor_0_2_12/biometrics_minor_sites_plot"
+                        "#biometrics_minor_0_2_13/biometrics_minor_sites_plot"
                     ],
                     "type": [
                         "null",
@@ -2850,7 +2854,7 @@
                 {
                     "id": "#biometrics_minor_plot",
                     "outputSource": [
-                        "#biometrics_minor_0_2_12/biometrics_minor_plot"
+                        "#biometrics_minor_0_2_13/biometrics_minor_plot"
                     ],
                     "type": [
                         "null",
@@ -2862,7 +2866,7 @@
                 {
                     "id": "#biometrics_minor_json",
                     "outputSource": [
-                        "#biometrics_minor_0_2_12/biometrics_minor_json"
+                        "#biometrics_minor_0_2_13/biometrics_minor_json"
                     ],
                     "type": [
                         "null",
@@ -2874,7 +2878,7 @@
                 {
                     "id": "#biometrics_minor_csv",
                     "outputSource": [
-                        "#biometrics_minor_0_2_12/biometrics_minor_csv"
+                        "#biometrics_minor_0_2_13/biometrics_minor_csv"
                     ],
                     "type": "File",
                     "https://www.sevenbridges.com/x": 1495.5341796875,
@@ -3073,41 +3077,41 @@
                     "https://www.sevenbridges.com/y": 1373.125
                 },
                 {
-                    "id": "#biometrics_major_0_2_12",
+                    "id": "#biometrics_major_0_2_13",
                     "in": [
                         {
-                            "id": "#biometrics_major_0_2_12/input",
+                            "id": "#biometrics_major_0_2_13/input",
                             "linkMerge": "merge_nested",
                             "source": [
-                                "#biometrics_extract_0_2_12/biometrics_extract_pickle"
+                                "#biometrics_extract_0_2_13/biometrics_extract_pickle"
                             ]
                         },
                         {
-                            "id": "#biometrics_major_0_2_12/major_threshold",
+                            "id": "#biometrics_major_0_2_13/major_threshold",
                             "source": "#major_threshold"
                         },
                         {
-                            "id": "#biometrics_major_0_2_12/prefix",
+                            "id": "#biometrics_major_0_2_13/prefix",
                             "source": "#prefix"
                         },
                         {
-                            "id": "#biometrics_major_0_2_12/plot",
+                            "id": "#biometrics_major_0_2_13/plot",
                             "source": "#plot"
                         },
                         {
-                            "id": "#biometrics_major_0_2_12/json",
+                            "id": "#biometrics_major_0_2_13/json",
                             "source": "#json"
                         }
                     ],
                     "out": [
                         {
-                            "id": "#biometrics_major_0_2_12/biometrics_major_csv"
+                            "id": "#biometrics_major_0_2_13/biometrics_major_csv"
                         },
                         {
-                            "id": "#biometrics_major_0_2_12/biometrics_major_json"
+                            "id": "#biometrics_major_0_2_13/biometrics_major_json"
                         },
                         {
-                            "id": "#biometrics_major_0_2_12/biometrics_major_plot"
+                            "id": "#biometrics_major_0_2_13/biometrics_major_plot"
                         }
                     ],
                     "run": "#biometrics_major.cwl",
@@ -3115,40 +3119,40 @@
                     "https://www.sevenbridges.com/y": 2313.71875
                 },
                 {
-                    "id": "#biometrics_extract_0_2_12",
+                    "id": "#biometrics_extract_0_2_13",
                     "in": [
                         {
-                            "id": "#biometrics_extract_0_2_12/sample_bam",
+                            "id": "#biometrics_extract_0_2_13/sample_bam",
                             "source": "#duplex_bam"
                         },
                         {
-                            "id": "#biometrics_extract_0_2_12/sample_sex",
+                            "id": "#biometrics_extract_0_2_13/sample_sex",
                             "source": "#sample_sex"
                         },
                         {
-                            "id": "#biometrics_extract_0_2_12/sample_group",
+                            "id": "#biometrics_extract_0_2_13/sample_group",
                             "source": "#sample_group"
                         },
                         {
-                            "id": "#biometrics_extract_0_2_12/sample_name",
+                            "id": "#biometrics_extract_0_2_13/sample_name",
                             "source": "#sample_name"
                         },
                         {
-                            "id": "#biometrics_extract_0_2_12/fafile",
+                            "id": "#biometrics_extract_0_2_13/fafile",
                             "source": "#reference"
                         },
                         {
-                            "id": "#biometrics_extract_0_2_12/vcf_file",
+                            "id": "#biometrics_extract_0_2_13/vcf_file",
                             "source": "#vcf_file"
                         },
                         {
-                            "id": "#biometrics_extract_0_2_12/min_coverage",
+                            "id": "#biometrics_extract_0_2_13/min_coverage",
                             "default": 200
                         }
                     ],
                     "out": [
                         {
-                            "id": "#biometrics_extract_0_2_12/biometrics_extract_pickle"
+                            "id": "#biometrics_extract_0_2_13/biometrics_extract_pickle"
                         }
                     ],
                     "run": "#biometrics_extract.cwl",
@@ -3156,40 +3160,40 @@
                     "https://www.sevenbridges.com/y": 1189.28125
                 },
                 {
-                    "id": "#biometrics_minor_0_2_12",
+                    "id": "#biometrics_minor_0_2_13",
                     "in": [
                         {
-                            "id": "#biometrics_minor_0_2_12/input",
+                            "id": "#biometrics_minor_0_2_13/input",
                             "linkMerge": "merge_nested",
                             "source": [
-                                "#biometrics_extract_0_2_12/biometrics_extract_pickle"
+                                "#biometrics_extract_0_2_13/biometrics_extract_pickle"
                             ]
                         },
                         {
-                            "id": "#biometrics_minor_0_2_12/prefix",
+                            "id": "#biometrics_minor_0_2_13/prefix",
                             "source": "#prefix"
                         },
                         {
-                            "id": "#biometrics_minor_0_2_12/plot",
+                            "id": "#biometrics_minor_0_2_13/plot",
                             "source": "#plot"
                         },
                         {
-                            "id": "#biometrics_minor_0_2_12/json",
+                            "id": "#biometrics_minor_0_2_13/json",
                             "source": "#json"
                         }
                     ],
                     "out": [
                         {
-                            "id": "#biometrics_minor_0_2_12/biometrics_minor_csv"
+                            "id": "#biometrics_minor_0_2_13/biometrics_minor_csv"
                         },
                         {
-                            "id": "#biometrics_minor_0_2_12/biometrics_minor_json"
+                            "id": "#biometrics_minor_0_2_13/biometrics_minor_json"
                         },
                         {
-                            "id": "#biometrics_minor_0_2_12/biometrics_minor_plot"
+                            "id": "#biometrics_minor_0_2_13/biometrics_minor_plot"
                         },
                         {
-                            "id": "#biometrics_minor_0_2_12/biometrics_minor_sites_plot"
+                            "id": "#biometrics_minor_0_2_13/biometrics_minor_sites_plot"
                         }
                     ],
                     "run": "#biometrics_minor.cwl",
@@ -3247,6 +3251,9 @@
             "requirements": [
                 {
                     "class": "SubworkflowFeatureRequirement"
+                },
+                {
+                    "class": "InlineJavascriptRequirement"
                 }
             ]
         }

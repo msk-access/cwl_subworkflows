@@ -229,7 +229,7 @@ steps:
     in:
       - id: input
         source:
-          - gatk_revert_sam_4_1_8_1/gatk_revert_sam_output
+          - gatk_revert_sam_4_1_8_0/gatk_revert_sam_output
       - id: target_intervals
         source: pool_b_target_intervals
       - id: bait_intervals
@@ -287,31 +287,8 @@ steps:
       - id: gatk_revert_sam_output
       - id: gatk_revert_sam_output_map
     run: ../command_line_tools/gatk_revert_sam/4.1.8.0/gatk_revert_sam_4.1.8.0.cwl
-    label: GATK-CollectHsMetrics
+    label: GATK-RevertSam
     'sbg:x': 351.4375
     'sbg:y': 580.8984375
-  - id: gatk_revert_sam_4_1_8_1
-    in:
-      - id: input
-        source: uncollapsed_bam_base_recal
-      - id: remove_alignment_information
-        default: 'false'
-      - id: remove_duplicate_information
-        default: 'true'
-      - id: restore_hardclips
-        default: 'false'
-      - id: restore_original_qualities
-        default: 'false'
-      - id: sort_order
-        default: unsorted
-      - id: validation_stringency
-        default: SILENT
-    out:
-      - id: gatk_revert_sam_output
-      - id: gatk_revert_sam_output_map
-    run: ../command_line_tools/gatk_revert_sam/4.1.8.0/gatk_revert_sam_4.1.8.0.cwl
-    label: GATK-CollectHsMetrics
-    'sbg:x': 351.4375
-    'sbg:y': 460.0078125
 requirements:
   - class: SubworkflowFeatureRequirement
