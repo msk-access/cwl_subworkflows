@@ -2046,6 +2046,9 @@
                 },
                 {
                     "class": "InlineJavascriptRequirement"
+                },
+                {
+                    "class": "StepInputExpressionRequirement"
                 }
             ],
             "http://purl.org/dc/terms/contributor": [
