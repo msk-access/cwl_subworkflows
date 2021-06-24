@@ -2475,6 +2475,9 @@
                 },
                 {
                     "class": "InlineJavascriptRequirement"
+                },
+                {
+                    "class": "StepInputExpressionRequirement"
                 }
             ],
             "http://purl.org/dc/terms/contributor": [
@@ -2721,6 +2724,15 @@
                     "type": "File",
                     "https://www.sevenbridges.com/x": 0,
                     "https://www.sevenbridges.com/y": 1893.34375
+                },
+                {
+                    "id": "#bed_file",
+                    "type": [
+                        "null",
+                        "File"
+                    ],
+                    "https://www.sevenbridges.com/x": -5.7914533615112305,
+                    "https://www.sevenbridges.com/y": 1468.1177978515625
                 }
             ],
             "outputs": [
@@ -3603,6 +3615,10 @@
                         {
                             "id": "#biometrics_extract_0_2_13/vcf_file",
                             "source": "#vcf_file"
+                        },
+                        {
+                            "id": "#biometrics_extract_0_2_13/bed_file",
+                            "source": "#bed_file"
                         }
                     ],
                     "out": [
@@ -3642,13 +3658,13 @@
                             "source": "#maf"
                         },
                         {
-                            "id": "#getbasecountsmultisample_1_2_5/ref_fasta",
-                            "source": "#reference"
-                        },
-                        {
                             "id": "#getbasecountsmultisample_1_2_5/output",
                             "source": "#sample_name",
                             "valueFrom": "$(self + '_collapsed_hotspots_fillout.maf')"
+                        },
+                        {
+                            "id": "#getbasecountsmultisample_1_2_5/ref_fasta",
+                            "source": "#reference"
                         }
                     ],
                     "out": [
@@ -3665,9 +3681,6 @@
             "requirements": [
                 {
                     "class": "SubworkflowFeatureRequirement"
-                },
-                {
-                    "class": "InlineJavascriptRequirement"
                 }
             ]
         }

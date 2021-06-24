@@ -117,6 +117,10 @@ inputs:
     type: File
     'sbg:x': 0
     'sbg:y': 1893.34375
+  - id: bed_file
+    type: File?
+    'sbg:x': -5.7914533615112305
+    'sbg:y': 1468.1177978515625
 outputs:
   - id: fgbio_collect_duplex_seq_metrics_duplex_family_size_pool_a
     outputSource:
@@ -635,6 +639,8 @@ steps:
         source: reference
       - id: vcf_file
         source: vcf_file
+      - id: bed_file
+        source: bed_file
     out:
       - id: biometrics_extract_pickle
     run: ../command_line_tools/biometrics_extract/0.2.13/biometrics_extract.cwl
@@ -654,11 +660,11 @@ steps:
         default: 1
       - id: maf
         source: maf
-      - id: ref_fasta
-        source: reference
       - id: output
         source: sample_name
         valueFrom: $(self + '_collapsed_hotspots_fillout.maf')
+      - id: ref_fasta
+        source: reference
     out:
       - id: fillout
     run: >-
@@ -669,4 +675,3 @@ steps:
 requirements:
   - class: SubworkflowFeatureRequirement
   - class: InlineJavascriptRequirement
-
