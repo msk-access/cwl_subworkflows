@@ -7,7 +7,12 @@ $namespaces:
   sbg: 'https://www.sevenbridges.com/'
 inputs:
   - id: input
-    type: File
+    type:
+      - File
+      - type: array
+        items: File
+    secondaryFiles:
+      - ^.bai
     'sbg:x': 0
     'sbg:y': 374.0625
   - id: target_intervals
@@ -29,46 +34,79 @@ inputs:
     type: string?
     'sbg:x': 0
     'sbg:y': 53.4375
+  - id: hsmetrics_minimum_mapping_quality
+    type: int?
+    label: hsmetrics_minimum_mapping_quality
+    'sbg:x': 1
+    'sbg:y': 613
+  - id: hsmetrics_minimum_base_quality
+    type: int?
+    label: hsmetrics_minimum_base_quality
+    'sbg:x': 3
+    'sbg:y': 743
+  - id: hsmetrics_coverage_cap
+    type: int?
+    label: hsmetrics_coverage_cap
+    'sbg:x': 2
+    'sbg:y': 872
 outputs:
   - id: gatk_collect_insert_size_metrics_histogram_pdf
     outputSource:
       - >-
         gatk_collect_insert_size_metrics_4_1_8_0/gatk_collect_insert_size_metrics_histogram_pdf
-    type: File
+    type:
+      - File
+      - type: array
+        items: File
     'sbg:x': 700.636962890625
     'sbg:y': 106.875
   - id: gatk_collect_insert_size_metrics_txt
     outputSource:
       - >-
         gatk_collect_insert_size_metrics_4_1_8_0/gatk_collect_insert_size_metrics_txt
-    type: File
+    type:
+      - File
+      - type: array
+        items: File
     'sbg:x': 700.636962890625
     'sbg:y': 0
   - id: gatk_collect_hs_metrics_txt
     outputSource:
       - gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_txt
-    type: File
+    type:
+      - File
+      - type: array
+        items: File
     'sbg:x': 700.636962890625
     'sbg:y': 213.75
   - id: gatk_collect_hs_metrics_per_base_coverage_txt
     outputSource:
       - >-
         gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_per_base_coverage_txt
-    type: File
+    type:
+      - File
+      - type: array
+        items: File
     'sbg:x': 700.636962890625
     'sbg:y': 427.5
   - id: gatk_collect_hs_metrics_per_target_coverage_txt
     outputSource:
       - >-
         gatk_collect_hs_metrics_4_1_8_0/gatk_collect_hs_metrics_per_target_coverage_txt
-    type: File
+    type:
+      - File
+      - type: array
+        items: File
     'sbg:x': 700.636962890625
     'sbg:y': 320.625
   - id: gatk_collect_alignment_summary_metrics_txt
     outputSource:
       - >-
         gatk_collect_alignment_summary_metrics_4_1_3_0/gatk_collect_alignment_summary_metrics_txt
-    type: File
+    type:
+      - File
+      - type: array
+        items: File
     'sbg:x': 700.636962890625
     'sbg:y': 534.375
 steps:
@@ -85,8 +123,8 @@ steps:
     run: >-
       ../command_line_tools/gatk_collect_alignment_summary_metrics_4.1.8.0/gatk_collect_alignment_summary_metrics_4.1.8.0.cwl
     label: GATK-CollectAlignmentSummaryMetrics
-    'sbg:x': 208.8125
-    'sbg:y': 402.0625
+    'sbg:x': 334.2886657714844
+    'sbg:y': 560.505126953125
   - id: gatk_collect_hs_metrics_4_1_8_0
     in:
       - id: input
@@ -95,6 +133,12 @@ steps:
         source: bait_intervals
       - id: target_intervals
         source: target_intervals
+      - id: coverage_cap
+        source: hsmetrics_coverage_cap
+      - id: minimum_base_quality
+        source: hsmetrics_minimum_base_quality
+      - id: minimum_mapping_quality
+        source: hsmetrics_minimum_mapping_quality
       - id: reference
         source: reference
       - id: temporary_directory
@@ -106,8 +150,8 @@ steps:
     run: >-
       ../command_line_tools/gatk_collect_hs_metrics_4.1.8.0/gatk_collect_hs_metrics_4.1.8.0.cwl
     label: GATK-CollectHsMetrics
-    'sbg:x': 208.8125
-    'sbg:y': 253.1875
+    'sbg:x': 327.8453674316406
+    'sbg:y': 372.8453674316406
   - id: gatk_collect_insert_size_metrics_4_1_8_0
     in:
       - id: input
@@ -122,8 +166,8 @@ steps:
     run: >-
       ../command_line_tools/gatk_collect_insert_size_metrics_4.1.8.0/gatk_collect_insert_size_metrics_4.1.8.0.cwl
     label: GATK-CollectInsertSizeMetrics
-    'sbg:x': 208.8125
-    'sbg:y': 111.3125
+    'sbg:x': 335.57733154296875
+    'sbg:y': 194.7628936767578
 requirements: []
 $schemas:
   - 'http://schema.org/version/latest/schemaorg-current-http.rdf'

@@ -24,16 +24,12 @@ inputs:
       - 'null'
       - type: array
         items: string
-        inputBinding:
-          prefix: '--read-filter'
     'sbg:x': 0
     'sbg:y': 213.375
   - id: known_sites
     type:
       type: array
       items: File
-      inputBinding:
-        prefix: '--known-sites'
     secondaryFiles:
       - .idx
     'sbg:x': 0
@@ -51,8 +47,6 @@ inputs:
       - 'null'
       - type: array
         items: string
-        inputBinding:
-          prefix: '--disable-read-filter'
     'sbg:x': 0
     'sbg:y': 640.0625
   - id: lenient

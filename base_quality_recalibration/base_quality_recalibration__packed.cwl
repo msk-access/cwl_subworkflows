@@ -12,7 +12,7 @@
                         "^.bai"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 427.4375
+                    "https://www.sevenbridges.com/y": 533.390625
                 },
                 {
                     "id": "#reference",
@@ -22,7 +22,7 @@
                         "^.dict"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 0
+                    "https://www.sevenbridges.com/y": 106.703125
                 },
                 {
                     "id": "#read_filter",
@@ -30,26 +30,23 @@
                         "null",
                         {
                             "type": "array",
-                            "items": "string",
-                            "inputBinding": {
-                                "prefix": "--read-filter"
-                            }
+                            "items": "string"
                         }
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 106.859375
+                    "https://www.sevenbridges.com/y": 213.375
                 },
                 {
                     "id": "#known_sites",
                     "type": {
                         "type": "array",
-                        "items": "File",
-                        "inputBinding": {
-                            "prefix": "--known-sites"
-                        }
+                        "items": "File"
                     },
+                    "secondaryFiles": [
+                        ".idx"
+                    ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 320.578125
+                    "https://www.sevenbridges.com/y": 426.71875
                 },
                 {
                     "id": "#base_recalibrator_output_file_name",
@@ -58,7 +55,7 @@
                         "string"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 641.15625
+                    "https://www.sevenbridges.com/y": 746.734375
                 },
                 {
                     "id": "#add_output_sam_program_record",
@@ -67,7 +64,7 @@
                         "boolean"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 961.734375
+                    "https://www.sevenbridges.com/y": 853.4375
                 },
                 {
                     "id": "#disable_read_filter",
@@ -75,14 +72,11 @@
                         "null",
                         {
                             "type": "array",
-                            "items": "string",
-                            "inputBinding": {
-                                "prefix": "--disable-read-filter"
-                            }
+                            "items": "string"
                         }
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 534.296875
+                    "https://www.sevenbridges.com/y": 640.0625
                 },
                 {
                     "id": "#lenient",
@@ -91,7 +85,7 @@
                         "boolean"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 213.71875
+                    "https://www.sevenbridges.com/y": 320.046875
                 },
                 {
                     "id": "#apply_bqsr_create_output_bam_index",
@@ -99,8 +93,8 @@
                         "null",
                         "boolean"
                     ],
-                    "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 854.875
+                    "https://www.sevenbridges.com/x": 337.34375,
+                    "https://www.sevenbridges.com/y": 533.453125
                 },
                 {
                     "id": "#apply_bqsr_output_file_name",
@@ -108,8 +102,17 @@
                         "null",
                         "string"
                     ],
+                    "https://www.sevenbridges.com/x": 337.34375,
+                    "https://www.sevenbridges.com/y": 426.71875
+                },
+                {
+                    "id": "#temporary_directory",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 748.015625
+                    "https://www.sevenbridges.com/y": 0
                 }
             ],
             "outputs": [
@@ -118,12 +121,12 @@
                     "outputSource": [
                         "#gatk_apply_bqsr_4_1_8_1/gatk_apply_bqsr_bam"
                     ],
-                    "type": [
-                        "null",
-                        "File"
+                    "type": "File",
+                    "secondaryFiles": [
+                        "^.bai"
                     ],
-                    "https://www.sevenbridges.com/x": 1060.585205078125,
-                    "https://www.sevenbridges.com/y": 772.228271484375
+                    "https://www.sevenbridges.com/x": 1269.836181640625,
+                    "https://www.sevenbridges.com/y": 426.71875
                 }
             ],
             "steps": [
@@ -167,6 +170,10 @@
                             "source": [
                                 "#read_filter"
                             ]
+                        },
+                        {
+                            "id": "#gatk_base_recalibrator_4_1_8_1/temporary_directory",
+                            "source": "#temporary_directory"
                         }
                     ],
                     "out": [
@@ -176,8 +183,8 @@
                     ],
                     "run": "#gatk_base_recalibrator_4.1.8.1.cwl",
                     "label": "gatk_base_recalibrator_4.1.8.1",
-                    "https://www.sevenbridges.com/x": 356.59375,
-                    "https://www.sevenbridges.com/y": 350.4375
+                    "https://www.sevenbridges.com/x": 337.34375,
+                    "https://www.sevenbridges.com/y": 263.8515625
                 },
                 {
                     "id": "#gatk_apply_bqsr_4_1_8_1",
@@ -217,6 +224,10 @@
                             "source": [
                                 "#read_filter"
                             ]
+                        },
+                        {
+                            "id": "#gatk_apply_bqsr_4_1_8_1/temporary_directory",
+                            "source": "#temporary_directory"
                         }
                     ],
                     "out": [
@@ -226,8 +237,8 @@
                     ],
                     "run": "#gatk_apply_bqsr_4.1.8.1.cwl",
                     "label": "gatk_apply_bqsr_4.1.8.1",
-                    "https://www.sevenbridges.com/x": 589.6504516601562,
-                    "https://www.sevenbridges.com/y": 741.6892700195312
+                    "https://www.sevenbridges.com/x": 837.3018188476562,
+                    "https://www.sevenbridges.com/y": 370.5859375
                 }
             ],
             "requirements": [],
@@ -260,7 +271,8 @@
             "class": "CommandLineTool",
             "id": "#gatk_apply_bqsr_4.1.8.1.cwl",
             "baseCommand": [
-                "gatk"
+                "gatk",
+                "ApplyBQSR"
             ],
             "inputs": [
                 {
@@ -733,15 +745,20 @@
                         "null",
                         "int"
                     ]
+                },
+                {
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/temporary_directory",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "doc": "Default value: null. This option may be specified 0 or more times."
                 }
             ],
             "outputs": [
                 {
                     "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_bam",
-                    "type": [
-                        "null",
-                        "File"
-                    ],
+                    "type": "File",
                     "outputBinding": {
                         "glob": "${\n    if(inputs.output_file_name){\n        return inputs.output_file_name\n    } else {\n        return inputs.input.basename.replace(/.bam/, '_bqsr.bam')\n    }\n}"
                     },
@@ -755,34 +772,28 @@
                 {
                     "position": 0,
                     "prefix": "--java-options",
-                    "valueFrom": "${\n     if(inputs.memory_per_job && inputs.memory_overhead){\n        if(inputs.memory_per_job % 1000 == 0){\n            return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\"\n        } else {\n            return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\"\n        }\n     } else if (inputs.memory_per_job && !inputs.memory_overhead){\n        if(inputs.memory_per_job % 1000 == 0) {\n            return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\"\n        } else {\n            return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\"\n        }\n     } else if(!inputs.memory_per_job && inputs.memory_overhead){\n        return \"-Xmx4G\"\n     } else {\n        return \"-Xmx4G\"\n     }\n}"
+                    "valueFrom": "${\n     if(inputs.memory_per_job && inputs.memory_overhead){\n        if(inputs.memory_per_job % 1000 == 0){\n            return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\"\n        } else {\n            return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\"\n        }\n     } else if (inputs.memory_per_job && !inputs.memory_overhead){\n        if(inputs.memory_per_job % 1000 == 0) {\n            return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\"\n        } else {\n            return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\"\n        }\n     } else if(!inputs.memory_per_job && inputs.memory_overhead){\n        return \"-Xmx12G\"\n     } else {\n        return \"-Xmx12G\"\n     }\n}"
+                },
+                {
+                    "position": 2,
+                    "prefix": "--tmp-dir",
+                    "valueFrom": "${\n    if(inputs.temporary_directory)\n        return inputs.temporary_directory;\n      return runtime.tmpdir\n}"
                 },
                 {
                     "position": 2,
                     "prefix": "--output",
                     "valueFrom": "${\n    if(inputs.output_file_name){\n        return inputs.output_file_name\n    } else {\n        return inputs.input.basename.replace(/.bam/, '_bqsr.bam')\n    }\n}"
-                },
-                {
-                    "position": 2,
-                    "prefix": "--tmp-dir",
-                    "valueFrom": "$(runtime.tmpdir)"
-                },
-                {
-                    "position": 1,
-                    "prefix": "",
-                    "separate": false,
-                    "valueFrom": "ApplyBQSR"
                 }
             ],
             "requirements": [
                 {
                     "class": "ResourceRequirement",
-                    "ramMin": 10000,
-                    "coresMin": 8
+                    "ramMin": 16000,
+                    "coresMin": 4
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "broadinstitute/gatk:4.1.8.1"
+                    "dockerPull": "ghcr.io/msk-access/gatk:4.1.8.1"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -837,7 +848,8 @@
             "class": "CommandLineTool",
             "id": "#gatk_base_recalibrator_4.1.8.1.cwl",
             "baseCommand": [
-                "gatk"
+                "gatk",
+                "BaseRecalibrator"
             ],
             "inputs": [
                 {
@@ -866,7 +878,7 @@
                     },
                     "doc": "One or more databases of known polymorphic sites used to exclude regions around known polymorphisms from analysis",
                     "secondaryFiles": [
-                        "^.idx"
+                        ".idx"
                     ]
                 },
                 {
@@ -1375,6 +1387,14 @@
                         "null",
                         "int"
                     ]
+                },
+                {
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/temporary_directory",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "doc": "Default value: null. This option may be specified 0 or more times."
                 }
             ],
             "outputs": [
@@ -1391,28 +1411,17 @@
                 {
                     "position": 0,
                     "prefix": "--java-options",
-                    "valueFrom": "${\n     if(inputs.memory_per_job && inputs.memory_overhead){\n        if(inputs.memory_per_job % 1000 == 0){\n            return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\"\n        } else {\n            return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\"\n        }\n     } else if (inputs.memory_per_job && !inputs.memory_overhead){\n        if(inputs.memory_per_job % 1000 == 0) {\n            return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\"\n        } else {\n            return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\"\n        }\n     } else if(!inputs.memory_per_job && inputs.memory_overhead){\n        return \"-Xmx4G\"\n     } else {\n        return \"-Xmx4G\"\n     }\n}"
-                },
-                {
-                    "position": 1,
-                    "prefix": "",
-                    "separate": false,
-                    "valueFrom": "BaseRecalibrator"
+                    "valueFrom": "${\n     if(inputs.memory_per_job && inputs.memory_overhead){\n        if(inputs.memory_per_job % 1000 == 0){\n            return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\"\n        } else {\n            return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\"\n        }\n     } else if (inputs.memory_per_job && !inputs.memory_overhead){\n        if(inputs.memory_per_job % 1000 == 0) {\n            return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\"\n        } else {\n            return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\"\n        }\n     } else if(!inputs.memory_per_job && inputs.memory_overhead){\n        return \"-Xmx12G\"\n     } else {\n        return \"-Xmx12G\"\n     }\n}"
                 },
                 {
                     "position": 2,
                     "prefix": "--tmp-dir",
-                    "valueFrom": "$(runtime.tmpdir)"
+                    "valueFrom": "${\n    if(inputs.temporary_directory)\n        return inputs.temporary_directory;\n      return runtime.tmpdir\n}"
                 },
                 {
                     "position": 2,
                     "prefix": "--output",
                     "valueFrom": "${\n    if(inputs.output_file_name){\n        return inputs.output_file_name\n    } else {\n        return inputs.input.basename.replace(/.bam/, '_bqsr.table')\n    }\n}"
-                },
-                {
-                    "position": 2,
-                    "prefix": "--verbosity",
-                    "valueFrom": "INFO"
                 }
             ],
             "requirements": [
@@ -1423,7 +1432,7 @@
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "broadinstitute/gatk:4.1.8.1"
+                    "dockerPull": "ghcr.io/msk-access/gatk:4.1.8.1"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -1470,6 +1479,6 @@
     ],
     "cwlVersion": "v1.0",
     "$schemas": [
-        "http://schema.org/version/9.0/schemaorg-current-http.rdf"
+        "http://schema.org/version/latest/schemaorg-current-http.rdf"
     ]
 }

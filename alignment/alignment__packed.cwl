@@ -12,7 +12,7 @@
                         "boolean"
                     ],
                     "https://www.sevenbridges.com/x": 319.15625,
-                    "https://www.sevenbridges.com/y": 852.0390625
+                    "https://www.sevenbridges.com/y": 958.8671875
                 },
                 {
                     "id": "#output_file_name",
@@ -21,7 +21,7 @@
                         "string"
                     ],
                     "https://www.sevenbridges.com/x": 319.15625,
-                    "https://www.sevenbridges.com/y": 745.2109375
+                    "https://www.sevenbridges.com/y": 852.0390625
                 },
                 {
                     "id": "#read_group_description",
@@ -30,25 +30,25 @@
                         "string"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 1388.765625
+                    "https://www.sevenbridges.com/y": 1495.59375
                 },
                 {
                     "id": "#read_group_identifier",
                     "type": "string",
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 1281.9375
+                    "https://www.sevenbridges.com/y": 1388.765625
                 },
                 {
                     "id": "#read_group_library",
                     "type": "string",
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 1175.109375
+                    "https://www.sevenbridges.com/y": 1281.9375
                 },
                 {
                     "id": "#read_group_platform_unit",
                     "type": "string",
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 1068.28125
+                    "https://www.sevenbridges.com/y": 1175.109375
                 },
                 {
                     "id": "#read_group_run_date",
@@ -57,25 +57,25 @@
                         "string"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 961.453125
+                    "https://www.sevenbridges.com/y": 1068.28125
                 },
                 {
                     "id": "#read_group_sample_name",
                     "type": "string",
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 854.625
+                    "https://www.sevenbridges.com/y": 961.453125
                 },
                 {
                     "id": "#read_group_sequencing_center",
                     "type": "string",
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 747.796875
+                    "https://www.sevenbridges.com/y": 854.625
                 },
                 {
                     "id": "#read_group_sequencing_platform",
                     "type": "string",
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 640.96875
+                    "https://www.sevenbridges.com/y": 747.796875
                 },
                 {
                     "id": "#sort_order",
@@ -84,7 +84,7 @@
                         "string"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 320.484375
+                    "https://www.sevenbridges.com/y": 427.3125
                 },
                 {
                     "id": "#validation_stringency",
@@ -98,8 +98,17 @@
                 {
                     "id": "#reference",
                     "type": "File",
+                    "secondaryFiles": [
+                        ".amb",
+                        ".fai",
+                        ".sa",
+                        "^.dict",
+                        ".ann",
+                        ".bwt",
+                        ".pac"
+                    ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 427.3125
+                    "https://www.sevenbridges.com/y": 534.140625
                 },
                 {
                     "id": "#reads",
@@ -108,7 +117,7 @@
                         "items": "File"
                     },
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 534.140625
+                    "https://www.sevenbridges.com/y": 640.96875
                 },
                 {
                     "id": "#output",
@@ -117,7 +126,7 @@
                         "string"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 1602.421875
+                    "https://www.sevenbridges.com/y": 1709.25
                 },
                 {
                     "id": "#P",
@@ -126,7 +135,7 @@
                         "boolean"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 1495.59375
+                    "https://www.sevenbridges.com/y": 1602.421875
                 },
                 {
                     "id": "#M",
@@ -135,7 +144,7 @@
                         "boolean"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 1709.25
+                    "https://www.sevenbridges.com/y": 1816.078125
                 },
                 {
                     "id": "#T",
@@ -144,7 +153,7 @@
                         "int"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 213.65625
+                    "https://www.sevenbridges.com/y": 320.484375
                 },
                 {
                     "id": "#Y",
@@ -162,7 +171,7 @@
                         "int"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 1816.078125
+                    "https://www.sevenbridges.com/y": 1922.90625
                 },
                 {
                     "id": "#bwa_number_of_threads",
@@ -171,7 +180,16 @@
                         "int"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 1922.90625
+                    "https://www.sevenbridges.com/y": 2029.734375
+                },
+                {
+                    "id": "#temporary_directory",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 213.65625
                 }
             ],
             "outputs": [
@@ -181,8 +199,11 @@
                         "#picard_add_or_replace_read_groups_4_1_8_1/picard_add_or_replace_read_groups_bam"
                     ],
                     "type": "File",
-                    "https://www.sevenbridges.com/x": 1379.46142578125,
-                    "https://www.sevenbridges.com/y": 961.453125
+                    "secondaryFiles": [
+                        "^.bai"
+                    ],
+                    "https://www.sevenbridges.com/x": 1389.239501953125,
+                    "https://www.sevenbridges.com/y": 1014.8671875
                 }
             ],
             "steps": [
@@ -240,6 +261,10 @@
                         {
                             "id": "#picard_add_or_replace_read_groups_4_1_8_1/create_bam_index",
                             "source": "#create_bam_index"
+                        },
+                        {
+                            "id": "#picard_add_or_replace_read_groups_4_1_8_1/temporary_directory",
+                            "source": "#temporary_directory"
                         }
                     ],
                     "out": [
@@ -250,7 +275,7 @@
                     "run": "#picard_add_or_replace_read_groups_4.1.8.1.cwl",
                     "label": "picard_add_or_replace_read_groups_4.1.8.1",
                     "https://www.sevenbridges.com/x": 737.3328857421875,
-                    "https://www.sevenbridges.com/y": 870.453125
+                    "https://www.sevenbridges.com/y": 923.8671875
                 },
                 {
                     "id": "#bwa_mem_0_7_17",
@@ -302,7 +327,7 @@
                     "run": "#bwa_mem_0.7.17.cwl",
                     "label": "bwa_mem_0.7.17",
                     "https://www.sevenbridges.com/x": 319.15625,
-                    "https://www.sevenbridges.com/y": 1014.8671875
+                    "https://www.sevenbridges.com/y": 1121.6953125
                 }
             ],
             "requirements": [],
@@ -891,12 +916,12 @@
             "requirements": [
                 {
                     "class": "ResourceRequirement",
-                    "ramMin": "${ if(inputs.memory_per_job && inputs.memory_overhead) { return inputs.memory_per_job + inputs.memory_overhead } else if (inputs.memory_per_job && !inputs.memory_overhead){ return inputs.memory_per_job + 2000 } else if(!inputs.memory_per_job && inputs.memory_overhead){ return 32000 + inputs.memory_overhead } else { return 32000 } }",
-                    "coresMin": "${ if (inputs.number_of_threads) { return inputs.number_of_threads } else { return 16 } }"
+                    "ramMin": 34000,
+                    "coresMin": 16
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "mskaccess/bwa_mem_0.7.17:0.1.0"
+                    "dockerPull": "ghcr.io/msk-access/bwa:0.7.17"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -1135,6 +1160,14 @@
                         "prefix": "--CREATE_INDEX"
                     },
                     "doc": "Whether to create a BAM index when writing a coordinate-sorted BAM file. Default value:false. This option can be set to 'null' to clear the default value. Possible values:{true, false}"
+                },
+                {
+                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/temporary_directory",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "doc": "Default value: null. This option may be specified 0 or more times."
                 }
             ],
             "outputs": [
@@ -1157,13 +1190,14 @@
                 },
                 {
                     "position": 0,
-                    "valueFrom": "-XX:-UseGCOverheadLimit",
-                    "shellQuote": false
+                    "prefix": "-Djava.io.tmpdir=",
+                    "separate": false,
+                    "valueFrom": "${\n    if(inputs.temporary_directory)\n        return inputs.temporary_directory;\n      return runtime.tmpdir\n}"
                 },
                 {
                     "position": 0,
-                    "valueFrom": "-Djava.io.tmpdir=$(runtime.tmpdir)",
-                    "shellQuote": false
+                    "shellQuote": false,
+                    "valueFrom": "-XX:-UseGCOverheadLimit"
                 },
                 {
                     "position": 0,
@@ -1177,7 +1211,7 @@
                 {
                     "position": 0,
                     "prefix": "--TMP_DIR",
-                    "valueFrom": "$(runtime.tmpdir)"
+                    "valueFrom": "${\n    if(inputs.temporary_directory)\n        return inputs.temporary_directory;\n      return runtime.tmpdir\n}"
                 },
                 {
                     "position": 0,
@@ -1187,13 +1221,16 @@
             ],
             "requirements": [
                 {
+                    "class": "ShellCommandRequirement"
+                },
+                {
                     "class": "ResourceRequirement",
-                    "ramMin": 25000,
+                    "ramMin": 17000,
                     "coresMin": 2
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "broadinstitute/gatk:4.1.8.1"
+                    "dockerPull": "ghcr.io/msk-access/gatk:4.1.8.1"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -1236,6 +1273,6 @@
     ],
     "cwlVersion": "v1.0",
     "$schemas": [
-        "http://schema.org/version/9.0/schemaorg-current-http.rdf"
+        "http://schema.org/version/latest/schemaorg-current-http.rdf"
     ]
 }

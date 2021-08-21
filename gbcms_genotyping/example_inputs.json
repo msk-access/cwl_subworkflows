@@ -1,0 +1,51 @@
+{
+    "duplex_bams": [
+        {
+            "class": "File",
+            "path": "/Users/shahr2/Documents/test_reference/bam/duplex/SeraCare_0-5.bam"
+        }
+    ],
+    "duplex_genotyping_bams_ids": [
+        "test1"
+    ],
+    "duplex_output": null,
+    "generic_counting": null,
+    "maf": {
+        "class": "File",
+        "path": "/Users/shahr2/Downloads/SeraCare_0-5.F22.combined-variants.vep_keptrmv_taggedHotspots.maf"
+    },
+    "normal_bams": [
+        {
+            "class": "File",
+            "path": "/Users/shahr2/Documents/test_reference/bam/SeraCare_0-5.bam"
+        }
+    ],
+    "normal_genotyping_bams_ids": [
+        "test1"
+    ],
+    "normal_output": null,
+    "ref_fasta": {
+        "class": "File",
+        "path": "/Users/shahr2/Documents/test_reference/reference/versions/hg19/Homo_sapiens_assembly19.fasta"
+    },
+    "simplex_bams": [
+        {
+            "class": "File",
+            "path": "/Users/shahr2/Documents/test_reference/bam/SeraCare_0-5-SIMPLEX.bam"
+        }
+    ],
+    "simplex_genotyping_bams_ids": [
+        "test1"
+    ],
+    "simplex_output": null,
+    "tumor_bams": [
+        {
+            "class": "File",
+            "path": "/Users/shahr2/Documents/test_reference/bam/SeraCare_0-5.bam"
+        }
+    ],
+    "tumor_genotyping_bams_ids": [
+        "test1"
+    ],
+    "tumor_output": null
+}
