@@ -16,7 +16,7 @@ The sub-workflow calculates quality control metrics for collapsed BAMs. The main
 - [Biometrics](https://msk-access.gitbook.io/biometrics/)
 
 ### Two versions of this subworkflow:
-v1.0 qc_collapsed_bam.cwl
+### v1.0 qc_collapsed_bam.cwl
 
 This sub-workflow was originally designed for MSK-ACCESS data. Hence, in addition to the collapsed BAM, it expects two sets of bait/target regions (referred to as pool A and pool B for MSK-ACCESS).
 
@@ -75,7 +75,7 @@ optional arguments:
   --maf MAF
 ```
 
-v2.0 qc_collapsed_bam_v2.0.cwl
+### v2.0 qc_collapsed_bam_v2.0.cwl
 
 This sub-workflow was designed for MSK-ACCESS and CMO-CH data. The updated v2.0 of this sub-workflow expects a single set of bait/target regions as opposed to two in v1.0.
 

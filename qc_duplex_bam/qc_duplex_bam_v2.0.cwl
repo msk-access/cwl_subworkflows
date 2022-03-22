@@ -10,6 +10,7 @@ inputs:
     doc: 'Path to reference fasta, containing all regions in bed_file'
     secondaryFiles:
       - ^.fasta.fai
+      - ^.dict
     'sbg:x': 0
     'sbg:y': 903.75
   - id: duplex_bam
@@ -113,6 +114,21 @@ inputs:
     type: File
     'sbg:x': 0
     'sbg:y': 1865.34375
+  - id: bed
+    type: File?
+    doc: optional BED file to restrict coverage	calculation with mosdepth
+    inputBinding:
+      position: 0
+      prefix: '-b'
+      shellQuote: false
+  - id: flag
+    type: int?
+    'sbg:x': 0
+    'sbg:y': 1865.34375
+  - id: mapq
+    type: int?
+    'sbg:x': 0
+    'sbg:y': 1865.34375
 outputs:
   - id: sequence_qc_noise_positions
     outputSource:
@@ -167,8 +183,8 @@ outputs:
       - type: array
         items: File
     label: gatk_collect_alignment_summary_metrics_txt
-    'sbg:x': 982.1435546875
-    'sbg:y': 1923.1875
+    'sbg:x': 971.8158569335938
+    'sbg:y': 1621.2945556640625
   - id: gatk_collect_hs_metrics_per_base_coverage_txt
     outputSource:
       - bam_qc_stats/gatk_collect_hs_metrics_per_base_coverage_txt
@@ -256,8 +272,8 @@ outputs:
     outputSource:
       - biometrics_extract_0_2_13/biometrics_extract_pickle
     type: File
-    'sbg:x': 982.1435546875
-    'sbg:y': 2448.5625
+    'sbg:x': 988.3651123046875
+    'sbg:y': 2717.8662109375
   - id: biometrics_minor_sites_plot
     outputSource:
       - biometrics_minor_0_2_13/biometrics_minor_sites_plot
@@ -286,8 +302,32 @@ outputs:
     outputSource:
       - getbasecountsmultisample_1_2_5/fillout
     type: File
-    'sbg:x': 982.1435546875
-    'sbg:y': 2030.03125
+    'sbg:x': 983.2730102539062
+    'sbg:y': 1816.1336669921875
+  - id: per_base_bed
+    outputSource:
+      - mosdepth_0_3_3/per_base_bed
+    type: File
+    'sbg:x': 983.1544799804688
+    'sbg:y': 1895.7244873046875
+  - id: per_region_bed
+    outputSource:
+      - mosdepth_0_3_3/per_region_bed
+    type: File?
+    'sbg:x': 986.9735717773438
+    'sbg:y': 2005.5035400390625
+  - id: global_distribution
+    outputSource:
+      - mosdepth_0_3_3/global_distribution
+    type: File?
+    'sbg:x': 974.1873779296875
+    'sbg:y': 2111.288818359375
+  - id: region_distribution
+    outputSource:
+      - mosdepth_0_3_3/region_distribution
+    type: File?
+    'sbg:x': 980.7269287109375
+    'sbg:y': 2215.860595703125
 steps:
   - id: bam_qc_stats
     in:
@@ -344,8 +384,8 @@ steps:
       - id: sequence_qc_noise_del
       - id: sequence_qc_figures
     run: ../command_line_tools/sequence_qc/0.2.3/sequence_qc_0.2.3.cwl
-    'sbg:x': 351.4375
-    'sbg:y': 998.4375
+    'sbg:x': 394.4020690917969
+    'sbg:y': 1001.4264526367188
   - id: biometrics_major_0_2_13
     in:
       - id: input
@@ -365,8 +405,8 @@ steps:
       - id: biometrics_major_json
       - id: biometrics_major_plot
     run: ../command_line_tools/biometrics_major/0.2.13/biometrics_major.cwl
-    'sbg:x': 982.1435546875
-    'sbg:y': 2313.71875
+    'sbg:x': 985.8190307617188
+    'sbg:y': 2553.6005859375
   - id: biometrics_extract_0_2_13
     in:
       - id: sample_bam
@@ -406,8 +446,8 @@ steps:
       - id: biometrics_minor_plot
       - id: biometrics_minor_sites_plot
     run: ../command_line_tools/biometrics_minor/0.2.13/biometrics_minor.cwl
-    'sbg:x': 982.1435546875
-    'sbg:y': 2157.875
+    'sbg:x': 974.3618774414062
+    'sbg:y': 2355.5908203125
   - id: getbasecountsmultisample_1_2_5
     in:
       - id: genotyping_bams
@@ -429,11 +469,33 @@ steps:
         source: reference
     out:
       - id: fillout
-    run: >-
-      ../command_line_tools/getbasecountsmultisample/1.2.5/getbasecountsmultisample_1.2.5.cwl
+    run: ../command_line_tools/getbasecountsmultisample/1.2.5/getbasecountsmultisample_1.2.5.cwl
     label: getbasecountsmultisample_1.2.5
-    'sbg:x': 351.4375
-    'sbg:y': 814.59375
+    'sbg:x': 379.7510070800781
+    'sbg:y': 598.9540405273438
+  - id: mosdepth_0_3_3
+    in:
+      - id: bed
+        source: bed
+      - id: input_bam
+        source:
+          - duplex_bam
+      - id: prefix
+        source: sample_name
+      - id: flag
+        default: 1796
+      - id: mapq
+        default: 20
+    out:
+      - id: per_base_bed
+      - id: per_region_bed
+      - id: global_distribution
+      - id: region_distribution
+    run: >-
+      ../command_line_tools/mosdepth_0.3.3/mosdepth_0.3.3.cwl
+    label: mosdepth_0.3.3
+    'sbg:x': 390.10137939453125
+    'sbg:y': 794.4492797851562
 requirements:
-  - class: SubworkflowFeatureRequirement
   - class: InlineJavascriptRequirement
+  - class: SubworkflowFeatureRequirement
