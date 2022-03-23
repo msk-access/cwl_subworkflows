@@ -305,6 +305,7 @@
             "https://schema.org/dateCreated": "2020-09-23",
             "https://schema.org/license": "https://spdx.org/licenses/Apache-2.0",
             "$namespaces": {
+                "s": "https://schema.org/",
                 "sbg": "https://www.sevenbridges.com/"
             }
         },
@@ -1275,6 +1276,7 @@
         {
             "class": "Workflow",
             "id": "#main",
+            "doc": "Calcualte Quality Control Metrics from Simplex BAM",
             "label": "qc_simplex_bam",
             "inputs": [
                 {
@@ -1284,8 +1286,8 @@
                         "^.fasta.fai",
                         "^.dict"
                     ],
-                    "https://www.sevenbridges.com/x": -573,
-                    "https://www.sevenbridges.com/y": 247.2935333251953
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 213.28125
                 },
                 {
                     "id": "#simplex_bam",
@@ -1294,22 +1296,22 @@
                     "secondaryFiles": [
                         "^.bai"
                     ],
-                    "https://www.sevenbridges.com/x": -570.2189331054688,
-                    "https://www.sevenbridges.com/y": 376.736328125
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 106.671875
                 },
                 {
                     "id": "#bait_intervals",
                     "type": "File",
                     "label": "bait_intervals",
-                    "https://www.sevenbridges.com/x": -583.9046020507812,
-                    "https://www.sevenbridges.com/y": -163.9043731689453
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 640.09375
                 },
                 {
                     "id": "#target_intervals",
                     "type": "File",
                     "label": "target_intervals",
-                    "https://www.sevenbridges.com/x": -581.4170532226562,
-                    "https://www.sevenbridges.com/y": -288.2825012207031
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 0
                 },
                 {
                     "id": "#hsmetrics_minimum_mapping_quality",
@@ -1317,8 +1319,8 @@
                         "null",
                         "int"
                     ],
-                    "https://www.sevenbridges.com/x": -585.7700805664062,
-                    "https://www.sevenbridges.com/y": -414.1761779785156
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 319.953125
                 },
                 {
                     "id": "#hsmetrics_minimum_base_quality",
@@ -1326,8 +1328,8 @@
                         "null",
                         "int"
                     ],
-                    "https://www.sevenbridges.com/x": -590.94140625,
-                    "https://www.sevenbridges.com/y": -539.5800170898438
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 426.6875
                 },
                 {
                     "id": "#hsmetrics_coverage_cap",
@@ -1335,8 +1337,8 @@
                         "null",
                         "int"
                     ],
-                    "https://www.sevenbridges.com/x": -595.156005859375,
-                    "https://www.sevenbridges.com/y": -670.54931640625
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 533.421875
                 }
             ],
             "outputs": [
@@ -1347,8 +1349,8 @@
                     ],
                     "type": "File",
                     "label": "gatk_collect_alignment_summary_metrics_txt",
-                    "https://www.sevenbridges.com/x": 420.07769775390625,
-                    "https://www.sevenbridges.com/y": -155.64930725097656
+                    "https://www.sevenbridges.com/x": 982.1435546875,
+                    "https://www.sevenbridges.com/y": 586.8515625
                 },
                 {
                     "id": "#gatk_collect_hs_metrics_per_base_coverage_txt",
@@ -1357,8 +1359,8 @@
                     ],
                     "type": "File",
                     "label": "gatk_collect_hs_metrics_per_base_coverage_txt",
-                    "https://www.sevenbridges.com/x": 417.46673583984375,
-                    "https://www.sevenbridges.com/y": -274.4482727050781
+                    "https://www.sevenbridges.com/x": 982.1435546875,
+                    "https://www.sevenbridges.com/y": 480.1171875
                 },
                 {
                     "id": "#gatk_collect_hs_metrics_per_target_coverage_txt",
@@ -1367,8 +1369,8 @@
                     ],
                     "type": "File",
                     "label": "gatk_collect_hs_metrics_per_target_coverage_txt",
-                    "https://www.sevenbridges.com/x": 414.85577392578125,
-                    "https://www.sevenbridges.com/y": -389.3307800292969
+                    "https://www.sevenbridges.com/x": 982.1435546875,
+                    "https://www.sevenbridges.com/y": 373.3828125
                 },
                 {
                     "id": "#gatk_collect_hs_metrics_txt",
@@ -1377,8 +1379,8 @@
                     ],
                     "type": "File",
                     "label": "gatk_collect_hs_metrics_txt",
-                    "https://www.sevenbridges.com/x": 409.9451599121094,
-                    "https://www.sevenbridges.com/y": -498.08355712890625
+                    "https://www.sevenbridges.com/x": 982.1435546875,
+                    "https://www.sevenbridges.com/y": 266.6484375
                 },
                 {
                     "id": "#gatk_collect_insert_size_metrics_histogram_pdf",
@@ -1387,8 +1389,8 @@
                     ],
                     "type": "File",
                     "label": "gatk_collect_insert_size_metrics_histogram_pdf",
-                    "https://www.sevenbridges.com/x": 410.9393005371094,
-                    "https://www.sevenbridges.com/y": -621.7067260742188
+                    "https://www.sevenbridges.com/x": 982.1435546875,
+                    "https://www.sevenbridges.com/y": 159.9140625
                 },
                 {
                     "id": "#gatk_collect_insert_size_metrics_txt",
@@ -1397,8 +1399,8 @@
                     ],
                     "type": "File",
                     "label": "gatk_collect_insert_size_metrics_txt",
-                    "https://www.sevenbridges.com/x": 400.4954528808594,
-                    "https://www.sevenbridges.com/y": -773.1427612304688
+                    "https://www.sevenbridges.com/x": 982.1435546875,
+                    "https://www.sevenbridges.com/y": 53.1796875
                 }
             ],
             "steps": [
@@ -1458,15 +1460,35 @@
                     ],
                     "run": "#bam_qc_stats.cwl",
                     "label": "bam_qc_stats",
-                    "https://www.sevenbridges.com/x": -114.38903045654297,
-                    "https://www.sevenbridges.com/y": -295.4621276855469
+                    "https://www.sevenbridges.com/x": 351.4375,
+                    "https://www.sevenbridges.com/y": 278.078125
                 }
             ],
             "requirements": [
                 {
                     "class": "SubworkflowFeatureRequirement"
                 }
-            ]
+            ],
+            "https://schema.org/author": [
+                {
+                    "class": "https://schema.org/Person",
+                    "https://schema.org/email": "mailto:charalk@mskcc.org",
+                    "https://schema.org/identifier": "",
+                    "https://schema.org/name": "Carmelina Charalambous"
+                }
+            ],
+            "https://schema.org/citation": "",
+            "https://schema.org/codeRepository": "https://github.com/msk-access/uncollapsed_bam_generation",
+            "https://schema.org/contributor": [
+                {
+                    "class": "https://schema.org/Person",
+                    "https://schema.org/email": "mailto:shahr2@mskcc.org",
+                    "https://schema.org/identifier": "https://orcid.org/0000-0001-9042-6213",
+                    "https://schema.org/name": "Ronak Shah"
+                }
+            ],
+            "https://schema.org/dateCreated": "2022-03-23",
+            "https://schema.org/license": "https://spdx.org/licenses/Apache-2.0"
         }
     ],
     "cwlVersion": "v1.0",

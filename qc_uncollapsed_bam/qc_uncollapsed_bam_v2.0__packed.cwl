@@ -305,6 +305,7 @@
             "https://schema.org/dateCreated": "2020-09-23",
             "https://schema.org/license": "https://spdx.org/licenses/Apache-2.0",
             "$namespaces": {
+                "s": "https://schema.org/",
                 "sbg": "https://www.sevenbridges.com/"
             }
         },
@@ -1887,6 +1888,7 @@
         {
             "class": "Workflow",
             "id": "#main",
+            "doc": "Calcualte Quality Control Metrics from Standard/Uncollapsed BAM",
             "label": "qc_uncollapsed_bam",
             "inputs": [
                 {
@@ -2222,7 +2224,27 @@
                 {
                     "class": "SubworkflowFeatureRequirement"
                 }
-            ]
+            ],
+            "https://schema.org/author": [
+                {
+                    "class": "https://schema.org/Person",
+                    "https://schema.org/email": "mailto:charalk@mskcc.org",
+                    "https://schema.org/identifier": "",
+                    "https://schema.org/name": "Carmelina Charalambous"
+                }
+            ],
+            "https://schema.org/citation": "",
+            "https://schema.org/codeRepository": "https://github.com/msk-access/uncollapsed_bam_generation",
+            "https://schema.org/contributor": [
+                {
+                    "class": "https://schema.org/Person",
+                    "https://schema.org/email": "mailto:shahr2@mskcc.org",
+                    "https://schema.org/identifier": "https://orcid.org/0000-0001-9042-6213",
+                    "https://schema.org/name": "Ronak Shah"
+                }
+            ],
+            "https://schema.org/dateCreated": "2022-03-23",
+            "https://schema.org/license": "https://spdx.org/licenses/Apache-2.0"
         }
     ],
     "cwlVersion": "v1.0",
