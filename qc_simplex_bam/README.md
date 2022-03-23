@@ -44,7 +44,7 @@ optional arguments:
   --hsmetrics_coverage_cap HSMETRICS_COVERAGE_CAP
 ```
 ### v2.0 qc_simplex_bam_v2.0.cwl
-This sub-workflow was designed for MSK-ACCESS and CMO-CH data. The updated v2.0 of this sub-workflow expects a single set of bait/target regions as opposed to two in v1.0.
+This sub-workflow is compatible with any target region of interest. The current v2.0 implementation is used for MSK-ACCESS and CMO-CH.
 
 ### Usage v2.0
 
