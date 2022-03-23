@@ -1,8 +1,10 @@
 class: Workflow
 cwlVersion: v1.0
 id: qc_uncollapsed_bam
+doc: Calcualte Quality Control Metrics from Standard/Uncollapsed BAM
 label: qc_uncollapsed_bam
 $namespaces:
+  s: 'https://schema.org/'
   sbg: 'https://www.sevenbridges.com/'
 inputs:
   - id: reference
@@ -194,3 +196,19 @@ steps:
     'sbg:y': 580.8984375
 requirements:
   - class: SubworkflowFeatureRequirement
+$schemas:
+  - 'http://schema.org/version/latest/schemaorg-current-http.rdf'
+'s:author':
+  - class: 's:Person'
+    's:email': 'mailto:charalk@mskcc.org'
+    's:identifier': ''
+    's:name': Carmelina Charalambous
+'s:citation': ''
+'s:codeRepository': 'https://github.com/msk-access/uncollapsed_bam_generation'
+'s:contributor':
+  - class: 's:Person'
+    's:email': 'mailto:shahr2@mskcc.org'
+    's:identifier': 'https://orcid.org/0000-0001-9042-6213'
+    's:name': Ronak Shah
+'s:dateCreated': '2022-03-23'
+'s:license': 'https://spdx.org/licenses/Apache-2.0'
