@@ -17,7 +17,7 @@ The sub-workflow calculates quality control metrics for duplex BAMs. The main ou
 ### Two versions of this subworkflow:
 v1.0 qc_duplex_bam.cwl
 
-This sub-workflow was originally designed for MSK-ACCESS data. Hence, in addition to the duplex BAM, it expects two sets of bait/target regions (referred to as pool A and pool B for MSK-ACCESS).
+This sub-workflow was originally designed for MSK-ACCESS data. Hence, in addition to the duplex BAM, it expects two sets of bait/target regions (referred to as pool A and pool B).
 
 ### Usage v1.0
 
