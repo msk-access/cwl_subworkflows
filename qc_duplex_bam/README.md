@@ -75,19 +75,9 @@ optional arguments:
 ### v2.0 qc_duplex_bam_v2.0.cwl
 
 This sub-workflow was designed for MSK-ACCESS and CMO-CH data. The updated v2.0 of this sub-workflow expects the duplex bam and a single set of bait/target regions as opposed to two in v1.0.
-
-The sub-workflow calculates quality control metrics for duplex BAMs. The main outputs are the following:
-
-1. Targeted capture metrics.
-2. Insert size metrics.
-3. Alignment metrics.
-4. Extracted genotype information used for fingerprinting and contamination estimation.
-5. Genotype metrics to be used for hotspot mutation metrics.
-6. Coverage metrics files to estimate on target coverage. Specific to v2.0.
-
-### Additional Tools used:
-
-- [Mosdepth](https://github.com/brentp/mosdepth)
+The sub-workflow calculates quality control metrics for duplex BAMs with and additional step in calculating coverage using Mosdepth. 
+Mosdepth is designed for fast BAM depth calculation for WGS, exome, or targeted sequencing. 
+[Mosdepth](https://github.com/brentp/mosdepth)
 
 ### Usage v2.0
 
