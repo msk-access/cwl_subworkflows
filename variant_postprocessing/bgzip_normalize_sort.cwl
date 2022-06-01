@@ -7,12 +7,44 @@ $namespaces:
 inputs:
   - id: input
     type: File
-    'sbg:x': -622.0040893554688
-    'sbg:y': -118
+    'sbg:x': 0
+    'sbg:y': 220.75
   - id: fastaRef
     type: File
-    'sbg:x': -543.0069580078125
-    'sbg:y': 105
+    'sbg:x': 530.09375
+    'sbg:y': 220.75
+  - id: stdout
+    type: boolean
+    'sbg:x': 0
+    'sbg:y': 7
+  - id: bgzip_output_name
+    type: string?
+    'sbg:x': 0
+    'sbg:y': 327.625
+  - id: preset
+    type: string?
+    'sbg:x': 266.546875
+    'sbg:y': 153.3125
+  - id: output_type
+    type: string?
+    'sbg:x': 0
+    'sbg:y': 113.875
+  - id: bcftools_norm_output_name
+    type: string?
+    'sbg:x': 530.09375
+    'sbg:y': 434.5
+  - id: multiallelics
+    type: string?
+    'sbg:x': 530.09375
+    'sbg:y': 113.875
+  - id: check_ref
+    type: string?
+    'sbg:x': 530.09375
+    'sbg:y': 327.625
+  - id: bcftools_sort_output_name
+    type: string
+    'sbg:x': 0
+    'sbg:y': 434.5
 outputs:
   - id: bgzip_normalize_sort_output
     outputSource:
@@ -20,31 +52,45 @@ outputs:
     type: File?
     secondaryFiles:
       - .tbi
-    'sbg:x': 508.9930419921875
-    'sbg:y': 12
+    'sbg:x': 1734.3028564453125
+    'sbg:y': 220.75
 steps:
   - id: bgzip
     in:
+      - id: stdout
+        source: stdout
       - id: input
         source: input
+      - id: output_file_name
+        source: bgzip_output_name
     out:
       - id: zippedVcf
     run: ../command_line_tools/bcftools_1.15.1/bcftools_bgzip_1.15.1.cwl
     label: bgzip
-    'sbg:x': -317
-    'sbg:y': 12
+    'sbg:x': 266.546875
+    'sbg:y': 274.1875
   - id: tabix
     in:
+      - id: preset
+        source: preset
       - id: input
         source: bgzip/zippedVcf
     out:
       - id: tabixIndex
     run: ../command_line_tools/bcftools_1.15.1/bcftools_tabix_1.15.1.cwl
     label: tabix
-    'sbg:x': -132
-    'sbg:y': 41
+    'sbg:x': 530.09375
+    'sbg:y': 0
   - id: norm
     in:
+      - id: check_ref
+        source: check_ref
+      - id: multiallelics
+        source: multiallelics
+      - id: output_type
+        source: output_type
+      - id: output_name
+        source: bcftools_norm_output_name
       - id: input
         source: tabix/tabixIndex
       - id: fastaRef
@@ -53,36 +99,44 @@ steps:
       - id: normalized_vcf
     run: ../command_line_tools/bcftools_1.15.1/bcftools_norm_1.15.1.cwl
     label: bcftools_norm
-    'sbg:x': 68
-    'sbg:y': 42
+    'sbg:x': 807.75
+    'sbg:y': 185.75
   - id: tabix_1
     in:
+      - id: preset
+        source: preset
       - id: input
         source: norm/normalized_vcf
     out:
       - id: tabixIndex
     run: ../command_line_tools/bcftools_1.15.1/bcftools_tabix_1.15.1.cwl
     label: tabix
-    'sbg:x': 279
-    'sbg:y': 22
+    'sbg:x': 1109.5467529296875
+    'sbg:y': 213.75
   - id: bcftools_sort
     in:
+      - id: output_name
+        source: bcftools_sort_output_name
+      - id: output_type
+        source: output_type
       - id: input
         source: tabix_1/tabixIndex
     out:
       - id: sorted_file
     run: ../command_line_tools/bcftools_1.15.1/bcftools_sort._1.15.1.cwl
     label: bcftools_sort
-    'sbg:x': 329
-    'sbg:y': -110
+    'sbg:x': 1299.7919921875
+    'sbg:y': 206.75
   - id: tabix_2
     in:
+      - id: preset
+        source: preset
       - id: input
         source: bcftools_sort/sorted_file
     out:
       - id: tabixIndex
     run: ../command_line_tools/bcftools_1.15.1/bcftools_tabix_1.15.1.cwl
     label: tabix
-    'sbg:x': 442
-    'sbg:y': -149
+    'sbg:x': 1544.0576171875
+    'sbg:y': 213.6875
 requirements: []
