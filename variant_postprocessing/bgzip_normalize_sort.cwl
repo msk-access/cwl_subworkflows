@@ -3,12 +3,13 @@ cwlVersion: v1.0
 id: bgzip_normalize_sort
 label: bgzip_normalize_sort
 $namespaces:
+  s: 'https://schema.org/'
   sbg: 'https://www.sevenbridges.com/'
 inputs:
   - id: input
     type: File
     'sbg:x': 0
-    'sbg:y': 220.75
+    'sbg:y': 345.4530029296875
   - id: fastaRef
     type: File
     'sbg:x': 530.09375
@@ -19,16 +20,16 @@ inputs:
     'sbg:y': 7
   - id: bgzip_output_name
     type: string?
-    'sbg:x': 0
-    'sbg:y': 327.625
+    'sbg:x': 1.529915452003479
+    'sbg:y': 219.90597534179688
   - id: preset
     type: string?
     'sbg:x': 266.546875
     'sbg:y': 153.3125
   - id: output_type
     type: string?
-    'sbg:x': 0
-    'sbg:y': 113.875
+    'sbg:x': 1098.478759765625
+    'sbg:y': -9.393171310424805
   - id: bcftools_norm_output_name
     type: string?
     'sbg:x': 530.09375
@@ -43,8 +44,8 @@ inputs:
     'sbg:y': 327.625
   - id: bcftools_sort_output_name
     type: string
-    'sbg:x': 0
-    'sbg:y': 434.5
+    'sbg:x': 1034.2222900390625
+    'sbg:y': 86.7093734741211
 outputs:
   - id: bgzip_normalize_sort_output
     outputSource:
@@ -140,3 +141,28 @@ steps:
     'sbg:x': 1544.0576171875
     'sbg:y': 213.6875
 requirements: []
+$schemas:
+  - 'http://schema.org/version/latest/schemaorg-current-http.rdf'
+'s:author':
+  - class: 's:Person'
+    's:email': 'mailto:sivaprk@mskcc.org'
+    's:identifier': ''
+    's:name': Karthigayini Sivaprakasam
+  - class: 's:Person'
+    's:email': 'mailto:shahr@mskcc.org'
+    's:identifier': ''
+    's:name': Ronak Shah
+'s:citation': ''
+'s:codeRepository': 'https://github.com/msk-access/cwl_subworkflows/variant_postprocessing'
+'s:contributor':
+  - class: 's:Person'
+    's:email': 'mailto:sivaprk@mskcc.org'
+    's:identifier': ''
+    's:name': Karthigayini Sivaprakasam
+  - class: 's:Person'
+    's:email': 'mailto:shahr@mskcc.org'
+    's:identifier': ''
+    's:name': Ronak Shah
+'s:dateCreated': '2020-06-2'
+'s:license': 'https://spdx.org/licenses/Apache-2.0'
+
