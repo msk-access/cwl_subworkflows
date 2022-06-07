@@ -18,7 +18,7 @@ inputs:
     output: string
     limit: int
     summary: boolean
-    snps
+    snps: 
       type:
         - type: array
           items: File?
