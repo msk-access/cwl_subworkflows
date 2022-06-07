@@ -4,28 +4,41 @@ cwlVersion: v1.0
 class: Workflow
 inputs:
 # input for annotate 
-    transcript_file: File
-    chunk_size: int
-    output_name: string
+    - id: transcript_file
+      type: File
+    - id: chunk_size
+      type: int?
+    - id: output_name 
+      type: string?
 # input for stat 
-    build: File  
-    flagstat: File  
-    thresholds:     
+    - id: build 
+      type: File?
+    - id: flagstat
+      type: File?
+    - id: thresholds   
       type: 'int[]?'
 # input for report 
-    threshold: int
-    sample_name: string
-    output: string
-    limit: int
-    summary: boolean
-    snps: 
+    - id: threshold
+      type: int?
+    - id: sample_name 
+      type: string?
+    - id: output
+      type: string?
+    - id: limit
+      type: int?
+    - id: summary 
+      type: boolean?
+    - id: snps
       type:
         - type: array
           items: File?
 # shared 
-    panel_bed: File
-    coverage_file: File
-    cores: int
+    - id: panel_bed
+      type: File
+    - id: coverage_file
+      type: File
+    - id: cores 
+      type: int?
 
     
 
