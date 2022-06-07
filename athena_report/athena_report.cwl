@@ -11,19 +11,17 @@ inputs:
     build: File  
     flagstat: File  
     thresholds:     
-      type:
-        - type: array
-          items: int
+      type: 'int[]?'
 # input for report 
     threshold: int
     sample_name: string
     output: string
     limit: int
     summary: boolean
-    snps: 
+    snps
       type:
         - type: array
-          items: File
+          items: File?
 # shared 
     panel_bed: File
     coverage_file: File
