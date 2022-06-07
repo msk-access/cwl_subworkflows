@@ -30,8 +30,10 @@ inputs:
       type: boolean?
     - id: snps
       type:
+        - 'null'
+        - File
         - type: array
-          items: File?
+          items: File
 # shared 
     - id: panel_bed
       type: File
