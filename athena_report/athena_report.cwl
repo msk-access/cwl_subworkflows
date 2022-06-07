@@ -23,7 +23,7 @@ inputs:
     snps: 
       type:
         - type: array
-          items: File? 
+          items: File
 # shared 
     panel_bed: File
     coverage_file: File
