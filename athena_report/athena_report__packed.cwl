@@ -4,16 +4,107 @@
             "class": "Workflow",
             "inputs": [
                 {
-                    "type": "File",
-                    "id": "#main/coverage_file"
+                    "id": "#main/transcript_file",
+                    "type": "File"
                 },
                 {
-                    "type": "File",
-                    "id": "#main/panel_bed"
+                    "id": "#main/chunk_size",
+                    "type": [
+                        "null",
+                        "int"
+                    ]
                 },
                 {
-                    "type": "File",
-                    "id": "#main/transcript_file"
+                    "id": "#main/output_name",
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                {
+                    "id": "#main/build",
+                    "type": [
+                        "null",
+                        "File"
+                    ]
+                },
+                {
+                    "id": "#main/flagstat",
+                    "type": [
+                        "null",
+                        "File"
+                    ]
+                },
+                {
+                    "id": "#main/thresholds",
+                    "type": [
+                        "null",
+                        {
+                            "type": "array",
+                            "items": "int"
+                        }
+                    ]
+                },
+                {
+                    "id": "#main/threshold",
+                    "type": [
+                        "null",
+                        "int"
+                    ]
+                },
+                {
+                    "id": "#main/sample_name",
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                {
+                    "id": "#main/output",
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                {
+                    "id": "#main/limit",
+                    "type": [
+                        "null",
+                        "int"
+                    ]
+                },
+                {
+                    "id": "#main/summary",
+                    "type": [
+                        "null",
+                        "boolean"
+                    ]
+                },
+                {
+                    "id": "#main/snps",
+                    "type": [
+                        "null",
+                        "File",
+                        {
+                            "type": "array",
+                            "items": "File"
+                        }
+                    ]
+                },
+                {
+                    "id": "#main/panel_bed",
+                    "type": "File"
+                },
+                {
+                    "id": "#main/coverage_file",
+                    "type": "File"
+                },
+                {
+                    "id": "#main/cores",
+                    "type": [
+                        "null",
+                        "int"
+                    ]
                 }
             ],
             "outputs": [
@@ -28,8 +119,16 @@
                     "run": "#annotate_bed.cwl",
                     "in": [
                         {
+                            "source": "#main/chunk_size",
+                            "id": "#main/annotate/chunk_size"
+                        },
+                        {
                             "source": "#main/coverage_file",
                             "id": "#main/annotate/coverage_file"
+                        },
+                        {
+                            "source": "#main/output_name",
+                            "id": "#main/annotate/output_name"
                         },
                         {
                             "source": "#main/panel_bed",
@@ -49,6 +148,10 @@
                     "run": "#coverage_report_single.cwl",
                     "in": [
                         {
+                            "source": "#main/cores",
+                            "id": "#main/report/cores"
+                        },
+                        {
                             "source": "#main/stats/exon_stats_output",
                             "id": "#main/report/exon_stats"
                         },
@@ -57,8 +160,40 @@
                             "id": "#main/report/gene_stats"
                         },
                         {
+                            "source": "#main/limit",
+                            "id": "#main/report/limit"
+                        },
+                        {
+                            "source": "#main/output",
+                            "id": "#main/report/output"
+                        },
+                        {
+                            "source": "#main/panel_bed",
+                            "id": "#main/report/panel"
+                        },
+                        {
+                            "source": "#main/coverage_file",
+                            "id": "#main/report/per_base_coverage"
+                        },
+                        {
                             "source": "#main/annotate/annotated_bed",
                             "id": "#main/report/raw_coverage"
+                        },
+                        {
+                            "source": "#main/sample_name",
+                            "id": "#main/report/sample_name"
+                        },
+                        {
+                            "source": "#main/snps",
+                            "id": "#main/report/snps"
+                        },
+                        {
+                            "source": "#main/summary",
+                            "id": "#main/report/summary"
+                        },
+                        {
+                            "source": "#main/threshold",
+                            "id": "#main/report/threshold"
                         }
                     ],
                     "out": [
@@ -70,8 +205,24 @@
                     "run": "#coverage_stats_single.cwl",
                     "in": [
                         {
+                            "source": "#main/build",
+                            "id": "#main/stats/build"
+                        },
+                        {
+                            "source": "#main/cores",
+                            "id": "#main/stats/cores"
+                        },
+                        {
                             "source": "#main/annotate/annotated_bed",
                             "id": "#main/stats/file"
+                        },
+                        {
+                            "source": "#main/flagstat",
+                            "id": "#main/stats/flagstat"
+                        },
+                        {
+                            "source": "#main/thresholds",
+                            "id": "#main/stats/thresholds"
                         }
                     ],
                     "out": [
