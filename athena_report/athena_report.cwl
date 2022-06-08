@@ -76,6 +76,14 @@ steps:
       flagstat: flagstat  
       thresholds: thresholds
       cores: cores
+    when: ${
+        if (inputs.file == null){
+          return false
+          } 
+        else {
+          return true
+          }
+        } 
     out: [gene_stats_output, exon_stats_output]
   report:
     run: ../command_line_tools/athena/1.4.2/coverage_report_single/coverage_report_single.cwl
@@ -92,6 +100,14 @@ steps:
       limit: limit
       summary: summary
       cores: cores
+    when: ${
+        if (inputs.raw_coverage == null || inputs.gene_stats == null || inputs.exon_stats == null){
+          return false
+          } 
+        else {
+          return true
+          }
+        } 
     out: [coverage_report_single]
 
 requirements:
