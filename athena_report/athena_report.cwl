@@ -5,7 +5,7 @@ class: Workflow
 inputs:
 # input for annotate 
     - id: transcript_file
-      type: File
+      type: File?
     - id: chunk_size
       type: int?
     - id: output_name 
@@ -36,9 +36,9 @@ inputs:
           items: File
 # shared 
     - id: panel_bed
-      type: File
+      type: File?
     - id: coverage_file
-      type: File
+      type: File?
     - id: cores 
       type: int?
 
