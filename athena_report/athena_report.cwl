@@ -59,6 +59,14 @@ steps:
       coverage_file: coverage_file
       chunk_size: chunk_size
       output_name: output_name
+    when: ${
+            if (inputs.panel_bed == null || inputs.transcript_file == null || inputs.coverage_file == null){
+              return false
+              } 
+            else {
+              return true
+              }
+           } 
     out: [annotated_bed]
   stats:
     run: ../command_line_tools/athena/1.4.2/coverage_stats_single/coverage_stats_single.cwl
@@ -85,3 +93,7 @@ steps:
       summary: summary
       cores: cores
     out: [coverage_report_single]
+
+requirements:
+  InlineJavascriptRequirement: {}
+  MultipleInputFeatureRequirement: {}
