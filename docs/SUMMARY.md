@@ -11,6 +11,7 @@
     -   [INDEL re-alignment sub-workflow](../indel_realignment/README.md)
     -   [Simplex BAM QC sub-workflow](../qc_simplex_bam/README.md)
     -   [Uncollapsed BAM QC sub-workflow](../qc_uncollapsed_bam/README.md)
+    -   [Athena Report sub-workflow](../athena_report/README.md)
 
 ## Github Specifications
 
