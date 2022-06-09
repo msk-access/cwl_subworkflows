@@ -13,7 +13,7 @@ The sub-workflow runs all steps required to generate an [athena](https://github.
 - Example Command using [toil](https://toil.readthedocs.io):
 
 ```bash
-    > cwl-runner athena_report/athena_report.cwl athena_report/example_inputs_juno.yaml
+    > cwltool athena_report/athena_report.cwl athena_report/example_inputs_juno.yaml
 ```
 **If at MSK, using the JUNO cluster having installed toil-msk version 3.21.1 you can use the following command**
 
