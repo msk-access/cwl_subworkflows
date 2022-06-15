@@ -26,7 +26,7 @@ inputs:
     type: string?
     'sbg:x': 53.55900573730469
     'sbg:y': -245.5
-  - id: bcftools_sort_output_name
+  - id: sort_output_name
     type: string
     'sbg:x': -9
     'sbg:y': 90
@@ -57,7 +57,7 @@ steps:
   - id: bcftools_sort
     in:
       - id: output_name
-        source: bcftools_sort_output_name
+        source: sort_output_name
       - id: output_type
         source: output_type
       - id: input
@@ -115,6 +115,5 @@ $schemas:
     's:email': 'mailto:shahr@mskcc.org'
     's:identifier': ''
     's:name': Ronak Shah
-'s:dateCreated': '2020-06-2'
+'s:dateCreated': 2020-06-2
 's:license': 'https://spdx.org/licenses/Apache-2.0'
-

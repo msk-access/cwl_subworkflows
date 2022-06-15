@@ -38,10 +38,6 @@ inputs:
     type: string
     'sbg:x': -346.4879150390625
     'sbg:y': 1564.30517578125
-  - id: singleSample
-    type: boolean
-    'sbg:x': 214.26870727539062
-    'sbg:y': 425.43206787109375
 outputs:
   - id: vcf
     outputSource:
@@ -124,9 +120,6 @@ steps:
         default: 0.01
       - id: minQual
         default: 20
-      - id: singleSample
-        source: singleSample
-        valueFrom: $(inputs.singleSample)
     out:
       - id: txt
       - id: vcf
@@ -135,16 +128,6 @@ steps:
     'sbg:x': -54.009891510009766
     'sbg:y': 1058.4854736328125
     when: $(inputs.singleSample == 1)
-  - id: pv_vardict_case_control_filter_0_1_3
-    in: []
-    out:
-      - id: txt
-      - id: vcf
-    run: >-
-      ../command_line_tools/postprocessing_variant_calls/0.1.3/pv_vardict_case-control_filter_0.1.3.cwl
-    'sbg:x': 514.1472778320312
-    'sbg:y': 967.3076782226562
-    when: $(inputs.singleSample == 0)
 requirements: []
 $schemas:
   - 'http://schema.org/version/latest/schemaorg-current-http.rdf'

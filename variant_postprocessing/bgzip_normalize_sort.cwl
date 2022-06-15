@@ -24,13 +24,13 @@ inputs:
     'sbg:y': 219.90597534179688
   - id: preset
     type: string?
-    'sbg:x': 266.546875
-    'sbg:y': 153.3125
+    'sbg:x': 764.5779418945312
+    'sbg:y': -371.015625
   - id: output_type
     type: string?
     'sbg:x': 1098.478759765625
     'sbg:y': -9.393171310424805
-  - id: bcftools_norm_output_name
+  - id: norm_output_name
     type: string?
     'sbg:x': 530.09375
     'sbg:y': 434.5
@@ -42,7 +42,7 @@ inputs:
     type: string?
     'sbg:x': 530.09375
     'sbg:y': 327.625
-  - id: bcftools_sort_output_name
+  - id: sort_output_name
     type: string
     'sbg:x': 1034.2222900390625
     'sbg:y': 86.7093734741211
@@ -80,8 +80,8 @@ steps:
       - id: tabixIndex
     run: ../command_line_tools/bcftools_1.15.1/bcftools_tabix_1.15.1.cwl
     label: tabix
-    'sbg:x': 530.09375
-    'sbg:y': 0
+    'sbg:x': 530
+    'sbg:y': -145.842529296875
   - id: norm
     in:
       - id: check_ref
@@ -91,7 +91,7 @@ steps:
       - id: output_type
         source: output_type
       - id: output_name
-        source: bcftools_norm_output_name
+        source: norm_output_name
       - id: input
         source: tabix/tabixIndex
       - id: fastaRef
@@ -117,7 +117,7 @@ steps:
   - id: bcftools_sort
     in:
       - id: output_name
-        source: bcftools_sort_output_name
+        source: sort_output_name
       - id: output_type
         source: output_type
       - id: input
@@ -163,6 +163,5 @@ $schemas:
     's:email': 'mailto:shahr@mskcc.org'
     's:identifier': ''
     's:name': Ronak Shah
-'s:dateCreated': '2020-06-2'
+'s:dateCreated': 2020-06-2
 's:license': 'https://spdx.org/licenses/Apache-2.0'
-
