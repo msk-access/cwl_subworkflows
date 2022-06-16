@@ -8,6 +8,8 @@ $namespaces:
 inputs:
   - id: refFasta
     type: File
+    secondaryFiles:
+      - .fai
     'sbg:x': -960.29052734375
     'sbg:y': 16.868247985839844
   - id: tumorBam

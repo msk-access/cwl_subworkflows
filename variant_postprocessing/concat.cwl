@@ -58,14 +58,14 @@ inputs:
     type: File
     'sbg:x': 314.4129638671875
     'sbg:y': -336.0438232421875
-  - id: bgzip_sortonly_output_name
+  - id: bgzip_output_name_sortonly
     type: string?
     'sbg:x': 424.8155212402344
     'sbg:y': -223.23497009277344
-  - id: bcftools_sortonly_output_name
+  - id: sort_output_name_sortonly
     type: string
-    'sbg:x': 359.3756103515625
-    'sbg:y': -41.48789596557617
+    'sbg:x': 376.7597961425781
+    'sbg:y': -556.363525390625
 outputs:
   - id: bcftools_concat_output
     outputSource:
@@ -88,14 +88,10 @@ steps:
         source: preset
       - id: output_type
         source: output_type
-      - id: bcftools_norm_output_name
-        source: bcftools_norm_output_name
       - id: multiallelics
         source: multiallelics
       - id: check_ref
         source: check_ref
-      - id: bcftools_sort_output_name
-        source: bcftools_sort_output_name
     out:
       - id: bgzip_normalize_sort_output
     run: ./bgzip_normalize_sort.cwl
@@ -127,13 +123,13 @@ steps:
       - id: stdout
         source: stdout
       - id: bgzip_output_name
-        source: bgzip_sortonly_output_name
+        source: bgzip_output_name_sortonly
       - id: preset
         source: preset
       - id: output_type
         source: output_type
-      - id: bcftools_sort_output_name
-        source: bcftools_sortonly_output_name
+      - id: sort_output_name
+        source: sort_output_name_sortonly
     out:
       - id: bgzip_sorted_output
     run: ./bgzip_sort-cwl.cwl
@@ -165,6 +161,5 @@ $schemas:
     's:email': 'mailto:shahr@mskcc.org'
     's:identifier': ''
     's:name': Ronak Shah
-'s:dateCreated': '2020-06-2'
+'s:dateCreated': 2020-06-2
 's:license': 'https://spdx.org/licenses/Apache-2.0'
-

@@ -8,6 +8,8 @@ $namespaces:
 inputs:
   - id: refFasta
     type: File
+    secondaryFiles:
+      - .fai
     'sbg:x': -538.2053833007812
     'sbg:y': -103.44498443603516
   - id: sortonly_input
@@ -24,24 +26,24 @@ inputs:
     'sbg:y': -375.3398742675781
   - id: region_Of_Interest_Bedfile
     type: File?
-    'sbg:x': -759.0303955078125
-    'sbg:y': -165.29519653320312
+    'sbg:x': -782.35888671875
+    'sbg:y': -128.01513671875
   - id: sampleName
     type: string?
     'sbg:x': -740.7139282226562
     'sbg:y': -252.20782470703125
   - id: filter_For_PassFilter
     type: boolean?
-    'sbg:x': -643.5648193359375
-    'sbg:y': 125.33007049560547
+    'sbg:x': -658.7418823242188
+    'sbg:y': 205.45843505859375
   - id: outputVcf_name
     type: string
     'sbg:x': -723.66259765625
     'sbg:y': 43.330074310302734
   - id: tsampleName
     type: string
-    'sbg:x': -620.6210327148438
-    'sbg:y': -265.7677307128906
+    'sbg:x': -814.5510864257812
+    'sbg:y': -344.4085998535156
   - id: complexvcf_bgzip_output_name
     type: string?
     'sbg:x': -665.4901733398438
@@ -62,10 +64,10 @@ inputs:
     type: string?
     'sbg:x': -172.33987426757812
     'sbg:y': 995.37255859375
-  - id: sortonly_output_name
+  - id: sort_output_name
     type: string
-    'sbg:x': -315.09173583984375
-    'sbg:y': 966.6249389648438
+    'sbg:x': -504.3341979980469
+    'sbg:y': 1017.663330078125
 outputs:
   - id: txt
     outputSource:
@@ -143,17 +145,16 @@ steps:
         source: sortonly_input
       - id: bgzip_sortonly_output_name
         source: bgzip_sortonly_output_name
-      - id: bcftools_sortonly_output_name
-        source: sortonly_output_name
+      - id: sort_output_name
+        source: sort_output_name
     out:
       - id: bcftools_concat_output
     run: ./concat.cwl
     label: concat
-    'sbg:x': -121.8169937133789
-    'sbg:y': 593.3856201171875
+    'sbg:x': -121
+    'sbg:y': 600.9408569335938
 requirements:
   - class: SubworkflowFeatureRequirement
-  - class: MultipleInputFeatureRequirement
 $schemas:
   - 'http://schema.org/version/latest/schemaorg-current-http.rdf'
 's:author':
@@ -176,5 +177,5 @@ $schemas:
     's:email': 'mailto:shahr@mskcc.org'
     's:identifier': ''
     's:name': Ronak Shah
-'s:dateCreated': '2020-06-2'
+'s:dateCreated': 2020-06-2
 's:license': 'https://spdx.org/licenses/Apache-2.0'
