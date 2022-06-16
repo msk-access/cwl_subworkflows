@@ -22,14 +22,6 @@ inputs:
     type: string?
     'sbg:x': -1072.8909912109375
     'sbg:y': 395.6759033203125
-  - id: bcftools_sort_output_name
-    type: string
-    'sbg:x': -687.890625
-    'sbg:y': 299
-  - id: bcftools_norm_output_name
-    type: string?
-    'sbg:x': -462.890625
-    'sbg:y': 449.99603271484375
   - id: multiallelics
     type: string?
     'sbg:x': -866.60791015625
@@ -66,6 +58,14 @@ inputs:
     type: string
     'sbg:x': 376.7597961425781
     'sbg:y': -556.363525390625
+  - id: bgzipNormSort_norm_output_name
+    type: string?
+    'sbg:x': -525.8037719726562
+    'sbg:y': 310.4252014160156
+  - id: bgzipNormSort_sort_output_name
+    type: string
+    'sbg:x': -865.2481079101562
+    'sbg:y': 735.3568115234375
 outputs:
   - id: bcftools_concat_output
     outputSource:
@@ -88,10 +88,14 @@ steps:
         source: preset
       - id: output_type
         source: output_type
+      - id: norm_output_name
+        source: bgzipNormSort_norm_output_name
       - id: multiallelics
         source: multiallelics
       - id: check_ref
         source: check_ref
+      - id: sort_output_name
+        source: bgzipNormSort_sort_output_name
     out:
       - id: bgzip_normalize_sort_output
     run: ./bgzip_normalize_sort.cwl

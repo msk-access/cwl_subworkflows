@@ -48,10 +48,6 @@ inputs:
     type: string?
     'sbg:x': -665.4901733398438
     'sbg:y': 606.4901733398438
-  - id: complexvcf_sort_output_name
-    type: string
-    'sbg:x': -687.45751953125
-    'sbg:y': 724.1961059570312
   - id: complexvcf_norm_output_name
     type: string?
     'sbg:x': -636.3202514648438
@@ -68,6 +64,10 @@ inputs:
     type: string?
     'sbg:x': -190.74244689941406
     'sbg:y': 913.9622802734375
+  - id: complexvcf_sort_output_name
+    type: string
+    'sbg:x': -803.500732421875
+    'sbg:y': 796.4148559570312
 outputs:
   - id: txt
     outputSource:
@@ -125,10 +125,6 @@ steps:
         default: s
       - id: bgzip_output_name
         source: complexvcf_bgzip_output_name
-      - id: bcftools_sort_output_name
-        source: complexvcf_sort_output_name
-      - id: bcftools_norm_output_name
-        source: complexvcf_norm_output_name
       - id: multiallelics
         default: '-any'
       - id: output_type
@@ -147,12 +143,16 @@ steps:
         source: bgzip_output_name_sortonly
       - id: sort_output_name_sortonly
         source: sort_output_name_sortonly
+      - id: bgzipNormSort_norm_output_name
+        source: complexvcf_norm_output_name
+      - id: bgzipNormSort_sort_output_name
+        source: complexvcf_sort_output_name
     out:
       - id: bcftools_concat_output
     run: ./concat.cwl
     label: concat
-    'sbg:x': -121
-    'sbg:y': 600.9408569335938
+    'sbg:x': -126.4066162109375
+    'sbg:y': 600
 requirements:
   - class: SubworkflowFeatureRequirement
 $schemas:
