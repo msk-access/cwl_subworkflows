@@ -12,14 +12,6 @@ inputs:
       - .fai
     'sbg:x': -538.2053833007812
     'sbg:y': -103.44498443603516
-  - id: sortonly_input
-    type: File
-    'sbg:x': 369.2935791015625
-    'sbg:y': 290.21844482421875
-  - id: normalize_sort_input
-    type: File
-    'sbg:x': -292.9486999511719
-    'sbg:y': 183.7336883544922
   - id: tumorBam
     type: File?
     'sbg:x': -620.7823486328125
@@ -69,26 +61,18 @@ inputs:
     'sbg:x': -803.500732421875
     'sbg:y': 796.4148559570312
 outputs:
-  - id: txt
+  - id: output_txt
     outputSource:
       - pv_vardictandfilter/txt
     type: File
     'sbg:x': -26.5175724029541
     'sbg:y': -151.3258819580078
-  - id: vcf
-    outputSource:
-      - pv_vardictandfilter/vcf
-      - sortonly_input
-      - normalize_sort_input
-    type: 'File[]'
-    'sbg:x': 260.18310546875
-    'sbg:y': -229.2333526611328
   - id: bcftools_concat_output
     outputSource:
       - concat/bcftools_concat_output
     type: File
-    'sbg:x': 130.9866943359375
-    'sbg:y': 592.0882568359375
+    'sbg:x': 288.932861328125
+    'sbg:y': 641.5375366210938
 steps:
   - id: pv_vardictandfilter
     in:
@@ -118,7 +102,7 @@ steps:
   - id: concat
     in:
       - id: normalize_sort_input
-        source: normalize_sort_input
+        source: pv_vardictandfilter/vcf
       - id: fastaRef
         source: refFasta
       - id: check_ref
@@ -138,7 +122,7 @@ steps:
       - id: stdout
         default: true
       - id: sortonly_input
-        source: sortonly_input
+        source: pv_vardictandfilter/vcf
       - id: bgzip_output_name_sortonly
         source: bgzip_output_name_sortonly
       - id: sort_output_name_sortonly
@@ -151,8 +135,8 @@ steps:
       - id: bcftools_concat_output
     run: ./concat.cwl
     label: concat
-    'sbg:x': -126.4066162109375
-    'sbg:y': 600
+    'sbg:x': 63.822635650634766
+    'sbg:y': 488.3396301269531
 requirements:
   - class: SubworkflowFeatureRequirement
 $schemas:
