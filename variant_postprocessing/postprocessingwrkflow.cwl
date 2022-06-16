@@ -60,14 +60,14 @@ inputs:
     type: string
     'sbg:x': -510.92156982421875
     'sbg:y': 369.7189636230469
-  - id: bgzip_sortonly_output_name
-    type: string?
-    'sbg:x': -172.33987426757812
-    'sbg:y': 995.37255859375
-  - id: sort_output_name
+  - id: sort_output_name_sortonly
     type: string
-    'sbg:x': -504.3341979980469
-    'sbg:y': 1017.663330078125
+    'sbg:x': -421.6850280761719
+    'sbg:y': 875.02734375
+  - id: bgzip_output_name_sortonly
+    type: string?
+    'sbg:x': -190.74244689941406
+    'sbg:y': 913.9622802734375
 outputs:
   - id: txt
     outputSource:
@@ -143,10 +143,10 @@ steps:
         default: true
       - id: sortonly_input
         source: sortonly_input
-      - id: bgzip_sortonly_output_name
-        source: bgzip_sortonly_output_name
-      - id: sort_output_name
-        source: sort_output_name
+      - id: bgzip_output_name_sortonly
+        source: bgzip_output_name_sortonly
+      - id: sort_output_name_sortonly
+        source: sort_output_name_sortonly
     out:
       - id: bcftools_concat_output
     run: ./concat.cwl
