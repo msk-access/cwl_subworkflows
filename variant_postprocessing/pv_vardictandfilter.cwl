@@ -127,7 +127,6 @@ steps:
       ../command_line_tools/postprocessing_variant_calls/0.1.3/pv_vardict_single_filter_0.1.3.cwl
     'sbg:x': -54.009891510009766
     'sbg:y': 1058.4854736328125
-    when: $(inputs.singleSample == 1)
 requirements: []
 $schemas:
   - 'http://schema.org/version/latest/schemaorg-current-http.rdf'
