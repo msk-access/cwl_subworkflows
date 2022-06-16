@@ -20,46 +20,18 @@ inputs:
     type: File?
     'sbg:x': -782.35888671875
     'sbg:y': -128.01513671875
-  - id: sampleName
-    type: string?
-    'sbg:x': -740.7139282226562
-    'sbg:y': -252.20782470703125
   - id: filter_For_PassFilter
     type: boolean?
     'sbg:x': -658.7418823242188
     'sbg:y': 205.45843505859375
-  - id: outputVcf_name
-    type: string
-    'sbg:x': -723.66259765625
-    'sbg:y': 43.330074310302734
   - id: tsampleName
     type: string
     'sbg:x': -814.5510864257812
     'sbg:y': -344.4085998535156
-  - id: complexvcf_bgzip_output_name
-    type: string?
-    'sbg:x': -665.4901733398438
-    'sbg:y': 606.4901733398438
-  - id: complexvcf_norm_output_name
-    type: string?
-    'sbg:x': -636.3202514648438
-    'sbg:y': 860.3594970703125
   - id: concat_output_name
     type: string
     'sbg:x': -510.92156982421875
     'sbg:y': 369.7189636230469
-  - id: sort_output_name_sortonly
-    type: string
-    'sbg:x': -421.6850280761719
-    'sbg:y': 875.02734375
-  - id: bgzip_output_name_sortonly
-    type: string?
-    'sbg:x': -190.74244689941406
-    'sbg:y': 913.9622802734375
-  - id: complexvcf_sort_output_name
-    type: string
-    'sbg:x': -803.500732421875
-    'sbg:y': 796.4148559570312
 outputs:
   - id: output_txt
     outputSource:
@@ -71,8 +43,8 @@ outputs:
     outputSource:
       - concat/bcftools_concat_output
     type: File
-    'sbg:x': 288.932861328125
-    'sbg:y': 641.5375366210938
+    'sbg:x': 446.16448974609375
+    'sbg:y': 445.3755187988281
 steps:
   - id: pv_vardictandfilter
     in:
@@ -83,13 +55,11 @@ steps:
       - id: region_Of_Interest_Bedfile
         source: region_Of_Interest_Bedfile
       - id: sampleName
-        source: sampleName
+        source: tsampleName
       - id: filter_For_PassFilter
         source: filter_For_PassFilter
       - id: alleleFrequency
         default: '0.01'
-      - id: outputVcf_name
-        source: outputVcf_name
       - id: tsampleName
         source: tsampleName
     out:
@@ -97,8 +67,8 @@ steps:
       - id: txt
     run: ./pv_vardictandfilter.cwl
     label: pv_vardictAndfilter
-    'sbg:x': -214.29869079589844
-    'sbg:y': -159.00978088378906
+    'sbg:x': -210.11282348632812
+    'sbg:y': -180.3794708251953
   - id: concat
     in:
       - id: normalize_sort_input
@@ -107,8 +77,6 @@ steps:
         source: refFasta
       - id: check_ref
         default: s
-      - id: bgzip_output_name
-        source: complexvcf_bgzip_output_name
       - id: multiallelics
         default: '-any'
       - id: output_type
@@ -123,20 +91,12 @@ steps:
         default: true
       - id: sortonly_input
         source: pv_vardictandfilter/vcf
-      - id: bgzip_output_name_sortonly
-        source: bgzip_output_name_sortonly
-      - id: sort_output_name_sortonly
-        source: sort_output_name_sortonly
-      - id: bgzipNormSort_norm_output_name
-        source: complexvcf_norm_output_name
-      - id: bgzipNormSort_sort_output_name
-        source: complexvcf_sort_output_name
     out:
       - id: bcftools_concat_output
     run: ./concat.cwl
     label: concat
-    'sbg:x': 63.822635650634766
-    'sbg:y': 488.3396301269531
+    'sbg:x': 194.1100311279297
+    'sbg:y': 423.48553466796875
 requirements:
   - class: SubworkflowFeatureRequirement
 $schemas:

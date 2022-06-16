@@ -1,0 +1,11 @@
+concat_output_name: tsampleName_concat_vcf.gz
+filter_For_PassFilter: YES
+refFasta:
+  class: File
+  path: >-
+    /path/to/Homo_sapiens_assembly19.fasta
+region_Of_Interest_Bedfile: null
+tsampleName: tumorname
+tumorBam:
+  class: File
+  path: /path/to/input.bam

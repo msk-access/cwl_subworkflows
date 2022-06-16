@@ -32,10 +32,6 @@ inputs:
     type: string?
     'sbg:x': -735.9003295898438
     'sbg:y': 317.54022216796875
-  - id: outputVcf_name
-    type: string
-    'sbg:x': -533.4613037109375
-    'sbg:y': 841.9304809570312
   - id: tsampleName
     type: string
     'sbg:x': -346.4879150390625
@@ -91,7 +87,7 @@ steps:
       - id: input_vcf
         source: teststrandbias/output_var
       - id: vcf
-        source: outputVcf_name
+        source: sampleName
     out:
       - id: output
     run: ../command_line_tools/vardictjava/v1.8.2/var_to_vcf.cwl
