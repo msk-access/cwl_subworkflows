@@ -30,6 +30,14 @@ inputs:
     type: string?
     'sbg:x': -685.7598876953125
     'sbg:y': 24.68556022644043
+  - id: sort_output_name_sortonly
+    type: string
+    'sbg:x': -75.44412231445312
+    'sbg:y': 574.46728515625
+  - id: bgzipNormSort_sort_output_name
+    type: string
+    'sbg:x': -16.48606300354004
+    'sbg:y': 692.1005859375
 outputs:
   - id: bcftools_concat_output
     outputSource:
@@ -60,6 +68,10 @@ steps:
         default: true
       - id: sortonly_input
         source: pv_vardictandfilter/vcf_complex
+      - id: sort_output_name_sortonly
+        source: sort_output_name_sortonly
+      - id: bgzipNormSort_sort_output_name
+        source: bgzipNormSort_sort_output_name
     out:
       - id: bcftools_concat_output
     run: ./concat.cwl
