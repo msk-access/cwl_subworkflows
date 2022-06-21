@@ -32,23 +32,49 @@ inputs:
     type: string?
     'sbg:x': -735.9003295898438
     'sbg:y': 317.54022216796875
-  - id: tsampleName
-    type: string
-    'sbg:x': -346.4879150390625
-    'sbg:y': 1564.30517578125
+  - id: alleledepth
+    type: int
+    'sbg:x': -19.603960037231445
+    'sbg:y': 1515.9840087890625
+  - id: totalDepth
+    type: int?
+    'sbg:x': -31.603960037231445
+    'sbg:y': 1397.9840087890625
+  - id: tnRatio
+    type: int?
+    'sbg:x': -125.60395812988281
+    'sbg:y': 1469.9840087890625
+  - id: variantFraction
+    type: float?
+    'sbg:x': 164.3960418701172
+    'sbg:y': 1211.9840087890625
+  - id: minQual
+    type: int?
+    'sbg:x': 24.396039962768555
+    'sbg:y': 1635.9840087890625
+  - id: filterGermline
+    type: boolean?
+    'sbg:x': 116.39604187011719
+    'sbg:y': 1918.4564208984375
 outputs:
+  - id: vcf_complex
+    outputSource:
+      - pv_vardict_single_filter/vcf_complex
+    type: File
+    'sbg:x': 540.3960571289062
+    'sbg:y': 1344.4564208984375
   - id: vcf
     outputSource:
-      - pv_vardict_single_filter_0_1_3/vcf
-    type: 'File[]'
-    'sbg:x': 83.85237121582031
-    'sbg:y': 1022.6150512695312
+      - pv_vardict_single_filter/vcf
+    type: File
+    'sbg:x': 610.3960571289062
+    'sbg:y': 1514.4564208984375
   - id: txt
     outputSource:
-      - pv_vardict_single_filter_0_1_3/txt
+      - pv_vardict_single_filter/txt
     type: File
-    'sbg:x': 216.3269500732422
-    'sbg:y': 1157.1595458984375
+    'sbg:x': 410.3960266113281
+    'sbg:y': 1706.4564208984375
 steps:
   - id: vardict
     in:
@@ -102,29 +128,32 @@ steps:
     run: ../command_line_tools/vardictjava/v1.8.2/teststrandbias.cwl
     'sbg:x': -477.36370849609375
     'sbg:y': 243.697509765625
-  - id: pv_vardict_single_filter_0_1_3
+  - id: pv_vardict_single_filter
     in:
       - id: inputVCF
         source: vardict_var2vcf/output
       - id: tsampleName
-        source: tsampleName
+        source: sampleName
       - id: alleledepth
-        default: 3
+        source: alleledepth
       - id: totalDepth
-        default: 5
+        source: totalDepth
       - id: tnRatio
-        default: 3
+        source: tnRatio
       - id: variantFraction
-        default: 0.01
+        source: variantFraction
       - id: minQual
-        default: 20
+        source: minQual
+      - id: filterGermline
+        source: filterGermline
     out:
       - id: txt
+      - id: vcf_complex
       - id: vcf
     run: >-
-      ../command_line_tools/postprocessing_variant_calls/0.1.3/pv_vardict_single_filter_0.1.3.cwl
-    'sbg:x': -54.009891510009766
-    'sbg:y': 1058.4854736328125
+      ../command_line_tools/postprocessing_variant_calls/0.1.4/pv_vardict_single_filter.cwl
+    'sbg:x': 265
+    'sbg:y': 1398
 requirements: []
 $schemas:
   - 'http://schema.org/version/latest/schemaorg-current-http.rdf'

@@ -10,35 +10,25 @@ inputs:
     type: File
     secondaryFiles:
       - .fai
-    'sbg:x': -538.2053833007812
-    'sbg:y': -103.44498443603516
-  - id: tumorBam
-    type: File?
-    'sbg:x': -620.7823486328125
-    'sbg:y': -375.3398742675781
-  - id: region_Of_Interest_Bedfile
-    type: File?
-    'sbg:x': -782.35888671875
-    'sbg:y': -128.01513671875
-  - id: filter_For_PassFilter
-    type: boolean?
-    'sbg:x': -658.7418823242188
-    'sbg:y': 205.45843505859375
-  - id: tsampleName
-    type: string
-    'sbg:x': -814.5510864257812
-    'sbg:y': -344.4085998535156
+    'sbg:x': -583.6369018554688
+    'sbg:y': 152.2815399169922
   - id: concat_output_name
     type: string
     'sbg:x': -510.92156982421875
     'sbg:y': 369.7189636230469
+  - id: tumorBam
+    type: File?
+    'sbg:x': -567.3890991210938
+    'sbg:y': -72.29290008544922
+  - id: region_Of_Interest_Bedfile
+    type: File?
+    'sbg:x': -491.8029479980469
+    'sbg:y': 44.65171432495117
+  - id: sampleName
+    type: string?
+    'sbg:x': -685.7598876953125
+    'sbg:y': 24.68556022644043
 outputs:
-  - id: output_txt
-    outputSource:
-      - pv_vardictandfilter/txt
-    type: File
-    'sbg:x': -26.5175724029541
-    'sbg:y': -151.3258819580078
   - id: bcftools_concat_output
     outputSource:
       - concat/bcftools_concat_output
@@ -46,29 +36,6 @@ outputs:
     'sbg:x': 446.16448974609375
     'sbg:y': 445.3755187988281
 steps:
-  - id: pv_vardictandfilter
-    in:
-      - id: refFasta
-        source: refFasta
-      - id: tumorBam
-        source: tumorBam
-      - id: region_Of_Interest_Bedfile
-        source: region_Of_Interest_Bedfile
-      - id: sampleName
-        source: tsampleName
-      - id: filter_For_PassFilter
-        source: filter_For_PassFilter
-      - id: alleleFrequency
-        default: '0.01'
-      - id: tsampleName
-        source: tsampleName
-    out:
-      - id: vcf
-      - id: txt
-    run: ./pv_vardictandfilter.cwl
-    label: pv_vardictAndfilter
-    'sbg:x': -210.11282348632812
-    'sbg:y': -180.3794708251953
   - id: concat
     in:
       - id: normalize_sort_input
@@ -90,13 +57,45 @@ steps:
       - id: stdout
         default: true
       - id: sortonly_input
-        source: pv_vardictandfilter/vcf
+        source: pv_vardictandfilter/vcf_complex
     out:
       - id: bcftools_concat_output
     run: ./concat.cwl
     label: concat
     'sbg:x': 194.1100311279297
     'sbg:y': 423.48553466796875
+  - id: pv_vardictandfilter
+    in:
+      - id: refFasta
+        source: refFasta
+      - id: tumorBam
+        source: tumorBam
+      - id: region_Of_Interest_Bedfile
+        source: region_Of_Interest_Bedfile
+      - id: sampleName
+        source: sampleName
+      - id: filter_For_PassFilter
+        default: true
+      - id: alleleFrequency
+        default: '0.01'
+      - id: alleledepth
+        default: 3
+      - id: totalDepth
+        default: 5
+      - id: tnRatio
+        default: 5
+      - id: variantFraction
+        default: 0.01
+      - id: minQual
+        default: 20
+    out:
+      - id: vcf_complex
+      - id: vcf
+      - id: txt
+    run: ./pv_vardictandfilter.cwl
+    label: pv_vardictAndfilter
+    'sbg:x': -196.58909606933594
+    'sbg:y': -79.42366790771484
 requirements:
   - class: SubworkflowFeatureRequirement
 $schemas:
