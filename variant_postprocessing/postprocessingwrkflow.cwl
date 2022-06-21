@@ -18,6 +18,8 @@ inputs:
     'sbg:y': 369.7189636230469
   - id: tumorBam
     type: File?
+    secondaryFiles:
+      - .bai
     'sbg:x': -567.3890991210938
     'sbg:y': -72.29290008544922
   - id: region_Of_Interest_Bedfile
