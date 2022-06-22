@@ -16,10 +16,6 @@ inputs:
     type: File?
     'sbg:x': -850.534423828125
     'sbg:y': 146.13653564453125
-  - id: region_Of_Interest_Bedfile
-    type: File?
-    'sbg:x': -1043.2174072265625
-    'sbg:y': -214.8390655517578
   - id: sampleName
     type: string?
     'sbg:x': -948.0953979492188
@@ -88,8 +84,6 @@ steps:
         default: '2'
       - id: b
         source: tumorBam
-      - id: bedfile
-        source: region_Of_Interest_Bedfile
       - id: c
         default: '1'
       - id: f
