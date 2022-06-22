@@ -34,6 +34,10 @@ inputs:
     type: string
     'sbg:x': -16.48606300354004
     'sbg:y': 692.1005859375
+  - id: panel_bedfile
+    type: File?
+    'sbg:x': -345.50335693359375
+    'sbg:y': 124.1751937866211
 outputs:
   - id: bcftools_concat_output
     outputSource:
@@ -96,6 +100,8 @@ steps:
         default: 0.01
       - id: minQual
         default: 20
+      - id: panel_bedfile
+        source: panel_bedfile
     out:
       - id: vcf_complex
       - id: vcf

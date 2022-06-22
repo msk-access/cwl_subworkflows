@@ -52,6 +52,10 @@ inputs:
     type: boolean?
     'sbg:x': 116.39604187011719
     'sbg:y': 1918.4564208984375
+  - id: panel_bedfile
+    type: File?
+    'sbg:x': -1181.29931640625
+    'sbg:y': -83.72862243652344
 outputs:
   - id: vcf_complex
     outputSource:
@@ -84,6 +88,8 @@ steps:
         default: '2'
       - id: b
         source: tumorBam
+      - id: bedfile
+        source: panel_bedfile
       - id: c
         default: '1'
       - id: f
@@ -94,8 +100,8 @@ steps:
     out:
       - id: output
     run: ../command_line_tools/vardictjava/v1.8.2/vardict_app.cwl
-    'sbg:x': -686.46337890625
-    'sbg:y': -175.26829528808594
+    'sbg:x': -631.4354858398438
+    'sbg:y': -245.61289978027344
   - id: vardict_var2vcf
     in:
       - id: 'N'
