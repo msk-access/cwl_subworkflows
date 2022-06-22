@@ -91,13 +91,13 @@ steps:
       - id: alleleFrequency
         default: '0.01'
       - id: alleledepth
-        default: 3
+        default: 1
       - id: totalDepth
-        default: 5
+        default: 20
       - id: tnRatio
         default: 5
       - id: variantFraction
-        default: 0.01
+        default: 0.4
       - id: minQual
         default: 20
       - id: panel_bedfile
