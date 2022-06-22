@@ -19,13 +19,9 @@ inputs:
   - id: tumorBam
     type: File?
     secondaryFiles:
-      - .bai
+      - ^.bai
     'sbg:x': -567.3890991210938
     'sbg:y': -72.29290008544922
-  - id: region_Of_Interest_Bedfile
-    type: File?
-    'sbg:x': -491.8029479980469
-    'sbg:y': 44.65171432495117
   - id: sampleName
     type: string?
     'sbg:x': -685.7598876953125
@@ -84,8 +80,6 @@ steps:
         source: refFasta
       - id: tumorBam
         source: tumorBam
-      - id: region_Of_Interest_Bedfile
-        source: region_Of_Interest_Bedfile
       - id: sampleName
         source: sampleName
       - id: filter_For_PassFilter
