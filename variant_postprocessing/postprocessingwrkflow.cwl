@@ -38,6 +38,10 @@ inputs:
     type: File?
     'sbg:x': -345.50335693359375
     'sbg:y': 124.1751937866211
+  - id: output_vcfname
+    type: string
+    'sbg:x': -153.9996795654297
+    'sbg:y': 167.50958251953125
 outputs:
   - id: bcftools_concat_output
     outputSource:
@@ -89,7 +93,7 @@ steps:
       - id: filter_For_PassFilter
         default: true
       - id: alleleFrequency
-        default: '0.01'
+        default: 0.01
       - id: alleledepth
         default: 1
       - id: totalDepth
@@ -102,6 +106,8 @@ steps:
         default: 20
       - id: panel_bedfile
         source: panel_bedfile
+      - id: output_vcfname
+        source: output_vcfname
     out:
       - id: vcf_complex
       - id: vcf
