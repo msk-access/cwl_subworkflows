@@ -14,6 +14,8 @@ inputs:
     'sbg:y': 16.868247985839844
   - id: tumorBam
     type: File?
+    secondaryFiles:
+      - ^.bai
     'sbg:x': -850.534423828125
     'sbg:y': 146.13653564453125
   - id: sampleName
