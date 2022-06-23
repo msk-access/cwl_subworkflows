@@ -14,8 +14,8 @@ inputs:
     'sbg:y': 152.2815399169922
   - id: concat_output_name
     type: string
-    'sbg:x': -510.92156982421875
-    'sbg:y': 369.7189636230469
+    'sbg:x': -305.915771484375
+    'sbg:y': 831.3782958984375
   - id: tumorBam
     type: File?
     secondaryFiles:
@@ -26,29 +26,47 @@ inputs:
     type: string?
     'sbg:x': -685.7598876953125
     'sbg:y': 24.68556022644043
-  - id: sort_output_name_sortonly
-    type: string
-    'sbg:x': -75.44412231445312
-    'sbg:y': 574.46728515625
-  - id: bgzipNormSort_sort_output_name
-    type: string
-    'sbg:x': -16.48606300354004
-    'sbg:y': 692.1005859375
   - id: panel_bedfile
     type: File?
     'sbg:x': -345.50335693359375
     'sbg:y': 124.1751937866211
-  - id: output_vcfname
+  - id: vardict_output_vcfname
     type: string
     'sbg:x': -153.9996795654297
     'sbg:y': 167.50958251953125
+  - id: stdvcf_bgzip_output_name
+    type: string?
+    'sbg:x': 31.068662643432617
+    'sbg:y': 323.2969055175781
+  - id: complexvcf_bgzip_output_name
+    type: string?
+    'sbg:x': -4.069731712341309
+    'sbg:y': 930.5181274414062
+  - id: complexvcf_sort_output_name
+    type: string
+    'sbg:x': -195.4963836669922
+    'sbg:y': 915.3782958984375
+  - id: stdvcf_norm_output_name
+    type: string?
+    'sbg:x': 126.85070037841797
+    'sbg:y': 314.2720031738281
+  - id: stdvcf_sort_output_name
+    type: string
+    'sbg:x': 220.4860382080078
+    'sbg:y': 393.7340393066406
 outputs:
   - id: bcftools_concat_output
     outputSource:
       - concat/bcftools_concat_output
     type: File
-    'sbg:x': 446.16448974609375
-    'sbg:y': 445.3755187988281
+    'sbg:x': 438.0279541015625
+    'sbg:y': 779.82568359375
+  - id: txt
+    outputSource:
+      - pv_vardictandfilter/txt
+    type: File
+    'sbg:x': 46.870967864990234
+    'sbg:y': -27.70967674255371
 steps:
   - id: concat
     in:
@@ -58,6 +76,8 @@ steps:
         source: refFasta
       - id: check_ref
         default: s
+      - id: stdvcf_bgzip_output_name
+        source: stdvcf_bgzip_output_name
       - id: multiallelics
         default: '-any'
       - id: output_type
@@ -72,16 +92,20 @@ steps:
         default: true
       - id: sortonly_input
         source: pv_vardictandfilter/vcf_complex
-      - id: sort_output_name_sortonly
-        source: sort_output_name_sortonly
-      - id: bgzipNormSort_sort_output_name
-        source: bgzipNormSort_sort_output_name
+      - id: complexvcf_bgzip_output_name
+        source: complexvcf_bgzip_output_name
+      - id: complexvcf_sort_output_name
+        source: complexvcf_sort_output_name
+      - id: stdvcf_norm_output_name
+        source: stdvcf_norm_output_name
+      - id: stdvcf_sort_output_name
+        source: stdvcf_sort_output_name
     out:
       - id: bcftools_concat_output
     run: ./concat.cwl
     label: concat
-    'sbg:x': 194.1100311279297
-    'sbg:y': 423.48553466796875
+    'sbg:x': 181.24473571777344
+    'sbg:y': 770.5809326171875
   - id: pv_vardictandfilter
     in:
       - id: refFasta
@@ -107,7 +131,7 @@ steps:
       - id: panel_bedfile
         source: panel_bedfile
       - id: output_vcfname
-        source: output_vcfname
+        source: vardict_output_vcfname
     out:
       - id: vcf_complex
       - id: vcf

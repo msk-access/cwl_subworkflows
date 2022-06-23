@@ -20,8 +20,9 @@ inputs:
     type: string?
     'sbg:x': -897.890625
     'sbg:y': 164
-  - id: bgzip_output_name
+  - id: stdvcf_bgzip_output_name
     type: string?
+    doc: filename.vcf.gz
     'sbg:x': -1072.8909912109375
     'sbg:y': 395.6759033203125
   - id: multiallelics
@@ -52,20 +53,24 @@ inputs:
     type: File
     'sbg:x': 314.4129638671875
     'sbg:y': -336.0438232421875
-  - id: bgzip_output_name_sortonly
+  - id: complexvcf_bgzip_output_name
     type: string?
+    doc: filename.vcf.gz
     'sbg:x': 424.8155212402344
     'sbg:y': -223.23497009277344
-  - id: sort_output_name_sortonly
+  - id: complexvcf_sort_output_name
     type: string
+    doc: filename_sort.vcf.gz
     'sbg:x': 376.7597961425781
     'sbg:y': -556.363525390625
-  - id: bgzipNormSort_norm_output_name
+  - id: stdvcf_norm_output_name
     type: string?
+    doc: filename_sort.vcf.gz
     'sbg:x': -525.8037719726562
     'sbg:y': 310.4252014160156
-  - id: bgzipNormSort_sort_output_name
+  - id: stdvcf_sort_output_name
     type: string
+    doc: filename_sort.vcf.gz
     'sbg:x': -865.2481079101562
     'sbg:y': 735.3568115234375
 outputs:
@@ -85,19 +90,19 @@ steps:
       - id: stdout
         source: stdout
       - id: bgzip_output_name
-        source: bgzip_output_name
+        source: stdvcf_bgzip_output_name
       - id: preset
         source: preset
       - id: output_type
         source: output_type
       - id: norm_output_name
-        source: bgzipNormSort_norm_output_name
+        source: stdvcf_norm_output_name
       - id: multiallelics
         source: multiallelics
       - id: check_ref
         source: check_ref
       - id: sort_output_name
-        source: bgzipNormSort_sort_output_name
+        source: stdvcf_sort_output_name
     out:
       - id: bgzip_normalize_sort_output
     run: ./bgzip_normalize_sort.cwl
@@ -129,13 +134,13 @@ steps:
       - id: stdout
         source: stdout
       - id: bgzip_output_name
-        source: bgzip_output_name_sortonly
+        source: complexvcf_bgzip_output_name
       - id: preset
         source: preset
       - id: output_type
         source: output_type
       - id: sort_output_name
-        source: sort_output_name_sortonly
+        source: complexvcf_sort_output_name
     out:
       - id: bgzip_sorted_output
     run: ./bgzip_sort-cwl.cwl
