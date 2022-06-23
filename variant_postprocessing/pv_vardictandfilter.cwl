@@ -25,7 +25,7 @@ inputs:
     'sbg:x': -562.7295532226562
     'sbg:y': 1439.491455078125
   - id: alleleFrequency
-    type: string?
+    type: float?
     'sbg:x': -735.9003295898438
     'sbg:y': 317.54022216796875
   - id: alleledepth
