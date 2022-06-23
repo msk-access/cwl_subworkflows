@@ -58,6 +58,10 @@ inputs:
     type: File?
     'sbg:x': -1181.29931640625
     'sbg:y': -83.72862243652344
+  - id: output_vcfname
+    type: string
+    'sbg:x': -596.9100952148438
+    'sbg:y': 727.7566528320312
 outputs:
   - id: vcf_complex
     outputSource:
@@ -115,7 +119,7 @@ steps:
       - id: input_vcf
         source: teststrandbias/output_var
       - id: vcf
-        source: sampleName
+        source: output_vcfname
     out:
       - id: output
     run: ../command_line_tools/vardictjava/v1.8.2/var_to_vcf.cwl
