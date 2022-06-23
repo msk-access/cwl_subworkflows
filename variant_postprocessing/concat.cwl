@@ -12,6 +12,8 @@ inputs:
     'sbg:y': -124.5
   - id: fastaRef
     type: File
+    secondaryFiles:
+      - .fai
     'sbg:x': -914.3859252929688
     'sbg:y': -0.5
   - id: check_ref
