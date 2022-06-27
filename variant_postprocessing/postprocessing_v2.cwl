@@ -30,18 +30,6 @@ inputs:
     type: string
     'sbg:x': -1032.3736572265625
     'sbg:y': -142.95726013183594
-  - id: complexvcf_sort_output_name
-    type: string
-    'sbg:x': 129.9329833984375
-    'sbg:y': 277.5096740722656
-  - id: stdvcf_sort_output_name
-    type: string
-    'sbg:x': 125.8931884765625
-    'sbg:y': -154.74871826171875
-  - id: control_sample_name
-    type: string
-    'sbg:x': -846.8492431640625
-    'sbg:y': 53.784610748291016
 outputs:
   - id: bcftools_concat_output
     outputSource:
@@ -78,10 +66,6 @@ steps:
         default: true
       - id: sortonly_input
         source: pv_vardict_single_filter/vcf_complex
-      - id: complexvcf_sort_output_name
-        source: complexvcf_sort_output_name
-      - id: stdvcf_sort_output_name
-        source: stdvcf_sort_output_name
     out:
       - id: bcftools_concat_output
     run: ./concat.cwl
@@ -106,8 +90,6 @@ steps:
         default: '4'
       - id: bed_file_column_for_chromsome
         default: '1'
-      - id: control_sample_name
-        source: control_sample_name
       - id: filter_variants
         default: true
       - id: minimum_allele_frequency
