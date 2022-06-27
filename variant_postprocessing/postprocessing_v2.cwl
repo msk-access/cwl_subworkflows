@@ -38,6 +38,10 @@ inputs:
     type: string
     'sbg:x': 125.8931884765625
     'sbg:y': -154.74871826171875
+  - id: control_sample_name
+    type: string
+    'sbg:x': -846.8492431640625
+    'sbg:y': 53.784610748291016
 outputs:
   - id: bcftools_concat_output
     outputSource:
@@ -102,6 +106,8 @@ steps:
         default: '4'
       - id: bed_file_column_for_chromsome
         default: '1'
+      - id: control_sample_name
+        source: control_sample_name
       - id: filter_variants
         default: true
       - id: minimum_allele_frequency
