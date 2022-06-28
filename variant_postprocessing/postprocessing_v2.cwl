@@ -7,6 +7,8 @@ $namespaces:
 inputs:
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     'sbg:x': -919.1336059570312
     'sbg:y': -296.20172119140625
   - id: concat_output_name
@@ -16,6 +18,8 @@ inputs:
     'sbg:y': 143.8258514404297
   - id: input_bam_case
     type: File
+    secondaryFiles:
+      - ^.bai
     'sbg:x': -824.95458984375
     'sbg:y': -145
   - id: bedfile
