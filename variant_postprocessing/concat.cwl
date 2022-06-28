@@ -59,7 +59,7 @@ inputs:
     'sbg:x': 424.8155212402344
     'sbg:y': -223.23497009277344
   - id: complexvcf_sort_output_name
-    type: string
+    type: string?
     doc: filename_sort.vcf.gz
     'sbg:x': 376.7597961425781
     'sbg:y': -556.363525390625
@@ -69,7 +69,7 @@ inputs:
     'sbg:x': -525.8037719726562
     'sbg:y': 310.4252014160156
   - id: stdvcf_sort_output_name
-    type: string
+    type: string?
     doc: filename_sort.vcf.gz
     'sbg:x': -865.2481079101562
     'sbg:y': 735.3568115234375
