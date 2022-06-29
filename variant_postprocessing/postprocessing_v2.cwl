@@ -8,7 +8,7 @@ inputs:
   - id: reference_fasta
     type: File
     secondaryFiles:
-      - ^.fai
+      - .fai
     'sbg:x': -919.1336059570312
     'sbg:y': -296.20172119140625
   - id: concat_output_name
