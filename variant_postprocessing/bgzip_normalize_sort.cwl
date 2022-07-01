@@ -43,7 +43,7 @@ inputs:
     'sbg:x': 530.09375
     'sbg:y': 327.625
   - id: sort_output_name
-    type: string
+    type: string?
     'sbg:x': 1034.2222900390625
     'sbg:y': 86.7093734741211
 outputs:

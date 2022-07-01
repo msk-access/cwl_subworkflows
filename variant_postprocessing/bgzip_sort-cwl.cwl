@@ -27,7 +27,7 @@ inputs:
     'sbg:x': 53.55900573730469
     'sbg:y': -245.5
   - id: sort_output_name
-    type: string
+    type: string?
     'sbg:x': -9
     'sbg:y': 90
 outputs:
