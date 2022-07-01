@@ -34,6 +34,10 @@ inputs:
     type: string
     'sbg:x': -1032.3736572265625
     'sbg:y': -142.95726013183594
+  - id: complexvcf_sort_output_name
+    type: string?
+    'sbg:x': 101.27484130859375
+    'sbg:y': 433.3896789550781
 outputs:
   - id: bcftools_concat_output
     outputSource:
@@ -70,6 +74,8 @@ steps:
         default: true
       - id: sortonly_input
         source: pv_vardict_single_filter/vcf_complex
+      - id: complexvcf_sort_output_name
+        source: complexvcf_sort_output_name
     out:
       - id: bcftools_concat_output
     run: ./concat.cwl
