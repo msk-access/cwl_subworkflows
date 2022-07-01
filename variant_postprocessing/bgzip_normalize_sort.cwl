@@ -12,6 +12,8 @@ inputs:
     'sbg:y': 345.4530029296875
   - id: fastaRef
     type: File
+    secondaryFiles:
+      - .fai
     'sbg:x': 530.09375
     'sbg:y': 220.75
   - id: stdout
