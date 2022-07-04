@@ -71,7 +71,7 @@ steps:
       - id: concat_output_name
         source: concat_output_name
       - id: stdout
-        default: true
+        default: false
       - id: sortonly_input
         source: pv_vardict_single_filter/vcf_complex
       - id: complexvcf_sort_output_name
