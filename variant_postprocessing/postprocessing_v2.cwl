@@ -38,6 +38,10 @@ inputs:
     type: string?
     'sbg:x': 101.27484130859375
     'sbg:y': 433.3896789550781
+  - id: bgzip_output_directory
+    type: string?
+    'sbg:x': 246.6015625
+    'sbg:y': 322
 outputs:
   - id: bcftools_concat_output
     outputSource:
@@ -76,6 +80,8 @@ steps:
         source: pv_vardict_single_filter/vcf_complex
       - id: complexvcf_sort_output_name
         source: complexvcf_sort_output_name
+      - id: bgzip_output_directory
+        source: bgzip_output_directory
     out:
       - id: bcftools_concat_output
     run: ./concat.cwl
