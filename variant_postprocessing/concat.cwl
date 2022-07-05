@@ -73,6 +73,10 @@ inputs:
     doc: filename_sort.vcf.gz
     'sbg:x': -865.2481079101562
     'sbg:y': 735.3568115234375
+  - id: bgzip_output_directory
+    type: string?
+    'sbg:x': -185.47254943847656
+    'sbg:y': 694.0014038085938
 outputs:
   - id: bcftools_concat_output
     outputSource:
@@ -103,6 +107,8 @@ steps:
         source: check_ref
       - id: sort_output_name
         source: stdvcf_sort_output_name
+      - id: bgzip_output_directory
+        source: bgzip_output_directory
     out:
       - id: bgzip_normalize_sort_output
     run: ./bgzip_normalize_sort.cwl
@@ -141,6 +147,8 @@ steps:
         source: output_type
       - id: sort_output_name
         source: complexvcf_sort_output_name
+      - id: bgzip_output_directory
+        source: bgzip_output_directory
     out:
       - id: bgzip_sorted_output
     run: ./bgzip_sort-cwl.cwl

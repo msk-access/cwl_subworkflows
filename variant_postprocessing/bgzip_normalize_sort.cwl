@@ -48,6 +48,10 @@ inputs:
     type: string?
     'sbg:x': 1034.2222900390625
     'sbg:y': 86.7093734741211
+  - id: bgzip_output_directory
+    type: string?
+    'sbg:x': -161.70230102539062
+    'sbg:y': 294.5
 outputs:
   - id: bgzip_normalize_sort_output
     outputSource:
@@ -66,6 +70,8 @@ steps:
         source: input
       - id: output_file_name
         source: bgzip_output_name
+      - id: output_directory
+        source: bgzip_output_directory
     out:
       - id: zippedVcf
     run: ../command_line_tools/bcftools_1.15.1/bcftools_bgzip_1.15.1.cwl
