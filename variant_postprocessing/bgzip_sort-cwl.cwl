@@ -31,7 +31,7 @@ inputs:
     'sbg:x': -9
     'sbg:y': 90
   - id: bgzip_output_directory
-    type: string?
+    type: Directory?
     'sbg:x': -674.9921875
     'sbg:y': 2.5
 outputs:

@@ -49,7 +49,7 @@ inputs:
     'sbg:x': 1034.2222900390625
     'sbg:y': 86.7093734741211
   - id: bgzip_output_directory
-    type: string?
+    type: Directory?
     'sbg:x': -161.70230102539062
     'sbg:y': 294.5
 outputs:
