@@ -21,7 +21,7 @@ inputs:
     type: string
     'sbg:x': -295
     'sbg:y': -483.5596008300781
-  - id: output_name
+  - id: concat_output_name
     type: string
     'sbg:x': 20.6474609375
     'sbg:y': 102.47994995117188
@@ -112,7 +112,7 @@ steps:
       - id: complex_input
         source: pv_vardict_single_filter/vcf_complex
       - id: output_name
-        source: output_name
+        source: concat_output_name
       - id: allow_overlaps
         default: true
       - id: stdout
