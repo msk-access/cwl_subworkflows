@@ -1,126 +1,124 @@
 class: Workflow
 cwlVersion: v1.0
-id: concat
-label: concat
+id: variants_concat
+label: variants_concat
 $namespaces:
-  s: 'https://schema.org/'
   sbg: 'https://www.sevenbridges.com/'
 inputs:
-  - id: normalize_sort_input
-    type: File
-    'sbg:x': -948.3859252929688
-    'sbg:y': -124.5
   - id: fastaRef
     type: File
-    secondaryFiles:
-      - .fai
-    'sbg:x': -914.3859252929688
-    'sbg:y': -0.5
+    'sbg:x': -495.60113525390625
+    'sbg:y': -51.5
+  - id: input
+    type: File
+    'sbg:x': -468.60113525390625
+    'sbg:y': -197.5
+  - id: bgzip_output_name
+    type: string?
+    'sbg:x': -275.7477722167969
+    'sbg:y': 175.36965942382812
   - id: check_ref
     type: string?
-    'sbg:x': -897.890625
-    'sbg:y': 164
-  - id: stdvcf_bgzip_output_name
-    type: string?
-    doc: filename.vcf.gz
-    'sbg:x': -1072.8909912109375
-    'sbg:y': 395.6759033203125
+    'sbg:x': -326.6642761230469
+    'sbg:y': 39.93177032470703
   - id: multiallelics
     type: string?
-    'sbg:x': -866.60791015625
-    'sbg:y': -248.6446990966797
+    'sbg:x': -409.58453369140625
+    'sbg:y': -127.52545928955078
+  - id: norm_output_name
+    type: string?
+    'sbg:x': -349.4378967285156
+    'sbg:y': -236.35031127929688
   - id: output_type
     type: string?
-    'sbg:x': -441.8370361328125
-    'sbg:y': -965.5772094726562
+    'sbg:x': -203.44635009765625
+    'sbg:y': -346.006103515625
   - id: preset
     type: string?
-    'sbg:x': -758.090087890625
-    'sbg:y': -554.468994140625
+    'sbg:x': -69.02679443359375
+    'sbg:y': -255.37474060058594
+  - id: sort_output_name
+    type: string?
+    'sbg:x': 147.8774871826172
+    'sbg:y': -269.6313781738281
+  - id: complex_sort_output_name
+    type: string?
+    'sbg:x': 622.2739868164062
+    'sbg:y': -229.81654357910156
+  - id: complex_input
+    type: File
+    'sbg:x': 461.0975036621094
+    'sbg:y': 26.654048919677734
+  - id: complex_bgzip_output_name
+    type: string?
+    'sbg:x': 494.0386962890625
+    'sbg:y': 265.64788818359375
+  - id: output_name
+    type: string
+    'sbg:x': 21.79051399230957
+    'sbg:y': 742.0482177734375
   - id: allow_overlaps
     type: boolean?
-    'sbg:x': 107.66560363769531
-    'sbg:y': 1210.692138671875
-  - id: concat_output_name
-    type: string
-    'sbg:x': 83.19007873535156
-    'sbg:y': 836.5663452148438
-  - id: stdout
-    type: boolean
-    'sbg:x': -672.1541748046875
-    'sbg:y': -762.3403930664062
-  - id: sortonly_input
-    type: File
-    'sbg:x': 314.4129638671875
-    'sbg:y': -336.0438232421875
-  - id: complexvcf_bgzip_output_name
-    type: string?
-    doc: filename.vcf.gz
-    'sbg:x': 424.8155212402344
-    'sbg:y': -223.23497009277344
-  - id: complexvcf_sort_output_name
-    type: string?
-    doc: filename_sort.vcf.gz
-    'sbg:x': 376.7597961425781
-    'sbg:y': -556.363525390625
-  - id: stdvcf_norm_output_name
-    type: string?
-    doc: filename_sort.vcf.gz
-    'sbg:x': -525.8037719726562
-    'sbg:y': 310.4252014160156
-  - id: stdvcf_sort_output_name
-    type: string?
-    doc: filename_sort.vcf.gz
-    'sbg:x': -865.2481079101562
-    'sbg:y': 735.3568115234375
-  - id: bgzip_output_directory
-    type: Directory?
-    'sbg:x': -185.47254943847656
-    'sbg:y': 694.0014038085938
+    'sbg:x': 93.62149810791016
+    'sbg:y': 873.0341186523438
 outputs:
-  - id: bcftools_concat_output
+  - id: concatenated_vcf
     outputSource:
       - bcftools_concat/concatenated_vcf
     type: File
-    'sbg:x': 761.0638427734375
-    'sbg:y': 476
+    'sbg:x': 689.3961181640625
+    'sbg:y': 751.9074096679688
 steps:
   - id: bgzip_normalize_sort
     in:
       - id: input
-        source: normalize_sort_input
+        source: input
       - id: fastaRef
         source: fastaRef
-      - id: stdout
-        source: stdout
       - id: bgzip_output_name
-        source: stdvcf_bgzip_output_name
+        source: bgzip_output_name
       - id: preset
         source: preset
       - id: output_type
         source: output_type
       - id: norm_output_name
-        source: stdvcf_norm_output_name
+        source: norm_output_name
       - id: multiallelics
         source: multiallelics
       - id: check_ref
         source: check_ref
       - id: sort_output_name
-        source: stdvcf_sort_output_name
-      - id: bgzip_output_directory
-        source: bgzip_output_directory
+        source: sort_output_name
     out:
       - id: bgzip_normalize_sort_output
-    run: ./bgzip_normalize_sort.cwl
+    run: ./variant_normalize_sort.cwl
     label: bgzip_normalize_sort
-    'sbg:x': -299.3984375
-    'sbg:y': -81.5
+    'sbg:x': 87.80394744873047
+    'sbg:y': 16.577659606933594
+  - id: bgzip_sort
+    in:
+      - id: input
+        source: complex_input
+      - id: bgzip_output_name
+        source: complex_bgzip_output_name
+      - id: preset
+        source: preset
+      - id: output_type
+        source: output_type
+      - id: sort_output_name
+        source: complex_sort_output_name
+    out:
+      - id: bgzip_sorted_output
+    run: ./variant_sort.cwl
+    label: bgzip_sort.cwl
+    'sbg:x': 639.3529663085938
+    'sbg:y': -26.823528289794922
   - id: bcftools_concat
     in:
       - id: allow_overlaps
         source: allow_overlaps
       - id: output_name
-        source: concat_output_name
+        source: output_name
       - id: output_type
         source: output_type
       - id: input
@@ -131,54 +129,8 @@ steps:
       - id: concatenated_vcf
     run: ../command_line_tools/bcftools_1.15.1/bcftools_concat_1.15.1.cwl
     label: bcftools_concat
-    'sbg:x': 313.76495361328125
-    'sbg:y': 478.2802734375
-  - id: bgzip_sort
-    in:
-      - id: input
-        source: sortonly_input
-      - id: stdout
-        source: stdout
-      - id: bgzip_output_name
-        source: complexvcf_bgzip_output_name
-      - id: preset
-        source: preset
-      - id: output_type
-        source: output_type
-      - id: sort_output_name
-        source: complexvcf_sort_output_name
-      - id: bgzip_output_directory
-        source: bgzip_output_directory
-    out:
-      - id: bgzip_sorted_output
-    run: ./bgzip_sort-cwl.cwl
-    label: bgzip_sort.cwl
-    'sbg:x': 650.7271118164062
-    'sbg:y': -354.9095764160156
+    'sbg:x': 369.0542907714844
+    'sbg:y': 754.6953125
 requirements:
   - class: SubworkflowFeatureRequirement
   - class: MultipleInputFeatureRequirement
-$schemas:
-  - 'http://schema.org/version/latest/schemaorg-current-http.rdf'
-'s:author':
-  - class: 's:Person'
-    's:email': 'mailto:sivaprk@mskcc.org'
-    's:identifier': ''
-    's:name': Karthigayini Sivaprakasam
-  - class: 's:Person'
-    's:email': 'mailto:shahr@mskcc.org'
-    's:identifier': ''
-    's:name': Ronak Shah
-'s:citation': ''
-'s:codeRepository': 'https://github.com/msk-access/cwl_subworkflows/variant_postprocessing'
-'s:contributor':
-  - class: 's:Person'
-    's:email': 'mailto:sivaprk@mskcc.org'
-    's:identifier': ''
-    's:name': Karthigayini Sivaprakasam
-  - class: 's:Person'
-    's:email': 'mailto:shahr@mskcc.org'
-    's:identifier': ''
-    's:name': Ronak Shah
-'s:dateCreated': 2020-06-2
-'s:license': 'https://spdx.org/licenses/Apache-2.0'

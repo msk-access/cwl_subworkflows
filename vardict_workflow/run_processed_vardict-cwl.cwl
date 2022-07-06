@@ -7,8 +7,8 @@ $namespaces:
 inputs:
   - id: reference_fasta
     type: File
-    'sbg:x': -666
-    'sbg:y': -278
+    'sbg:x': -634.5714111328125
+    'sbg:y': 149.14285278320312
   - id: input_bam_case
     type: File
     'sbg:x': -699
@@ -19,8 +19,8 @@ inputs:
     'sbg:y': -36.49504852294922
   - id: sample_name
     type: string
-    'sbg:x': -525.591064453125
-    'sbg:y': -345.4913635253906
+    'sbg:x': -295
+    'sbg:y': -483.5596008300781
   - id: output_vcf_name
     type: string
     'sbg:x': -796.5
@@ -32,6 +32,12 @@ outputs:
     type: File
     'sbg:x': 208.52406311035156
     'sbg:y': -167.63339233398438
+  - id: concatenated_vcf
+    outputSource:
+      - variants_concat/concatenated_vcf
+    type: File
+    'sbg:x': 493.2825012207031
+    'sbg:y': 131.36968994140625
 steps:
   - id: vardict
     in:
@@ -87,5 +93,29 @@ steps:
       ../command_line_tools/postprocessing_variant_calls/0.1.4/pv_vardict_single_filter.cwl
     'sbg:x': 1.4255318641662598
     'sbg:y': -197.1702117919922
+  - id: variants_concat
+    in:
+      - id: fastaRef
+        source: reference_fasta
+      - id: input
+        source: pv_vardict_single_filter/vcf
+      - id: check_ref
+        default: s
+      - id: multiallelics
+        default: '-any'
+      - id: output_type
+        default: z
+      - id: preset
+        default: vcf
+      - id: complex_input
+        source: pv_vardict_single_filter/vcf_complex
+      - id: allow_overlaps
+        default: true
+    out:
+      - id: concatenated_vcf
+    run: ../variant_postprocessing/variants_concat.cwl
+    label: variants_concat
+    'sbg:x': 293.28570556640625
+    'sbg:y': 131.14285278320312
 requirements:
   - class: SubworkflowFeatureRequirement
