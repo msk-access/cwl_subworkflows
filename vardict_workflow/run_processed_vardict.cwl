@@ -21,10 +21,14 @@ inputs:
     type: string
     'sbg:x': -295
     'sbg:y': -483.5596008300781
-  - id: output_vcf_name
+  - id: concat_output_name
     type: string
-    'sbg:x': -796.5
-    'sbg:y': -201.81307983398438
+    'sbg:x': 20.6474609375
+    'sbg:y': 102.47994995117188
+  - id: stdout
+    type: boolean
+    'sbg:x': 111.61993408203125
+    'sbg:y': -36.53657531738281
 outputs:
   - id: txt
     outputSource:
@@ -61,8 +65,6 @@ steps:
         default: true
       - id: minimum_allele_frequency
         default: 0.01
-      - id: output_vcf
-        source: output_vcf_name
     out:
       - id: output
     run: ../command_line_tools/vardictjava/v1.8.2/vardict_single_sample.cwl
@@ -109,13 +111,17 @@ steps:
         default: vcf
       - id: complex_input
         source: pv_vardict_single_filter/vcf_complex
+      - id: output_name
+        source: concat_output_name
       - id: allow_overlaps
         default: true
+      - id: stdout
+        source: stdout
     out:
       - id: concatenated_vcf
     run: ../variant_postprocessing/variants_concat.cwl
     label: variants_concat
-    'sbg:x': 293.28570556640625
-    'sbg:y': 131.14285278320312
+    'sbg:x': 337.0436706542969
+    'sbg:y': 125.96643829345703
 requirements:
   - class: SubworkflowFeatureRequirement
