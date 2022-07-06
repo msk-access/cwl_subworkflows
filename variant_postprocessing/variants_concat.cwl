@@ -99,8 +99,8 @@ steps:
       - id: bgzip_normalize_sort_output
     run: ./variant_normalize_sort.cwl
     label: bgzip_normalize_sort
-    'sbg:x': 87.80394744873047
-    'sbg:y': 16.577659606933594
+    'sbg:x': 125.46411895751953
+    'sbg:y': 20.04885482788086
   - id: bgzip_sort
     in:
       - id: input
@@ -119,8 +119,8 @@ steps:
       - id: bgzip_sorted_output
     run: ./variant_sort.cwl
     label: bgzip_sort.cwl
-    'sbg:x': 639.3529663085938
-    'sbg:y': -26.823528289794922
+    'sbg:x': 1037.812255859375
+    'sbg:y': -30.04885482788086
   - id: bcftools_concat
     in:
       - id: allow_overlaps
