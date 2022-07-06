@@ -7,10 +7,14 @@ $namespaces:
 inputs:
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     'sbg:x': -634.5714111328125
     'sbg:y': 149.14285278320312
   - id: input_bam_case
     type: File
+    secondaryFiles:
+      - ^.bai
     'sbg:x': -699
     'sbg:y': -149
   - id: bedfile
