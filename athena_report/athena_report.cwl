@@ -48,8 +48,6 @@ inputs:
 outputs:
   coverage_report_single:
     type: File
-    outputBinding:
-        glob: '*_report.html'
 
 steps:
   annotate:
