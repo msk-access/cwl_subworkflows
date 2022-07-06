@@ -1,7 +1,7 @@
 class: Workflow
 cwlVersion: v1.0
 id: bgzip_sort
-label: bgzip_sort.cwl
+label: variant_sort
 $namespaces:
   s: 'https://schema.org/'
   sbg: 'https://www.sevenbridges.com/'
@@ -30,10 +30,6 @@ inputs:
     type: string?
     'sbg:x': -9
     'sbg:y': 90
-  - id: bgzip_output_directory
-    type: Directory?
-    'sbg:x': -674.9921875
-    'sbg:y': 2.5
 outputs:
   - id: bgzip_sorted_output
     outputSource:
@@ -52,8 +48,6 @@ steps:
         source: input
       - id: output_file_name
         source: bgzip_output_name
-      - id: output_directory
-        source: bgzip_output_directory
     out:
       - id: zippedVcf
     run: ../command_line_tools/bcftools_1.15.1/bcftools_bgzip_1.15.1.cwl
