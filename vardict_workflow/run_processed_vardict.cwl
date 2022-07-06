@@ -31,8 +31,8 @@ inputs:
     'sbg:y': 102.47994995117188
   - id: stdout
     type: boolean
-    'sbg:x': 111.61993408203125
-    'sbg:y': -36.53657531738281
+    'sbg:x': 109.83137512207031
+    'sbg:y': -20.80786895751953
   - id: vardict_output_vcf_name
     type: string?
     'sbg:x': -596.02392578125
