@@ -11,7 +11,7 @@
     -   [INDEL re-alignment sub-workflow](../indel_realignment/README.md)
     -   [Simplex BAM QC sub-workflow](../qc_simplex_bam/README.md)
     -   [Uncollapsed BAM QC sub-workflow](../qc_uncollapsed_bam/README.md)
-    -   [vardict variant calling and post-processing sub-workflow](../variant_postprocessing/README.md)
+    -   [vardict variant calling and post-processing sub-workflow](../variant_workflow/README.md)
 
 ## Github Specifications
 
