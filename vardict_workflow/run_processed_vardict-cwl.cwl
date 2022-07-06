@@ -1,0 +1,91 @@
+class: Workflow
+cwlVersion: v1.0
+id: run_processed_vardict_cwl
+label: run_processed_vardict.cwl
+$namespaces:
+  sbg: 'https://www.sevenbridges.com/'
+inputs:
+  - id: reference_fasta
+    type: File
+    'sbg:x': -666
+    'sbg:y': -278
+  - id: input_bam_case
+    type: File
+    'sbg:x': -699
+    'sbg:y': -149
+  - id: bedfile
+    type: File?
+    'sbg:x': -636.4950561523438
+    'sbg:y': -36.49504852294922
+  - id: sample_name
+    type: string
+    'sbg:x': -525.591064453125
+    'sbg:y': -345.4913635253906
+  - id: output_vcf_name
+    type: string
+    'sbg:x': -796.5
+    'sbg:y': -201.81307983398438
+outputs:
+  - id: txt
+    outputSource:
+      - pv_vardict_single_filter/txt
+    type: File
+    'sbg:x': 208.52406311035156
+    'sbg:y': -167.63339233398438
+steps:
+  - id: vardict
+    in:
+      - id: bedfile
+        source: bedfile
+      - id: input_bam_case
+        source: input_bam_case
+      - id: reference_fasta
+        source: reference_fasta
+      - id: sample_name
+        source: sample_name
+      - id: bed_file_column_for_region_start
+        default: '2'
+      - id: bed_file_column_for_region_end
+        default: '3'
+      - id: bed_file_column_for_gene_name
+        default: '4'
+      - id: bed_file_column_for_chromsome
+        default: '1'
+      - id: filter_variants
+        default: true
+      - id: minimum_allele_frequency
+        default: 0.01
+      - id: output_vcf
+        source: output_vcf_name
+    out:
+      - id: output
+    run: ../command_line_tools/vardictjava/v1.8.2/vardict_single_sample.cwl
+    label: vardict
+    'sbg:x': -411.7029724121094
+    'sbg:y': -187.75247192382812
+  - id: pv_vardict_single_filter
+    in:
+      - id: inputVCF
+        source: vardict/output
+      - id: tsampleName
+        source: sample_name
+      - id: alleledepth
+        default: 1
+      - id: totalDepth
+        default: 20
+      - id: tnRatio
+        default: 5
+      - id: variantFraction
+        default: 0.04
+      - id: minQual
+        default: 20
+    out:
+      - id: txt
+      - id: vcf_complex
+      - id: vcf
+    run: >-
+      ../command_line_tools/postprocessing_variant_calls/0.1.4/pv_vardict_single_filter.cwl
+    'sbg:x': 1.4255318641662598
+    'sbg:y': -197.1702117919922
+requirements:
+  - class: SubworkflowFeatureRequirement
