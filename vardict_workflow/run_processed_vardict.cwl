@@ -1,6 +1,6 @@
 class: Workflow
 cwlVersion: v1.0
-id: run_processed_vardict_cwl
+id: run_processed_vardict
 label: run_processed_vardict.cwl
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
@@ -29,6 +29,10 @@ inputs:
     type: boolean
     'sbg:x': 111.61993408203125
     'sbg:y': -36.53657531738281
+  - id: vardict_output_vcf_name
+    type: string?
+    'sbg:x': -596.02392578125
+    'sbg:y': -291.1067810058594
 outputs:
   - id: txt
     outputSource:
@@ -65,6 +69,8 @@ steps:
         default: true
       - id: minimum_allele_frequency
         default: 0.01
+      - id: output_vcf
+        source: vardict_output_vcf_name
     out:
       - id: output
     run: ../command_line_tools/vardictjava/v1.8.2/vardict_single_sample.cwl
