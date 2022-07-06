@@ -61,6 +61,10 @@ inputs:
     type: boolean?
     'sbg:x': 93.62149810791016
     'sbg:y': 873.0341186523438
+  - id: stdout
+    type: boolean
+    'sbg:x': 315.8106689453125
+    'sbg:y': -71.67112731933594
 outputs:
   - id: concatenated_vcf
     outputSource:
@@ -75,6 +79,8 @@ steps:
         source: input
       - id: fastaRef
         source: fastaRef
+      - id: stdout
+        source: stdout
       - id: bgzip_output_name
         source: bgzip_output_name
       - id: preset
@@ -99,6 +105,8 @@ steps:
     in:
       - id: input
         source: complex_input
+      - id: stdout
+        source: stdout
       - id: bgzip_output_name
         source: complex_bgzip_output_name
       - id: preset
