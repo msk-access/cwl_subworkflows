@@ -48,8 +48,7 @@ inputs:
 outputs:
   coverage_report_single:
     type: File
-    outputSource:
-      - athena_report
+    outputSource: report/coverage_report_single
 
 steps:
   annotate:
