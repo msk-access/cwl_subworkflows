@@ -404,14 +404,14 @@
                 {
                     "id": "#main/input",
                     "type": "File",
-                    "https://www.sevenbridges.com/x": -518.9956665039062,
-                    "https://www.sevenbridges.com/y": 42
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 321
                 },
                 {
                     "id": "#main/stdout",
                     "type": "boolean",
-                    "https://www.sevenbridges.com/x": -432,
-                    "https://www.sevenbridges.com/y": -172
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 0
                 },
                 {
                     "id": "#main/bgzip_output_name",
@@ -419,8 +419,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": -504,
-                    "https://www.sevenbridges.com/y": -84
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 428
                 },
                 {
                     "id": "#main/preset",
@@ -428,8 +428,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": -253,
-                    "https://www.sevenbridges.com/y": -228
+                    "https://www.sevenbridges.com/x": 206.859375,
+                    "https://www.sevenbridges.com/y": 146.5
                 },
                 {
                     "id": "#main/output_type",
@@ -437,8 +437,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": 53.55900573730469,
-                    "https://www.sevenbridges.com/y": -245.5
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 214
                 },
                 {
                     "id": "#main/sort_output_name",
@@ -446,8 +446,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": -9,
-                    "https://www.sevenbridges.com/y": 90
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 107
                 }
             ],
             "outputs": [
@@ -463,8 +463,8 @@
                     "secondaryFiles": [
                         ".tbi"
                     ],
-                    "https://www.sevenbridges.com/x": 591,
-                    "https://www.sevenbridges.com/y": 33
+                    "https://www.sevenbridges.com/x": 1095.162353515625,
+                    "https://www.sevenbridges.com/y": 214
                 }
             ],
             "steps": [
@@ -491,8 +491,8 @@
                     ],
                     "run": "#bcftools_bgzip_1.15.1.cwl",
                     "label": "bgzip",
-                    "https://www.sevenbridges.com/x": -245,
-                    "https://www.sevenbridges.com/y": -43
+                    "https://www.sevenbridges.com/x": 206.859375,
+                    "https://www.sevenbridges.com/y": 267.5
                 },
                 {
                     "id": "#main/bcftools_sort",
@@ -517,8 +517,8 @@
                     ],
                     "run": "#bcftools_sort._1.15.1.cwl",
                     "label": "bcftools_sort",
-                    "https://www.sevenbridges.com/x": 190,
-                    "https://www.sevenbridges.com/y": -79
+                    "https://www.sevenbridges.com/x": 660.6514892578125,
+                    "https://www.sevenbridges.com/y": 200
                 },
                 {
                     "id": "#main/tabix",
@@ -539,8 +539,8 @@
                     ],
                     "run": "#bcftools_tabix_1.15.1.cwl",
                     "label": "tabix",
-                    "https://www.sevenbridges.com/x": -31,
-                    "https://www.sevenbridges.com/y": -85
+                    "https://www.sevenbridges.com/x": 470.40625,
+                    "https://www.sevenbridges.com/y": 207
                 },
                 {
                     "id": "#main/tabix_1",
@@ -561,8 +561,8 @@
                     ],
                     "run": "#bcftools_tabix_1.15.1.cwl",
                     "label": "tabix",
-                    "https://www.sevenbridges.com/x": 383,
-                    "https://www.sevenbridges.com/y": -115
+                    "https://www.sevenbridges.com/x": 904.9171142578125,
+                    "https://www.sevenbridges.com/y": 207
                 }
             ],
             "requirements": [],
@@ -572,12 +572,6 @@
                     "https://schema.org/email": "mailto:sivaprk@mskcc.org",
                     "https://schema.org/identifier": "",
                     "https://schema.org/name": "Karthigayini Sivaprakasam"
-                },
-                {
-                    "class": "https://schema.org/Person",
-                    "https://schema.org/email": "mailto:shahr@mskcc.org",
-                    "https://schema.org/identifier": "",
-                    "https://schema.org/name": "Ronak Shah"
                 }
             ],
             "https://schema.org/citation": "",
@@ -596,7 +590,7 @@
                     "https://schema.org/name": "Ronak Shah"
                 }
             ],
-            "https://schema.org/dateCreated": "2020-06-2",
+            "https://schema.org/dateCreated": "2020-07-13",
             "https://schema.org/license": "https://spdx.org/licenses/Apache-2.0"
         }
     ],

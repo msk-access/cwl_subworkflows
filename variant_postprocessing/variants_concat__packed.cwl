@@ -693,13 +693,13 @@
         {
             "class": "Workflow",
             "id": "#variant_normalize_sort.cwl",
-            "label": "bgzip_normalize_sort",
+            "label": "variant_normalize_sort",
             "inputs": [
                 {
                     "id": "#variant_normalize_sort.cwl/bgzip_normalize_sort/input",
                     "type": "File",
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 345.4530029296875
+                    "https://www.sevenbridges.com/y": 427.6875
                 },
                 {
                     "id": "#variant_normalize_sort.cwl/bgzip_normalize_sort/fastaRef",
@@ -707,14 +707,14 @@
                     "secondaryFiles": [
                         ".fai"
                     ],
-                    "https://www.sevenbridges.com/x": 530.09375,
-                    "https://www.sevenbridges.com/y": 220.75
+                    "https://www.sevenbridges.com/x": 506.94903564453125,
+                    "https://www.sevenbridges.com/y": 374.2265625
                 },
                 {
                     "id": "#variant_normalize_sort.cwl/bgzip_normalize_sort/stdout",
                     "type": "boolean",
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 7
+                    "https://www.sevenbridges.com/y": 0
                 },
                 {
                     "id": "#variant_normalize_sort.cwl/bgzip_normalize_sort/bgzip_output_name",
@@ -722,8 +722,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": 1.529915452003479,
-                    "https://www.sevenbridges.com/y": 219.90597534179688
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 534.609375
                 },
                 {
                     "id": "#variant_normalize_sort.cwl/bgzip_normalize_sort/preset",
@@ -731,8 +731,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": 764.5779418945312,
-                    "https://www.sevenbridges.com/y": -371.015625
+                    "https://www.sevenbridges.com/x": 231.125,
+                    "https://www.sevenbridges.com/y": 246.3046875
                 },
                 {
                     "id": "#variant_normalize_sort.cwl/bgzip_normalize_sort/output_type",
@@ -740,8 +740,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": 1098.478759765625,
-                    "https://www.sevenbridges.com/y": -9.393171310424805
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 213.84375
                 },
                 {
                     "id": "#variant_normalize_sort.cwl/bgzip_normalize_sort/norm_output_name",
@@ -749,8 +749,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": 530.09375,
-                    "https://www.sevenbridges.com/y": 434.5
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 320.765625
                 },
                 {
                     "id": "#variant_normalize_sort.cwl/bgzip_normalize_sort/multiallelics",
@@ -758,8 +758,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": 530.09375,
-                    "https://www.sevenbridges.com/y": 113.875
+                    "https://www.sevenbridges.com/x": 506.94903564453125,
+                    "https://www.sevenbridges.com/y": 267.3046875
                 },
                 {
                     "id": "#variant_normalize_sort.cwl/bgzip_normalize_sort/check_ref",
@@ -767,8 +767,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": 530.09375,
-                    "https://www.sevenbridges.com/y": 327.625
+                    "https://www.sevenbridges.com/x": 506.94903564453125,
+                    "https://www.sevenbridges.com/y": 481.1484375
                 },
                 {
                     "id": "#variant_normalize_sort.cwl/bgzip_normalize_sort/sort_output_name",
@@ -776,17 +776,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": 1034.2222900390625,
-                    "https://www.sevenbridges.com/y": 86.7093734741211
-                },
-                {
-                    "id": "#variant_normalize_sort.cwl/bgzip_normalize_sort/bgzip_output_directory",
-                    "type": [
-                        "null",
-                        "Directory"
-                    ],
-                    "https://www.sevenbridges.com/x": -161.70230102539062,
-                    "https://www.sevenbridges.com/y": 294.5
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 106.921875
                 }
             ],
             "outputs": [
@@ -802,8 +793,8 @@
                     "secondaryFiles": [
                         ".tbi"
                     ],
-                    "https://www.sevenbridges.com/x": 1734.3028564453125,
-                    "https://www.sevenbridges.com/y": 220.75
+                    "https://www.sevenbridges.com/x": 1623.7470703125,
+                    "https://www.sevenbridges.com/y": 320.765625
                 }
             ],
             "steps": [
@@ -821,10 +812,6 @@
                         {
                             "id": "#variant_normalize_sort.cwl/bgzip_normalize_sort/bgzip/output_file_name",
                             "source": "#variant_normalize_sort.cwl/bgzip_normalize_sort/bgzip_output_name"
-                        },
-                        {
-                            "id": "#variant_normalize_sort.cwl/bgzip_normalize_sort/bgzip/output_directory",
-                            "source": "#variant_normalize_sort.cwl/bgzip_normalize_sort/bgzip_output_directory"
                         }
                     ],
                     "out": [
@@ -834,8 +821,8 @@
                     ],
                     "run": "#bcftools_bgzip_1.15.1.cwl",
                     "label": "bgzip",
-                    "https://www.sevenbridges.com/x": 266.546875,
-                    "https://www.sevenbridges.com/y": 274.1875
+                    "https://www.sevenbridges.com/x": 231.125,
+                    "https://www.sevenbridges.com/y": 374.2265625
                 },
                 {
                     "id": "#variant_normalize_sort.cwl/bgzip_normalize_sort/tabix",
@@ -856,8 +843,8 @@
                     ],
                     "run": "#bcftools_tabix_1.15.1.cwl",
                     "label": "tabix",
-                    "https://www.sevenbridges.com/x": 530,
-                    "https://www.sevenbridges.com/y": -145.842529296875
+                    "https://www.sevenbridges.com/x": 506.94903564453125,
+                    "https://www.sevenbridges.com/y": 153.3828125
                 },
                 {
                     "id": "#variant_normalize_sort.cwl/bgzip_normalize_sort/norm",
@@ -894,8 +881,8 @@
                     ],
                     "run": "#bcftools_norm_1.15.1.cwl",
                     "label": "bcftools_norm",
-                    "https://www.sevenbridges.com/x": 807.75,
-                    "https://www.sevenbridges.com/y": 185.75
+                    "https://www.sevenbridges.com/x": 697.1942749023438,
+                    "https://www.sevenbridges.com/y": 285.765625
                 },
                 {
                     "id": "#variant_normalize_sort.cwl/bgzip_normalize_sort/tabix_1",
@@ -916,8 +903,8 @@
                     ],
                     "run": "#bcftools_tabix_1.15.1.cwl",
                     "label": "tabix",
-                    "https://www.sevenbridges.com/x": 1109.5467529296875,
-                    "https://www.sevenbridges.com/y": 213.75
+                    "https://www.sevenbridges.com/x": 998.9910278320312,
+                    "https://www.sevenbridges.com/y": 313.765625
                 },
                 {
                     "id": "#variant_normalize_sort.cwl/bgzip_normalize_sort/bcftools_sort",
@@ -942,8 +929,8 @@
                     ],
                     "run": "#bcftools_sort._1.15.1.cwl",
                     "label": "bcftools_sort",
-                    "https://www.sevenbridges.com/x": 1299.7919921875,
-                    "https://www.sevenbridges.com/y": 206.75
+                    "https://www.sevenbridges.com/x": 1189.236328125,
+                    "https://www.sevenbridges.com/y": 306.765625
                 },
                 {
                     "id": "#variant_normalize_sort.cwl/bgzip_normalize_sort/tabix_2",
@@ -964,8 +951,8 @@
                     ],
                     "run": "#bcftools_tabix_1.15.1.cwl",
                     "label": "tabix",
-                    "https://www.sevenbridges.com/x": 1544.0576171875,
-                    "https://www.sevenbridges.com/y": 213.6875
+                    "https://www.sevenbridges.com/x": 1433.501953125,
+                    "https://www.sevenbridges.com/y": 313.765625
                 }
             ],
             "requirements": [],
@@ -975,12 +962,6 @@
                     "https://schema.org/email": "mailto:sivaprk@mskcc.org",
                     "https://schema.org/identifier": "",
                     "https://schema.org/name": "Karthigayini Sivaprakasam"
-                },
-                {
-                    "class": "https://schema.org/Person",
-                    "https://schema.org/email": "mailto:shahr@mskcc.org",
-                    "https://schema.org/identifier": "",
-                    "https://schema.org/name": "Ronak Shah"
                 }
             ],
             "https://schema.org/citation": "",
@@ -999,7 +980,7 @@
                     "https://schema.org/name": "Ronak Shah"
                 }
             ],
-            "https://schema.org/dateCreated": "2020-06-2",
+            "https://schema.org/dateCreated": "2020-13-7",
             "https://schema.org/license": "https://spdx.org/licenses/Apache-2.0"
         },
         {
@@ -1010,14 +991,14 @@
                 {
                     "id": "#variant_sort.cwl/bgzip_sort/input",
                     "type": "File",
-                    "https://www.sevenbridges.com/x": -518.9956665039062,
-                    "https://www.sevenbridges.com/y": 42
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 321
                 },
                 {
                     "id": "#variant_sort.cwl/bgzip_sort/stdout",
                     "type": "boolean",
-                    "https://www.sevenbridges.com/x": -432,
-                    "https://www.sevenbridges.com/y": -172
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 0
                 },
                 {
                     "id": "#variant_sort.cwl/bgzip_sort/bgzip_output_name",
@@ -1025,8 +1006,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": -504,
-                    "https://www.sevenbridges.com/y": -84
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 428
                 },
                 {
                     "id": "#variant_sort.cwl/bgzip_sort/preset",
@@ -1034,8 +1015,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": -253,
-                    "https://www.sevenbridges.com/y": -228
+                    "https://www.sevenbridges.com/x": 206.859375,
+                    "https://www.sevenbridges.com/y": 146.5
                 },
                 {
                     "id": "#variant_sort.cwl/bgzip_sort/output_type",
@@ -1043,8 +1024,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": 53.55900573730469,
-                    "https://www.sevenbridges.com/y": -245.5
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 214
                 },
                 {
                     "id": "#variant_sort.cwl/bgzip_sort/sort_output_name",
@@ -1052,8 +1033,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": -9,
-                    "https://www.sevenbridges.com/y": 90
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 107
                 }
             ],
             "outputs": [
@@ -1069,8 +1050,8 @@
                     "secondaryFiles": [
                         ".tbi"
                     ],
-                    "https://www.sevenbridges.com/x": 591,
-                    "https://www.sevenbridges.com/y": 33
+                    "https://www.sevenbridges.com/x": 1095.162353515625,
+                    "https://www.sevenbridges.com/y": 214
                 }
             ],
             "steps": [
@@ -1097,8 +1078,8 @@
                     ],
                     "run": "#bcftools_bgzip_1.15.1.cwl",
                     "label": "bgzip",
-                    "https://www.sevenbridges.com/x": -245,
-                    "https://www.sevenbridges.com/y": -43
+                    "https://www.sevenbridges.com/x": 206.859375,
+                    "https://www.sevenbridges.com/y": 267.5
                 },
                 {
                     "id": "#variant_sort.cwl/bgzip_sort/bcftools_sort",
@@ -1123,8 +1104,8 @@
                     ],
                     "run": "#bcftools_sort._1.15.1.cwl",
                     "label": "bcftools_sort",
-                    "https://www.sevenbridges.com/x": 190,
-                    "https://www.sevenbridges.com/y": -79
+                    "https://www.sevenbridges.com/x": 660.6514892578125,
+                    "https://www.sevenbridges.com/y": 200
                 },
                 {
                     "id": "#variant_sort.cwl/bgzip_sort/tabix",
@@ -1145,8 +1126,8 @@
                     ],
                     "run": "#bcftools_tabix_1.15.1.cwl",
                     "label": "tabix",
-                    "https://www.sevenbridges.com/x": -31,
-                    "https://www.sevenbridges.com/y": -85
+                    "https://www.sevenbridges.com/x": 470.40625,
+                    "https://www.sevenbridges.com/y": 207
                 },
                 {
                     "id": "#variant_sort.cwl/bgzip_sort/tabix_1",
@@ -1167,8 +1148,8 @@
                     ],
                     "run": "#bcftools_tabix_1.15.1.cwl",
                     "label": "tabix",
-                    "https://www.sevenbridges.com/x": 383,
-                    "https://www.sevenbridges.com/y": -115
+                    "https://www.sevenbridges.com/x": 904.9171142578125,
+                    "https://www.sevenbridges.com/y": 207
                 }
             ],
             "requirements": [],
@@ -1178,12 +1159,6 @@
                     "https://schema.org/email": "mailto:sivaprk@mskcc.org",
                     "https://schema.org/identifier": "",
                     "https://schema.org/name": "Karthigayini Sivaprakasam"
-                },
-                {
-                    "class": "https://schema.org/Person",
-                    "https://schema.org/email": "mailto:shahr@mskcc.org",
-                    "https://schema.org/identifier": "",
-                    "https://schema.org/name": "Ronak Shah"
                 }
             ],
             "https://schema.org/citation": "",
@@ -1202,7 +1177,7 @@
                     "https://schema.org/name": "Ronak Shah"
                 }
             ],
-            "https://schema.org/dateCreated": "2020-06-2",
+            "https://schema.org/dateCreated": "2020-07-13",
             "https://schema.org/license": "https://spdx.org/licenses/Apache-2.0"
         },
         {
@@ -1213,14 +1188,14 @@
                 {
                     "id": "#main/fastaRef",
                     "type": "File",
-                    "https://www.sevenbridges.com/x": -495.60113525390625,
-                    "https://www.sevenbridges.com/y": -51.5
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 853.875
                 },
                 {
                     "id": "#main/input",
                     "type": "File",
-                    "https://www.sevenbridges.com/x": -468.60113525390625,
-                    "https://www.sevenbridges.com/y": -197.5
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 747.140625
                 },
                 {
                     "id": "#main/bgzip_output_name",
@@ -1228,8 +1203,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": -275.7477722167969,
-                    "https://www.sevenbridges.com/y": 175.36965942382812
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 1387.546875
                 },
                 {
                     "id": "#main/check_ref",
@@ -1237,8 +1212,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": -326.6642761230469,
-                    "https://www.sevenbridges.com/y": 39.93177032470703
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 1280.8125
                 },
                 {
                     "id": "#main/multiallelics",
@@ -1246,8 +1221,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": -409.58453369140625,
-                    "https://www.sevenbridges.com/y": -127.52545928955078
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 640.40625
                 },
                 {
                     "id": "#main/norm_output_name",
@@ -1255,8 +1230,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": -349.4378967285156,
-                    "https://www.sevenbridges.com/y": -236.35031127929688
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 533.671875
                 },
                 {
                     "id": "#main/output_type",
@@ -1264,8 +1239,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": -203.44635009765625,
-                    "https://www.sevenbridges.com/y": -346.006103515625
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 320.203125
                 },
                 {
                     "id": "#main/preset",
@@ -1273,8 +1248,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": -69.02679443359375,
-                    "https://www.sevenbridges.com/y": -255.37474060058594
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 213.46875
                 },
                 {
                     "id": "#main/sort_output_name",
@@ -1282,8 +1257,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": 147.8774871826172,
-                    "https://www.sevenbridges.com/y": -269.6313781738281
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 106.734375
                 },
                 {
                     "id": "#main/complex_sort_output_name",
@@ -1291,14 +1266,14 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": 622.2739868164062,
-                    "https://www.sevenbridges.com/y": -229.81654357910156
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 960.609375
                 },
                 {
                     "id": "#main/complex_input",
                     "type": "File",
-                    "https://www.sevenbridges.com/x": 461.0975036621094,
-                    "https://www.sevenbridges.com/y": 26.654048919677734
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 1067.34375
                 },
                 {
                     "id": "#main/complex_bgzip_output_name",
@@ -1306,14 +1281,14 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": 494.0386962890625,
-                    "https://www.sevenbridges.com/y": 265.64788818359375
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 1174.078125
                 },
                 {
                     "id": "#main/output_name",
                     "type": "string",
-                    "https://www.sevenbridges.com/x": 21.79051399230957,
-                    "https://www.sevenbridges.com/y": 742.0482177734375
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 426.9375
                 },
                 {
                     "id": "#main/allow_overlaps",
@@ -1321,14 +1296,14 @@
                         "null",
                         "boolean"
                     ],
-                    "https://www.sevenbridges.com/x": 93.62149810791016,
-                    "https://www.sevenbridges.com/y": 873.0341186523438
+                    "https://www.sevenbridges.com/x": 284.734375,
+                    "https://www.sevenbridges.com/y": 863.5078125
                 },
                 {
                     "id": "#main/stdout",
                     "type": "boolean",
-                    "https://www.sevenbridges.com/x": 315.8106689453125,
-                    "https://www.sevenbridges.com/y": -71.67112731933594
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 0
                 }
             ],
             "outputs": [
@@ -1338,8 +1313,8 @@
                         "#main/bcftools_concat/concatenated_vcf"
                     ],
                     "type": "File",
-                    "https://www.sevenbridges.com/x": 689.3961181640625,
-                    "https://www.sevenbridges.com/y": 751.9074096679688
+                    "https://www.sevenbridges.com/x": 1050.4891357421875,
+                    "https://www.sevenbridges.com/y": 693.7734375
                 }
             ],
             "steps": [
@@ -1394,8 +1369,8 @@
                     ],
                     "run": "#variant_normalize_sort.cwl",
                     "label": "bgzip_normalize_sort",
-                    "https://www.sevenbridges.com/x": 125.46411895751953,
-                    "https://www.sevenbridges.com/y": 20.04885482788086
+                    "https://www.sevenbridges.com/x": 284.734375,
+                    "https://www.sevenbridges.com/y": 693.7734375
                 },
                 {
                     "id": "#main/bgzip_sort",
@@ -1432,8 +1407,8 @@
                     ],
                     "run": "#variant_sort.cwl",
                     "label": "bgzip_sort.cwl",
-                    "https://www.sevenbridges.com/x": 1037.812255859375,
-                    "https://www.sevenbridges.com/y": -30.04885482788086
+                    "https://www.sevenbridges.com/x": 284.734375,
+                    "https://www.sevenbridges.com/y": 489.0390625
                 },
                 {
                     "id": "#main/bcftools_concat",
@@ -1465,8 +1440,8 @@
                     ],
                     "run": "#bcftools_concat_1.15.1.cwl",
                     "label": "bcftools_concat",
-                    "https://www.sevenbridges.com/x": 369.0542907714844,
-                    "https://www.sevenbridges.com/y": 754.6953125
+                    "https://www.sevenbridges.com/x": 755.8057250976562,
+                    "https://www.sevenbridges.com/y": 672.7734375
                 }
             ],
             "requirements": [
@@ -1476,7 +1451,33 @@
                 {
                     "class": "MultipleInputFeatureRequirement"
                 }
-            ]
+            ],
+            "https://schema.org/author": [
+                {
+                    "class": "https://schema.org/Person",
+                    "https://schema.org/email": "mailto:sivaprk@mskcc.org",
+                    "https://schema.org/identifier": "",
+                    "https://schema.org/name": "Karthigayini Sivaprakasam"
+                }
+            ],
+            "https://schema.org/citation": "",
+            "https://schema.org/codeRepository": "https://github.com/msk-access/cwl_subworkflows/variant_postprocessing",
+            "https://schema.org/contributor": [
+                {
+                    "class": "https://schema.org/Person",
+                    "https://schema.org/email": "mailto:sivaprk@mskcc.org",
+                    "https://schema.org/identifier": "",
+                    "https://schema.org/name": "Karthigayini Sivaprakasam"
+                },
+                {
+                    "class": "https://schema.org/Person",
+                    "https://schema.org/email": "mailto:shahr@mskcc.org",
+                    "https://schema.org/identifier": "",
+                    "https://schema.org/name": "Ronak Shah"
+                }
+            ],
+            "https://schema.org/dateCreated": "2020-07-13",
+            "https://schema.org/license": "https://spdx.org/licenses/Apache-2.0"
         }
     ],
     "cwlVersion": "v1.0",
@@ -1484,6 +1485,7 @@
         "http://schema.org/version/latest/schemaorg-current-http.rdf"
     ],
     "$namespaces": {
+        "s": "https://schema.org/",
         "sbg": "https://www.sevenbridges.com/"
     }
 }
