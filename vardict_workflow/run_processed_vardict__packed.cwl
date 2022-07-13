@@ -54,6 +54,16 @@
                         "string"
                     ],
                     "doc": "Name of the output file"
+                },
+                {
+                    "id": "#bcftools_bgzip_1.15.1.cwl/bgzip/output_directory",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "inputBinding": {
+                        "position": 0
+                    }
                 }
             ],
             "label": "bgzip",
@@ -71,7 +81,8 @@
                     "class": "InitialWorkDirRequirement",
                     "listing": [
                         {
-                            "entry": "$(inputs.input)"
+                            "entry": "$(inputs.output_directory)",
+                            "writable": true
                         }
                     ]
                 },
@@ -461,6 +472,10 @@
                         "null",
                         "string"
                     ],
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "-o"
+                    },
                     "doc": "Output file name"
                 },
                 {
@@ -500,13 +515,6 @@
                 }
             ],
             "label": "bcftools_sort",
-            "arguments": [
-                {
-                    "position": 0,
-                    "prefix": "-o",
-                    "valueFrom": "${\n    if(inputs.output_name) {\n        return inputs.output_name\n    } else {\n        return inputs.input.basename.replace(/.vcf/, '.sorted.vcf') \n        } \n    }"
-                }
-            ],
             "requirements": [
                 {
                     "class": "ResourceRequirement",
@@ -1073,7 +1081,7 @@
                 }
             ],
             "stdin": "$(inputs.input_vcf.path)",
-            "stdout": "${ \n    if(inputs.output_vcf)\n        return inputs.output_vcf; \n    return inputs.case_sample_name + \"_vardict.vcf\"\n}",
+            "stdout": "${ return inputs.output_vcf; }",
             "http://purl.org/dc/terms/contributor": [
                 {
                     "class": "http://xmlns.com/foaf/0.1/Organization",
