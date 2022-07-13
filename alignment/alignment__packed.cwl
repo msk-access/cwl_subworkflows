@@ -6,7 +6,7 @@
             "label": "alignment",
             "inputs": [
                 {
-                    "id": "#create_bam_index",
+                    "id": "#main/create_bam_index",
                     "type": [
                         "null",
                         "boolean"
@@ -15,7 +15,7 @@
                     "https://www.sevenbridges.com/y": 958.8671875
                 },
                 {
-                    "id": "#output_file_name",
+                    "id": "#main/output_file_name",
                     "type": [
                         "null",
                         "string"
@@ -24,7 +24,7 @@
                     "https://www.sevenbridges.com/y": 852.0390625
                 },
                 {
-                    "id": "#read_group_description",
+                    "id": "#main/read_group_description",
                     "type": [
                         "null",
                         "string"
@@ -33,25 +33,25 @@
                     "https://www.sevenbridges.com/y": 1495.59375
                 },
                 {
-                    "id": "#read_group_identifier",
+                    "id": "#main/read_group_identifier",
                     "type": "string",
                     "https://www.sevenbridges.com/x": 0,
                     "https://www.sevenbridges.com/y": 1388.765625
                 },
                 {
-                    "id": "#read_group_library",
+                    "id": "#main/read_group_library",
                     "type": "string",
                     "https://www.sevenbridges.com/x": 0,
                     "https://www.sevenbridges.com/y": 1281.9375
                 },
                 {
-                    "id": "#read_group_platform_unit",
+                    "id": "#main/read_group_platform_unit",
                     "type": "string",
                     "https://www.sevenbridges.com/x": 0,
                     "https://www.sevenbridges.com/y": 1175.109375
                 },
                 {
-                    "id": "#read_group_run_date",
+                    "id": "#main/read_group_run_date",
                     "type": [
                         "null",
                         "string"
@@ -60,25 +60,25 @@
                     "https://www.sevenbridges.com/y": 1068.28125
                 },
                 {
-                    "id": "#read_group_sample_name",
+                    "id": "#main/read_group_sample_name",
                     "type": "string",
                     "https://www.sevenbridges.com/x": 0,
                     "https://www.sevenbridges.com/y": 961.453125
                 },
                 {
-                    "id": "#read_group_sequencing_center",
+                    "id": "#main/read_group_sequencing_center",
                     "type": "string",
                     "https://www.sevenbridges.com/x": 0,
                     "https://www.sevenbridges.com/y": 854.625
                 },
                 {
-                    "id": "#read_group_sequencing_platform",
+                    "id": "#main/read_group_sequencing_platform",
                     "type": "string",
                     "https://www.sevenbridges.com/x": 0,
                     "https://www.sevenbridges.com/y": 747.796875
                 },
                 {
-                    "id": "#sort_order",
+                    "id": "#main/sort_order",
                     "type": [
                         "null",
                         "string"
@@ -87,7 +87,7 @@
                     "https://www.sevenbridges.com/y": 427.3125
                 },
                 {
-                    "id": "#validation_stringency",
+                    "id": "#main/validation_stringency",
                     "type": [
                         "null",
                         "string"
@@ -96,7 +96,7 @@
                     "https://www.sevenbridges.com/y": 106.828125
                 },
                 {
-                    "id": "#reference",
+                    "id": "#main/reference",
                     "type": "File",
                     "secondaryFiles": [
                         ".amb",
@@ -111,7 +111,7 @@
                     "https://www.sevenbridges.com/y": 534.140625
                 },
                 {
-                    "id": "#reads",
+                    "id": "#main/reads",
                     "type": {
                         "type": "array",
                         "items": "File"
@@ -120,7 +120,7 @@
                     "https://www.sevenbridges.com/y": 640.96875
                 },
                 {
-                    "id": "#output",
+                    "id": "#main/output",
                     "type": [
                         "null",
                         "string"
@@ -129,7 +129,7 @@
                     "https://www.sevenbridges.com/y": 1709.25
                 },
                 {
-                    "id": "#P",
+                    "id": "#main/P",
                     "type": [
                         "null",
                         "boolean"
@@ -138,7 +138,7 @@
                     "https://www.sevenbridges.com/y": 1602.421875
                 },
                 {
-                    "id": "#M",
+                    "id": "#main/M",
                     "type": [
                         "null",
                         "boolean"
@@ -147,7 +147,7 @@
                     "https://www.sevenbridges.com/y": 1816.078125
                 },
                 {
-                    "id": "#T",
+                    "id": "#main/T",
                     "type": [
                         "null",
                         "int"
@@ -156,7 +156,7 @@
                     "https://www.sevenbridges.com/y": 320.484375
                 },
                 {
-                    "id": "#Y",
+                    "id": "#main/Y",
                     "type": [
                         "null",
                         "boolean"
@@ -165,7 +165,7 @@
                     "https://www.sevenbridges.com/y": 0
                 },
                 {
-                    "id": "#K",
+                    "id": "#main/K",
                     "type": [
                         "null",
                         "int"
@@ -174,7 +174,7 @@
                     "https://www.sevenbridges.com/y": 1922.90625
                 },
                 {
-                    "id": "#bwa_number_of_threads",
+                    "id": "#main/bwa_number_of_threads",
                     "type": [
                         "null",
                         "int"
@@ -183,7 +183,7 @@
                     "https://www.sevenbridges.com/y": 2029.734375
                 },
                 {
-                    "id": "#temporary_directory",
+                    "id": "#main/temporary_directory",
                     "type": [
                         "null",
                         "string"
@@ -192,84 +192,70 @@
                     "https://www.sevenbridges.com/y": 213.65625
                 }
             ],
-            "outputs": [
-                {
-                    "id": "#picard_add_or_replace_read_groups_bam",
-                    "outputSource": [
-                        "#picard_add_or_replace_read_groups_4_1_8_1/picard_add_or_replace_read_groups_bam"
-                    ],
-                    "type": "File",
-                    "secondaryFiles": [
-                        "^.bai"
-                    ],
-                    "https://www.sevenbridges.com/x": 1389.239501953125,
-                    "https://www.sevenbridges.com/y": 1014.8671875
-                }
-            ],
             "steps": [
                 {
-                    "id": "#picard_add_or_replace_read_groups_4_1_8_1",
+                    "id": "#main/picard_add_or_replace_read_groups_4_1_8_1",
                     "in": [
                         {
-                            "id": "#picard_add_or_replace_read_groups_4_1_8_1/input",
-                            "source": "#bwa_mem_0_7_17/bwa_mem_output_sam"
+                            "id": "#main/picard_add_or_replace_read_groups_4_1_8_1/input",
+                            "source": "#main/bwa_mem_0_7_17/bwa_mem_output_sam"
                         },
                         {
-                            "id": "#picard_add_or_replace_read_groups_4_1_8_1/output_file_name",
-                            "source": "#output_file_name"
+                            "id": "#main/picard_add_or_replace_read_groups_4_1_8_1/output_file_name",
+                            "source": "#main/output_file_name"
                         },
                         {
-                            "id": "#picard_add_or_replace_read_groups_4_1_8_1/sort_order",
-                            "source": "#sort_order"
+                            "id": "#main/picard_add_or_replace_read_groups_4_1_8_1/sort_order",
+                            "source": "#main/sort_order"
                         },
                         {
-                            "id": "#picard_add_or_replace_read_groups_4_1_8_1/read_group_identifier",
-                            "source": "#read_group_identifier"
+                            "id": "#main/picard_add_or_replace_read_groups_4_1_8_1/read_group_identifier",
+                            "source": "#main/read_group_identifier"
                         },
                         {
-                            "id": "#picard_add_or_replace_read_groups_4_1_8_1/read_group_sequencing_center",
-                            "source": "#read_group_sequencing_center"
+                            "id": "#main/picard_add_or_replace_read_groups_4_1_8_1/read_group_sequencing_center",
+                            "source": "#main/read_group_sequencing_center"
                         },
                         {
-                            "id": "#picard_add_or_replace_read_groups_4_1_8_1/read_group_library",
-                            "source": "#read_group_library"
+                            "id": "#main/picard_add_or_replace_read_groups_4_1_8_1/read_group_library",
+                            "source": "#main/read_group_library"
                         },
                         {
-                            "id": "#picard_add_or_replace_read_groups_4_1_8_1/read_group_platform_unit",
-                            "source": "#read_group_platform_unit"
+                            "id": "#main/picard_add_or_replace_read_groups_4_1_8_1/read_group_platform_unit",
+                            "source": "#main/read_group_platform_unit"
                         },
                         {
-                            "id": "#picard_add_or_replace_read_groups_4_1_8_1/read_group_sample_name",
-                            "source": "#read_group_sample_name"
+                            "id": "#main/picard_add_or_replace_read_groups_4_1_8_1/read_group_sample_name",
+                            "source": "#main/read_group_sample_name"
                         },
                         {
-                            "id": "#picard_add_or_replace_read_groups_4_1_8_1/read_group_sequencing_platform",
-                            "source": "#read_group_sequencing_platform"
+                            "id": "#main/picard_add_or_replace_read_groups_4_1_8_1/read_group_sequencing_platform",
+                            "source": "#main/read_group_sequencing_platform"
                         },
                         {
-                            "id": "#picard_add_or_replace_read_groups_4_1_8_1/read_group_description",
-                            "source": "#read_group_description"
+                            "id": "#main/picard_add_or_replace_read_groups_4_1_8_1/read_group_description",
+                            "source": "#main/read_group_description"
                         },
                         {
-                            "id": "#picard_add_or_replace_read_groups_4_1_8_1/read_group_run_date",
-                            "source": "#read_group_run_date"
+                            "id": "#main/picard_add_or_replace_read_groups_4_1_8_1/read_group_run_date",
+                            "source": "#main/read_group_run_date"
                         },
                         {
-                            "id": "#picard_add_or_replace_read_groups_4_1_8_1/validation_stringency",
-                            "source": "#validation_stringency"
+                            "id": "#main/picard_add_or_replace_read_groups_4_1_8_1/validation_stringency",
+                            "source": "#main/validation_stringency"
                         },
                         {
-                            "id": "#picard_add_or_replace_read_groups_4_1_8_1/create_bam_index",
-                            "source": "#create_bam_index"
+                            "id": "#main/picard_add_or_replace_read_groups_4_1_8_1/create_bam_index",
+                            "source": "#main/create_bam_index"
                         },
                         {
-                            "id": "#picard_add_or_replace_read_groups_4_1_8_1/temporary_directory",
-                            "source": "#temporary_directory"
+                            "id": "#main/picard_add_or_replace_read_groups_4_1_8_1/temporary_directory",
+                            "source": "#main/temporary_directory"
                         }
                     ],
                     "out": [
                         {
-                            "id": "#picard_add_or_replace_read_groups_4_1_8_1/picard_add_or_replace_read_groups_bam"
+                            "id": "#main/picard_add_or_replace_read_groups_4_1_8_1/picard_add_or_replace_read_groups_bam"
                         }
                     ],
                     "run": "#picard_add_or_replace_read_groups_4.1.8.1.cwl",
@@ -278,50 +264,50 @@
                     "https://www.sevenbridges.com/y": 923.8671875
                 },
                 {
-                    "id": "#bwa_mem_0_7_17",
+                    "id": "#main/bwa_mem_0_7_17",
                     "in": [
                         {
-                            "id": "#bwa_mem_0_7_17/number_of_threads",
-                            "source": "#bwa_number_of_threads"
+                            "id": "#main/bwa_mem_0_7_17/number_of_threads",
+                            "source": "#main/bwa_number_of_threads"
                         },
                         {
-                            "id": "#bwa_mem_0_7_17/reads",
+                            "id": "#main/bwa_mem_0_7_17/reads",
                             "source": [
-                                "#reads"
+                                "#main/reads"
                             ]
                         },
                         {
-                            "id": "#bwa_mem_0_7_17/reference",
-                            "source": "#reference"
+                            "id": "#main/bwa_mem_0_7_17/reference",
+                            "source": "#main/reference"
                         },
                         {
-                            "id": "#bwa_mem_0_7_17/M",
-                            "source": "#M"
+                            "id": "#main/bwa_mem_0_7_17/M",
+                            "source": "#main/M"
                         },
                         {
-                            "id": "#bwa_mem_0_7_17/P",
-                            "source": "#P"
+                            "id": "#main/bwa_mem_0_7_17/P",
+                            "source": "#main/P"
                         },
                         {
-                            "id": "#bwa_mem_0_7_17/T",
-                            "source": "#T"
+                            "id": "#main/bwa_mem_0_7_17/T",
+                            "source": "#main/T"
                         },
                         {
-                            "id": "#bwa_mem_0_7_17/K",
-                            "source": "#K"
+                            "id": "#main/bwa_mem_0_7_17/K",
+                            "source": "#main/K"
                         },
                         {
-                            "id": "#bwa_mem_0_7_17/output",
-                            "source": "#output"
+                            "id": "#main/bwa_mem_0_7_17/output",
+                            "source": "#main/output"
                         },
                         {
-                            "id": "#bwa_mem_0_7_17/Y",
-                            "source": "#Y"
+                            "id": "#main/bwa_mem_0_7_17/Y",
+                            "source": "#main/Y"
                         }
                     ],
                     "out": [
                         {
-                            "id": "#bwa_mem_0_7_17/bwa_mem_output_sam"
+                            "id": "#main/bwa_mem_0_7_17/bwa_mem_output_sam"
                         }
                     ],
                     "run": "#bwa_mem_0.7.17.cwl",
@@ -375,10 +361,20 @@
             ],
             "https://schema.org/dateCreated": "2019-10-01",
             "https://schema.org/license": "https://spdx.org/licenses/Apache-2.0",
-            "$namespaces": {
-                "s": "https://schema.org/",
-                "sbg": "https://www.sevenbridges.com/"
-            }
+            "outputs": [
+                {
+                    "id": "#main/picard_add_or_replace_read_groups_bam",
+                    "outputSource": [
+                        "#main/picard_add_or_replace_read_groups_4_1_8_1/picard_add_or_replace_read_groups_bam"
+                    ],
+                    "type": "File",
+                    "secondaryFiles": [
+                        "^.bai"
+                    ],
+                    "https://www.sevenbridges.com/x": 1389.239501953125,
+                    "https://www.sevenbridges.com/y": 1014.8671875
+                }
+            ]
         },
         {
             "class": "CommandLineTool",
@@ -971,7 +967,7 @@
             ],
             "inputs": [
                 {
-                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/memory_per_job",
+                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/picard_add_or_replace_read_groups_4.1.8.1/memory_per_job",
                     "type": [
                         "null",
                         "int"
@@ -979,7 +975,7 @@
                     "doc": "Memory per job in megabytes"
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/memory_overhead",
+                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/picard_add_or_replace_read_groups_4.1.8.1/memory_overhead",
                     "type": [
                         "null",
                         "int"
@@ -987,14 +983,14 @@
                     "doc": "Memory overhead per job in megabytes"
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/number_of_threads",
+                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/picard_add_or_replace_read_groups_4.1.8.1/number_of_threads",
                     "type": [
                         "null",
                         "int"
                     ]
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/input",
+                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/picard_add_or_replace_read_groups_4.1.8.1/input",
                     "type": "File",
                     "inputBinding": {
                         "position": 0,
@@ -1003,7 +999,7 @@
                     "doc": "Input file ( sam).  Required."
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/output_file_name",
+                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/picard_add_or_replace_read_groups_4.1.8.1/output_file_name",
                     "type": [
                         "null",
                         "string"
@@ -1011,7 +1007,7 @@
                     "doc": "Output file name (bam or sam). Not Required"
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/sort_order",
+                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/picard_add_or_replace_read_groups_4.1.8.1/sort_order",
                     "type": [
                         "null",
                         "string"
@@ -1023,7 +1019,7 @@
                     "doc": "Optional sort order to output in. If not supplied OUTPUT is in the same order as INPUT.Default value: null. Possible values: {unsorted, queryname, coordinate}"
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/read_group_identifier",
+                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/picard_add_or_replace_read_groups_4.1.8.1/read_group_identifier",
                     "type": "string",
                     "inputBinding": {
                         "position": 0,
@@ -1032,7 +1028,7 @@
                     "doc": "Read Group ID  Default value: 1. This option can be set to 'null' to clear the default value  Required"
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/read_group_sequencing_center",
+                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/picard_add_or_replace_read_groups_4.1.8.1/read_group_sequencing_center",
                     "type": "string",
                     "inputBinding": {
                         "position": 0,
@@ -1041,7 +1037,7 @@
                     "doc": "Read Group sequencing center name  Default value: null. Required"
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/read_group_library",
+                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/picard_add_or_replace_read_groups_4.1.8.1/read_group_library",
                     "type": "string",
                     "inputBinding": {
                         "position": 0,
@@ -1050,7 +1046,7 @@
                     "doc": "Read Group Library.  Required"
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/read_group_platform_unit",
+                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/picard_add_or_replace_read_groups_4.1.8.1/read_group_platform_unit",
                     "type": "string",
                     "inputBinding": {
                         "position": 0,
@@ -1059,7 +1055,7 @@
                     "doc": "Read Group platform unit (eg. run barcode)  Required."
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/read_group_sample_name",
+                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/picard_add_or_replace_read_groups_4.1.8.1/read_group_sample_name",
                     "type": "string",
                     "inputBinding": {
                         "position": 0,
@@ -1068,7 +1064,7 @@
                     "doc": "Read Group sample name.  Required"
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/read_group_sequencing_platform",
+                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/picard_add_or_replace_read_groups_4.1.8.1/read_group_sequencing_platform",
                     "type": "string",
                     "inputBinding": {
                         "position": 0,
@@ -1077,7 +1073,7 @@
                     "doc": "Read Group platform (e.g. illumina, solid)  Required."
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/read_group_description",
+                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/picard_add_or_replace_read_groups_4.1.8.1/read_group_description",
                     "type": [
                         "null",
                         "string"
@@ -1089,7 +1085,7 @@
                     "doc": "Read Group description  Default value: null."
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/read_group_run_date",
+                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/picard_add_or_replace_read_groups_4.1.8.1/read_group_run_date",
                     "type": [
                         "null",
                         "string"
@@ -1101,7 +1097,7 @@
                     "doc": "Read Group run date  Default value: null."
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/validation_stringency",
+                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/picard_add_or_replace_read_groups_4.1.8.1/validation_stringency",
                     "type": [
                         "null",
                         "string"
@@ -1113,7 +1109,7 @@
                     "doc": "Validation stringency for all SAM files read by this program.  Setting stringency to SILENT can improve performance when processing a BAM file in which variable-length data (read, qualities, tags) do not otherwise need to be decoded.  Default value: STRICT. This option can be set to 'null' to clear the default value. Possible values: {STRICT,LENIENT, SILENT}"
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/bam_compression_level",
+                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/picard_add_or_replace_read_groups_4.1.8.1/bam_compression_level",
                     "type": [
                         "null",
                         "int"
@@ -1125,7 +1121,7 @@
                     "doc": "Compression level for all compressed files created (e.g. BAM and GELI). Default value:5. This option can be set to 'null' to clear the default value."
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/use_jdk_deflater",
+                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/picard_add_or_replace_read_groups_4.1.8.1/use_jdk_deflater",
                     "type": [
                         "null",
                         "boolean"
@@ -1137,7 +1133,7 @@
                     "doc": "Use the JDK Deflater instead of the Intel Deflater for writing compressed output"
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/use_jdk_inflater",
+                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/picard_add_or_replace_read_groups_4.1.8.1/use_jdk_inflater",
                     "type": [
                         "null",
                         "boolean"
@@ -1150,7 +1146,7 @@
                 },
                 {
                     "default": true,
-                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/create_bam_index",
+                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/picard_add_or_replace_read_groups_4.1.8.1/create_bam_index",
                     "type": [
                         "null",
                         "boolean"
@@ -1162,7 +1158,7 @@
                     "doc": "Whether to create a BAM index when writing a coordinate-sorted BAM file. Default value:false. This option can be set to 'null' to clear the default value. Possible values:{true, false}"
                 },
                 {
-                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/temporary_directory",
+                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/picard_add_or_replace_read_groups_4.1.8.1/temporary_directory",
                     "type": [
                         "null",
                         "string"
@@ -1172,7 +1168,7 @@
             ],
             "outputs": [
                 {
-                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/picard_add_or_replace_read_groups_bam",
+                    "id": "#picard_add_or_replace_read_groups_4.1.8.1.cwl/picard_add_or_replace_read_groups_4.1.8.1/picard_add_or_replace_read_groups_bam",
                     "type": "File",
                     "outputBinding": {
                         "glob": "${\n    if(inputs.output_file_name)\n        return inputs.output_file_name;\n    return inputs.input.basename.replace(/.sam$/, '_srt.bam');\n}"
@@ -1274,5 +1270,9 @@
     "cwlVersion": "v1.0",
     "$schemas": [
         "http://schema.org/version/latest/schemaorg-current-http.rdf"
-    ]
+    ],
+    "$namespaces": {
+        "s": "https://schema.org/",
+        "sbg": "https://www.sevenbridges.com/"
+    }
 }

@@ -6,7 +6,7 @@
             "label": "base_quality_recalibration",
             "inputs": [
                 {
-                    "id": "#input",
+                    "id": "#main/input",
                     "type": "File",
                     "secondaryFiles": [
                         "^.bai"
@@ -15,7 +15,7 @@
                     "https://www.sevenbridges.com/y": 533.390625
                 },
                 {
-                    "id": "#reference",
+                    "id": "#main/reference",
                     "type": "File",
                     "secondaryFiles": [
                         ".fai",
@@ -25,7 +25,7 @@
                     "https://www.sevenbridges.com/y": 106.703125
                 },
                 {
-                    "id": "#read_filter",
+                    "id": "#main/read_filter",
                     "type": [
                         "null",
                         {
@@ -37,7 +37,7 @@
                     "https://www.sevenbridges.com/y": 213.375
                 },
                 {
-                    "id": "#known_sites",
+                    "id": "#main/known_sites",
                     "type": {
                         "type": "array",
                         "items": "File"
@@ -49,7 +49,7 @@
                     "https://www.sevenbridges.com/y": 426.71875
                 },
                 {
-                    "id": "#base_recalibrator_output_file_name",
+                    "id": "#main/base_recalibrator_output_file_name",
                     "type": [
                         "null",
                         "string"
@@ -58,7 +58,7 @@
                     "https://www.sevenbridges.com/y": 746.734375
                 },
                 {
-                    "id": "#add_output_sam_program_record",
+                    "id": "#main/add_output_sam_program_record",
                     "type": [
                         "null",
                         "boolean"
@@ -67,7 +67,7 @@
                     "https://www.sevenbridges.com/y": 853.4375
                 },
                 {
-                    "id": "#disable_read_filter",
+                    "id": "#main/disable_read_filter",
                     "type": [
                         "null",
                         {
@@ -79,7 +79,7 @@
                     "https://www.sevenbridges.com/y": 640.0625
                 },
                 {
-                    "id": "#lenient",
+                    "id": "#main/lenient",
                     "type": [
                         "null",
                         "boolean"
@@ -88,7 +88,7 @@
                     "https://www.sevenbridges.com/y": 320.046875
                 },
                 {
-                    "id": "#apply_bqsr_create_output_bam_index",
+                    "id": "#main/apply_bqsr_create_output_bam_index",
                     "type": [
                         "null",
                         "boolean"
@@ -97,7 +97,7 @@
                     "https://www.sevenbridges.com/y": 533.453125
                 },
                 {
-                    "id": "#apply_bqsr_output_file_name",
+                    "id": "#main/apply_bqsr_output_file_name",
                     "type": [
                         "null",
                         "string"
@@ -106,7 +106,7 @@
                     "https://www.sevenbridges.com/y": 426.71875
                 },
                 {
-                    "id": "#temporary_directory",
+                    "id": "#main/temporary_directory",
                     "type": [
                         "null",
                         "string"
@@ -115,70 +115,56 @@
                     "https://www.sevenbridges.com/y": 0
                 }
             ],
-            "outputs": [
-                {
-                    "id": "#gatk_apply_bqsr_bam",
-                    "outputSource": [
-                        "#gatk_apply_bqsr_4_1_8_1/gatk_apply_bqsr_bam"
-                    ],
-                    "type": "File",
-                    "secondaryFiles": [
-                        "^.bai"
-                    ],
-                    "https://www.sevenbridges.com/x": 1269.836181640625,
-                    "https://www.sevenbridges.com/y": 426.71875
-                }
-            ],
             "steps": [
                 {
-                    "id": "#gatk_base_recalibrator_4_1_8_1",
+                    "id": "#main/gatk_base_recalibrator_4_1_8_1",
                     "in": [
                         {
-                            "id": "#gatk_base_recalibrator_4_1_8_1/input",
-                            "source": "#input"
+                            "id": "#main/gatk_base_recalibrator_4_1_8_1/input",
+                            "source": "#main/input"
                         },
                         {
-                            "id": "#gatk_base_recalibrator_4_1_8_1/known_sites",
+                            "id": "#main/gatk_base_recalibrator_4_1_8_1/known_sites",
                             "source": [
-                                "#known_sites"
+                                "#main/known_sites"
                             ]
                         },
                         {
-                            "id": "#gatk_base_recalibrator_4_1_8_1/reference",
-                            "source": "#reference"
+                            "id": "#main/gatk_base_recalibrator_4_1_8_1/reference",
+                            "source": "#main/reference"
                         },
                         {
-                            "id": "#gatk_base_recalibrator_4_1_8_1/output_file_name",
-                            "source": "#base_recalibrator_output_file_name"
+                            "id": "#main/gatk_base_recalibrator_4_1_8_1/output_file_name",
+                            "source": "#main/base_recalibrator_output_file_name"
                         },
                         {
-                            "id": "#gatk_base_recalibrator_4_1_8_1/add_output_sam_program_record",
-                            "source": "#add_output_sam_program_record"
+                            "id": "#main/gatk_base_recalibrator_4_1_8_1/add_output_sam_program_record",
+                            "source": "#main/add_output_sam_program_record"
                         },
                         {
-                            "id": "#gatk_base_recalibrator_4_1_8_1/disable_read_filter",
+                            "id": "#main/gatk_base_recalibrator_4_1_8_1/disable_read_filter",
                             "source": [
-                                "#disable_read_filter"
+                                "#main/disable_read_filter"
                             ]
                         },
                         {
-                            "id": "#gatk_base_recalibrator_4_1_8_1/lenient",
-                            "source": "#lenient"
+                            "id": "#main/gatk_base_recalibrator_4_1_8_1/lenient",
+                            "source": "#main/lenient"
                         },
                         {
-                            "id": "#gatk_base_recalibrator_4_1_8_1/read_filter",
+                            "id": "#main/gatk_base_recalibrator_4_1_8_1/read_filter",
                             "source": [
-                                "#read_filter"
+                                "#main/read_filter"
                             ]
                         },
                         {
-                            "id": "#gatk_base_recalibrator_4_1_8_1/temporary_directory",
-                            "source": "#temporary_directory"
+                            "id": "#main/gatk_base_recalibrator_4_1_8_1/temporary_directory",
+                            "source": "#main/temporary_directory"
                         }
                     ],
                     "out": [
                         {
-                            "id": "#gatk_base_recalibrator_4_1_8_1/gatk_base_recalibrator_output"
+                            "id": "#main/gatk_base_recalibrator_4_1_8_1/gatk_base_recalibrator_output"
                         }
                     ],
                     "run": "#gatk_base_recalibrator_4.1.8.1.cwl",
@@ -187,52 +173,52 @@
                     "https://www.sevenbridges.com/y": 263.8515625
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4_1_8_1",
+                    "id": "#main/gatk_apply_bqsr_4_1_8_1",
                     "in": [
                         {
-                            "id": "#gatk_apply_bqsr_4_1_8_1/reference",
-                            "source": "#reference"
+                            "id": "#main/gatk_apply_bqsr_4_1_8_1/reference",
+                            "source": "#main/reference"
                         },
                         {
-                            "id": "#gatk_apply_bqsr_4_1_8_1/create_output_bam_index",
-                            "source": "#apply_bqsr_create_output_bam_index"
+                            "id": "#main/gatk_apply_bqsr_4_1_8_1/create_output_bam_index",
+                            "source": "#main/apply_bqsr_create_output_bam_index"
                         },
                         {
-                            "id": "#gatk_apply_bqsr_4_1_8_1/bqsr_recal_file",
-                            "source": "#gatk_base_recalibrator_4_1_8_1/gatk_base_recalibrator_output"
+                            "id": "#main/gatk_apply_bqsr_4_1_8_1/bqsr_recal_file",
+                            "source": "#main/gatk_base_recalibrator_4_1_8_1/gatk_base_recalibrator_output"
                         },
                         {
-                            "id": "#gatk_apply_bqsr_4_1_8_1/input",
-                            "source": "#input"
+                            "id": "#main/gatk_apply_bqsr_4_1_8_1/input",
+                            "source": "#main/input"
                         },
                         {
-                            "id": "#gatk_apply_bqsr_4_1_8_1/output_file_name",
-                            "source": "#apply_bqsr_output_file_name"
+                            "id": "#main/gatk_apply_bqsr_4_1_8_1/output_file_name",
+                            "source": "#main/apply_bqsr_output_file_name"
                         },
                         {
-                            "id": "#gatk_apply_bqsr_4_1_8_1/disable_read_filter",
+                            "id": "#main/gatk_apply_bqsr_4_1_8_1/disable_read_filter",
                             "source": [
-                                "#disable_read_filter"
+                                "#main/disable_read_filter"
                             ]
                         },
                         {
-                            "id": "#gatk_apply_bqsr_4_1_8_1/lenient",
-                            "source": "#lenient"
+                            "id": "#main/gatk_apply_bqsr_4_1_8_1/lenient",
+                            "source": "#main/lenient"
                         },
                         {
-                            "id": "#gatk_apply_bqsr_4_1_8_1/read_filter",
+                            "id": "#main/gatk_apply_bqsr_4_1_8_1/read_filter",
                             "source": [
-                                "#read_filter"
+                                "#main/read_filter"
                             ]
                         },
                         {
-                            "id": "#gatk_apply_bqsr_4_1_8_1/temporary_directory",
-                            "source": "#temporary_directory"
+                            "id": "#main/gatk_apply_bqsr_4_1_8_1/temporary_directory",
+                            "source": "#main/temporary_directory"
                         }
                     ],
                     "out": [
                         {
-                            "id": "#gatk_apply_bqsr_4_1_8_1/gatk_apply_bqsr_bam"
+                            "id": "#main/gatk_apply_bqsr_4_1_8_1/gatk_apply_bqsr_bam"
                         }
                     ],
                     "run": "#gatk_apply_bqsr_4.1.8.1.cwl",
@@ -262,10 +248,20 @@
             ],
             "https://schema.org/dateCreated": "2020-06-09",
             "https://schema.org/license": "https://spdx.org/licenses/Apache-2.0",
-            "$namespaces": {
-                "s": "https://schema.org/",
-                "sbg": "https://www.sevenbridges.com/"
-            }
+            "outputs": [
+                {
+                    "id": "#main/gatk_apply_bqsr_bam",
+                    "outputSource": [
+                        "#main/gatk_apply_bqsr_4_1_8_1/gatk_apply_bqsr_bam"
+                    ],
+                    "type": "File",
+                    "secondaryFiles": [
+                        "^.bai"
+                    ],
+                    "https://www.sevenbridges.com/x": 1269.836181640625,
+                    "https://www.sevenbridges.com/y": 426.71875
+                }
+            ]
         },
         {
             "class": "CommandLineTool",
@@ -276,7 +272,7 @@
             ],
             "inputs": [
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/reference",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/reference",
                     "type": "File",
                     "inputBinding": {
                         "position": 4,
@@ -289,7 +285,7 @@
                     ]
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/create_output_bam_index",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/create_output_bam_index",
                     "type": [
                         "null",
                         "boolean"
@@ -300,7 +296,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/bqsr_recal_file",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/bqsr_recal_file",
                     "type": "File",
                     "inputBinding": {
                         "position": 4,
@@ -309,7 +305,7 @@
                     "doc": "Input recalibration table for BQSR. Only run ApplyBQSR with the covariates table created from the input BAM"
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/input",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/input",
                     "type": "File",
                     "inputBinding": {
                         "position": 4,
@@ -321,7 +317,7 @@
                     ]
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/output_file_name",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/output_file_name",
                     "type": [
                         "null",
                         "string"
@@ -329,7 +325,7 @@
                     "doc": "Output file name. Not Required"
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/add_output_sam_program_record",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/add_output_sam_program_record",
                     "type": [
                         "null",
                         "boolean"
@@ -340,7 +336,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/add_output_vcf_command_line",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/add_output_vcf_command_line",
                     "type": [
                         "null",
                         "boolean"
@@ -351,7 +347,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/arguments_file",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/arguments_file",
                     "type": [
                         "null",
                         "File"
@@ -362,7 +358,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/cloud_index_prefetch_buffer",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/cloud_index_prefetch_buffer",
                     "type": [
                         "null",
                         "int"
@@ -373,7 +369,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/cloud_prefetch_buffer",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/cloud_prefetch_buffer",
                     "type": [
                         "null",
                         "int"
@@ -384,7 +380,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/create_output_bam_md5",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/create_output_bam_md5",
                     "type": [
                         "null",
                         "boolean"
@@ -395,7 +391,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/create_output_variant_index",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/create_output_variant_index",
                     "type": [
                         "null",
                         "boolean"
@@ -406,7 +402,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/create_output_variant_md5",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/create_output_variant_md5",
                     "type": [
                         "null",
                         "boolean"
@@ -417,7 +413,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/disable_bam_index_caching",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/disable_bam_index_caching",
                     "type": [
                         "null",
                         "boolean"
@@ -428,7 +424,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/disable_read_filter",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/disable_read_filter",
                     "type": [
                         "null",
                         {
@@ -445,7 +441,7 @@
                     "doc": "Read filters to be disabled before analysis"
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/disable_sequence_dictionary_validation",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/disable_sequence_dictionary_validation",
                     "type": [
                         "null",
                         "boolean"
@@ -457,7 +453,7 @@
                 },
                 {
                     "default": true,
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/emit_original_quals",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/emit_original_quals",
                     "type": [
                         "null",
                         "boolean"
@@ -468,7 +464,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/exclude_intervals",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/exclude_intervals",
                     "type": [
                         "null",
                         "string"
@@ -479,7 +475,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_config_file",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/gatk_config_file",
                     "type": [
                         "null",
                         "File"
@@ -490,7 +486,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gcs_max_retries",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/gcs_max_retries",
                     "type": [
                         "null",
                         "int"
@@ -501,7 +497,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gcs_project_for_requester_pays",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/gcs_project_for_requester_pays",
                     "type": [
                         "null",
                         "string"
@@ -512,7 +508,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/global_qscore_prior",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/global_qscore_prior",
                     "type": [
                         "null",
                         "float"
@@ -523,7 +519,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/interval_exclusion_padding",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/interval_exclusion_padding",
                     "type": [
                         "null",
                         "int"
@@ -534,7 +530,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/interval_merging_rule",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/interval_merging_rule",
                     "type": [
                         "null",
                         "string"
@@ -545,7 +541,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/interval_padding",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/interval_padding",
                     "type": [
                         "null",
                         "int"
@@ -556,7 +552,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/interval_set_rule",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/interval_set_rule",
                     "type": [
                         "null",
                         "string"
@@ -567,7 +563,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/intervals",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/intervals",
                     "type": [
                         "null",
                         "string"
@@ -578,7 +574,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/lenient",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/lenient",
                     "type": [
                         "null",
                         "boolean"
@@ -589,7 +585,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/preserve_qscores_less_than",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/preserve_qscores_less_than",
                     "type": [
                         "null",
                         "int"
@@ -600,7 +596,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/quantize_quals",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/quantize_quals",
                     "type": [
                         "null",
                         "int"
@@ -611,7 +607,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/quiet",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/quiet",
                     "type": [
                         "null",
                         "boolean"
@@ -622,7 +618,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/read_filter",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/read_filter",
                     "type": [
                         "null",
                         {
@@ -638,7 +634,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/read_index",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/read_index",
                     "type": [
                         "null",
                         "string"
@@ -649,7 +645,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/read_validation_stringency",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/read_validation_stringency",
                     "type": [
                         "null",
                         "string"
@@ -660,7 +656,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/seconds_between_progress_updates",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/seconds_between_progress_updates",
                     "type": [
                         "null",
                         "float"
@@ -671,7 +667,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/sequence_dictionary",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/sequence_dictionary",
                     "type": [
                         "null",
                         "File"
@@ -682,7 +678,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/sites_only_vcf_output",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/sites_only_vcf_output",
                     "type": [
                         "null",
                         "boolean"
@@ -693,7 +689,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/use_jdk_deflater",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/use_jdk_deflater",
                     "type": [
                         "null",
                         "boolean"
@@ -704,7 +700,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/use_jdk_inflater",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/use_jdk_inflater",
                     "type": [
                         "null",
                         "boolean"
@@ -715,7 +711,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/use_original_qualities",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/use_original_qualities",
                     "type": [
                         "null",
                         "boolean"
@@ -726,28 +722,28 @@
                     }
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/memory_overhead",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/memory_overhead",
                     "type": [
                         "null",
                         "int"
                     ]
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/memory_per_job",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/memory_per_job",
                     "type": [
                         "null",
                         "int"
                     ]
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/number_of_threads",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/number_of_threads",
                     "type": [
                         "null",
                         "int"
                     ]
                 },
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/temporary_directory",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/temporary_directory",
                     "type": [
                         "null",
                         "string"
@@ -757,7 +753,7 @@
             ],
             "outputs": [
                 {
-                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_bam",
+                    "id": "#gatk_apply_bqsr_4.1.8.1.cwl/gatk_apply_bqsr_4_1_8_1/gatk_apply_bqsr_bam",
                     "type": "File",
                     "outputBinding": {
                         "glob": "${\n    if(inputs.output_file_name){\n        return inputs.output_file_name\n    } else {\n        return inputs.input.basename.replace(/.bam/, '_bqsr.bam')\n    }\n}"
@@ -853,7 +849,7 @@
             ],
             "inputs": [
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/input",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/input",
                     "type": "File",
                     "inputBinding": {
                         "position": 3,
@@ -865,7 +861,7 @@
                     ]
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/known_sites",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/known_sites",
                     "type": {
                         "type": "array",
                         "items": "File",
@@ -882,7 +878,7 @@
                     ]
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/reference",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/reference",
                     "type": "File",
                     "inputBinding": {
                         "position": 3,
@@ -895,7 +891,7 @@
                     ]
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/output_file_name",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/output_file_name",
                     "type": [
                         "null",
                         "string"
@@ -903,7 +899,7 @@
                     "doc": "Output file name. Not Required"
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/add_output_sam_program_record",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/add_output_sam_program_record",
                     "type": [
                         "null",
                         "boolean"
@@ -914,7 +910,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/add_output_vcf_command_line",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/add_output_vcf_command_line",
                     "type": [
                         "null",
                         "boolean"
@@ -925,7 +921,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/arguments_file",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/arguments_file",
                     "type": [
                         "null",
                         {
@@ -939,7 +935,7 @@
                     ]
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/binary_tag_name",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/binary_tag_name",
                     "type": [
                         "null",
                         "string"
@@ -950,7 +946,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/bqsr_baq_gap_open_penalty",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/bqsr_baq_gap_open_penalty",
                     "type": [
                         "null",
                         "float"
@@ -961,7 +957,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/cloud-index-prefetch-buffer",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/cloud-index-prefetch-buffer",
                     "type": [
                         "null",
                         "int"
@@ -972,7 +968,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/cloud_prefetch_buffer",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/cloud_prefetch_buffer",
                     "type": [
                         "null",
                         "int"
@@ -983,7 +979,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/create_output_bam_index",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/create_output_bam_index",
                     "type": [
                         "null",
                         "boolean"
@@ -994,7 +990,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/create_output_bam_md5",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/create_output_bam_md5",
                     "type": [
                         "null",
                         "boolean"
@@ -1005,7 +1001,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/create_output_variant_index",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/create_output_variant_index",
                     "type": [
                         "null",
                         "boolean"
@@ -1016,7 +1012,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/create_output_variant_md5",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/create_output_variant_md5",
                     "type": [
                         "null",
                         "boolean"
@@ -1027,7 +1023,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/default_base_qualities",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/default_base_qualities",
                     "type": [
                         "null",
                         "int"
@@ -1038,7 +1034,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/deletions_default_quality",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/deletions_default_quality",
                     "type": [
                         "null",
                         "int"
@@ -1049,7 +1045,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/disable_bam_index_caching",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/disable_bam_index_caching",
                     "type": [
                         "null",
                         "boolean"
@@ -1060,7 +1056,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/disable_read_filter",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/disable_read_filter",
                     "type": [
                         "null",
                         {
@@ -1077,7 +1073,7 @@
                     "doc": "Read filters to be disabled before analysis"
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/disable_sequence_dictionary_validation",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/disable_sequence_dictionary_validation",
                     "type": [
                         "null",
                         "boolean"
@@ -1088,7 +1084,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/exclude_intervals",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/exclude_intervals",
                     "type": [
                         "null",
                         "string"
@@ -1099,7 +1095,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_config_file",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/gatk_config_file",
                     "type": [
                         "null",
                         "File"
@@ -1110,7 +1106,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gcs_max_retries",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/gcs_max_retries",
                     "type": [
                         "null",
                         "int"
@@ -1121,7 +1117,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gcs_project_for_requester_pays",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/gcs_project_for_requester_pays",
                     "type": [
                         "null",
                         "string"
@@ -1132,7 +1128,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/indels_context_size",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/indels_context_size",
                     "type": [
                         "null",
                         "int"
@@ -1143,7 +1139,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/insertions_default_quality",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/insertions_default_quality",
                     "type": [
                         "null",
                         "int"
@@ -1154,7 +1150,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/interval_exclusion_padding",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/interval_exclusion_padding",
                     "type": [
                         "null",
                         "int"
@@ -1165,7 +1161,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/interval_merging_rule",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/interval_merging_rule",
                     "type": [
                         "null",
                         "string"
@@ -1176,7 +1172,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/interval_padding",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/interval_padding",
                     "type": [
                         "null",
                         "int"
@@ -1187,7 +1183,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/interval_set_rule",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/interval_set_rule",
                     "type": [
                         "null",
                         "string"
@@ -1198,7 +1194,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/intervals",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/intervals",
                     "type": [
                         "null",
                         "string"
@@ -1209,7 +1205,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/lenient",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/lenient",
                     "type": [
                         "null",
                         "boolean"
@@ -1220,7 +1216,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/low_quality_tail",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/low_quality_tail",
                     "type": [
                         "null",
                         "int"
@@ -1231,7 +1227,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/maximum_cycle_value",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/maximum_cycle_value",
                     "type": [
                         "null",
                         "int"
@@ -1242,7 +1238,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/mismatches_context_size",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/mismatches_context_size",
                     "type": [
                         "null",
                         "int"
@@ -1253,7 +1249,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/mismatches_default_quality",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/mismatches_default_quality",
                     "type": [
                         "null",
                         "int"
@@ -1264,7 +1260,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/preserve_qscores_less_than",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/preserve_qscores_less_than",
                     "type": [
                         "null",
                         "int"
@@ -1275,7 +1271,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/quantizing_levels",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/quantizing_levels",
                     "type": [
                         "null",
                         "int"
@@ -1286,7 +1282,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/QUIET",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/QUIET",
                     "type": [
                         "null",
                         "boolean"
@@ -1297,7 +1293,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/read_filter",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/read_filter",
                     "type": [
                         "null",
                         {
@@ -1313,7 +1309,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/read_index",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/read_index",
                     "type": [
                         "null",
                         "string"
@@ -1324,7 +1320,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/seconds_between_progress_updates",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/seconds_between_progress_updates",
                     "type": [
                         "null",
                         "float"
@@ -1335,7 +1331,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/sequence_dictionary",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/sequence_dictionary",
                     "type": [
                         "null",
                         "File"
@@ -1346,7 +1342,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/sites_only_vcf_output",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/sites_only_vcf_output",
                     "type": [
                         "null",
                         "boolean"
@@ -1357,7 +1353,7 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/use_original_qualities",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/use_original_qualities",
                     "type": [
                         "null",
                         "boolean"
@@ -1368,28 +1364,28 @@
                     }
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/number_of_threads",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/number_of_threads",
                     "type": [
                         "null",
                         "int"
                     ]
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/memory_per_job",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/memory_per_job",
                     "type": [
                         "null",
                         "int"
                     ]
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/memory_overhead",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/memory_overhead",
                     "type": [
                         "null",
                         "int"
                     ]
                 },
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/temporary_directory",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/temporary_directory",
                     "type": [
                         "null",
                         "string"
@@ -1399,7 +1395,7 @@
             ],
             "outputs": [
                 {
-                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_output",
+                    "id": "#gatk_base_recalibrator_4.1.8.1.cwl/gatk_base_recalibrator_4_1_8_1/gatk_base_recalibrator_output",
                     "type": "File",
                     "outputBinding": {
                         "glob": "${\n    if(inputs.output_file_name){\n        return inputs.output_file_name\n    } else {\n        return inputs.input.basename.replace(/.bam/, '_bqsr.table')\n    }\n}"
@@ -1480,5 +1476,9 @@
     "cwlVersion": "v1.0",
     "$schemas": [
         "http://schema.org/version/latest/schemaorg-current-http.rdf"
-    ]
+    ],
+    "$namespaces": {
+        "s": "https://schema.org/",
+        "sbg": "https://www.sevenbridges.com/"
+    }
 }
