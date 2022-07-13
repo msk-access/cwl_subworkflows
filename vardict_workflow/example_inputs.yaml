@@ -1,11 +1,16 @@
-concat_output_name: tsampleName_concat_vcf.gz
-filter_For_PassFilter: YES
-refFasta:
+bedfile:
   class: File
   path: >-
-    /path/to/Homo_sapiens_assembly19.fasta
-region_Of_Interest_Bedfile: null
-tsampleName: tumorname
-tumorBam:
+    /path/to/bed/file.bed
+concat_output_name: concat.vcf.gz
+input_bam_case:
   class: File
-  path: /path/to/input.bam
+  path: >-
+    /path/to/bam/file.bam
+reference_fasta:
+  class: File
+  path: >-
+    /path/to/reference/file.fasta
+sample_name: tumourName
+stdout: TRUE
+vardict_output_vcf_name: tumorName_vardict.vcf
