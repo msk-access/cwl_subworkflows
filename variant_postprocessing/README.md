@@ -3,17 +3,18 @@ description: Specifications for performing Indel Re-alignment on a BAM file.
 
 ---
 
-## Variant postprocessing sub-workflows
+# Variant postprocessing sub-workflows
 
-### Tools used:
+## variant_normalize_sort
 
--   [bcftools bgzip](https://msk-access.gitbook.io/command-line-tools-cwl/bcftools_1.15.1/)
--   [bcftools tabix](https://msk-access.gitbook.io/command-line-tools-cwl/bcftools_1.15.1/)
--   [bcftools norm](https://msk-access.gitbook.io/command-line-tools-cwl/bcftools_1.15.1/)
--   [bcftools sort](https://msk-access.gitbook.io/command-line-tools-cwl/bcftools_1.15.1/)
--   [bcftools concat](https://msk-access.gitbook.io/command-line-tools-cwl/bcftools_1.15.1/)
+### Tools used
 
-### Usage
+- [bcftools bgzip](https://msk-access.gitbook.io/command-line-tools-cwl/bcftools_1.15.1/)
+- [bcftools tabix](https://msk-access.gitbook.io/command-line-tools-cwl/bcftools_1.15.1/)
+- [bcftools norm](https://msk-access.gitbook.io/command-line-tools-cwl/bcftools_1.15.1/)
+- [bcftools sort](https://msk-access.gitbook.io/command-line-tools-cwl/bcftools_1.15.1/)
+
+#### Usage
 
 ```bash
 usage: variant_normalize_sort.cwl [-h] --input INPUT --fastaRef FASTAREF
@@ -47,7 +48,17 @@ optional arguments:
 
 ```
 
-```shell
+## variant_sort
+
+### Tools used
+
+- [bcftools bgzip](https://msk-access.gitbook.io/command-line-tools-cwl/bcftools_1.15.1/)
+- [bcftools tabix](https://msk-access.gitbook.io/command-line-tools-cwl/bcftools_1.15.1/)
+- [bcftools sort](https://msk-access.gitbook.io/command-line-tools-cwl/bcftools_1.15.1/)
+
+#### Usage
+
+```bash
 usage: variant_sort.cwl [-h] --input INPUT --stdout
                         [--bgzip_output_name BGZIP_OUTPUT_NAME]
                         [--preset PRESET] [--output_type OUTPUT_TYPE]
@@ -67,7 +78,17 @@ optional arguments:
   --sort_output_name SORT_OUTPUT_NAME
 ```
 
-```shell
+## variant_concat
+
+### Tools used
+
+- [variant normalize sort](../variant_postprocessing/README.md)
+- [variant sort](../variant_postprocessing/README.md)
+- [bcftools concat](https://msk-access.gitbook.io/command-line-tools-cwl/bcftools_1.15.1/)
+
+#### Usage
+
+```bash
 usage: variants_concat.cwl [-h] --fastaRef FASTAREF --input INPUT
                            [--bgzip_output_name BGZIP_OUTPUT_NAME]
                            [--check_ref CHECK_REF]

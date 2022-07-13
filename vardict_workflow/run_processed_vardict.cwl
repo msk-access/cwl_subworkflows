@@ -3,6 +3,7 @@ cwlVersion: v1.0
 id: run_processed_vardict
 label: run_processed_vardict.cwl
 $namespaces:
+  s: 'https://schema.org/'
   sbg: 'https://www.sevenbridges.com/'
 inputs:
   - id: reference_fasta
@@ -135,3 +136,23 @@ steps:
     'sbg:y': 125.96643829345703
 requirements:
   - class: SubworkflowFeatureRequirement
+$schemas:
+  - 'http://schema.org/version/latest/schemaorg-current-http.rdf'
+'s:author':
+  - class: 's:Person'
+    's:email': 'mailto:sivaprk@mskcc.org'
+    's:identifier': ''
+    's:name': Karthigayini Sivaprakasam
+'s:citation': ''
+'s:codeRepository': 'https://github.com/msk-access/cwl_subworkflows/vardict_workflow'
+'s:contributor':
+  - class: 's:Person'
+    's:email': 'mailto:sivaprk@mskcc.org'
+    's:identifier': ''
+    's:name': Karthigayini Sivaprakasam
+  - class: 's:Person'
+    's:email': 'mailto:shahr@mskcc.org'
+    's:identifier': ''
+    's:name': Ronak Shah
+'s:dateCreated': 2020-07-13
+'s:license': 'https://spdx.org/licenses/Apache-2.0'

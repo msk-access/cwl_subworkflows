@@ -3,75 +3,76 @@ cwlVersion: v1.0
 id: variants_concat
 label: variants_concat
 $namespaces:
+  s: 'https://schema.org/'
   sbg: 'https://www.sevenbridges.com/'
 inputs:
   - id: fastaRef
     type: File
-    'sbg:x': -495.60113525390625
-    'sbg:y': -51.5
+    'sbg:x': 0
+    'sbg:y': 853.875
   - id: input
     type: File
-    'sbg:x': -468.60113525390625
-    'sbg:y': -197.5
+    'sbg:x': 0
+    'sbg:y': 747.140625
   - id: bgzip_output_name
     type: string?
-    'sbg:x': -275.7477722167969
-    'sbg:y': 175.36965942382812
+    'sbg:x': 0
+    'sbg:y': 1387.546875
   - id: check_ref
     type: string?
-    'sbg:x': -326.6642761230469
-    'sbg:y': 39.93177032470703
+    'sbg:x': 0
+    'sbg:y': 1280.8125
   - id: multiallelics
     type: string?
-    'sbg:x': -409.58453369140625
-    'sbg:y': -127.52545928955078
+    'sbg:x': 0
+    'sbg:y': 640.40625
   - id: norm_output_name
     type: string?
-    'sbg:x': -349.4378967285156
-    'sbg:y': -236.35031127929688
+    'sbg:x': 0
+    'sbg:y': 533.671875
   - id: output_type
     type: string?
-    'sbg:x': -203.44635009765625
-    'sbg:y': -346.006103515625
+    'sbg:x': 0
+    'sbg:y': 320.203125
   - id: preset
     type: string?
-    'sbg:x': -69.02679443359375
-    'sbg:y': -255.37474060058594
+    'sbg:x': 0
+    'sbg:y': 213.46875
   - id: sort_output_name
     type: string?
-    'sbg:x': 147.8774871826172
-    'sbg:y': -269.6313781738281
+    'sbg:x': 0
+    'sbg:y': 106.734375
   - id: complex_sort_output_name
     type: string?
-    'sbg:x': 622.2739868164062
-    'sbg:y': -229.81654357910156
+    'sbg:x': 0
+    'sbg:y': 960.609375
   - id: complex_input
     type: File
-    'sbg:x': 461.0975036621094
-    'sbg:y': 26.654048919677734
+    'sbg:x': 0
+    'sbg:y': 1067.34375
   - id: complex_bgzip_output_name
     type: string?
-    'sbg:x': 494.0386962890625
-    'sbg:y': 265.64788818359375
+    'sbg:x': 0
+    'sbg:y': 1174.078125
   - id: output_name
     type: string
-    'sbg:x': 21.79051399230957
-    'sbg:y': 742.0482177734375
+    'sbg:x': 0
+    'sbg:y': 426.9375
   - id: allow_overlaps
     type: boolean?
-    'sbg:x': 93.62149810791016
-    'sbg:y': 873.0341186523438
+    'sbg:x': 284.734375
+    'sbg:y': 863.5078125
   - id: stdout
     type: boolean
-    'sbg:x': 315.8106689453125
-    'sbg:y': -71.67112731933594
+    'sbg:x': 0
+    'sbg:y': 0
 outputs:
   - id: concatenated_vcf
     outputSource:
       - bcftools_concat/concatenated_vcf
     type: File
-    'sbg:x': 689.3961181640625
-    'sbg:y': 751.9074096679688
+    'sbg:x': 1050.4891357421875
+    'sbg:y': 693.7734375
 steps:
   - id: bgzip_normalize_sort
     in:
@@ -99,8 +100,8 @@ steps:
       - id: bgzip_normalize_sort_output
     run: ./variant_normalize_sort.cwl
     label: bgzip_normalize_sort
-    'sbg:x': 125.46411895751953
-    'sbg:y': 20.04885482788086
+    'sbg:x': 284.734375
+    'sbg:y': 693.7734375
   - id: bgzip_sort
     in:
       - id: input
@@ -119,8 +120,8 @@ steps:
       - id: bgzip_sorted_output
     run: ./variant_sort.cwl
     label: bgzip_sort.cwl
-    'sbg:x': 1037.812255859375
-    'sbg:y': -30.04885482788086
+    'sbg:x': 284.734375
+    'sbg:y': 489.0390625
   - id: bcftools_concat
     in:
       - id: allow_overlaps
@@ -137,8 +138,28 @@ steps:
       - id: concatenated_vcf
     run: ../command_line_tools/bcftools_1.15.1/bcftools_concat_1.15.1.cwl
     label: bcftools_concat
-    'sbg:x': 369.0542907714844
-    'sbg:y': 754.6953125
+    'sbg:x': 755.8057250976562
+    'sbg:y': 672.7734375
 requirements:
   - class: SubworkflowFeatureRequirement
   - class: MultipleInputFeatureRequirement
+$schemas:
+  - 'http://schema.org/version/latest/schemaorg-current-http.rdf'
+'s:author':
+  - class: 's:Person'
+    's:email': 'mailto:sivaprk@mskcc.org'
+    's:identifier': ''
+    's:name': Karthigayini Sivaprakasam
+'s:citation': ''
+'s:codeRepository': 'https://github.com/msk-access/cwl_subworkflows/variant_postprocessing'
+'s:contributor':
+  - class: 's:Person'
+    's:email': 'mailto:sivaprk@mskcc.org'
+    's:identifier': ''
+    's:name': Karthigayini Sivaprakasam
+  - class: 's:Person'
+    's:email': 'mailto:shahr@mskcc.org'
+    's:identifier': ''
+    's:name': Ronak Shah
+'s:dateCreated': 2020-07-13
+'s:license': 'https://spdx.org/licenses/Apache-2.0'
