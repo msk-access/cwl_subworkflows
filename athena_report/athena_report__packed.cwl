@@ -421,10 +421,14 @@
                     "id": "#coverage_report_single.cwl/general_stats_parse/snps",
                     "type": [
                         "null",
-                        "File"
+                        "File",
+                        {
+                            "type": "array",
+                            "items": "File"
+                        }
                     ],
                     "inputBinding": {
-                        "position": 0,
+                        "position": 999,
                         "prefix": "-s"
                     },
                     "doc": "VCF(s) of known SNPs to check coverage of (optional; i.e. HGMD, ClinVar)"
@@ -480,7 +484,7 @@
                     "id": "#coverage_report_single.cwl/general_stats_parse/limit",
                     "type": [
                         "null",
-                        "File"
+                        "int"
                     ],
                     "inputBinding": {
                         "position": 0,
@@ -504,7 +508,7 @@
                     "id": "#coverage_report_single.cwl/general_stats_parse/cores",
                     "type": [
                         "null",
-                        "File"
+                        "int"
                     ],
                     "inputBinding": {
                         "position": 0,
@@ -616,7 +620,6 @@
                     "id": "#coverage_stats_single.cwl/general_stats_parse/thresholds",
                     "type": [
                         "null",
-                        "int",
                         {
                             "type": "array",
                             "items": "int"
@@ -656,7 +659,7 @@
                     "id": "#coverage_stats_single.cwl/general_stats_parse/cores",
                     "type": [
                         "null",
-                        "string"
+                        "int"
                     ],
                     "inputBinding": {
                         "position": 900,
