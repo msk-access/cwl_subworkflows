@@ -248,7 +248,7 @@
             "id": "#main",
             "outputs": [
                 {
-                    "type": "Directory",
+                    "type": "File",
                     "outputSource": "#main/report/coverage_report_single",
                     "id": "#main/coverage_report_single"
                 }
@@ -520,15 +520,13 @@
             "outputs": [
                 {
                     "id": "#coverage_report_single.cwl/general_stats_parse/coverage_report_single",
-                    "label": "coverage_report_single",
-                    "type": "Directory",
+                    "type": "File",
                     "outputBinding": {
-                        "glob": ".",
-                        "outputEval": "${\n    self[0].basename = \"coverage_report_single\";\n    return self[0]\n}"
+                        "glob": "${\n    if (inputs.prefix) {\n      return inputs.prefix + '*_report.html'\n    } else {\n      return '*_report.html'\n    }\n}"
                     }
                 }
             ],
-            "label": "general_stats_parse",
+            "label": "coverage_report_single",
             "requirements": [
                 {
                     "class": "DockerRequirement",
@@ -544,8 +542,8 @@
                     "http://xmlns.com/foaf/0.1/member": [
                         {
                             "class": "http://xmlns.com/foaf/0.1/Person",
-                            "http://xmlns.com/foaf/0.1/mbox": "mailto:johnsoni@mskcc.org",
-                            "http://xmlns.com/foaf/0.1/name": "Ian Johnson"
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:buehlere@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Eric Buehler"
                         }
                     ],
                     "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
@@ -557,8 +555,8 @@
                     "http://xmlns.com/foaf/0.1/member": [
                         {
                             "class": "http://xmlns.com/foaf/0.1/Person",
-                            "http://xmlns.com/foaf/0.1/mbox": "mailto:johnsoni@mskcc.org",
-                            "http://xmlns.com/foaf/0.1/name": "Ian Johnson"
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:buehlere@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Eric Buehler"
                         }
                     ],
                     "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"

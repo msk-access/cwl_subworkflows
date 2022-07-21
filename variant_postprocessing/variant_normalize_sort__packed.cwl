@@ -54,16 +54,6 @@
                         "string"
                     ],
                     "doc": "Name of the output file"
-                },
-                {
-                    "id": "#bcftools_bgzip_1.15.1.cwl/bgzip/output_directory",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "inputBinding": {
-                        "position": 0
-                    }
                 }
             ],
             "label": "bgzip",
@@ -81,8 +71,7 @@
                     "class": "InitialWorkDirRequirement",
                     "listing": [
                         {
-                            "entry": "$(inputs.output_directory)",
-                            "writable": true
+                            "entry": "$(inputs.input)"
                         }
                     ]
                 },
@@ -336,10 +325,6 @@
                         "null",
                         "string"
                     ],
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "-o"
-                    },
                     "doc": "Output file name"
                 },
                 {
@@ -379,6 +364,13 @@
                 }
             ],
             "label": "bcftools_sort",
+            "arguments": [
+                {
+                    "position": 0,
+                    "prefix": "-o",
+                    "valueFrom": "${\n    if(inputs.output_name) {\n        return inputs.output_name\n    } else {\n        return inputs.input.basename.replace(/.vcf/, '.sorted.vcf') \n        } \n    }"
+                }
+            ],
             "requirements": [
                 {
                     "class": "ResourceRequirement",
