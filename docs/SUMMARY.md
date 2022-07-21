@@ -11,8 +11,11 @@
   - [INDEL re-alignment sub-workflow](../indel_realignment/README.md)
   - [Simplex BAM QC sub-workflow](../qc_simplex_bam/README.md)
   - [Uncollapsed BAM QC sub-workflow](../qc_uncollapsed_bam/README.md)
+<<<<<<< HEAD
+=======
   - [Variant post-processing sub-workflow](../variant_postprocessing/README.md)
   - [VarDict variant calling and post-processing sub-workflow](../vardict_workflow/README.md)
+>>>>>>> develop
   - [Athena Report sub-workflow](../athena_report/README.md)
 
 ## Github Specifications

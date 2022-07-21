@@ -47,7 +47,7 @@ inputs:
 
 outputs:
   coverage_report_single:
-    type: Directory
+    type: File
     outputSource: report/coverage_report_single
 
 steps:
