@@ -1,4 +1,4 @@
-toil-ionox0[cwl]==0.0.7
+toil[cwl]==5.4.0.a1
 pytz
 typing==3.7.4
 ruamel.yaml==0.15.77
