@@ -1,4 +1,4 @@
-toil[cwl]==5.6.0
+toil[cwl]==5.7.1
 pytz
 typing==3.7.4
 ruamel.yaml==0.15.77
