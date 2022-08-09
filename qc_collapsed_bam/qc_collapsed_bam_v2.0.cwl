@@ -333,7 +333,7 @@ outputs:
     type: File
     'sbg:x': 1482.3623046875
     'sbg:y': 1710
-  - id: biometrics_extract_pickle
+  - id: collapsed_biometrics_extract_pickle
     outputSource:
       - biometrics_extract_0_2_13/biometrics_extract_pickle
     type: File
@@ -475,7 +475,7 @@ steps:
       - id: bed_file
         source: bed_file
     out:
-      - id: biometrics_extract_pickle
+      - id: collapsed_biometrics_extract_pickle
     run: ../command_line_tools/biometrics_extract/0.2.13/biometrics_extract.cwl
     'sbg:x': 351.4375
     'sbg:y': 1328.9375

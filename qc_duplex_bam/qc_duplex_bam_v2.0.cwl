@@ -284,7 +284,7 @@ outputs:
     type: File
     'sbg:x': 1432.8466796875
     'sbg:y': 1760.375
-  - id: biometrics_extract_pickle
+  - id: duplex_biometrics_extract_pickle
     outputSource:
       - biometrics_extract_0_2_13/biometrics_extract_pickle
     type: File
@@ -440,7 +440,7 @@ steps:
       - id: min_coverage
         default: 200
     out:
-      - id: biometrics_extract_pickle
+      - id: duplex_biometrics_extract_pickle
     run: ../command_line_tools/biometrics_extract/0.2.13/biometrics_extract.cwl
     'sbg:x': 353.515625
     'sbg:y': 1616.984375
