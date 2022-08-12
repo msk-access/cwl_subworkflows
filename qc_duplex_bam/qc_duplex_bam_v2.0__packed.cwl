@@ -527,179 +527,6 @@
         },
         {
             "class": "CommandLineTool",
-            "id": "#biometrics_major.cwl",
-            "baseCommand": [
-                "biometrics",
-                "major"
-            ],
-            "inputs": [
-                {
-                    "id": "#biometrics_major.cwl/biometrics_major_0_2_13/input",
-                    "type": {
-                        "type": "array",
-                        "items": "File",
-                        "inputBinding": {
-                            "prefix": "--input"
-                        }
-                    },
-                    "inputBinding": {
-                        "position": 0
-                    },
-                    "doc": "Can be one of three types: (1) path to a CSV file containing sample information (one per line). For example: sample_name,sample_bam,sample_type,sample_sex,sample_group. (2) Path to a '*.pk' file that was produced by the 'extract' tool. (3) Name of the sample to analyze; this assumes there is a file named '{sample_name}.pk' in your database directory. Can be specified more than once."
-                },
-                {
-                    "id": "#biometrics_major.cwl/biometrics_major_0_2_13/database",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "--database"
-                    },
-                    "doc": "Directory to store the intermediate files after running the extraction step."
-                },
-                {
-                    "default": 0.6,
-                    "id": "#biometrics_major.cwl/biometrics_major_0_2_13/major_threshold",
-                    "type": [
-                        "null",
-                        "float"
-                    ],
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "--major-threshold"
-                    },
-                    "doc": "Major contamination threshold for bad sample."
-                },
-                {
-                    "id": "#biometrics_major.cwl/biometrics_major_0_2_13/prefix",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "--prefix"
-                    },
-                    "doc": "Output file prefix."
-                },
-                {
-                    "id": "#biometrics_major.cwl/biometrics_major_0_2_13/plot",
-                    "type": [
-                        "null",
-                        "boolean"
-                    ],
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "--plot"
-                    },
-                    "doc": "Also output plots of the data."
-                },
-                {
-                    "id": "#biometrics_major.cwl/biometrics_major_0_2_13/json",
-                    "type": [
-                        "null",
-                        "boolean"
-                    ],
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "--json"
-                    },
-                    "doc": "Also output data in JSON format."
-                },
-                {
-                    "id": "#biometrics_major.cwl/biometrics_major_0_2_13/no_db_comparison",
-                    "type": [
-                        "null",
-                        "boolean"
-                    ],
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "--no-db-compare"
-                    },
-                    "doc": "Do not compare the sample(s) you provided to all samples in the database, only compare them with each other."
-                }
-            ],
-            "outputs": [
-                {
-                    "id": "#biometrics_major.cwl/biometrics_major_0_2_13/biometrics_major_csv",
-                    "type": "File",
-                    "outputBinding": {
-                        "glob": "${\n    if (inputs.prefix) {\n      return inputs.prefix + '_major_contamination.csv'\n    } else {\n      return 'major_contamination.csv'\n    }\n}"
-                    }
-                },
-                {
-                    "id": "#biometrics_major.cwl/biometrics_major_0_2_13/biometrics_major_json",
-                    "type": [
-                        "null",
-                        "File"
-                    ],
-                    "outputBinding": {
-                        "glob": "${\n    if (inputs.prefix) {\n      return inputs.prefix + '_major_contamination.json'\n    } else {\n      return 'major_contamination.json'\n    }\n}"
-                    }
-                },
-                {
-                    "id": "#biometrics_major.cwl/biometrics_major_0_2_13/biometrics_major_plot",
-                    "type": [
-                        "null",
-                        "File"
-                    ],
-                    "outputBinding": {
-                        "glob": "${\n  return 'major_contamination.html'\n}"
-                    }
-                }
-            ],
-            "requirements": [
-                {
-                    "class": "ResourceRequirement",
-                    "ramMin": 16000,
-                    "coresMin": 2
-                },
-                {
-                    "class": "DockerRequirement",
-                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.13"
-                },
-                {
-                    "class": "InlineJavascriptRequirement"
-                }
-            ],
-            "http://purl.org/dc/terms/contributor": [
-                {
-                    "class": "http://xmlns.com/foaf/0.1/Organization",
-                    "http://xmlns.com/foaf/0.1/member": [
-                        {
-                            "class": "http://xmlns.com/foaf/0.1/Person",
-                            "http://xmlns.com/foaf/0.1/mbox": "mailto:murphyc4@mskcc.org",
-                            "http://xmlns.com/foaf/0.1/name": "Charlie Murphy"
-                        }
-                    ],
-                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
-                }
-            ],
-            "http://purl.org/dc/terms/creator": [
-                {
-                    "class": "http://xmlns.com/foaf/0.1/Organization",
-                    "http://xmlns.com/foaf/0.1/member": [
-                        {
-                            "class": "http://xmlns.com/foaf/0.1/Person",
-                            "http://xmlns.com/foaf/0.1/mbox": "mailto:murphyc4@mskcc.org",
-                            "http://xmlns.com/foaf/0.1/name": "Charlie Murphy"
-                        }
-                    ],
-                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
-                }
-            ],
-            "http://usefulinc.com/ns/doap#release": [
-                {
-                    "class": "http://usefulinc.com/ns/doap#Version",
-                    "http://usefulinc.com/ns/doap#name": "biometrics",
-                    "http://usefulinc.com/ns/doap#revision": "0.2.13"
-                }
-            ]
-        },
-        {
-            "class": "CommandLineTool",
             "id": "#biometrics_minor.cwl",
             "baseCommand": [
                 "biometrics",
@@ -2664,15 +2491,6 @@
                     "https://www.sevenbridges.com/y": 1066.71875
                 },
                 {
-                    "id": "#main/major_threshold",
-                    "type": [
-                        "null",
-                        "float"
-                    ],
-                    "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 1813.5078125
-                },
-                {
                     "id": "#main/vcf_file",
                     "type": "File",
                     "https://www.sevenbridges.com/x": 0,
@@ -2958,39 +2776,6 @@
                     "https://www.sevenbridges.com/y": 750.8828125
                 },
                 {
-                    "id": "#main/biometrics_major_plot",
-                    "outputSource": [
-                        "#main/biometrics_major_0_2_13/biometrics_major_plot"
-                    ],
-                    "type": [
-                        "null",
-                        "File"
-                    ],
-                    "https://www.sevenbridges.com/x": 1432.8466796875,
-                    "https://www.sevenbridges.com/y": 1546.90625
-                },
-                {
-                    "id": "#main/biometrics_major_json",
-                    "outputSource": [
-                        "#main/biometrics_major_0_2_13/biometrics_major_json"
-                    ],
-                    "type": [
-                        "null",
-                        "File"
-                    ],
-                    "https://www.sevenbridges.com/x": 1432.8466796875,
-                    "https://www.sevenbridges.com/y": 1653.640625
-                },
-                {
-                    "id": "#main/biometrics_major_csv",
-                    "outputSource": [
-                        "#main/biometrics_major_0_2_13/biometrics_major_csv"
-                    ],
-                    "type": "File",
-                    "https://www.sevenbridges.com/x": 1432.8466796875,
-                    "https://www.sevenbridges.com/y": 1760.375
-                },
-                {
                     "id": "#main/biometrics_extract_pickle",
                     "outputSource": [
                         "#main/biometrics_extract_0_2_13/biometrics_extract_pickle"
@@ -3223,48 +3008,6 @@
                     "https://www.sevenbridges.com/y": 1426.328125
                 },
                 {
-                    "id": "#main/biometrics_major_0_2_13",
-                    "in": [
-                        {
-                            "id": "#main/biometrics_major_0_2_13/input",
-                            "linkMerge": "merge_nested",
-                            "source": [
-                                "#main/biometrics_extract_0_2_13/biometrics_extract_pickle"
-                            ]
-                        },
-                        {
-                            "id": "#main/biometrics_major_0_2_13/major_threshold",
-                            "source": "#main/major_threshold"
-                        },
-                        {
-                            "id": "#main/biometrics_major_0_2_13/prefix",
-                            "source": "#main/prefix"
-                        },
-                        {
-                            "id": "#main/biometrics_major_0_2_13/plot",
-                            "source": "#main/plot"
-                        },
-                        {
-                            "id": "#main/biometrics_major_0_2_13/json",
-                            "source": "#main/json"
-                        }
-                    ],
-                    "out": [
-                        {
-                            "id": "#main/biometrics_major_0_2_13/biometrics_major_csv"
-                        },
-                        {
-                            "id": "#main/biometrics_major_0_2_13/biometrics_major_json"
-                        },
-                        {
-                            "id": "#main/biometrics_major_0_2_13/biometrics_major_plot"
-                        }
-                    ],
-                    "run": "#biometrics_major.cwl",
-                    "https://www.sevenbridges.com/x": 984.2216796875,
-                    "https://www.sevenbridges.com/y": 2421.6640625
-                },
-                {
                     "id": "#main/biometrics_extract_0_2_13",
                     "in": [
                         {
@@ -3461,6 +3204,9 @@
                 },
                 {
                     "class": "InlineJavascriptRequirement"
+                },
+                {
+                    "class": "StepInputExpressionRequirement"
                 }
             ],
             "https://schema.org/author": [
