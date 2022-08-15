@@ -3418,6 +3418,9 @@
                 },
                 {
                     "class": "InlineJavascriptRequirement"
+                },
+                {
+                    "class": "StepInputExpressionRequirement"
                 }
             ],
             "https://schema.org/author": [

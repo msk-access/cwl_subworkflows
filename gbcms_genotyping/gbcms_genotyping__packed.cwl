@@ -8,7 +8,7 @@
             ],
             "inputs": [
                 {
-                    "id": "#getbasecountsmultisample_1.2.5.cwl/memory_per_job",
+                    "id": "#getbasecountsmultisample_1.2.5.cwl/getbasecountsmultisample_1_2_5/memory_per_job",
                     "type": [
                         "null",
                         "int"
@@ -16,7 +16,7 @@
                     "doc": "Memory per job in megabytes"
                 },
                 {
-                    "id": "#getbasecountsmultisample_1.2.5.cwl/memory_overhead",
+                    "id": "#getbasecountsmultisample_1.2.5.cwl/getbasecountsmultisample_1_2_5/memory_overhead",
                     "type": [
                         "null",
                         "int"
@@ -24,14 +24,14 @@
                     "doc": "Memory overhead per job in megabytes"
                 },
                 {
-                    "id": "#getbasecountsmultisample_1.2.5.cwl/number_of_threads",
+                    "id": "#getbasecountsmultisample_1.2.5.cwl/getbasecountsmultisample_1_2_5/number_of_threads",
                     "type": [
                         "null",
                         "int"
                     ]
                 },
                 {
-                    "id": "#getbasecountsmultisample_1.2.5.cwl/genotyping_bams",
+                    "id": "#getbasecountsmultisample_1.2.5.cwl/getbasecountsmultisample_1_2_5/genotyping_bams",
                     "type": [
                         "File",
                         {
@@ -42,7 +42,7 @@
                     "doc": "Input bam file"
                 },
                 {
-                    "id": "#getbasecountsmultisample_1.2.5.cwl/genotyping_bams_ids",
+                    "id": "#getbasecountsmultisample_1.2.5.cwl/getbasecountsmultisample_1_2_5/genotyping_bams_ids",
                     "type": [
                         "string",
                         {
@@ -53,7 +53,7 @@
                     "doc": "Input bam, sample identifier to be used for \"Tumor Sample Barcode\" for maf or Sample name in the header for vcf"
                 },
                 {
-                    "id": "#getbasecountsmultisample_1.2.5.cwl/filter_duplicate",
+                    "id": "#getbasecountsmultisample_1.2.5.cwl/getbasecountsmultisample_1_2_5/filter_duplicate",
                     "type": "int",
                     "inputBinding": {
                         "position": 0,
@@ -62,7 +62,7 @@
                     "doc": "Whether to filter reads that are marked as duplicate. 0=off, 1=on. Default 1"
                 },
                 {
-                    "id": "#getbasecountsmultisample_1.2.5.cwl/fragment_count",
+                    "id": "#getbasecountsmultisample_1.2.5.cwl/getbasecountsmultisample_1_2_5/fragment_count",
                     "type": "int",
                     "inputBinding": {
                         "position": 0,
@@ -71,7 +71,7 @@
                     "doc": "Whether to output fragment read counts DPF/RDF/ADF. 0=off, 1=on. Default 0"
                 },
                 {
-                    "id": "#getbasecountsmultisample_1.2.5.cwl/maf",
+                    "id": "#getbasecountsmultisample_1.2.5.cwl/getbasecountsmultisample_1_2_5/maf",
                     "type": "File",
                     "inputBinding": {
                         "position": 0,
@@ -80,7 +80,7 @@
                     "doc": "Input variant file in TCGA maf format. --maf or --vcf need to be specified at least once. But --maf and --vcf are mutually exclusive"
                 },
                 {
-                    "id": "#getbasecountsmultisample_1.2.5.cwl/maq",
+                    "id": "#getbasecountsmultisample_1.2.5.cwl/getbasecountsmultisample_1_2_5/maq",
                     "type": [
                         "null",
                         "int"
@@ -92,7 +92,7 @@
                     "doc": "Mapping quality threshold. Default 20"
                 },
                 {
-                    "id": "#getbasecountsmultisample_1.2.5.cwl/omaf",
+                    "id": "#getbasecountsmultisample_1.2.5.cwl/getbasecountsmultisample_1_2_5/omaf",
                     "type": [
                         "null",
                         "boolean"
@@ -104,7 +104,7 @@
                     "doc": "Output the result in maf format"
                 },
                 {
-                    "id": "#getbasecountsmultisample_1.2.5.cwl/output",
+                    "id": "#getbasecountsmultisample_1.2.5.cwl/getbasecountsmultisample_1_2_5/output",
                     "type": [
                         "null",
                         "string"
@@ -117,7 +117,7 @@
                     "doc": "Filename for output of raw fillout data in MAF/VCF format"
                 },
                 {
-                    "id": "#getbasecountsmultisample_1.2.5.cwl/ref_fasta",
+                    "id": "#getbasecountsmultisample_1.2.5.cwl/getbasecountsmultisample_1_2_5/ref_fasta",
                     "type": "File",
                     "inputBinding": {
                         "position": 0,
@@ -126,7 +126,7 @@
                     "doc": "Input reference sequence file"
                 },
                 {
-                    "id": "#getbasecountsmultisample_1.2.5.cwl/vcf",
+                    "id": "#getbasecountsmultisample_1.2.5.cwl/getbasecountsmultisample_1_2_5/vcf",
                     "type": [
                         "null",
                         "File"
@@ -138,7 +138,7 @@
                     "doc": "Input variant file in vcf-like format(the first 5 columns are used). --maf or --vcf need to be specified at least once. But --maf and --vcf are mutually exclusive"
                 },
                 {
-                    "id": "#getbasecountsmultisample_1.2.5.cwl/generic_counting",
+                    "id": "#getbasecountsmultisample_1.2.5.cwl/getbasecountsmultisample_1_2_5/generic_counting",
                     "type": [
                         "null",
                         "boolean"
@@ -148,15 +148,6 @@
                         "prefix": "--generic_counting"
                     },
                     "doc": "Use the newly implemented generic counting algorithm. Works better for complex variants. You may get different allele count result from the default counting algorithm"
-                }
-            ],
-            "outputs": [
-                {
-                    "id": "#getbasecountsmultisample_1.2.5.cwl/fillout",
-                    "type": "File",
-                    "outputBinding": {
-                        "glob": "${\n    if (inputs.output) {\n        return inputs.output\n    } else if (inputs.genotyping_bams.length) {\n        return inputs.maf.basename.replace('.maf', '_fillout.maf')\n    } else {\n        return inputs.genotyping_bams.basename.replace('.bam', '_fillout.maf')\n    }\n}"
-                    }
                 }
             ],
             "label": "getbasecountsmultisample_1.2.5",
@@ -236,10 +227,15 @@
                     "http://usefulinc.com/ns/doap#revision": "1.2.5"
                 }
             ],
-            "$namespaces": {
-                "s": "https://schema.org/",
-                "sbg": "https://www.sevenbridges.com/"
-            }
+            "outputs": [
+                {
+                    "id": "#getbasecountsmultisample_1.2.5.cwl/getbasecountsmultisample_1_2_5/fillout",
+                    "type": "File",
+                    "outputBinding": {
+                        "glob": "${\n    if (inputs.output) {\n        return inputs.output\n    } else if (inputs.genotyping_bams.length) {\n        return inputs.maf.basename.replace('.maf', '_fillout.maf')\n    } else {\n        return inputs.genotyping_bams.basename.replace('.bam', '_fillout.maf')\n    }\n}"
+                    }
+                }
+            ]
         },
         {
             "class": "Workflow",
@@ -247,7 +243,7 @@
             "label": "gbcms_genotyping",
             "inputs": [
                 {
-                    "id": "#duplex_bams",
+                    "id": "#main/duplex_bams",
                     "type": {
                         "type": "array",
                         "items": "File"
@@ -259,7 +255,7 @@
                     "https://www.sevenbridges.com/y": 1067.0859375
                 },
                 {
-                    "id": "#normal_bams",
+                    "id": "#main/normal_bams",
                     "type": {
                         "type": "array",
                         "items": "File"
@@ -271,7 +267,7 @@
                     "https://www.sevenbridges.com/y": 640.2421875
                 },
                 {
-                    "id": "#tumor_bams",
+                    "id": "#main/tumor_bams",
                     "type": {
                         "type": "array",
                         "items": "File"
@@ -283,7 +279,7 @@
                     "https://www.sevenbridges.com/y": 106.7109375
                 },
                 {
-                    "id": "#simplex_bams",
+                    "id": "#main/simplex_bams",
                     "type": {
                         "type": "array",
                         "items": "File"
@@ -295,19 +291,19 @@
                     "https://www.sevenbridges.com/y": 320.1328125
                 },
                 {
-                    "id": "#maf",
+                    "id": "#main/maf",
                     "type": "File",
                     "https://www.sevenbridges.com/x": 0,
                     "https://www.sevenbridges.com/y": 746.9296875
                 },
                 {
-                    "id": "#ref_fasta",
+                    "id": "#main/ref_fasta",
                     "type": "File",
                     "https://www.sevenbridges.com/x": 0,
                     "https://www.sevenbridges.com/y": 426.8203125
                 },
                 {
-                    "id": "#simplex_genotyping_bams_ids",
+                    "id": "#main/simplex_genotyping_bams_ids",
                     "type": {
                         "type": "array",
                         "items": "string"
@@ -316,7 +312,7 @@
                     "https://www.sevenbridges.com/y": 213.421875
                 },
                 {
-                    "id": "#generic_counting",
+                    "id": "#main/generic_counting",
                     "type": [
                         "null",
                         "boolean"
@@ -325,7 +321,7 @@
                     "https://www.sevenbridges.com/y": 853.640625
                 },
                 {
-                    "id": "#normal_genotyping_bams_ids",
+                    "id": "#main/normal_genotyping_bams_ids",
                     "type": {
                         "type": "array",
                         "items": "string"
@@ -334,7 +330,7 @@
                     "https://www.sevenbridges.com/y": 533.53125
                 },
                 {
-                    "id": "#tumor_genotyping_bams_ids",
+                    "id": "#main/tumor_genotyping_bams_ids",
                     "type": {
                         "type": "array",
                         "items": "string"
@@ -343,7 +339,7 @@
                     "https://www.sevenbridges.com/y": 0
                 },
                 {
-                    "id": "#duplex_genotyping_bams_ids",
+                    "id": "#main/duplex_genotyping_bams_ids",
                     "type": {
                         "type": "array",
                         "items": "string"
@@ -354,9 +350,9 @@
             ],
             "outputs": [
                 {
-                    "id": "#tumor_fillout",
+                    "id": "#main/tumor_fillout",
                     "outputSource": [
-                        "#tumor_getbasecountsmultisample_1_2_5/fillout"
+                        "#main/tumor_getbasecountsmultisample_1_2_5/fillout"
                     ],
                     "type": [
                         "File",
@@ -369,9 +365,9 @@
                     "https://www.sevenbridges.com/y": 373.5234375
                 },
                 {
-                    "id": "#simplex_fillout",
+                    "id": "#main/simplex_fillout",
                     "outputSource": [
-                        "#simplex_getbasecountsmultisample_1_2_5/fillout"
+                        "#main/simplex_getbasecountsmultisample_1_2_5/fillout"
                     ],
                     "type": [
                         "File",
@@ -384,9 +380,9 @@
                     "https://www.sevenbridges.com/y": 480.2109375
                 },
                 {
-                    "id": "#normal_fillout",
+                    "id": "#main/normal_fillout",
                     "outputSource": [
-                        "#normal_getbasecountsmultisample_1_2_5/fillout"
+                        "#main/normal_getbasecountsmultisample_1_2_5/fillout"
                     ],
                     "type": [
                         "File",
@@ -399,9 +395,9 @@
                     "https://www.sevenbridges.com/y": 586.8984375
                 },
                 {
-                    "id": "#duplex_fillout",
+                    "id": "#main/duplex_fillout",
                     "outputSource": [
-                        "#duplex_getbasecountsmultisample_1_2_5/fillout"
+                        "#main/duplex_getbasecountsmultisample_1_2_5/fillout"
                     ],
                     "type": [
                         "File",
@@ -416,260 +412,260 @@
             ],
             "steps": [
                 {
-                    "id": "#duplex_getbasecountsmultisample_1_2_5",
+                    "id": "#main/duplex_getbasecountsmultisample_1_2_5",
                     "in": [
                         {
-                            "id": "#duplex_getbasecountsmultisample_1_2_5/genotyping_bams",
+                            "id": "#main/duplex_getbasecountsmultisample_1_2_5/genotyping_bams",
                             "source": [
-                                "#duplex_bams"
+                                "#main/duplex_bams"
                             ]
                         },
                         {
-                            "id": "#duplex_getbasecountsmultisample_1_2_5/genotyping_bams_ids",
+                            "id": "#main/duplex_getbasecountsmultisample_1_2_5/genotyping_bams_ids",
                             "source": [
-                                "#duplex_genotyping_bams_ids"
+                                "#main/duplex_genotyping_bams_ids"
                             ]
                         },
                         {
-                            "id": "#duplex_getbasecountsmultisample_1_2_5/filter_duplicate",
+                            "id": "#main/duplex_getbasecountsmultisample_1_2_5/filter_duplicate",
                             "default": 0
                         },
                         {
-                            "id": "#duplex_getbasecountsmultisample_1_2_5/fragment_count",
+                            "id": "#main/duplex_getbasecountsmultisample_1_2_5/fragment_count",
                             "default": 1
                         },
                         {
-                            "id": "#duplex_getbasecountsmultisample_1_2_5/maf",
-                            "source": "#maf"
+                            "id": "#main/duplex_getbasecountsmultisample_1_2_5/maf",
+                            "source": "#main/maf"
                         },
                         {
-                            "id": "#duplex_getbasecountsmultisample_1_2_5/maq",
+                            "id": "#main/duplex_getbasecountsmultisample_1_2_5/maq",
                             "default": 20
                         },
                         {
-                            "id": "#duplex_getbasecountsmultisample_1_2_5/omaf",
+                            "id": "#main/duplex_getbasecountsmultisample_1_2_5/omaf",
                             "default": true
                         },
                         {
-                            "id": "#duplex_getbasecountsmultisample_1_2_5/output",
-                            "source": "#duplex_genotyping_bams_ids",
+                            "id": "#main/duplex_getbasecountsmultisample_1_2_5/output",
+                            "source": "#main/duplex_genotyping_bams_ids",
                             "valueFrom": "${\n  if (inputs.duplex_output) {\n    return inputs.duplex_output\n  } else {\n    if (typeof(self) == 'object') {\n        return self.map(function(b, i) {\n          return b + \"_fillout_DUPLEX.maf\"\n        })\n    } else {\n        return self + \"_fillout_DUPLEX.maf\"\n    }\n  }\n}"
                         },
                         {
-                            "id": "#duplex_getbasecountsmultisample_1_2_5/ref_fasta",
-                            "source": "#ref_fasta"
+                            "id": "#main/duplex_getbasecountsmultisample_1_2_5/ref_fasta",
+                            "source": "#main/ref_fasta"
                         },
                         {
-                            "id": "#duplex_getbasecountsmultisample_1_2_5/generic_counting",
-                            "source": "#generic_counting"
+                            "id": "#main/duplex_getbasecountsmultisample_1_2_5/generic_counting",
+                            "source": "#main/generic_counting"
                         }
                     ],
                     "out": [
                         {
-                            "id": "#duplex_getbasecountsmultisample_1_2_5/fillout"
+                            "id": "#main/duplex_getbasecountsmultisample_1_2_5/fillout"
                         }
                     ],
                     "run": "#getbasecountsmultisample_1.2.5.cwl",
                     "label": "duplex_getbasecountsmultisample_1.2.5",
                     "scatter": [
-                        "#duplex_getbasecountsmultisample_1_2_5/genotyping_bams",
-                        "#duplex_getbasecountsmultisample_1_2_5/genotyping_bams_ids",
-                        "#duplex_getbasecountsmultisample_1_2_5/output"
+                        "#main/duplex_getbasecountsmultisample_1_2_5/genotyping_bams",
+                        "#main/duplex_getbasecountsmultisample_1_2_5/genotyping_bams_ids",
+                        "#main/duplex_getbasecountsmultisample_1_2_5/output"
                     ],
                     "scatterMethod": "dotproduct",
                     "https://www.sevenbridges.com/x": 295.84375,
                     "https://www.sevenbridges.com/y": 763.6328125
                 },
                 {
-                    "id": "#simplex_getbasecountsmultisample_1_2_5",
+                    "id": "#main/simplex_getbasecountsmultisample_1_2_5",
                     "in": [
                         {
-                            "id": "#simplex_getbasecountsmultisample_1_2_5/genotyping_bams",
+                            "id": "#main/simplex_getbasecountsmultisample_1_2_5/genotyping_bams",
                             "source": [
-                                "#simplex_bams"
+                                "#main/simplex_bams"
                             ]
                         },
                         {
-                            "id": "#simplex_getbasecountsmultisample_1_2_5/genotyping_bams_ids",
+                            "id": "#main/simplex_getbasecountsmultisample_1_2_5/genotyping_bams_ids",
                             "source": [
-                                "#simplex_genotyping_bams_ids"
+                                "#main/simplex_genotyping_bams_ids"
                             ]
                         },
                         {
-                            "id": "#simplex_getbasecountsmultisample_1_2_5/filter_duplicate",
+                            "id": "#main/simplex_getbasecountsmultisample_1_2_5/filter_duplicate",
                             "default": 0
                         },
                         {
-                            "id": "#simplex_getbasecountsmultisample_1_2_5/fragment_count",
+                            "id": "#main/simplex_getbasecountsmultisample_1_2_5/fragment_count",
                             "default": 1
                         },
                         {
-                            "id": "#simplex_getbasecountsmultisample_1_2_5/maf",
-                            "source": "#maf"
+                            "id": "#main/simplex_getbasecountsmultisample_1_2_5/maf",
+                            "source": "#main/maf"
                         },
                         {
-                            "id": "#simplex_getbasecountsmultisample_1_2_5/maq",
+                            "id": "#main/simplex_getbasecountsmultisample_1_2_5/maq",
                             "default": 20
                         },
                         {
-                            "id": "#simplex_getbasecountsmultisample_1_2_5/omaf",
+                            "id": "#main/simplex_getbasecountsmultisample_1_2_5/omaf",
                             "default": true
                         },
                         {
-                            "id": "#simplex_getbasecountsmultisample_1_2_5/output",
-                            "source": "#simplex_genotyping_bams_ids",
+                            "id": "#main/simplex_getbasecountsmultisample_1_2_5/output",
+                            "source": "#main/simplex_genotyping_bams_ids",
                             "valueFrom": "${\n  if (inputs.simplex_output){\n    return inputs.simplex_output\n  } else {\n    if (typeof(self) == 'object') {\n        return self.map(function(b, i) {\n          return b + \"_fillout_SIMPLEX.maf\"\n        })\n    } else {\n        return self + \"_fillout_SIMPLEX.maf\"\n    }\n  }\n}"
                         },
                         {
-                            "id": "#simplex_getbasecountsmultisample_1_2_5/ref_fasta",
-                            "source": "#ref_fasta"
+                            "id": "#main/simplex_getbasecountsmultisample_1_2_5/ref_fasta",
+                            "source": "#main/ref_fasta"
                         },
                         {
-                            "id": "#simplex_getbasecountsmultisample_1_2_5/generic_counting",
-                            "source": "#generic_counting"
+                            "id": "#main/simplex_getbasecountsmultisample_1_2_5/generic_counting",
+                            "source": "#main/generic_counting"
                         }
                     ],
                     "out": [
                         {
-                            "id": "#simplex_getbasecountsmultisample_1_2_5/fillout"
+                            "id": "#main/simplex_getbasecountsmultisample_1_2_5/fillout"
                         }
                     ],
                     "run": "#getbasecountsmultisample_1.2.5.cwl",
                     "label": "simplex_getbasecountsmultisample_1.2.5",
                     "scatter": [
-                        "#simplex_getbasecountsmultisample_1_2_5/genotyping_bams",
-                        "#simplex_getbasecountsmultisample_1_2_5/genotyping_bams_ids",
-                        "#simplex_getbasecountsmultisample_1_2_5/output"
+                        "#main/simplex_getbasecountsmultisample_1_2_5/genotyping_bams",
+                        "#main/simplex_getbasecountsmultisample_1_2_5/genotyping_bams_ids",
+                        "#main/simplex_getbasecountsmultisample_1_2_5/output"
                     ],
                     "scatterMethod": "dotproduct",
                     "https://www.sevenbridges.com/x": 295.84375,
                     "https://www.sevenbridges.com/y": 410.1640625
                 },
                 {
-                    "id": "#tumor_getbasecountsmultisample_1_2_5",
+                    "id": "#main/tumor_getbasecountsmultisample_1_2_5",
                     "in": [
                         {
-                            "id": "#tumor_getbasecountsmultisample_1_2_5/genotyping_bams",
+                            "id": "#main/tumor_getbasecountsmultisample_1_2_5/genotyping_bams",
                             "source": [
-                                "#tumor_bams"
+                                "#main/tumor_bams"
                             ]
                         },
                         {
-                            "id": "#tumor_getbasecountsmultisample_1_2_5/genotyping_bams_ids",
+                            "id": "#main/tumor_getbasecountsmultisample_1_2_5/genotyping_bams_ids",
                             "source": [
-                                "#tumor_genotyping_bams_ids"
+                                "#main/tumor_genotyping_bams_ids"
                             ]
                         },
                         {
-                            "id": "#tumor_getbasecountsmultisample_1_2_5/filter_duplicate",
+                            "id": "#main/tumor_getbasecountsmultisample_1_2_5/filter_duplicate",
                             "default": 0
                         },
                         {
-                            "id": "#tumor_getbasecountsmultisample_1_2_5/fragment_count",
+                            "id": "#main/tumor_getbasecountsmultisample_1_2_5/fragment_count",
                             "default": 1
                         },
                         {
-                            "id": "#tumor_getbasecountsmultisample_1_2_5/maf",
-                            "source": "#maf"
+                            "id": "#main/tumor_getbasecountsmultisample_1_2_5/maf",
+                            "source": "#main/maf"
                         },
                         {
-                            "id": "#tumor_getbasecountsmultisample_1_2_5/maq",
+                            "id": "#main/tumor_getbasecountsmultisample_1_2_5/maq",
                             "default": 20
                         },
                         {
-                            "id": "#tumor_getbasecountsmultisample_1_2_5/omaf",
+                            "id": "#main/tumor_getbasecountsmultisample_1_2_5/omaf",
                             "default": true
                         },
                         {
-                            "id": "#tumor_getbasecountsmultisample_1_2_5/output",
-                            "source": "#tumor_genotyping_bams_ids",
+                            "id": "#main/tumor_getbasecountsmultisample_1_2_5/output",
+                            "source": "#main/tumor_genotyping_bams_ids",
                             "valueFrom": "${\n  if (inputs.tumor_output) {\n    return inputs.tumor_output\n  } else {\n    if (typeof(self) == 'object') {\n        return self.map(function(b, i) {\n          return b + \"_fillout.maf\"\n        })\n    } else {\n        return self + \"_fillout.maf\"\n    }\n  }\n}   "
                         },
                         {
-                            "id": "#tumor_getbasecountsmultisample_1_2_5/ref_fasta",
-                            "source": "#ref_fasta"
+                            "id": "#main/tumor_getbasecountsmultisample_1_2_5/ref_fasta",
+                            "source": "#main/ref_fasta"
                         },
                         {
-                            "id": "#tumor_getbasecountsmultisample_1_2_5/generic_counting",
-                            "source": "#generic_counting"
+                            "id": "#main/tumor_getbasecountsmultisample_1_2_5/generic_counting",
+                            "source": "#main/generic_counting"
                         }
                     ],
                     "out": [
                         {
-                            "id": "#tumor_getbasecountsmultisample_1_2_5/fillout"
+                            "id": "#main/tumor_getbasecountsmultisample_1_2_5/fillout"
                         }
                     ],
                     "run": "#getbasecountsmultisample_1.2.5.cwl",
                     "label": "tumor_getbasecountsmultisample_1.2.5",
                     "scatter": [
-                        "#tumor_getbasecountsmultisample_1_2_5/genotyping_bams",
-                        "#tumor_getbasecountsmultisample_1_2_5/genotyping_bams_ids",
-                        "#tumor_getbasecountsmultisample_1_2_5/output"
+                        "#main/tumor_getbasecountsmultisample_1_2_5/genotyping_bams",
+                        "#main/tumor_getbasecountsmultisample_1_2_5/genotyping_bams_ids",
+                        "#main/tumor_getbasecountsmultisample_1_2_5/output"
                     ],
                     "scatterMethod": "dotproduct",
                     "https://www.sevenbridges.com/x": 295.84375,
                     "https://www.sevenbridges.com/y": 233.4296875
                 },
                 {
-                    "id": "#normal_getbasecountsmultisample_1_2_5",
+                    "id": "#main/normal_getbasecountsmultisample_1_2_5",
                     "in": [
                         {
-                            "id": "#normal_getbasecountsmultisample_1_2_5/genotyping_bams",
+                            "id": "#main/normal_getbasecountsmultisample_1_2_5/genotyping_bams",
                             "source": [
-                                "#normal_bams"
+                                "#main/normal_bams"
                             ]
                         },
                         {
-                            "id": "#normal_getbasecountsmultisample_1_2_5/genotyping_bams_ids",
+                            "id": "#main/normal_getbasecountsmultisample_1_2_5/genotyping_bams_ids",
                             "source": [
-                                "#normal_genotyping_bams_ids"
+                                "#main/normal_genotyping_bams_ids"
                             ]
                         },
                         {
-                            "id": "#normal_getbasecountsmultisample_1_2_5/filter_duplicate",
+                            "id": "#main/normal_getbasecountsmultisample_1_2_5/filter_duplicate",
                             "default": 0
                         },
                         {
-                            "id": "#normal_getbasecountsmultisample_1_2_5/fragment_count",
+                            "id": "#main/normal_getbasecountsmultisample_1_2_5/fragment_count",
                             "default": 1
                         },
                         {
-                            "id": "#normal_getbasecountsmultisample_1_2_5/maf",
-                            "source": "#maf"
+                            "id": "#main/normal_getbasecountsmultisample_1_2_5/maf",
+                            "source": "#main/maf"
                         },
                         {
-                            "id": "#normal_getbasecountsmultisample_1_2_5/maq",
+                            "id": "#main/normal_getbasecountsmultisample_1_2_5/maq",
                             "default": 20
                         },
                         {
-                            "id": "#normal_getbasecountsmultisample_1_2_5/omaf",
+                            "id": "#main/normal_getbasecountsmultisample_1_2_5/omaf",
                             "default": true
                         },
                         {
-                            "id": "#normal_getbasecountsmultisample_1_2_5/output",
-                            "source": "#normal_genotyping_bams_ids",
+                            "id": "#main/normal_getbasecountsmultisample_1_2_5/output",
+                            "source": "#main/normal_genotyping_bams_ids",
                             "valueFrom": "${\n  if (inputs.normal_output){\n    return inputs.normal_output\n  } else {\n    if (typeof(self) == 'object') {\n        return self.map(function(b, i) {\n          return b + \"_fillout.maf\"\n        })\n    } else {\n        return self + \"_fillout.maf\"\n    }\n  }\n}"
                         },
                         {
-                            "id": "#normal_getbasecountsmultisample_1_2_5/ref_fasta",
-                            "source": "#ref_fasta"
+                            "id": "#main/normal_getbasecountsmultisample_1_2_5/ref_fasta",
+                            "source": "#main/ref_fasta"
                         },
                         {
-                            "id": "#normal_getbasecountsmultisample_1_2_5/generic_counting",
-                            "source": "#generic_counting"
+                            "id": "#main/normal_getbasecountsmultisample_1_2_5/generic_counting",
+                            "source": "#main/generic_counting"
                         }
                     ],
                     "out": [
                         {
-                            "id": "#normal_getbasecountsmultisample_1_2_5/fillout"
+                            "id": "#main/normal_getbasecountsmultisample_1_2_5/fillout"
                         }
                     ],
                     "run": "#getbasecountsmultisample_1.2.5.cwl",
                     "label": "normal_getbasecountsmultisample_1.2.5",
                     "scatter": [
-                        "#normal_getbasecountsmultisample_1_2_5/genotyping_bams",
-                        "#normal_getbasecountsmultisample_1_2_5/genotyping_bams_ids",
-                        "#normal_getbasecountsmultisample_1_2_5/output"
+                        "#main/normal_getbasecountsmultisample_1_2_5/genotyping_bams",
+                        "#main/normal_getbasecountsmultisample_1_2_5/genotyping_bams_ids",
+                        "#main/normal_getbasecountsmultisample_1_2_5/output"
                     ],
                     "scatterMethod": "dotproduct",
                     "https://www.sevenbridges.com/x": 295.84375,
@@ -710,5 +706,9 @@
     "cwlVersion": "v1.0",
     "$schemas": [
         "http://schema.org/version/latest/schemaorg-current-http.rdf"
-    ]
+    ],
+    "$namespaces": {
+        "s": "https://schema.org/",
+        "sbg": "https://www.sevenbridges.com/"
+    }
 }
