@@ -96,10 +96,6 @@ inputs:
     type: string?
     'sbg:x': 0
     'sbg:y': 1066.71875
-  - id: major_threshold
-    type: float?
-    'sbg:x': 0
-    'sbg:y': 1813.5078125
   - id: vcf_file
     type: File
     'sbg:x': 0
@@ -266,25 +262,7 @@ outputs:
     type: File
     'sbg:x': 984.2216796875
     'sbg:y': 750.8828125
-  - id: biometrics_major_plot
-    outputSource:
-      - biometrics_major_0_2_13/biometrics_major_plot
-    type: File?
-    'sbg:x': 1432.8466796875
-    'sbg:y': 1546.90625
-  - id: biometrics_major_json
-    outputSource:
-      - biometrics_major_0_2_13/biometrics_major_json
-    type: File?
-    'sbg:x': 1432.8466796875
-    'sbg:y': 1653.640625
-  - id: biometrics_major_csv
-    outputSource:
-      - biometrics_major_0_2_13/biometrics_major_csv
-    type: File
-    'sbg:x': 1432.8466796875
-    'sbg:y': 1760.375
-  - id: duplex_biometrics_extract_pickle
+  - id: biometrics_extract_pickle
     outputSource:
       - biometrics_extract_0_2_13/biometrics_extract_pickle
     type: File
@@ -402,27 +380,6 @@ steps:
     run: ../command_line_tools/sequence_qc/0.2.3/sequence_qc_0.2.3.cwl
     'sbg:x': 353.515625
     'sbg:y': 1426.328125
-  - id: biometrics_major_0_2_13
-    in:
-      - id: input
-        linkMerge: merge_nested
-        source:
-          - biometrics_extract_0_2_13/biometrics_extract_pickle
-      - id: major_threshold
-        source: major_threshold
-      - id: prefix
-        source: prefix
-      - id: plot
-        source: plot
-      - id: json
-        source: json
-    out:
-      - id: biometrics_major_csv
-      - id: biometrics_major_json
-      - id: biometrics_major_plot
-    run: ../command_line_tools/biometrics_major/0.2.13/biometrics_major.cwl
-    'sbg:x': 984.2216796875
-    'sbg:y': 2421.6640625
   - id: biometrics_extract_0_2_13
     in:
       - id: sample_bam

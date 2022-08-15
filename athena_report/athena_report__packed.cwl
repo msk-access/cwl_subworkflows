@@ -263,7 +263,31 @@
             ],
             "inputs": [
                 {
-                    "id": "#annotate_bed.cwl/general_stats_parse/panel_bed",
+                    "id": "#annotate_bed.cwl/annotate_bed/memory_per_job",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "doc": "Memory per job in megabytes"
+                },
+                {
+                    "id": "#annotate_bed.cwl/annotate_bed/memory_overhead",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "doc": "Memory overhead per job in megabytes"
+                },
+                {
+                    "id": "#annotate_bed.cwl/annotate_bed/number_of_threads",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "doc": "worker thread number"
+                },
+                {
+                    "id": "#annotate_bed.cwl/annotate_bed/panel_bed",
                     "type": "File",
                     "inputBinding": {
                         "position": 0,
@@ -272,7 +296,7 @@
                     "doc": "Input panel bed file; must have ONLY the following 4 columns chromosome, start position, end position, gene/transcript"
                 },
                 {
-                    "id": "#annotate_bed.cwl/general_stats_parse/transcript_file",
+                    "id": "#annotate_bed.cwl/annotate_bed/transcript_file",
                     "type": "File",
                     "inputBinding": {
                         "position": 0,
@@ -281,7 +305,7 @@
                     "doc": "Transcript annotation file, contains required gene and exon information. Must have ONLY the following 6 columns:\nchromosome, start, end, gene, transcript, exon"
                 },
                 {
-                    "id": "#annotate_bed.cwl/general_stats_parse/coverage_file",
+                    "id": "#annotate_bed.cwl/annotate_bed/coverage_file",
                     "type": "File",
                     "inputBinding": {
                         "position": 0,
@@ -290,7 +314,7 @@
                     "doc": "Per base coverage file (output from mosdepth or similar)"
                 },
                 {
-                    "id": "#annotate_bed.cwl/general_stats_parse/chunk_size",
+                    "id": "#annotate_bed.cwl/annotate_bed/chunk_size",
                     "type": [
                         "null",
                         "int"
@@ -301,7 +325,7 @@
                     }
                 },
                 {
-                    "id": "#annotate_bed.cwl/general_stats_parse/output_name",
+                    "id": "#annotate_bed.cwl/annotate_bed/output_name",
                     "type": [
                         "null",
                         "string"
@@ -315,7 +339,7 @@
             ],
             "outputs": [
                 {
-                    "id": "#annotate_bed.cwl/general_stats_parse/annotated_bed",
+                    "id": "#annotate_bed.cwl/annotate_bed/annotated_bed",
                     "label": "annotated_bed",
                     "type": "File",
                     "outputBinding": {
@@ -323,8 +347,13 @@
                     }
                 }
             ],
-            "label": "general_stats_parse",
+            "label": "annotate_bed",
             "requirements": [
+                {
+                    "class": "ResourceRequirement",
+                    "ramMin": 17000,
+                    "coresMin": 2
+                },
                 {
                     "class": "DockerRequirement",
                     "dockerPull": "ghcr.io/msk-access/athena:1.4.2"
@@ -339,8 +368,19 @@
                     "http://xmlns.com/foaf/0.1/member": [
                         {
                             "class": "http://xmlns.com/foaf/0.1/Person",
-                            "http://xmlns.com/foaf/0.1/mbox": "mailto:johnsoni@mskcc.org",
-                            "http://xmlns.com/foaf/0.1/name": "Ian Johnson"
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:charlk@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Carmelina Charlambous"
+                        }
+                    ],
+                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
+                },
+                {
+                    "class": "http://xmlns.com/foaf/0.1/Organization",
+                    "http://xmlns.com/foaf/0.1/member": [
+                        {
+                            "class": "http://xmlns.com/foaf/0.1/Person",
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:buehlere@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Eric Buehler"
                         }
                     ],
                     "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
@@ -352,8 +392,19 @@
                     "http://xmlns.com/foaf/0.1/member": [
                         {
                             "class": "http://xmlns.com/foaf/0.1/Person",
-                            "http://xmlns.com/foaf/0.1/mbox": "mailto:johnsoni@mskcc.org",
-                            "http://xmlns.com/foaf/0.1/name": "Ian Johnson"
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:charlk@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Carmelina Charlambous"
+                        }
+                    ],
+                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
+                },
+                {
+                    "class": "http://xmlns.com/foaf/0.1/Organization",
+                    "http://xmlns.com/foaf/0.1/member": [
+                        {
+                            "class": "http://xmlns.com/foaf/0.1/Person",
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:buehlere@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Eric Buehler"
                         }
                     ],
                     "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
@@ -378,6 +429,30 @@
                 "/app/bin/coverage_report_single.py"
             ],
             "inputs": [
+                {
+                    "id": "#coverage_report_single.cwl/general_stats_parse/memory_per_job",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "doc": "Memory per job in megabytes"
+                },
+                {
+                    "id": "#coverage_report_single.cwl/general_stats_parse/memory_overhead",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "doc": "Memory overhead per job in megabytes"
+                },
+                {
+                    "id": "#coverage_report_single.cwl/general_stats_parse/number_of_threads",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "doc": "worker thread number"
+                },
                 {
                     "id": "#coverage_report_single.cwl/general_stats_parse/exon_stats",
                     "type": "File",
@@ -503,18 +578,6 @@
                         "prefix": "-m"
                     },
                     "doc": "boolean flag to add clinical report summary text in summary section, includes list of all genes with transcripts (optional; default False)"
-                },
-                {
-                    "id": "#coverage_report_single.cwl/general_stats_parse/cores",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "--cores"
-                    },
-                    "doc": "Number of CPU cores to utilise, for larger numbers of genes this will drastically reduce run time. If not given will use maximum available"
                 }
             ],
             "outputs": [
@@ -527,7 +590,19 @@
                 }
             ],
             "label": "coverage_report_single",
+            "arguments": [
+                {
+                    "position": 0,
+                    "prefix": "--cores",
+                    "valueFrom": "${\n    if(inputs.number_of_threads)\n        return inputs.number_of_threads\n    return runtime.cores\n}"
+                }
+            ],
             "requirements": [
+                {
+                    "class": "ResourceRequirement",
+                    "ramMin": 25000,
+                    "coresMin": 6
+                },
                 {
                     "class": "DockerRequirement",
                     "dockerPull": "ghcr.io/msk-access/athena:1.4.2"
@@ -542,6 +617,17 @@
                     "http://xmlns.com/foaf/0.1/member": [
                         {
                             "class": "http://xmlns.com/foaf/0.1/Person",
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:charlk@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Carmelina Charlambous"
+                        }
+                    ],
+                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
+                },
+                {
+                    "class": "http://xmlns.com/foaf/0.1/Organization",
+                    "http://xmlns.com/foaf/0.1/member": [
+                        {
+                            "class": "http://xmlns.com/foaf/0.1/Person",
                             "http://xmlns.com/foaf/0.1/mbox": "mailto:buehlere@mskcc.org",
                             "http://xmlns.com/foaf/0.1/name": "Eric Buehler"
                         }
@@ -550,6 +636,17 @@
                 }
             ],
             "http://purl.org/dc/terms/creator": [
+                {
+                    "class": "http://xmlns.com/foaf/0.1/Organization",
+                    "http://xmlns.com/foaf/0.1/member": [
+                        {
+                            "class": "http://xmlns.com/foaf/0.1/Person",
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:charlk@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Carmelina Charlambous"
+                        }
+                    ],
+                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
+                },
                 {
                     "class": "http://xmlns.com/foaf/0.1/Organization",
                     "http://xmlns.com/foaf/0.1/member": [
@@ -581,6 +678,30 @@
                 "/app/bin/coverage_stats_single.py"
             ],
             "inputs": [
+                {
+                    "id": "#coverage_stats_single.cwl/general_stats_parse/memory_per_job",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "doc": "Memory per job in megabytes"
+                },
+                {
+                    "id": "#coverage_stats_single.cwl/general_stats_parse/memory_overhead",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "doc": "Memory overhead per job in megabytes"
+                },
+                {
+                    "id": "#coverage_stats_single.cwl/general_stats_parse/number_of_threads",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "doc": "worker thread number"
+                },
                 {
                     "id": "#coverage_stats_single.cwl/general_stats_parse/file",
                     "type": "File",
@@ -652,18 +773,6 @@
                         "prefix": "--flagstat"
                     },
                     "doc": "file for sample, required for generating run statistics (in development)"
-                },
-                {
-                    "id": "#coverage_stats_single.cwl/general_stats_parse/cores",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
-                    "inputBinding": {
-                        "position": 900,
-                        "prefix": "--cores"
-                    },
-                    "doc": "Number of CPU cores to utilise, for larger numbers of genes this will drastically reduce run time. If not given will use maximum available"
                 }
             ],
             "outputs": [
@@ -685,7 +794,19 @@
                 }
             ],
             "label": "general_stats_parse",
+            "arguments": [
+                {
+                    "position": 0,
+                    "prefix": "--cores",
+                    "valueFrom": "${\n    if(inputs.number_of_threads)\n        return inputs.number_of_threads\n    return runtime.cores\n}"
+                }
+            ],
             "requirements": [
+                {
+                    "class": "ResourceRequirement",
+                    "ramMin": 25000,
+                    "coresMin": 6
+                },
                 {
                     "class": "DockerRequirement",
                     "dockerPull": "ghcr.io/msk-access/athena:1.4.2"
@@ -700,8 +821,19 @@
                     "http://xmlns.com/foaf/0.1/member": [
                         {
                             "class": "http://xmlns.com/foaf/0.1/Person",
-                            "http://xmlns.com/foaf/0.1/mbox": "mailto:johnsoni@mskcc.org",
-                            "http://xmlns.com/foaf/0.1/name": "Ian Johnson"
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:charlk@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Carmelina Charlambous"
+                        }
+                    ],
+                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
+                },
+                {
+                    "class": "http://xmlns.com/foaf/0.1/Organization",
+                    "http://xmlns.com/foaf/0.1/member": [
+                        {
+                            "class": "http://xmlns.com/foaf/0.1/Person",
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:buehlere@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Eric Buehler"
                         }
                     ],
                     "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
@@ -713,8 +845,19 @@
                     "http://xmlns.com/foaf/0.1/member": [
                         {
                             "class": "http://xmlns.com/foaf/0.1/Person",
-                            "http://xmlns.com/foaf/0.1/mbox": "mailto:johnsoni@mskcc.org",
-                            "http://xmlns.com/foaf/0.1/name": "Ian Johnson"
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:charlk@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Carmelina Charlambous"
+                        }
+                    ],
+                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
+                },
+                {
+                    "class": "http://xmlns.com/foaf/0.1/Organization",
+                    "http://xmlns.com/foaf/0.1/member": [
+                        {
+                            "class": "http://xmlns.com/foaf/0.1/Person",
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:buehlere@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Eric Buehler"
                         }
                     ],
                     "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
