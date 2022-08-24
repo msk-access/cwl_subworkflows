@@ -141,6 +141,10 @@ inputs:
     type: int
     'sbg:x': 0
     'sbg:y': 2667.265625
+  - id: duplex_biometrics_extract_file_type
+    type: string?
+    'sbg:x': 829.6761474609375
+    'sbg:y': 1418.3421630859375
 outputs:
   - id: sequence_qc_noise_positions
     outputSource:
@@ -396,6 +400,9 @@ steps:
         source: vcf_file
       - id: min_coverage
         default: 200
+      - id: file_type
+        default: duplex
+        source: duplex_biometrics_extract_file_type
     out:
       - id: biometrics_extract_pickle
     run: ../command_line_tools/biometrics_extract/0.2.13/biometrics_extract.cwl
@@ -481,8 +488,6 @@ steps:
     'sbg:y': 1009.9375
 requirements:
   - class: SubworkflowFeatureRequirement
-  - class: InlineJavascriptRequirement
-  - class: StepInputExpressionRequirement
 $schemas:
   - 'http://schema.org/version/latest/schemaorg-current-http.rdf'
 's:author':
