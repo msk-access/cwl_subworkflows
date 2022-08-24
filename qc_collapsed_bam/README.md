@@ -82,21 +82,17 @@ This sub-workflow was designed for MSK-ACCESS and CMO-CH data. The updated v2.0 
 ### Usage v2.0
 
 ```bash
-usage: qc_collapsed_bam_v2.0.cwl [-h] --reference REFERENCE
-                            --target_intervals TARGET_INTERVALS
-                            [--bait_intervals BAIT_INTERVALS]
-                            [--json] [--plot]
-                            [--minor_threshold MINOR_THRESHOLD]
-                            [--coverage_threshold COVERAGE_THRESHOLD]
-                            [--hsmetrics_minimum_mapping_quality HSMETRICS_MINIMUM_MAPPING_QUALITY]
-                            [--hsmetrics_minimum_base_quality HSMETRICS_MINIMUM_BASE_QUALITY]
-                            [--hsmetrics_coverage_cap HSMETRICS_COVERAGE_CAP]
-                            [--prefix PREFIX]
-                            [--major_threshold MAJOR_THRESHOLD] [--json_1]
-                            --vcf_file VCF_FILE --sample_name SAMPLE_NAME
-                            [--sample_sex SAMPLE_SEX]
-                            [--sample_group SAMPLE_GROUP] --maf MAF
-                            [job_order]
+usage: qc_collapsed_bam_v2.0.cwl [-h] --reference REFERENCE --target_intervals TARGET_INTERVALS [--bait_intervals BAIT_INTERVALS] [--json] [--plot]
+                                 [--minor_threshold MINOR_THRESHOLD] [--coverage_threshold COVERAGE_THRESHOLD]
+                                 [--hsmetrics_minimum_mapping_quality HSMETRICS_MINIMUM_MAPPING_QUALITY]
+                                 [--hsmetrics_minimum_base_quality HSMETRICS_MINIMUM_BASE_QUALITY] [--hsmetrics_coverage_cap HSMETRICS_COVERAGE_CAP]
+                                 [--prefix PREFIX] [--major_threshold MAJOR_THRESHOLD] [--json_1] --vcf_file VCF_FILE --sample_name SAMPLE_NAME
+                                 [--sample_sex SAMPLE_SEX] [--sample_group SAMPLE_GROUP] --maf MAF [--bed_file BED_FILE] [--omaf] --filter_duplicate
+                                 FILTER_DUPLICATE --fragment_count FRAGMENT_COUNT [--generic_counting]
+                                 [--collapsed_biometrics_extract_file_type COLLAPSED_BIOMETRICS_EXTRACT_FILE_TYPE]
+                                 [job_order]
+
+Calcualte Quality Control Metrics from All-Unique/Collapsed BAM
 
 positional arguments:
   job_order             Job input json file
@@ -104,21 +100,15 @@ positional arguments:
 optional arguments:
   -h, --help            show this help message and exit
   --reference REFERENCE
-  --pool_b_target_intervals POOL_B_TARGET_INTERVALS
-  --pool_a_target_intervals POOL_A_TARGET_INTERVALS
-  --pool_a_bait_intervals POOL_A_BAIT_INTERVALS
-                        Optional set of intervals over which to restrict
-                        analysis. [Optional].
-  --pool_b_bait_intervals POOL_B_BAIT_INTERVALS
-                        Optional set of intervals over which to restrict
-                        analysis. [Optional].
+  --target_intervals TARGET_INTERVALS
+  --bait_intervals BAIT_INTERVALS
+                        Optional set of intervals over which to restrict analysis. [Optional].
   --json                Also output data in JSON format.
   --plot                Also output plots of the data.
   --minor_threshold MINOR_THRESHOLD
                         Minor contamination threshold for bad sample.
   --coverage_threshold COVERAGE_THRESHOLD
-                        Samples with Y chromosome above this value will be
-                        considered male.
+                        Samples with Y chromosome above this value will be considered male.
   --hsmetrics_minimum_mapping_quality HSMETRICS_MINIMUM_MAPPING_QUALITY
   --hsmetrics_minimum_base_quality HSMETRICS_MINIMUM_BASE_QUALITY
   --hsmetrics_coverage_cap HSMETRICS_COVERAGE_CAP
@@ -130,4 +120,10 @@ optional arguments:
   --sample_sex SAMPLE_SEX
   --sample_group SAMPLE_GROUP
   --maf MAF
+  --bed_file BED_FILE
+  --omaf
+  --filter_duplicate FILTER_DUPLICATE
+  --fragment_count FRAGMENT_COUNT
+  --generic_counting
+  --collapsed_biometrics_extract_file_type COLLAPSED_BIOMETRICS_EXTRACT_FILE_TYPE
 ```

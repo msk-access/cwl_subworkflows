@@ -128,6 +128,10 @@ inputs:
     type: boolean?
     'sbg:x': 0
     'sbg:y': 1923.75
+  - id: collapsed_biometrics_extract_file_type
+    type: string?
+    'sbg:x': 723.521240234375
+    'sbg:y': 1204.8056640625
 outputs:
   - id: fgbio_collect_duplex_seq_metrics_duplex_family_size
     outputSource:
@@ -474,6 +478,9 @@ steps:
         source: vcf_file
       - id: bed_file
         source: bed_file
+      - id: file_type
+        default: collapsed
+        source: collapsed_biometrics_extract_file_type
     out:
       - id: biometrics_extract_pickle
     run: ../command_line_tools/biometrics_extract/0.2.13/biometrics_extract.cwl
@@ -515,8 +522,6 @@ steps:
     'sbg:y': 940.1875
 requirements:
   - class: SubworkflowFeatureRequirement
-  - class: InlineJavascriptRequirement
-  - class: StepInputExpressionRequirement
 $schemas:
   - 'http://schema.org/version/latest/schemaorg-current-http.rdf'
 's:author':

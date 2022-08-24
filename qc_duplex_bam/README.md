@@ -102,6 +102,7 @@ usage: qc_duplex_bam_v2.0.cwl [-h] --reference REFERENCE --target_intervals
                               VCF_FILE [--sample_sex SAMPLE_SEX]
                               [--sample_group SAMPLE_GROUP] --maf MAF
                               [--bed BED] [--flag FLAG] [--mapq MAPQ]
+                              [--duplex_biometrics_extract_file_type DUPLEX_BIOMETRICS_EXTRACT_FILE_TYPE]
                               [job_order]
 
 positional arguments:
@@ -136,5 +137,6 @@ optional arguments:
                         with mosdepth
   --flag FLAG
   --mapq MAPQ
+  --duplex_biometrics_extract_file_type DUPLEX_BIOMETRICS_EXTRACT_FILE_TYPE
+
   ```
-  
