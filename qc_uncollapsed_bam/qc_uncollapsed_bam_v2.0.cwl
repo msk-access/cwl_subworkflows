@@ -187,6 +187,8 @@ steps:
         default: unsorted
       - id: validation_stringency
         default: SILENT
+      - id: create_index
+        default: true
     out:
       - id: gatk_revert_sam_output
       - id: gatk_revert_sam_output_map
