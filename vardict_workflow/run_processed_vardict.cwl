@@ -103,7 +103,7 @@ steps:
       - id: vcf_complex
       - id: vcf
     run: >-
-      ../command_line_tools/postprocessing_variant_calls/0.1.4/pv_vardict_single_filter.cwl
+      ../command_line_tools/postprocessing_variant_calls/0.1.5/pv_vardict_single_filter.cwl
     'sbg:x': 1.4255318641662598
     'sbg:y': -197.1702117919922
   - id: variants_concat
