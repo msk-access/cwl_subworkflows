@@ -1797,7 +1797,10 @@
                     "type": "File",
                     "outputBinding": {
                         "glob": "${\n  if(inputs.output){\n      return inputs.output\n  } else {\n      return inputs.input.basename.replace(/.bam|.sam/, '_revertsam.bam')\n  }\n}"
-                    }
+                    },
+                    "secondaryFiles": [
+                        "^.bai"
+                    ]
                 },
                 {
                     "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_4_1_8_0/gatk_revert_sam_output_map",
@@ -2200,6 +2203,10 @@
                         {
                             "id": "#main/gatk_revert_sam_4_1_8_0/validation_stringency",
                             "default": "SILENT"
+                        },
+                        {
+                            "id": "#main/gatk_revert_sam_4_1_8_0/create_index",
+                            "default": true
                         }
                     ],
                     "out": [
