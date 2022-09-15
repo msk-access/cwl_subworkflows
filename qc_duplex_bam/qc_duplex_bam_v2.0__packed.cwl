@@ -466,14 +466,6 @@
                         "prefix": "--default-genotype"
                     },
                     "doc": "Default genotype if coverage is too low (options are Het or Hom)."
-                },
-                {
-                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_13/file_type",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "doc": "Specify the type of bam file you are generating the pickle for to be incorporated in pickle file name (Myeloid_1_L001_duplex.pickle)"
                 }
             ],
             "outputs": [
@@ -481,8 +473,7 @@
                     "id": "#biometrics_extract.cwl/biometrics_extract_0_2_13/biometrics_extract_pickle",
                     "type": "File",
                     "outputBinding": {
-                        "glob": "${\n  if (inputs.database) {\n    return inputs.database + '/' + inputs.sample_name + '.pickle';\n  }\n  else {\n    return inputs.sample_name + '.pickle';\n  }\n}",
-                        "outputEval": "${\n   if (inputs.file_type) {\n     self[0].basename = inputs.sample_name + '_' + inputs.file_type + \".pickle\";\n     return self;\n   }\n   else {\n     return self;\n   }\n}"
+                        "glob": "${\n  if (inputs.database) {\n    return inputs.database + '/' + inputs.sample_name + '.pickle';\n  } else {\n    return inputs.sample_name + '.pickle';\n  }\n}"
                     }
                 }
             ],
@@ -508,16 +499,6 @@
                             "class": "http://xmlns.com/foaf/0.1/Person",
                             "http://xmlns.com/foaf/0.1/mbox": "mailto:murphyc4@mskcc.org",
                             "http://xmlns.com/foaf/0.1/name": "Charlie Murphy"
-                        },
-                        {
-                            "class": "http://xmlns.com/foaf/0.1/Person",
-                            "http://xmlns.com/foaf/0.1/mbox": "mailto:shahr2@mskcc.org",
-                            "http://xmlns.com/foaf/0.1/name": "Ronak Shah"
-                        },
-                        {
-                            "class": "http://xmlns.com/foaf/0.1/Person",
-                            "http://xmlns.com/foaf/0.1/mbox": "mailto:charlk@mskcc.org",
-                            "http://xmlns.com/foaf/0.1/name": "Carmelina Charlambous"
                         }
                     ],
                     "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
@@ -2596,15 +2577,6 @@
                     "type": "int",
                     "https://www.sevenbridges.com/x": 0,
                     "https://www.sevenbridges.com/y": 2667.265625
-                },
-                {
-                    "id": "#main/duplex_biometrics_extract_file_type",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "https://www.sevenbridges.com/x": 829.6761474609375,
-                    "https://www.sevenbridges.com/y": 1418.3421630859375
                 }
             ],
             "outputs": [
@@ -3065,11 +3037,6 @@
                         {
                             "id": "#main/biometrics_extract_0_2_13/min_coverage",
                             "default": 200
-                        },
-                        {
-                            "id": "#main/biometrics_extract_0_2_13/file_type",
-                            "default": "duplex",
-                            "source": "#main/duplex_biometrics_extract_file_type"
                         }
                     ],
                     "out": [
@@ -3234,6 +3201,12 @@
             "requirements": [
                 {
                     "class": "SubworkflowFeatureRequirement"
+                },
+                {
+                    "class": "InlineJavascriptRequirement"
+                },
+                {
+                    "class": "StepInputExpressionRequirement"
                 }
             ],
             "https://schema.org/author": [
