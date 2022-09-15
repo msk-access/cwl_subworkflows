@@ -466,6 +466,14 @@
                         "prefix": "--default-genotype"
                     },
                     "doc": "Default genotype if coverage is too low (options are Het or Hom)."
+                },
+                {
+                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_13/file_type",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "doc": "Specify the type of bam file you are generating the pickle for to be incorporated in pickle file name (Myeloid_1_L001_duplex.pickle)"
                 }
             ],
             "outputs": [
@@ -473,7 +481,8 @@
                     "id": "#biometrics_extract.cwl/biometrics_extract_0_2_13/biometrics_extract_pickle",
                     "type": "File",
                     "outputBinding": {
-                        "glob": "${\n  if (inputs.database) {\n    return inputs.database + '/' + inputs.sample_name + '.pickle';\n  } else {\n    return inputs.sample_name + '.pickle';\n  }\n}"
+                        "glob": "${\n  if (inputs.database) {\n    return inputs.database + '/' + inputs.sample_name + '.pickle';\n  }\n  else {\n    return inputs.sample_name + '.pickle';\n  }\n}",
+                        "outputEval": "${\n   if (inputs.file_type) {\n     self[0].basename = inputs.sample_name + '_' + inputs.file_type + \".pickle\";\n     return self;\n   }\n   else {\n     return self;\n   }\n}"
                     }
                 }
             ],
@@ -499,6 +508,16 @@
                             "class": "http://xmlns.com/foaf/0.1/Person",
                             "http://xmlns.com/foaf/0.1/mbox": "mailto:murphyc4@mskcc.org",
                             "http://xmlns.com/foaf/0.1/name": "Charlie Murphy"
+                        },
+                        {
+                            "class": "http://xmlns.com/foaf/0.1/Person",
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:shahr2@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Ronak Shah"
+                        },
+                        {
+                            "class": "http://xmlns.com/foaf/0.1/Person",
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:charlk@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Carmelina Charlambous"
                         }
                     ],
                     "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
