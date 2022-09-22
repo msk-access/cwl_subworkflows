@@ -1270,624 +1270,10 @@
             ]
         },
         {
-            "class": "CommandLineTool",
-            "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl",
-            "baseCommand": [
-                "gatk",
-                "MeanQualityByCycle"
-            ],
-            "inputs": [
-                {
-                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/gatk_mean_quality_by_cycle_4_1_8_0/input",
-                    "type": "File",
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "-I"
-                    },
-                    "doc": "An aligned SAM or BAM file.  Required."
-                },
-                {
-                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/gatk_mean_quality_by_cycle_4_1_8_0/output_file_name",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "doc": "The output file to write the metrics to."
-                },
-                {
-                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/gatk_mean_quality_by_cycle_4_1_8_0/chart_output",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "doc": "A file (with .pdf extension) to write the chart to."
-                },
-                {
-                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/gatk_mean_quality_by_cycle_4_1_8_0/assume_sorted",
-                    "type": [
-                        "null",
-                        "boolean"
-                    ],
-                    "inputBinding": {
-                        "position": 1,
-                        "prefix": "--ASSUME_SORTED"
-                    },
-                    "doc": "If true (default), then the sort order in the header file will be ignored.\n"
-                },
-                {
-                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/gatk_mean_quality_by_cycle_4_1_8_0/pf_reads_only",
-                    "type": [
-                        "null",
-                        "boolean"
-                    ],
-                    "inputBinding": {
-                        "position": 1,
-                        "prefix": "--PF_READS_ONLY"
-                    },
-                    "doc": "If set to true calculate mean quality over PF reads only.  Default value: false. Possible values: {true, false}\n"
-                },
-                {
-                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/gatk_mean_quality_by_cycle_4_1_8_0/reference",
-                    "type": [
-                        "null",
-                        "File"
-                    ],
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "-R"
-                    },
-                    "doc": "Reference sequence file. Note that while this argument is not required, without it only a small subset of the metrics will be calculated. Note also that if a reference sequence is provided, it must be accompanied by a sequence dictionary.  Default value: null.",
-                    "secondaryFiles": [
-                        "^.fasta.fai",
-                        "^.dict"
-                    ]
-                },
-                {
-                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/gatk_mean_quality_by_cycle_4_1_8_0/validation_stringency",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "--VALIDATION_STRINGENCY"
-                    },
-                    "doc": "Validation stringency for all SAM files read by this program.  Setting stringency to SILENT can improve performance when processing a BAM file in which variable-length data (read, qualities, tags) do not otherwise need to be decoded.  Default value: STRICT. This option can be set to 'null' to clear the default value. Possible values: {STRICT,LENIENT, SILENT}"
-                },
-                {
-                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/gatk_mean_quality_by_cycle_4_1_8_0/create_index",
-                    "type": [
-                        "null",
-                        "boolean"
-                    ],
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "--CREATE_INDEX"
-                    },
-                    "doc": "Whether to create a BAM index when writing a coordinate-sorted BAM file. Default value: false. Possible values: {true, false}"
-                },
-                {
-                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/gatk_mean_quality_by_cycle_4_1_8_0/create_md5_file",
-                    "type": [
-                        "null",
-                        "boolean"
-                    ],
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "--CREATE_MD5_FILE"
-                    },
-                    "doc": "Whether to create an MD5 digest for any BAM or FASTQ files created. Default value: false. Possible values: {true, false}"
-                },
-                {
-                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/gatk_mean_quality_by_cycle_4_1_8_0/memory_per_job",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
-                    "doc": "Memory per job in megabytes"
-                },
-                {
-                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/gatk_mean_quality_by_cycle_4_1_8_0/memory_overhead",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
-                    "doc": "Memory overhead per job in megabytes"
-                },
-                {
-                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/gatk_mean_quality_by_cycle_4_1_8_0/number_of_threads",
-                    "type": [
-                        "null",
-                        "int"
-                    ]
-                },
-                {
-                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/gatk_mean_quality_by_cycle_4_1_8_0/temporary_directory",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "doc": "Directory with space available to be used by this program for temporary storage of working files."
-                }
-            ],
-            "outputs": [
-                {
-                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/gatk_mean_quality_by_cycle_4_1_8_0/gatk_mean_quality_by_cycle_output",
-                    "type": "File",
-                    "outputBinding": {
-                        "glob": "${\n    if(inputs.output_file_name){\n        return inputs.output_file_name\n    } else {\n        return inputs.input.basename.replace(/.bam/, '_mean_quality_by_cycle.txt')\n    }\n}"
-                    }
-                },
-                {
-                    "id": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl/gatk_mean_quality_by_cycle_4_1_8_0/gatk_mean_quality_by_cycle_chart_output",
-                    "type": "File",
-                    "outputBinding": {
-                        "glob": "${\n    if(inputs.chart_output){\n        return inputs.chart_output\n    } else {\n        return inputs.input.basename.replace(/.bam/, '_mean_quality_by_cycle.pdf')\n    }\n}"
-                    }
-                }
-            ],
-            "label": "GATK-MeanQualityByCycle",
-            "arguments": [
-                {
-                    "position": 0,
-                    "prefix": "--java-options",
-                    "valueFrom": "${\n  if(inputs.memory_per_job && inputs.memory_overhead) {\n    if(inputs.memory_per_job % 1000 == 0) {\n      return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\"\n    }\n    else {\n      return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\"\n    }\n  }\n  else if (inputs.memory_per_job && !inputs.memory_overhead){\n    if(inputs.memory_per_job % 1000 == 0) {\n      return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\"\n    }\n    else {\n      return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\"\n    }\n  }\n  else if(!inputs.memory_per_job && inputs.memory_overhead){\n    return \"-Xmx14G\"\n  }\n  else {\n      return \"-Xmx14G\"\n  }\n}"
-                },
-                {
-                    "position": 0,
-                    "prefix": "--TMP_DIR",
-                    "valueFrom": "${\n    if(inputs.temporary_directory) {\n      return inputs.temporary_directory;\n    }\n    return runtime.tmpdir;\n}"
-                },
-                {
-                    "position": 0,
-                    "prefix": "-O",
-                    "valueFrom": "${\n    if(inputs.output_file_name){\n        return inputs.output_file_name\n    } else {\n        return inputs.input.basename.replace(/.bam/, '_mean_quality_by_cycle.txt')\n    }\n}"
-                },
-                {
-                    "position": 0,
-                    "prefix": "--CHART_OUTPUT",
-                    "valueFrom": "${\n    if(inputs.chart_output){\n        return inputs.chart_output\n    } else {\n        return inputs.input.basename.replace(/.bam/, '_mean_quality_by_cycle.pdf')\n    }\n}"
-                }
-            ],
-            "requirements": [
-                {
-                    "class": "ResourceRequirement",
-                    "ramMin": 16000,
-                    "coresMin": 2
-                },
-                {
-                    "class": "DockerRequirement",
-                    "dockerPull": "ghcr.io/msk-access/gatk:4.1.8.0"
-                },
-                {
-                    "class": "InlineJavascriptRequirement"
-                }
-            ],
-            "http://purl.org/dc/terms/contributor": [
-                {
-                    "class": "http://xmlns.com/foaf/0.1/Organization",
-                    "http://xmlns.com/foaf/0.1/member": [
-                        {
-                            "class": "http://xmlns.com/foaf/0.1/Person",
-                            "http://xmlns.com/foaf/0.1/mbox": "mailto:murphyc4@mskcc.org",
-                            "http://xmlns.com/foaf/0.1/name": "Charles Murphy"
-                        }
-                    ],
-                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
-                }
-            ],
-            "http://purl.org/dc/terms/creator": [
-                {
-                    "class": "http://xmlns.com/foaf/0.1/Organization",
-                    "http://xmlns.com/foaf/0.1/member": [
-                        {
-                            "class": "http://xmlns.com/foaf/0.1/Person",
-                            "http://xmlns.com/foaf/0.1/mbox": "mailto:murphyc4@mskcc.org",
-                            "http://xmlns.com/foaf/0.1/name": "Charles Murphy"
-                        }
-                    ],
-                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
-                }
-            ],
-            "http://usefulinc.com/ns/doap#release": [
-                {
-                    "class": "http://usefulinc.com/ns/doap#Version",
-                    "http://usefulinc.com/ns/doap#name": "gatk4",
-                    "http://usefulinc.com/ns/doap#revision": "4.1.8.0"
-                }
-            ]
-        },
-        {
-            "class": "CommandLineTool",
-            "id": "#gatk_revert_sam_4.1.8.0.cwl",
-            "baseCommand": [
-                "gatk",
-                "RevertSam"
-            ],
-            "inputs": [
-                {
-                    "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_4_1_8_0/input",
-                    "type": "File",
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "-I"
-                    },
-                    "doc": "An aligned SAM or BAM file.  Required."
-                },
-                {
-                    "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_4_1_8_0/output",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "doc": "The output SAM/BAM file to create, or an output directory if OUTPUT_BY_READGROUP is true. Required.  Cannot be used in conjunction with argument(s) OUTPUT_MAP (OM)"
-                },
-                {
-                    "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_4_1_8_0/output_map",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "doc": "Tab separated file with two columns, READ_GROUP_ID and OUTPUT, providing file mapping only used if OUTPUT_BY_READGROUP is true.  Required.  Cannot be used in conjunction with argument(s) OUTPUT (O)"
-                },
-                {
-                    "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_4_1_8_0/attribute_to_clear",
-                    "type": [
-                        "null",
-                        {
-                            "type": "array",
-                            "items": "string",
-                            "inputBinding": {
-                                "position": 0,
-                                "prefix": "--ATTRIBUTE_TO_CLEAR"
-                            }
-                        }
-                    ],
-                    "doc": "When removing alignment information, the set of optional tags to remove.  This may be specified 0 or more times. Default value: [NM, UQ, PG, MD, MQ, SA, MC, AS]."
-                },
-                {
-                    "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_4_1_8_0/max_discard_fraction",
-                    "type": [
-                        "null",
-                        "float"
-                    ],
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "--MAX_DISCARD_FRACTION"
-                    },
-                    "doc": "If SANITIZE=true and higher than MAX_DISCARD_FRACTION reads are discarded due to sanitization thenthe program will exit with an Exception instead of exiting cleanly. Output BAM will still be valid.  Default value: 0.01."
-                },
-                {
-                    "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_4_1_8_0/library_name",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "--LIBRARY_NAME"
-                    },
-                    "doc": "The library name to use in the reverted output file.  This will override the existing sample alias in the file and is used only if all the read groups in the input file have the same library name.  Default value: null."
-                },
-                {
-                    "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_4_1_8_0/max_records_in_ram",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "--MAX_RECORDS_IN_RAM"
-                    },
-                    "doc": "When writing files that need to be sorted, this will specify the number of records stored in RAM before spilling to disk. Increasing this number reduces the number of file handles needed to sort the file, and increases the amount of RAM needed.  Default value: 500000."
-                },
-                {
-                    "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_4_1_8_0/output_by_readgroup",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "default": "false",
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "--OUTPUT_BY_READGROUP"
-                    },
-                    "doc": "When true, outputs each read group in a separate file.  Default value: false. Possible values: {true, false}"
-                },
-                {
-                    "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_4_1_8_0/output_by_readgroup_file_format",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "--OUTPUT_BY_READGROUP_FILE_FORMAT"
-                    },
-                    "doc": "When using OUTPUT_BY_READGROUP, the output file format can be set to a certain format. Default value: dynamic. sam (Generate SAM files.) bam (Generate BAM files.) cram (Generate CRAM files.) dynamic (Generate files based on the extention of INPUT.)"
-                },
-                {
-                    "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_4_1_8_0/remove_alignment_information",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "default": "true",
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "--REMOVE_ALIGNMENT_INFORMATION"
-                    },
-                    "doc": "Remove all alignment information from the file.  Default value: true. Possible values: {true, false}"
-                },
-                {
-                    "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_4_1_8_0/remove_duplicate_information",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "default": "true",
-                    "inputBinding": {
-                        "position": 1,
-                        "prefix": "--REMOVE_DUPLICATE_INFORMATION"
-                    },
-                    "doc": "Remove duplicate read flags from all reads.  Note that if this is false and\nREMOVE_ALIGNMENT_INFORMATION==true,  the output may have the unusual but sometimes\ndesirable trait of having unmapped reads that are marked as duplicates.  Default value:\ntrue. Possible values: {true, false}\n"
-                },
-                {
-                    "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_4_1_8_0/restore_hardclips",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "default": "true",
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "--RESTORE_HARDCLIPS"
-                    },
-                    "doc": "When true, restores reads and qualities of records with hard-clips containing XB and XQ tags.  Default value: true. Possible values: {true, false}"
-                },
-                {
-                    "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_4_1_8_0/restore_original_qualities",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "default": "true",
-                    "inputBinding": {
-                        "position": 1,
-                        "prefix": "--RESTORE_ORIGINAL_QUALITIES"
-                    },
-                    "doc": "True to restore original qualities from the OQ field to the QUAL field if available. Default value: true. Possible values: {true, false}\n"
-                },
-                {
-                    "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_4_1_8_0/sample_alias",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "inputBinding": {
-                        "position": 1,
-                        "prefix": "--SAMPLE_ALIAS"
-                    },
-                    "doc": "The sample alias to use in the reverted output file.  This will override the existing\nsample alias in the file and is used only if all the read groups in the input file have\nthe same sample alias.  Default value: null.\n"
-                },
-                {
-                    "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_4_1_8_0/sanitize",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "default": "false",
-                    "inputBinding": {
-                        "position": 1,
-                        "prefix": "--SANITIZE"
-                    },
-                    "doc": "WARNING: This option is potentially destructive. If enabled will discard reads in order to\nproduce a consistent output BAM. Reads discarded include (but are not limited to) paired\nreads with missing mates, duplicated records, records with mismatches in length of bases\nand qualities. This option can only be enabled if the output sort order is queryname and\nwill always cause sorting to occur.  Default value: false. Possible values: {true, false}\n"
-                },
-                {
-                    "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_4_1_8_0/sort_order",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "inputBinding": {
-                        "position": 1,
-                        "prefix": "--SORT_ORDER"
-                    },
-                    "doc": "The sort order to create the reverted output file with.  Default value: queryname. Possible values: {unsorted, queryname, coordinate, duplicate, unknown}\n"
-                },
-                {
-                    "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_4_1_8_0/reference",
-                    "type": [
-                        "null",
-                        "File"
-                    ],
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "-R"
-                    },
-                    "doc": "Reference sequence file. Note that while this argument is not required, without it only a small subset of the metrics will be calculated. Note also that if a reference sequence is provided, it must be accompanied by a sequence dictionary.  Default value: null.",
-                    "secondaryFiles": [
-                        "^.fasta.fai",
-                        "^.dict"
-                    ]
-                },
-                {
-                    "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_4_1_8_0/validation_stringency",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "--VALIDATION_STRINGENCY"
-                    },
-                    "doc": "Validation stringency for all SAM files read by this program.  Setting stringency to SILENT can improve performance when processing a BAM file in which variable-length data (read, qualities, tags) do not otherwise need to be decoded.  Default value: STRICT. This option can be set to 'null' to clear the default value. Possible values: {STRICT,LENIENT, SILENT}"
-                },
-                {
-                    "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_4_1_8_0/compression_level",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "--COMPRESSION_LEVEL"
-                    },
-                    "doc": "Compression level for all compressed files created (e.g. BAM and VCF).  Default value: 2."
-                },
-                {
-                    "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_4_1_8_0/create_index",
-                    "type": [
-                        "null",
-                        "boolean"
-                    ],
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "--CREATE_INDEX"
-                    },
-                    "doc": "Whether to create a BAM index when writing a coordinate-sorted BAM file. Default value: false. Possible values: {true, false}"
-                },
-                {
-                    "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_4_1_8_0/create_md5_file",
-                    "type": [
-                        "null",
-                        "boolean"
-                    ],
-                    "inputBinding": {
-                        "position": 0,
-                        "prefix": "--CREATE_MD5_FILE"
-                    },
-                    "doc": "Whether to create an MD5 digest for any BAM or FASTQ files created. Default value: false. Possible values: {true, false}"
-                },
-                {
-                    "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_4_1_8_0/memory_per_job",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
-                    "doc": "Memory per job in megabytes"
-                },
-                {
-                    "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_4_1_8_0/memory_overhead",
-                    "type": [
-                        "null",
-                        "int"
-                    ],
-                    "doc": "Memory overhead per job in megabytes"
-                },
-                {
-                    "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_4_1_8_0/number_of_threads",
-                    "type": [
-                        "null",
-                        "int"
-                    ]
-                },
-                {
-                    "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_4_1_8_0/temporary_directory",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "doc": "Default value: null. This option may be specified 0 or more times."
-                }
-            ],
-            "outputs": [
-                {
-                    "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_4_1_8_0/gatk_revert_sam_output",
-                    "type": "File",
-                    "outputBinding": {
-                        "glob": "${\n  if(inputs.output){\n      return inputs.output\n  } else {\n      return inputs.input.basename.replace(/.bam|.sam/, '_revertsam.bam')\n  }\n}"
-                    },
-                    "secondaryFiles": [
-                        "^.bai"
-                    ]
-                },
-                {
-                    "id": "#gatk_revert_sam_4.1.8.0.cwl/gatk_revert_sam_4_1_8_0/gatk_revert_sam_output_map",
-                    "type": [
-                        "null",
-                        "File"
-                    ],
-                    "outputBinding": {
-                        "glob": "${\n  if(inputs.output_map){\n      return inputs.output_map\n  } else {\n      return inputs.input.basename.replace(/.bam|.sam/, '_revertsam.tsv')\n  }\n}"
-                    }
-                }
-            ],
-            "label": "GATK-RevertSam",
-            "arguments": [
-                {
-                    "position": 0,
-                    "prefix": "--java-options",
-                    "valueFrom": "${\n  if(inputs.memory_per_job && inputs.memory_overhead) {\n    if(inputs.memory_per_job % 1000 == 0) {\n      return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\"\n    }\n    else {\n      return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\"\n    }\n  }\n  else if (inputs.memory_per_job && !inputs.memory_overhead){\n    if(inputs.memory_per_job % 1000 == 0) {\n      return \"-Xmx\" + (inputs.memory_per_job/1000).toString() + \"G\"\n    }\n    else {\n      return \"-Xmx\" + Math.floor((inputs.memory_per_job/1000)).toString() + \"G\"\n    }\n  }\n  else if(!inputs.memory_per_job && inputs.memory_overhead){\n    return \"-Xmx15G\"\n  }\n  else {\n      return \"-Xmx15G\"\n  }\n}"
-                },
-                {
-                    "position": 0,
-                    "prefix": "--TMP_DIR",
-                    "valueFrom": "${\n    if(inputs.temporary_directory)\n        return inputs.temporary_directory;\n      return runtime.tmpdir\n}"
-                },
-                {
-                    "position": 0,
-                    "prefix": "-O",
-                    "valueFrom": "${\n    if(inputs.output){\n        return inputs.output;\n    } else if (inputs.output_map) {\n      return null;\n    } else {\n        return inputs.input.basename.replace(/.bam|.sam/, '_revertsam.bam');\n    }\n}"
-                },
-                {
-                    "position": 0,
-                    "prefix": "-OM",
-                    "valueFrom": "${\n    if(inputs.output_map){\n        return inputs.output_map;\n    } else {\n        return null;\n    }\n}"
-                }
-            ],
-            "requirements": [
-                {
-                    "class": "ResourceRequirement",
-                    "ramMin": 17000,
-                    "coresMin": 2
-                },
-                {
-                    "class": "DockerRequirement",
-                    "dockerPull": "ghcr.io/msk-access/gatk:4.1.8.0"
-                },
-                {
-                    "class": "InlineJavascriptRequirement"
-                }
-            ],
-            "http://purl.org/dc/terms/contributor": [
-                {
-                    "class": "http://xmlns.com/foaf/0.1/Organization",
-                    "http://xmlns.com/foaf/0.1/member": [
-                        {
-                            "class": "http://xmlns.com/foaf/0.1/Person",
-                            "http://xmlns.com/foaf/0.1/mbox": "mailto:murphyc4@mskcc.org",
-                            "http://xmlns.com/foaf/0.1/name": "Charles Murphy"
-                        }
-                    ],
-                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
-                }
-            ],
-            "http://purl.org/dc/terms/creator": [
-                {
-                    "class": "http://xmlns.com/foaf/0.1/Organization",
-                    "http://xmlns.com/foaf/0.1/member": [
-                        {
-                            "class": "http://xmlns.com/foaf/0.1/Person",
-                            "http://xmlns.com/foaf/0.1/mbox": "mailto:murphyc4@mskcc.org",
-                            "http://xmlns.com/foaf/0.1/name": "Charles Murphy"
-                        }
-                    ],
-                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
-                }
-            ],
-            "http://usefulinc.com/ns/doap#release": [
-                {
-                    "class": "http://usefulinc.com/ns/doap#Version",
-                    "http://usefulinc.com/ns/doap#name": "gatk4",
-                    "http://usefulinc.com/ns/doap#revision": "4.1.8.0"
-                }
-            ]
-        },
-        {
             "class": "Workflow",
             "id": "#main",
-            "label": "qc_uncollapsed_bam",
+            "doc": "Calcualte Quality Control Metrics from Simplex BAM",
+            "label": "qc_simplex_bam",
             "inputs": [
                 {
                     "id": "#main/reference",
@@ -1897,51 +1283,31 @@
                         "^.dict"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 267.2265625
+                    "https://www.sevenbridges.com/y": 213.28125
                 },
                 {
-                    "id": "#main/uncollapsed_bam_base_recal",
-                    "type": [
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
-                    "label": "uncollapsed_bam_base_recal",
+                    "id": "#main/simplex_bam",
+                    "type": "File",
+                    "label": "simplex_bam",
                     "secondaryFiles": [
                         "^.bai"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 160.3359375
+                    "https://www.sevenbridges.com/y": 106.671875
                 },
                 {
-                    "id": "#main/pool_b_target_intervals",
+                    "id": "#main/bait_intervals",
                     "type": "File",
-                    "label": "pool_b_target_intervals",
+                    "label": "bait_intervals",
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 374.1171875
+                    "https://www.sevenbridges.com/y": 640.09375
                 },
                 {
-                    "id": "#main/pool_b_bait_intervals",
+                    "id": "#main/target_intervals",
                     "type": "File",
-                    "label": "pool_b_bait_intervals",
+                    "label": "target_intervals",
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 481.0078125
-                },
-                {
-                    "id": "#main/pool_a_bait_intervals",
-                    "type": "File",
-                    "label": "pool_a_bait_intervals",
-                    "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 694.7890625
-                },
-                {
-                    "id": "#main/pool_a_target_intervals",
-                    "type": "File",
-                    "label": "pool_a_target_intervals",
-                    "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 587.8984375
+                    "https://www.sevenbridges.com/y": 0
                 },
                 {
                     "id": "#main/hsmetrics_minimum_mapping_quality",
@@ -1950,7 +1316,7 @@
                         "int"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 801.6796875
+                    "https://www.sevenbridges.com/y": 319.953125
                 },
                 {
                     "id": "#main/hsmetrics_minimum_base_quality",
@@ -1959,7 +1325,7 @@
                         "int"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 908.5703125
+                    "https://www.sevenbridges.com/y": 426.6875
                 },
                 {
                     "id": "#main/hsmetrics_coverage_cap",
@@ -1968,430 +1334,157 @@
                         "int"
                     ],
                     "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 1015.4609375
+                    "https://www.sevenbridges.com/y": 533.421875
                 }
             ],
             "outputs": [
                 {
-                    "id": "#main/gatk_collect_alignment_summary_metrics_txt_pool_b",
+                    "id": "#main/gatk_collect_alignment_summary_metrics_txt",
                     "outputSource": [
-                        "#main/bam_qc_stats_pool_b/gatk_collect_alignment_summary_metrics_txt"
+                        "#main/bam_qc_stats/gatk_collect_alignment_summary_metrics_txt"
                     ],
-                    "type": [
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
-                    "label": "gatk_collect_alignment_summary_metrics_txt_pool_b",
-                    "https://www.sevenbridges.com/x": 1369.4512939453125,
-                    "https://www.sevenbridges.com/y": 1068.90625
+                    "type": "File",
+                    "label": "gatk_collect_alignment_summary_metrics_txt",
+                    "https://www.sevenbridges.com/x": 982.1435546875,
+                    "https://www.sevenbridges.com/y": 586.8515625
                 },
                 {
-                    "id": "#main/gatk_collect_hs_metrics_per_base_coverage_txt_pool_b",
+                    "id": "#main/gatk_collect_hs_metrics_per_base_coverage_txt",
                     "outputSource": [
-                        "#main/bam_qc_stats_pool_b/gatk_collect_hs_metrics_per_base_coverage_txt"
+                        "#main/bam_qc_stats/gatk_collect_hs_metrics_per_base_coverage_txt"
                     ],
-                    "type": [
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
-                    "label": "gatk_collect_hs_metrics_per_base_coverage_txt_pool_b",
-                    "https://www.sevenbridges.com/x": 1369.4512939453125,
-                    "https://www.sevenbridges.com/y": 855.125
+                    "type": "File",
+                    "label": "gatk_collect_hs_metrics_per_base_coverage_txt",
+                    "https://www.sevenbridges.com/x": 982.1435546875,
+                    "https://www.sevenbridges.com/y": 480.1171875
                 },
                 {
-                    "id": "#main/gatk_collect_hs_metrics_per_target_coverage_txt_pool_b",
+                    "id": "#main/gatk_collect_hs_metrics_per_target_coverage_txt",
                     "outputSource": [
-                        "#main/bam_qc_stats_pool_b/gatk_collect_hs_metrics_per_target_coverage_txt"
+                        "#main/bam_qc_stats/gatk_collect_hs_metrics_per_target_coverage_txt"
                     ],
-                    "type": [
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
-                    "label": "gatk_collect_hs_metrics_per_target_coverage_txt_pool_b",
-                    "https://www.sevenbridges.com/x": 1369.4512939453125,
-                    "https://www.sevenbridges.com/y": 641.34375
+                    "type": "File",
+                    "label": "gatk_collect_hs_metrics_per_target_coverage_txt",
+                    "https://www.sevenbridges.com/x": 982.1435546875,
+                    "https://www.sevenbridges.com/y": 373.3828125
                 },
                 {
-                    "id": "#main/gatk_collect_hs_metrics_txt_pool_b",
+                    "id": "#main/gatk_collect_hs_metrics_txt",
                     "outputSource": [
-                        "#main/bam_qc_stats_pool_b/gatk_collect_hs_metrics_txt"
+                        "#main/bam_qc_stats/gatk_collect_hs_metrics_txt"
                     ],
-                    "type": [
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
-                    "label": "gatk_collect_hs_metrics_txt_pool_b",
-                    "https://www.sevenbridges.com/x": 1369.4512939453125,
-                    "https://www.sevenbridges.com/y": 427.5625
+                    "type": "File",
+                    "label": "gatk_collect_hs_metrics_txt",
+                    "https://www.sevenbridges.com/x": 982.1435546875,
+                    "https://www.sevenbridges.com/y": 266.6484375
                 },
                 {
-                    "id": "#main/gatk_collect_insert_size_metrics_histogram_pdf_pool_b",
+                    "id": "#main/gatk_collect_insert_size_metrics_histogram_pdf",
                     "outputSource": [
-                        "#main/bam_qc_stats_pool_b/gatk_collect_insert_size_metrics_histogram_pdf"
+                        "#main/bam_qc_stats/gatk_collect_insert_size_metrics_histogram_pdf"
                     ],
-                    "type": [
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
-                    "label": "gatk_collect_insert_size_metrics_histogram_pdf_pool_b",
-                    "https://www.sevenbridges.com/x": 1369.4512939453125,
-                    "https://www.sevenbridges.com/y": 213.78125
+                    "type": "File",
+                    "label": "gatk_collect_insert_size_metrics_histogram_pdf",
+                    "https://www.sevenbridges.com/x": 982.1435546875,
+                    "https://www.sevenbridges.com/y": 159.9140625
                 },
                 {
-                    "id": "#main/gatk_collect_insert_size_metrics_txt_pool_b",
+                    "id": "#main/gatk_collect_insert_size_metrics_txt",
                     "outputSource": [
-                        "#main/bam_qc_stats_pool_b/gatk_collect_insert_size_metrics_txt"
+                        "#main/bam_qc_stats/gatk_collect_insert_size_metrics_txt"
                     ],
-                    "type": [
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
-                    "label": "gatk_collect_insert_size_metrics_txt_pool_b",
-                    "https://www.sevenbridges.com/x": 1369.4512939453125,
-                    "https://www.sevenbridges.com/y": 0
-                },
-                {
-                    "id": "#main/gatk_collect_alignment_summary_metrics_txt_pool_a",
-                    "outputSource": [
-                        "#main/bam_qc_stats_pool_a/gatk_collect_alignment_summary_metrics_txt"
-                    ],
-                    "type": [
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
-                    "label": "gatk_collect_alignment_summary_metrics_txt_pool_a",
-                    "https://www.sevenbridges.com/x": 1369.4512939453125,
-                    "https://www.sevenbridges.com/y": 1175.796875
-                },
-                {
-                    "id": "#main/gatk_collect_hs_metrics_per_base_coverage_txt_pool_a",
-                    "outputSource": [
-                        "#main/bam_qc_stats_pool_a/gatk_collect_hs_metrics_per_base_coverage_txt"
-                    ],
-                    "type": [
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
-                    "label": "gatk_collect_hs_metrics_per_base_coverage_txt_pool_a",
-                    "https://www.sevenbridges.com/x": 1369.4512939453125,
-                    "https://www.sevenbridges.com/y": 962.015625
-                },
-                {
-                    "id": "#main/gatk_collect_hs_metrics_per_target_coverage_txt_pool_a",
-                    "outputSource": [
-                        "#main/bam_qc_stats_pool_a/gatk_collect_hs_metrics_per_target_coverage_txt"
-                    ],
-                    "type": [
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
-                    "label": "gatk_collect_hs_metrics_per_target_coverage_txt_pool_a",
-                    "https://www.sevenbridges.com/x": 1369.4512939453125,
-                    "https://www.sevenbridges.com/y": 748.234375
-                },
-                {
-                    "id": "#main/gatk_collect_hs_metrics_txt_pool_a",
-                    "outputSource": [
-                        "#main/bam_qc_stats_pool_a/gatk_collect_hs_metrics_txt"
-                    ],
-                    "type": [
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
-                    "label": "gatk_collect_hs_metrics_txt_pool_a",
-                    "https://www.sevenbridges.com/x": 1369.4512939453125,
-                    "https://www.sevenbridges.com/y": 534.453125
-                },
-                {
-                    "id": "#main/gatk_collect_insert_size_metrics_histogram_pdf_pool_a",
-                    "outputSource": [
-                        "#main/bam_qc_stats_pool_a/gatk_collect_insert_size_metrics_histogram_pdf"
-                    ],
-                    "type": [
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
-                    "label": "gatk_collect_insert_size_metrics_histogram_pdf_pool_a",
-                    "https://www.sevenbridges.com/x": 1369.4512939453125,
-                    "https://www.sevenbridges.com/y": 320.671875
-                },
-                {
-                    "id": "#main/gatk_collect_insert_size_metrics_txt_pool_a",
-                    "outputSource": [
-                        "#main/bam_qc_stats_pool_a/gatk_collect_insert_size_metrics_txt"
-                    ],
-                    "type": [
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
-                    "label": "gatk_collect_insert_size_metrics_txt_pool_a",
-                    "https://www.sevenbridges.com/x": 1369.4512939453125,
-                    "https://www.sevenbridges.com/y": 106.890625
-                },
-                {
-                    "id": "#main/gatk_mean_quality_by_cycle_output_base_recal",
-                    "outputSource": [
-                        "#main/gatk_mean_quality_by_cycle_4_1_8_1/gatk_mean_quality_by_cycle_output"
-                    ],
-                    "type": [
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
-                    "label": "gatk_mean_quality_by_cycle_output_base_recal",
-                    "https://www.sevenbridges.com/x": 738.7452392578125,
-                    "https://www.sevenbridges.com/y": 343.5625
-                },
-                {
-                    "id": "#main/gatk_mean_quality_by_cycle_chart_output_base_recal",
-                    "outputSource": [
-                        "#main/gatk_mean_quality_by_cycle_4_1_8_1/gatk_mean_quality_by_cycle_chart_output"
-                    ],
-                    "type": [
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
-                    "label": "gatk_mean_quality_by_cycle_chart_output_base_recal",
-                    "https://www.sevenbridges.com/x": 738.7452392578125,
-                    "https://www.sevenbridges.com/y": 450.453125
+                    "type": "File",
+                    "label": "gatk_collect_insert_size_metrics_txt",
+                    "https://www.sevenbridges.com/x": 982.1435546875,
+                    "https://www.sevenbridges.com/y": 53.1796875
                 }
             ],
             "steps": [
                 {
-                    "id": "#main/bam_qc_stats_pool_a",
+                    "id": "#main/bam_qc_stats",
                     "in": [
                         {
-                            "id": "#main/bam_qc_stats_pool_a/input",
+                            "id": "#main/bam_qc_stats/input",
                             "source": [
-                                "#main/gatk_revert_sam_4_1_8_0/gatk_revert_sam_output"
+                                "#main/simplex_bam"
                             ]
                         },
                         {
-                            "id": "#main/bam_qc_stats_pool_a/target_intervals",
-                            "source": "#main/pool_a_target_intervals"
+                            "id": "#main/bam_qc_stats/target_intervals",
+                            "source": "#main/target_intervals"
                         },
                         {
-                            "id": "#main/bam_qc_stats_pool_a/bait_intervals",
-                            "source": "#main/pool_a_bait_intervals"
+                            "id": "#main/bam_qc_stats/bait_intervals",
+                            "source": "#main/bait_intervals"
                         },
                         {
-                            "id": "#main/bam_qc_stats_pool_a/reference",
+                            "id": "#main/bam_qc_stats/reference",
                             "source": "#main/reference"
                         },
                         {
-                            "id": "#main/bam_qc_stats_pool_a/hsmetrics_minimum_mapping_quality",
+                            "id": "#main/bam_qc_stats/hsmetrics_minimum_mapping_quality",
                             "source": "#main/hsmetrics_minimum_mapping_quality"
                         },
                         {
-                            "id": "#main/bam_qc_stats_pool_a/hsmetrics_minimum_base_quality",
+                            "id": "#main/bam_qc_stats/hsmetrics_minimum_base_quality",
                             "source": "#main/hsmetrics_minimum_base_quality"
                         },
                         {
-                            "id": "#main/bam_qc_stats_pool_a/hsmetrics_coverage_cap",
+                            "id": "#main/bam_qc_stats/hsmetrics_coverage_cap",
                             "source": "#main/hsmetrics_coverage_cap"
                         }
                     ],
                     "out": [
                         {
-                            "id": "#main/bam_qc_stats_pool_a/gatk_collect_insert_size_metrics_histogram_pdf"
+                            "id": "#main/bam_qc_stats/gatk_collect_insert_size_metrics_histogram_pdf"
                         },
                         {
-                            "id": "#main/bam_qc_stats_pool_a/gatk_collect_insert_size_metrics_txt"
+                            "id": "#main/bam_qc_stats/gatk_collect_insert_size_metrics_txt"
                         },
                         {
-                            "id": "#main/bam_qc_stats_pool_a/gatk_collect_hs_metrics_txt"
+                            "id": "#main/bam_qc_stats/gatk_collect_hs_metrics_txt"
                         },
                         {
-                            "id": "#main/bam_qc_stats_pool_a/gatk_collect_hs_metrics_per_base_coverage_txt"
+                            "id": "#main/bam_qc_stats/gatk_collect_hs_metrics_per_base_coverage_txt"
                         },
                         {
-                            "id": "#main/bam_qc_stats_pool_a/gatk_collect_hs_metrics_per_target_coverage_txt"
+                            "id": "#main/bam_qc_stats/gatk_collect_hs_metrics_per_target_coverage_txt"
                         },
                         {
-                            "id": "#main/bam_qc_stats_pool_a/gatk_collect_alignment_summary_metrics_txt"
+                            "id": "#main/bam_qc_stats/gatk_collect_alignment_summary_metrics_txt"
                         }
                     ],
                     "run": "#bam_qc_stats.cwl",
-                    "label": "bam_qc_stats_pool_a",
-                    "https://www.sevenbridges.com/x": 738.7452392578125,
-                    "https://www.sevenbridges.com/y": 790.234375
-                },
-                {
-                    "id": "#main/bam_qc_stats_pool_b",
-                    "in": [
-                        {
-                            "id": "#main/bam_qc_stats_pool_b/input",
-                            "source": [
-                                "#main/gatk_revert_sam_4_1_8_0/gatk_revert_sam_output"
-                            ]
-                        },
-                        {
-                            "id": "#main/bam_qc_stats_pool_b/target_intervals",
-                            "source": "#main/pool_b_target_intervals"
-                        },
-                        {
-                            "id": "#main/bam_qc_stats_pool_b/bait_intervals",
-                            "source": "#main/pool_b_bait_intervals"
-                        },
-                        {
-                            "id": "#main/bam_qc_stats_pool_b/reference",
-                            "source": "#main/reference"
-                        },
-                        {
-                            "id": "#main/bam_qc_stats_pool_b/hsmetrics_minimum_mapping_quality",
-                            "source": "#main/hsmetrics_minimum_mapping_quality"
-                        },
-                        {
-                            "id": "#main/bam_qc_stats_pool_b/hsmetrics_minimum_base_quality",
-                            "source": "#main/hsmetrics_minimum_base_quality"
-                        },
-                        {
-                            "id": "#main/bam_qc_stats_pool_b/hsmetrics_coverage_cap",
-                            "source": "#main/hsmetrics_coverage_cap"
-                        }
-                    ],
-                    "out": [
-                        {
-                            "id": "#main/bam_qc_stats_pool_b/gatk_collect_insert_size_metrics_histogram_pdf"
-                        },
-                        {
-                            "id": "#main/bam_qc_stats_pool_b/gatk_collect_insert_size_metrics_txt"
-                        },
-                        {
-                            "id": "#main/bam_qc_stats_pool_b/gatk_collect_hs_metrics_txt"
-                        },
-                        {
-                            "id": "#main/bam_qc_stats_pool_b/gatk_collect_hs_metrics_per_base_coverage_txt"
-                        },
-                        {
-                            "id": "#main/bam_qc_stats_pool_b/gatk_collect_hs_metrics_per_target_coverage_txt"
-                        },
-                        {
-                            "id": "#main/bam_qc_stats_pool_b/gatk_collect_alignment_summary_metrics_txt"
-                        }
-                    ],
-                    "run": "#bam_qc_stats.cwl",
-                    "label": "bam_qc_stats_pool_b",
-                    "https://www.sevenbridges.com/x": 738.7452392578125,
-                    "https://www.sevenbridges.com/y": 599.34375
-                },
-                {
-                    "id": "#main/gatk_mean_quality_by_cycle_4_1_8_1",
-                    "in": [
-                        {
-                            "id": "#main/gatk_mean_quality_by_cycle_4_1_8_1/input",
-                            "source": "#main/uncollapsed_bam_base_recal"
-                        },
-                        {
-                            "id": "#main/gatk_mean_quality_by_cycle_4_1_8_1/reference",
-                            "source": "#main/reference"
-                        }
-                    ],
-                    "out": [
-                        {
-                            "id": "#main/gatk_mean_quality_by_cycle_4_1_8_1/gatk_mean_quality_by_cycle_output"
-                        },
-                        {
-                            "id": "#main/gatk_mean_quality_by_cycle_4_1_8_1/gatk_mean_quality_by_cycle_chart_output"
-                        }
-                    ],
-                    "run": "#gatk_mean_quality_by_cycle_4.1.8.0.cwl",
-                    "label": "GATK-MeanQualityByCycle_base_recal",
+                    "label": "bam_qc_stats",
                     "https://www.sevenbridges.com/x": 351.4375,
-                    "https://www.sevenbridges.com/y": 701.7890625
-                },
-                {
-                    "id": "#main/gatk_revert_sam_4_1_8_0",
-                    "in": [
-                        {
-                            "id": "#main/gatk_revert_sam_4_1_8_0/input",
-                            "source": "#main/uncollapsed_bam_base_recal"
-                        },
-                        {
-                            "id": "#main/gatk_revert_sam_4_1_8_0/remove_alignment_information",
-                            "default": "false"
-                        },
-                        {
-                            "id": "#main/gatk_revert_sam_4_1_8_0/remove_duplicate_information",
-                            "default": "true"
-                        },
-                        {
-                            "id": "#main/gatk_revert_sam_4_1_8_0/restore_hardclips",
-                            "default": "false"
-                        },
-                        {
-                            "id": "#main/gatk_revert_sam_4_1_8_0/restore_original_qualities",
-                            "default": "false"
-                        },
-                        {
-                            "id": "#main/gatk_revert_sam_4_1_8_0/sort_order",
-                            "default": "unsorted"
-                        },
-                        {
-                            "id": "#main/gatk_revert_sam_4_1_8_0/validation_stringency",
-                            "default": "SILENT"
-                        }
-                    ],
-                    "out": [
-                        {
-                            "id": "#main/gatk_revert_sam_4_1_8_0/gatk_revert_sam_output"
-                        },
-                        {
-                            "id": "#main/gatk_revert_sam_4_1_8_0/gatk_revert_sam_output_map"
-                        }
-                    ],
-                    "run": "#gatk_revert_sam_4.1.8.0.cwl",
-                    "label": "GATK-RevertSam",
-                    "https://www.sevenbridges.com/x": 351.4375,
-                    "https://www.sevenbridges.com/y": 580.8984375
+                    "https://www.sevenbridges.com/y": 278.078125
                 }
             ],
             "requirements": [
                 {
                     "class": "SubworkflowFeatureRequirement"
                 }
-            ]
+            ],
+            "https://schema.org/author": [
+                {
+                    "class": "https://schema.org/Person",
+                    "https://schema.org/email": "mailto:charalk@mskcc.org",
+                    "https://schema.org/identifier": "",
+                    "https://schema.org/name": "Carmelina Charalambous"
+                }
+            ],
+            "https://schema.org/citation": "",
+            "https://schema.org/codeRepository": "https://github.com/msk-access/uncollapsed_bam_generation",
+            "https://schema.org/contributor": [
+                {
+                    "class": "https://schema.org/Person",
+                    "https://schema.org/email": "mailto:shahr2@mskcc.org",
+                    "https://schema.org/identifier": "https://orcid.org/0000-0001-9042-6213",
+                    "https://schema.org/name": "Ronak Shah"
+                }
+            ],
+            "https://schema.org/dateCreated": "2022-03-23",
+            "https://schema.org/license": "https://spdx.org/licenses/Apache-2.0"
         }
     ],
     "cwlVersion": "v1.0",
@@ -2399,6 +1492,7 @@
         "http://schema.org/version/latest/schemaorg-current-http.rdf"
     ],
     "$namespaces": {
+        "s": "https://schema.org/",
         "sbg": "https://www.sevenbridges.com/"
     }
 }

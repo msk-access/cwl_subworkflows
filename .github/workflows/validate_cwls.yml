@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: [3.6, 3.7]
+        python-version: [3.7, 3.8, 3.9]
     steps:
       - uses: actions/checkout@v2
         with:
@@ -23,7 +23,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install cwltool
         run: |
-          python -m pip install toil[cwl]==4.2.0
+          python -m pip install toil[cwl]==5.7.1
       - uses: actions/checkout@v2
       - name: Validate
         run: |

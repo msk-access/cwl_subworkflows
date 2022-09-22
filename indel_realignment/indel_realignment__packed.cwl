@@ -8,7 +8,7 @@
             ],
             "inputs": [
                 {
-                    "id": "#abra2_2.22.cwl/memory_per_job",
+                    "id": "#abra2_2.22.cwl/abra2_2_22/memory_per_job",
                     "type": [
                         "null",
                         "int"
@@ -16,7 +16,7 @@
                     "doc": "Memory per job in megabytes"
                 },
                 {
-                    "id": "#abra2_2.22.cwl/memory_overhead",
+                    "id": "#abra2_2.22.cwl/abra2_2_22/memory_overhead",
                     "type": [
                         "null",
                         "int"
@@ -24,14 +24,14 @@
                     "doc": "Memory overhead per job in megabytes"
                 },
                 {
-                    "id": "#abra2_2.22.cwl/number_of_threads",
+                    "id": "#abra2_2.22.cwl/abra2_2_22/number_of_threads",
                     "type": [
                         "null",
                         "int"
                     ]
                 },
                 {
-                    "id": "#abra2_2.22.cwl/input_bam",
+                    "id": "#abra2_2.22.cwl/abra2_2_22/input_bam",
                     "type": [
                         "File",
                         {
@@ -49,7 +49,7 @@
                     ]
                 },
                 {
-                    "id": "#abra2_2.22.cwl/working_directory",
+                    "id": "#abra2_2.22.cwl/abra2_2_22/working_directory",
                     "type": [
                         "null",
                         "string"
@@ -57,7 +57,7 @@
                     "doc": "Set the temp directory (overrides java.io.tmpdir)"
                 },
                 {
-                    "id": "#abra2_2.22.cwl/reference_fasta",
+                    "id": "#abra2_2.22.cwl/abra2_2_22/reference_fasta",
                     "type": "File",
                     "inputBinding": {
                         "position": 0,
@@ -69,7 +69,7 @@
                     ]
                 },
                 {
-                    "id": "#abra2_2.22.cwl/targets",
+                    "id": "#abra2_2.22.cwl/abra2_2_22/targets",
                     "type": "File",
                     "inputBinding": {
                         "position": 0,
@@ -77,7 +77,7 @@
                     }
                 },
                 {
-                    "id": "#abra2_2.22.cwl/kmer_size",
+                    "id": "#abra2_2.22.cwl/abra2_2_22/kmer_size",
                     "type": [
                         "null",
                         "string"
@@ -89,7 +89,7 @@
                     "doc": "Optional assembly kmer size(delimit with commas if multiple sizes specified)"
                 },
                 {
-                    "id": "#abra2_2.22.cwl/maximum_average_depth",
+                    "id": "#abra2_2.22.cwl/abra2_2_22/maximum_average_depth",
                     "type": [
                         "null",
                         "int"
@@ -101,7 +101,7 @@
                     "doc": "Regions with average depth exceeding this value will be downsampled (default: 1000)"
                 },
                 {
-                    "id": "#abra2_2.22.cwl/soft_clip_contig",
+                    "id": "#abra2_2.22.cwl/abra2_2_22/soft_clip_contig",
                     "type": [
                         "null",
                         "string"
@@ -113,7 +113,7 @@
                     "doc": "Soft clip contig args [max_contigs,min_base_qual,frac_high_qual_bases,min_soft_clip_len] (default:16,13,80,15)"
                 },
                 {
-                    "id": "#abra2_2.22.cwl/maximum_mixmatch_rate",
+                    "id": "#abra2_2.22.cwl/abra2_2_22/maximum_mixmatch_rate",
                     "type": [
                         "null",
                         "float"
@@ -125,7 +125,7 @@
                     "doc": "Max allowed mismatch rate when mapping reads back to contigs (default: 0.05)"
                 },
                 {
-                    "id": "#abra2_2.22.cwl/scoring_gap_alignments",
+                    "id": "#abra2_2.22.cwl/abra2_2_22/scoring_gap_alignments",
                     "type": [
                         "null",
                         "string"
@@ -137,7 +137,7 @@
                     "doc": "Scoring used for contig alignments(match, mismatch_penalty,gap_open_penalty,gap_extend_penalty) (default:8,32,48,1)"
                 },
                 {
-                    "id": "#abra2_2.22.cwl/contig_anchor",
+                    "id": "#abra2_2.22.cwl/abra2_2_22/contig_anchor",
                     "type": [
                         "null",
                         "string"
@@ -149,7 +149,7 @@
                     "doc": "Contig anchor [M_bases_at_contig_edge,max_mismatches_near_edge] (default:10,2)"
                 },
                 {
-                    "id": "#abra2_2.22.cwl/window_size",
+                    "id": "#abra2_2.22.cwl/abra2_2_22/window_size",
                     "type": [
                         "null",
                         "string"
@@ -161,7 +161,7 @@
                     "doc": "Processing window size and overlap\n(size,overlap) (default: 400,200)"
                 },
                 {
-                    "id": "#abra2_2.22.cwl/consensus_sequence",
+                    "id": "#abra2_2.22.cwl/abra2_2_22/consensus_sequence",
                     "type": [
                         "null",
                         "boolean"
@@ -173,7 +173,7 @@
                     "doc": "Use positional consensus sequence when aligning high quality soft clipping"
                 },
                 {
-                    "id": "#abra2_2.22.cwl/output_bams",
+                    "id": "#abra2_2.22.cwl/abra2_2_22/output_bams",
                     "type": [
                         "string",
                         {
@@ -188,7 +188,7 @@
                     "doc": "Required list of output sam or bam file (s) separated by comma"
                 },
                 {
-                    "id": "#abra2_2.22.cwl/ignore_bad_assembly",
+                    "id": "#abra2_2.22.cwl/abra2_2_22/ignore_bad_assembly",
                     "type": [
                         "null",
                         "boolean"
@@ -200,7 +200,7 @@
                     "doc": "Use this option to avoid parsing errors for corrupted assemblies"
                 },
                 {
-                    "id": "#abra2_2.22.cwl/bam_index",
+                    "id": "#abra2_2.22.cwl/abra2_2_22/bam_index",
                     "type": [
                         "null",
                         "boolean"
@@ -212,7 +212,7 @@
                     "doc": "Enable BAM index generation when outputting sorted alignments (may require additonal memory)"
                 },
                 {
-                    "id": "#abra2_2.22.cwl/input_vcf",
+                    "id": "#abra2_2.22.cwl/abra2_2_22/input_vcf",
                     "type": [
                         "null",
                         "File"
@@ -224,7 +224,7 @@
                     "doc": "VCF containing known (or suspected) variant sites.  Very large files should be avoided."
                 },
                 {
-                    "id": "#abra2_2.22.cwl/no_edge_complex_indel",
+                    "id": "#abra2_2.22.cwl/abra2_2_22/no_edge_complex_indel",
                     "type": [
                         "null",
                         "boolean"
@@ -236,7 +236,7 @@
                     "doc": "Prevent output of complex indels at read start or read end"
                 },
                 {
-                    "id": "#abra2_2.22.cwl/no_sort",
+                    "id": "#abra2_2.22.cwl/abra2_2_22/no_sort",
                     "type": [
                         "null",
                         "boolean"
@@ -246,25 +246,6 @@
                         "prefix": "--nosort"
                     },
                     "doc": "Do not attempt to sort final output"
-                }
-            ],
-            "outputs": [
-                {
-                    "id": "#abra2_2.22.cwl/abra_realigned_bam",
-                    "type": [
-                        "null",
-                        "File",
-                        {
-                            "type": "array",
-                            "items": "File"
-                        }
-                    ],
-                    "outputBinding": {
-                        "glob": "${\n    return inputs.output_bams\n}"
-                    },
-                    "secondaryFiles": [
-                        "^.bai"
-                    ]
                 }
             ],
             "label": "abra2_2.22",
@@ -336,10 +317,25 @@
                     "http://usefulinc.com/ns/doap#revision": 2.22
                 }
             ],
-            "$namespaces": {
-                "s": "https://schema.org/",
-                "sbg": "https://www.sevenbridges.com/"
-            }
+            "outputs": [
+                {
+                    "id": "#abra2_2.22.cwl/abra2_2_22/abra_realigned_bam",
+                    "type": [
+                        "null",
+                        "File",
+                        {
+                            "type": "array",
+                            "items": "File"
+                        }
+                    ],
+                    "outputBinding": {
+                        "glob": "${\n    return inputs.output_bams\n}"
+                    },
+                    "secondaryFiles": [
+                        "^.bai"
+                    ]
+                }
+            ]
         },
         {
             "class": "CommandLineTool",
@@ -350,7 +346,7 @@
             ],
             "inputs": [
                 {
-                    "id": "#bedtools_genomecov_v2.28.0_cv2.cwl/input",
+                    "id": "#bedtools_genomecov_v2.28.0_cv2.cwl/bedtools_genomecov/input",
                     "type": "File",
                     "inputBinding": {
                         "position": 5,
@@ -363,35 +359,35 @@
                     ]
                 },
                 {
-                    "id": "#bedtools_genomecov_v2.28.0_cv2.cwl/output_file_name",
+                    "id": "#bedtools_genomecov_v2.28.0_cv2.cwl/bedtools_genomecov/output_file_name",
                     "type": [
                         "null",
                         "string"
                     ]
                 },
                 {
-                    "id": "#bedtools_genomecov_v2.28.0_cv2.cwl/memory_overhead",
+                    "id": "#bedtools_genomecov_v2.28.0_cv2.cwl/bedtools_genomecov/memory_overhead",
                     "type": [
                         "null",
                         "int"
                     ]
                 },
                 {
-                    "id": "#bedtools_genomecov_v2.28.0_cv2.cwl/memory_per_job",
+                    "id": "#bedtools_genomecov_v2.28.0_cv2.cwl/bedtools_genomecov/memory_per_job",
                     "type": [
                         "null",
                         "int"
                     ]
                 },
                 {
-                    "id": "#bedtools_genomecov_v2.28.0_cv2.cwl/number_of_threads",
+                    "id": "#bedtools_genomecov_v2.28.0_cv2.cwl/bedtools_genomecov/number_of_threads",
                     "type": [
                         "null",
                         "int"
                     ]
                 },
                 {
-                    "id": "#bedtools_genomecov_v2.28.0_cv2.cwl/option_bedgraph",
+                    "id": "#bedtools_genomecov_v2.28.0_cv2.cwl/bedtools_genomecov/option_bedgraph",
                     "type": [
                         "null",
                         "boolean"
@@ -406,7 +402,7 @@
             ],
             "outputs": [
                 {
-                    "id": "#bedtools_genomecov_v2.28.0_cv2.cwl/bedtools_genomecove_bedgraph",
+                    "id": "#bedtools_genomecov_v2.28.0_cv2.cwl/bedtools_genomecov/bedtools_genomecove_bedgraph",
                     "type": "File",
                     "outputBinding": {
                         "glob": "${\n     if (inputs.output_file_name)\n      return inputs.output_file_name;\n    return inputs.input.basename.replace('.bam','.bedgraph');\n  }"
@@ -475,7 +471,7 @@
             ],
             "inputs": [
                 {
-                    "id": "#bedtools_merge_v2.28.0_cv2.cwl/input",
+                    "id": "#bedtools_merge_v2.28.0_cv2.cwl/bedtools_merge/input",
                     "type": "File",
                     "inputBinding": {
                         "position": 5,
@@ -485,28 +481,28 @@
                     "doc": "BEDgraph format file generated from Bedtools Genomecov module"
                 },
                 {
-                    "id": "#bedtools_merge_v2.28.0_cv2.cwl/output_file_name",
+                    "id": "#bedtools_merge_v2.28.0_cv2.cwl/bedtools_merge/output_file_name",
                     "type": [
                         "null",
                         "string"
                     ]
                 },
                 {
-                    "id": "#bedtools_merge_v2.28.0_cv2.cwl/memory_overhead",
+                    "id": "#bedtools_merge_v2.28.0_cv2.cwl/bedtools_merge/memory_overhead",
                     "type": [
                         "null",
                         "int"
                     ]
                 },
                 {
-                    "id": "#bedtools_merge_v2.28.0_cv2.cwl/memory_per_job",
+                    "id": "#bedtools_merge_v2.28.0_cv2.cwl/bedtools_merge/memory_per_job",
                     "type": [
                         "null",
                         "int"
                     ]
                 },
                 {
-                    "id": "#bedtools_merge_v2.28.0_cv2.cwl/number_of_threads",
+                    "id": "#bedtools_merge_v2.28.0_cv2.cwl/bedtools_merge/number_of_threads",
                     "type": [
                         "null",
                         "int"
@@ -514,7 +510,7 @@
                 },
                 {
                     "default": 0,
-                    "id": "#bedtools_merge_v2.28.0_cv2.cwl/distance_between_features",
+                    "id": "#bedtools_merge_v2.28.0_cv2.cwl/bedtools_merge/distance_between_features",
                     "type": [
                         "null",
                         "int"
@@ -529,7 +525,7 @@
             ],
             "outputs": [
                 {
-                    "id": "#bedtools_merge_v2.28.0_cv2.cwl/bedtools_merge_bed",
+                    "id": "#bedtools_merge_v2.28.0_cv2.cwl/bedtools_merge/bedtools_merge_bed",
                     "type": "File",
                     "outputBinding": {
                         "glob": "${\n    if (inputs.output_file_name)\n      return inputs.output_file_name;\n    return inputs.input.basename.replace('.bedgraph', '.bed');\n  }"
@@ -597,7 +593,7 @@
             ],
             "inputs": [
                 {
-                    "id": "#picard_fix_mate_information_4.1.8.1.cwl/memory_per_job",
+                    "id": "#picard_fix_mate_information_4.1.8.1.cwl/picard_fix_mate_information_4_1_8_1/memory_per_job",
                     "type": [
                         "null",
                         "int"
@@ -605,7 +601,7 @@
                     "doc": "Memory per job in megabytes"
                 },
                 {
-                    "id": "#picard_fix_mate_information_4.1.8.1.cwl/memory_overhead",
+                    "id": "#picard_fix_mate_information_4.1.8.1.cwl/picard_fix_mate_information_4_1_8_1/memory_overhead",
                     "type": [
                         "null",
                         "int"
@@ -613,14 +609,14 @@
                     "doc": "Memory overhead per job in megabytes"
                 },
                 {
-                    "id": "#picard_fix_mate_information_4.1.8.1.cwl/number_of_threads",
+                    "id": "#picard_fix_mate_information_4.1.8.1.cwl/picard_fix_mate_information_4_1_8_1/number_of_threads",
                     "type": [
                         "null",
                         "int"
                     ]
                 },
                 {
-                    "id": "#picard_fix_mate_information_4.1.8.1.cwl/input",
+                    "id": "#picard_fix_mate_information_4.1.8.1.cwl/picard_fix_mate_information_4_1_8_1/input",
                     "type": "File",
                     "inputBinding": {
                         "position": 0,
@@ -629,7 +625,7 @@
                     "doc": "The input file to fix.  This option may be specified 0 or more times"
                 },
                 {
-                    "id": "#picard_fix_mate_information_4.1.8.1.cwl/output_file_name",
+                    "id": "#picard_fix_mate_information_4.1.8.1.cwl/picard_fix_mate_information_4_1_8_1/output_file_name",
                     "type": [
                         "null",
                         "string"
@@ -637,7 +633,7 @@
                     "doc": "Output file name (bam or sam). Not Required"
                 },
                 {
-                    "id": "#picard_fix_mate_information_4.1.8.1.cwl/sort_order",
+                    "id": "#picard_fix_mate_information_4.1.8.1.cwl/picard_fix_mate_information_4_1_8_1/sort_order",
                     "type": [
                         "null",
                         "string"
@@ -649,7 +645,7 @@
                     "doc": "Optional sort order to output in. If not supplied OUTPUT is in the same order as INPUT.Default value: null. Possible values: {unsorted, queryname, coordinate}"
                 },
                 {
-                    "id": "#picard_fix_mate_information_4.1.8.1.cwl/validation_stringency",
+                    "id": "#picard_fix_mate_information_4.1.8.1.cwl/picard_fix_mate_information_4_1_8_1/validation_stringency",
                     "type": [
                         "null",
                         "string"
@@ -661,7 +657,7 @@
                     "doc": "Validation stringency for all SAM files read by this program.  Setting stringency to SILENT can improve performance when processing a BAM file in which variable-length data (read, qualities, tags) do not otherwise need to be decoded.  Default value: STRICT. This option can be set to 'null' to clear the default value. Possible values: {STRICT,LENIENT, SILENT}"
                 },
                 {
-                    "id": "#picard_fix_mate_information_4.1.8.1.cwl/bam_compression_level",
+                    "id": "#picard_fix_mate_information_4.1.8.1.cwl/picard_fix_mate_information_4_1_8_1/bam_compression_level",
                     "type": [
                         "null",
                         "int"
@@ -673,7 +669,7 @@
                     "doc": "Compression level for all compressed files created (e.g. BAM and GELI). Default value:5. This option can be set to 'null' to clear the default value."
                 },
                 {
-                    "id": "#picard_fix_mate_information_4.1.8.1.cwl/use_jdk_deflater",
+                    "id": "#picard_fix_mate_information_4.1.8.1.cwl/picard_fix_mate_information_4_1_8_1/use_jdk_deflater",
                     "type": [
                         "null",
                         "boolean"
@@ -685,7 +681,7 @@
                     "doc": "Use the JDK Deflater instead of the Intel Deflater for writing compressed output"
                 },
                 {
-                    "id": "#picard_fix_mate_information_4.1.8.1.cwl/use_jdk_inflater",
+                    "id": "#picard_fix_mate_information_4.1.8.1.cwl/picard_fix_mate_information_4_1_8_1/use_jdk_inflater",
                     "type": [
                         "null",
                         "boolean"
@@ -698,7 +694,7 @@
                 },
                 {
                     "default": true,
-                    "id": "#picard_fix_mate_information_4.1.8.1.cwl/create_bam_index",
+                    "id": "#picard_fix_mate_information_4.1.8.1.cwl/picard_fix_mate_information_4_1_8_1/create_bam_index",
                     "type": [
                         "null",
                         "boolean"
@@ -710,7 +706,7 @@
                     "doc": "Whether to create a BAM index when writing a coordinate-sorted BAM file. Default value:false. This option can be set to 'null' to clear the default value. Possible values:{true, false}"
                 },
                 {
-                    "id": "#picard_fix_mate_information_4.1.8.1.cwl/temporary_directory",
+                    "id": "#picard_fix_mate_information_4.1.8.1.cwl/picard_fix_mate_information_4_1_8_1/temporary_directory",
                     "type": [
                         "null",
                         "string"
@@ -720,7 +716,7 @@
             ],
             "outputs": [
                 {
-                    "id": "#picard_fix_mate_information_4.1.8.1.cwl/picard_fix_mate_information_bam",
+                    "id": "#picard_fix_mate_information_4.1.8.1.cwl/picard_fix_mate_information_4_1_8_1/picard_fix_mate_information_bam",
                     "type": "File",
                     "outputBinding": {
                         "glob": "${\n    if(inputs.output_file_name){\n        return inputs.output_file_name\n    } else {\n        return inputs.input.basename.replace(/.bam/,'_fm.bam')\n    }\n}"
@@ -818,7 +814,7 @@
             "label": "indel_realignment",
             "inputs": [
                 {
-                    "id": "#window_size",
+                    "id": "#main/window_size",
                     "type": [
                         "null",
                         "string"
@@ -827,7 +823,7 @@
                     "https://www.sevenbridges.com/y": 0
                 },
                 {
-                    "id": "#soft_clip_contig",
+                    "id": "#main/soft_clip_contig",
                     "type": [
                         "null",
                         "string"
@@ -836,7 +832,7 @@
                     "https://www.sevenbridges.com/y": 426.796875
                 },
                 {
-                    "id": "#scoring_gap_alignments",
+                    "id": "#main/scoring_gap_alignments",
                     "type": [
                         "null",
                         "string"
@@ -845,7 +841,7 @@
                     "https://www.sevenbridges.com/y": 533.53125
                 },
                 {
-                    "id": "#reference_fasta",
+                    "id": "#main/reference_fasta",
                     "type": "File",
                     "secondaryFiles": [
                         ".fai"
@@ -854,7 +850,7 @@
                     "https://www.sevenbridges.com/y": 640.21875
                 },
                 {
-                    "id": "#no_sort",
+                    "id": "#main/no_sort",
                     "type": [
                         "null",
                         "boolean"
@@ -863,7 +859,7 @@
                     "https://www.sevenbridges.com/y": 1066.875
                 },
                 {
-                    "id": "#maximum_mixmatch_rate",
+                    "id": "#main/maximum_mixmatch_rate",
                     "type": [
                         "null",
                         "float"
@@ -872,7 +868,7 @@
                     "https://www.sevenbridges.com/y": 1280.25
                 },
                 {
-                    "id": "#maximum_average_depth",
+                    "id": "#main/maximum_average_depth",
                     "type": [
                         "null",
                         "int"
@@ -881,7 +877,7 @@
                     "https://www.sevenbridges.com/y": 1386.9375
                 },
                 {
-                    "id": "#input_bam",
+                    "id": "#main/input_bam",
                     "type": "File",
                     "secondaryFiles": [
                         "^.bai"
@@ -890,7 +886,7 @@
                     "https://www.sevenbridges.com/y": 1493.625
                 },
                 {
-                    "id": "#ignore_bad_assembly",
+                    "id": "#main/ignore_bad_assembly",
                     "type": [
                         "null",
                         "boolean"
@@ -899,7 +895,7 @@
                     "https://www.sevenbridges.com/y": 1600.3125
                 },
                 {
-                    "id": "#contig_anchor",
+                    "id": "#main/contig_anchor",
                     "type": [
                         "null",
                         "string"
@@ -908,7 +904,7 @@
                     "https://www.sevenbridges.com/y": 1813.6875
                 },
                 {
-                    "id": "#consensus_sequence",
+                    "id": "#main/consensus_sequence",
                     "type": [
                         "null",
                         "boolean"
@@ -917,7 +913,7 @@
                     "https://www.sevenbridges.com/y": 1920.375
                 },
                 {
-                    "id": "#bam_index",
+                    "id": "#main/bam_index",
                     "type": [
                         "null",
                         "boolean"
@@ -926,7 +922,7 @@
                     "https://www.sevenbridges.com/y": 2027.015625
                 },
                 {
-                    "id": "#number_of_threads",
+                    "id": "#main/number_of_threads",
                     "type": [
                         "null",
                         "int"
@@ -935,7 +931,7 @@
                     "https://www.sevenbridges.com/y": 960.234375
                 },
                 {
-                    "id": "#option_bedgraph",
+                    "id": "#main/option_bedgraph",
                     "type": [
                         "null",
                         "boolean"
@@ -944,7 +940,7 @@
                     "https://www.sevenbridges.com/y": 853.546875
                 },
                 {
-                    "id": "#no_edge_complex_indel",
+                    "id": "#main/no_edge_complex_indel",
                     "type": [
                         "null",
                         "boolean"
@@ -953,7 +949,7 @@
                     "https://www.sevenbridges.com/y": 1173.5625
                 },
                 {
-                    "id": "#distance_between_features",
+                    "id": "#main/distance_between_features",
                     "type": [
                         "null",
                         "int"
@@ -962,7 +958,7 @@
                     "https://www.sevenbridges.com/y": 1707
                 },
                 {
-                    "id": "#output_bams",
+                    "id": "#main/output_bams",
                     "type": [
                         "string",
                         {
@@ -974,7 +970,7 @@
                     "https://www.sevenbridges.com/y": 746.859375
                 },
                 {
-                    "id": "#validation_stringency",
+                    "id": "#main/validation_stringency",
                     "type": [
                         "null",
                         "string"
@@ -983,7 +979,7 @@
                     "https://www.sevenbridges.com/y": 106.6875
                 },
                 {
-                    "id": "#sort_order",
+                    "id": "#main/sort_order",
                     "type": [
                         "null",
                         "string"
@@ -992,7 +988,7 @@
                     "https://www.sevenbridges.com/y": 320.109375
                 },
                 {
-                    "id": "#output_file_name",
+                    "id": "#main/output_file_name",
                     "type": [
                         "null",
                         "string"
@@ -1001,7 +997,7 @@
                     "https://www.sevenbridges.com/y": 794.8671875
                 },
                 {
-                    "id": "#create_bam_index",
+                    "id": "#main/create_bam_index",
                     "type": [
                         "null",
                         "boolean"
@@ -1010,7 +1006,7 @@
                     "https://www.sevenbridges.com/y": 901.5078125
                 },
                 {
-                    "id": "#temporary_directory",
+                    "id": "#main/temporary_directory",
                     "type": [
                         "null",
                         "string"
@@ -1021,9 +1017,9 @@
             ],
             "outputs": [
                 {
-                    "id": "#indel_realignment_bam",
+                    "id": "#main/indel_realignment_bam",
                     "outputSource": [
-                        "#picard_fix_mate_information_4_1_8_1/picard_fix_mate_information_bam"
+                        "#main/picard_fix_mate_information_4_1_8_1/picard_fix_mate_information_bam"
                     ],
                     "type": "File",
                     "secondaryFiles": [
@@ -1035,84 +1031,84 @@
             ],
             "steps": [
                 {
-                    "id": "#abra2_2_22",
+                    "id": "#main/abra2_2_22",
                     "in": [
                         {
-                            "id": "#abra2_2_22/number_of_threads",
-                            "source": "#number_of_threads"
+                            "id": "#main/abra2_2_22/number_of_threads",
+                            "source": "#main/number_of_threads"
                         },
                         {
-                            "id": "#abra2_2_22/input_bam",
+                            "id": "#main/abra2_2_22/input_bam",
                             "source": [
-                                "#input_bam"
+                                "#main/input_bam"
                             ]
                         },
                         {
-                            "id": "#abra2_2_22/working_directory",
-                            "source": "#temporary_directory"
+                            "id": "#main/abra2_2_22/working_directory",
+                            "source": "#main/temporary_directory"
                         },
                         {
-                            "id": "#abra2_2_22/reference_fasta",
-                            "source": "#reference_fasta"
+                            "id": "#main/abra2_2_22/reference_fasta",
+                            "source": "#main/reference_fasta"
                         },
                         {
-                            "id": "#abra2_2_22/targets",
-                            "source": "#bedtools_merge/bedtools_merge_bed"
+                            "id": "#main/abra2_2_22/targets",
+                            "source": "#main/bedtools_merge/bedtools_merge_bed"
                         },
                         {
-                            "id": "#abra2_2_22/maximum_average_depth",
-                            "source": "#maximum_average_depth"
+                            "id": "#main/abra2_2_22/maximum_average_depth",
+                            "source": "#main/maximum_average_depth"
                         },
                         {
-                            "id": "#abra2_2_22/soft_clip_contig",
-                            "source": "#soft_clip_contig"
+                            "id": "#main/abra2_2_22/soft_clip_contig",
+                            "source": "#main/soft_clip_contig"
                         },
                         {
-                            "id": "#abra2_2_22/maximum_mixmatch_rate",
-                            "source": "#maximum_mixmatch_rate"
+                            "id": "#main/abra2_2_22/maximum_mixmatch_rate",
+                            "source": "#main/maximum_mixmatch_rate"
                         },
                         {
-                            "id": "#abra2_2_22/scoring_gap_alignments",
-                            "source": "#scoring_gap_alignments"
+                            "id": "#main/abra2_2_22/scoring_gap_alignments",
+                            "source": "#main/scoring_gap_alignments"
                         },
                         {
-                            "id": "#abra2_2_22/contig_anchor",
-                            "source": "#contig_anchor"
+                            "id": "#main/abra2_2_22/contig_anchor",
+                            "source": "#main/contig_anchor"
                         },
                         {
-                            "id": "#abra2_2_22/window_size",
-                            "source": "#window_size"
+                            "id": "#main/abra2_2_22/window_size",
+                            "source": "#main/window_size"
                         },
                         {
-                            "id": "#abra2_2_22/consensus_sequence",
-                            "source": "#consensus_sequence"
+                            "id": "#main/abra2_2_22/consensus_sequence",
+                            "source": "#main/consensus_sequence"
                         },
                         {
-                            "id": "#abra2_2_22/output_bams",
+                            "id": "#main/abra2_2_22/output_bams",
                             "source": [
-                                "#output_bams"
+                                "#main/output_bams"
                             ]
                         },
                         {
-                            "id": "#abra2_2_22/ignore_bad_assembly",
-                            "source": "#ignore_bad_assembly"
+                            "id": "#main/abra2_2_22/ignore_bad_assembly",
+                            "source": "#main/ignore_bad_assembly"
                         },
                         {
-                            "id": "#abra2_2_22/bam_index",
-                            "source": "#bam_index"
+                            "id": "#main/abra2_2_22/bam_index",
+                            "source": "#main/bam_index"
                         },
                         {
-                            "id": "#abra2_2_22/no_edge_complex_indel",
-                            "source": "#no_edge_complex_indel"
+                            "id": "#main/abra2_2_22/no_edge_complex_indel",
+                            "source": "#main/no_edge_complex_indel"
                         },
                         {
-                            "id": "#abra2_2_22/no_sort",
-                            "source": "#no_sort"
+                            "id": "#main/abra2_2_22/no_sort",
+                            "source": "#main/no_sort"
                         }
                     ],
                     "out": [
                         {
-                            "id": "#abra2_2_22/abra_realigned_bam"
+                            "id": "#main/abra2_2_22/abra_realigned_bam"
                         }
                     ],
                     "run": "#abra2_2.22.cwl",
@@ -1121,20 +1117,20 @@
                     "https://www.sevenbridges.com/y": 1120.1484375
                 },
                 {
-                    "id": "#bedtools_genomecov",
+                    "id": "#main/bedtools_genomecov",
                     "in": [
                         {
-                            "id": "#bedtools_genomecov/input",
-                            "source": "#input_bam"
+                            "id": "#main/bedtools_genomecov/input",
+                            "source": "#main/input_bam"
                         },
                         {
-                            "id": "#bedtools_genomecov/option_bedgraph",
-                            "source": "#option_bedgraph"
+                            "id": "#main/bedtools_genomecov/option_bedgraph",
+                            "source": "#main/option_bedgraph"
                         }
                     ],
                     "out": [
                         {
-                            "id": "#bedtools_genomecov/bedtools_genomecove_bedgraph"
+                            "id": "#main/bedtools_genomecov/bedtools_genomecove_bedgraph"
                         }
                     ],
                     "run": "#bedtools_genomecov_v2.28.0_cv2.cwl",
@@ -1143,20 +1139,20 @@
                     "https://www.sevenbridges.com/y": 1006.4609375
                 },
                 {
-                    "id": "#bedtools_merge",
+                    "id": "#main/bedtools_merge",
                     "in": [
                         {
-                            "id": "#bedtools_merge/input",
-                            "source": "#bedtools_genomecov/bedtools_genomecove_bedgraph"
+                            "id": "#main/bedtools_merge/input",
+                            "source": "#main/bedtools_genomecov/bedtools_genomecove_bedgraph"
                         },
                         {
-                            "id": "#bedtools_merge/distance_between_features",
-                            "source": "#distance_between_features"
+                            "id": "#main/bedtools_merge/distance_between_features",
+                            "source": "#main/distance_between_features"
                         }
                     ],
                     "out": [
                         {
-                            "id": "#bedtools_merge/bedtools_merge_bed"
+                            "id": "#main/bedtools_merge/bedtools_merge_bed"
                         }
                     ],
                     "run": "#bedtools_merge_v2.28.0_cv2.cwl",
@@ -1165,36 +1161,36 @@
                     "https://www.sevenbridges.com/y": 1006.4609375
                 },
                 {
-                    "id": "#picard_fix_mate_information_4_1_8_1",
+                    "id": "#main/picard_fix_mate_information_4_1_8_1",
                     "in": [
                         {
-                            "id": "#picard_fix_mate_information_4_1_8_1/input",
-                            "source": "#abra2_2_22/abra_realigned_bam"
+                            "id": "#main/picard_fix_mate_information_4_1_8_1/input",
+                            "source": "#main/abra2_2_22/abra_realigned_bam"
                         },
                         {
-                            "id": "#picard_fix_mate_information_4_1_8_1/output_file_name",
-                            "source": "#output_file_name"
+                            "id": "#main/picard_fix_mate_information_4_1_8_1/output_file_name",
+                            "source": "#main/output_file_name"
                         },
                         {
-                            "id": "#picard_fix_mate_information_4_1_8_1/sort_order",
-                            "source": "#sort_order"
+                            "id": "#main/picard_fix_mate_information_4_1_8_1/sort_order",
+                            "source": "#main/sort_order"
                         },
                         {
-                            "id": "#picard_fix_mate_information_4_1_8_1/validation_stringency",
-                            "source": "#validation_stringency"
+                            "id": "#main/picard_fix_mate_information_4_1_8_1/validation_stringency",
+                            "source": "#main/validation_stringency"
                         },
                         {
-                            "id": "#picard_fix_mate_information_4_1_8_1/create_bam_index",
-                            "source": "#create_bam_index"
+                            "id": "#main/picard_fix_mate_information_4_1_8_1/create_bam_index",
+                            "source": "#main/create_bam_index"
                         },
                         {
-                            "id": "#picard_fix_mate_information_4_1_8_1/temporary_directory",
-                            "source": "#temporary_directory"
+                            "id": "#main/picard_fix_mate_information_4_1_8_1/temporary_directory",
+                            "source": "#main/temporary_directory"
                         }
                     ],
                     "out": [
                         {
-                            "id": "#picard_fix_mate_information_4_1_8_1/picard_fix_mate_information_bam"
+                            "id": "#main/picard_fix_mate_information_4_1_8_1/picard_fix_mate_information_bam"
                         }
                     ],
                     "run": "#picard_fix_mate_information_4.1.8.1.cwl",
@@ -1227,5 +1223,9 @@
     "cwlVersion": "v1.0",
     "$schemas": [
         "http://schema.org/version/latest/schemaorg-current-http.rdf"
-    ]
+    ],
+    "$namespaces": {
+        "s": "https://schema.org/",
+        "sbg": "https://www.sevenbridges.com/"
+    }
 }

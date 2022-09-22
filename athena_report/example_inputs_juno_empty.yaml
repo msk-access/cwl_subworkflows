@@ -1,0 +1,12 @@
+panel_bed: 
+transcript_file: 
+coverage_file: 
+chunk_size: 10000000
+output_name: 'prefix_name'
+threshold: 20
+sample_name: 'report1'
+output: 'report1'
+limit: 20
+summary: true
+cores: 4
+thresholds: [10, 20, 30, 50, 100]
