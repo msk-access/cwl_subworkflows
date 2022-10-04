@@ -56,13 +56,17 @@ inputs:
     type: string?
     'sbg:x': 367.52093505859375
     'sbg:y': 171.32838439941406
+  - id: custom_enst
+    type: File?
+    'sbg:x': 182.85572814941406
+    'sbg:y': 627.060546875
 outputs:
   - id: txt
     outputSource:
       - run_processed_vardict/txt
     type: File
-    'sbg:x': -246.60113525390625
-    'sbg:y': -171.5
+    'sbg:x': -130.59559631347656
+    'sbg:y': -166.92691040039062
   - id: vcf2maf_maf
     outputSource:
       - vcf2maf_v1_6_21/vcf2maf_maf
@@ -89,8 +93,8 @@ steps:
       - id: concatenated_vcf
     run: ../vardict_workflow/run_processed_vardict.cwl
     label: run_processed_vardict.cwl
-    'sbg:x': -348.6015625
-    'sbg:y': -52.5
+    'sbg:x': -256.8610534667969
+    'sbg:y': -35.328243255615234
   - id: snpsift_annotate_5_0
     in:
       - id: input_DB_vcf
@@ -121,10 +125,12 @@ steps:
     'sbg:y': -17
   - id: vcf2maf_v1_6_21
     in:
+      - id: custom_enst
+        source: custom_enst
+      - id: input_vcf
+        source: snpsift_annotate_5_1/annotatedOutput
       - id: output_maf
         source: output_maf
-      - id: ref_fasta
-        source: reference_fasta
       - id: retain_info
         source: retain_info
       - id: tumor_id
@@ -134,7 +140,7 @@ steps:
     out:
       - id: vcf2maf_maf
     run: ../../cwl-commandlinetools/vcf2maf_1.6.21/vcf2maf_1.6.21.cwl
-    'sbg:x': 297.54205322265625
-    'sbg:y': 279.22430419921875
+    'sbg:x': 361.464111328125
+    'sbg:y': 349.0213623046875
 requirements:
   - class: SubworkflowFeatureRequirement
