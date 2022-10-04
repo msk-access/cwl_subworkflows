@@ -20,8 +20,8 @@ inputs:
     'sbg:y': 118.5
   - id: bedfile
     type: File?
-    'sbg:x': -417.219970703125
-    'sbg:y': 144.89012145996094
+    'sbg:x': -398.2340393066406
+    'sbg:y': 201.86170959472656
   - id: sample_name
     type: string
     'sbg:x': -378.665771484375
@@ -42,12 +42,6 @@ inputs:
     type: string?
     'sbg:x': 204.9292449951172
     'sbg:y': -199.08726501464844
-  - id: retain_info
-    type: string?
-    'sbg:exposed': true
-  - id: tumor_id
-    type: string?
-    'sbg:exposed': true
   - id: output_maf
     type: string?
     'sbg:x': -13.897157669067383
@@ -60,6 +54,23 @@ inputs:
     type: File?
     'sbg:x': 182.85572814941406
     'sbg:y': 627.060546875
+  - id: retain_fmt
+    type: string?
+    'sbg:x': -170.06387329101562
+    'sbg:y': 675.545166015625
+  - id: retain_info
+    type: string?
+    'sbg:x': 249.5113983154297
+    'sbg:y': 796.01220703125
+  - id: tumor_id
+    type: string?
+    'sbg:x': -96.32970428466797
+    'sbg:y': 509.139404296875
+  - id: input_DB_vcf_1
+    'sbg:fileTypes': VCF
+    type: File
+    'sbg:x': 72.41624450683594
+    'sbg:y': 132.4322052001953
 outputs:
   - id: txt
     outputSource:
@@ -93,8 +104,8 @@ steps:
       - id: concatenated_vcf
     run: ../vardict_workflow/run_processed_vardict.cwl
     label: run_processed_vardict.cwl
-    'sbg:x': -256.8610534667969
-    'sbg:y': -35.328243255615234
+    'sbg:x': -241.925537109375
+    'sbg:y': -49.074466705322266
   - id: snpsift_annotate_5_0
     in:
       - id: input_DB_vcf
@@ -112,7 +123,7 @@ steps:
   - id: snpsift_annotate_5_1
     in:
       - id: input_DB_vcf
-        source: input_DB_vcf
+        source: input_DB_vcf_1
       - id: input_vcf
         source: snpsift_annotate_5_0/annotatedOutput
       - id: output_file_name
@@ -131,6 +142,8 @@ steps:
         source: snpsift_annotate_5_1/annotatedOutput
       - id: output_maf
         source: output_maf
+      - id: retain_fmt
+        source: retain_fmt
       - id: retain_info
         source: retain_info
       - id: tumor_id
@@ -140,7 +153,7 @@ steps:
     out:
       - id: vcf2maf_maf
     run: ../../cwl-commandlinetools/vcf2maf_1.6.21/vcf2maf_1.6.21.cwl
-    'sbg:x': 361.464111328125
-    'sbg:y': 349.0213623046875
+    'sbg:x': 420.425537109375
+    'sbg:y': 391.2234191894531
 requirements:
   - class: SubworkflowFeatureRequirement
