@@ -71,6 +71,10 @@ inputs:
     type: File
     'sbg:x': 72.41624450683594
     'sbg:y': 132.4322052001953
+  - id: stdout
+    type: boolean
+    'sbg:x': -309.70770263671875
+    'sbg:y': -710.3633422851562
 outputs:
   - id: txt
     outputSource:
@@ -97,6 +101,8 @@ steps:
         source: sample_name
       - id: concat_output_name
         source: concat_output_name
+      - id: stdout
+        source: stdout
       - id: vardict_output_vcf_name
         source: vardict_output_vcf_name
     out:
