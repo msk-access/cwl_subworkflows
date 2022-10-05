@@ -139,12 +139,20 @@ steps:
     'sbg:y': 227.875
   - id: vcf2maf_v1_6_21
     in:
+      - id: buffer_size
+        default: 5000
       - id: custom_enst
         source: custom_enst
       - id: input_vcf
         source: snpsift_annotate_5_1/annotatedOutput
+      - id: min_hom_vaf
+        default: 0.7
+      - id: ncbi_build
+        default: GRCh37
       - id: output_maf
         source: output_maf_name
+      - id: ref_fasta
+        default: /.vep/homo_sapiens/105_GRCh37/Homo_sapiens.GRCh37.dna.toplevel.fa.gz
       - id: retain_fmt
         source: retain_fmt
       - id: retain_info
@@ -153,6 +161,10 @@ steps:
         source: vcf_tumor_id
       - id: vcf_tumor_id
         source: vcf_tumor_id
+      - id: vep_data
+        default: /.vep/
+      - id: vep_path
+        default: /usr/local/bin/
     out:
       - id: vcf2maf_maf
     run: ../../cwl-commandlinetools/vcf2maf_1.6.21/vcf2maf_1.6.21.cwl
