@@ -7,6 +7,8 @@ $namespaces:
 inputs:
   - id: input_bam_case
     type: File
+    secondaryFiles:
+      - ^.bai
     'sbg:x': 0
     'sbg:y': 441.75
   - id: reference_fasta
