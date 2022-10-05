@@ -102,6 +102,7 @@ steps:
       - id: concat_output_name
         source: concat_output_name
       - id: stdout
+        default: true
         source: stdout
       - id: vardict_output_vcf_name
         source: vardict_output_vcf_name
