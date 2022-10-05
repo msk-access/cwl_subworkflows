@@ -11,6 +11,8 @@ inputs:
     'sbg:y': 441.75
   - id: reference_fasta
     type: File
+    secondaryFiles:
+      - .fai
     'sbg:x': 0
     'sbg:y': 334.8125
   - id: input_vcf_cosmicDB
