@@ -1,0 +1,31 @@
+bedfile_for_vardict:
+  class: File
+  path: >-
+    /path/to/bed/file.bed
+concatvcf_output_name: concat.vcf.gz
+custom_enst:
+  class: File
+  path: >-
+    /path/to/overridesFile
+input_bam_case: null
+input_vcf_cosmicDB:
+  class: File
+  path: >-
+    /path/to/cosmicDB/file.vcf.gz
+input_vcf_preval:
+  class: File
+  path: >-
+    /path/to/cosmicPrevalance
+output_file_name_cosmicdb: snpsift_cosmic.vcf
+output_file_name_preval: snpsift_preval.vcf
+output_maf_name: annotated.maf
+reference_fasta:
+  class:File
+  path : >-
+    /path/to/reference/file.fa
+retain_fmt: null
+retain_info: null
+sample_name: null
+stdout: TRUE
+vardict_output_vcf_name: filename.vcf
+vcf_tumor_id: tumorID
