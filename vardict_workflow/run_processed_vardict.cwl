@@ -38,6 +38,14 @@ inputs:
     type: string?
     'sbg:x': 0
     'sbg:y': 0
+  - id: vartovcf_allele_frequency
+    type: float?
+    'sbg:x': 195.59970092773438
+    'sbg:y': -28.773317337036133
+  - id: vardict_allele_frequency_threshold
+    type: string?
+    'sbg:x': 79.46308135986328
+    'sbg:y': -169.6322784423828
 outputs:
   - id: txt
     outputSource:
@@ -51,6 +59,12 @@ outputs:
     type: File
     'sbg:x': 1064.255126953125
     'sbg:y': 213.53125
+  - id: output
+    outputSource:
+      - vardict/output
+    type: File
+    'sbg:x': 387.01007080078125
+    'sbg:y': 30.822128295898438
 steps:
   - id: vardict
     in:
@@ -72,10 +86,12 @@ steps:
         default: '1'
       - id: filter_variants
         default: true
-      - id: minimum_allele_frequency
-        default: 0.01
       - id: output_vcf
         source: vardict_output_vcf_name
+      - id: vardict_allele_frequency_threshold
+        source: vardict_allele_frequency_threshold
+      - id: vartovcf_allele_frequency
+        source: vartovcf_allele_frequency
     out:
       - id: output
     run: ../command_line_tools/vardictjava/v1.8.2/vardict_single_sample.cwl
