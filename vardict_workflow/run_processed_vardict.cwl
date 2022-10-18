@@ -63,12 +63,6 @@ outputs:
     type: File
     'sbg:x': 1064.255126953125
     'sbg:y': 213.53125
-  - id: output
-    outputSource:
-      - vardict/output
-    type: File
-    'sbg:x': 387.01007080078125
-    'sbg:y': 30.822128295898438
 steps:
   - id: vardict
     in:
