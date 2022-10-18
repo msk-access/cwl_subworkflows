@@ -46,6 +46,10 @@ inputs:
     type: string?
     'sbg:x': 79.46308135986328
     'sbg:y': -169.6322784423828
+  - id: filter_variants
+    type: boolean?
+    'sbg:x': 198.8257293701172
+    'sbg:y': 601.82177734375
 outputs:
   - id: txt
     outputSource:
@@ -85,7 +89,8 @@ steps:
       - id: bed_file_column_for_chromsome
         default: '1'
       - id: filter_variants
-        default: true
+        default: false
+        source: filter_variants
       - id: output_vcf
         source: vardict_output_vcf_name
       - id: vardict_allele_frequency_threshold
