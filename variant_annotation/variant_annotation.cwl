@@ -34,8 +34,8 @@ inputs:
   - id: input_vcf_preval
     'sbg:fileTypes': VCF
     type: File
-    'sbg:x': 211.84375
-    'sbg:y': 327.53125
+    'sbg:x': 264.74945068359375
+    'sbg:y': 368.41351318359375
   - id: input_vcf
     type: File
     'sbg:x': 0
@@ -103,8 +103,8 @@ steps:
     out:
       - id: vcf2maf_maf
     run: ../../cwl-commandlinetools/vcf2maf_1.6.21/vcf2maf_1.6.21.cwl
-    'sbg:x': 734.146728515625
-    'sbg:y': 232.109375
+    'sbg:x': 799.2042236328125
+    'sbg:y': 249.62277221679688
 requirements: []
 $schemas:
   - 'http://schema.org/version/latest/schemaorg-current-http.rdf'
