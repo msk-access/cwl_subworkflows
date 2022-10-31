@@ -60,16 +60,16 @@ steps:
     label: snpsift_annotate_5.0
     'sbg:x': 211.84375
     'sbg:y': 213.6875
-  - id: snpsift_annotate_5_1
+  - id: snpsift_annotate_prevalence
     in:
       - id: input_DB_vcf
         source: input_vcf_preval
       - id: input_vcf
         source: snpsift_annotate_5_0/annotatedOutput
     out:
-      - id: annotatedOutput
+      - id: annotatedOutput_prevalence
     run: ../../cwl-commandlinetools/snpsift_annotate_5.0/snpsift_annotate_5-0.cwl
-    label: snpsift_annotate_5.0
+    label: snpsift_annotate_prevalence
     'sbg:x': 472.9952392578125
     'sbg:y': 113.84375
   - id: vcf2maf_v1_6_21
@@ -79,7 +79,7 @@ steps:
       - id: custom_enst
         source: custom_enst
       - id: input_vcf
-        source: snpsift_annotate_5_1/annotatedOutput
+        source: snpsift_annotate_prevalence/annotatedOutput
       - id: min_hom_vaf
         default: 0.7
       - id: ncbi_build
