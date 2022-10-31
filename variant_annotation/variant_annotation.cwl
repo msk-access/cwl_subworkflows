@@ -3,144 +3,75 @@ cwlVersion: v1.0
 id: variant_annotation
 label: variant_annotation
 $namespaces:
+  s: 'https://schema.org/'
   sbg: 'https://www.sevenbridges.com/'
 inputs:
-  - id: input_bam_case
-    type: File
-    secondaryFiles:
-      - ^.bai
-    'sbg:x': 0
-    'sbg:y': 441.75
-  - id: reference_fasta
-    type: File
-    secondaryFiles:
-      - .fai
-    'sbg:x': 0
-    'sbg:y': 334.8125
   - id: input_vcf_cosmicDB
     'sbg:fileTypes': VCF
     type: File
-    'sbg:x': 250.328125
-    'sbg:y': 441.75
-  - id: bedfile_for_vardict
-    type: File?
     'sbg:x': 0
-    'sbg:y': 655.625
-  - id: sample_name
-    type: string
-    'sbg:x': 0
-    'sbg:y': 227.87498474121094
-  - id: concatvcf_output_name
-    type: string
-    'sbg:x': 0
-    'sbg:y': 548.6875
-  - id: vardict_output_vcf_name
-    type: string?
-    'sbg:x': 0
-    'sbg:y': 14.000015258789062
-  - id: output_file_name_cosmicdb
-    type: string?
-    'sbg:x': 250.328125
-    'sbg:y': 334.8125
-  - id: output_file_name_preval
-    type: string?
-    'sbg:x': 613.7874755859375
-    'sbg:y': 402.28125
+    'sbg:y': 220.6875
   - id: output_maf_name
     type: string?
-    'sbg:x': 903.501708984375
-    'sbg:y': 562.6875
+    'sbg:x': 472.9952392578125
+    'sbg:y': 441.375
   - id: vcf_tumor_id
     type: string?
-    'sbg:x': 907.3548583984375
-    'sbg:y': -30.484054565429688
+    'sbg:x': 472.9952392578125
+    'sbg:y': 0
   - id: custom_enst
     type: File?
-    'sbg:x': 903.501708984375
-    'sbg:y': 669.625
+    'sbg:x': 472.9952392578125
+    'sbg:y': 548.21875
   - id: retain_fmt
     type: string?
-    'sbg:x': 903.501708984375
-    'sbg:y': 455.75
+    'sbg:x': 472.9952392578125
+    'sbg:y': 334.53125
   - id: retain_info
     type: string?
-    'sbg:x': 903.501708984375
-    'sbg:y': 348.8125
+    'sbg:x': 472.9952392578125
+    'sbg:y': 227.6875
   - id: input_vcf_preval
     'sbg:fileTypes': VCF
     type: File
-    'sbg:x': 613.7874755859375
-    'sbg:y': 509.21875
-  - id: stdout
-    type: boolean
-    'sbg:x': 0
-    'sbg:y': 120.9375
-outputs:
-  - id: txt
-    outputSource:
-      - run_processed_vardict/txt
+    'sbg:x': 211.84375
+    'sbg:y': 327.53125
+  - id: input_vcf
     type: File
-    'sbg:x': 621.0455932617188
-    'sbg:y': 131.37380981445312
+    'sbg:x': 0
+    'sbg:y': 327.53125
+outputs:
   - id: vcf2maf_maf
     outputSource:
       - vcf2maf_v1_6_21/vcf2maf_maf
     type: File
-    'sbg:x': 1493.4658203125
-    'sbg:y': 334.8125
+    'sbg:x': 1034.3966064453125
+    'sbg:y': 274.109375
 steps:
-  - id: run_processed_vardict
-    in:
-      - id: reference_fasta
-        source: reference_fasta
-      - id: input_bam_case
-        source: input_bam_case
-      - id: bedfile
-        source: bedfile_for_vardict
-      - id: sample_name
-        source: sample_name
-      - id: concat_output_name
-        source: concatvcf_output_name
-      - id: stdout
-        default: true
-        source: stdout
-      - id: vardict_output_vcf_name
-        source: vardict_output_vcf_name
-    out:
-      - id: txt
-      - id: concatenated_vcf
-    run: ../vardict_workflow/run_processed_vardict.cwl
-    label: run_processed_vardict.cwl
-    'sbg:x': 250.328125
-    'sbg:y': 185.875
   - id: snpsift_annotate_5_0
     in:
       - id: input_DB_vcf
         source: input_vcf_cosmicDB
       - id: input_vcf
-        source: run_processed_vardict/concatenated_vcf
-      - id: output_file_name
-        source: output_file_name_cosmicdb
+        source: input_vcf
     out:
       - id: annotatedOutput
     run: ../../cwl-commandlinetools/snpsift_annotate_5.0/snpsift_annotate_5-0.cwl
     label: snpsift_annotate_5.0
-    'sbg:x': 613.7874755859375
-    'sbg:y': 281.34375
+    'sbg:x': 211.84375
+    'sbg:y': 213.6875
   - id: snpsift_annotate_5_1
     in:
       - id: input_DB_vcf
         source: input_vcf_preval
       - id: input_vcf
         source: snpsift_annotate_5_0/annotatedOutput
-      - id: output_file_name
-        source: output_file_name_preval
     out:
       - id: annotatedOutput
     run: ../../cwl-commandlinetools/snpsift_annotate_5.0/snpsift_annotate_5-0.cwl
     label: snpsift_annotate_5.0
-    'sbg:x': 903.501708984375
-    'sbg:y': 227.875
+    'sbg:x': 472.9952392578125
+    'sbg:y': 113.84375
   - id: vcf2maf_v1_6_21
     in:
       - id: buffer_size
@@ -172,7 +103,26 @@ steps:
     out:
       - id: vcf2maf_maf
     run: ../../cwl-commandlinetools/vcf2maf_1.6.21/vcf2maf_1.6.21.cwl
-    'sbg:x': 1193.2159423828125
-    'sbg:y': 292.8125
-requirements:
-  - class: SubworkflowFeatureRequirement
+    'sbg:x': 734.146728515625
+    'sbg:y': 232.109375
+requirements: []
+$schemas:
+  - 'http://schema.org/version/latest/schemaorg-current-http.rdf'
+'s:author':
+  - class: 's:Person'
+    's:email': 'mailto:sivaprk@mskcc.org'
+    's:identifier': ''
+    's:name': Karthigayini Sivaprakasam
+'s:citation': ''
+'s:codeRepository': 'https://github.com/msk-access/cwl_subworkflows/variant_postprocessing'
+'s:contributor':
+  - class: 's:Person'
+    's:email': 'mailto:sivaprk@mskcc.org'
+    's:identifier': ''
+    's:name': Karthigayini Sivaprakasam
+  - class: 's:Person'
+    's:email': 'mailto:shahr@mskcc.org'
+    's:identifier': ''
+    's:name': Ronak Shah
+'s:dateCreated': '2020-10-31'
+'s:license': 'https://spdx.org/licenses/Apache-2.0'
