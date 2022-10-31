@@ -67,7 +67,7 @@ steps:
       - id: input_vcf
         source: snpsift_annotate_5_0/annotatedOutput
     out:
-      - id: annotatedOutput_prevalence
+      - id: annotatedOutput
     run: ../../cwl-commandlinetools/snpsift_annotate_5.0/snpsift_annotate_5-0.cwl
     label: snpsift_annotate_prevalence
     'sbg:x': 472.9952392578125
@@ -79,7 +79,7 @@ steps:
       - id: custom_enst
         source: custom_enst
       - id: input_vcf
-        source: snpsift_annotate_prevalence/annotatedOutput
+        source: snpsift_annotate/annotatedOutput
       - id: min_hom_vaf
         default: 0.7
       - id: ncbi_build
