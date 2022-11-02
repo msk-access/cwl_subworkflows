@@ -1025,7 +1025,8 @@
                     ],
                     "inputBinding": {
                         "position": 0,
-                        "prefix": "-f"
+                        "prefix": "-f",
+                        "valueFrom": "${ return inputs.minimum_allele_frequency.toString(); }"
                     },
                     "doc": "The threshold for allele frequency, default - 0.05 or 5%%"
                 },
@@ -1230,11 +1231,12 @@
                     "id": "#vardict_app.cwl/vardict/allele_frequency_threshold",
                     "type": [
                         "null",
-                        "string"
+                        "float"
                     ],
                     "inputBinding": {
                         "position": 0,
-                        "prefix": "-f"
+                        "prefix": "-f",
+                        "valueFrom": "${ return inputs.allele_frequency_threshold.toString(); }"
                     },
                     "doc": "The threshold for allele frequency, default - 0.01 or 1%%"
                 },
@@ -1452,19 +1454,19 @@
                     "https://www.sevenbridges.com/y": 533.296875
                 },
                 {
-                    "id": "#vardict_single_sample.cwl/vardict/minimum_allele_frequency",
-                    "type": [
-                        "null",
-                        "float"
-                    ],
-                    "https://www.sevenbridges.com/x": 742.6807250976562,
-                    "https://www.sevenbridges.com/y": 426.625
-                },
-                {
                     "id": "#vardict_single_sample.cwl/vardict/output_vcf",
                     "type": "string",
                     "https://www.sevenbridges.com/x": 742.6807250976562,
                     "https://www.sevenbridges.com/y": 319.953125
+                },
+                {
+                    "id": "#vardict_single_sample.cwl/vardict/vardict_allele_frequency_threshold",
+                    "type": [
+                        "null",
+                        "float"
+                    ],
+                    "https://www.sevenbridges.com/x": 352.5365905761719,
+                    "https://www.sevenbridges.com/y": 766
                 }
             ],
             "outputs": [
@@ -1513,7 +1515,7 @@
                         },
                         {
                             "id": "#vardict_single_sample.cwl/vardict/var_to_vcf/minimum_allele_frequency",
-                            "source": "#vardict_single_sample.cwl/vardict/minimum_allele_frequency"
+                            "source": "#vardict_single_sample.cwl/vardict/vardict_allele_frequency_threshold"
                         },
                         {
                             "id": "#vardict_single_sample.cwl/vardict/var_to_vcf/input_vcf",
@@ -1567,6 +1569,10 @@
                         {
                             "id": "#vardict_single_sample.cwl/vardict/vardict/bed_file_column_for_chromsome",
                             "source": "#vardict_single_sample.cwl/vardict/bed_file_column_for_chromsome"
+                        },
+                        {
+                            "id": "#vardict_single_sample.cwl/vardict/vardict/allele_frequency_threshold",
+                            "source": "#vardict_single_sample.cwl/vardict/vardict_allele_frequency_threshold"
                         },
                         {
                             "id": "#vardict_single_sample.cwl/vardict/vardict/bed_file_column_for_gene_name",
@@ -1640,8 +1646,8 @@
                     "secondaryFiles": [
                         ".fai"
                     ],
-                    "https://www.sevenbridges.com/x": -634.5714111328125,
-                    "https://www.sevenbridges.com/y": 149.14285278320312
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 213.53125
                 },
                 {
                     "id": "#main/input_bam_case",
@@ -1649,8 +1655,8 @@
                     "secondaryFiles": [
                         "^.bai"
                     ],
-                    "https://www.sevenbridges.com/x": -699,
-                    "https://www.sevenbridges.com/y": -149
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 320.296875
                 },
                 {
                     "id": "#main/bedfile",
@@ -1658,26 +1664,26 @@
                         "null",
                         "File"
                     ],
-                    "https://www.sevenbridges.com/x": -636.4950561523438,
-                    "https://www.sevenbridges.com/y": -36.49504852294922
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 427.0625
                 },
                 {
                     "id": "#main/sample_name",
                     "type": "string",
-                    "https://www.sevenbridges.com/x": -295,
-                    "https://www.sevenbridges.com/y": -483.5596008300781
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 106.765625
                 },
                 {
                     "id": "#main/concat_output_name",
                     "type": "string",
-                    "https://www.sevenbridges.com/x": 20.6474609375,
-                    "https://www.sevenbridges.com/y": 102.47994995117188
+                    "https://www.sevenbridges.com/x": 513.37158203125,
+                    "https://www.sevenbridges.com/y": 334.296875
                 },
                 {
                     "id": "#main/stdout",
                     "type": "boolean",
-                    "https://www.sevenbridges.com/x": 109.83137512207031,
-                    "https://www.sevenbridges.com/y": -20.80786895751953
+                    "https://www.sevenbridges.com/x": 513.37158203125,
+                    "https://www.sevenbridges.com/y": 92.765625
                 },
                 {
                     "id": "#main/vardict_output_vcf_name",
@@ -1685,8 +1691,26 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": -596.02392578125,
-                    "https://www.sevenbridges.com/y": -291.1067810058594
+                    "https://www.sevenbridges.com/x": 0,
+                    "https://www.sevenbridges.com/y": 0
+                },
+                {
+                    "id": "#main/filter_variants",
+                    "type": [
+                        "null",
+                        "boolean"
+                    ],
+                    "https://www.sevenbridges.com/x": 198.8257293701172,
+                    "https://www.sevenbridges.com/y": 601.82177734375
+                },
+                {
+                    "id": "#main/vardict_allele_frequency_threshold",
+                    "type": [
+                        "null",
+                        "float"
+                    ],
+                    "https://www.sevenbridges.com/x": 227.29263305664062,
+                    "https://www.sevenbridges.com/y": -49.30992126464844
                 }
             ],
             "outputs": [
@@ -1696,8 +1720,8 @@
                         "#main/pv_vardict_single_filter/txt"
                     ],
                     "type": "File",
-                    "https://www.sevenbridges.com/x": 208.52406311035156,
-                    "https://www.sevenbridges.com/y": -167.63339233398438
+                    "https://www.sevenbridges.com/x": 759.164794921875,
+                    "https://www.sevenbridges.com/y": 266.9140625
                 },
                 {
                     "id": "#main/concatenated_vcf",
@@ -1705,8 +1729,8 @@
                         "#main/variants_concat/concatenated_vcf"
                     ],
                     "type": "File",
-                    "https://www.sevenbridges.com/x": 493.2825012207031,
-                    "https://www.sevenbridges.com/y": 131.36968994140625
+                    "https://www.sevenbridges.com/x": 1064.255126953125,
+                    "https://www.sevenbridges.com/y": 213.53125
                 }
             ],
             "steps": [
@@ -1747,15 +1771,16 @@
                         },
                         {
                             "id": "#main/vardict/filter_variants",
-                            "default": true
-                        },
-                        {
-                            "id": "#main/vardict/minimum_allele_frequency",
-                            "default": 0.01
+                            "default": false,
+                            "source": "#main/filter_variants"
                         },
                         {
                             "id": "#main/vardict/output_vcf",
                             "source": "#main/vardict_output_vcf_name"
+                        },
+                        {
+                            "id": "#main/vardict/vardict_allele_frequency_threshold",
+                            "source": "#main/vardict_allele_frequency_threshold"
                         }
                     ],
                     "out": [
@@ -1765,8 +1790,8 @@
                     ],
                     "run": "#vardict_single_sample.cwl",
                     "label": "vardict",
-                    "https://www.sevenbridges.com/x": -411.7029724121094,
-                    "https://www.sevenbridges.com/y": -187.75247192382812
+                    "https://www.sevenbridges.com/x": 250.328125,
+                    "https://www.sevenbridges.com/y": 185.53125
                 },
                 {
                     "id": "#main/pv_vardict_single_filter",
@@ -1793,7 +1818,7 @@
                         },
                         {
                             "id": "#main/pv_vardict_single_filter/variantFraction",
-                            "default": 0.04
+                            "default": 0
                         },
                         {
                             "id": "#main/pv_vardict_single_filter/minQual",
@@ -1812,8 +1837,8 @@
                         }
                     ],
                     "run": "#pv_vardict_single_filter.cwl",
-                    "https://www.sevenbridges.com/x": 1.4255318641662598,
-                    "https://www.sevenbridges.com/y": -197.1702117919922
+                    "https://www.sevenbridges.com/x": 513.37158203125,
+                    "https://www.sevenbridges.com/y": 213.53125
                 },
                 {
                     "id": "#main/variants_concat",
@@ -1866,8 +1891,8 @@
                     ],
                     "run": "#variants_concat.cwl",
                     "label": "variants_concat",
-                    "https://www.sevenbridges.com/x": 337.0436706542969,
-                    "https://www.sevenbridges.com/y": 125.96643829345703
+                    "https://www.sevenbridges.com/x": 759.164794921875,
+                    "https://www.sevenbridges.com/y": 132.1484375
                 }
             ],
             "requirements": [
@@ -1899,7 +1924,7 @@
                     "https://schema.org/name": "Ronak Shah"
                 }
             ],
-            "https://schema.org/dateCreated": "2020-07-13",
+            "https://schema.org/dateCreated": "2020-07-13T00:00:00.000Z",
             "https://schema.org/license": "https://spdx.org/licenses/Apache-2.0"
         },
         {

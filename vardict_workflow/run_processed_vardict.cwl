@@ -10,47 +10,55 @@ inputs:
     type: File
     secondaryFiles:
       - .fai
-    'sbg:x': -634.5714111328125
-    'sbg:y': 149.14285278320312
+    'sbg:x': 0
+    'sbg:y': 213.53125
   - id: input_bam_case
     type: File
     secondaryFiles:
       - ^.bai
-    'sbg:x': -699
-    'sbg:y': -149
+    'sbg:x': 0
+    'sbg:y': 320.296875
   - id: bedfile
     type: File?
-    'sbg:x': -636.4950561523438
-    'sbg:y': -36.49504852294922
+    'sbg:x': 0
+    'sbg:y': 427.0625
   - id: sample_name
     type: string
-    'sbg:x': -295
-    'sbg:y': -483.5596008300781
+    'sbg:x': 0
+    'sbg:y': 106.765625
   - id: concat_output_name
     type: string
-    'sbg:x': 20.6474609375
-    'sbg:y': 102.47994995117188
+    'sbg:x': 513.37158203125
+    'sbg:y': 334.296875
   - id: stdout
     type: boolean
-    'sbg:x': 109.83137512207031
-    'sbg:y': -20.80786895751953
+    'sbg:x': 513.37158203125
+    'sbg:y': 92.765625
   - id: vardict_output_vcf_name
     type: string?
-    'sbg:x': -596.02392578125
-    'sbg:y': -291.1067810058594
+    'sbg:x': 0
+    'sbg:y': 0
+  - id: filter_variants
+    type: boolean?
+    'sbg:x': 198.8257293701172
+    'sbg:y': 601.82177734375
+  - id: vardict_allele_frequency_threshold
+    type: float?
+    'sbg:x': 227.29263305664062
+    'sbg:y': -49.30992126464844
 outputs:
   - id: txt
     outputSource:
       - pv_vardict_single_filter/txt
     type: File
-    'sbg:x': 208.52406311035156
-    'sbg:y': -167.63339233398438
+    'sbg:x': 759.164794921875
+    'sbg:y': 266.9140625
   - id: concatenated_vcf
     outputSource:
       - variants_concat/concatenated_vcf
     type: File
-    'sbg:x': 493.2825012207031
-    'sbg:y': 131.36968994140625
+    'sbg:x': 1064.255126953125
+    'sbg:y': 213.53125
 steps:
   - id: vardict
     in:
@@ -71,17 +79,18 @@ steps:
       - id: bed_file_column_for_chromsome
         default: '1'
       - id: filter_variants
-        default: true
-      - id: minimum_allele_frequency
-        default: 0.01
+        default: false
+        source: filter_variants
       - id: output_vcf
         source: vardict_output_vcf_name
+      - id: vardict_allele_frequency_threshold
+        source: vardict_allele_frequency_threshold
     out:
       - id: output
     run: ../command_line_tools/vardictjava/v1.8.2/vardict_single_sample.cwl
     label: vardict
-    'sbg:x': -411.7029724121094
-    'sbg:y': -187.75247192382812
+    'sbg:x': 250.328125
+    'sbg:y': 185.53125
   - id: pv_vardict_single_filter
     in:
       - id: inputVCF
@@ -95,7 +104,7 @@ steps:
       - id: tnRatio
         default: 5
       - id: variantFraction
-        default: 0.04
+        default: 0
       - id: minQual
         default: 20
     out:
@@ -104,8 +113,8 @@ steps:
       - id: vcf
     run: >-
       ../command_line_tools/postprocessing_variant_calls/0.1.5/pv_vardict_single_filter.cwl
-    'sbg:x': 1.4255318641662598
-    'sbg:y': -197.1702117919922
+    'sbg:x': 513.37158203125
+    'sbg:y': 213.53125
   - id: variants_concat
     in:
       - id: fastaRef
@@ -132,8 +141,8 @@ steps:
       - id: concatenated_vcf
     run: ../variant_postprocessing/variants_concat.cwl
     label: variants_concat
-    'sbg:x': 337.0436706542969
-    'sbg:y': 125.96643829345703
+    'sbg:x': 759.164794921875
+    'sbg:y': 132.1484375
 requirements:
   - class: SubworkflowFeatureRequirement
 $schemas:
@@ -154,5 +163,5 @@ $schemas:
     's:email': 'mailto:shahr@mskcc.org'
     's:identifier': ''
     's:name': Ronak Shah
-'s:dateCreated': 2020-07-13
+'s:dateCreated': '2020-07-13T00:00:00.000Z'
 's:license': 'https://spdx.org/licenses/Apache-2.0'
