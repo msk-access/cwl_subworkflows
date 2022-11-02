@@ -66,7 +66,7 @@ steps:
         source: vardict_input_vcf
     out:
       - id: annotatedOutput
-    run: ../../cwl-commandlinetools/snpsift_annotate_5.0/snpsift_annotate_5-0.cwl
+    run: ../command_line_tools/snpsift_annotate_5.0/snpsift_annotate_5-0.cwl
     label: snpsift_countAnnotation
     'sbg:x': 155.640625
     'sbg:y': 320.390625
@@ -78,7 +78,7 @@ steps:
         source: snpsift_annotate_5_0/annotatedOutput
     out:
       - id: annotatedOutput
-    run: ../../cwl-commandlinetools/snpsift_annotate_5.0/snpsift_annotate_5-0.cwl
+    run: ../command_line_tools/snpsift_annotate_5.0/snpsift_annotate_5-0.cwl
     label: snpsift_annotate_5.0
     'sbg:x': 416.7921447753906
     'sbg:y': 113.796875
@@ -100,7 +100,7 @@ steps:
         source: tumor_id
     out:
       - id: vcf2maf_maf
-    run: ../../cwl-commandlinetools/vcf2maf_1.6.21/vcf2maf_1.6.21.cwl
+    run: ../command_line_tools//vcf2maf_1.6.21/vcf2maf_1.6.21.cwl
     'sbg:x': 833.5098266601562
     'sbg:y': 276.9501953125
 requirements: []
