@@ -26,10 +26,6 @@ inputs:
     type: string?
     'sbg:x': 416.7921447753906
     'sbg:y': 441.1875
-  - id: ref_fasta
-    type: string?
-    'sbg:x': 416.7921447753906
-    'sbg:y': 334.390625
   - id: retain_info
     type: string?
     'sbg:x': 416.7921447753906
@@ -38,6 +34,10 @@ inputs:
     type: string?
     'sbg:x': 416.7921447753906
     'sbg:y': 0
+  - id: ref_fasta
+    type: File?
+    'sbg:x': 766.7887573242188
+    'sbg:y': 565.2807006835938
 outputs:
   - id: cosmicCount_annotatedOutput
     outputSource:
