@@ -8,6 +8,8 @@ $namespaces:
 inputs:
   - id: input_cosmicCountDB_vcf
     type: File
+    secondaryFiles:
+      - .tbi
     'sbg:x': 0
     'sbg:y': 434.1875
   - id: vardict_input_vcf
@@ -16,6 +18,8 @@ inputs:
     'sbg:y': 327.390625
   - id: input_cosmicprevalenceDB_vcf
     type: File
+    secondaryFiles:
+      - .tbi
     'sbg:x': 217.47328186035156
     'sbg:y': 564.6259765625
   - id: min_hom_vaf
