@@ -10,14 +10,27 @@
 #### Usage
 
 ```bash
-usage: variant_annotation.cwl [-h] --input_DB_vcf INPUT_DB_VCF --input_vcf
-                              INPUT_VCF --input_DB_vcf_1 INPUT_DB_VCF_1
-                              [--min_hom_vaf MIN_HOM_VAF]
-                              [--output_maf OUTPUT_MAF]
-                              [--ref_fasta REF_FASTA]
-                              [--retain_info RETAIN_INFO]
-                              [--tumor_id TUMOR_ID]
-                              [job_order]
+usage: variant_annotation.cwl [-h]  --input_cosmicCountDB_vcf INPUT_COSMICCOUNTDB_VCF
+       --vardict_input_vcf VARDICT_INPUT_VCF --input_cosmicprevalenceDB_vcf
+       INPUT_COSMICPREVALENCEDB_VCF [--min_hom_vaf MIN_HOM_VAF]
+       [--output_mafName OUTPUT_MAFNAME] [--retain_info RETAIN_INFO]
+       [--tumor_id TUMOR_ID] [--snpsift_countOpName SNPSIFT_COUNTOPNAME]
+       [--snpsift_prevalOpName SNPSIFT_PREVALOPNAME]
+       [job_order]
 
+positional arguments:
+  job_order             Job input json file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --input_cosmicCountDB_vcf INPUT_COSMICCOUNTDB_VCF
+  --vardict_input_vcf VARDICT_INPUT_VCF
+  --input_cosmicprevalenceDB_vcf INPUT_COSMICPREVALENCEDB_VCF
+  --min_hom_vaf MIN_HOM_VAF
+  --output_mafName OUTPUT_MAFNAME
+  --retain_info RETAIN_INFO
+  --tumor_id TUMOR_ID
+  --snpsift_countOpName SNPSIFT_COUNTOPNAME
+  --snpsift_prevalOpName SNPSIFT_PREVALOPNAME
 ```
 
