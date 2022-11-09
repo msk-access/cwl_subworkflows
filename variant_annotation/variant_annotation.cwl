@@ -14,7 +14,7 @@ inputs:
     type: File
     'sbg:x': 0
     'sbg:y': 327.390625
-  - id: input_cosmicprevalence_vcf
+  - id: input_cosmicprevalenceDB_vcf
     type: File
     'sbg:x': 217.47328186035156
     'sbg:y': 564.6259765625
@@ -79,7 +79,7 @@ steps:
   - id: snpsift_annotate_5_1
     in:
       - id: input_DB_vcf
-        source: input_cosmicprevalence_vcf
+        source: input_cosmicprevalenceDB_vcf
       - id: input_vcf
         source: snpsift_annotate_5_0/annotatedOutput
       - id: output_file_name
