@@ -6,7 +6,7 @@ $namespaces:
   s: 'https://schema.org/'
   sbg: 'https://www.sevenbridges.com/'
 inputs:
-  - id: input_cosmicCount_vcf
+  - id: input_cosmicCountDB_vcf
     type: File
     'sbg:x': 0
     'sbg:y': 434.1875
@@ -16,8 +16,8 @@ inputs:
     'sbg:y': 327.390625
   - id: input_cosmicprevalence_vcf
     type: File
-    'sbg:x': 155.640625
-    'sbg:y': 434.1875
+    'sbg:x': 217.47328186035156
+    'sbg:y': 564.6259765625
   - id: min_hom_vaf
     type: float?
     'sbg:x': 416.7921447753906
@@ -34,10 +34,6 @@ inputs:
     type: string?
     'sbg:x': 416.7921447753906
     'sbg:y': 0
-  - id: ref_fasta
-    type: string?
-    'sbg:x': 750.5759887695312
-    'sbg:y': 511.7911376953125
   - id: snpsift_countOpName
     type: string?
     'sbg:x': 16.4202823638916
@@ -69,7 +65,7 @@ steps:
   - id: snpsift_annotate_5_0
     in:
       - id: input_DB_vcf
-        source: input_cosmicCount_vcf
+        source: input_cosmicCountDB_vcf
       - id: input_vcf
         source: vardict_input_vcf
       - id: output_file_name
@@ -104,7 +100,6 @@ steps:
         source: output_mafName
       - id: ref_fasta
         default: /.vep/homo_sapiens/105_GRCh37/Homo_sapiens.GRCh37.dna.toplevel.fa.gz
-        source: ref_fasta
       - id: retain_info
         source: retain_info
       - id: tumor_id
