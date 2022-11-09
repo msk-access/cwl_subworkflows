@@ -6,23 +6,27 @@ $namespaces:
   s: 'https://schema.org/'
   sbg: 'https://www.sevenbridges.com/'
 inputs:
-  - id: input_cosmicCount_vcf
+  - id: input_cosmicCountDB_vcf
     type: File
+    secondaryFiles:
+      - .tbi
     'sbg:x': 0
     'sbg:y': 434.1875
   - id: vardict_input_vcf
     type: File
     'sbg:x': 0
     'sbg:y': 327.390625
-  - id: input_cosmicprevalence_vcf
+  - id: input_cosmicprevalenceDB_vcf
     type: File
-    'sbg:x': 155.640625
-    'sbg:y': 434.1875
+    secondaryFiles:
+      - .tbi
+    'sbg:x': 217.47328186035156
+    'sbg:y': 564.6259765625
   - id: min_hom_vaf
     type: float?
     'sbg:x': 416.7921447753906
     'sbg:y': 654.78125
-  - id: output_maf
+  - id: output_mafName
     type: string?
     'sbg:x': 416.7921447753906
     'sbg:y': 441.1875
@@ -34,17 +38,21 @@ inputs:
     type: string?
     'sbg:x': 416.7921447753906
     'sbg:y': 0
-  - id: ref_fasta
-    type: File?
-    'sbg:x': 766.7887573242188
-    'sbg:y': 565.2807006835938
+  - id: snpsift_countOpName
+    type: string?
+    'sbg:x': 16.4202823638916
+    'sbg:y': 169.89190673828125
+  - id: snpsift_prevalOpName
+    type: string?
+    'sbg:x': 214.9839324951172
+    'sbg:y': -51.58765411376953
 outputs:
   - id: cosmicCount_annotatedOutput
     outputSource:
       - snpsift_annotate_5_0/annotatedOutput
     type: File
-    'sbg:x': 416.7921447753906
-    'sbg:y': 761.578125
+    'sbg:x': 348.4152526855469
+    'sbg:y': 772.9266967773438
   - id: annotatedOutput_prevalence
     outputSource:
       - snpsift_annotate_5_1/annotatedOutput
@@ -61,9 +69,11 @@ steps:
   - id: snpsift_annotate_5_0
     in:
       - id: input_DB_vcf
-        source: input_cosmicCount_vcf
+        source: input_cosmicCountDB_vcf
       - id: input_vcf
         source: vardict_input_vcf
+      - id: output_file_name
+        source: snpsift_countOpName
     out:
       - id: annotatedOutput
     run: ../command_line_tools/snpsift_annotate_5.0/snpsift_annotate_5-0.cwl
@@ -73,9 +83,11 @@ steps:
   - id: snpsift_annotate_5_1
     in:
       - id: input_DB_vcf
-        source: input_cosmicprevalence_vcf
+        source: input_cosmicprevalenceDB_vcf
       - id: input_vcf
         source: snpsift_annotate_5_0/annotatedOutput
+      - id: output_file_name
+        source: snpsift_prevalOpName
     out:
       - id: annotatedOutput
     run: ../command_line_tools/snpsift_annotate_5.0/snpsift_annotate_5-0.cwl
@@ -89,9 +101,9 @@ steps:
       - id: min_hom_vaf
         source: min_hom_vaf
       - id: output_maf
-        source: output_maf
+        source: output_mafName
       - id: ref_fasta
-        source: ref_fasta
+        default: /.vep/homo_sapiens/105_GRCh37/Homo_sapiens.GRCh37.dna.toplevel.fa.gz
       - id: retain_info
         source: retain_info
       - id: tumor_id
