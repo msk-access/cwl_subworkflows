@@ -325,12 +325,11 @@
                     "id": "#vcf2maf_1.6.21.cwl/vcf2maf_v1_6_21/ref_fasta",
                     "type": [
                         "null",
-                        "File"
+                        "string"
                     ],
                     "inputBinding": {
                         "position": 0,
-                        "prefix": "--ref-fasta",
-                        "valueFrom": "${ return inputs.ref_fasta.toString(); }"
+                        "prefix": "--ref-fasta"
                     },
                     "doc": "Reference FASTA file"
                 },
@@ -541,8 +540,11 @@
             "label": "variant_annotation",
             "inputs": [
                 {
-                    "id": "#main/input_cosmicCount_vcf",
+                    "id": "#main/input_cosmicCountDB_vcf",
                     "type": "File",
+                    "secondaryFiles": [
+                        ".tbi"
+                    ],
                     "https://www.sevenbridges.com/x": 0,
                     "https://www.sevenbridges.com/y": 434.1875
                 },
@@ -553,10 +555,13 @@
                     "https://www.sevenbridges.com/y": 327.390625
                 },
                 {
-                    "id": "#main/input_cosmicprevalence_vcf",
+                    "id": "#main/input_cosmicprevalenceDB_vcf",
                     "type": "File",
-                    "https://www.sevenbridges.com/x": 155.640625,
-                    "https://www.sevenbridges.com/y": 434.1875
+                    "secondaryFiles": [
+                        ".tbi"
+                    ],
+                    "https://www.sevenbridges.com/x": 217.47328186035156,
+                    "https://www.sevenbridges.com/y": 564.6259765625
                 },
                 {
                     "id": "#main/min_hom_vaf",
@@ -568,7 +573,7 @@
                     "https://www.sevenbridges.com/y": 654.78125
                 },
                 {
-                    "id": "#main/output_maf",
+                    "id": "#main/output_mafName",
                     "type": [
                         "null",
                         "string"
@@ -595,13 +600,22 @@
                     "https://www.sevenbridges.com/y": 0
                 },
                 {
-                    "id": "#main/ref_fasta",
+                    "id": "#main/snpsift_countOpName",
                     "type": [
                         "null",
-                        "File"
+                        "string"
                     ],
-                    "https://www.sevenbridges.com/x": 766.7887573242188,
-                    "https://www.sevenbridges.com/y": 565.2807006835938
+                    "https://www.sevenbridges.com/x": 16.4202823638916,
+                    "https://www.sevenbridges.com/y": 169.89190673828125
+                },
+                {
+                    "id": "#main/snpsift_prevalOpName",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "https://www.sevenbridges.com/x": 214.9839324951172,
+                    "https://www.sevenbridges.com/y": -51.58765411376953
                 }
             ],
             "outputs": [
@@ -611,8 +625,8 @@
                         "#main/snpsift_annotate_5_0/annotatedOutput"
                     ],
                     "type": "File",
-                    "https://www.sevenbridges.com/x": 416.7921447753906,
-                    "https://www.sevenbridges.com/y": 761.578125
+                    "https://www.sevenbridges.com/x": 348.4152526855469,
+                    "https://www.sevenbridges.com/y": 772.9266967773438
                 },
                 {
                     "id": "#main/annotatedOutput_prevalence",
@@ -639,11 +653,15 @@
                     "in": [
                         {
                             "id": "#main/snpsift_annotate_5_0/input_DB_vcf",
-                            "source": "#main/input_cosmicCount_vcf"
+                            "source": "#main/input_cosmicCountDB_vcf"
                         },
                         {
                             "id": "#main/snpsift_annotate_5_0/input_vcf",
                             "source": "#main/vardict_input_vcf"
+                        },
+                        {
+                            "id": "#main/snpsift_annotate_5_0/output_file_name",
+                            "source": "#main/snpsift_countOpName"
                         }
                     ],
                     "out": [
@@ -661,11 +679,15 @@
                     "in": [
                         {
                             "id": "#main/snpsift_annotate_5_1/input_DB_vcf",
-                            "source": "#main/input_cosmicprevalence_vcf"
+                            "source": "#main/input_cosmicprevalenceDB_vcf"
                         },
                         {
                             "id": "#main/snpsift_annotate_5_1/input_vcf",
                             "source": "#main/snpsift_annotate_5_0/annotatedOutput"
+                        },
+                        {
+                            "id": "#main/snpsift_annotate_5_1/output_file_name",
+                            "source": "#main/snpsift_prevalOpName"
                         }
                     ],
                     "out": [
@@ -691,11 +713,11 @@
                         },
                         {
                             "id": "#main/vcf2maf_v1_6_21/output_maf",
-                            "source": "#main/output_maf"
+                            "source": "#main/output_mafName"
                         },
                         {
                             "id": "#main/vcf2maf_v1_6_21/ref_fasta",
-                            "source": "#main/ref_fasta"
+                            "default": "/.vep/homo_sapiens/105_GRCh37/Homo_sapiens.GRCh37.dna.toplevel.fa.gz"
                         },
                         {
                             "id": "#main/vcf2maf_v1_6_21/retain_info",
