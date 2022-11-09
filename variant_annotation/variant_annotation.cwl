@@ -35,9 +35,9 @@ inputs:
     'sbg:x': 416.7921447753906
     'sbg:y': 0
   - id: ref_fasta
-    type: File?
-    'sbg:x': 766.7887573242188
-    'sbg:y': 565.2807006835938
+    type: string?
+    'sbg:x': 750.5759887695312
+    'sbg:y': 511.7911376953125
 outputs:
   - id: cosmicCount_annotatedOutput
     outputSource:
@@ -91,6 +91,7 @@ steps:
       - id: output_maf
         source: output_maf
       - id: ref_fasta
+        default: '/.vep/homo_sapiens/105_GRCh37/Homo_sapiens.GRCh37.dna.toplevel.fa.gz'
         source: ref_fasta
       - id: retain_info
         source: retain_info
