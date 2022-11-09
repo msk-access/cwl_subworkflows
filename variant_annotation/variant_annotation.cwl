@@ -22,7 +22,7 @@ inputs:
     type: float?
     'sbg:x': 416.7921447753906
     'sbg:y': 654.78125
-  - id: output_maf
+  - id: output_mafName
     type: string?
     'sbg:x': 416.7921447753906
     'sbg:y': 441.1875
@@ -38,13 +38,21 @@ inputs:
     type: string?
     'sbg:x': 750.5759887695312
     'sbg:y': 511.7911376953125
+  - id: snpsift_countOpName
+    type: string?
+    'sbg:x': 16.4202823638916
+    'sbg:y': 169.89190673828125
+  - id: snpsift_prevalOpName
+    type: string?
+    'sbg:x': 214.9839324951172
+    'sbg:y': -51.58765411376953
 outputs:
   - id: cosmicCount_annotatedOutput
     outputSource:
       - snpsift_annotate_5_0/annotatedOutput
     type: File
-    'sbg:x': 416.7921447753906
-    'sbg:y': 761.578125
+    'sbg:x': 348.4152526855469
+    'sbg:y': 772.9266967773438
   - id: annotatedOutput_prevalence
     outputSource:
       - snpsift_annotate_5_1/annotatedOutput
@@ -64,6 +72,8 @@ steps:
         source: input_cosmicCount_vcf
       - id: input_vcf
         source: vardict_input_vcf
+      - id: output_file_name
+        source: snpsift_countOpName
     out:
       - id: annotatedOutput
     run: ../command_line_tools/snpsift_annotate_5.0/snpsift_annotate_5-0.cwl
@@ -76,6 +86,8 @@ steps:
         source: input_cosmicprevalence_vcf
       - id: input_vcf
         source: snpsift_annotate_5_0/annotatedOutput
+      - id: output_file_name
+        source: snpsift_prevalOpName
     out:
       - id: annotatedOutput
     run: ../command_line_tools/snpsift_annotate_5.0/snpsift_annotate_5-0.cwl
@@ -89,9 +101,9 @@ steps:
       - id: min_hom_vaf
         source: min_hom_vaf
       - id: output_maf
-        source: output_maf
+        source: output_mafName
       - id: ref_fasta
-        default: '/.vep/homo_sapiens/105_GRCh37/Homo_sapiens.GRCh37.dna.toplevel.fa.gz'
+        default: /.vep/homo_sapiens/105_GRCh37/Homo_sapiens.GRCh37.dna.toplevel.fa.gz
         source: ref_fasta
       - id: retain_info
         source: retain_info
