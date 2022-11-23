@@ -306,49 +306,49 @@ outputs:
     'sbg:y': 427.375
   - id: biometrics_major_plot
     outputSource:
-      - biometrics_major_0_2_13/biometrics_major_plot
+      - biometrics_major_0_2_14/biometrics_major_plot
     type: File?
     'sbg:x': 1495.5341796875
     'sbg:y': 1331.125
   - id: biometrics_major_json
     outputSource:
-      - biometrics_major_0_2_13/biometrics_major_json
+      - biometrics_major_0_2_14/biometrics_major_json
     type: File?
     'sbg:x': 1495.5341796875
     'sbg:y': 1437.96875
   - id: biometrics_major_csv
     outputSource:
-      - biometrics_major_0_2_13/biometrics_major_csv
+      - biometrics_major_0_2_14/biometrics_major_csv
     type: File
     'sbg:x': 1495.5341796875
     'sbg:y': 1544.8125
   - id: biometrics_extract_pickle
     outputSource:
-      - biometrics_extract_0_2_13/biometrics_extract_pickle
+      - biometrics_extract_0_2_14/biometrics_extract_pickle
     type: File
     'sbg:x': 982.1435546875
     'sbg:y': 2448.5625
   - id: biometrics_minor_sites_plot
     outputSource:
-      - biometrics_minor_0_2_13/biometrics_minor_sites_plot
+      - biometrics_minor_0_2_14/biometrics_minor_sites_plot
     type: File?
     'sbg:x': 1495.5341796875
     'sbg:y': 903.75
   - id: biometrics_minor_plot
     outputSource:
-      - biometrics_minor_0_2_13/biometrics_minor_plot
+      - biometrics_minor_0_2_14/biometrics_minor_plot
     type: File?
     'sbg:x': 1495.5341796875
     'sbg:y': 1010.59375
   - id: biometrics_minor_json
     outputSource:
-      - biometrics_minor_0_2_13/biometrics_minor_json
+      - biometrics_minor_0_2_14/biometrics_minor_json
     type: File?
     'sbg:x': 1495.5341796875
     'sbg:y': 1117.4375
   - id: biometrics_minor_csv
     outputSource:
-      - biometrics_minor_0_2_13/biometrics_minor_csv
+      - biometrics_minor_0_2_14/biometrics_minor_csv
     type: File
     'sbg:x': 1495.5341796875
     'sbg:y': 1224.28125
@@ -444,12 +444,12 @@ steps:
     label: bam_qc_stats_pool_b
     'sbg:x': 351.4375
     'sbg:y': 1373.125
-  - id: biometrics_major_0_2_13
+  - id: biometrics_major_0_2_14
     in:
       - id: input
         linkMerge: merge_nested
         source:
-          - biometrics_extract_0_2_13/biometrics_extract_pickle
+          - biometrics_extract_0_2_14/biometrics_extract_pickle
       - id: major_threshold
         source: major_threshold
       - id: prefix
@@ -462,10 +462,10 @@ steps:
       - id: biometrics_major_csv
       - id: biometrics_major_json
       - id: biometrics_major_plot
-    run: ../command_line_tools/biometrics_major/0.2.13/biometrics_major.cwl
+    run: ../command_line_tools/biometrics_major/0.2.14/biometrics_major.cwl
     'sbg:x': 982.1435546875
     'sbg:y': 2313.71875
-  - id: biometrics_extract_0_2_13
+  - id: biometrics_extract_0_2_14
     in:
       - id: sample_bam
         source: duplex_bam
@@ -483,15 +483,15 @@ steps:
         default: 200
     out:
       - id: biometrics_extract_pickle
-    run: ../command_line_tools/biometrics_extract/0.2.13/biometrics_extract.cwl
+    run: ../command_line_tools/biometrics_extract/0.2.14/biometrics_extract.cwl
     'sbg:x': 351.4375
     'sbg:y': 1189.28125
-  - id: biometrics_minor_0_2_13
+  - id: biometrics_minor_0_2_14
     in:
       - id: input
         linkMerge: merge_nested
         source:
-          - biometrics_extract_0_2_13/biometrics_extract_pickle
+          - biometrics_extract_0_2_14/biometrics_extract_pickle
       - id: prefix
         source: prefix
       - id: plot
@@ -503,7 +503,7 @@ steps:
       - id: biometrics_minor_json
       - id: biometrics_minor_plot
       - id: biometrics_minor_sites_plot
-    run: ../command_line_tools/biometrics_minor/0.2.13/biometrics_minor.cwl
+    run: ../command_line_tools/biometrics_minor/0.2.14/biometrics_minor.cwl
     'sbg:x': 982.1435546875
     'sbg:y': 2157.875
   - id: getbasecountsmultisample_1_2_5
