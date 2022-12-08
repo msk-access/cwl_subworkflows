@@ -46,6 +46,14 @@ inputs:
     type: string?
     'sbg:x': 214.9839324951172
     'sbg:y': -51.58765411376953
+  - id: opOncoKbMafName
+    type: string
+    'sbg:x': 953.6817626953125
+    'sbg:y': 129.14283752441406
+  - id: oncoKbApiToken
+    type: string
+    'sbg:x': 913.6817626953125
+    'sbg:y': 479.1428527832031
 outputs:
   - id: cosmicCount_annotatedOutput
     outputSource:
@@ -59,12 +67,12 @@ outputs:
     type: File
     'sbg:x': 656.337158203125
     'sbg:y': 723.7005615234375
-  - id: vcf2maf_maf
+  - id: opOncoKbMaf
     outputSource:
-      - vcf2maf_v1_6_21/vcf2maf_maf
-    type: File
-    'sbg:x': 1113.535400390625
-    'sbg:y': 265.8045959472656
+      - oncokb_annotator/outputMaf
+    type: File?
+    'sbg:x': 1262.5966796875
+    'sbg:y': 265.911376953125
 steps:
   - id: snpsift_annotate_5_0
     in:
@@ -115,6 +123,22 @@ steps:
     run: ../command_line_tools//vcf2maf_1.6.21/vcf2maf_1.6.21.cwl
     'sbg:x': 833.5098266601562
     'sbg:y': 276.9501953125
+  - id: oncokb_annotator
+    in:
+      - id: inputMafFile
+        source: vcf2maf_v1_6_21/vcf2maf_maf
+      - id: outputMafName
+        source: opOncoKbMafName
+      - id: apiToken
+        source: oncoKbApiToken
+      - id: referenceGenome
+        default: GRCh37
+    out:
+      - id: outputMaf
+    run: ../command_line_tools/oncokb_annotator_3.2.2/oncokb_annotator_3-2-2.cwl
+    label: oncokb_annotator
+    'sbg:x': 1059.142822265625
+    'sbg:y': 261.2857360839844
 requirements: []
 $schemas:
   - 'http://schema.org/version/latest/schemaorg-current-http.rdf'

@@ -15,3 +15,6 @@ output_mafName: tumorId_annotated.maf
 retain_info: CNT,TUMOR_TYPE
 tumor_id: tumorId
 min_hom_vaf: 0
+oncoKbApiToken: 111d111-token123
+opOncoKbMafName: testOnco.maf
+
