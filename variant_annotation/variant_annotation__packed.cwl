@@ -2,6 +2,144 @@
     "$graph": [
         {
             "class": "CommandLineTool",
+            "id": "#oncokb_annotator_3-2-2.cwl",
+            "baseCommand": [
+                "python3",
+                "/oncokb/MafAnnotator.py"
+            ],
+            "inputs": [
+                {
+                    "id": "#oncokb_annotator_3-2-2.cwl/oncokb_annotator/inputMafFile",
+                    "type": "File",
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "-i"
+                    },
+                    "doc": "input maf file for annotation"
+                },
+                {
+                    "id": "#oncokb_annotator_3-2-2.cwl/oncokb_annotator/outputMafName",
+                    "type": "string",
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "-o"
+                    }
+                },
+                {
+                    "id": "#oncokb_annotator_3-2-2.cwl/oncokb_annotator/apiToken",
+                    "type": "string",
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "-b"
+                    },
+                    "doc": "OncoKB API token"
+                },
+                {
+                    "id": "#oncokb_annotator_3-2-2.cwl/oncokb_annotator/previousResult",
+                    "type": [
+                        "null",
+                        "File"
+                    ],
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "-p"
+                    }
+                },
+                {
+                    "id": "#oncokb_annotator_3-2-2.cwl/oncokb_annotator/clinicalFile",
+                    "type": [
+                        "null",
+                        "File"
+                    ],
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "-c"
+                    },
+                    "doc": "Essential clinical columns:\n    SAMPLE_ID: sample ID\n    ONCOTREE_CODE: tumor type code from oncotree (http://oncotree.mskcc.org)"
+                },
+                {
+                    "id": "#oncokb_annotator_3-2-2.cwl/oncokb_annotator/tumorType",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "-t"
+                    },
+                    "doc": "Cancer type will be assigned based on the following priority:\n    1) ONCOTREE_CODE in clinical data file\n    2) ONCOTREE_CODE exist in MAF\n    3) default tumor type (-t)"
+                },
+                {
+                    "id": "#oncokb_annotator_3-2-2.cwl/oncokb_annotator/referenceGenome",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "-r"
+                    },
+                    "doc": "Reference Genome only allows the following values(case-insensitive):\n    - GRCh37\n      GRCh38"
+                }
+            ],
+            "label": "oncokb_annotator",
+            "requirements": [
+                {
+                    "class": "DockerRequirement",
+                    "dockerPull": "ghcr.io/msk-access/oncokbannotator:3.2.2"
+                },
+                {
+                    "class": "InlineJavascriptRequirement"
+                }
+            ],
+            "http://purl.org/dc/terms/contributor": [
+                {
+                    "class": "http://xmlns.com/foaf/0.1/Organization",
+                    "http://xmlns.com/foaf/0.1/member": [
+                        {
+                            "class": "http://xmlns.com/foaf/0.1/Person",
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:sivaprk@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Karthigayini Sivaprakasam"
+                        }
+                    ],
+                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
+                }
+            ],
+            "http://purl.org/dc/terms/creator": [
+                {
+                    "class": "http://xmlns.com/foaf/0.1/Organization",
+                    "http://xmlns.com/foaf/0.1/member": [
+                        {
+                            "class": "http://xmlns.com/foaf/0.1/Person",
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:sivaprk@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Karthigayini Sivaprakasam"
+                        }
+                    ],
+                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
+                }
+            ],
+            "http://usefulinc.com/ns/doap#release": [
+                {
+                    "class": "http://usefulinc.com/ns/doap#Version",
+                    "http://usefulinc.com/ns/doap#name": "oncoKb Annotator",
+                    "http://usefulinc.com/ns/doap#revision": "3.2.2"
+                }
+            ],
+            "outputs": [
+                {
+                    "id": "#oncokb_annotator_3-2-2.cwl/oncokb_annotator/outputMaf",
+                    "type": [
+                        "null",
+                        "File"
+                    ],
+                    "outputBinding": {
+                        "glob": "$(inputs.outputMafName)"
+                    }
+                }
+            ]
+        },
+        {
+            "class": "CommandLineTool",
             "id": "#snpsift_annotate_5-0.cwl",
             "baseCommand": [
                 "java"
@@ -103,6 +241,15 @@
                     "doc": "VCF database is sorted and uncompressed. Default: false"
                 }
             ],
+            "outputs": [
+                {
+                    "id": "#snpsift_annotate_5-0.cwl/snpsift_annotate_5_0/annotatedOutput",
+                    "type": "File",
+                    "outputBinding": {
+                        "glob": "${ \n    if (inputs.output_file_name) { \n        return inputs.output_file_name \n    } else { \n        return inputs.input_vcf.basename.replace(/.vcf/, 'snpsift.vcf') \n    } \n}"
+                    }
+                }
+            ],
             "label": "snpsift_annotate_5.0",
             "arguments": [
                 {
@@ -161,15 +308,6 @@
                     "class": "http://usefulinc.com/ns/doap#Version",
                     "http://usefulinc.com/ns/doap#name": "snpsift",
                     "http://usefulinc.com/ns/doap#revision": 5
-                }
-            ],
-            "outputs": [
-                {
-                    "id": "#snpsift_annotate_5-0.cwl/snpsift_annotate_5_0/annotatedOutput",
-                    "type": "File",
-                    "outputBinding": {
-                        "glob": "${ \n    if (inputs.output_file_name) { \n        return inputs.output_file_name \n    } else { \n        return inputs.input_vcf.basename.replace(/.vcf/, 'snpsift.vcf') \n    } \n}"
-                    }
                 }
             ]
         },
@@ -616,6 +754,18 @@
                     ],
                     "https://www.sevenbridges.com/x": 214.9839324951172,
                     "https://www.sevenbridges.com/y": -51.58765411376953
+                },
+                {
+                    "id": "#main/opOncoKbMafName",
+                    "type": "string",
+                    "https://www.sevenbridges.com/x": 953.6817626953125,
+                    "https://www.sevenbridges.com/y": 129.14283752441406
+                },
+                {
+                    "id": "#main/oncoKbApiToken",
+                    "type": "string",
+                    "https://www.sevenbridges.com/x": 913.6817626953125,
+                    "https://www.sevenbridges.com/y": 479.1428527832031
                 }
             ],
             "outputs": [
@@ -638,13 +788,16 @@
                     "https://www.sevenbridges.com/y": 723.7005615234375
                 },
                 {
-                    "id": "#main/vcf2maf_maf",
+                    "id": "#main/opOncoKbMaf",
                     "outputSource": [
-                        "#main/vcf2maf_v1_6_21/vcf2maf_maf"
+                        "#main/oncokb_annotator/outputMaf"
                     ],
-                    "type": "File",
-                    "https://www.sevenbridges.com/x": 1113.535400390625,
-                    "https://www.sevenbridges.com/y": 265.8045959472656
+                    "type": [
+                        "null",
+                        "File"
+                    ],
+                    "https://www.sevenbridges.com/x": 1262.5966796875,
+                    "https://www.sevenbridges.com/y": 265.911376953125
                 }
             ],
             "steps": [
@@ -740,6 +893,36 @@
                     "run": "#vcf2maf_1.6.21.cwl",
                     "https://www.sevenbridges.com/x": 833.5098266601562,
                     "https://www.sevenbridges.com/y": 276.9501953125
+                },
+                {
+                    "id": "#main/oncokb_annotator",
+                    "in": [
+                        {
+                            "id": "#main/oncokb_annotator/inputMafFile",
+                            "source": "#main/vcf2maf_v1_6_21/vcf2maf_maf"
+                        },
+                        {
+                            "id": "#main/oncokb_annotator/outputMafName",
+                            "source": "#main/opOncoKbMafName"
+                        },
+                        {
+                            "id": "#main/oncokb_annotator/apiToken",
+                            "source": "#main/oncoKbApiToken"
+                        },
+                        {
+                            "id": "#main/oncokb_annotator/referenceGenome",
+                            "default": "GRCh37"
+                        }
+                    ],
+                    "out": [
+                        {
+                            "id": "#main/oncokb_annotator/outputMaf"
+                        }
+                    ],
+                    "run": "#oncokb_annotator_3-2-2.cwl",
+                    "label": "oncokb_annotator",
+                    "https://www.sevenbridges.com/x": 1059.142822265625,
+                    "https://www.sevenbridges.com/y": 261.2857360839844
                 }
             ],
             "requirements": [],
