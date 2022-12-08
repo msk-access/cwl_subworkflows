@@ -6,6 +6,7 @@
 
 - [snpift](https://msk-access.gitbook.io/command-line-tools-cwl/snpsift_annotate_5.0/)
 - [vcf2maf](https://msk-access.gitbook.io/command-line-tools-cwl/vcf2maf_1.6.21/)
+- [oncokb_annotator](https://msk-access.gitbook.io/command-line-tools-cwl/oncokb_annotator_3.2.2/)
 
 #### Usage
 
@@ -15,7 +16,8 @@ usage: variant_annotation.cwl [-h]  --input_cosmicCountDB_vcf INPUT_COSMICCOUNTD
        INPUT_COSMICPREVALENCEDB_VCF [--min_hom_vaf MIN_HOM_VAF]
        [--output_mafName OUTPUT_MAFNAME] [--retain_info RETAIN_INFO]
        [--tumor_id TUMOR_ID] [--snpsift_countOpName SNPSIFT_COUNTOPNAME]
-       [--snpsift_prevalOpName SNPSIFT_PREVALOPNAME]
+       [--snpsift_prevalOpName SNPSIFT_PREVALOPNAME] --opOncoKbMafName
+       OPONCOKBMAFNAME --oncoKbApiToken ONCOKBAPITOKEN
        [job_order]
 
 positional arguments:
@@ -32,5 +34,7 @@ optional arguments:
   --tumor_id TUMOR_ID
   --snpsift_countOpName SNPSIFT_COUNTOPNAME
   --snpsift_prevalOpName SNPSIFT_PREVALOPNAME
+  --opOncoKbMafName OPONCOKBMAFNAME
+  --oncoKbApiToken ONCOKBAPITOKEN
 ```
 
