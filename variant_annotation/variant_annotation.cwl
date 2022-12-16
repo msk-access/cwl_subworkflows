@@ -51,9 +51,13 @@ inputs:
     'sbg:x': 953.6817626953125
     'sbg:y': 129.14283752441406
   - id: oncoKbApiToken
-    type: string
-    'sbg:x': 913.6817626953125
-    'sbg:y': 479.1428527832031
+    type: File
+    'sbg:x': 934
+    'sbg:y': 402
+  - id: oncoKbAnnotateHotspots
+    type: boolean?
+    'sbg:x': 914.09375
+    'sbg:y': 582.5
 outputs:
   - id: cosmicCount_annotatedOutput
     outputSource:
@@ -133,6 +137,8 @@ steps:
         source: oncoKbApiToken
       - id: referenceGenome
         default: GRCh37
+      - id: annotateHotspots
+        source: oncoKbAnnotateHotspots
     out:
       - id: outputMaf
     run: ../command_line_tools/oncokb_annotator_3.2.2/oncokb_annotator_3-2-2.cwl
