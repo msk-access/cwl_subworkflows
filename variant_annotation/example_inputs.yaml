@@ -15,6 +15,8 @@ output_mafName: tumorId_annotated.maf
 retain_info: CNT,TUMOR_TYPE
 tumor_id: tumorId
 min_hom_vaf: 0
-oncoKbApiToken: 111d111-token123
+oncoKbApiToken: 
+  class: File
+  path: ?path/to/oncoKb/tokenFile.txt
 opOncoKbMafName: testOnco.maf
-
+oncoKbAnnotateHotspots: True
