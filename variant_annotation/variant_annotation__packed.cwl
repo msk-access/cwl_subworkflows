@@ -27,10 +27,12 @@
                 },
                 {
                     "id": "#oncokb_annotator_3-2-2.cwl/oncokb_annotator/apiToken",
-                    "type": "string",
+                    "type": "File",
                     "inputBinding": {
                         "position": 0,
-                        "prefix": "-b"
+                        "prefix": "-b",
+                        "loadContents": true,
+                        "valueFrom": " ${ return inputs.apiToken.contents; }"
                     },
                     "doc": "OncoKB API token"
                 },
@@ -80,6 +82,17 @@
                         "prefix": "-r"
                     },
                     "doc": "Reference Genome only allows the following values(case-insensitive):\n    - GRCh37\n      GRCh38"
+                },
+                {
+                    "id": "#oncokb_annotator_3-2-2.cwl/oncokb_annotator/annotateHotspots",
+                    "type": [
+                        "null",
+                        "boolean"
+                    ],
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "-a"
+                    }
                 }
             ],
             "label": "oncokb_annotator",
@@ -92,6 +105,7 @@
                     "class": "InlineJavascriptRequirement"
                 }
             ],
+            "stdout": "onckb_stdout.txt",
             "http://purl.org/dc/terms/contributor": [
                 {
                     "class": "http://xmlns.com/foaf/0.1/Organization",
@@ -763,9 +777,18 @@
                 },
                 {
                     "id": "#main/oncoKbApiToken",
-                    "type": "string",
-                    "https://www.sevenbridges.com/x": 913.6817626953125,
-                    "https://www.sevenbridges.com/y": 479.1428527832031
+                    "type": "File",
+                    "https://www.sevenbridges.com/x": 934,
+                    "https://www.sevenbridges.com/y": 402
+                },
+                {
+                    "id": "#main/oncoKbAnnotateHotspots",
+                    "type": [
+                        "null",
+                        "boolean"
+                    ],
+                    "https://www.sevenbridges.com/x": 914.09375,
+                    "https://www.sevenbridges.com/y": 582.5
                 }
             ],
             "outputs": [
@@ -912,6 +935,10 @@
                         {
                             "id": "#main/oncokb_annotator/referenceGenome",
                             "default": "GRCh37"
+                        },
+                        {
+                            "id": "#main/oncokb_annotator/annotateHotspots",
+                            "source": "#main/oncoKbAnnotateHotspots"
                         }
                     ],
                     "out": [
