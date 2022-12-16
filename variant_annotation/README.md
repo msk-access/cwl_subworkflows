@@ -11,13 +11,14 @@
 #### Usage
 
 ```bash
-usage: variant_annotation.cwl [-h]  --input_cosmicCountDB_vcf INPUT_COSMICCOUNTDB_VCF
+usage: variant_annotation.cwl [-h]   --input_cosmicCountDB_vcf INPUT_COSMICCOUNTDB_VCF
        --vardict_input_vcf VARDICT_INPUT_VCF --input_cosmicprevalenceDB_vcf
        INPUT_COSMICPREVALENCEDB_VCF [--min_hom_vaf MIN_HOM_VAF]
        [--output_mafName OUTPUT_MAFNAME] [--retain_info RETAIN_INFO]
        [--tumor_id TUMOR_ID] [--snpsift_countOpName SNPSIFT_COUNTOPNAME]
        [--snpsift_prevalOpName SNPSIFT_PREVALOPNAME] --opOncoKbMafName
        OPONCOKBMAFNAME --oncoKbApiToken ONCOKBAPITOKEN
+       [--oncoKbAnnotateHotspots]
        [job_order]
 
 positional arguments:
@@ -36,5 +37,6 @@ optional arguments:
   --snpsift_prevalOpName SNPSIFT_PREVALOPNAME
   --opOncoKbMafName OPONCOKBMAFNAME
   --oncoKbApiToken ONCOKBAPITOKEN
+  --oncoKbAnnotateHotspots
 ```
 
