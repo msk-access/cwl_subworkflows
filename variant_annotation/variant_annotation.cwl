@@ -77,6 +77,12 @@ outputs:
     type: File?
     'sbg:x': 1262.5966796875
     'sbg:y': 265.911376953125
+  - id: vcf2maf_maf
+    outputSource:
+      - vcf2maf_v1_6_21/vcf2maf_maf
+    type: File
+    'sbg:x': 1148.8089599609375
+    'sbg:y': 594.5475463867188
 steps:
   - id: snpsift_annotate_5_0
     in:
