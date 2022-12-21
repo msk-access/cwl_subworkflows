@@ -821,6 +821,15 @@
                     ],
                     "https://www.sevenbridges.com/x": 1262.5966796875,
                     "https://www.sevenbridges.com/y": 265.911376953125
+                },
+                {
+                    "id": "#main/vcf2maf_maf",
+                    "outputSource": [
+                        "#main/vcf2maf_v1_6_21/vcf2maf_maf"
+                    ],
+                    "type": "File",
+                    "https://www.sevenbridges.com/x": 1148.8089599609375,
+                    "https://www.sevenbridges.com/y": 594.5475463867188
                 }
             ],
             "steps": [
