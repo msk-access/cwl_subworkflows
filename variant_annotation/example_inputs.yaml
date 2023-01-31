@@ -1,0 +1,17 @@
+vardict_input_vcf:
+  class: File
+  path: /path/to/vardict_concat.vcf.gz
+input_cosmicCountDB_vcf:
+  class: File
+  path: >-
+    /work/cch/production/resources/cosmic/versions/v96/CosmicCodingMuts.vcf.gz
+input_cosmicprevalenceDB_vcf:
+  class: File
+  path: >-
+    /work/cch/production/resources/cosmic/versions/v96/CosmicCodingMuts_GRCh37_processed.vcf.gz
+snpsift_countOpName: tumorId_cosmic.vcf
+snpsift_prevalOpName: tumorId_preval.vcf
+output_mafName: tumorId_annotated.maf
+retain_info: CNT,TUMOR_TYPE
+tumor_id: tumorId
+min_hom_vaf: 0

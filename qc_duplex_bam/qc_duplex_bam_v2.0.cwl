@@ -268,31 +268,31 @@ outputs:
     'sbg:y': 750.8828125
   - id: biometrics_extract_pickle
     outputSource:
-      - biometrics_extract_0_2_13/biometrics_extract_pickle
+      - biometrics_extract_0_2_14/biometrics_extract_pickle
     type: File
     'sbg:x': 984.2216796875
     'sbg:y': 2556.359375
   - id: biometrics_minor_sites_plot
     outputSource:
-      - biometrics_minor_0_2_13/biometrics_minor_sites_plot
+      - biometrics_minor_0_2_14/biometrics_minor_sites_plot
     type: File?
     'sbg:x': 1432.8466796875
     'sbg:y': 1120.1640625
   - id: biometrics_minor_plot
     outputSource:
-      - biometrics_minor_0_2_13/biometrics_minor_plot
+      - biometrics_minor_0_2_14/biometrics_minor_plot
     type: File?
     'sbg:x': 1432.8466796875
     'sbg:y': 1226.8203125
   - id: biometrics_minor_json
     outputSource:
-      - biometrics_minor_0_2_13/biometrics_minor_json
+      - biometrics_minor_0_2_14/biometrics_minor_json
     type: File?
     'sbg:x': 1432.8466796875
     'sbg:y': 1333.515625
   - id: biometrics_minor_csv
     outputSource:
-      - biometrics_minor_0_2_13/biometrics_minor_csv
+      - biometrics_minor_0_2_14/biometrics_minor_csv
     type: File
     'sbg:x': 1432.8466796875
     'sbg:y': 1440.2109375
@@ -384,7 +384,7 @@ steps:
     run: ../command_line_tools/sequence_qc/0.2.3/sequence_qc_0.2.3.cwl
     'sbg:x': 353.515625
     'sbg:y': 1426.328125
-  - id: biometrics_extract_0_2_13
+  - id: biometrics_extract_0_2_14
     in:
       - id: sample_bam
         source: duplex_bam
@@ -405,15 +405,15 @@ steps:
         source: duplex_biometrics_extract_file_type
     out:
       - id: biometrics_extract_pickle
-    run: ../command_line_tools/biometrics_extract/0.2.13/biometrics_extract.cwl
+    run: ../command_line_tools/biometrics_extract/0.2.14/biometrics_extract.cwl
     'sbg:x': 353.515625
     'sbg:y': 1616.984375
-  - id: biometrics_minor_0_2_13
+  - id: biometrics_minor_0_2_14
     in:
       - id: input
         linkMerge: merge_nested
         source:
-          - biometrics_extract_0_2_13/biometrics_extract_pickle
+          - biometrics_extract_0_2_14/biometrics_extract_pickle
       - id: prefix
         source: prefix
       - id: plot
@@ -425,7 +425,7 @@ steps:
       - id: biometrics_minor_json
       - id: biometrics_minor_plot
       - id: biometrics_minor_sites_plot
-    run: ../command_line_tools/biometrics_minor/0.2.13/biometrics_minor.cwl
+    run: ../command_line_tools/biometrics_minor/0.2.14/biometrics_minor.cwl
     'sbg:x': 984.2216796875
     'sbg:y': 2265.96875
   - id: getbasecountsmultisample_1_2_5
