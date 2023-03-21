@@ -107,6 +107,12 @@ outputs:
     type: File
     'sbg:x': 1663.9556884765625
     'sbg:y': 281.1669921875
+  - id: output_complexity_maf
+    outputSource:
+      - maf_annotated_by_bed/output
+    type: File
+    'sbg:x': 1419.9385986328125
+    'sbg:y': 708.3048095703125
 steps:
   - id: snpsift_annotate_5_0
     in:
