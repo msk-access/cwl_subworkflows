@@ -84,10 +84,6 @@ inputs:
     type: float?
     'sbg:x': 0
     'sbg:y': 1068.75
-  - id: json_1
-    type: boolean?
-    'sbg:x': 0
-    'sbg:y': 1282.5
   - id: vcf_file
     type: File
     'sbg:x': 0
@@ -337,7 +333,7 @@ outputs:
     type: File
     'sbg:x': 1482.3623046875
     'sbg:y': 1710
-  - id: biometrics_extract_pickle
+  - id: collapsed_biometrics_extract_pickle
     outputSource:
       - biometrics_extract_0_2_14/biometrics_extract_pickle
     type: File
@@ -433,6 +429,7 @@ steps:
         default: collapsed
         source: prefix
       - id: json
+        default: true
         source: json
     out:
       - id: biometrics_sexmismatch_csv
@@ -450,11 +447,13 @@ steps:
       - id: major_threshold
         source: major_threshold
       - id: prefix
+        default: collapsed
         source: prefix
       - id: plot
         source: plot
       - id: json
-        source: json_1
+        default: true
+        source: json
     out:
       - id: biometrics_major_csv
       - id: biometrics_major_json

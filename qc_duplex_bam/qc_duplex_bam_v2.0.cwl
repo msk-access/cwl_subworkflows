@@ -266,7 +266,7 @@ outputs:
     type: File
     'sbg:x': 984.2216796875
     'sbg:y': 750.8828125
-  - id: biometrics_extract_pickle
+  - id: duplex_biometrics_extract_pickle
     outputSource:
       - biometrics_extract_0_2_14/biometrics_extract_pickle
     type: File
@@ -415,10 +415,12 @@ steps:
         source:
           - biometrics_extract_0_2_14/biometrics_extract_pickle
       - id: prefix
+        default: duplex
         source: prefix
       - id: plot
         source: plot
       - id: json
+        default: true
         source: json
     out:
       - id: biometrics_minor_csv
