@@ -188,7 +188,7 @@ steps:
     out:
       - id: output
     run: >-
-      ../command_line_tools/postprocessing_variant_calls/0.1.7/maf_annotated_by_bed/maf_annotated_by_bed.cwl
+      ../command_line_tools/postprocessing_variant_calls/0.2.0/maf_annotated_by_bed/maf_annotated_by_bed.cwl
     label: maf_annotated_by_bed
     'sbg:x': 1317.3984375
     'sbg:y': 267
@@ -205,7 +205,7 @@ steps:
     out:
       - id: output
     run: >-
-      ../command_line_tools/postprocessing_variant_calls/0.1.7/maf_annotated_by_bed/maf_annotated_by_bed.cwl
+      ../command_line_tools/postprocessing_variant_calls/0.2.0/maf_annotated_by_bed/maf_annotated_by_bed.cwl
     label: maf_annotated_by_bed
     'sbg:x': 1525.9556884765625
     'sbg:y': 284.1666564941406
