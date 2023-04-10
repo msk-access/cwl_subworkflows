@@ -11,7 +11,7 @@
 #### Usage
 
 ```bash
-usage: /work/bergerm1/bergerlab/sivaprk/github/cwl_subworkflows/variant_annotation/variant_annotation.cwl
+usage: variant_annotation.cwl
        [-h] --input_cosmicCountDB_vcf INPUT_COSMICCOUNTDB_VCF
        --vardict_input_vcf VARDICT_INPUT_VCF --input_cosmicprevalenceDB_vcf
        INPUT_COSMICPREVALENCEDB_VCF [--min_hom_vaf MIN_HOM_VAF]

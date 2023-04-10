@@ -103,13 +103,13 @@ outputs:
     'sbg:y': 594.5475463867188
   - id: output
     outputSource:
-      - maf_annotated_by_bed_1/output
+      - maf_annotated_by_bed_mappability/output
     type: File
     'sbg:x': 1663.9556884765625
     'sbg:y': 281.1669921875
   - id: output_complexity_maf
     outputSource:
-      - maf_annotated_by_bed/output
+      - maf_annotated_by_bed_lowComplexity/output
     type: File
     'sbg:x': 1419.9385986328125
     'sbg:y': 708.3048095703125
@@ -181,7 +181,7 @@ steps:
     label: oncokb_annotator
     'sbg:x': 1059.142822265625
     'sbg:y': 261.2857360839844
-  - id: maf_annotated_by_bed
+  - id: maf_annotated_by_bed_lowComplexity
     in:
       - id: input_maf
         source: oncokb_annotator/outputMaf
@@ -198,10 +198,10 @@ steps:
     label: maf_annotated_by_bed
     'sbg:x': 1317.3984375
     'sbg:y': 267
-  - id: maf_annotated_by_bed_1
+  - id: maf_annotated_by_bed_mappability
     in:
       - id: input_maf
-        source: maf_annotated_by_bed/output
+        source: maf_annotated_by_bed_lowComplexity/output
       - id: input_bed
         source: input_DUST_bed
       - id: output_filename
@@ -213,8 +213,8 @@ steps:
     run: >-
       ../command_line_tools/postprocessing_variant_calls/0.2.2/maf_annotated_by_bed/maf_annotated_by_bed.cwl
     label: maf_annotated_by_bed
-    'sbg:x': 1525.9556884765625
-    'sbg:y': 284.1666564941406
+    'sbg:x': 1526
+    'sbg:y': 285
 requirements: []
 $schemas:
   - 'http://schema.org/version/latest/schemaorg-current-http.rdf'
