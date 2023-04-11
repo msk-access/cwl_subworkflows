@@ -58,27 +58,27 @@ inputs:
     type: boolean?
     'sbg:x': 914.09375
     'sbg:y': 582.5
-  - id: input_complexity_bed
+  - id: input_mappability_bed
     type: File
-    'sbg:x': 1156
-    'sbg:y': 356
-  - id: input_DUST_bed
+    'sbg:x': 1137.1201171875
+    'sbg:y': 407.4906311035156
+  - id: input_complexity_bed
     type: File
     'sbg:x': 1406.9556884765625
     'sbg:y': 421.1669921875
-  - id: output_DUST_filename
-    type: string?
-    'sbg:x': 1361.5447998046875
-    'sbg:y': 125.57429504394531
-  - id: column_name_DUST
-    type: string?
-    'sbg:x': 1497.9617919921875
-    'sbg:y': 538.1150512695312
   - id: output_complexity_filename
     type: string?
-    'sbg:x': 1218.041259765625
-    'sbg:y': 70.77140045166016
+    'sbg:x': 1628.751220703125
+    'sbg:y': 116.41822814941406
   - id: column_name_complexity
+    type: string?
+    'sbg:x': 1479.83642578125
+    'sbg:y': 538
+  - id: output_mappability_filename
+    type: string?
+    'sbg:x': 1172.9835205078125
+    'sbg:y': 68.39226531982422
+  - id: column_name_mappability
     type: string?
     'sbg:x': 1273.205322265625
     'sbg:y': 514.48193359375
@@ -101,18 +101,18 @@ outputs:
     type: File
     'sbg:x': 1148.8089599609375
     'sbg:y': 594.5475463867188
-  - id: output
+  - id: output_mappability_maf
     outputSource:
       - maf_annotated_by_bed_mappability/output
     type: File
-    'sbg:x': 1663.9556884765625
-    'sbg:y': 281.1669921875
+    'sbg:x': 1448.455810546875
+    'sbg:y': 54.44126510620117
   - id: output_complexity_maf
     outputSource:
       - maf_annotated_by_bed_lowComplexity/output
     type: File
-    'sbg:x': 1419.9385986328125
-    'sbg:y': 708.3048095703125
+    'sbg:x': 1683.3055419921875
+    'sbg:y': 452.26324462890625
 steps:
   - id: snpsift_annotate_5_0
     in:
@@ -179,12 +179,31 @@ steps:
       - id: outputMaf
     run: ../command_line_tools/oncokb_annotator_3.2.2/oncokb_annotator_3-2-2.cwl
     label: oncokb_annotator
-    'sbg:x': 1059.142822265625
-    'sbg:y': 261.2857360839844
-  - id: maf_annotated_by_bed_lowComplexity
+    'sbg:x': 1096.5919189453125
+    'sbg:y': 261
+  - id: maf_annotated_by_bed_mappability
     in:
       - id: input_maf
         source: oncokb_annotator/outputMaf
+      - id: input_bed
+        source: input_mappability_bed
+      - id: output_filename
+        source: output_mappability_filename
+      - id: column_name
+        source: column_name_mappability
+    out:
+      - id: output
+    run: >-
+      ../command_line_tools/postprocessing_variant_calls/0.2.2/maf_annotated_by_bed/maf_annotated_by_bed.cwl
+    label: maf_annotated_by_bed
+    'sbg:x': 1317.3984375
+    'sbg:y': 267
+  - id: maf_annotated_by_bed_lowComplexity
+    in:
+      - id: input_maf
+        source:
+          - maf_annotated_by_bed_lowComplexity/output
+          - maf_annotated_by_bed_mappability/output
       - id: input_bed
         source: input_complexity_bed
       - id: output_filename
@@ -196,26 +215,10 @@ steps:
     run: >-
       ../command_line_tools/postprocessing_variant_calls/0.2.2/maf_annotated_by_bed/maf_annotated_by_bed.cwl
     label: maf_annotated_by_bed
-    'sbg:x': 1317.3984375
-    'sbg:y': 267
-  - id: maf_annotated_by_bed_mappability
-    in:
-      - id: input_maf
-        source: maf_annotated_by_bed_lowComplexity/output
-      - id: input_bed
-        source: input_DUST_bed
-      - id: output_filename
-        source: output_DUST_filename
-      - id: column_name
-        source: column_name_DUST
-    out:
-      - id: output
-    run: >-
-      ../command_line_tools/postprocessing_variant_calls/0.2.2/maf_annotated_by_bed/maf_annotated_by_bed.cwl
-    label: maf_annotated_by_bed
     'sbg:x': 1526
     'sbg:y': 285
-requirements: []
+requirements:
+  - class: MultipleInputFeatureRequirement
 $schemas:
   - 'http://schema.org/version/latest/schemaorg-current-http.rdf'
 's:author':
