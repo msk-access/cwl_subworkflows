@@ -766,7 +766,7 @@
                     "id": "#coverage_stats_single.cwl/general_stats_parse/flagstat",
                     "type": [
                         "null",
-                        "string"
+                        "File"
                     ],
                     "inputBinding": {
                         "position": 900,
