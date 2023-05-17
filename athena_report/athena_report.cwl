@@ -23,7 +23,7 @@ inputs:
     - id: sample_name 
       type: string?
     - id: output
-      type: string?
+      type: 'string[]?'
     - id: limit
       type: int?
     - id: summary 
