@@ -66,7 +66,10 @@
                     "id": "#main/output",
                     "type": [
                         "null",
-                        "string"
+                        {
+                            "type": "array",
+                            "items": "string"
+                        }
                     ]
                 },
                 {
@@ -535,7 +538,10 @@
                     "id": "#coverage_report_single.cwl/general_stats_parse/output",
                     "type": [
                         "null",
-                        "string"
+                        {
+                            "type": "array",
+                            "items": "string"
+                        }
                     ],
                     "inputBinding": {
                         "position": 0,
@@ -766,7 +772,7 @@
                     "id": "#coverage_stats_single.cwl/general_stats_parse/flagstat",
                     "type": [
                         "null",
-                        "string"
+                        "File"
                     ],
                     "inputBinding": {
                         "position": 900,
