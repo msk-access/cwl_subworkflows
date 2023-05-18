@@ -62,18 +62,6 @@ inputs:
     type: File
     'sbg:x': 1137.1201171875
     'sbg:y': 407.4906311035156
-  - id: input_complexity_bed
-    type: File
-    'sbg:x': 1406.9556884765625
-    'sbg:y': 421.1669921875
-  - id: output_complexity_filename
-    type: string?
-    'sbg:x': 1628.751220703125
-    'sbg:y': 116.41822814941406
-  - id: column_name_complexity
-    type: string?
-    'sbg:x': 1479.83642578125
-    'sbg:y': 538
   - id: output_mappability_filename
     type: string?
     'sbg:x': 1172.9835205078125
@@ -82,6 +70,18 @@ inputs:
     type: string?
     'sbg:x': 1273.205322265625
     'sbg:y': 514.48193359375
+  - id: input_complexity_bed
+    type: File
+    'sbg:x': 1455.4620361328125
+    'sbg:y': 427.4315490722656
+  - id: column_name_complexity
+    type: string?
+    'sbg:x': 1688.9140625
+    'sbg:y': 449.50762939453125
+  - id: output_complexity_filename
+    type: string?
+    'sbg:x': 1609.2314453125
+    'sbg:y': 21.32272720336914
 outputs:
   - id: cosmicCount_annotatedOutput
     outputSource:
@@ -111,8 +111,8 @@ outputs:
     outputSource:
       - maf_annotated_by_bed_lowComplexity/output
     type: File
-    'sbg:x': 1683.3055419921875
-    'sbg:y': 452.26324462890625
+    'sbg:x': 1815.8809814453125
+    'sbg:y': 248.1118621826172
 steps:
   - id: snpsift_annotate_5_0
     in:
@@ -201,9 +201,7 @@ steps:
   - id: maf_annotated_by_bed_lowComplexity
     in:
       - id: input_maf
-        source:
-          - maf_annotated_by_bed_lowComplexity/output
-          - maf_annotated_by_bed_mappability/output
+        source: maf_annotated_by_bed_mappability/output
       - id: input_bed
         source: input_complexity_bed
       - id: output_filename
@@ -215,10 +213,9 @@ steps:
     run: >-
       ../command_line_tools/postprocessing_variant_calls/0.2.2/maf_annotated_by_bed/maf_annotated_by_bed.cwl
     label: maf_annotated_by_bed
-    'sbg:x': 1526
-    'sbg:y': 285
-requirements:
-  - class: MultipleInputFeatureRequirement
+    'sbg:x': 1600
+    'sbg:y': 262.8888854980469
+requirements: []
 $schemas:
   - 'http://schema.org/version/latest/schemaorg-current-http.rdf'
 's:author':
