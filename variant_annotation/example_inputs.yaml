@@ -15,14 +15,14 @@ opOncoKbMafName: tumorId_annotated.maf
 retain_info: CNT,TUMOR_TYPE
 tumor_id: tumorId
 min_hom_vaf: 0
-column_name_DUST: DUST
+column_name_mappability: mappability
 column_name_complexity: complexity
-input_DUST_bed:
+input_mappability_bed:
   class: File
-  path: /path/to/dust_algo/bedfile.bed
+  path: /path/to/mappability_algo/bedfile.bed
 input_complexity_bed:
   class: File
   path: /path/to/complexity/bedfile.bed
-output_DUST_filename: dust.maf
+output_mappability_filename: mappability.maf
 output_complexity_filename: complexity.maf
 output_vcf2mafName: vcf2maf.maf
