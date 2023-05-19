@@ -11,7 +11,18 @@ input_cosmicprevalenceDB_vcf:
     /work/cch/production/resources/cosmic/versions/v96/CosmicCodingMuts_GRCh37_processed.vcf.gz
 snpsift_countOpName: tumorId_cosmic.vcf
 snpsift_prevalOpName: tumorId_preval.vcf
-output_mafName: tumorId_annotated.maf
+opOncoKbMafName: tumorId_annotated.maf
 retain_info: CNT,TUMOR_TYPE
 tumor_id: tumorId
 min_hom_vaf: 0
+column_name_mappability: mappability
+column_name_complexity: complexity
+input_mappability_bed:
+  class: File
+  path: /path/to/mappability_algo/bedfile.bed
+input_complexity_bed:
+  class: File
+  path: /path/to/complexity/bedfile.bed
+output_mappability_filename: mappability.maf
+output_complexity_filename: complexity.maf
+output_vcf2mafName: vcf2maf.maf
