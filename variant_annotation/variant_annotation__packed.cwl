@@ -924,43 +924,34 @@
                     "https://www.sevenbridges.com/y": 582.5
                 },
                 {
+                    "id": "#main/input_mappability_bed",
+                    "type": "File",
+                    "https://www.sevenbridges.com/x": 1137.1201171875,
+                    "https://www.sevenbridges.com/y": 407.4906311035156
+                },
+                {
+                    "id": "#main/output_mappability_filename",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "https://www.sevenbridges.com/x": 1172.9835205078125,
+                    "https://www.sevenbridges.com/y": 68.39226531982422
+                },
+                {
+                    "id": "#main/column_name_mappability",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "https://www.sevenbridges.com/x": 1273.205322265625,
+                    "https://www.sevenbridges.com/y": 514.48193359375
+                },
+                {
                     "id": "#main/input_complexity_bed",
                     "type": "File",
-                    "https://www.sevenbridges.com/x": 1156,
-                    "https://www.sevenbridges.com/y": 356
-                },
-                {
-                    "id": "#main/input_DUST_bed",
-                    "type": "File",
-                    "https://www.sevenbridges.com/x": 1406.9556884765625,
-                    "https://www.sevenbridges.com/y": 421.1669921875
-                },
-                {
-                    "id": "#main/output_DUST_filename",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "https://www.sevenbridges.com/x": 1361.5447998046875,
-                    "https://www.sevenbridges.com/y": 125.57429504394531
-                },
-                {
-                    "id": "#main/column_name_DUST",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "https://www.sevenbridges.com/x": 1497.9617919921875,
-                    "https://www.sevenbridges.com/y": 538.1150512695312
-                },
-                {
-                    "id": "#main/output_complexity_filename",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "https://www.sevenbridges.com/x": 1218.041259765625,
-                    "https://www.sevenbridges.com/y": 70.77140045166016
+                    "https://www.sevenbridges.com/x": 1455.4620361328125,
+                    "https://www.sevenbridges.com/y": 427.4315490722656
                 },
                 {
                     "id": "#main/column_name_complexity",
@@ -968,8 +959,17 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": 1273.205322265625,
-                    "https://www.sevenbridges.com/y": 514.48193359375
+                    "https://www.sevenbridges.com/x": 1688.9140625,
+                    "https://www.sevenbridges.com/y": 449.50762939453125
+                },
+                {
+                    "id": "#main/output_complexity_filename",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "https://www.sevenbridges.com/x": 1609.2314453125,
+                    "https://www.sevenbridges.com/y": 21.32272720336914
                 }
             ],
             "outputs": [
@@ -1001,13 +1001,13 @@
                     "https://www.sevenbridges.com/y": 594.5475463867188
                 },
                 {
-                    "id": "#main/output",
+                    "id": "#main/output_mappability_maf",
                     "outputSource": [
                         "#main/maf_annotated_by_bed_mappability/output"
                     ],
                     "type": "File",
-                    "https://www.sevenbridges.com/x": 1663.9556884765625,
-                    "https://www.sevenbridges.com/y": 281.1669921875
+                    "https://www.sevenbridges.com/x": 1448.455810546875,
+                    "https://www.sevenbridges.com/y": 54.44126510620117
                 },
                 {
                     "id": "#main/output_complexity_maf",
@@ -1015,8 +1015,8 @@
                         "#main/maf_annotated_by_bed_lowComplexity/output"
                     ],
                     "type": "File",
-                    "https://www.sevenbridges.com/x": 1419.9385986328125,
-                    "https://www.sevenbridges.com/y": 708.3048095703125
+                    "https://www.sevenbridges.com/x": 1815.8809814453125,
+                    "https://www.sevenbridges.com/y": 248.1118621826172
                 }
             ],
             "steps": [
@@ -1144,15 +1144,45 @@
                     ],
                     "run": "#oncokb_annotator_3-2-2.cwl",
                     "label": "oncokb_annotator",
-                    "https://www.sevenbridges.com/x": 1059.142822265625,
-                    "https://www.sevenbridges.com/y": 261.2857360839844
+                    "https://www.sevenbridges.com/x": 1096.5919189453125,
+                    "https://www.sevenbridges.com/y": 261
+                },
+                {
+                    "id": "#main/maf_annotated_by_bed_mappability",
+                    "in": [
+                        {
+                            "id": "#main/maf_annotated_by_bed_mappability/input_maf",
+                            "source": "#main/oncokb_annotator/outputMaf"
+                        },
+                        {
+                            "id": "#main/maf_annotated_by_bed_mappability/input_bed",
+                            "source": "#main/input_mappability_bed"
+                        },
+                        {
+                            "id": "#main/maf_annotated_by_bed_mappability/output_filename",
+                            "source": "#main/output_mappability_filename"
+                        },
+                        {
+                            "id": "#main/maf_annotated_by_bed_mappability/column_name",
+                            "source": "#main/column_name_mappability"
+                        }
+                    ],
+                    "out": [
+                        {
+                            "id": "#main/maf_annotated_by_bed_mappability/output"
+                        }
+                    ],
+                    "run": "#maf_annotated_by_bed.cwl",
+                    "label": "maf_annotated_by_bed",
+                    "https://www.sevenbridges.com/x": 1317.3984375,
+                    "https://www.sevenbridges.com/y": 267
                 },
                 {
                     "id": "#main/maf_annotated_by_bed_lowComplexity",
                     "in": [
                         {
                             "id": "#main/maf_annotated_by_bed_lowComplexity/input_maf",
-                            "source": "#main/oncokb_annotator/outputMaf"
+                            "source": "#main/maf_annotated_by_bed_mappability/output"
                         },
                         {
                             "id": "#main/maf_annotated_by_bed_lowComplexity/input_bed",
@@ -1174,38 +1204,8 @@
                     ],
                     "run": "#maf_annotated_by_bed.cwl",
                     "label": "maf_annotated_by_bed",
-                    "https://www.sevenbridges.com/x": 1317.3984375,
-                    "https://www.sevenbridges.com/y": 267
-                },
-                {
-                    "id": "#main/maf_annotated_by_bed_mappability",
-                    "in": [
-                        {
-                            "id": "#main/maf_annotated_by_bed_mappability/input_maf",
-                            "source": "#main/maf_annotated_by_bed_lowComplexity/output"
-                        },
-                        {
-                            "id": "#main/maf_annotated_by_bed_mappability/input_bed",
-                            "source": "#main/input_DUST_bed"
-                        },
-                        {
-                            "id": "#main/maf_annotated_by_bed_mappability/output_filename",
-                            "source": "#main/output_DUST_filename"
-                        },
-                        {
-                            "id": "#main/maf_annotated_by_bed_mappability/column_name",
-                            "source": "#main/column_name_DUST"
-                        }
-                    ],
-                    "out": [
-                        {
-                            "id": "#main/maf_annotated_by_bed_mappability/output"
-                        }
-                    ],
-                    "run": "#maf_annotated_by_bed.cwl",
-                    "label": "maf_annotated_by_bed",
-                    "https://www.sevenbridges.com/x": 1526,
-                    "https://www.sevenbridges.com/y": 285
+                    "https://www.sevenbridges.com/x": 1600,
+                    "https://www.sevenbridges.com/y": 262.8888854980469
                 }
             ],
             "requirements": [],
