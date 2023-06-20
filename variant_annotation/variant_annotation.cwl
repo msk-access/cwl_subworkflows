@@ -158,6 +158,10 @@ steps:
         source: tumor_id
       - id: vcf_tumor_id
         source: tumor_id
+      - id: vep_data
+        default: /.vep/
+      - id: vep_path
+        default: /usr/local/bin/
     out:
       - id: vcf2maf_maf
     run: ../command_line_tools//vcf2maf_1.6.21/vcf2maf_1.6.21.cwl
