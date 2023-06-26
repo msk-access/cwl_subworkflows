@@ -1102,6 +1102,14 @@
                         {
                             "id": "#main/vcf2maf_v1_6_21/vcf_tumor_id",
                             "source": "#main/tumor_id"
+                        },
+                        {
+                            "id": "#main/vcf2maf_v1_6_21/vep_data",
+                            "default": "/.vep/"
+                        },
+                        {
+                            "id": "#main/vcf2maf_v1_6_21/vep_path",
+                            "default": "/usr/local/bin/"
                         }
                     ],
                     "out": [
