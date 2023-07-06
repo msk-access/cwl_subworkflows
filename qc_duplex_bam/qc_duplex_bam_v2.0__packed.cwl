@@ -2140,13 +2140,13 @@
         },
         {
             "class": "CommandLineTool",
-            "id": "#sequence_qc_0.2.3.cwl",
+            "id": "#sequence_qc_0.2.4.cwl",
             "baseCommand": [
                 "calculate_noise"
             ],
             "inputs": [
                 {
-                    "id": "#sequence_qc_0.2.3.cwl/calculate_noise_0_2_3/reference",
+                    "id": "#sequence_qc_0.2.4.cwl/calculate_noise_0_2_4/reference",
                     "type": "File",
                     "inputBinding": {
                         "position": 0,
@@ -2158,7 +2158,7 @@
                     "doc": "Path to reference fasta, containing all regions in bed_file"
                 },
                 {
-                    "id": "#sequence_qc_0.2.3.cwl/calculate_noise_0_2_3/bam_file",
+                    "id": "#sequence_qc_0.2.4.cwl/calculate_noise_0_2_4/bam_file",
                     "type": "File",
                     "inputBinding": {
                         "position": 0,
@@ -2170,7 +2170,7 @@
                     "doc": "Path to BAM file for calculating noise  [required]"
                 },
                 {
-                    "id": "#sequence_qc_0.2.3.cwl/calculate_noise_0_2_3/bed_file",
+                    "id": "#sequence_qc_0.2.4.cwl/calculate_noise_0_2_4/bed_file",
                     "type": "File",
                     "inputBinding": {
                         "position": 0,
@@ -2179,7 +2179,7 @@
                     "doc": "Path to BED file containing regions over which to calculate noise  [required]"
                 },
                 {
-                    "id": "#sequence_qc_0.2.3.cwl/calculate_noise_0_2_3/sample_id",
+                    "id": "#sequence_qc_0.2.4.cwl/calculate_noise_0_2_4/sample_id",
                     "type": "string",
                     "inputBinding": {
                         "position": 0,
@@ -2188,7 +2188,7 @@
                     "doc": "Prefix to include in all output file names"
                 },
                 {
-                    "id": "#sequence_qc_0.2.3.cwl/calculate_noise_0_2_3/threshold",
+                    "id": "#sequence_qc_0.2.4.cwl/calculate_noise_0_2_4/threshold",
                     "type": [
                         "null",
                         "float"
@@ -2200,7 +2200,7 @@
                     "doc": "Alt allele frequency past which to ignore positions from the calculation."
                 },
                 {
-                    "id": "#sequence_qc_0.2.3.cwl/calculate_noise_0_2_3/truncate",
+                    "id": "#sequence_qc_0.2.4.cwl/calculate_noise_0_2_4/truncate",
                     "type": [
                         "null",
                         "int"
@@ -2212,7 +2212,7 @@
                     "doc": "Whether to exclude trailing bases from reads that only partially overlap the bed file (0 or 1)"
                 },
                 {
-                    "id": "#sequence_qc_0.2.3.cwl/calculate_noise_0_2_3/min_mapq",
+                    "id": "#sequence_qc_0.2.4.cwl/calculate_noise_0_2_4/min_mapq",
                     "type": [
                         "null",
                         "int"
@@ -2224,7 +2224,7 @@
                     "doc": "Exclude reads with a lower mapping quality"
                 },
                 {
-                    "id": "#sequence_qc_0.2.3.cwl/calculate_noise_0_2_3/min_basq",
+                    "id": "#sequence_qc_0.2.4.cwl/calculate_noise_0_2_4/min_basq",
                     "type": [
                         "null",
                         "int"
@@ -2238,49 +2238,49 @@
             ],
             "outputs": [
                 {
-                    "id": "#sequence_qc_0.2.3.cwl/calculate_noise_0_2_3/sequence_qc_pileup",
+                    "id": "#sequence_qc_0.2.4.cwl/calculate_noise_0_2_4/sequence_qc_pileup",
                     "type": "File",
                     "outputBinding": {
                         "glob": "${\n    return inputs.sample_id + '_pileup.tsv'\n}"
                     }
                 },
                 {
-                    "id": "#sequence_qc_0.2.3.cwl/calculate_noise_0_2_3/sequence_qc_noise_positions",
+                    "id": "#sequence_qc_0.2.4.cwl/calculate_noise_0_2_4/sequence_qc_noise_positions",
                     "type": "File",
                     "outputBinding": {
                         "glob": "${\n    return inputs.sample_id + '_noise_positions.tsv'\n}"
                     }
                 },
                 {
-                    "id": "#sequence_qc_0.2.3.cwl/calculate_noise_0_2_3/sequence_qc_noise_by_substitution",
+                    "id": "#sequence_qc_0.2.4.cwl/calculate_noise_0_2_4/sequence_qc_noise_by_substitution",
                     "type": "File",
                     "outputBinding": {
                         "glob": "${\n    return inputs.sample_id + '_noise_by_substitution.tsv'\n}"
                     }
                 },
                 {
-                    "id": "#sequence_qc_0.2.3.cwl/calculate_noise_0_2_3/sequence_qc_noise_acgt",
+                    "id": "#sequence_qc_0.2.4.cwl/calculate_noise_0_2_4/sequence_qc_noise_acgt",
                     "type": "File",
                     "outputBinding": {
                         "glob": "${\n    return inputs.sample_id + '_noise_acgt.tsv'\n}"
                     }
                 },
                 {
-                    "id": "#sequence_qc_0.2.3.cwl/calculate_noise_0_2_3/sequence_qc_noise_n",
+                    "id": "#sequence_qc_0.2.4.cwl/calculate_noise_0_2_4/sequence_qc_noise_n",
                     "type": "File",
                     "outputBinding": {
                         "glob": "${\n    return inputs.sample_id + '_noise_n.tsv'\n}"
                     }
                 },
                 {
-                    "id": "#sequence_qc_0.2.3.cwl/calculate_noise_0_2_3/sequence_qc_noise_del",
+                    "id": "#sequence_qc_0.2.4.cwl/calculate_noise_0_2_4/sequence_qc_noise_del",
                     "type": "File",
                     "outputBinding": {
                         "glob": "${\n    return inputs.sample_id + '_noise_del.tsv'\n}"
                     }
                 },
                 {
-                    "id": "#sequence_qc_0.2.3.cwl/calculate_noise_0_2_3/sequence_qc_figures",
+                    "id": "#sequence_qc_0.2.4.cwl/calculate_noise_0_2_4/sequence_qc_figures",
                     "type": "File",
                     "outputBinding": {
                         "glob": "${\n    return inputs.sample_id + '_noise.html'\n}"
@@ -2295,7 +2295,7 @@
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "ghcr.io/msk-access/sequence_qc:0.2.3"
+                    "dockerPull": "ghcr.io/msk-access/sequence_qc:0.2.4"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -2320,8 +2320,8 @@
                     "http://xmlns.com/foaf/0.1/member": [
                         {
                             "class": "http://xmlns.com/foaf/0.1/Person",
-                            "http://xmlns.com/foaf/0.1/mbox": "mailto:murphyc4@mskcc.org",
-                            "http://xmlns.com/foaf/0.1/name": "Charlie Murphy"
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:shahr2@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Ronak Shah"
                         }
                     ],
                     "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
@@ -2344,7 +2344,7 @@
                 {
                     "class": "http://usefulinc.com/ns/doap#Version",
                     "http://usefulinc.com/ns/doap#name": "sesquence_qc",
-                    "http://usefulinc.com/ns/doap#revision": "0.2.3"
+                    "http://usefulinc.com/ns/doap#revision": "0.2.4"
                 }
             ]
         },
@@ -3031,7 +3031,7 @@
                             "id": "#main/calculate_noise/sequence_qc_figures"
                         }
                     ],
-                    "run": "#sequence_qc_0.2.3.cwl",
+                    "run": "#sequence_qc_0.2.4.cwl",
                     "https://www.sevenbridges.com/x": 353.515625,
                     "https://www.sevenbridges.com/y": 1426.328125
                 },
