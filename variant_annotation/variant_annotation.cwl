@@ -105,14 +105,20 @@ outputs:
     outputSource:
       - maf_annotated_by_bed_mappability/output
     type: File
-    'sbg:x': 1448.455810546875
-    'sbg:y': 54.44126510620117
+    'sbg:x': 1524.598876953125
+    'sbg:y': 679.8934936523438
   - id: output_complexity_maf
     outputSource:
       - maf_annotated_by_bed_lowComplexity/output
     type: File
     'sbg:x': 1815.8809814453125
     'sbg:y': 248.1118621826172
+  - id: oncokb_maf
+    outputSource:
+      - oncokb_annotator/outputMaf
+    type: File?
+    'sbg:x': 1327.9454345703125
+    'sbg:y': 738.3821411132812
 steps:
   - id: snpsift_annotate_5_0
     in:
