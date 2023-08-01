@@ -1731,6 +1731,33 @@
                     "type": "File",
                     "https://www.sevenbridges.com/x": 1064.255126953125,
                     "https://www.sevenbridges.com/y": 213.53125
+                },
+                {
+                    "id": "#main/vardict_output",
+                    "outputSource": [
+                        "#main/vardict/output"
+                    ],
+                    "type": "File",
+                    "https://www.sevenbridges.com/x": 397.9921875,
+                    "https://www.sevenbridges.com/y": 590.5
+                },
+                {
+                    "id": "#main/single_filter_vcf",
+                    "outputSource": [
+                        "#main/pv_vardict_single_filter/vcf"
+                    ],
+                    "type": "File",
+                    "https://www.sevenbridges.com/x": 688.9921875,
+                    "https://www.sevenbridges.com/y": 587.5
+                },
+                {
+                    "id": "#main/single_filter_vcf_complex",
+                    "outputSource": [
+                        "#main/pv_vardict_single_filter/vcf_complex"
+                    ],
+                    "type": "File",
+                    "https://www.sevenbridges.com/x": 942.9921875,
+                    "https://www.sevenbridges.com/y": 552.5
                 }
             ],
             "steps": [
@@ -1837,8 +1864,8 @@
                         }
                     ],
                     "run": "#pv_vardict_single_filter.cwl",
-                    "https://www.sevenbridges.com/x": 513.37158203125,
-                    "https://www.sevenbridges.com/y": 213.53125
+                    "https://www.sevenbridges.com/x": 483,
+                    "https://www.sevenbridges.com/y": 220
                 },
                 {
                     "id": "#main/variants_concat",

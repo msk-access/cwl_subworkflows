@@ -1006,8 +1006,8 @@
                         "#main/maf_annotated_by_bed_mappability/output"
                     ],
                     "type": "File",
-                    "https://www.sevenbridges.com/x": 1448.455810546875,
-                    "https://www.sevenbridges.com/y": 54.44126510620117
+                    "https://www.sevenbridges.com/x": 1524.598876953125,
+                    "https://www.sevenbridges.com/y": 679.8934936523438
                 },
                 {
                     "id": "#main/output_complexity_maf",
@@ -1017,6 +1017,18 @@
                     "type": "File",
                     "https://www.sevenbridges.com/x": 1815.8809814453125,
                     "https://www.sevenbridges.com/y": 248.1118621826172
+                },
+                {
+                    "id": "#main/oncokb_maf",
+                    "outputSource": [
+                        "#main/oncokb_annotator/outputMaf"
+                    ],
+                    "type": [
+                        "null",
+                        "File"
+                    ],
+                    "https://www.sevenbridges.com/x": 1327.9454345703125,
+                    "https://www.sevenbridges.com/y": 738.3821411132812
                 }
             ],
             "steps": [
