@@ -381,7 +381,7 @@ steps:
       - id: sequence_qc_noise_n
       - id: sequence_qc_noise_del
       - id: sequence_qc_figures
-    run: ../command_line_tools/sequence_qc/0.2.3/sequence_qc_0.2.3.cwl
+    run: ../command_line_tools/sequence_qc/0.2.4/sequence_qc_0.2.4.cwl
     'sbg:x': 353.515625
     'sbg:y': 1426.328125
   - id: biometrics_extract_0_2_14

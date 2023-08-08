@@ -59,6 +59,24 @@ outputs:
     type: File
     'sbg:x': 1064.255126953125
     'sbg:y': 213.53125
+  - id: vardict_output
+    outputSource:
+      - vardict/output
+    type: File
+    'sbg:x': 397.9921875
+    'sbg:y': 590.5
+  - id: single_filter_vcf
+    outputSource:
+      - pv_vardict_single_filter/vcf
+    type: File
+    'sbg:x': 688.9921875
+    'sbg:y': 587.5
+  - id: single_filter_vcf_complex
+    outputSource:
+      - pv_vardict_single_filter/vcf_complex
+    type: File
+    'sbg:x': 942.9921875
+    'sbg:y': 552.5
 steps:
   - id: vardict
     in:
@@ -113,8 +131,8 @@ steps:
       - id: vcf
     run: >-
       ../command_line_tools/postprocessing_variant_calls/0.1.5/pv_vardict_single_filter.cwl
-    'sbg:x': 513.37158203125
-    'sbg:y': 213.53125
+    'sbg:x': 483
+    'sbg:y': 220
   - id: variants_concat
     in:
       - id: fastaRef
