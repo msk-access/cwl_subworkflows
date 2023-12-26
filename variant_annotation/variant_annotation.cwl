@@ -58,7 +58,7 @@ inputs:
     type: boolean?
     'sbg:x': 0
     'sbg:y': 748.34375
-  - id: input_mapabbility_bed
+  - id: input_mappability_bed
     type: File
     'sbg:x': 1163.603759765625
     'sbg:y': 502.078125
@@ -66,11 +66,11 @@ inputs:
     type: File
     'sbg:x': 1428.8468017578125
     'sbg:y': 502.078125
-  - id: output_mapability_filename
+  - id: output_mappability_filename
     type: string
     'sbg:x': 0
     'sbg:y': 320.71875
-  - id: column_name_mapability
+  - id: column_name_mappability
     type: string?
     'sbg:x': 1163.603759765625
     'sbg:y': 608.984375
@@ -202,18 +202,18 @@ steps:
       - id: input_maf
         source: oncokb_annotator/outputMaf
       - id: input_bed
-        source: input_mapabbility_bed
+        source: input_mappability_bed
       - id: output_filename
-        source: output_mapability_filename
+        source: output_mappability_filename
       - id: column_name
-        source: column_name_mapability
+        source: column_name_mappability
     out:
       - id: output
     run: >-
       ../command_line_tools/postprocessing_variant_calls/0.2.3/maf_annotated_by_bed/maf_annotated_by_bed.cwl
     label: maf_annotated_by_bed
-    'sbg:x': 1428.8468017578125
-    'sbg:y': 374.171875
+    'sbg:x': 1464.233642578125
+    'sbg:y': 372.9342956542969
   - id: maf_annotated_by_bed_1
     in:
       - id: input_maf
