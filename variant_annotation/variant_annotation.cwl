@@ -11,114 +11,120 @@ inputs:
     secondaryFiles:
       - .tbi
     'sbg:x': 0
-    'sbg:y': 434.1875
+    'sbg:y': 855.25
   - id: vardict_input_vcf
     type: File
     'sbg:x': 0
-    'sbg:y': 327.390625
+    'sbg:y': 0
   - id: input_cosmicprevalenceDB_vcf
     type: File
     secondaryFiles:
       - .tbi
-    'sbg:x': 217.47328186035156
-    'sbg:y': 564.6259765625
+    'sbg:x': 272.546875
+    'sbg:y': 481.078125
   - id: min_hom_vaf
     type: float?
-    'sbg:x': 416.7921447753906
-    'sbg:y': 654.78125
+    'sbg:x': 573.796875
+    'sbg:y': 601.984375
   - id: output_vcf2mafName
     type: string?
-    'sbg:x': 416.7921447753906
-    'sbg:y': 441.1875
+    'sbg:x': 573.796875
+    'sbg:y': 495.078125
   - id: retain_info
     type: string?
-    'sbg:x': 407
-    'sbg:y': 277
+    'sbg:x': 573.796875
+    'sbg:y': 388.171875
   - id: tumor_id
     type: string?
-    'sbg:x': 469
-    'sbg:y': -64
+    'sbg:x': 573.796875
+    'sbg:y': 146.359375
   - id: snpsift_countOpName
     type: string?
-    'sbg:x': 16.4202823638916
-    'sbg:y': 169.89190673828125
+    'sbg:x': 0
+    'sbg:y': 213.8125
   - id: snpsift_prevalOpName
     type: string?
-    'sbg:x': 214.9839324951172
-    'sbg:y': -51.58765411376953
+    'sbg:x': 0
+    'sbg:y': 106.90625
   - id: opOncoKbMafName
     type: string
-    'sbg:x': 953.6817626953125
-    'sbg:y': 129.14283752441406
+    'sbg:x': 0
+    'sbg:y': 534.53125
   - id: oncoKbApiToken
     type: File
-    'sbg:x': 934
-    'sbg:y': 402
+    'sbg:x': 0
+    'sbg:y': 641.4375
   - id: oncoKbAnnotateHotspots
     type: boolean?
-    'sbg:x': 914.09375
-    'sbg:y': 582.5
-  - id: input_mappability_bed
+    'sbg:x': 0
+    'sbg:y': 748.34375
+  - id: input_mapabbility_bed
     type: File
-    'sbg:x': 1137.1201171875
-    'sbg:y': 407.4906311035156
-  - id: output_mappability_filename
-    type: string?
-    'sbg:x': 1172.9835205078125
-    'sbg:y': 68.39226531982422
-  - id: column_name_mappability
-    type: string?
-    'sbg:x': 1273.205322265625
-    'sbg:y': 514.48193359375
+    'sbg:x': 1163.603759765625
+    'sbg:y': 502.078125
   - id: input_complexity_bed
     type: File
-    'sbg:x': 1455.4620361328125
-    'sbg:y': 427.4315490722656
+    'sbg:x': 1428.8468017578125
+    'sbg:y': 502.078125
+  - id: output_mapability_filename
+    type: string
+    'sbg:x': 0
+    'sbg:y': 320.71875
+  - id: column_name_mapability
+    type: string?
+    'sbg:x': 1163.603759765625
+    'sbg:y': 608.984375
+  - id: output_complexity_filename
+    type: string
+    'sbg:x': 0
+    'sbg:y': 427.625
   - id: column_name_complexity
     type: string?
-    'sbg:x': 1688.9140625
-    'sbg:y': 449.50762939453125
-  - id: output_complexity_filename
-    type: string?
-    'sbg:x': 1609.2314453125
-    'sbg:y': 21.32272720336914
+    'sbg:x': 1428.8468017578125
+    'sbg:y': 608.984375
 outputs:
   - id: cosmicCount_annotatedOutput
     outputSource:
       - snpsift_annotate_5_0/annotatedOutput
     type: File
-    'sbg:x': 348.4152526855469
-    'sbg:y': 772.9266967773438
+    'sbg:x': 573.796875
+    'sbg:y': 708.890625
   - id: annotatedOutput_prevalence
     outputSource:
       - snpsift_annotate_5_1/annotatedOutput
     type: File
-    'sbg:x': 656.337158203125
-    'sbg:y': 723.7005615234375
+    'sbg:x': 871.65625
+    'sbg:y': 481.078125
   - id: vcf2maf_maf
     outputSource:
       - vcf2maf_v1_6_21/vcf2maf_maf
     type: File
-    'sbg:x': 1148.8089599609375
-    'sbg:y': 594.5475463867188
-  - id: output_mappability_maf
-    outputSource:
-      - maf_annotated_by_bed_mappability/output
-    type: File
-    'sbg:x': 1524.598876953125
-    'sbg:y': 679.8934936523438
-  - id: output_complexity_maf
-    outputSource:
-      - maf_annotated_by_bed_lowComplexity/output
-    type: File
-    'sbg:x': 1815.8809814453125
-    'sbg:y': 248.1118621826172
+    'sbg:x': 1163.603759765625
+    'sbg:y': 246.265625
   - id: oncokb_maf
     outputSource:
       - oncokb_annotator/outputMaf
     type: File?
-    'sbg:x': 1327.9454345703125
-    'sbg:y': 738.3821411132812
+    'sbg:x': 1428.8468017578125
+    'sbg:y': 246.265625
+  - id: output_mapability_maf
+    outputSource:
+      - maf_annotated_by_bed/output
+    type: File
+    'sbg:x': 1686.1904296875
+    'sbg:y': 353.171875
+  - id: output_complexity_maf
+    outputSource:
+      - maf_annotated_by_bed_1/output
+    type: File
+    'sbg:x': 1923.05859375
+    'sbg:y': 374.171875
+  - id: output
+    outputSource:
+      - maf_annotated_by_bed_1/output
+    type: File
+    'sbg:x': 1923.05859375
+    'sbg:y': 481.078125
 steps:
   - id: snpsift_annotate_5_0
     in:
@@ -132,8 +138,8 @@ steps:
       - id: annotatedOutput
     run: ../command_line_tools/snpsift_annotate_5.0/snpsift_annotate_5-0.cwl
     label: snpsift_countAnnotation
-    'sbg:x': 155.640625
-    'sbg:y': 320.390625
+    'sbg:x': 272.546875
+    'sbg:y': 360.171875
   - id: snpsift_annotate_5_1
     in:
       - id: input_DB_vcf
@@ -146,8 +152,8 @@ steps:
       - id: annotatedOutput
     run: ../command_line_tools/snpsift_annotate_5.0/snpsift_annotate_5-0.cwl
     label: snpsift_annotate_5.0
-    'sbg:x': 416.7921447753906
-    'sbg:y': 113.796875
+    'sbg:x': 573.796875
+    'sbg:y': 267.265625
   - id: vcf2maf_v1_6_21
     in:
       - id: input_vcf
@@ -171,8 +177,8 @@ steps:
     out:
       - id: vcf2maf_maf
     run: ../command_line_tools//vcf2maf_1.6.21/vcf2maf_1.6.21.cwl
-    'sbg:x': 833.5098266601562
-    'sbg:y': 276.9501953125
+    'sbg:x': 871.65625
+    'sbg:y': 339.171875
   - id: oncokb_annotator
     in:
       - id: inputMafFile
@@ -189,29 +195,29 @@ steps:
       - id: outputMaf
     run: ../command_line_tools/oncokb_annotator_3.2.2/oncokb_annotator_3-2-2.cwl
     label: oncokb_annotator
-    'sbg:x': 1096.5919189453125
-    'sbg:y': 261
-  - id: maf_annotated_by_bed_mappability
+    'sbg:x': 1163.603759765625
+    'sbg:y': 374.171875
+  - id: maf_annotated_by_bed
     in:
       - id: input_maf
         source: oncokb_annotator/outputMaf
       - id: input_bed
-        source: input_mappability_bed
+        source: input_mapabbility_bed
       - id: output_filename
-        source: output_mappability_filename
+        source: output_mapability_filename
       - id: column_name
-        source: column_name_mappability
+        source: column_name_mapability
     out:
       - id: output
     run: >-
-      ../command_line_tools/postprocessing_variant_calls/0.2.2/maf_annotated_by_bed/maf_annotated_by_bed.cwl
+      ../command_line_tools/postprocessing_variant_calls/0.2.3/maf_annotated_by_bed/maf_annotated_by_bed.cwl
     label: maf_annotated_by_bed
-    'sbg:x': 1317.3984375
-    'sbg:y': 267
-  - id: maf_annotated_by_bed_lowComplexity
+    'sbg:x': 1428.8468017578125
+    'sbg:y': 374.171875
+  - id: maf_annotated_by_bed_1
     in:
       - id: input_maf
-        source: maf_annotated_by_bed_mappability/output
+        source: maf_annotated_by_bed/output
       - id: input_bed
         source: input_complexity_bed
       - id: output_filename
@@ -221,10 +227,10 @@ steps:
     out:
       - id: output
     run: >-
-      ../command_line_tools/postprocessing_variant_calls/0.2.2/maf_annotated_by_bed/maf_annotated_by_bed.cwl
+      ../command_line_tools/postprocessing_variant_calls/0.2.3/maf_annotated_by_bed/maf_annotated_by_bed.cwl
     label: maf_annotated_by_bed
-    'sbg:x': 1600
-    'sbg:y': 262.8888854980469
+    'sbg:x': 1748.00244140625
+    'sbg:y': 573.7960815429688
 requirements: []
 $schemas:
   - 'http://schema.org/version/latest/schemaorg-current-http.rdf'
