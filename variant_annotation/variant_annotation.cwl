@@ -155,12 +155,6 @@ outputs:
     type: File
     'sbg:x': 2283.204345703125
     'sbg:y': 275.9561767578125
-  - id: output
-    outputSource:
-      - maf_annotated_by_bed_1/output
-    type: File
-    'sbg:x': 2380.1826171875
-    'sbg:y': 616.3430786132812
   - id: output_hotspot_maf
     outputSource:
       - pv_maf_annotated_by_tsv/output
@@ -298,7 +292,7 @@ steps:
     out:
       - id: output
     run: >-
-      ../command_line_tools/postprocessing_variant_calls/0.2.3/maf_annotate_by_tsv/maf_annotate_by_tsv.cwl
+      ../command_line_tools/postprocessing_variant_calls/0.2.3/maf_annotated_by_tsv/maf_annotated_by_tsv.cwl
     label: pv_maf_annotatedByTsv
     'sbg:x': 2624.56201171875
     'sbg:y': 446.36090087890625
@@ -315,7 +309,7 @@ steps:
     out:
       - id: output
     run: >-
-      ../command_line_tools/postprocessing_variant_calls/0.2.3/maf_annotate_by_tsv/maf_annotate_by_tsv.cwl
+      ../command_line_tools/postprocessing_variant_calls/0.2.3/maf_annotated_by_tsv/maf_annotated_by_tsv.cwl
     label: pv_maf_annotatedByTsv
     'sbg:x': 3027.093994140625
     'sbg:y': 444.81915283203125
@@ -332,7 +326,7 @@ steps:
     out:
       - id: output
     run: >-
-      ../command_line_tools/postprocessing_variant_calls/0.2.3/maf_annotate_by_tsv/maf_annotate_by_tsv.cwl
+      ../command_line_tools/postprocessing_variant_calls/0.2.3/maf_annotated_by_tsv/maf_annotated_by_tsv.cwl
     label: pv_maf_annotatedByTsv
     'sbg:x': 3366.108154296875
     'sbg:y': 434.5843505859375
