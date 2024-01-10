@@ -82,7 +82,7 @@
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "ghcr.io/msk-access/postprocessing_variant_calls:chipvar_dev10"
+                    "dockerPull": "ghcr.io/msk-access/postprocessing_variant_calls:0.2.3"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -228,7 +228,7 @@
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "ghcr.io/msk-access/postprocessing_variant_calls:chipvar_dev10"
+                    "dockerPull": "ghcr.io/msk-access/postprocessing_variant_calls:0.2.3"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
