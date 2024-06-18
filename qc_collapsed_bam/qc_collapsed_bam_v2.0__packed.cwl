@@ -314,7 +314,7 @@
             ],
             "inputs": [
                 {
-                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_14/sample_bam",
+                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_15/sample_bam",
                     "type": "File",
                     "inputBinding": {
                         "position": 0,
@@ -326,7 +326,7 @@
                     ]
                 },
                 {
-                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_14/sample_sex",
+                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_15/sample_sex",
                     "type": [
                         "null",
                         "string"
@@ -338,7 +338,7 @@
                     "doc": "Expected sample sex (i.e. M or F)."
                 },
                 {
-                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_14/sample_group",
+                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_15/sample_group",
                     "type": [
                         "null",
                         "string"
@@ -350,7 +350,7 @@
                     "doc": "The sample group (e.g. the sample patient ID)."
                 },
                 {
-                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_14/sample_name",
+                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_15/sample_name",
                     "type": "string",
                     "inputBinding": {
                         "position": 0,
@@ -359,7 +359,7 @@
                     "doc": "Sample name. If not specified, sample name is automatically figured out from the BAM file."
                 },
                 {
-                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_14/fafile",
+                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_15/fafile",
                     "type": "File",
                     "inputBinding": {
                         "position": 0,
@@ -371,7 +371,7 @@
                     ]
                 },
                 {
-                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_14/vcf_file",
+                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_15/vcf_file",
                     "type": "File",
                     "inputBinding": {
                         "position": 0,
@@ -380,7 +380,7 @@
                     "doc": "VCF file containing the SNPs to be queried."
                 },
                 {
-                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_14/bed_file",
+                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_15/bed_file",
                     "type": [
                         "null",
                         "File"
@@ -392,7 +392,7 @@
                     "doc": "BED file containing the intervals to be queried."
                 },
                 {
-                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_14/database",
+                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_15/database",
                     "type": [
                         "null",
                         "string"
@@ -405,7 +405,7 @@
                 },
                 {
                     "default": 1,
-                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_14/min_mapping_quality",
+                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_15/min_mapping_quality",
                     "type": [
                         "null",
                         "int"
@@ -418,7 +418,7 @@
                 },
                 {
                     "default": 1,
-                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_14/min_base_quality",
+                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_15/min_base_quality",
                     "type": [
                         "null",
                         "int"
@@ -431,7 +431,7 @@
                 },
                 {
                     "default": 10,
-                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_14/min_coverage",
+                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_15/min_coverage",
                     "type": [
                         "null",
                         "int"
@@ -444,7 +444,7 @@
                 },
                 {
                     "default": 0.1,
-                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_14/min_homozygous_thresh",
+                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_15/min_homozygous_thresh",
                     "type": [
                         "null",
                         "float"
@@ -456,7 +456,7 @@
                     "doc": "Minimum threshold to define homozygous."
                 },
                 {
-                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_14/default_genotype",
+                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_15/default_genotype",
                     "type": [
                         "null",
                         "string"
@@ -468,7 +468,7 @@
                     "doc": "Default genotype if coverage is too low (options are Het or Hom)."
                 },
                 {
-                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_14/file_type",
+                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_15/file_type",
                     "type": [
                         "null",
                         "string"
@@ -478,7 +478,7 @@
             ],
             "outputs": [
                 {
-                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_14/biometrics_extract_pickle",
+                    "id": "#biometrics_extract.cwl/biometrics_extract_0_2_15/biometrics_extract_pickle",
                     "type": "File",
                     "outputBinding": {
                         "glob": "${\n  if (inputs.database) {\n    return inputs.database + '/' + inputs.sample_name + '.pickle';\n  }\n  else {\n    return inputs.sample_name + '.pickle';\n  }\n}",
@@ -494,7 +494,7 @@
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.14"
+                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.15"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -529,8 +529,8 @@
                     "http://xmlns.com/foaf/0.1/member": [
                         {
                             "class": "http://xmlns.com/foaf/0.1/Person",
-                            "http://xmlns.com/foaf/0.1/mbox": "mailto:murphyc4@mskcc.org",
-                            "http://xmlns.com/foaf/0.1/name": "Charlie Murphy"
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:shahr2@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Ronak Shah"
                         }
                     ],
                     "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
@@ -540,7 +540,7 @@
                 {
                     "class": "http://usefulinc.com/ns/doap#Version",
                     "http://usefulinc.com/ns/doap#name": "biometrics",
-                    "http://usefulinc.com/ns/doap#revision": "0.2.14"
+                    "http://usefulinc.com/ns/doap#revision": "0.2.15"
                 }
             ]
         },
@@ -553,7 +553,7 @@
             ],
             "inputs": [
                 {
-                    "id": "#biometrics_major.cwl/biometrics_major_0_2_14/input",
+                    "id": "#biometrics_major.cwl/biometrics_major_0_2_15/input",
                     "type": {
                         "type": "array",
                         "items": "File",
@@ -567,7 +567,7 @@
                     "doc": "Can be one of three types: (1) path to a CSV file containing sample information (one per line). For example: sample_name,sample_bam,sample_type,sample_sex,sample_group. (2) Path to a '*.pk' file that was produced by the 'extract' tool. (3) Name of the sample to analyze; this assumes there is a file named '{sample_name}.pk' in your database directory. Can be specified more than once."
                 },
                 {
-                    "id": "#biometrics_major.cwl/biometrics_major_0_2_14/database",
+                    "id": "#biometrics_major.cwl/biometrics_major_0_2_15/database",
                     "type": [
                         "null",
                         "string"
@@ -580,7 +580,7 @@
                 },
                 {
                     "default": 0.6,
-                    "id": "#biometrics_major.cwl/biometrics_major_0_2_14/major_threshold",
+                    "id": "#biometrics_major.cwl/biometrics_major_0_2_15/major_threshold",
                     "type": [
                         "null",
                         "float"
@@ -592,7 +592,7 @@
                     "doc": "Major contamination threshold for bad sample."
                 },
                 {
-                    "id": "#biometrics_major.cwl/biometrics_major_0_2_14/prefix",
+                    "id": "#biometrics_major.cwl/biometrics_major_0_2_15/prefix",
                     "type": [
                         "null",
                         "string"
@@ -604,7 +604,7 @@
                     "doc": "Output file prefix."
                 },
                 {
-                    "id": "#biometrics_major.cwl/biometrics_major_0_2_14/plot",
+                    "id": "#biometrics_major.cwl/biometrics_major_0_2_15/plot",
                     "type": [
                         "null",
                         "boolean"
@@ -616,7 +616,7 @@
                     "doc": "Also output plots of the data."
                 },
                 {
-                    "id": "#biometrics_major.cwl/biometrics_major_0_2_14/json",
+                    "id": "#biometrics_major.cwl/biometrics_major_0_2_15/json",
                     "type": [
                         "null",
                         "boolean"
@@ -628,7 +628,7 @@
                     "doc": "Also output data in JSON format."
                 },
                 {
-                    "id": "#biometrics_major.cwl/biometrics_major_0_2_14/no_db_comparison",
+                    "id": "#biometrics_major.cwl/biometrics_major_0_2_15/no_db_comparison",
                     "type": [
                         "null",
                         "boolean"
@@ -642,14 +642,14 @@
             ],
             "outputs": [
                 {
-                    "id": "#biometrics_major.cwl/biometrics_major_0_2_14/biometrics_major_csv",
+                    "id": "#biometrics_major.cwl/biometrics_major_0_2_15/biometrics_major_csv",
                     "type": "File",
                     "outputBinding": {
                         "glob": "${\n    if (inputs.prefix) {\n      return inputs.prefix + '_major_contamination.csv'\n    } else {\n      return 'major_contamination.csv'\n    }\n}"
                     }
                 },
                 {
-                    "id": "#biometrics_major.cwl/biometrics_major_0_2_14/biometrics_major_json",
+                    "id": "#biometrics_major.cwl/biometrics_major_0_2_15/biometrics_major_json",
                     "type": [
                         "null",
                         "File"
@@ -659,7 +659,7 @@
                     }
                 },
                 {
-                    "id": "#biometrics_major.cwl/biometrics_major_0_2_14/biometrics_major_plot",
+                    "id": "#biometrics_major.cwl/biometrics_major_0_2_15/biometrics_major_plot",
                     "type": [
                         "null",
                         "File"
@@ -677,7 +677,7 @@
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.14"
+                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.15"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -713,7 +713,7 @@
                 {
                     "class": "http://usefulinc.com/ns/doap#Version",
                     "http://usefulinc.com/ns/doap#name": "biometrics",
-                    "http://usefulinc.com/ns/doap#revision": "0.2.14"
+                    "http://usefulinc.com/ns/doap#revision": "0.2.15"
                 }
             ]
         },
@@ -726,7 +726,7 @@
             ],
             "inputs": [
                 {
-                    "id": "#biometrics_minor.cwl/biometrics_minor_0_2_14/input",
+                    "id": "#biometrics_minor.cwl/biometrics_minor_0_2_15/input",
                     "type": {
                         "type": "array",
                         "items": "File",
@@ -740,7 +740,7 @@
                     "doc": "Can be one of three types: (1) path to a CSV file containing sample information (one per line). For example: sample_name,sample_bam,sample_type,sample_sex,sample_group. (2) Path to a '*.pk' file that was produced by the 'extract' tool. (3) Name of the sample to analyze; this assumes there is a file named '{sample_name}.pk' in your database directory. Can be specified more than once."
                 },
                 {
-                    "id": "#biometrics_minor.cwl/biometrics_minor_0_2_14/database",
+                    "id": "#biometrics_minor.cwl/biometrics_minor_0_2_15/database",
                     "type": [
                         "null",
                         "string"
@@ -753,7 +753,7 @@
                 },
                 {
                     "default": 0.002,
-                    "id": "#biometrics_minor.cwl/biometrics_minor_0_2_14/minor_threshold",
+                    "id": "#biometrics_minor.cwl/biometrics_minor_0_2_15/minor_threshold",
                     "type": [
                         "null",
                         "float"
@@ -765,7 +765,7 @@
                     "doc": "Minor contamination threshold for bad sample."
                 },
                 {
-                    "id": "#biometrics_minor.cwl/biometrics_minor_0_2_14/prefix",
+                    "id": "#biometrics_minor.cwl/biometrics_minor_0_2_15/prefix",
                     "type": [
                         "null",
                         "string"
@@ -777,7 +777,7 @@
                     "doc": "Output file prefix."
                 },
                 {
-                    "id": "#biometrics_minor.cwl/biometrics_minor_0_2_14/plot",
+                    "id": "#biometrics_minor.cwl/biometrics_minor_0_2_15/plot",
                     "type": [
                         "null",
                         "boolean"
@@ -789,7 +789,7 @@
                     "doc": "Also output plots of the data."
                 },
                 {
-                    "id": "#biometrics_minor.cwl/biometrics_minor_0_2_14/json",
+                    "id": "#biometrics_minor.cwl/biometrics_minor_0_2_15/json",
                     "type": [
                         "null",
                         "boolean"
@@ -801,7 +801,7 @@
                     "doc": "Also output data in JSON format."
                 },
                 {
-                    "id": "#biometrics_minor.cwl/biometrics_minor_0_2_14/no_db_comparison",
+                    "id": "#biometrics_minor.cwl/biometrics_minor_0_2_15/no_db_comparison",
                     "type": [
                         "null",
                         "boolean"
@@ -815,14 +815,14 @@
             ],
             "outputs": [
                 {
-                    "id": "#biometrics_minor.cwl/biometrics_minor_0_2_14/biometrics_minor_csv",
+                    "id": "#biometrics_minor.cwl/biometrics_minor_0_2_15/biometrics_minor_csv",
                     "type": "File",
                     "outputBinding": {
                         "glob": "${\n    if (inputs.prefix) {\n      return inputs.prefix + '_minor_contamination.csv'\n    } else {\n      return 'minor_contamination.csv'\n    }\n}"
                     }
                 },
                 {
-                    "id": "#biometrics_minor.cwl/biometrics_minor_0_2_14/biometrics_minor_json",
+                    "id": "#biometrics_minor.cwl/biometrics_minor_0_2_15/biometrics_minor_json",
                     "type": [
                         "null",
                         "File"
@@ -832,7 +832,7 @@
                     }
                 },
                 {
-                    "id": "#biometrics_minor.cwl/biometrics_minor_0_2_14/biometrics_minor_plot",
+                    "id": "#biometrics_minor.cwl/biometrics_minor_0_2_15/biometrics_minor_plot",
                     "type": [
                         "null",
                         "File"
@@ -842,7 +842,7 @@
                     }
                 },
                 {
-                    "id": "#biometrics_minor.cwl/biometrics_minor_0_2_14/biometrics_minor_sites_plot",
+                    "id": "#biometrics_minor.cwl/biometrics_minor_0_2_15/biometrics_minor_sites_plot",
                     "type": [
                         "null",
                         "File"
@@ -860,7 +860,7 @@
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.14"
+                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.15"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -885,8 +885,8 @@
                     "http://xmlns.com/foaf/0.1/member": [
                         {
                             "class": "http://xmlns.com/foaf/0.1/Person",
-                            "http://xmlns.com/foaf/0.1/mbox": "mailto:murphyc4@mskcc.org",
-                            "http://xmlns.com/foaf/0.1/name": "Charlie Murphy"
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:shahr2@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Ronak Shah"
                         }
                     ],
                     "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
@@ -896,7 +896,7 @@
                 {
                     "class": "http://usefulinc.com/ns/doap#Version",
                     "http://usefulinc.com/ns/doap#name": "biometrics",
-                    "http://usefulinc.com/ns/doap#revision": "0.2.14"
+                    "http://usefulinc.com/ns/doap#revision": "0.2.15"
                 }
             ]
         },
@@ -909,7 +909,7 @@
             ],
             "inputs": [
                 {
-                    "id": "#biometrics_sexmismatch.cwl/biometrics_sexmismatch_0_2_14/input",
+                    "id": "#biometrics_sexmismatch.cwl/biometrics_sexmismatch_0_2_15/input",
                     "type": {
                         "type": "array",
                         "items": "File",
@@ -923,7 +923,7 @@
                     "doc": "Can be one of three types: (1) path to a CSV file containing sample information (one per line). For example: sample_name,sample_bam,sample_type,sample_sex,sample_group. (2) Path to a '*.pk' file that was produced by the 'extract' tool. (3) Name of the sample to analyze; this assumes there is a file named '{sample_name}.pk' in your database directory. Can be specified more than once."
                 },
                 {
-                    "id": "#biometrics_sexmismatch.cwl/biometrics_sexmismatch_0_2_14/database",
+                    "id": "#biometrics_sexmismatch.cwl/biometrics_sexmismatch_0_2_15/database",
                     "type": [
                         "null",
                         "string"
@@ -936,7 +936,7 @@
                 },
                 {
                     "default": 50,
-                    "id": "#biometrics_sexmismatch.cwl/biometrics_sexmismatch_0_2_14/coverage_threshold",
+                    "id": "#biometrics_sexmismatch.cwl/biometrics_sexmismatch_0_2_15/coverage_threshold",
                     "type": [
                         "null",
                         "int"
@@ -948,7 +948,7 @@
                     "doc": "Samples with Y chromosome above this value will be considered male."
                 },
                 {
-                    "id": "#biometrics_sexmismatch.cwl/biometrics_sexmismatch_0_2_14/prefix",
+                    "id": "#biometrics_sexmismatch.cwl/biometrics_sexmismatch_0_2_15/prefix",
                     "type": [
                         "null",
                         "string"
@@ -960,7 +960,7 @@
                     "doc": "Output file prefix."
                 },
                 {
-                    "id": "#biometrics_sexmismatch.cwl/biometrics_sexmismatch_0_2_14/json",
+                    "id": "#biometrics_sexmismatch.cwl/biometrics_sexmismatch_0_2_15/json",
                     "type": [
                         "null",
                         "boolean"
@@ -972,7 +972,7 @@
                     "doc": "Also output data in JSON format."
                 },
                 {
-                    "id": "#biometrics_sexmismatch.cwl/biometrics_sexmismatch_0_2_14/no_db_comparison",
+                    "id": "#biometrics_sexmismatch.cwl/biometrics_sexmismatch_0_2_15/no_db_comparison",
                     "type": [
                         "null",
                         "boolean"
@@ -986,14 +986,14 @@
             ],
             "outputs": [
                 {
-                    "id": "#biometrics_sexmismatch.cwl/biometrics_sexmismatch_0_2_14/biometrics_sexmismatch_csv",
+                    "id": "#biometrics_sexmismatch.cwl/biometrics_sexmismatch_0_2_15/biometrics_sexmismatch_csv",
                     "type": "File",
                     "outputBinding": {
                         "glob": "${\n    if (inputs.prefix) {\n      return inputs.prefix + '_sex_mismatch.csv'\n    } else {\n      return 'sex_mismatch.csv'\n    }\n}"
                     }
                 },
                 {
-                    "id": "#biometrics_sexmismatch.cwl/biometrics_sexmismatch_0_2_14/biometrics_sexmismatch_json",
+                    "id": "#biometrics_sexmismatch.cwl/biometrics_sexmismatch_0_2_15/biometrics_sexmismatch_json",
                     "type": [
                         "null",
                         "File"
@@ -1011,7 +1011,7 @@
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.14"
+                    "dockerPull": "ghcr.io/msk-access/biometrics:0.2.15"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -1036,8 +1036,8 @@
                     "http://xmlns.com/foaf/0.1/member": [
                         {
                             "class": "http://xmlns.com/foaf/0.1/Person",
-                            "http://xmlns.com/foaf/0.1/mbox": "mailto:murphyc4@mskcc.org",
-                            "http://xmlns.com/foaf/0.1/name": "Charlie Murphy"
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:shahr2@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Ronak Shah"
                         }
                     ],
                     "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
@@ -1047,7 +1047,7 @@
                 {
                     "class": "http://usefulinc.com/ns/doap#Version",
                     "http://usefulinc.com/ns/doap#name": "biometrics",
-                    "http://usefulinc.com/ns/doap#revision": "0.2.14"
+                    "http://usefulinc.com/ns/doap#revision": "0.2.15"
                 }
             ]
         },
@@ -3056,7 +3056,7 @@
                 {
                     "id": "#main/biometrics_major_plot",
                     "outputSource": [
-                        "#main/biometrics_major_0_2_14/biometrics_major_plot"
+                        "#main/biometrics_major_0_2_15/biometrics_major_plot"
                     ],
                     "type": [
                         "null",
@@ -3068,7 +3068,7 @@
                 {
                     "id": "#main/biometrics_major_json",
                     "outputSource": [
-                        "#main/biometrics_major_0_2_14/biometrics_major_json"
+                        "#main/biometrics_major_0_2_15/biometrics_major_json"
                     ],
                     "type": [
                         "null",
@@ -3080,7 +3080,7 @@
                 {
                     "id": "#main/biometrics_major_csv",
                     "outputSource": [
-                        "#main/biometrics_major_0_2_14/biometrics_major_csv"
+                        "#main/biometrics_major_0_2_15/biometrics_major_csv"
                     ],
                     "type": "File",
                     "https://www.sevenbridges.com/x": 1482.3623046875,
@@ -3089,7 +3089,7 @@
                 {
                     "id": "#main/collapsed_biometrics_extract_pickle",
                     "outputSource": [
-                        "#main/biometrics_extract_0_2_14/biometrics_extract_pickle"
+                        "#main/biometrics_extract_0_2_15/biometrics_extract_pickle"
                     ],
                     "type": "File",
                     "https://www.sevenbridges.com/x": 982.1435546875,
@@ -3209,7 +3209,7 @@
                             "id": "#main/biometrics_minor/input",
                             "linkMerge": "merge_nested",
                             "source": [
-                                "#main/biometrics_extract_0_2_14/biometrics_extract_pickle"
+                                "#main/biometrics_extract_0_2_15/biometrics_extract_pickle"
                             ]
                         },
                         {
@@ -3257,7 +3257,7 @@
                             "id": "#main/biometrics_sexmismatch/input",
                             "linkMerge": "merge_flattened",
                             "source": [
-                                "#main/biometrics_extract_0_2_14/biometrics_extract_pickle"
+                                "#main/biometrics_extract_0_2_15/biometrics_extract_pickle"
                             ]
                         },
                         {
@@ -3288,43 +3288,43 @@
                     "https://www.sevenbridges.com/y": 1760.875
                 },
                 {
-                    "id": "#main/biometrics_major_0_2_14",
+                    "id": "#main/biometrics_major_0_2_15",
                     "in": [
                         {
-                            "id": "#main/biometrics_major_0_2_14/input",
+                            "id": "#main/biometrics_major_0_2_15/input",
                             "linkMerge": "merge_nested",
                             "source": [
-                                "#main/biometrics_extract_0_2_14/biometrics_extract_pickle"
+                                "#main/biometrics_extract_0_2_15/biometrics_extract_pickle"
                             ]
                         },
                         {
-                            "id": "#main/biometrics_major_0_2_14/major_threshold",
+                            "id": "#main/biometrics_major_0_2_15/major_threshold",
                             "source": "#main/major_threshold"
                         },
                         {
-                            "id": "#main/biometrics_major_0_2_14/prefix",
+                            "id": "#main/biometrics_major_0_2_15/prefix",
                             "default": "collapsed",
                             "source": "#main/prefix"
                         },
                         {
-                            "id": "#main/biometrics_major_0_2_14/plot",
+                            "id": "#main/biometrics_major_0_2_15/plot",
                             "source": "#main/plot"
                         },
                         {
-                            "id": "#main/biometrics_major_0_2_14/json",
+                            "id": "#main/biometrics_major_0_2_15/json",
                             "default": true,
                             "source": "#main/json"
                         }
                     ],
                     "out": [
                         {
-                            "id": "#main/biometrics_major_0_2_14/biometrics_major_csv"
+                            "id": "#main/biometrics_major_0_2_15/biometrics_major_csv"
                         },
                         {
-                            "id": "#main/biometrics_major_0_2_14/biometrics_major_json"
+                            "id": "#main/biometrics_major_0_2_15/biometrics_major_json"
                         },
                         {
-                            "id": "#main/biometrics_major_0_2_14/biometrics_major_plot"
+                            "id": "#main/biometrics_major_0_2_15/biometrics_major_plot"
                         }
                     ],
                     "run": "#biometrics_major.cwl",
@@ -3332,45 +3332,45 @@
                     "https://www.sevenbridges.com/y": 2079.625
                 },
                 {
-                    "id": "#main/biometrics_extract_0_2_14",
+                    "id": "#main/biometrics_extract_0_2_15",
                     "in": [
                         {
-                            "id": "#main/biometrics_extract_0_2_14/sample_bam",
+                            "id": "#main/biometrics_extract_0_2_15/sample_bam",
                             "source": "#main/collapsed_bam"
                         },
                         {
-                            "id": "#main/biometrics_extract_0_2_14/sample_sex",
+                            "id": "#main/biometrics_extract_0_2_15/sample_sex",
                             "source": "#main/sample_sex"
                         },
                         {
-                            "id": "#main/biometrics_extract_0_2_14/sample_group",
+                            "id": "#main/biometrics_extract_0_2_15/sample_group",
                             "source": "#main/sample_group"
                         },
                         {
-                            "id": "#main/biometrics_extract_0_2_14/sample_name",
+                            "id": "#main/biometrics_extract_0_2_15/sample_name",
                             "source": "#main/sample_name"
                         },
                         {
-                            "id": "#main/biometrics_extract_0_2_14/fafile",
+                            "id": "#main/biometrics_extract_0_2_15/fafile",
                             "source": "#main/reference"
                         },
                         {
-                            "id": "#main/biometrics_extract_0_2_14/vcf_file",
+                            "id": "#main/biometrics_extract_0_2_15/vcf_file",
                             "source": "#main/vcf_file"
                         },
                         {
-                            "id": "#main/biometrics_extract_0_2_14/bed_file",
+                            "id": "#main/biometrics_extract_0_2_15/bed_file",
                             "source": "#main/bed_file"
                         },
                         {
-                            "id": "#main/biometrics_extract_0_2_14/file_type",
+                            "id": "#main/biometrics_extract_0_2_15/file_type",
                             "default": "collapsed",
                             "source": "#main/collapsed_biometrics_extract_file_type"
                         }
                     ],
                     "out": [
                         {
-                            "id": "#main/biometrics_extract_0_2_14/biometrics_extract_pickle"
+                            "id": "#main/biometrics_extract_0_2_15/biometrics_extract_pickle"
                         }
                     ],
                     "run": "#biometrics_extract.cwl",
