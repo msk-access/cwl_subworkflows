@@ -1,0 +1,5 @@
+input_variant_annotated_maf:
+  class: File
+  path: /path/tovariant/annotated/maf
+output_maf_name_filter: annotated_cmoch_filter.maf
+output_maf_name_tag: annotated_cmoch-tag.maf

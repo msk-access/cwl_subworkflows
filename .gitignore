@@ -107,3 +107,4 @@ ENV/
 #vscode
 .vscode/*
 
+pv_vardict/pv_maf_processing.cwl

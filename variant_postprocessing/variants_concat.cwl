@@ -161,5 +161,5 @@ $schemas:
     's:email': 'mailto:shahr@mskcc.org'
     's:identifier': ''
     's:name': Ronak Shah
-'s:dateCreated': 2020-07-13
+'s:dateCreated': '2020-07-13'
 's:license': 'https://spdx.org/licenses/Apache-2.0'

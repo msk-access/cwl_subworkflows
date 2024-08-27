@@ -19,7 +19,10 @@
                 },
                 {
                     "id": "#oncokb_annotator_3-2-2.cwl/oncokb_annotator/outputMafName",
-                    "type": "string",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
                     "inputBinding": {
                         "position": 0,
                         "prefix": "-o"
@@ -96,6 +99,13 @@
                 }
             ],
             "label": "oncokb_annotator",
+            "arguments": [
+                {
+                    "position": 0,
+                    "prefix": "-o",
+                    "valueFrom": "${\n    if(inputs.outputMafName){\n        return inputs.outputMafName\n    } else {\n        return inputs.inputMafFile.basename.replace('.maf', '_oncoKB.maf')\n    }\n}"
+                }
+            ],
             "requirements": [
                 {
                     "class": "DockerRequirement",
@@ -147,7 +157,7 @@
                         "File"
                     ],
                     "outputBinding": {
-                        "glob": "$(inputs.outputMafName)"
+                        "glob": "${ \n    if (inputs.outputMafName) { \n        return inputs.outputMafName\n    } else { \n        return inputs.inputMafFile.basename.replace('.maf', '_oncoKB.maf') \n    } \n}"
                     }
                 }
             ]
@@ -200,10 +210,7 @@
                 },
                 {
                     "id": "#maf_annotated_by_bed.cwl/maf_annotated_by_bed/output_filename",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
+                    "type": "string",
                     "inputBinding": {
                         "position": 3,
                         "prefix": "-o"
@@ -227,7 +234,7 @@
                     "id": "#maf_annotated_by_bed.cwl/maf_annotated_by_bed/output",
                     "type": "File",
                     "outputBinding": {
-                        "glob": "*.maf"
+                        "glob": "${ \n    if (inputs.output_filename) { \n        return inputs.output_filename \n    } else { \n        return inputs.input_maf.basename.replace('.maf', '_mafAnnotatedByBed.maf') \n    } \n}"
                     }
                 }
             ],
@@ -235,7 +242,12 @@
             "arguments": [
                 "maf",
                 "annotate",
-                "mafbybed"
+                "mafbybed",
+                {
+                    "position": 2,
+                    "prefix": "--output",
+                    "valueFrom": "${\n    if(inputs.output_filename){\n        return inputs.output_filename\n    } else {\n        return inputs.input_maf.basename.replace('.maf', '_mafAnnotatedByBed')\n    }\n}"
+                }
             ],
             "requirements": [
                 {
@@ -245,7 +257,7 @@
                 },
                 {
                     "class": "DockerRequirement",
-                    "dockerPull": "ghcr.io/msk-access/postprocessing_variant_calls:0.2.2"
+                    "dockerPull": "ghcr.io/msk-access/postprocessing_variant_calls:0.2.3"
                 },
                 {
                     "class": "InlineJavascriptRequirement"
@@ -281,7 +293,174 @@
                 {
                     "class": "http://usefulinc.com/ns/doap#Version",
                     "http://usefulinc.com/ns/doap#name": "postprocessing_variant_calls",
-                    "http://usefulinc.com/ns/doap#revision": "0.0.1"
+                    "http://usefulinc.com/ns/doap#revision": "0.2.3"
+                }
+            ]
+        },
+        {
+            "class": "CommandLineTool",
+            "id": "#maf_annotated_by_tsv.cwl",
+            "baseCommand": [
+                "pv"
+            ],
+            "inputs": [
+                {
+                    "id": "#maf_annotated_by_tsv.cwl/pv_maf_annotated_by_tsv/memory_per_job",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "doc": "Memory per job in megabytes"
+                },
+                {
+                    "id": "#maf_annotated_by_tsv.cwl/pv_maf_annotated_by_tsv/memory_overhead",
+                    "type": [
+                        "null",
+                        "int"
+                    ],
+                    "doc": "Memory overhead per job in megabytes"
+                },
+                {
+                    "id": "#maf_annotated_by_tsv.cwl/pv_maf_annotated_by_tsv/number_of_threads",
+                    "type": [
+                        "null",
+                        "int"
+                    ]
+                },
+                {
+                    "id": "#maf_annotated_by_tsv.cwl/pv_maf_annotated_by_tsv/input_maf",
+                    "type": "File",
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "-m"
+                    }
+                },
+                {
+                    "id": "#maf_annotated_by_tsv.cwl/pv_maf_annotated_by_tsv/output_maf_name",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "-o"
+                    },
+                    "https://www.sevenbridges.com/toolDefaultValue": "output.maf"
+                },
+                {
+                    "id": "#maf_annotated_by_tsv.cwl/pv_maf_annotated_by_tsv/output_column_name",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "-oc"
+                    },
+                    "https://www.sevenbridges.com/toolDefaultValue": "tsv"
+                },
+                {
+                    "id": "#maf_annotated_by_tsv.cwl/pv_maf_annotated_by_tsv/input_tsv_file",
+                    "type": "File",
+                    "inputBinding": {
+                        "position": 1,
+                        "prefix": "-t"
+                    }
+                },
+                {
+                    "id": "#maf_annotated_by_tsv.cwl/pv_maf_annotated_by_tsv/separator",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "-sep"
+                    }
+                },
+                {
+                    "id": "#maf_annotated_by_tsv.cwl/pv_maf_annotated_by_tsv/values",
+                    "type": [
+                        "null",
+                        {
+                            "type": "array",
+                            "items": "string"
+                        }
+                    ],
+                    "inputBinding": {
+                        "position": 0,
+                        "prefix": "-v"
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "id": "#maf_annotated_by_tsv.cwl/pv_maf_annotated_by_tsv/output",
+                    "type": [
+                        "null",
+                        "File"
+                    ],
+                    "outputBinding": {
+                        "glob": "${ \n    if (inputs.output_maf_name) { \n        return inputs.output_maf_name \n    } else { \n        return inputs.input_maf.basename.replace('.maf', '_maftagcmoCh.maf') \n    } \n}"
+                    }
+                }
+            ],
+            "label": "pv_maf_annotatedByTsv",
+            "arguments": [
+                "maf",
+                "annotate",
+                "mafbytsv",
+                {
+                    "position": 2,
+                    "prefix": "--output",
+                    "valueFrom": "${ \n    if (inputs.output_maf_name) { \n        return inputs.output_maf_name \n    } else { \n        return inputs.input_maf.basename.replace('.maf', '_maftagcmoCh.maf') \n    } \n}"
+                }
+            ],
+            "requirements": [
+                {
+                    "class": "ResourceRequirement",
+                    "ramMin": 8000,
+                    "coresMin": 2
+                },
+                {
+                    "class": "DockerRequirement",
+                    "dockerPull": "ghcr.io/msk-access/postprocessing_variant_calls:0.2.3"
+                },
+                {
+                    "class": "InlineJavascriptRequirement"
+                }
+            ],
+            "http://purl.org/dc/terms/contributor": [
+                {
+                    "class": "http://xmlns.com/foaf/0.1/Organization",
+                    "http://xmlns.com/foaf/0.1/member": [
+                        {
+                            "class": "http://xmlns.com/foaf/0.1/Person",
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:shahr2@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Ronak Shah"
+                        }
+                    ],
+                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
+                }
+            ],
+            "http://purl.org/dc/terms/creator": [
+                {
+                    "class": "http://xmlns.com/foaf/0.1/Organization",
+                    "http://xmlns.com/foaf/0.1/member": [
+                        {
+                            "class": "http://xmlns.com/foaf/0.1/Person",
+                            "http://xmlns.com/foaf/0.1/mbox": "mailto:sivaprk@mskcc.org",
+                            "http://xmlns.com/foaf/0.1/name": "Karthigayini Sivaprakasam"
+                        }
+                    ],
+                    "http://xmlns.com/foaf/0.1/name": "Memorial Sloan Kettering Cancer Center"
+                }
+            ],
+            "http://usefulinc.com/ns/doap#release": [
+                {
+                    "class": "http://usefulinc.com/ns/doap#Version",
+                    "http://usefulinc.com/ns/doap#name": "postprocessing_variant_calls",
+                    "http://usefulinc.com/ns/doap#revision": "0.2.3"
                 }
             ]
         },
@@ -393,7 +572,7 @@
                     "id": "#snpsift_annotate_5-0.cwl/snpsift_annotate_5_0/annotatedOutput",
                     "type": "File",
                     "outputBinding": {
-                        "glob": "${ \n    if (inputs.output_file_name) { \n        return inputs.output_file_name \n    } else { \n        return inputs.input_vcf.basename.replace(/.vcf/, 'snpsift.vcf') \n    } \n}"
+                        "glob": "${ \n    if (inputs.output_file_name) { \n        return inputs.output_file_name \n    } else { \n        return inputs.input_vcf.basename.replace(/.vcf/, '_snpsift.vcf') \n    } \n}"
                     }
                 }
             ],
@@ -751,7 +930,7 @@
                     "id": "#vcf2maf_1.6.21.cwl/vcf2maf_v1_6_21/vcf2maf_maf",
                     "type": "File",
                     "outputBinding": {
-                        "glob": "${\n  if (inputs.output_maf)\n    return inputs.output_maf;\n  return null;\n}\n"
+                        "glob": "${ \n    if (inputs.output_maf) { \n        return inputs.output_maf\n    } else { \n        return inputs.input_vcf.basename.replace('.vcf', '_vcf2maf.maf') \n    } \n}"
                     }
                 }
             ],
@@ -761,6 +940,11 @@
                     "prefix": "--tmp-dir",
                     "shellQuote": false,
                     "valueFrom": "$(runtime.tmpdir)"
+                },
+                {
+                    "position": 0,
+                    "prefix": "--output-maf",
+                    "valueFrom": "${ \n    if (inputs.output_maf) { \n        return inputs.output_maf\n    } else { \n        return inputs.input_vcf.basename.replace('.vcf', '_vcf2maf.maf') \n    } \n}"
                 }
             ],
             "requirements": [
@@ -830,14 +1014,14 @@
                     "secondaryFiles": [
                         ".tbi"
                     ],
-                    "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 434.1875
+                    "https://www.sevenbridges.com/x": 23.445261001586914,
+                    "https://www.sevenbridges.com/y": 364.7808837890625
                 },
                 {
                     "id": "#main/vardict_input_vcf",
                     "type": "File",
-                    "https://www.sevenbridges.com/x": 0,
-                    "https://www.sevenbridges.com/y": 327.390625
+                    "https://www.sevenbridges.com/x": -6.394162178039551,
+                    "https://www.sevenbridges.com/y": 252.5694122314453
                 },
                 {
                     "id": "#main/input_cosmicprevalenceDB_vcf",
@@ -845,8 +1029,8 @@
                     "secondaryFiles": [
                         ".tbi"
                     ],
-                    "https://www.sevenbridges.com/x": 217.47328186035156,
-                    "https://www.sevenbridges.com/y": 564.6259765625
+                    "https://www.sevenbridges.com/x": 478.74456787109375,
+                    "https://www.sevenbridges.com/y": 357.3795166015625
                 },
                 {
                     "id": "#main/min_hom_vaf",
@@ -854,8 +1038,8 @@
                         "null",
                         "float"
                     ],
-                    "https://www.sevenbridges.com/x": 416.7921447753906,
-                    "https://www.sevenbridges.com/y": 654.78125
+                    "https://www.sevenbridges.com/x": 811.7153930664062,
+                    "https://www.sevenbridges.com/y": 475.2481384277344
                 },
                 {
                     "id": "#main/output_vcf2mafName",
@@ -863,8 +1047,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": 416.7921447753906,
-                    "https://www.sevenbridges.com/y": 441.1875
+                    "https://www.sevenbridges.com/x": 810.6497192382812,
+                    "https://www.sevenbridges.com/y": 390.56201171875
                 },
                 {
                     "id": "#main/retain_info",
@@ -872,8 +1056,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": 407,
-                    "https://www.sevenbridges.com/y": 277
+                    "https://www.sevenbridges.com/x": 833.029296875,
+                    "https://www.sevenbridges.com/y": 255.85397338867188
                 },
                 {
                     "id": "#main/tumor_id",
@@ -881,8 +1065,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": 469,
-                    "https://www.sevenbridges.com/y": -64
+                    "https://www.sevenbridges.com/x": 876.7227172851562,
+                    "https://www.sevenbridges.com/y": 144.93431091308594
                 },
                 {
                     "id": "#main/snpsift_countOpName",
@@ -890,8 +1074,8 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": 16.4202823638916,
-                    "https://www.sevenbridges.com/y": 169.89190673828125
+                    "https://www.sevenbridges.com/x": 21.313875198364258,
+                    "https://www.sevenbridges.com/y": 146.92698669433594
                 },
                 {
                     "id": "#main/snpsift_prevalOpName",
@@ -899,20 +1083,20 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": 214.9839324951172,
-                    "https://www.sevenbridges.com/y": -51.58765411376953
+                    "https://www.sevenbridges.com/x": 471.03662109375,
+                    "https://www.sevenbridges.com/y": 208.3065948486328
                 },
                 {
                     "id": "#main/opOncoKbMafName",
                     "type": "string",
-                    "https://www.sevenbridges.com/x": 953.6817626953125,
-                    "https://www.sevenbridges.com/y": 129.14283752441406
+                    "https://www.sevenbridges.com/x": 1262.8470458984375,
+                    "https://www.sevenbridges.com/y": 271.8393249511719
                 },
                 {
                     "id": "#main/oncoKbApiToken",
                     "type": "File",
-                    "https://www.sevenbridges.com/x": 934,
-                    "https://www.sevenbridges.com/y": 402
+                    "https://www.sevenbridges.com/x": 1170.1317138671875,
+                    "https://www.sevenbridges.com/y": 455.5693054199219
                 },
                 {
                     "id": "#main/oncoKbAnnotateHotspots",
@@ -920,23 +1104,26 @@
                         "null",
                         "boolean"
                     ],
-                    "https://www.sevenbridges.com/x": 914.09375,
-                    "https://www.sevenbridges.com/y": 582.5
+                    "https://www.sevenbridges.com/x": 1230.876220703125,
+                    "https://www.sevenbridges.com/y": 542.3211059570312
                 },
                 {
                     "id": "#main/input_mappability_bed",
                     "type": "File",
-                    "https://www.sevenbridges.com/x": 1137.1201171875,
-                    "https://www.sevenbridges.com/y": 407.4906311035156
+                    "https://www.sevenbridges.com/x": 1663.8760986328125,
+                    "https://www.sevenbridges.com/y": 483.8832092285156
+                },
+                {
+                    "id": "#main/input_complexity_bed",
+                    "type": "File",
+                    "https://www.sevenbridges.com/x": 1974.700927734375,
+                    "https://www.sevenbridges.com/y": 498.8029479980469
                 },
                 {
                     "id": "#main/output_mappability_filename",
-                    "type": [
-                        "null",
-                        "string"
-                    ],
-                    "https://www.sevenbridges.com/x": 1172.9835205078125,
-                    "https://www.sevenbridges.com/y": 68.39226531982422
+                    "type": "string",
+                    "https://www.sevenbridges.com/x": 1618.7889404296875,
+                    "https://www.sevenbridges.com/y": 318.9342956542969
                 },
                 {
                     "id": "#main/column_name_mappability",
@@ -944,14 +1131,14 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": 1273.205322265625,
-                    "https://www.sevenbridges.com/y": 514.48193359375
+                    "https://www.sevenbridges.com/x": 1702.2410888671875,
+                    "https://www.sevenbridges.com/y": 577.0948486328125
                 },
                 {
-                    "id": "#main/input_complexity_bed",
-                    "type": "File",
-                    "https://www.sevenbridges.com/x": 1455.4620361328125,
-                    "https://www.sevenbridges.com/y": 427.4315490722656
+                    "id": "#main/output_complexity_filename",
+                    "type": "string",
+                    "https://www.sevenbridges.com/x": 2086.625732421875,
+                    "https://www.sevenbridges.com/y": 382.24090576171875
                 },
                 {
                     "id": "#main/column_name_complexity",
@@ -959,17 +1146,80 @@
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": 1688.9140625,
-                    "https://www.sevenbridges.com/y": 449.50762939453125
+                    "https://www.sevenbridges.com/x": 2012.0001220703125,
+                    "https://www.sevenbridges.com/y": 601.6058349609375
                 },
                 {
-                    "id": "#main/output_complexity_filename",
+                    "id": "#main/input_hotspot_tsv_file",
+                    "type": "File",
+                    "https://www.sevenbridges.com/x": 2425.953857421875,
+                    "https://www.sevenbridges.com/y": 306.6236572265625
+                },
+                {
+                    "id": "#main/output_column_name_hotpsot",
                     "type": [
                         "null",
                         "string"
                     ],
-                    "https://www.sevenbridges.com/x": 1609.2314453125,
-                    "https://www.sevenbridges.com/y": 21.32272720336914
+                    "https://www.sevenbridges.com/x": 2538.91748046875,
+                    "https://www.sevenbridges.com/y": 206.44845581054688
+                },
+                {
+                    "id": "#main/output_hotspot_maf_name",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "https://www.sevenbridges.com/x": 2457.218994140625,
+                    "https://www.sevenbridges.com/y": 758.5621337890625
+                },
+                {
+                    "id": "#main/input_47kchpd_tsv_file",
+                    "type": "File",
+                    "https://www.sevenbridges.com/x": 2759.510498046875,
+                    "https://www.sevenbridges.com/y": 265.0616149902344
+                },
+                {
+                    "id": "#main/output_47kchpd_maf_name",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "https://www.sevenbridges.com/x": 3004.045654296875,
+                    "https://www.sevenbridges.com/y": 208.01800537109375
+                },
+                {
+                    "id": "#main/output_column_name_47kchpd",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "https://www.sevenbridges.com/x": 2837.483642578125,
+                    "https://www.sevenbridges.com/y": 590.1929931640625
+                },
+                {
+                    "id": "#main/input_panmeloid_tsv_file",
+                    "type": "File",
+                    "https://www.sevenbridges.com/x": 3165.773193359375,
+                    "https://www.sevenbridges.com/y": 219.0523681640625
+                },
+                {
+                    "id": "#main/output_maf_name_panmyeloid",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "https://www.sevenbridges.com/x": 3330.037841796875,
+                    "https://www.sevenbridges.com/y": 199.72714233398438
+                },
+                {
+                    "id": "#main/output_column_name_panmyeloid",
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "https://www.sevenbridges.com/x": 3216.4921875,
+                    "https://www.sevenbridges.com/y": 559.9721069335938
                 }
             ],
             "outputs": [
@@ -979,8 +1229,8 @@
                         "#main/snpsift_annotate_5_0/annotatedOutput"
                     ],
                     "type": "File",
-                    "https://www.sevenbridges.com/x": 348.4152526855469,
-                    "https://www.sevenbridges.com/y": 772.9266967773438
+                    "https://www.sevenbridges.com/x": 224.51815795898438,
+                    "https://www.sevenbridges.com/y": 602.496337890625
                 },
                 {
                     "id": "#main/annotatedOutput_prevalence",
@@ -988,8 +1238,8 @@
                         "#main/snpsift_annotate_5_1/annotatedOutput"
                     ],
                     "type": "File",
-                    "https://www.sevenbridges.com/x": 656.337158203125,
-                    "https://www.sevenbridges.com/y": 723.7005615234375
+                    "https://www.sevenbridges.com/x": 714.343017578125,
+                    "https://www.sevenbridges.com/y": 463.94891357421875
                 },
                 {
                     "id": "#main/vcf2maf_maf",
@@ -997,26 +1247,8 @@
                         "#main/vcf2maf_v1_6_21/vcf2maf_maf"
                     ],
                     "type": "File",
-                    "https://www.sevenbridges.com/x": 1148.8089599609375,
-                    "https://www.sevenbridges.com/y": 594.5475463867188
-                },
-                {
-                    "id": "#main/output_mappability_maf",
-                    "outputSource": [
-                        "#main/maf_annotated_by_bed_mappability/output"
-                    ],
-                    "type": "File",
-                    "https://www.sevenbridges.com/x": 1524.598876953125,
-                    "https://www.sevenbridges.com/y": 679.8934936523438
-                },
-                {
-                    "id": "#main/output_complexity_maf",
-                    "outputSource": [
-                        "#main/maf_annotated_by_bed_lowComplexity/output"
-                    ],
-                    "type": "File",
-                    "https://www.sevenbridges.com/x": 1815.8809814453125,
-                    "https://www.sevenbridges.com/y": 248.1118621826172
+                    "https://www.sevenbridges.com/x": 1163.603759765625,
+                    "https://www.sevenbridges.com/y": 246.265625
                 },
                 {
                     "id": "#main/oncokb_maf",
@@ -1027,8 +1259,62 @@
                         "null",
                         "File"
                     ],
-                    "https://www.sevenbridges.com/x": 1327.9454345703125,
-                    "https://www.sevenbridges.com/y": 738.3821411132812
+                    "https://www.sevenbridges.com/x": 1504.72998046875,
+                    "https://www.sevenbridges.com/y": 733.0220336914062
+                },
+                {
+                    "id": "#main/output_mapability_maf",
+                    "outputSource": [
+                        "#main/maf_annotated_by_bed/output"
+                    ],
+                    "type": "File",
+                    "https://www.sevenbridges.com/x": 2008.9051513671875,
+                    "https://www.sevenbridges.com/y": 272.00726318359375
+                },
+                {
+                    "id": "#main/output_complexity_maf",
+                    "outputSource": [
+                        "#main/maf_annotated_by_bed_1/output"
+                    ],
+                    "type": "File",
+                    "https://www.sevenbridges.com/x": 2283.204345703125,
+                    "https://www.sevenbridges.com/y": 275.9561767578125
+                },
+                {
+                    "id": "#main/output_hotspot_maf",
+                    "outputSource": [
+                        "#main/pv_maf_annotated_by_tsv/output"
+                    ],
+                    "type": [
+                        "null",
+                        "File"
+                    ],
+                    "https://www.sevenbridges.com/x": 2793.349609375,
+                    "https://www.sevenbridges.com/y": 755.3427734375
+                },
+                {
+                    "id": "#main/output_47kchpd_maf",
+                    "outputSource": [
+                        "#main/pv_maf_annotated_by_tsv_1/output"
+                    ],
+                    "type": [
+                        "null",
+                        "File"
+                    ],
+                    "https://www.sevenbridges.com/x": 3171.963623046875,
+                    "https://www.sevenbridges.com/y": 695.1704711914062
+                },
+                {
+                    "id": "#main/output_panmyeloid_maf",
+                    "outputSource": [
+                        "#main/pv_maf_annotated_by_tsv_2/output"
+                    ],
+                    "type": [
+                        "null",
+                        "File"
+                    ],
+                    "https://www.sevenbridges.com/x": 3498.328369140625,
+                    "https://www.sevenbridges.com/y": 604.7518310546875
                 }
             ],
             "steps": [
@@ -1055,8 +1341,8 @@
                     ],
                     "run": "#snpsift_annotate_5-0.cwl",
                     "label": "snpsift_countAnnotation",
-                    "https://www.sevenbridges.com/x": 155.640625,
-                    "https://www.sevenbridges.com/y": 320.390625
+                    "https://www.sevenbridges.com/x": 245.35765075683594,
+                    "https://www.sevenbridges.com/y": 251.2992401123047
                 },
                 {
                     "id": "#main/snpsift_annotate_5_1",
@@ -1081,8 +1367,8 @@
                     ],
                     "run": "#snpsift_annotate_5-0.cwl",
                     "label": "snpsift_annotate_5.0",
-                    "https://www.sevenbridges.com/x": 416.7921447753906,
-                    "https://www.sevenbridges.com/y": 113.796875
+                    "https://www.sevenbridges.com/x": 639.072998046875,
+                    "https://www.sevenbridges.com/y": 278.7226257324219
                 },
                 {
                     "id": "#main/vcf2maf_v1_6_21",
@@ -1130,8 +1416,8 @@
                         }
                     ],
                     "run": "#vcf2maf_1.6.21.cwl",
-                    "https://www.sevenbridges.com/x": 833.5098266601562,
-                    "https://www.sevenbridges.com/y": 276.9501953125
+                    "https://www.sevenbridges.com/x": 1015.934326171875,
+                    "https://www.sevenbridges.com/y": 356.05108642578125
                 },
                 {
                     "id": "#main/oncokb_annotator",
@@ -1164,68 +1450,158 @@
                     ],
                     "run": "#oncokb_annotator_3-2-2.cwl",
                     "label": "oncokb_annotator",
-                    "https://www.sevenbridges.com/x": 1096.5919189453125,
-                    "https://www.sevenbridges.com/y": 261
+                    "https://www.sevenbridges.com/x": 1426.226318359375,
+                    "https://www.sevenbridges.com/y": 402.77374267578125
                 },
                 {
-                    "id": "#main/maf_annotated_by_bed_mappability",
+                    "id": "#main/maf_annotated_by_bed",
                     "in": [
                         {
-                            "id": "#main/maf_annotated_by_bed_mappability/input_maf",
+                            "id": "#main/maf_annotated_by_bed/input_maf",
                             "source": "#main/oncokb_annotator/outputMaf"
                         },
                         {
-                            "id": "#main/maf_annotated_by_bed_mappability/input_bed",
+                            "id": "#main/maf_annotated_by_bed/input_bed",
                             "source": "#main/input_mappability_bed"
                         },
                         {
-                            "id": "#main/maf_annotated_by_bed_mappability/output_filename",
+                            "id": "#main/maf_annotated_by_bed/output_filename",
                             "source": "#main/output_mappability_filename"
                         },
                         {
-                            "id": "#main/maf_annotated_by_bed_mappability/column_name",
+                            "id": "#main/maf_annotated_by_bed/column_name",
                             "source": "#main/column_name_mappability"
                         }
                     ],
                     "out": [
                         {
-                            "id": "#main/maf_annotated_by_bed_mappability/output"
+                            "id": "#main/maf_annotated_by_bed/output"
                         }
                     ],
                     "run": "#maf_annotated_by_bed.cwl",
                     "label": "maf_annotated_by_bed",
-                    "https://www.sevenbridges.com/x": 1317.3984375,
-                    "https://www.sevenbridges.com/y": 267
+                    "https://www.sevenbridges.com/x": 1838.0584716796875,
+                    "https://www.sevenbridges.com/y": 425.2846984863281
                 },
                 {
-                    "id": "#main/maf_annotated_by_bed_lowComplexity",
+                    "id": "#main/maf_annotated_by_bed_1",
                     "in": [
                         {
-                            "id": "#main/maf_annotated_by_bed_lowComplexity/input_maf",
-                            "source": "#main/maf_annotated_by_bed_mappability/output"
+                            "id": "#main/maf_annotated_by_bed_1/input_maf",
+                            "source": "#main/maf_annotated_by_bed/output"
                         },
                         {
-                            "id": "#main/maf_annotated_by_bed_lowComplexity/input_bed",
+                            "id": "#main/maf_annotated_by_bed_1/input_bed",
                             "source": "#main/input_complexity_bed"
                         },
                         {
-                            "id": "#main/maf_annotated_by_bed_lowComplexity/output_filename",
+                            "id": "#main/maf_annotated_by_bed_1/output_filename",
                             "source": "#main/output_complexity_filename"
                         },
                         {
-                            "id": "#main/maf_annotated_by_bed_lowComplexity/column_name",
+                            "id": "#main/maf_annotated_by_bed_1/column_name",
                             "source": "#main/column_name_complexity"
                         }
                     ],
                     "out": [
                         {
-                            "id": "#main/maf_annotated_by_bed_lowComplexity/output"
+                            "id": "#main/maf_annotated_by_bed_1/output"
                         }
                     ],
                     "run": "#maf_annotated_by_bed.cwl",
                     "label": "maf_annotated_by_bed",
-                    "https://www.sevenbridges.com/x": 1600,
-                    "https://www.sevenbridges.com/y": 262.8888854980469
+                    "https://www.sevenbridges.com/x": 2220.102294921875,
+                    "https://www.sevenbridges.com/y": 478.15325927734375
+                },
+                {
+                    "id": "#main/pv_maf_annotated_by_tsv",
+                    "in": [
+                        {
+                            "id": "#main/pv_maf_annotated_by_tsv/input_maf",
+                            "source": "#main/maf_annotated_by_bed_1/output"
+                        },
+                        {
+                            "id": "#main/pv_maf_annotated_by_tsv/output_maf_name",
+                            "source": "#main/output_hotspot_maf_name"
+                        },
+                        {
+                            "id": "#main/pv_maf_annotated_by_tsv/output_column_name",
+                            "source": "#main/output_column_name_hotpsot"
+                        },
+                        {
+                            "id": "#main/pv_maf_annotated_by_tsv/input_tsv_file",
+                            "source": "#main/input_hotspot_tsv_file"
+                        }
+                    ],
+                    "out": [
+                        {
+                            "id": "#main/pv_maf_annotated_by_tsv/output"
+                        }
+                    ],
+                    "run": "#maf_annotated_by_tsv.cwl",
+                    "label": "pv_maf_annotatedByTsv",
+                    "https://www.sevenbridges.com/x": 2624.56201171875,
+                    "https://www.sevenbridges.com/y": 446.36090087890625
+                },
+                {
+                    "id": "#main/pv_maf_annotated_by_tsv_1",
+                    "in": [
+                        {
+                            "id": "#main/pv_maf_annotated_by_tsv_1/input_maf",
+                            "source": "#main/pv_maf_annotated_by_tsv/output"
+                        },
+                        {
+                            "id": "#main/pv_maf_annotated_by_tsv_1/output_maf_name",
+                            "source": "#main/output_47kchpd_maf_name"
+                        },
+                        {
+                            "id": "#main/pv_maf_annotated_by_tsv_1/output_column_name",
+                            "source": "#main/output_column_name_47kchpd"
+                        },
+                        {
+                            "id": "#main/pv_maf_annotated_by_tsv_1/input_tsv_file",
+                            "source": "#main/input_47kchpd_tsv_file"
+                        }
+                    ],
+                    "out": [
+                        {
+                            "id": "#main/pv_maf_annotated_by_tsv_1/output"
+                        }
+                    ],
+                    "run": "#maf_annotated_by_tsv.cwl",
+                    "label": "pv_maf_annotatedByTsv",
+                    "https://www.sevenbridges.com/x": 3027.093994140625,
+                    "https://www.sevenbridges.com/y": 444.81915283203125
+                },
+                {
+                    "id": "#main/pv_maf_annotated_by_tsv_2",
+                    "in": [
+                        {
+                            "id": "#main/pv_maf_annotated_by_tsv_2/input_maf",
+                            "source": "#main/pv_maf_annotated_by_tsv_1/output"
+                        },
+                        {
+                            "id": "#main/pv_maf_annotated_by_tsv_2/output_maf_name",
+                            "source": "#main/output_maf_name_panmyeloid"
+                        },
+                        {
+                            "id": "#main/pv_maf_annotated_by_tsv_2/output_column_name",
+                            "source": "#main/output_column_name_panmyeloid"
+                        },
+                        {
+                            "id": "#main/pv_maf_annotated_by_tsv_2/input_tsv_file",
+                            "source": "#main/input_panmeloid_tsv_file"
+                        }
+                    ],
+                    "out": [
+                        {
+                            "id": "#main/pv_maf_annotated_by_tsv_2/output"
+                        }
+                    ],
+                    "run": "#maf_annotated_by_tsv.cwl",
+                    "label": "pv_maf_annotatedByTsv",
+                    "https://www.sevenbridges.com/x": 3366.108154296875,
+                    "https://www.sevenbridges.com/y": 434.5843505859375
                 }
             ],
             "requirements": [],
