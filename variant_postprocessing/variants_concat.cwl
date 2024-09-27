@@ -66,6 +66,10 @@ inputs:
     type: boolean
     'sbg:x': 0
     'sbg:y': 0
+  - id: bgzip_sort_output_name
+    type: string?
+    'sbg:x': 280.76068115234375
+    'sbg:y': 1231.531005859375
 outputs:
   - id: concatenated_vcf
     outputSource:
@@ -116,12 +120,14 @@ steps:
         source: output_type
       - id: sort_output_name
         source: complex_sort_output_name
+      - id: bgzip_sort_output_name
+        source: bgzip_sort_output_name
     out:
       - id: bgzip_sorted_output
     run: ./variant_sort.cwl
     label: bgzip_sort.cwl
-    'sbg:x': 284.734375
-    'sbg:y': 489.0390625
+    'sbg:x': 469.7548828125
+    'sbg:y': 321.82061767578125
   - id: bcftools_concat
     in:
       - id: allow_overlaps

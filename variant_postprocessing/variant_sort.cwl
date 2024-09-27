@@ -20,16 +20,20 @@ inputs:
     'sbg:y': 428
   - id: preset
     type: string?
-    'sbg:x': 206.859375
-    'sbg:y': 146.5
+    'sbg:x': 851
+    'sbg:y': 39
   - id: output_type
     type: string?
     'sbg:x': 0
     'sbg:y': 214
   - id: sort_output_name
     type: string?
-    'sbg:x': 0
-    'sbg:y': 107
+    'sbg:x': 363
+    'sbg:y': -9
+  - id: bgzip_sort_output_name
+    type: string?
+    'sbg:x': 570
+    'sbg:y': 397
 outputs:
   - id: bgzip_sorted_output
     outputSource:
@@ -61,37 +65,39 @@ steps:
       - id: output_type
         source: output_type
       - id: input
-        source: tabix/tabixIndex
+        source: bgzip/zippedVcf
     out:
       - id: sorted_file
     run: ../command_line_tools/bcftools_1.15.1/bcftools_sort._1.15.1.cwl
     label: bcftools_sort
-    'sbg:x': 660.6514892578125
-    'sbg:y': 200
-  - id: tabix
-    in:
-      - id: preset
-        source: preset
-      - id: input
-        source: bgzip/zippedVcf
-    out:
-      - id: tabixIndex
-    run: ../command_line_tools/bcftools_1.15.1/bcftools_tabix_1.15.1.cwl
-    label: tabix
-    'sbg:x': 470.40625
-    'sbg:y': 207
+    'sbg:x': 504
+    'sbg:y': 217
   - id: tabix_1
     in:
       - id: preset
         source: preset
       - id: input
-        source: bcftools_sort/sorted_file
+        source: bgzip_1/zippedVcf
     out:
       - id: tabixIndex
     run: ../command_line_tools/bcftools_1.15.1/bcftools_tabix_1.15.1.cwl
     label: tabix
     'sbg:x': 904.9171142578125
     'sbg:y': 207
+  - id: bgzip_1
+    in:
+      - id: stdout
+        source: stdout
+      - id: input
+        source: bcftools_sort/sorted_file
+      - id: output_file_name
+        source: bgzip_sort_output_name
+    out:
+      - id: zippedVcf
+    run: ../command_line_tools/bcftools_1.15.1/bcftools_bgzip_1.15.1.cwl
+    label: bgzip
+    'sbg:x': 708
+    'sbg:y': 220
 requirements: []
 $schemas:
   - 'http://schema.org/version/latest/schemaorg-current-http.rdf'
