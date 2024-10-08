@@ -65,13 +65,13 @@ outputs:
     type: File
     'sbg:x': 501.0516662597656
     'sbg:y': 446.3981628417969
-  - id: vcf
+  - id: single_filter_vcf
     outputSource:
       - pv_vardict_single_filter/vcf
     type: File
     'sbg:x': 667.1679077148438
     'sbg:y': 454.6510925292969
-  - id: vcf_complex
+  - id: single_filter_vcf_complex
     outputSource:
       - pv_vardict_single_filter/vcf_complex
     type: File
