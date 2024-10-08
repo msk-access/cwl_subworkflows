@@ -141,6 +141,18 @@ steps:
     in:
       - id: inputVCF
         source: vardict/output
+      - id: tsampleName
+        source: sample_name
+      - id: alleledepth
+        default: 1
+      - id: totalDepth
+        default: 20
+      - id: tnRatio
+        default: 1
+      - id: variantFraction
+        default: 0.00005
+      - id: minQual
+        default: 0
     out:
       - id: txt
       - id: vcf_complex
