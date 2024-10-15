@@ -10,8 +10,8 @@ inputs:
     type: File
     secondaryFiles:
       - .fai
-    'sbg:x': 0
-    'sbg:y': 213.53125
+    'sbg:x': -79.38146209716797
+    'sbg:y': 249.81459045410156
   - id: input_bam_case
     type: File
     secondaryFiles:
@@ -28,12 +28,12 @@ inputs:
     'sbg:y': 106.765625
   - id: concat_output_name
     type: string
-    'sbg:x': 513.37158203125
-    'sbg:y': 334.296875
+    'sbg:x': 740.790283203125
+    'sbg:y': 70.54559326171875
   - id: stdout
     type: boolean
-    'sbg:x': 513.37158203125
-    'sbg:y': 92.765625
+    'sbg:x': 847.7826538085938
+    'sbg:y': -11.541033744812012
   - id: vardict_output_vcf_name
     type: string?
     'sbg:x': 0
@@ -47,12 +47,6 @@ inputs:
     'sbg:x': 227.29263305664062
     'sbg:y': -49.30992126464844
 outputs:
-  - id: txt
-    outputSource:
-      - pv_vardict_single_filter/txt
-    type: File
-    'sbg:x': 759.164794921875
-    'sbg:y': 266.9140625
   - id: concatenated_vcf
     outputSource:
       - variants_concat/concatenated_vcf
@@ -65,18 +59,24 @@ outputs:
     type: File
     'sbg:x': 397.9921875
     'sbg:y': 590.5
+  - id: txt
+    outputSource:
+      - pv_vardict_single_filter/txt
+    type: File
+    'sbg:x': 501.0516662597656
+    'sbg:y': 446.3981628417969
   - id: single_filter_vcf
     outputSource:
       - pv_vardict_single_filter/vcf
     type: File
-    'sbg:x': 688.9921875
-    'sbg:y': 587.5
+    'sbg:x': 667.1679077148438
+    'sbg:y': 454.6510925292969
   - id: single_filter_vcf_complex
     outputSource:
       - pv_vardict_single_filter/vcf_complex
     type: File
-    'sbg:x': 942.9921875
-    'sbg:y': 552.5
+    'sbg:x': 804.0721435546875
+    'sbg:y': 435.0933532714844
 steps:
   - id: vardict
     in:
@@ -109,30 +109,6 @@ steps:
     label: vardict
     'sbg:x': 250.328125
     'sbg:y': 185.53125
-  - id: pv_vardict_single_filter
-    in:
-      - id: inputVCF
-        source: vardict/output
-      - id: tsampleName
-        source: sample_name
-      - id: alleledepth
-        default: 1
-      - id: totalDepth
-        default: 20
-      - id: tnRatio
-        default: 5
-      - id: variantFraction
-        default: 0
-      - id: minQual
-        default: 20
-    out:
-      - id: txt
-      - id: vcf_complex
-      - id: vcf
-    run: >-
-      ../command_line_tools/postprocessing_variant_calls/0.1.5/pv_vardict_single_filter.cwl
-    'sbg:x': 483
-    'sbg:y': 220
   - id: variants_concat
     in:
       - id: fastaRef
@@ -159,8 +135,32 @@ steps:
       - id: concatenated_vcf
     run: ../variant_postprocessing/variants_concat.cwl
     label: variants_concat
-    'sbg:x': 759.164794921875
-    'sbg:y': 132.1484375
+    'sbg:x': 937.3206787109375
+    'sbg:y': 213.682373046875
+  - id: pv_vardict_single_filter
+    in:
+      - id: inputVCF
+        source: vardict/output
+      - id: tsampleName
+        source: sample_name
+      - id: alleledepth
+        default: 1
+      - id: totalDepth
+        default: 20
+      - id: tnRatio
+        default: 1
+      - id: variantFraction
+        default: 0.00005
+      - id: minQual
+        default: 0
+    out:
+      - id: txt
+      - id: vcf_complex
+      - id: vcf
+    run: >-
+      ../command_line_tools/postprocessing_variant_calls/0.2.3/pv_vardict_single_filter/pv_vardict_single_filter.cwl
+    'sbg:x': 492.4954528808594
+    'sbg:y': 150.5911865234375
 requirements:
   - class: SubworkflowFeatureRequirement
 $schemas:
