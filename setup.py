@@ -22,8 +22,7 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
         'Natural Language :: English',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.9',
     ],
     description="A list of subworkflows used for MSK-ACCESS data processing.",
     install_requires=requirements,
@@ -37,6 +36,6 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/rhshah/cwl_subworkflows',
-    version='1.0.0',
+    version='1.2.7',
     zip_safe=False,
 )

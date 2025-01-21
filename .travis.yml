@@ -1,7 +1,6 @@
 language: python
 python:
-- 3.7
-- 2.7
+- 3.9
 install: pip install -U tox-travis
 script: tox
 deploy:
@@ -15,4 +14,4 @@ deploy:
   on:
     tags: true
     repo: msk-access/cwl_subworkflows
-    python: 2.7
+    python: 3.9
