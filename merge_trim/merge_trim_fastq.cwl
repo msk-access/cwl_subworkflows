@@ -128,7 +128,7 @@ steps:
     out:
       - id: merge_fastq_1
       - id: merge_fastq_2
-    run: ../../cwl-commandlinetools/merge_fastq_0.1.7/merge_fastq_0.1.7.cwl
+    run: ../command_line_tools/merge_fastq_0.1.7/merge_fastq_0.1.7.cwl
     'sbg:x': 327.28125
     'sbg:y': 100
   - id: fastp_0_24_0
@@ -149,8 +149,6 @@ steps:
       - id: unpaired2_path
         default: unpaired_R2.fastq.gz
         source: fastp_unpaired2_output_file_name
-      - id: trim_tail2
-        default: -10
       - id: max_len_read1
         default: 95
         source: fastp_max_len_read1
@@ -179,7 +177,7 @@ steps:
       - id: fastp_read2_output
       - id: fastp_unpaired1_output
       - id: fastp_unpaired2_output
-    run: ../../cwl-commandlinetools/fastp_0.24.0/fastp_0.24.0.cwl
+    run: ../command_line_tools/fastp_0.24.0/fastp_0.24.0.cwl
     label: fastp_0.24.0
     'sbg:x': 583.671875
     'sbg:y': 290.5
