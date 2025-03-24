@@ -841,10 +841,6 @@
                             "source": "#main/fastp_unpaired2_output_file_name"
                         },
                         {
-                            "id": "#main/fastp_0_24_0/trim_tail2",
-                            "default": -10
-                        },
-                        {
                             "id": "#main/fastp_0_24_0/max_len_read1",
                             "default": 95,
                             "source": "#main/fastp_max_len_read1"
