@@ -1,0 +1,23 @@
+fastp_disable_trim_poly_g: null
+fastp_disable_adapter_trimming: null
+fastp_disable_length_filtering: null
+fastp_disable_quality_filtering: null
+fastp_dont_eval_duplication: null
+fastp_max_len_read1: null
+fastp_max_len_read2: null
+fastp_read1_output_file_name: null
+fastp_read2_output_file_name: null
+fastp_unpaired1_output_file_name: null
+fastp_unpaired2_output_file_name: null
+merge_fastq_fastq1:
+  - class: File
+    path: >-
+      /path/to/fastq/L001.R1.fastq.gz
+  - class: File
+    path: >-
+      /path/to/fastq/L002.R1.fastq.gz
+merge_fastq_fastq2:
+  - class: File
+    path: /path/to/fastq/L001.R2.fastq.gz
+  - class: File
+    path: /path/to/fastq/L002.R2.fastq.gz
