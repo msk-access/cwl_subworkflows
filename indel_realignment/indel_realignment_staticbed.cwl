@@ -94,7 +94,7 @@ inputs:
     'sbg:x': 0
     'sbg:y': 213.5
   - id: targets
-    type: File
+    type: File?
     'sbg:x': 0
     'sbg:y': 320.25
 outputs:
