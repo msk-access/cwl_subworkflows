@@ -101,6 +101,14 @@ inputs:
     type: string?
     'sbg:x': 0
     'sbg:y': 213.421875
+  - id: memory_per_job
+    type: int?
+    'sbg:x': 0
+    'sbg:y': 2134.125
+  - id: memory_overhead
+    type: int?
+    'sbg:x': 0
+    'sbg:y': 2240.8125
 outputs:
   - id: indel_realignment_bam
     outputSource:
@@ -149,6 +157,10 @@ steps:
         source: no_edge_complex_indel
       - id: no_sort
         source: no_sort
+      - id: memory_per_job
+        source: memory_per_job
+      - id: memory_overhead
+        source: memory_overhead
     out:
       - id: abra_realigned_bam
     run: ../command_line_tools/abra2_2.22/abra2_2.22.cwl
