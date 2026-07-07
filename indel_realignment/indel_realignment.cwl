@@ -114,8 +114,6 @@ outputs:
     outputSource:
       - picard_fix_mate_information_4_1_8_1/picard_fix_mate_information_bam
     type: File
-    secondaryFiles:
-      - ^.bai
     'sbg:x': 1981.323974609375
     'sbg:y': 1013.4609375
 steps:

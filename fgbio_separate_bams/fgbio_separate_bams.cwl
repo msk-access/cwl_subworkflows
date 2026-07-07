@@ -153,8 +153,6 @@ outputs:
       - >-
         fgbio_filter_consensus_reads_1_2_0_duplex/fgbio_filter_consensus_reads_bam
     type: File
-    secondaryFiles:
-      - ^.bai
     'sbg:x': 1072.9705810546875
     'sbg:y': 1828.3515625
   - id: fgbio_postprocessing_simplex_bam
@@ -162,8 +160,6 @@ outputs:
       - >-
         fgbio_postprocessing_simplex_filter_0_1_8/fgbio_postprocessing_simplex_bam
     type: File
-    secondaryFiles:
-      - ^.bai
     'sbg:x': 1616.9268798828125
     'sbg:y': 1809.984375
   - id: gatk_collect_alignment_summary_metrics_txt_duplex
@@ -178,8 +174,6 @@ outputs:
       - >-
         fgbio_filter_consensus_reads_1_2_1_simplex_duplex/fgbio_filter_consensus_reads_bam
     type: File
-    secondaryFiles:
-      - ^.bai
     'sbg:x': 1072.9705810546875
     'sbg:y': 1721.6171875
   - id: gatk_collect_alignment_summary_metrics_txt_simplex
